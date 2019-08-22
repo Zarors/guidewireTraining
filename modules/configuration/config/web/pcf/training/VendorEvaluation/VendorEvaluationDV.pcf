@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    editable="true"
+    id="VendorEvaluationDV">
+    <Require
+      name="aVendorEvaluation"
+      type="VendorEvaluation"/>
+    <InputColumn>
+      <TextInput
+        editable="true"
+        id="Evaluator"
+        label="DisplayKey.get(&quot;Training.Evaluator&quot;)"
+        required="true"
+        value="aVendorEvaluation.Evaluator"/>
+      <DateInput
+        editable="true"
+        id="EvaluationDate"
+        label="DisplayKey.get(&quot;Training.EvaluationDate&quot;)"
+        value="aVendorEvaluation.EvaluationDate"/>
+      <TypeKeyInput
+        id="Status"
+        label="DisplayKey.get(&quot;Training.Status&quot;)"
+        value="aVendorEvaluation.Status"
+        valueType="VendorEvaluationStatus"/>
+      <Label
+        id="ScoreLabel"
+        label="DisplayKey.get(&quot;Training.ScoresExplained&quot;)"/>
+      <TextInput
+        editable="true"
+        formatType="exactNumber"
+        id="Score_Timeliness"
+        label="DisplayKey.get(&quot;Training.ScoreTimeliness&quot;)"
+        maxChars="2"
+        validationExpression="((aVendorEvaluation.Score_Timeliness &gt; 25) or (aVendorEvaluation.Score_Timeliness &lt; 0)) ? DisplayKey.get(&quot;Training.ValidationEvalScore&quot;) : null"
+        value="aVendorEvaluation.Score_Timeliness"
+        valueType="java.lang.Integer"/>
+      <TextInput
+        align="right"
+        editable="true"
+        id="Score_Communication"
+        label="DisplayKey.get(&quot;Training.ScoreCommunication&quot;)"
+        maxChars="2" 
+        validationExpression="((aVendorEvaluation.Score_Communication &gt; 25) or (aVendorEvaluation.Score_Communication &lt; 0)) ? DisplayKey.get(&quot;Training.ValidationEvalScore&quot;) : null"
+        value="aVendorEvaluation.Score_Communication"
+        valueType="java.lang.Integer"/>
+      <TextInput
+        align="right"
+        editable="true"
+        id="Score_QualityOfWork"
+        label="DisplayKey.get(&quot;Training.ScoreQualityOfWork&quot;)"
+        maxChars="2"      
+        validationExpression="((aVendorEvaluation.Score_QualityOfWork &gt; 25) or (aVendorEvaluation.Score_QualityOfWork &lt; 0)) ? DisplayKey.get(&quot;Training.ValidationEvalScore&quot;) : null"
+        value="aVendorEvaluation.Score_QualityOfWork"
+        valueType="java.lang.Integer"/>
+      <TextInput
+        align="right"
+        editable="true"
+        id="Score_Pricing"
+        label="DisplayKey.get(&quot;Training.ScorePricing&quot;)"
+        maxChars="2"        
+        validationExpression="((aVendorEvaluation.Score_Pricing &gt; 25) or (aVendorEvaluation.Score_Pricing &lt; 0)) ? DisplayKey.get(&quot;Training.ValidationEvalScore&quot;) : null"
+        value="aVendorEvaluation.Score_Pricing"
+        valueType="java.lang.Integer"/>
+      <!--Automatically calculated as the sum of timeliness, communication, quality of work and pricing fields.-->
+      <TextInput
+        id="ScoreTotal"
+        label="DisplayKey.get(&quot;Training.TotalScore&quot;)"
+        maxChars="2"        
+        value="aVendorEvaluation.TotalScore"
+        valueType="int">
+        <Reflect
+          triggerIds="Score_Timeliness,Score_Communication,Score_QualityOfWork,Score_Pricing"
+          value="aVendorEvaluation.sumTotalScore(VALUE1,VALUE2,VALUE3,VALUE4)"/>
+      </TextInput>
+      <TextAreaInput
+        editable="true"
+        id="EvaluatorComment"
+        label="DisplayKey.get(&quot;Training.Comments&quot;)"
+        numRows="4"
+        value="aVendorEvaluation.EvaluatorComment"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

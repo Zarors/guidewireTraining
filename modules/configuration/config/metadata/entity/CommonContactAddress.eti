@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    CONTACT/ADDRESS JOIN TABLES
+  ******************************************************************************************************************** -->
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="CommonContactAddress"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactAddressImplCallback"/>
+  <fulldescription><![CDATA[
+      This is a shared delegate/interface which allows code to operate on those columns held by either
+      ContactAddress or ABContactAddress entities. This allows code-sharing in cases where code might
+      be used by both ContactManager and another Guidewire application.
+    ]]></fulldescription>
+</delegate>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<delegate
+  platform="true"
+  requiresType="keyable"
+  xmlns="http://guidewire.com/datamodel"
+  name="Obfuscatable">
+  <column
+    default="false"
+    desc="Flag to let us know if the bean has been obfuscated."
+    name="ObfuscatedInternal"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    type="bit"/>
+  <implementsInterface
+    iface="gw.api.obfuscation.Obfuscator"/>
+  <implementsInterface
+    iface="gw.api.obfuscation.ObfuscatablePublicMethods"
+    impl="com.guidewire.pl.domain.obfuscation.ObfuscatableMethodsImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.obfuscation.ObfuscatableInternalMethods"
+    impl="com.guidewire.pl.domain.obfuscation.ObfuscatableMethodsImpl"/>
+</delegate>

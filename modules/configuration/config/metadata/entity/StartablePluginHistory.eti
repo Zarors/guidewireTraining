@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="History of calls into startable plugins"
+  entity="StartablePluginHistory"
+  platform="true"
+  supertype="InboundHistory">
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.profiler.impl.StartablePluginHistoryImpl"/>
+  <column
+    desc="The name of the plugin."
+    name="PluginName"
+    nullok="false"
+    type="shorttext"/>
+  <events/>
+</subtype>

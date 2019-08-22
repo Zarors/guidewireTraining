@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    beforeCommit="Region.removeNullZones()"
+    canEdit="Region==null || perm.Region.edit"
+    canVisit="(Region!=null and perm.Region.view) || (Region==null and perm.Region.create)"
+    id="RegionDetail"
+    parent="RegionsPage()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.RegionDetail&quot;, Region.Name)">
+    <LocationEntryPoint
+      signature="RegionDetail(Region : Region)"/>
+    <LocationEntryPoint
+      signature="RegionDetail()"/>
+    <Variable
+      initialValue="Region == null ? new Region() : Region"
+      name="Region"
+      type="Region"/>
+    <ScreenRef
+      def="RegionDetailScreen(Region)"/>
+  </Page>
+</PCF>

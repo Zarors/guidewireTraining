@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Entity
+  name="Place">
+  <Columns>
+    <Column
+      beanPath="Place.Name"
+      name="Name"
+      sortBeanPath="Place.NameDenorm"
+      sortOrder="1"/>
+    <Column
+      beanPath="Place.NameKanji"
+      name="NameKanji"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.name.NameFormatter
+uses gw.api.name.ContactNameFieldsImpl
+
+var contact = new ContactNameFieldsImpl(){
+  :Name = Name,
+  :NameKanji = NameKanji
+}
+return new NameFormatter().format(contact, " ")
+  
+    ]]></DisplayName>
+</Entity>

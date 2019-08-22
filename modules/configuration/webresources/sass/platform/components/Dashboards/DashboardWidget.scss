@@ -1,0 +1,28 @@
+.gw-ScreenWidget.gw-DashboardScreen {
+  width: 100%;
+  background-color: $gw-app--DashboardScreen--bg;
+}
+
+.gw-DashboardWidget {
+  display: flex;
+  margin: $gw-app--Dashboard--margin;
+
+  @media (min-width: ($gw-media--tablet--width-px + 1)) {
+    .gw-DashboardColumnWidget:nth-of-type(1) {
+      flex: 1;
+      margin-right: $gw-app--DashboardColumn--horizontal-spacing;
+    }
+    .gw-DashboardColumnWidget:nth-of-type(2) {
+      width: 33.33%;
+    }
+  }
+
+  @media (max-width: $gw-media--tablet--width-px) {
+    flex-direction: column;
+    flex-basis: initial;
+
+    .gw-DashboardColumnWidget {
+      width: 100%;
+    }
+  }
+}

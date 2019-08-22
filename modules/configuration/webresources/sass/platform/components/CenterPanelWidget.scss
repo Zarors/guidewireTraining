@@ -1,0 +1,82 @@
+#gw-center-top-section {
+
+  // Internal padding
+  padding-top: $gw-app--CenterPanel-topsection--spacing-inner-top-rem;
+  padding-left: $gw-app--CenterPanel-topsection--spacing-inner-left-rem;
+  padding-right: $gw-app--CenterPanel-topsection--spacing-inner-right-rem;
+  padding-bottom: $gw-app--CenterPanel-topsection--spacing-inner-bottom-rem;
+
+  background-color: $gw-app--CenterPanel-topsection--bg;
+
+  @if($gw-app--TitleBar--screen--border-col != none) {
+    border-bottom: gw-border($gw-app--TitleBar--screen--border-col);
+  }
+
+  position: relative;
+  @include gw-z-index(centerTopSection);
+  box-shadow: $gw-app--TitleBar--drop-shadow;
+
+  #gw-center-title-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $gw-app--TitleBar--screen--bg;
+
+    &.gw-top-toolbar-left {
+      justify-content: flex-start;
+    }
+
+    .gw-ToolbarWidget {
+      align-self: flex-end;
+    }
+  }
+
+  #gw-fixedTopQuickButtons {
+    position: fixed;
+    top: 50%;
+    @include gw-z-index(fixedButtons);
+    transform-origin: right center;
+    right: gw-remScaled(-2);
+    transition: right .3s ease-out;
+    display: inline-block;
+    background-color: $gw-app--panels--bg;
+    border: gw-border();
+    @include gw-borderCap($left: true);
+    padding: $gw-app--SPACING-rem-M 0 $gw-app--SPACING-rem-M $gw-app--border-width-px;
+    padding-right: 0;
+    @include gw-boxShadowStandard();
+
+    &:hover {
+      right: gw-pxFixed(-1);
+      cursor: pointer;
+    }
+
+    #gw-quickErrorButton {
+      display: none;
+    }
+
+    #gw-quickErrorButton.gw-hasErrors {
+      display: inline-block;
+      vertical-align: top;
+      background-color: $gw-app--palette--error;
+      border: gw-border($gw-app--panels--error--border-col);
+      @include gw-borderRadius(50%);
+      padding: $gw-app--SPACING-rem-M $gw-app--SPACING-rem-M;
+
+      .gw-icon {
+        display: inline-block;
+        $size: gw-roundRemToNearestPixel(1.3em); //em-allowed
+        vertical-align: top;
+        color: $gw-app--panels--error--bg;
+        width: $size;
+        height: $size;
+        @include gw-icon($gw-app--MessagesWidget--error-glyph, $size, $width: auto, $height: auto, $display: inline, $v-align: middle, $h-align: middle, $position: relative, $bottom: $gw-app--border-width-px);
+      }
+
+      .gw-label {
+        display: none;
+      }
+    }
+  }
+}

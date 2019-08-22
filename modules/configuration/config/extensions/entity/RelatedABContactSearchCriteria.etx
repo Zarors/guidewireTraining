@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><extension xmlns="http://guidewire.com/datamodel" entityName="RelatedABContactSearchCriteria">
+  <typekey desc="Adjudicative Domain" name="AdjudicativeDomain" nullok="true" typelist="AdjudicativeDomain"/>
+  <typekey desc="Attorney's specialty" name="AttorneySpecialty" nullok="true" typelist="LegalSpecialty"/>
+  <typekey desc="Doctor's specialty" name="DoctorSpecialty" nullok="true" typelist="SpecialtyType"/>
+  <typekey desc="Medical specialty type" name="MedicalOrgSpecialty" nullok="true" typelist="SpecialtyType"/>
+  <typekey desc="Law firm Specialty" name="LawFirmSpecialty" nullok="true" typelist="LegalSpecialty"/>
+</extension>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Category for Service Provider Management Review questions and categories; generally, this will be extended by customers"
+  final="false"
+  name="ReviewCategory"
+  platform="true">
+  <typecode
+    code="general"
+    desc="A default category for general questions."
+    name="General"/>
+</typelist>

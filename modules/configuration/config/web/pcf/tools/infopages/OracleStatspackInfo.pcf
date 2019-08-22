@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    canVisit="gw.api.tools.OracleStatspackHelper.dbSupportsStatspack()"
+    countsAsWork="false"
+    id="OracleStatspackInfo"
+    parent="InfoPages()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleStatspackInfo&quot;)">
+    <Variable
+      initialValue="new gw.api.tools.OracleStatspackHelper()"
+      name="PageHelper"
+      type="gw.api.tools.OracleStatspackHelper"/>
+    <Variable
+      initialValue="true"
+      name="Paging"
+      type="Boolean"/>
+    <Screen
+      id="OracleStatspackInfoScreen">
+      <PanelRef
+        def="OracleStatspackLV(PageHelper)"
+        mode="Paging ? &quot;paging&quot; : &quot;nopaging&quot;">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleStatspack.Instructions&quot;)"/>
+        <Toolbar
+          id="orasptb">
+          <ToolbarButton
+            action="PageHelper.downloadStatspackInfo()"
+            available="PageHelper.ReadyToDownload"
+            download="true"
+            id="download"
+            label="DisplayKey.get(&quot;Button.Download&quot;)"/>
+          <ToolbarButton
+            action="PageHelper.loadSnapshotInfo()"
+            id="refresh"
+            label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+          <ToolbarButton
+            action="Paging = !Paging"
+            id="TogglePaging"
+            label="Paging ? DisplayKey.get(&quot;Web.InternalTools.InfoPages.DisablePaging&quot;) : DisplayKey.get(&quot;Web.InternalTools.InfoPages.EnablePaging&quot;)"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="Calefaccion_Ext" desc="">
+  <typecode
+    code="Interna"
+    name="Interna"/>
+  <typecode
+    code="Externa"
+    name="Externa"/>
+  <typecode
+    code="Otro"
+    name="Otro"/>
+</typelist>

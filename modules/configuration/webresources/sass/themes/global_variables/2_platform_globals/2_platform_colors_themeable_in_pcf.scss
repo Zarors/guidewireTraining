@@ -1,0 +1,58 @@
+$gw-app--palette--new: $gw-app--palette--green !default;
+$gw-app--palette--blank: transparent !default;
+$gw-app--palette--disabled: $gw-app--palette--gray-A !default;
+$gw-app--palette--active: $gw-app--palette--blue-active !default;
+$gw-app--palette--inactive: $gw-app--palette--gray-A !default;
+
+$gw-app--palette--urgencynone: $gw-app--palette--green !default;
+$gw-app--palette--urgencylow: $gw-app--palette--yellow !default;
+$gw-app--palette--urgencymedium: $gw-app--palette--orange !default;
+$gw-app--palette--urgencyhigh: $gw-app--palette--orange-dark !default;
+$gw-app--palette--urgencycritical: $gw-app--palette--red !default;
+
+$gw-app--palette--importancenone: $gw-app--palette--green !default;
+$gw-app--palette--importancelow: $gw-app--palette--yellow !default;
+$gw-app--palette--importancemedium: $gw-app--palette--orange !default;
+$gw-app--palette--importancehigh: $gw-app--palette--orange-dark !default;
+$gw-app--palette--importancecritical: $gw-app--palette--red !default;
+
+$gw-app--palette--numbersnegative: $gw-app--palette--red!default;
+$gw-app--palette--numbersneutral: $gw-app--palette--gray-A !default;
+$gw-app--palette--numberspositive: $gw-app--palette--green !default;
+
+$gw-app--palette--progressunstarted: $gw-app--palette--blue !default;
+$gw-app--palette--progressinprogress: $gw-app--palette--orange !default;
+$gw-app--palette--progressblocked: $gw-app--palette--red !default;
+$gw-app--palette--progressoverdue: $gw-app--palette--red !default;
+$gw-app--palette--progresscomplete: $gw-app--palette--green !default;
+$gw-app--palette--progressabandoned: $gw-app--palette--gray-7 !default;
+
+$gw-app--palette--actionsafe: $gw-app--palette--green !default;
+$gw-app--palette--actionneutral: $gw-app--palette--gray-A !default;
+$gw-app--palette--actiondanger: $gw-app--palette--red !default;
+
+$gw-app--palette--outcomepositive: $gw-app--palette--green !default;
+$gw-app--palette--outcomeneutral: $gw-app--palette--gray-A !default;
+$gw-app--palette--outcomenegative: $gw-app--palette--red !default;
+
+$gw-app--palette--alertwarning: $gw-app--palette--orange !default;
+$gw-app--palette--alerterror: $gw-app--palette--red !default;
+$gw-app--palette--alertinfo: $gw-app--palette--blue !default;
+$gw-app--palette--alertsuccess: $gw-app--palette--green !default;
+$gw-app--palette--alertneutral: $gw-app--palette--gray-A !default;
+
+$gw-app--palette--tier4: $gw-app--palette--bronze !default;
+$gw-app--palette--tier3: $gw-app--palette--silver !default;
+$gw-app--palette--tier2: $gw-app--palette--gold !default;
+$gw-app--palette--tier1: $gw-app--palette--platinum !default;
+
+$gw-app--palette--highlight: $gw-app--palette--yellow !default;
+$gw-app--palette--highlightalt: $gw-app--palette--yellow-dark !default;
+
+$gw-app--palette--callout: $gw-app--palette--blue-highlight !default;
+$gw-app--palette--calloutalt: $gw-app--palette--blue-highlight-alt!default;
+
+// Helpers
+$gw-app--palette--info: $gw-app--palette--alertinfo;
+$gw-app--palette--error: $gw-app--palette--alerterror;
+$gw-app--palette--warning: $gw-app--palette--alertwarning;

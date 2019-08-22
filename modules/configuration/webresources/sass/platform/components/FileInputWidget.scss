@@ -1,0 +1,29 @@
+.gw-FileInputWidget {
+  &.gw-StyleContainer--ToolbarWidget {
+    .gw-label {
+      display: none;
+    }
+  }
+}
+
+.gw-FileValueWidget {
+  input[type="text"] {
+    @include gw-borderCap($right: false);
+    border-right: 0 solid transparent;
+  }
+
+  .gw-FileInputWidget--button {
+    margin-left: 0;
+
+    @include gw-button--secondary(
+            $pad-h: $gw-app--inputs--pad-h-rem,
+            $pad-v: $gw-app--inputs--pad-v-rem,
+            $border-color: $gw-app--inputs--border--col,
+            $col: $gw-app--buttons--secondary--col,
+            $bg: $gw-app--buttons--secondary--bg,
+            $allow-active-shadows: false
+    );
+
+    @include gw-borderCap($right: true, $left: false);
+  }
+}

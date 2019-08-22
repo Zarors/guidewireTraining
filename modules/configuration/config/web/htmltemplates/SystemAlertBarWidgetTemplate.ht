@@ -1,0 +1,9 @@
+<div class="gw-SystemAlertBarWidget--inner">
+  <div :if="icon" class="gw-SystemAlertBarWidget--icon">
+    ${icon}
+  </div>
+  <div class="gw-SystemAlertBarWidget--content">
+    <div :if="label" class="gw-SystemAlertBarWidget--label">${label}</div>
+    <div :if="hasElements" class="gw-SystemAlertBarWidget--elements">${:children}</div>
+  </div>
+</div>

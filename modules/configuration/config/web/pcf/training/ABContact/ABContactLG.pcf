@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <LocationGroup
+    afterEnter="anABContact.recordContactViewed()"
+    id="ABContactLG"
+    infoBar="ABContactInfoBar(anABContact)"
+    menuActions="ABContactLGMenuActions(anABContact)"
+    parent="ContactTabForward()"
+    title="DisplayKey.get(&quot;Training.Contact&quot;)">
+    <LocationEntryPoint
+      signature="ABContactLG(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Training.Summary&quot;)"
+      location="ABContactSummaryPage(anABContact)"/>
+    <LocationRef
+      location="ABPersonDetailsPage(anABContact)"/>
+    <LocationRef
+      location="ABCompanyDetailsPage(anABContact)"/>
+    <LocationRef
+      location="ABPlaceDetailsPage(anABContact)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Training.AddressesCount&quot;,anABContact.AllAddresses.length) "
+      location="ABContactAddressesPage(anABContact)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Training.NotesCount&quot;, anABContact.ContactNotes.length)"
+      location="ABContactNotesPage(anABContact)"/>
+    <LocationRef
+      location="ABContactSocialMediaPage(anABContact)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Training.Analysis&quot;)"
+      location="ABContactAnalysisPage(anABContact)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Training.InteractionsSidebar&quot;)"
+      location="ABContactInteractionsPage(anABContact)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Training.History&quot;)"
+      location="ABContactHistoryPage(anABContact)"/>
+  </LocationGroup>
+</PCF>

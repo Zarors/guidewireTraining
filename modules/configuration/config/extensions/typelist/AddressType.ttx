@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of mailing addresses"
+  name="AddressType">
+  <typecode
+    code="home"
+    desc="Home"
+    name="Home"/>
+  <typecode
+    code="business"
+    desc="Business"
+    name="Business"/>
+  <typecode
+    code="other"
+    desc="Other"
+    name="Other"/>
+  <typecode
+    code="billing"
+    desc="Billing"
+    name="Billing"/>
+</typelistextension>

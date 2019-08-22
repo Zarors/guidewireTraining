@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DataDistributions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="SimpleDataDistRequest" type="simpledatadistributionrequest" minOccurs="0"
+                     maxOccurs="unbounded"/>
+        <xsd:element name="DateDistRequest" type="datedatadistribution" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+     This is a simple ad hoc data distribution request.  It can be used to report on any data distribution in the database.
+  -->
+  <xsd:complexType name="simpledatadistributionrequest">
+    <!--
+       One of these for each result column in the query.
+    -->
+    <xsd:sequence>
+      <xsd:element name="ResultColumn" type="resultcolumn" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <!--
+       Enter table name. This determines the page on which the results will be reported.
+       The query can specify any tables and columns.
+    -->
+    <xsd:attribute name="table" type="xsd:string" use="required"/>
+    <xsd:attribute name="description" type="xsd:string" use="required"/>
+    <!--
+      The query to run to produce the distribution.  It should include an order by descending
+      if you use the topN attribute.  It can reference any tables and columns, including
+      staging tables.
+    -->
+    <xsd:attribute name="query" type="xsd:string" use="required"/>
+    <!--
+       This optional attribute specifies that only the first number of rews will be printed
+       from the query.  If omitted, or 0, all rows will be printed.
+    -->
+    <xsd:attribute name="topN" type="xsd:int"/>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="resultcolumn">
+    <!--
+       The display name to label the results.
+    -->
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+
+  <!--
+     Requests a distribution of types across a range of dates.
+  -->
+  <xsd:complexType name="datedatadistribution">
+    <!--
+      Define the date bins to be used after the initial bin size specified as an attribute.
+      If not specified, bins that will be used are:
+        * An initial bin of the prior 30 days (from the attribute, not from here)
+        * 20 bins of 180 days (about 10 years total)
+        * 10 bins of 3600 days (about 100 more years)
+        * 10 bins of 36000 days (about 1000 more years)
+        * 1 bin of 360000 days (about another 1000 years)
+      If specified, only the specified bins will be used.
+      Note that the first set of repeated bins will overlap with the intial bin,
+      specified by initialbinsize.
+      Subsequent sets will cover the period prior to the period already covered.
+    -->
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="DateBin" type="datebin" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <!--
+       Enter table name.  Can be a regular table or staging table.
+    -->
+    <xsd:attribute name="table" type="xsd:string" use="required"/>
+    <xsd:attribute name="description" type="xsd:string" use="required"/>
+    <xsd:attribute name="typekeycolumn" type="xsd:string" use="required"/>
+    <xsd:attribute name="datecolumn" type="xsd:string" use="required"/>
+    <!--
+       Optional additional column.  Like the typekey, should have low cardinality (number of distinct values).
+    -->
+    <xsd:attribute name="addlcolumn" type="xsd:string"/>
+    <!--
+       The size of the first date interval in days.
+    -->
+    <xsd:attribute name="initialbinsize" type="xsd:integer" default="30"/>
+  </xsd:complexType>
+
+  <!--
+    Define the size of number of bins.
+  -->
+  <xsd:complexType name="datebin">
+    <!--
+      The size of the bin in days.
+    -->
+    <xsd:attribute name="size" type="xsd:integer"/>
+    <!--
+      Number of bins this size.
+    -->
+    <xsd:attribute name="number" type="xsd:integer"/>
+  </xsd:complexType>
+
+</xsd:schema>

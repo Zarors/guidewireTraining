@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    afterEnter="initDates()"
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="WorkQueueRawDataDownloadConfigurePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.RawDataDownloadConfigure&quot;)">
+    <LocationEntryPoint
+      signature="WorkQueueRawDataDownloadConfigurePopup()"/>
+    <Variable
+      initialValue="new gw.api.web.tools.WorkQueueInfoPage()"
+      name="Page"
+      type="gw.api.web.tools.WorkQueueInfoPage"/>
+    <Variable
+      name="StartDateTime"
+      type="java.util.Date"/>
+    <Variable
+      name="EndDateTime"
+      type="java.util.Date"/>
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            id="StartDate"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.RawDataDownloadConfigure.StartDate&quot;)"
+            required="true"
+            timeFormat="short"
+            value="StartDateTime"/>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            id="EndDate"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.RawDataDownloadConfigure.EndDate&quot;)"
+            required="true"
+            timeFormat="short"
+            value="EndDateTime"/>
+          <ButtonInput
+            action="completeDownload()"
+            download="true"
+            hideIfDisabled="false"
+            id="download"
+            value="DisplayKey.get(&quot;Button.Complete.Download&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[uses gw.api.util.DateUtil
+
+function initDates() {
+  EndDateTime = DateUtil.currentDate()
+  StartDateTime = DateUtil.trimToMidnight(EndDateTime)
+}
+
+function completeDownload() {
+  if (StartDateTime.compareTo(EndDateTime) > 0) {
+    throw new gw.api.util.DisplayableException(DisplayKey.get("Web.InternalTools.WorkQueueLv.RawDataDownloadConfigure.StartDateCannotBeGreaterThanEndDate"))
+  }
+  Page.downloadCsv(StartDateTime, EndDateTime)
+}]]></Code>
+  </Popup>
+</PCF>

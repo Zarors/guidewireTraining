@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="VerificationStatus"
+  name="VerificationStatus">
+  <typecode
+    code="pending"
+    desc="Pending"
+    name="Pending"
+    priority="10"/>
+  <typecode
+    code="verified"
+    desc="Verified"
+    name="Verified"
+    priority="20"/>
+  <typecode
+    code="invalid"
+    desc="Invalid"
+    name="Invalid"
+    priority="30"/>
+</typelist>

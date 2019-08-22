@@ -1,0 +1,57 @@
+//--------------Title Bar Widgets at the top of the screen
+// Position to other widgets
+$gw-app--TitleBar--screen--spacing-widget-top-rem: null !default;
+$gw-app--TitleBar--screen--spacing-widget-left-rem: null !default;
+$gw-app--TitleBar--screen--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--screen--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--TitleBar--screen--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--screen--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--screen--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--screen--spacing-inner-bottom-rem: $gw-app--SPACING-rem-XS !default;
+
+//Other
+$gw-app--TitleBar--screen--font-size-em: gw-emFixed(20/13) !default;
+$gw-app--TitleBar--screen--subtitle--font-size-em: gw-emFixed(1.2) !default;
+$gw-app--TitleBar--screen--font-family: null !default; //defaults to app font, but this can be changed to any font family
+$gw-app--TitleBar--screen--col: null !default;
+$gw-app--TitleBar--screen--bg: transparent !default; //makes the title bar a solid bar across the screen
+$gw-app--TitleBar--screen--subtitle--pad-top-rem: 0 !default;
+$gw-app--TitleBar--screen--font-weight: null !default;
+$gw-app--TitleBar--screen--subtitle-font-weight: null !default;
+$gw-app--TitleBar--screen--icon-margin-right-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--TitleBar--screen--border-col: $gw-app--border--col !default;
+$gw-app--TitleBar--use-alternate-breadcrumb-ux: false !default;
+$gw-app--TitleBar--drop-shadow: gw-pxFixed(1) gw-pxFixed(1) gw-pxFixed(3) $gw-app--palette--shadow-col !default;
+
+
+//------------Title Bar Widgets nested in panels
+// Position to other widgets
+$gw-app--TitleBar--panel--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--panel--spacing-widget-left-rem: null !default;
+$gw-app--TitleBar--panel--spacing-widget-right-rem: null !default;
+$gw-app--TitleBar--panel--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--TitleBar--panel--spacing-inner-top-rem: null !default;
+$gw-app--TitleBar--panel--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--panel--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--panel--spacing-inner-bottom-rem: $gw-app--SPACING-rem-XS !default;
+
+//Other
+$gw-app--TitleBar--panel--font-size-em: gw-emFixed(1.3) !default;
+$gw-app--TitleBar--panel--subtitle--font-size-em: gw-emFixed(1) !default;
+$gw-app--TitleBar--panel--font-family: null !default;
+$gw-app--TitleBar--panel--col: null !default;
+$gw-app--TitleBar--panel--bg: transparent !default;
+$gw-app--TitleBar--panel--border-bottom--col: $gw-app--border--col-lighter !default;
+$gw-app--TitleBar--panel--border-top--col: transparent !default;
+$gw-app--TitleBar--panel--border-top--width-px: 0 !default;
+$gw-app--TitleBar--panel--icon-margin-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TitleBar--panel--font-weight: null !default;
+$gw-app--TitleBar--panel--subtitle-font-weight: null !default;
+
+
+
+

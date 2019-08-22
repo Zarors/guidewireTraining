@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ExitPoint
+    id="GoogleSearch"
+    url="http://www.google.com/search">
+    <LocationEntryPoint
+      signature="GoogleSearch()"/>
+    <LocationEntryPoint
+      signature="GoogleSearch(SearchText : String)"/>
+    <ExitPointParameter
+      defaultValue="DisplayKey.get(&quot;Web.GoogleSearch.Guidewire&quot;)"
+      locationParam="SearchText"
+      type="String"
+      urlParam="q"/>
+  </ExitPoint>
+</PCF>

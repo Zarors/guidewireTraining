@@ -1,0 +1,13 @@
+package rules.Preupdate
+
+@gw.rules.RuleName("ABContactContact Preupdate")
+@gw.rules.RuleSetDescription("This is the ABContactContact update post-validation/pre-update rule set.")
+class ABContactContactPreupdate extends gw.rules.RuleSetBase {
+  static function invoke(bean : entity.ABContactContact) : gw.rules.ExecutionSession {
+    return invoke( new gw.rules.ExecutionSession(), bean )
+  }
+
+  static function invoke(exeSession : gw.rules.ExecutionSession, bean : entity.ABContactContact) : gw.rules.ExecutionSession {
+    return _invoke( exeSession, bean, "ABContactContact Pre-update", ABContactContactPreupdate )
+  }
+}

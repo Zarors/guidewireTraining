@@ -1,0 +1,508 @@
+$gw-app--wizards--minimized--min-width-rem: gw-remFixed(gw-stripUnit($gw-app--WestPanel--minimized-view-pad-h-rem) * 3);
+
+#gw-west-panel {
+
+  &.gw-makeWestPanel--min {
+    .gw-WizardMenuLinksWidget {
+      .gw-WizardMenuLinkWidget.gw-hasMinimizedView:not(.gw-independent-step) {
+        & > .gw-action--inner {
+          min-width: $gw-app--wizards--minimized--min-width-rem;
+          & > .gw-graphics {
+            margin-left: gw-pxFixed(gw-stripUnit($gw-app--wizards--minimized--min-width-rem / 2) * 14 - $gw-app--wizards--step-button-graphics--outer-circle-diameter-px);
+          }
+        }
+      }
+    }
+  }
+
+  //The Wizard Titles
+  .gw-Wizard--titles {
+    padding: $gw-app--wizards--title-area--pad-v-rem $gw-app--wizards--title-area--pad-h-rem;
+
+    .gw-Wizard--Title {
+      color: $gw-app--wizards--title--col;
+      font-size: $gw-app--wizards--title--font-size-em;
+      font-weight: $gw-app--wizards--title--font-weight;
+    }
+
+    .gw-Wizard--SubTitle {
+      margin-top: $gw-app--SPACING-rem-XS;
+      color: $gw-app--wizards--subtitle--col;
+      font-size: $gw-app--wizards--subtitle--font-size-em;
+      font-weight: $gw-app--wizards--subtitle--font-weight
+    }
+  }
+
+  // The Wizard Steps
+  .gw-WizardMenuLinksWidget {
+    border-top: $gw-app--wizards--container-top-border;
+    border-bottom: $gw-app--wizards--container-bottom-border;
+
+    > div:first-child {
+      border-top: $gw-app--wizards--step-button--bottom-border;
+    }
+
+    .gw-WizardMenuLinkWidget.gw-action--outer {
+      $border-width: 0;
+      $graphics-width: $gw-app--wizards--step-button-graphics-w-em;
+      @if ($gw-app--wizards--step-button-graphics-w-em != null) {
+        $graphics-width: $gw-app--wizards--step-button-graphics-w-em;
+        @if (gw-stripUnit($graphics-width) < 0) {
+          $graphics-width: null;
+        }
+      }
+
+      @include gw-menuItem(
+              $bg: $gw-app--wizards--step-button--bg,
+              $col: $gw-app--wizards--step-button--col,
+              $hover-bg: $gw-app--wizards--step-button--hover--bg,
+              $hover-col: $gw-app--wizards--step-button--hover--col,
+              $active-bg: $gw-app--wizards--step-button--active--bg,
+              $active-col: $gw-app--wizards--step-button--active--col,
+              $pad-v: $gw-app--wizards--step-button--pad-v-rem,
+              $inner-action--pad-h: $gw-app--wizards--step-button--pad-h-rem,
+              $expand--pad-h: $gw-app--wizards--step-button--pad-h-rem,
+              $is-button: false,
+              $glyph: $gw-app--wizards--step-button--expand-glyph-open,
+              $force-no-expand: false,
+              $force-expand-only: false,
+              $focus-offset: $gw-app--wizards--step-button--focus-offset-px,
+              $border-width: $border-width,
+              $graphics-width: $graphics-width,
+              $inactive-when-open: true,
+              $add-disabled-state: false
+      );
+      @include gw-subMenu(
+              $bg: $gw-app--wizards--submenu--step-button--bg,
+              $col: $gw-app--wizards--submenu--step-button--col,
+              $hover-bg: $gw-app--wizards--submenu--step-button--hover--bg,
+              $hover-col: $gw-app--wizards--submenu--step-button--hover--col,
+              $active-bg: $gw-app--wizards--submenu--step-button--active--bg,
+              $active-col: $gw-app--wizards--submenu--step-button--active--col,
+              $pad-v: $gw-app--wizards--submenu--step-button--pad-v-rem,
+              $inner-action--pad-h: $gw-app--wizards--submenu--step-button--pad-h-rem,
+              $expand--pad-h: $gw-app--wizards--step-button--pad-h-rem,
+              $glyph: $gw-app--wizards--step-button--expand-glyph-open,
+              $focus-offset: $gw-app--wizards--step-button--focus-offset-px,
+              $sub-menu-pad-v: 0,
+              $graphics-width: $graphics-width,
+              $border-width: $border-width,
+              $inactive-when-open: true,
+              $add-disabled-state: false
+      );
+
+      &.gw-disabled {
+        @include gw-disabledInner($gw-app--wizards--step-button--bg, $gw-app--wizards--step-button--disabled-col);
+
+        > .gw-action--inner:not(.gw-hasOpenSubMenu) {
+          @include gw-disabledInner($gw-app--wizards--step-button--bg, $gw-app--wizards--step-button--disabled-col);
+        }
+
+        > .gw-action--inner.gw-hasOpenSubMenu {
+          @include gw-disabledInner($gw-app--wizards--step-button--group-open-bg, $gw-app--wizards--step-button--disabled-col);
+        }
+
+        > .gw-action--expand-button {
+          @include gw-disabledInner(transparent, $gw-app--wizards--step-button--disabled-col);
+        }
+      }
+
+      .gw-subMenu {
+        .gw-action--outer.gw-disabled {
+          @include gw-disabledInner($gw-app--wizards--submenu--step-button--bg, $gw-app--wizards--step-button--disabled-col);
+
+          > .gw-action--inner:not(.gw-hasOpenSubMenu) {
+            @include gw-disabledInner($gw-app--wizards--submenu--step-button--bg, $gw-app--wizards--step-button--disabled-col);
+          }
+
+          > .gw-action--inner.gw-hasOpenSubMenu {
+            @include gw-disabledInner($gw-app--wizards--submenu--step-button--group-open-bg, $gw-app--wizards--step-button--disabled-col);
+          }
+
+          > .gw-action--expand-button {
+            @include gw-disabledInner(transparent, $gw-app--wizards--step-button--disabled-col);
+          }
+        }
+      }
+
+      .gw-label {
+        //vertical-align: middle; //TODO: revisit
+        @include gw-textEllipse();
+        max-width: calc(100% - #{2 * $gw-app--wizards--step-button--pad-h-rem}); //TODO: revisit one day
+      }
+
+      &:not(.gw-hasOpenSubMenu) {
+        border-bottom: $gw-app--wizards--step-button--bottom-border;
+      }
+
+      &.gw-hasOpenSubMenu {
+        > .gw-action--inner {
+          border-bottom: $gw-app--wizards--step-button--bottom-border;
+          background-color: $gw-app--wizards--step-button--group-open-bg;
+        }
+      }
+
+      .gw-subMenu {
+        font-size: $gw-app--wizards--submenu--step-button--font-size-em;
+        .gw-action--outer {
+
+          &:not(.gw-hasOpenSubMenu) {
+            border-bottom: $gw-app--wizards--submenu--step-button--bottom-border;
+          }
+
+          &.gw-hasOpenSubMenu {
+            > .gw-action--inner {
+              border-bottom: $gw-app--wizards--submenu--step-button--bottom-border;
+              background-color: $gw-app--wizards--submenu--step-button--group-open-bg;
+            }
+          }
+        }
+
+        &.gw-open {
+          // This entire chunk is a very complicated thing that builds out the correct visual shadows to show a group of children as being below the header, based on total submenu depth
+          @if ($gw-app--wizards--step-button--use-shadow-for-depth) {
+            $nest: "> .gw-action--outer";
+            @for $i from 1 through 4 {
+              $top-width: gw-pxFixed(2); //TODO: pull up into styling if we actually decide to use
+              $right-width: $i * 4 + $gw-app--border-width-px; //TODO: pull up into styling if we actually decide to use
+              $left-width: $i + $gw-app--border-width-px; //TODO: pull up into styling if we actually decide to use
+              $bottom-width: gw-pxFixed(1); //TODO: pull up into styling if we actually decide to use
+
+              #{$nest}:first-child:last-child > .gw-action--inner {
+                @include gw-boxShadowInsetSingleSides($top: $top-width, $right: $right-width, $left: $left-width, $bottom: $bottom-width);
+              }
+
+              #{$nest}:first-child:not(:last-child) > .gw-action--inner {
+                @include gw-boxShadowInsetSingleSides($top: $top-width, $right: $right-width, $left: $left-width);
+                //@include gw-boxShadowStandard(inset, -$right-width, $top-width, $bottom-width, 0);
+              }
+
+              #{$nest}:not(:first-child):not(:last-child) > .gw-action--inner {
+                @include gw-boxShadowInsetSingleSides($right: $right-width, $left: $left-width);
+              }
+
+              #{$nest}:last-child:not(:first-child) > .gw-action--inner {
+                @include gw-boxShadowInsetSingleSides($bottom: $bottom-width, $right: $right-width, $left: $left-width);
+                //@include gw-boxShadowStandard(inset, -$right-width, -$bottom-width , $right-width, 0);
+              }
+
+              // Recursive nesting
+              $nest: selector_nest($nest, "> .gw-open #{$nest}");
+            }
+          }
+        }
+      }
+
+      &.gw-hasOpenSubMenu {
+        & > .gw-action--expand-button {
+          .gw-icon--expand {
+            @include gw-iconVerticalCenter($gw-app--wizards--step-button--expand-glyph-close);
+          }
+        }
+
+        .gw-subMenu.gw-open {
+          .gw-hasOpenSubMenu {
+            & > .gw-action--expand-button {
+              .gw-icon--expand {
+                @include gw-iconVerticalCenter($gw-app--wizards--step-button--expand-glyph-close);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @mixin gw-buildConcentricCircles($inner-circle-col, $outermost-border-col: transparent) {
+      > .gw-action--inner {
+        .gw-graphics {
+          .gw-graphics-inner {
+            border: $gw-app--wizards--step-button-graphics--outer-circle-visual-border-w-px solid $outermost-border-col;
+
+            &:after {
+              position: absolute;
+              left: 0;
+              top: 0;
+              content: " ";
+              background-color: $inner-circle-col;
+              display: inline-block;
+              width: $gw-app--wizards--step-button-graphics--inner-circle-diameter-px;
+              height: $gw-app--wizards--step-button-graphics--inner-circle-diameter-px;
+              border-radius: 50%;
+              border: $gw-app--wizards--step-button-graphics--inner-circle-border-w-px solid $gw-app--wizards--step-button-graphics--channel-bg;
+            }
+          }
+        }
+      }
+    }
+
+    @mixin gw-wizardStepGraphics($first: false, $middle: false, $last: false, $both: false, $title: false, $open-title: null) {
+      > .gw-action--inner {
+        position: relative;
+
+        .gw-graphics {
+          position: absolute;
+          left: $gw-app--wizards--step-button-graphics--pad-left-px + ($gw-app--wizards--step-button-graphics--outer-circle-diameter-px * .5) - ($gw-app--wizards--step-button-graphics--channel-w-px * .5);
+          display: inline-block;
+          width: $gw-app--wizards--step-button-graphics--channel-w-px;
+          background-color: $gw-app--wizards--step-button-graphics--channel-bg;
+
+          @if ($title == true) {
+            @if ($open-title == true) {
+              @if ($first) {
+                bottom: 0;
+                height: 50%;
+                @include gw-borderCap($top: true);
+              } @else if ($last) {
+                top: 0;
+                height: 100%;
+                @include gw-borderCap($bottom: true);
+              } @else if ($both) {
+                bottom: 0;
+                height: 50%;
+              } @else if ($middle) {
+                top: 0;
+                height: 100%;
+              }
+            }
+
+            @if ($open-title != true) {
+              @if ($first) {
+                bottom: 0;
+                height: 50%;
+                @include gw-borderCap($top: true);
+              } @else if ($last) {
+                top: 0;
+                height: 50%;
+                @include gw-borderCap($bottom: true);
+              } @else if ($both) {
+                top: calc(50% - #{$gw-app--wizards--step-button-graphics--channel-w-px * .5});
+                height: $gw-app--wizards--step-button-graphics--channel-w-px;
+              } @else if ($middle) {
+                top: 0;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      // If you are not a title, then we do all the special logic to determine what your "graphic" should be.
+      @if ($title == false) {
+        > .gw-action--inner {
+          .gw-graphics {
+
+            @if ($first) {
+              bottom: 0;
+              height: 50%;
+              @include gw-borderCap($top: true);
+            } @else if ($last) {
+              top: 0;
+              height: 50%;
+              @include gw-borderCap($bottom: true);
+            } @else if ($both) {
+              top: 0;
+              height: 100%;
+              background-color: transparent;
+            } @else if ($middle) {
+              top: 0;
+              height: 100%;
+            }
+
+            .gw-graphics-inner {
+              position: absolute;
+              left: -($gw-app--wizards--step-button-graphics--outer-circle-diameter-px * .5) + ($gw-app--wizards--step-button-graphics--channel-w-px * .5);
+              display: inline-block;
+              width: $gw-app--wizards--step-button-graphics--outer-circle-diameter-px;
+              height: $gw-app--wizards--step-button-graphics--outer-circle-diameter-px;
+              border-radius: 50%;
+              border: $gw-app--wizards--step-button-graphics--outer-circle-visual-border-w-px solid transparent;
+              background-color: transparent;
+
+              @if ($first) {
+                top: -($gw-app--wizards--step-button-graphics--outer-circle-diameter-px * .5)
+              } @else if ($last) {
+                bottom: -($gw-app--wizards--step-button-graphics--outer-circle-diameter-px * .5);
+              } @else {
+                top: calc(50% - #{$gw-app--wizards--step-button-graphics--outer-circle-diameter-px * .5});
+              }
+            }
+          }
+        }
+
+        &:not(.gw-visited):not(.gw-navHasErrors):not(.gw-navHasWarnings):not(.gw-active) {
+          @include gw-buildConcentricCircles($gw-app--wizards--step-button-graphics--channel-bg);
+        }
+
+        &.gw-visited {
+          @include gw-buildConcentricCircles($gw-app--wizards--step-button-graphics--visited-col);
+        }
+
+        &.gw-navHasWarnings {
+          @include gw-buildConcentricCircles($gw-app--wizards--step-button-graphics--warning-col);
+        }
+
+        &.gw-navHasErrors {
+          @include gw-buildConcentricCircles($gw-app--wizards--step-button-graphics--error-col);
+        }
+
+        &.gw-active {
+          @include gw-buildConcentricCircles($gw-app--wizards--step-button-graphics--active-col, $gw-app--wizards--step-button-graphics--active-col);
+        }
+      }
+    }
+
+    // ======== WizardMenuLinks ============
+    .gw-WizardMenuLinkWidget:not(.gw-independent-step) {
+        &.gw-first-step:not(.gw-final-step):not(.gw-hasChildren) {
+          @include gw-wizardStepGraphics($first: true);
+        }
+
+        &.gw-final-step:not(.gw-first-step):not(.gw-hasChildren) {
+          @include gw-wizardStepGraphics($last: true);
+        }
+
+        &.gw-final-step.gw-first-step:not(.gw-hasChildren) {
+          @include gw-wizardStepGraphics($both: true);
+        }
+
+        &:not(.gw-first-step):not(.gw-final-step):not(.gw-hasChildren) {
+          @include gw-wizardStepGraphics($middle: true);
+        }
+    }
+
+    // =========== Special Logic for TopLevel WizardMenuLinks with Children =============
+    & > .gw-WizardMenuLinkWidget:not(.gw-independent-step).gw-hasChildren {
+
+      // Neither First nor Last
+      &:not(:first-child):not(:last-child) {
+        @include gw-wizardStepGraphics($title: true, $middle: true);
+      }
+
+      // First and Last
+      &:first-child:last-child {
+        &.gw-hasOpenSubMenu {
+          @include gw-wizardStepGraphics($title: true, $both: true, $open-title: true);
+        }
+
+        &:not(.gw-hasOpenSubMenu) {
+          @include gw-wizardStepGraphics($title: true, $both: true, $open-title: false);
+        }
+      }
+
+      // First
+      &:first-child:not(:last-child) {
+        &.gw-hasOpenSubMenu {
+          @include gw-wizardStepGraphics($title: true, $first: true, $open-title: true);
+        }
+
+        &:not(.gw-hasOpenSubMenu) {
+          @include gw-wizardStepGraphics($title: true, $first: true, $open-title: false);
+        }
+      }
+
+      // Last
+      &:last-child:not(:first-child) {
+        &.gw-hasOpenSubMenu {
+          @include gw-wizardStepGraphics($title: true, $last: true, $open-title: true);
+        }
+
+        &:not(.gw-hasOpenSubMenu) {
+          @include gw-wizardStepGraphics($title: true, $last: true, $open-title: false);
+        }
+      }
+
+      // =================== Special Cases for Children that are also Titles ================
+      // If you're in a submenu then you get no special graphics as a title, always just a title
+      .gw-WizardMenuLinkWidget.gw-hasChildren {
+        @include gw-wizardStepGraphics($title: true, $middle: true);
+      }
+
+      // If you're the last top level child, and you are a title, and you are open, then any title that is the last child of its parent, and is closed, needs special graphics
+      &:last-child.gw-hasOpenSubMenu {
+        .gw-WizardMenuLinkWidget.gw-hasChildren:last-child:not(.gw-hasOpenSubMenu) {
+          @include gw-wizardStepGraphics($title: true, $last: true, $open-title: false);
+        }
+      }
+    }
+  }
+
+  // ============= Collapsed state for Wizard Links when West Panel is Minimized =============
+  &.gw-makeWestPanel--min {
+    .gw-WizardMenuLinkWidget {
+      &:not(.gw-hasMinimizedView) {
+        display: none !important;
+      }
+
+      &.gw-action--outer.gw-hasMinimizedView {
+        .gw-action--inner {
+          padding-left: $gw-app--WestPanel--minimized-view-pad-h-rem;
+          padding-right: $gw-app--WestPanel--minimized-view-pad-h-rem;
+        }
+
+        .gw-subMenu {
+          .gw-action--outer {
+            .gw-action--inner {
+              padding-left: $gw-app--WestPanel--minimized-view-pad-h-rem;
+            }
+          }
+        }
+
+        .gw-action--expand-button {
+          display: none;
+        }
+
+        .gw-icon {
+          display: none;
+        }
+
+        .gw-label {
+          display: none;
+        }
+
+        @if ($gw-app--wizards--hide-wizard-graphics-in-minimized-view) {
+          .gw-graphics {
+            display: none;
+          }
+        } @else {
+          .gw-action--inner {
+            min-width: ($gw-app--wizards--step-button-graphics--pad-left-px * 2) + $gw-app--wizards--step-button-graphics--outer-circle-diameter-px + ($gw-app--border-width-px * 2 / gw-applicationBaseFontSizeStripped());
+            min-height: calc(#{($gw-app--wizards--step-button--pad-v-rem * 2)} + #{($gw-app--WestPanel--font-size-em * gw-lineHeightStripped())});
+          }
+
+          .gw-subMenu {
+            .gw-action--inner {
+              min-height: calc(#{($gw-app--wizards--submenu--step-button--pad-v-rem * 2)} + #{($gw-app--WestPanel--font-size-em * gw-lineHeightStripped())});
+            }
+          }
+        }
+
+        @if ($gw-app--wizards--hide-minimized-labels-and-icons-in-minimized-view == false) {
+          .gw-minimized-view {
+            display: inline-block;
+            height: 100%;
+            text-align: center;
+            vertical-align: middle;
+
+            .gw-icon-min {
+
+            }
+
+            .gw-shortcutKey, .gw-label-min {
+              @include gw-borderRadius();
+              text-align: center;
+            }
+
+            .gw-shortcutKey {
+              text-decoration: underline;
+            }
+
+            @if ($gw-app--wizards--hide-wizard-graphics-in-minimized-view == false) {
+              // Then both are showing, so space the min view out so that the absolutely placed graphics can sit next to them
+              margin-left: $gw-app--wizards--step-button-graphics--pad-left-px + $gw-app--wizards--step-button-graphics--outer-circle-diameter-px + ($gw-app--border-width-px * 2 / gw-applicationBaseFontSizeStripped());
+            }
+          }
+        }
+      }
+    }
+  }
+}

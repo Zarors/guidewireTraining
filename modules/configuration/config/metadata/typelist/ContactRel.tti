@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of relationships a contact can have with another contact"
+  final="false"
+  name="ContactRel"
+  platform="true">
+  <typecode
+    code="guardian"
+    desc="Parent of a child or Guardian of a ward."
+    name="Parent / Guardian"/>
+  <typecode
+    code="employer"
+    desc="Employer"
+    name="Employer"/>
+  <typecode
+    code="primarycontact"
+    desc="Primary contact"
+    name="Primary Contact"/>
+  <typecode
+    code="thirdpartyinsurer"
+    desc="Third-Party Insurer"
+    name="Third-Party Insurer"/>
+  <typecode
+    code="collectionagency"
+    desc="Collection Agency"
+    name="Collection Agency"/>
+</typelist>

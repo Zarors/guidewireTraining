@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF>
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=true;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_WQPROFILERCONFIG, com.guidewire.pl.system.workqueue.WorkQueueProfiler.getEntryPointName( workQueueName ) )"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableWorkQueuePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForWorkQueue&quot;)">
+    <LocationEntryPoint
+      signature="EnableWorkQueuePopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="workQueueName"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="WorkQueue"
+            label="DisplayKey.get(&quot;Web.Profiler.WorkQueue&quot;)"
+            required="true"
+            value="workQueueName"
+            valueRange="gw.api.profiler.BatchProcessWorkQueueProfilerPageHelper.getNotEnabledWorkQueueNames().toTypedArray()"
+            valueType="java.lang.String"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

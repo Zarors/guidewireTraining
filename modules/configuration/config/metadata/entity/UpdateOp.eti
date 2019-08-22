@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="An abstract base type for CreateUpdateOp, FieldChangeUpdateOp, and DeleteUpdateOp."
+  entity="UpdateOp"
+  exportable="true"
+  extendable="true"
+  final="false"
+  platform="true">
+  <fulldescription><![CDATA[
+        This non-persistent entity has been deprecated since ClaimCenter 8.0 along with the IAddressBookAdapter.
+    ]]></fulldescription>
+</nonPersistentEntity>

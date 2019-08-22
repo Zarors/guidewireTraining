@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="Regions.go()"
+    afterCommit="Regions.go()"
+    beforeCommit="Region.removeNullZones()"
+    canEdit="true"
+    canVisit="perm.Region.create"
+    id="NewRegion"
+    parent="RegionsPage()"
+    showUpLink="true"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.NewRegion&quot;)">
+    <LocationEntryPoint
+      signature="NewRegion()"/>
+    <Variable
+      initialValue="new Region()"
+      name="Region"
+      type="Region"/>
+    <ScreenRef
+      def="RegionDetailScreen(Region)"/>
+  </Page>
+</PCF>

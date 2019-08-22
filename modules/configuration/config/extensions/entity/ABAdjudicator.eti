@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><subtype xmlns="http://guidewire.com/datamodel" desc="Judge or arbitrator." displayName="Adjudicator" entity="ABAdjudicator" supertype="ABPerson">
+  <column desc="Adjudicator's business license number." name="AdjudicatorLicense" nullok="true" type="varchar">
+    <columnParam name="size" value="30"/>
+  </column>
+  <typekey desc="Adjudicative Domain" name="AdjudicativeDomain" nullok="true" typelist="AdjudicativeDomain"/>
+</subtype>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="WorkItem"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workqueue.impl.WorkItemInternalMethods"
+    impl="com.guidewire.pl.domain.workqueue.impl.WorkItemImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workqueue.WorkItemPublicMethods"
+    impl="com.guidewire.pl.domain.workqueue.impl.WorkItemImpl"/>
+  <column
+    desc="The writer batch job that created this workitem (ProcessHistory)."
+    name="ProcessHistoryID"
+    nullok="true"
+    type="softentityreference"/>
+  <typekey
+    default="available"
+    desc="Status of this workitem."
+    name="Status"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    typelist="WorkItemStatusType"/>
+  <column
+    name="LastUpdateTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The time after which the work item can be tried. Must be null on failed work items"
+    getterScriptability="doesNotExist"
+    name="AvailableSince"
+    nullok="true"
+    setterScriptability="doesNotExist"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="0"/>
+    <columnParam
+      name="precision"
+      value="19"/>
+  </column>
+  <column
+    default="0"
+    name="Priority"
+    nullok="false"
+    type="integer"/>
+  <!-- machine ID of which this items is checked out by -->
+  <column
+    name="CheckedOutBy"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    name="CreationTime"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    type="datetime"/>
+  <column
+    default="0"
+    name="Attempts"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Stack trace of the exception"
+    name="Exception"
+    nullok="true"
+    setterScriptability="hidden"
+    type="longtext"/>
+  <index
+    desc="index to speed up selection of work items by workers"
+    name="WorkItemIndex1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="AvailableSince"/>
+    <indexcol
+      keyposition="2"
+      name="ID"/>
+  </index>
+  <index
+    desc="ProcessHistoryID index"
+    name="WorkItemIndex3"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Status"/>
+    <indexcol
+      keyposition="2"
+      name="ProcessHistoryID"/>
+    <indexcol
+      keyposition="3"
+      name="ID"/>
+  </index>
+</delegate>

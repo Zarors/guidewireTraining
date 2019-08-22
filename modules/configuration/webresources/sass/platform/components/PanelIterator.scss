@@ -1,0 +1,39 @@
+.gw-PanelIteratorEntryWidget.gw-hasCheckbox {
+  position: relative;
+  padding-left: $gw-app--PanelIteratorChildren-with-borders--spacing-inner-left-rem;
+}
+
+.gw-PanelIteratorEntryCheckBoxInputWidget {
+  display: inline-flex;
+  position: absolute;
+  justify-content: center;
+  top: 0;
+  left: 0;
+
+  .gw-PanelIteratorEntryCheckBoxWidget {
+    @include gw-convertCheckbox();
+  }
+}
+
+.gw-PanelIteratorWidget.gw-hasCheckboxes {
+  .gw-PanelIteratorEntryWidget {
+    border: gw-border($gw-app--PanelSetAndIterator--child--border);
+    @include gw-borderRadius();
+
+    margin-top: $gw-app--PanelIteratorChildren-with-borders--spacing-widget-top-rem;
+    margin-left: $gw-app--PanelIteratorChildren-with-borders--spacing-widget-left-rem;
+    margin-right: $gw-app--PanelIteratorChildren-with-borders--spacing-widget-right-rem;
+    margin-bottom: $gw-app--PanelIteratorChildren-with-borders--spacing-widget-bottom-rem;
+
+    // Internal padding
+    padding-top: $gw-app--PanelIteratorChildren-with-borders--spacing-inner-top-rem;
+    padding-left: $gw-app--PanelIteratorChildren-with-borders--spacing-inner-left-rem;
+    padding-right: $gw-app--PanelIteratorChildren-with-borders--spacing-inner-right-rem;
+    padding-bottom: $gw-app--PanelIteratorChildren-with-borders--spacing-inner-bottom-rem;
+  }
+
+  .gw-PanelIteratorEntryCheckBoxInputWidget {
+    top: $gw-app--PanelIteratorChildren-with-borders--spacing-widget-top-rem;
+    left: $gw-app--PanelIteratorChildren-with-borders--spacing-widget-left-rem;
+  }
+}

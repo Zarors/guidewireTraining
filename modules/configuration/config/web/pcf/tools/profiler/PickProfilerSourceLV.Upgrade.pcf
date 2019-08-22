@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="Upgrade">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="upgradeInstance"
+      pickValue="upgradeInstance.ProfilerData"
+      value="gw.api.database.Query.make(UpgradeInstance).compare(&quot;ProfilerData&quot;, NotEquals, null).select()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.UpgradeInstance&gt;">
+      <ToolbarFlag
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="false"
+        name="CannotDelete"/>
+      <Row>
+        <DateCell
+          dateFormat="short"
+          id="UpgradeStartTime"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.StartTime&quot;)"
+          sortDirection="descending"
+          sortOrder="1"
+          timeFormat="short"
+          value="upgradeInstance.StartTime"/>
+        <DateCell
+          dateFormat="short"
+          id="UpgradeEndTime"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.EndTime&quot;)"
+          timeFormat="short"
+          value="upgradeInstance.EndTime"/>
+        <TextCell
+          id="UpgradeDuration"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.Duration&quot;)"
+          value="upgradeInstance.ExecDuration"
+          valueType="java.lang.Integer"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="HolidayZonesLV">
+    <ExposeIterator
+      valueType="entity.HolidayZone"
+      widget="HolidayZonesLV"/>
+    <Require
+      name="Holiday"
+      type="Holiday"/>
+    <Require
+      name="zoneType"
+      type="ZoneType"/>
+    <Require
+      name="country"
+      type="Country"/>
+    <RowIterator
+      canPick="false"
+      editable="true"
+      elementName="HolidayZone"
+      hasCheckBoxes="true"
+      hideCheckBoxesIfReadOnly="true"
+      toCreateAndAdd="createNewHolidayZone()"
+      toRemove="Holiday.removeFromHolidayZones(HolidayZone)"
+      value="Holiday.getHolidayZones(zoneType)"
+      valueType="entity.HolidayZone[]">
+      <IteratorSort
+        sortBy="HolidayZone.Code"
+        sortOrder="1"/>
+      <Row>
+        <TextCell
+          autoComplete="new gw.api.admin.ZoneAutocompleteHandler(country, zoneType)"
+          editable="true"
+          id="ZoneCode"
+          label="DisplayKey.get(&quot;Web.Admin.AdminHolidayDV.ZoneCode&quot;)"
+          required="true"
+          unique="true"
+          value="HolidayZone.Code"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+function createNewHolidayZone() : HolidayZone {
+  var newHolidayZone = new HolidayZone()
+  newHolidayZone.ZoneType = zoneType
+  newHolidayZone.Country = country
+  Holiday.addToHolidayZones(newHolidayZone)
+  return newHolidayZone
+}
+
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContactRelationshipConfigFile
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="contact-relationship-config.xsd">
+  <!--
+       Should not modify the following ContactRelationshipPair's because they corresponds to the
+       out-of-the-box typecodes for ContactRel and ContactBidiRel defined in tl_pl_contact.xml.
+       If you wants to add application specific relationship, you should copy this to your
+       own application and extend it from there.
+  -->
+  <ContactRelationshipPair contactRelCode="guardian" >
+    <Primary name="Guardian" cardinality="zeroorone" contactBidiRelCode="guardian" entity="Person" />
+    <Inverse name="Wards" cardinality="zeroormore" contactBidiRelCode="ward" entity="Person"/>
+  </ContactRelationshipPair>
+
+  <ContactRelationshipPair contactRelCode="employer" >
+    <Primary name="Employer" cardinality="zeroorone" contactBidiRelCode="employer" entity="Company" />
+    <Inverse name="Employees" cardinality="zeroormore" contactBidiRelCode="employee" entity="Person" />
+  </ContactRelationshipPair>
+
+  <ContactRelationshipPair contactRelCode="primarycontact" >
+    <Primary name="PrimaryContact" cardinality="zeroorone" contactBidiRelCode="primarycontact" entity="Contact" />
+    <Inverse name="PrimaryContactFor" cardinality="zeroormore" contactBidiRelCode="primarycontactfor" entity="Contact" />
+  </ContactRelationshipPair>
+  
+  <!-- Add your extension here if you added more typecodes for ContactRel and ContactBidiRel -->
+  <ContactRelationshipPair contactRelCode="thirdpartyinsurer">
+    <Primary name="Thirdpartyinsurer" cardinality="zeroorone" contactBidiRelCode="thirdpartyinsurer" entity="Company"/>
+    <Inverse name="Thirdpartyinsured" cardinality="zeroormore" contactBidiRelCode="thirdpartyinsured" entity="Contact"/>
+  </ContactRelationshipPair>
+
+  <ContactRelationshipPair contactRelCode="collectionagency">
+    <Primary name="CollectionAgency" cardinality="zeroorone" contactBidiRelCode="collectionagency" entity="Company"/>
+    <Inverse name="Case" cardinality="zeroormore" contactBidiRelCode="case" entity="Contact"/>
+  </ContactRelationshipPair>
+</ContactRelationshipConfigFile>

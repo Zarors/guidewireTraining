@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A security role collects a set of permissions."
+  entity="Role"
+  loadable="false"
+  platform="true"
+  table="role"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.security.RolePublicMethods"
+    impl="com.guidewire.pl.domain.security.impl.RoleImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.security.impl.RoleInternalMethods"
+    impl="com.guidewire.pl.domain.security.impl.RoleImpl"/>
+  <fulldescription><![CDATA[
+        A set of permissions defining a user Role. A User can be given multiple Roles and will be granted
+        the union of all their Role permission sets.
+      
+    ]]></fulldescription>
+  <implementsEntity
+    name="DecentralizedEntity"/>
+  <column
+    default="true"
+    desc="If true, this role is applicable to users internal to the carrier organization."
+    name="CarrierInternalRole"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Displayable name of the role."
+    name="Name"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+    <localization
+      nullok="false"
+      tableName="role_name_l10n"
+      unique="true"/>
+  </column>
+  <column
+    desc="An optional, more detailed description of the role."
+    name="Description"
+    nullok="true"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="4096"/>
+    <localization
+      nullok="true"
+      tableName="role_desc_l10n"/>
+  </column>
+  <typekey
+    desc="Type of the role."
+    name="RoleType"
+    nullok="true"
+    typelist="RoleType"/>
+  <array
+    arrayentity="RolePrivilege"
+    desc="Privileges granted by membership in this role."
+    name="Privileges"
+    owner="true"/>
+  <events/>
+  <index
+    desc="Enforce uniqueness of role names"
+    name="roleu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+</entity>

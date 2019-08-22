@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- ### ================================================================
+  ### Foreign key data distribution (owned by Table data distribution)
+  ### ================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores foreign key data distribution."
+  entity="ForKeyDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="forkeydatadist"
+  type="keyable">
+  <column
+    desc="Name of foreign key."
+    name="ForeignKeyName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    default="none"
+    desc="Name of foreign key entity"
+    name="ForeignKeyEntityName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    default="none"
+    desc="Name of table of foreign key"
+    name="ForeignKeyTableName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Count of # of non null values."
+    name="NumNonNull"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Ratio of non-null foreign key values to primary key values."
+    name="RatioFKtoPKValues"
+    nullok="false"
+    type="dbstat"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+</entity>

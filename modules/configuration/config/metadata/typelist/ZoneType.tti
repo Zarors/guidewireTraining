@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Possible types of zones"
+  final="false"
+  name="ZoneType"
+  platform="true">
+  <typecode
+    code="country"
+    desc="Country"
+    name="Country"/>
+  <!-- TODO: Please remove "unknown" from this typelist in Diamond. It is only useful in the Bedrock->Carbon upgrade b/c of HolidayZoneCodeVersionTriggerGroup. See PL-5080. -->
+  <typecode
+    code="unknown"
+    desc="Placeholder typecode for fields that should be populated with another ZoneType"
+    name="Unknown"
+    retired="true"/>
+</typelist>

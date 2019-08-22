@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    editable="true"
+    id="DocumentCreationInputSet">
+    <Require
+      name="documentApplicationContext"
+      type="gw.document.DocumentApplicationContext"/>
+    <Require
+      name="documentCreationInfo"
+      type="gw.document.DocumentCreationInfo"/>
+    <Require
+      name="CreateStepLabel"
+      type="String"/>
+    <Variable
+      name="usedWebFile"
+      type="gw.api.web.WebFile"
+      initialValue="null"/>
+    <Variable
+      name="unusedWebFile"
+      type="gw.api.web.WebFile"
+      initialValue="null"/>
+    <Variable
+      name="isDocumentEditable"
+      type="Boolean"
+      initialValue="false"/>
+    <!-- isResetStateNeeded recalculated on refresh to detect template descriptor
+         reset, which requires the state in this PCF to be reset-->
+    <Variable
+      name="isResetStateNeeded"
+      type="boolean"
+      initialValue="documentApplicationContext.TemplateResetSinceSetLastChecked ? resetState() : false"
+      recalculateOnRefresh="true"/>
+    <Variable
+      name="initialized"
+      type="boolean"
+      initialValue="return initInputSet()"/>
+    <ReferencedWidget
+      widget="DocumentCreationScreen"/>
+    <!-- This creates the document and stores it on the server. -->
+    <ButtonInput
+      action="resetState(); documentApplicationContext.generateDocument(documentCreationInfo); usedWebFile = documentCreationInfo.File"
+      available="documentApplicationContext.DocumentCreationReadOnly"
+      boldLabel="true"
+      hideIfDisabled="false"
+      id="CreateDocument"
+      label="CreateStepLabel"
+      labelAbove="true"
+      value="DisplayKey.get('Document.Create')"/>
+    <PreFormattedTextInput
+      boldValue="true"
+      id="UploadStatus"
+      labelAbove="true"
+      value="DisplayKey.get('Document.Create.Message', gw.document.DocumentsUtilBase.getFullFilename(documentCreationInfo.Document), DisplayKey.get('Button.Update'))"
+      visible="usedWebFile != null"/>
+    <!-- If the document has been created, this allows the document to be
+         downloaded/rendered for viewing and editing. -->
+    <ContentInput
+      labelAbove="true"
+      visible="usedWebFile != null and documentApplicationContext.DocumentCreationReadOnly">
+      <Link
+        action="viewEditAction()"
+        id="DocumentViewEdit"
+        label="DisplayKey.get('Document.ViewEdit.Link')"
+        styleClass="bigButton"/>
+    </ContentInput>
+    <BooleanRadioInput
+      editable="true"
+      falseLabel="usedWebFile == null ? DisplayKey.get(&quot;Document.ViewEdit.EditedLabel&quot;) : DisplayKey.get(&quot;Document.ViewEdit.UploadedLabel&quot;)"
+      id="ViewEdit"
+      labelAbove="true"
+      trueLabel="DisplayKey.get(&quot;Document.ViewEdit.ViewedLabel&quot;)"
+      value="documentApplicationContext.DocumentCreationReadOnly"
+      visible="isDocumentEditable"
+      label="documentApplicationContext.DocumentCreationReadOnly || usedWebFile == null ? DisplayKey.get('Document.ViewEdit.PromptEdit') : DisplayKey.get('Document.ViewEdit.PromptUse')">
+      <PostOnChange
+        onChange="swapFiles()"
+        target="DocumentCreationScreen"/>
+    </BooleanRadioInput>
+
+    <!-- This allows the replacement document to be uploaded in place of the created one. -->
+    <FileInput
+      buttonText="DisplayKey.get('Document.ViewEdit.BrowseAndUpload')"
+      dropzoneWidgets="DocumentCreationScreen"
+      editable="true"
+      labelAbove="true"
+      visible="!documentApplicationContext.DocumentCreationReadOnly"
+      label="DisplayKey.get('Document.Location.Label')"
+      id="ClientUploadedFile"
+      value="usedWebFile">
+      <PostOnChange
+        onChange="documentCreationInfo.File = usedWebFile"
+        target="DocumentCreationScreen"/>
+    </FileInput>
+    <!-- This FileInput is never rendered and only exists to cleanup a server generated
+         or client uploaded WebFile, whichever was not used -->
+    <FileInput
+      editable="true"
+      labelAbove="true"
+      visible="false"
+      id="CleanupSavedFile"
+      value="unusedWebFile"/>
+    <Code>uses com.guidewire.pl.web.controller.UserDisplayableException
+      uses gw.document.ContentDisposition
+      uses gw.api.web.WebFile
+
+      function initInputSet() : boolean {
+        documentApplicationContext.DocumentCreationReadOnly = true
+        documentApplicationContext.DocumentCreationResetState = \ -> resetState()
+        return true
+      }
+
+      function resetState() : boolean {
+        documentCreationInfo.File = null
+        if (usedWebFile != null) {
+          usedWebFile.releaseResources()
+          usedWebFile = null
+        }
+        if (unusedWebFile != null) {
+          unusedWebFile.releaseResources()
+          unusedWebFile = null
+        }
+        isDocumentEditable = false
+        documentApplicationContext.DocumentCreationReadOnly = true
+        return true
+      }
+
+      function viewEditAction() {
+        isDocumentEditable = true
+        if (unusedWebFile != null) {
+          unusedWebFile.releaseResources()
+          unusedWebFile = null
+        }
+
+        gw.document.DocumentsUtilBase.markFileInputsForClientInitiatedDownload(
+          {{'ClientUploadedFile', ContentDisposition.INLINE}})
+      }
+
+      function swapFiles() {
+        documentCreationInfo.File = unusedWebFile
+        unusedWebFile = usedWebFile
+        usedWebFile = documentCreationInfo.File
+      }</Code>
+  </InputSet>
+</PCF>

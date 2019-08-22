@@ -1,0 +1,24 @@
+#gw-helptext {
+  margin: $gw-app--border-width-px 0;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  min-height: gw-lineHeightInFixedEms();
+  max-height: gw-emFixed(10 * $gw-app--line-height-unitless);
+  min-width: gw-emFixed(20);
+  max-width: $gw-app--helptext--max-w;
+  overflow: auto;
+  @include gw-z-index(helptext);
+  box-shadow: $gw-app--helptext--shadow;
+  white-space: pre-wrap;
+  padding: $gw-app--helptext--pad-v-rem $gw-app--helptext--pad-h-rem;
+
+  background-color: $gw-app--helptext--bg;
+  color: $gw-app--helptext--col;
+  border: gw-border($gw-app--helptext--border-col);
+  @include gw-borderRadius();
+}
+
+.gw-helptextOpen {
+  position: relative;
+}

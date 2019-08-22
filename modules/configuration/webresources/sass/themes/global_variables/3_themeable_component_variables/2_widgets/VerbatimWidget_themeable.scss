@@ -1,0 +1,16 @@
+// Position to other widgets
+$gw-app--Verbatim--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--Verbatim--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--Verbatim--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--Verbatim--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--Verbatim--spacing-inner-top-rem: null !default;
+$gw-app--Verbatim--spacing-inner-left-rem: null !default;
+$gw-app--Verbatim--spacing-inner-right-rem: null !default;
+$gw-app--Verbatim--spacing-inner-bottom-rem: null !default;
+
+$gw-app--Verbatim--fill-container-width: false !default;
+$gw-app--Verbatim--col: $gw-app--col !default;
+$gw-app--Verbatim--warning-col: $gw-app--palette--warning !default;
+$gw-app--Verbatim--weight: gw-weight(bold) !default;

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="History of SOAP calls"
+  entity="SoapCallHistory"
+  platform="true"
+  supertype="InboundHistory">
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.profiler.impl.SoapCallHistoryImpl"/>
+  <column
+    desc="The name of the server receiving the request."
+    name="ServerName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The name of the service."
+    name="ServiceName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The name of the operation."
+    name="OperationName"
+    nullok="false"
+    type="shorttext"/>
+  <events/>
+</subtype>

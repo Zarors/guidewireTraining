@@ -1,0 +1,16 @@
+{
+  "name": "pl-font",
+  "private": "true",
+  "version": "0.0.1",
+  "author": "Guidewire Development",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "scripts": {
+    "font": "node ./font-build.js"
+  },
+  "devDependencies": {
+    "webfont": "7.1.4"
+  }
+}

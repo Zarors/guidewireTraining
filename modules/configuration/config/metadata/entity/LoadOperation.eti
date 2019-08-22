@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Detail of the staging table load history."
+  entity="LoadOperation"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadoperation"
+  type="keyable">
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <implementsEntity
+    name="OrdereddLoaderObject"/>
+  <foreignkey
+    columnName="LoadStepID"
+    desc="Parent step."
+    exportable="false"
+    fkentity="LoadStep"
+    name="LoadStep"
+    nullok="false"/>
+  <column
+    desc="Affected staging table."
+    name="TableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="Number of rows affected."
+    name="AffectedRowCount"
+    nullok="true"
+    type="longint"/>
+  <column
+    desc="Number of integrity check errors detected (if applicable)."
+    name="ErrorCount"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="If associated with a idsgenerated step, contains the start of the id range for the rows being loaded."
+    name="LowestID"
+    nullok="true"
+    type="softentityreference"/>
+  <column
+    desc="If associated with a idsgenerated step, contains the end of the id range for the rows being loaded."
+    name="HighestID"
+    nullok="true"
+    type="softentityreference"/>
+  <array
+    arrayentity="LoadIntegrityCheck"
+    desc="Timed loader integrity checks."
+    name="IntegrityChecks"
+    owner="true"/>
+  <array
+    arrayentity="LoadCallback"
+    desc="Timed loader callbacks."
+    name="Callbacks"
+    owner="true"/>
+  <array
+    arrayentity="LoadInsertSelect"
+    desc="Timed loader insert/selects."
+    name="InsertSelects"
+    owner="true"/>
+  <array
+    arrayentity="LoadUpdateStatisticsSelect"
+    desc="db update statistics loader selects."
+    name="UpdateStatisticsSelects"
+    owner="true"/>
+  <!-- Unique index on LoadStepID, Table -->
+  <index
+    desc="(LoadStepID, TableName) is unique across load operations"
+    name="loadoperationu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadStepID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+  </index>
+  <!-- Unique index on LoadStepID, ExecutionOrder -->
+  <index
+    desc="(LoadStepID, ExecutionOrder) is unique across load operations"
+    name="loadoperationu2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadStepID"/>
+    <indexcol
+      keyposition="2"
+      name="ExecutionOrder"/>
+  </index>
+</entity>

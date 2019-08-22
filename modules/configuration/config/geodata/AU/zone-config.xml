@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+
+  <Zones countryCode="AU">
+    <Zone code="postalcode" fileColumn="1" granularity="1" regionMatchOrder="1">
+      <AddressZoneValue>Address.PostalCode</AddressZoneValue>
+      <Links>
+        <!--  Attempt to fill the postalcode based on city.  Do not link to state since that is too ambiguous. -->
+        <Link toZone="city"/>
+      </Links>
+    </Zone>
+    <Zone code="city" fileColumn="2" granularity="2" regionMatchOrder="2">
+      <!--  There are cities that share names and are in different states, prefix the ZoneCode with the state. -->
+      <ZoneCode>state + ":" + city</ZoneCode>
+      <AddressZoneValue>Address.State.Abbreviation.DisplayName + ":" + Address.City</AddressZoneValue>
+      <Links>
+        <!--  Attempt to fill the city based on postalcode.  Do not link to state since that is too ambiguous. -->
+        <Link toZone="postalcode" lookupOrder="1"/>
+        <Link toZone="state"/>
+      </Links>
+    </Zone>
+    <Zone code="state" fileColumn="3" granularity="3" regionMatchOrder="3">
+      <AddressZoneValue>Address.State.Abbreviation.DisplayName</AddressZoneValue>
+      <Links>
+        <Link toZone="postalcode"/>
+        <Link toZone="city"/>
+      </Links>
+    </Zone>
+  </Zones>
+
+</ZoneConfig>
+

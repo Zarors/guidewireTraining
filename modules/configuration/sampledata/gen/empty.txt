@@ -1,0 +1,2 @@
+PC no longer uses Excel-based sample data, but this directory must exist for the build scripts.
+Keeping a text file here so P4 preserves the directory.

@@ -1,0 +1,338 @@
+.gw-HeaderCellWidget {
+  padding: 0;
+  vertical-align: bottom; //Put the label and sort icons at the bottom of the cell, regardless of row height from larger headers
+
+  .gw-cell-inner {
+    vertical-align: bottom;
+  }
+
+  &.gw-possibly-wrap-cell-contents {
+    .gw-header-content-wrapper > .gw-header--inner {
+      @include gw-wrapOnWhiteSpace();
+      flex-shrink: 1;
+      .gw-label {
+        @include gw-wrapOnWhiteSpace();
+      }
+    }
+  }
+
+  &:not(.gw-possibly-wrap-cell-contents) {
+    .gw-cell-inner {
+      .gw-HeaderCellValueWidget, .gw-EmptyHeaderCellValueWidget, .gw-ImplicitHeaderCellValue {
+        & > .gw-header-content-wrapper > .gw-header--inner {
+          @include gw-textEllipse();
+          flex-shrink: 0;
+          .gw-label {
+            @include gw-textEllipse();
+          }
+        }
+      }
+    }
+  }
+
+  &.gw-sliding {
+    .gw-header-content-wrapper:not(.gw-copy) {
+      background-color: $gw-app--HeaderCell--drag--bg;
+      color: $gw-app--HeaderCell--drag--col;
+
+      & > * {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &.gw-required {
+    .gw-header-content-wrapper > .gw-header--inner {
+      .gw-label {
+        @include gw-requiredAfter();
+      }
+    }
+  }
+
+  .gw-HeaderCellValueWidget, .gw-EmptyHeaderCellValueWidget, .gw-ImplicitHeaderCellValue {
+    height: 100%;
+    min-height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+
+    .gw-header--icon {
+      .gw-icon {
+        display: inline-block;
+        &:before {
+          vertical-align: bottom;
+        }
+      }
+    }
+
+    // We don't want to move the whole cell up, just the drag container, so let the drag container handle it
+    &.gw-beingDragged {
+      z-index: auto;
+    }
+
+    .gw-cell-inner {
+      display: block;
+      vertical-align: bottom;
+    }
+
+    .gw-header-content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end; //TODO: this should really be center, but bad things happens once icons get involved in tables, where chrome starts pushing down borders
+      justify-content: space-between;
+      padding-left: $gw-app--HeaderCell--spacing-inner-left-rem;
+      padding-right: $gw-app--HeaderCell--spacing-inner-right-rem;
+    }
+
+    .gw-header--inner {
+      padding-top: $gw-app--HeaderCell--spacing-inner-top-rem;
+      padding-bottom: $gw-app--HeaderCell--spacing-inner-bottom-rem;
+
+      // The crazy balance that is flex boxes inside of LVs
+      div:first-child.gw-label:empty {
+        &:before {
+          content: "\00a0";
+          visibility: hidden;
+        }
+      }
+
+    }
+
+    &[data-gw-draggable] {
+      cursor: grab;
+      cursor: -webkit-grab;
+      cursor: -moz-grab;
+    }
+
+    &:not(.gw-draggable) {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
+    .gw-dragContainer {
+      display: none;
+    }
+
+    .gw-dragContainer.gw-sliding {
+      display: inline-block;
+      text-align: center;
+      background-color: transparent;
+      @include gw-z-index(dragging);
+      position: fixed;
+      color: $gw-app--HeaderCell--drag--col;
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
+      @include gw-filter(drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3))); //@px-allowed
+
+      &:hover {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        cursor: -moz-grabbing;
+      }
+
+      .gw-header-content-wrapper.gw-copy {
+        position: relative;
+
+        @if($gw-app--tables--cell--include-vertical-borders) {
+          top: gw-pxFixed(-2);
+          left: gw-pxFixed(-2);
+
+          border: gw-pxFixed(2) solid $gw-app--HeaderCell--drag--border-col;
+        }
+
+        background-color: $gw-app--HeaderCell--drag--bg;
+
+        .gw-header--inner {
+          background-color: transparent;
+        }
+      }
+
+      .gw-pointer {
+        position: relative;
+        top: gw-pxFixed(-6);
+        color: $gw-app--HeaderCell--drag--border-col;
+        text-align: center;
+        @include gw-iconAfter("long-arrow-alt-down", $size: gw-emFixed(2), $h-align: center);
+
+        .gw-drag-mouse-cover {
+          position: fixed;
+          display: inline-block;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 100vh;
+          width: 100vw;
+          background-color: transparent;
+
+          cursor: grabbing;
+          cursor: -webkit-grabbing;
+          cursor: -moz-grabbing;
+          @include gw-z-index(clickOverlay);
+        }
+      }
+
+      &.gw-possibleDrop {
+        .gw-header-content-wrapper {
+          border-color: $gw-app--ListView-top-UI-section--hover-col;
+        }
+        .gw-pointer {
+          color: $gw-app--ListView-top-UI-section--hover-col
+        }
+
+        .gw-header-content-wrapper {
+
+        }
+      }
+    }
+
+    // ============ SORT ICONS =================
+
+    .gw-sort--section {
+      display: inline-block;
+      position: relative;
+      margin-left: $gw-app--SPACING-rem-S;
+      // Internal padding
+      padding-top: $gw-app--HeaderCell--spacing-inner-top-rem;
+      padding-left: $gw-app--SPACING-rem-S;
+      padding-right: $gw-app--SPACING-rem-S;
+      margin-right: -1 * $gw-app--SPACING-rem-S;
+      padding-bottom: $gw-app--HeaderCell--spacing-inner-bottom-rem;
+      @include gw-clickable($gw-app--HeaderCell--drag--col);
+
+      &:hover {
+        background-coor: $gw-app--tables--group--hover--bg;
+      }
+    }
+
+    &:not(.gw-sortable) {
+      .gw-sort--section {
+        display: none;
+      }
+    }
+
+    .gw-sort-icon--up {
+      display: inline-block;
+      height: gw-lineHeightInFixedEms();
+      width: gw-emFixed(1);
+      position: relative;
+      top: gw-emFixed(-.4);
+      pointer-events: none !important;
+      color: $gw-app--HeaderCell--sort--not-sorted--col;
+      padding-left: $gw-app--SPACING-rem-XS;
+      padding-right: $gw-app--SPACING-rem-XS;
+      @include gw-icon("caret-up-solid", gw-emFixed(1), $width: auto);
+    }
+
+    .gw-sort-icon--down {
+      display: inline-block;
+      height: gw-lineHeightInFixedEms();
+      width: gw-emFixed(1);
+      pointer-events: none !important;
+      position: absolute;
+      color: $gw-app--HeaderCell--sort--not-sorted--col;
+      bottom: gw-emFixed(.1);
+      left: $gw-app--SPACING-rem-S;
+
+      padding-left: $gw-app--SPACING-rem-XS;
+      padding-right: $gw-app--SPACING-rem-XS;
+      @include gw-icon("caret-down-solid", gw-emFixed(1), $width: auto);
+    }
+
+    &.gw-header--sorted--ASCENDING {
+      .gw-sort-icon--up {
+        color: $gw-app--HeaderCell--sort--generic--col;
+      }
+    }
+
+    &.gw-header--sorted--DESCENDING {
+      .gw-sort-icon--down {
+        color: $gw-app--HeaderCell--sort--generic--col;
+      }
+    }
+
+    &.gw-header--sorted--user-defined {
+      .gw-sorted--icon {
+        color: $gw-app--HeaderCell--sort--generic--col;
+      }
+    }
+
+    &:not(.gw-header--sorted--user-defined) {
+      .gw-sorted--icon {
+
+      }
+    }
+  }
+}
+
+.gw-ListView--inner:not(.gw-ListView--empty) {
+  //These are the highlight classes used by header drag and drop
+  //As long as the table is not empty, then we do some helpful things like shifting left and right column headers to show where things will drop
+  //But if the table is empty, then things get odd, so we don't
+  td {
+    &.gw-tdDropHighlightLeftCell, &.gw-tdDropHighlightRightCell {
+      overflow: visible;
+      position: relative;
+
+      background-color: $gw-app--HeaderCell--drag--bg;
+      color: $gw-app--HeaderCell--drag--col;
+      font-weight: $gw-app--HeaderCell--weight;
+
+      .gw-header-content-wrapper:not(.gw-copy) {
+        visibility: hidden;
+        overflow: visible;
+
+      }
+
+      .gw-cell-inner {
+        position: relative;
+        overflow: visible;
+
+        .gw-dragContainer {
+          display: inline-block;
+          position: absolute;
+          left: 0;
+
+          top: 100%;
+          @include gw-z-index(draggingbelow);
+          .gw-pointer {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.gw-tdDropHighlightRightCell {
+      .gw-cell-inner {
+        .gw-dragContainer {
+          left: 0;
+
+          .gw-header-content-wrapper {
+            background-color: $gw-app--HeaderCell--drag--bg;
+            color: $gw-app--HeaderCell--drag--col;
+            font-weight: $gw-app--HeaderCell--weight;
+            border-bottom-right-radius: $gw-app--border-radius-px;
+          }
+        }
+      }
+    }
+
+    &.gw-tdDropHighlightLeftCell {
+      .gw-cell-inner {
+        .gw-dragContainer {
+          right: 0;
+            .gw-header-content-wrapper {
+              background-color: $gw-app--HeaderCell--drag--bg;
+              color: $gw-app--HeaderCell--drag--col;
+              font-weight: $gw-app--HeaderCell--weight;
+              border-bottom-left-radius: $gw-app--border-radius-px;
+            }
+        }
+      }
+    }
+  }
+}

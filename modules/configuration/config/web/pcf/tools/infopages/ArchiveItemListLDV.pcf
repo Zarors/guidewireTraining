@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListDetailPanel
+    id="ArchiveItemListLDV"
+    selectionName="rootInfoObj"
+    selectionOnEnter="firstResult"
+    selectionType="KeyableBean">
+    <Require
+      name="archiveDetailsData"
+      type="gw.api.archiving.ArchiveDetailsData"/>
+    <Variable
+      initialValue="archiveDetailsData.QueryForRootInfos.select()"
+      name="query"
+      type="gw.api.database.IQueryBeanResult&lt;gw.pl.persistence.core.Bean&gt;"/>
+    <Variable
+      initialValue="query.FirstResult"
+      name="firstResult"
+      type="gw.pl.persistence.core.Bean"/>
+    <ExposeIterator
+      valueType="gw.pl.persistence.core.Bean"
+      widget="ArchiveItemListLV"/>
+    <ListViewPanel
+      id="ArchiveItemListLV">
+      <RowIterator
+        canPick="archiveDetailsData.ExcludedBecauseOfFailure"
+        checkBoxVisible="archiveDetailsData.ExcludedBecauseOfRules or archiveDetailsData.ExcludedBecauseOfFailure"
+        editable="false"
+        elementName="rootInfoElem"
+        hasCheckBoxes="true"
+        value="query"
+        valueType="gw.api.database.IQueryBeanResult&lt;gw.pl.persistence.core.Bean&gt;">
+        <Row>
+          <TextCell
+            action="gw.api.web.tools.ArchiveInfoPage.goToPage(rootInfoElem as RootInfo)"
+            enableSort="false"
+            id="Item"
+            label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Item&quot;)"
+            sortBy="(rootInfoElem as RootInfo).ArchivedDate"
+            sortDirection="descending"
+            sortOrder="1"
+            value="com.guidewire.pl.system.dependency.PLDependencies.getDomainGraphSupport().getInformationalString(rootInfoElem as RootInfo)"/>
+          <ButtonCell
+            action="gw.transaction.Transaction.runWithNewBundle(\ bundle -&gt; { var rootInfo = bundle.add(rootInfoElem as KeyableBean) as RootInfo; rootInfo.resetToPreArchivedState() }); if (archiveDetailsData.QueryForRootInfos.select().Count == 0) {CurrentLocation.cancel()}"
+            id="Reset"
+            label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ResetItem&quot;)"
+            value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ResetItem&quot;)"
+            visible="!archiveDetailsData.Skipped"/>
+          <ButtonCell
+            action="gw.transaction.Transaction.runWithNewBundle(\ bundle -&gt; { var rootInfo = bundle.add(rootInfoElem as KeyableBean) as RootInfo; rootInfo.resetToPreArchivedState() }); com.guidewire.pl.system.internal.InternalMethods.asRootInfoInternal((rootInfoElem as RootInfo)).runArchiveWithTrace()"
+            id="DebugItem"
+            label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.TraceItem&quot;)"
+            value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.TraceItem&quot;)"
+            visible="!archiveDetailsData.Skipped"/>
+        </Row>
+      </RowIterator>
+    </ListViewPanel>
+    <CardViewPanel>
+      <Card
+        id="FailureDetailsCV"
+        title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.FailureDetails&quot;, com.guidewire.pl.system.dependency.PLDependencies.getDomainGraphSupport().getInformationalString(rootInfoObj as RootInfo))"
+        visible="archiveDetailsData.ExcludedBecauseOfFailure">
+        <DetailViewPanel>
+          <InputColumn>
+            <TextInput
+              id="FailureDetails"
+              labelAbove="true"
+              value="(rootInfoObj as RootInfo).ArchiveFailureDetails.ArchiveFailureDetails"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </Card>
+      <Card
+        id="ArchiveTraceCV"
+        title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.TraceDetails&quot;, com.guidewire.pl.system.dependency.PLDependencies.getDomainGraphSupport().getInformationalString(rootInfoObj as RootInfo))"
+        visible="com.guidewire.pl.system.internal.InternalMethods.asRootInfoInternal((rootInfoObj as RootInfo)).hasTraceDetails() ">
+        <DetailViewPanel>
+          <InputColumn>
+            <TextInput
+              id="TraceDetails"
+              labelAbove="true"
+              value="com.guidewire.pl.system.internal.InternalMethods.asRootInfoInternal((rootInfoObj as RootInfo)).getTraceDetails()"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </Card>
+    </CardViewPanel>
+  </ListDetailPanel>
+</PCF>

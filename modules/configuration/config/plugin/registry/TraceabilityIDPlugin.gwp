@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="TraceabilityIDPlugin"
+  name="TraceabilityIDPlugin">
+  <plugin-gosu
+    gosuclass="gw.plugin.logging.DefaultTraceabilityIDPlugin"/>
+</plugin>

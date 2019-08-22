@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="OfficialID">
+  <implementsInterface
+    iface="gw.api.obfuscation.Obfuscator"
+    impl="gw.personaldata.obfuscation.DefaultPersonalDataObfuscator"/>
+  <column-override
+    name="OfficialIDValue">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column-override>
+  <typekey-override
+    name="State">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </typekey-override>
+</extension>

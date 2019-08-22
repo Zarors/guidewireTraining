@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="false"
+    canVisit="perm.ABContact.viewmerge"
+    id="MergeContacts"
+    title="DisplayKey.get(&quot;Web.Contacts.MergeContacts.Title&quot;)">
+    <Screen>
+      <SearchPanel
+        criteriaName="searchCriteria"
+        id="DuplicateContactPairSearch"
+        resultsName="results"
+        search="gw.domain.contact.DuplicateContactPairFinder.findDuplicateContactPairs(searchCriteria)"
+        searchCriteria="new gw.domain.contact.DuplicateContactSearchCriteria()"
+        searchCriteriaType="gw.domain.contact.DuplicateContactSearchCriteria"
+        searchOnEnter="true"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;DuplicateContactPair&gt;">
+        <PanelRef
+          def="DuplicateContactPairSearchDV(searchCriteria)"/>
+        <PanelRef
+          def="DuplicateContactPairSearchLV(results)">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.Search.Results&quot;)"/>
+          <Toolbar>
+            <CheckedValuesToolbarButton
+              checkedRowAction="CheckedValue.retire(); CheckedValue.Bundle.commit();"
+              confirmMessage="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Ignore.MultipleWarning&quot;)"
+              id="IgnoreButton"
+              iterator="DuplicateContactPairSearchLV.DuplicateContactPairSearchLV"
+              label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Ignore&quot;)"/>
+          </Toolbar>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores data distribution info in the database."
+  entity="DatabaseDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="databasedatadist"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.DatabaseDataDistInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.DatabaseDataDistImpl"/>
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="mediumtext"/>
+  <column
+    desc="Start time of data distribution process."
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="End time of data distribution process."
+    name="EndTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="Number of threads configured to collect data distribution"
+    name="NumThreads"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Major Schema Version at time of collection "
+    name="MajorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Minor Schema Version at time of collection "
+    name="MinorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Platform Major Schema Version at time of collection "
+    name="PlatformMajorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Platform Minor Schema Version at time of collection "
+    name="PlatformMinorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="true"
+    desc="Array distributions collected."
+    name="ArrayDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Blob distributions collected."
+    name="BlobDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Clob distributions collected."
+    name="ClobDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="ForeignKey distributions collected."
+    name="ForKeyDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="TypeKey  distributions collected."
+    name="TypeKeyDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Assignable Foreign Key distributions collected."
+    name="AssignableForKeyDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Bean distributions collected."
+    name="BeanDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Ad hoc data distributions collected"
+    name="AdHocDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Staging table data distributions collected"
+    name="StagingTableDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Typelist table data distributions collected"
+    name="TypeListTableDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="All tables data distributions collected.  If false, a subset was specified."
+    name="AllTablesCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Application specific data distributions collected."
+    name="AppSpecificDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Assignable data distributions by date collected."
+    name="AssignableDistsByDateCollected"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Boolean column data distributions collected"
+    name="BooleanColDistsCollected"
+    nullok="false"
+    type="bit"/>
+  <array
+    arrayentity="TableDataDist"
+    desc="Collection of TableDataDists linked to this DatabaseDataDist."
+    exportable="true"
+    name="TableDataDists"
+    owner="true"/>
+  <array
+    arrayentity="DataDistQueryExec"
+    desc="Collection of DataDistQueryExecs linked to this DatabaseDataDist."
+    exportable="true"
+    name="DataDistQueryExecs"
+    owner="true"/>
+</entity>

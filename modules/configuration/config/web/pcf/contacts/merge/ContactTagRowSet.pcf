@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ContactTagRowSet">
+    <Require
+      name="keptContact"
+      type="ABContact"/>
+    <Require
+      name="retiredContact"
+      type="ABContact"/>
+    <Require
+      name="mergedContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="{keptContact, retiredContact, mergedContact}"
+      name="contacts"
+      recalculateOnRefresh="true"
+      type="ABContact[]"/>
+    <Variable
+      initialValue="gw.web.merge.MergeContactsWebUtil.Instance"
+      name="mergeContactsWebUtil"
+      type="gw.web.merge.MergeContactsWebUtil"/>
+    <Row>
+      <TextCell
+        id="tagLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.Tags&quot;)"/>
+      <TextCell
+        id="keptContactCell"
+        value="mergeContactsWebUtil.contactTagsDisplay(keptContact)"/>
+      <TextCell
+        id="retiredContactCell"
+        value="mergeContactsWebUtil.contactTagsDisplay(retiredContact)"/>
+      <ButtonCell
+        action="ContactTagPopup.push(mergedContact)"
+        id="mergedContactCell"
+        value="mergeContactsWebUtil.contactTagsDisplay(mergedContact)"/>
+    </Row>
+  </RowSet>
+</PCF>

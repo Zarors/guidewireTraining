@@ -1,0 +1,58 @@
+.gw-LinkWithArgWidget {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  div {
+    max-width: 100%;
+    select {
+      max-width: 100%;
+    }
+  }
+
+  .gw-LinkWithArgWidget--label {
+    padding-right: $gw-app--SPACING-rem-M;
+  }
+
+  .gw-LinkWidget + .gw-LinkWidget {
+    margin-left: $gw-app--SPACING-rem-M;
+  }
+
+  .gw-ValueWidget + .gw-LinkWidget {
+    margin-left: $gw-app--SPACING-rem-M;
+  }
+
+  .gw-ValueWidget + .gw-ValueWidget {
+    margin-left: $gw-app--SPACING-rem-M;
+  }
+
+}
+
+#gw-west-panel--children {
+  .gw-LinkWithArgWidget {
+    padding: $gw-app--SPACING-rem-M $gw-app--WestPanel--button--pad-h-rem;
+    flex-wrap: wrap;
+
+    & + .gw-LinkWithArgWidget {
+      padding-top: 0;
+    }
+
+    .gw-DateValueWidget {
+      .gw-vw--value {
+        display: flex;
+      }
+    }
+  }
+
+  .gw-subMenu {
+    .gw-LinkWithArgWidget {
+      padding-left: $gw-app--WestPanel--button--pad-h-rem + $gw-app--WestPanel--submenu--additional-inset-pad-left-rem;
+    }
+  }
+}
+
+
+
+

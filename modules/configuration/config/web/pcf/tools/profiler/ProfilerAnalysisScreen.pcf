@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Screen
+    editable="true"
+    id="ProfilerAnalysisScreen">
+    <Require
+      name="entryType"
+      type="String"/>
+    <Variable
+      initialValue="entryType"
+      name="entryPointType"
+      type="String"/>
+    <ListDetailPanel
+      selectionName="profilerSource"
+      selectionType="gw.api.profiler.ProfilerDataSource">
+      <PanelRef
+        def="PickProfilerSourceLV()"
+        mode="entryPointType">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.Profiler.ProfilerSource&quot;)"/>
+        <Toolbar>
+          <IteratorButtons
+            addLabel="(entryPointType == &quot;SavedFile&quot;) ? DisplayKey.get(&quot;Button.Upload&quot;) : DisplayKey.get(&quot;Button.Search&quot;) as String "
+            iterator="PickProfilerSourceLV.PickProfilerSourceLV"
+            removeFlags="any CanDelete, no CannotDelete"
+            removeLabel="DisplayKey.get(&quot;Button.Delete&quot;)"/>
+        </Toolbar>
+      </PanelRef>
+      <CardViewPanel
+        hideTabIfSingle="true">
+        <Card
+          id="ProfilerResults"
+          title="DisplayKey.get(&quot;Web.Profiler.Result&quot;)">
+          <PanelRef
+            def="ProfilerAnalysisPanelSet(profilerSource, entryPointType)"/>
+        </Card>
+      </CardViewPanel>
+    </ListDetailPanel>
+  </Screen>
+</PCF>

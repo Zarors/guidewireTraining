@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="SystemPermissionType">
+  <typecode
+    code="eventmessageview"
+    desc="Permission to view the event messages page"
+    name="View event messages"/>
+<!-- BEGIN :: TrainingApp 8.0.2 -->
+  <typecode
+    code="flagentryresolve"
+    desc="Permission to resolve flag entries"
+    name="Resolve flag entries"/>
+<!-- END :: TrainingApp 8.0.2 -->
+</typelistextension>

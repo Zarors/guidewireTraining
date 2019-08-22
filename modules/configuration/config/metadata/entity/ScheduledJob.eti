@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  desc="Scheduled batch process"
+  entity="ScheduledJob"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="scheduledjob"
+  type="keyable">
+  <typekey
+    desc="The batch process"
+    name="ProcessType"
+    nullok="true"
+    typelist="BatchProcessType"/>
+  <column
+    default="0"
+    desc="The bean version"
+    name="Version"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="The schedule from the configuration file"
+    name="ConfigSchedule"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="The actual schedule"
+    name="ActualSchedule"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="The next time when the batch process has to be started"
+    name="NextTime"
+    nullok="true"
+    type="longint"/>
+  <index
+    desc="Uniqueness of BatchProcess"
+    name="BatchProcessUnique"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ProcessType"/>
+  </index>
+</entity>

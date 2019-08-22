@@ -1,0 +1,15 @@
+$gw-app--RangeRadioValueWidget--value-inner-spacing: $gw-app--SPACING-rem-XS !default;
+$gw-app--RangeRadioValueWidget--value-outer-spacing: $gw-app--SPACING-rem-XL !default;
+
+$gw-app--RangeShuttleValueWidget--remove-glyph: "angle-double-left" !default;
+$gw-app--RangeShuttleValueWidget--add-glyph: "angle-double-right" !default;
+$gw-app--RangeShuttleValueWidget--option-pad-h-rem: gw-remScaled(.4) !default;
+$gw-app--RangeShuttleValueWidget--option-pad-v-rem: gw-remScaled(.2) !default;
+$gw-app--RangeShuttleValueWidget--section-min-width-em: $gw-app--inputs--select-min-width-em !default;
+$gw-app--RangeShuttleValueWidget--section-width-em: null !default;
+$gw-app--RangeShuttleValueWidget--section-max-width-em: null !default;
+$gw-app--RangeShuttleValueWidget--button-margin-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--RangeShuttleValueWidget--button-margin-v-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--RangeShuttleValueWidget--height-em:  null !default;
+$gw-app--RangeShuttleValueWidget--min-height-em:  gw-emFixed(6.7) !default;
+$gw-app--RangeShuttleValueWidget--max-height-em:  gw-emFixed(20) !default;

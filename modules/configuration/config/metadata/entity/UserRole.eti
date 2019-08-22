@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- A join table associating a user with security roles assigned to the user -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Joins a user with their security roles."
+  entity="UserRole"
+  exportable="true"
+  loadable="true"
+  platform="true"
+  table="userrole"
+  type="joinarray">
+  <fulldescription><![CDATA[
+        Joins a User with their security roles. The system creates this entity when you assign a Role to a User.
+        The User will be granted the union of all the permissions granted by their Roles.
+      
+    ]]></fulldescription>
+  <foreignkey
+    columnName="UserID"
+    desc="Parent user."
+    exportable="false"
+    fkentity="User"
+    name="User"
+    nullok="false"/>
+  <foreignkey
+    columnName="RoleID"
+    desc="Security role granted to the user."
+    fkentity="Role"
+    name="Role"
+    nullok="false"/>
+  <!-- All array tables must have a unique index.  userrole accessed through
+      user, so we have key be (userid, roleid) and
+      eliminate backing index on userid since unique index is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, a particular role should only appear once in user's list of roles"
+    name="userroleu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UserID"/>
+    <indexcol
+      keyposition="2"
+      name="RoleID"/>
+  </index>
+</entity>

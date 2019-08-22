@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- This popup only has the two entry points that are required for the situations in which it is called by the existing TrainingApp resources: one that is passed an existing evaluation object to be edited and a Boolean value to indicate whether or not the popup should open in edit mode, and one for when a new evaluation is to be created that is only passed a Boolean to indicate whether or not the popup should open in edit mode.
+
+More entry points built upon other combinations of these variables could be defined for other situations, but have not been included for the sake of simplicity. One might be an entry point that is passed an existing evaluation object to be edited but is not passed a Boolean value to indicate whether or not the popup should open in edit mode. Another might be an entry point with an empty signature, which would create a new evaluation and would not specify whether or not the popup should open in edit mode. -->
+  <Popup
+    beforeCommit="aVendorEvaluation.Status=typekey.VendorEvaluationStatus.TC_UNVERIFIED"
+    canEdit="true"
+    canVisit="true"
+    id="VendorEvaluationPopup"
+    returnType="VendorEvaluation"
+    startInEditMode="shouldStartInEditMode"
+    title="DisplayKey.get(&quot;Training.VendorEvaluation&quot;)">
+    <LocationEntryPoint
+      signature="VendorEvaluationPopup( aVendorEvaluation : VendorEvaluation, shouldStartInEditMode : Boolean)"/>
+    <LocationEntryPoint
+      signature="VendorEvaluationPopup(shouldStartInEditMode : Boolean)"/>
+    <Variable
+      initialValue="new VendorEvaluation()"
+      name="aVendorEvaluation"
+      type="VendorEvaluation"/>
+    <Variable
+      name="shouldStartInEditMode"
+      type="Boolean"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          pickValue="aVendorEvaluation"/>
+      </Toolbar>
+      <PanelRef
+        def="VendorEvaluationDV(aVendorEvaluation)"/>
+    </Screen>
+  </Popup>
+</PCF>

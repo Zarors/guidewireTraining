@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="MessageControlForSOOList"
+    parent="MessageControlForDestinationList(DestinationId, DestinationName)"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.MessageControlForSOOList&quot;, SOOName)">
+    <LocationEntryPoint
+      signature="MessageControlForSOOList(DestinationId : int, DestinationName : String, SOOKeyValue : long, SOOName : String)"/>
+    <Variable
+      name="DestinationId"
+      type="int"/>
+    <Variable
+      name="DestinationName"
+      type="String"/>
+    <Variable
+      name="SOOKeyValue"
+      type="long"/>
+    <Variable
+      name="SOOName"
+      type="String"/>
+    <Screen
+      id="MessageControlForSOOListScreen">
+      <Toolbar>
+        <CheckedValuesToolbarButton
+          allCheckedRowsAction="gw.api.admin.MessagingUtil.retryRetryableMessages(CheckedValues)"
+          confirmMessage="DisplayKey.get(&quot;Web.Admin.MessageControlForSOOList.RetryConfirm&quot;)"
+          flags="any RetryableEventMessage"
+          id="MessageControlForSOOListScreen_RetryButton"
+          iterator="MessageControlForSOOListLV.MessageControlForSOOListLV"
+          label="DisplayKey.get(&quot;Button.Retry&quot;)"
+          tooltip="DisplayKey.get(&quot;Button.Retry.Tooltip&quot;)"
+          visible="perm.System.retrymessage and SOOKeyValue == -1"/>
+        <CheckedValuesToolbarButton
+          allCheckedRowsAction="gw.api.admin.MessagingUtil.skipMessages(CheckedValues)"
+          confirmMessage="DisplayKey.get(&quot;Web.Admin.MessageControlForSOOList.SkipConfirm&quot;)"
+          flags="any SkippableEventMessage"
+          id="MessageControlForSOOListScreen_SkipButton"
+          iterator="MessageControlForSOOListLV.MessageControlForSOOListLV"
+          label="DisplayKey.get(&quot;Button.Skip&quot;)"
+          tooltip="DisplayKey.get(&quot;Button.Skip.Tooltip&quot;)"
+          visible="perm.System.skipmessage"/>
+        <ToolbarDivider/>
+        <SearchItem
+          id="MessageControlSearchItem"
+          label="DisplayKey.get(&quot;Web.Admin.MessageControlForSOOList.Search&quot;)"
+          onFailure="CurrentLocation"
+          onResult="MessageControlForSOOList.go(gw.api.upgrade.Coercions.makePIntFrom((result as Object[])[1]), (result as Object[])[2] as String, ((result as Object[])[0] as gw.pl.persistence.core.Key).Value, gw.api.messaging.SOOMessageSearchItemUtil.getSOOName((result as Object[])[0] as KeyableBean))"
+          search="gw.api.messaging.SOOMessageSearchItemUtil.runSearchQuery(searchText, DestinationId, DestinationName)"
+          validationError="DisplayKey.get(&quot;Java.Messaging.SOOMessageSearch.Error&quot;, searchText)"
+          visible="gw.api.messaging.SOOMessageSearchItemUtil.isSearchAvailable(DestinationId)"/>
+        <ToolbarDivider/>
+      </Toolbar>
+      <PanelRef
+        def="MessageControlForSOOListLV(DestinationId, SOOKeyValue)"/>
+    </Screen>
+  </Page>
+</PCF>

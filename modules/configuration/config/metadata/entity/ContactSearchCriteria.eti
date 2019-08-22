@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ContactSearchCriteria"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.ContactSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ContactSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.ContactSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ContactSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.service.search.CommonContactSearchCriteria"
+    impl="com.guidewire.pl.domain.contact.impl.ContactSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.service.search.CommonContactSearchCriteriaInternal"
+    impl="com.guidewire.pl.domain.contact.impl.ContactSearchCriteriaImpl"/>
+  <column
+    default="true"
+    desc="Whether or not external search is enabled. True for &quot;picker&quot; searches; false otherwise."
+    exportable="false"
+    name="ExternalSearchEnabled"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Matched against Contacts belonging to an Organization (such as of person's employer) matching this name."
+    name="OrganizationName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Preferred Vendors"
+    name="PreferredVendors"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Tax ID for the contact (SSN or EIN)."
+    name="TaxID"
+    nullok="true"
+    type="ssn"/>
+  <column
+    desc="Field matched against the OfficialIDValue of the OfficialID objects associated with Contacts."
+    name="OfficialId"
+    nullok="true"
+    type="shorttext"/>
+  <typekey
+    desc="Match type requirement"
+    name="MatchType"
+    nullok="true"
+    typelist="ContactMatchResultType"/>
+  <typekey
+    desc="External search type (external search only)"
+    name="SearchType"
+    nullok="true"
+    typelist="ContactSearchType"/>
+  <typekey
+    desc="Contact class, like Person, Company, and Venue."
+    name="ContactSubtype"
+    nullok="true"
+    typelist="Contact"/>
+  <typekey
+    desc="The company's vendor type."
+    name="VendorType"
+    nullok="true"
+    typelist="VendorType"/>
+  <column
+    desc="First Name"
+    name="FirstName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Keyword is the general term for Name (Companies and Places) and LastName (for Persons)"
+    name="Keyword"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    desc="The address of the contact.  Supercedes the separate fields of City, State, and PostalCode."
+    fkentity="Address"
+    name="Address"
+    nullok="true"/>
+  <foreignkey
+    desc="The parameters for a proximity search."
+    fkentity="ProximitySearchParameters"
+    name="ProximitySearchParameters"
+    nullok="true"/>
+  <foreignkey
+    desc="The center for a proximity search. Ignored if location fields are set on the Proximity Search Parameters."
+    fkentity="Address"
+    name="ProximitySearchCenter"
+    nullok="true"/>
+</nonPersistentEntity>

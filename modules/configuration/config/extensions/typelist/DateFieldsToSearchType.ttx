@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- Legal values for this type list are included but commented out.
+   Adding values to this list that aren't in the legal list will cause them to show up in the UI, but when
+   the search button is hit the app will fail. -->
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="The search options for the date searches in search"
+  name="DateFieldsToSearchType">
+  <typecode
+    code="EffectiveDate"
+    desc="Find by Effective Date"
+    name="Effective Date"/>
+  <typecode
+    code="ExpirationDate"
+    desc="Find by Expiration Date"
+    name="Expiration Date"/>
+  <typecode
+    code="SubmissionDate"
+    desc="Find by Submission Date"
+    name="Submission Date"/>
+</typelistextension>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ABContactSearchCriteriaSpecialistService"
+  extendable="true">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABContactSearchCriteriaSpecialistService"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactSearchCriteriaSpecialistServiceImpl"/>
+  <foreignkey
+    columnName="SpecialistServiceID"
+    desc="SpecialistService"
+    fkentity="SpecialistService"
+    name="SpecialistService"
+    nullok="false"/>
+  <foreignkey
+    columnName="ABContactSearchCriteriaID"
+    desc="ABContactSearchCriteria"
+    fkentity="ABContactSearchCriteria"
+    name="ABContactSearchCriteria"
+    nullok="false"
+    setterScriptability="hidden"/>
+</nonPersistentEntity>

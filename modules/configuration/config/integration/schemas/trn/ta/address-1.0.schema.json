@@ -1,0 +1,30 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "definitions" : {
+    "AddressDetails" : {
+      "type" : "object",
+      "properties" : {
+        "AddressType" : {
+          "type" : "string",
+          "x-gw-type" : "typekey.AddressType"
+        },
+        "AddressLine1": {
+          "type" : "string"
+        },
+        "AddressLine2" : {
+          "type" : "string"
+        },
+        "City": {
+          "type" : "string"
+        },
+        "State" : {
+          "type" : "string",
+          "x-gw-type": "typekey.State"
+        },
+        "PostalCode" : {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

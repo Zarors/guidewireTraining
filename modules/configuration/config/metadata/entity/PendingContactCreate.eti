@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a change that is the creation of a new contact."
+  entity="PendingContactCreate"
+  final="false"
+  priority="2"
+  supertype="PendingContactChange">
+  <fulldescription><![CDATA[
+        Entity to hold the information about a request to create a new ABContact in ContactManager
+        that requires approval.
+    ]]></fulldescription>
+</subtype>

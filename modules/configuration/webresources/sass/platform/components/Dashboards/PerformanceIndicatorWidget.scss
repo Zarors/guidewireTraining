@@ -1,0 +1,99 @@
+.gw-PerformanceIndicatorRowWidget {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-top: $gw-app--PerformanceIndicatorRow--spacing-widget-top-rem;
+  margin-left: $gw-app--PerformanceIndicatorRow--spacing-widget-left-rem;
+  margin-right: $gw-app--PerformanceIndicatorRow--spacing-widget-right-rem;
+  margin-bottom: $gw-app--PerformanceIndicatorRow--spacing-widget-bottom-rem;
+
+  padding-top: $gw-app--PerformanceIndicatorRow--spacing-inner-top-rem;
+  padding-left: $gw-app--PerformanceIndicatorRow--spacing-inner-left-rem;
+  padding-right: $gw-app--PerformanceIndicatorRow--spacing-inner-right-rem;
+  padding-bottom: $gw-app--PerformanceIndicatorRow--spacing-inner-bottom-rem;
+
+ .gw-PerformanceIndicatorWidget {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   @include gw-borderRadius();
+   overflow: hidden;
+
+   min-width: $gw-app--PerformanceIndicator--min-width;
+
+   border: $gw-app--PerformanceIndicator--border;
+   box-shadow: $gw-app--PerformanceIndicator--box-shadow;
+   background-color: $gw-app--PerformanceIndicator--bg;
+
+   margin-top: $gw-app--PerformanceIndicator--spacing-widget-top-rem;
+   margin-left: $gw-app--PerformanceIndicator--spacing-widget-left-rem;
+   margin-right: $gw-app--PerformanceIndicator--spacing-widget-right-rem;
+   margin-bottom: $gw-app--PerformanceIndicator--spacing-widget-bottom-rem;
+
+   padding-top: $gw-app--PerformanceIndicator--spacing-inner-top-rem;
+   padding-left: $gw-app--PerformanceIndicator--spacing-inner-left-rem;
+   padding-right: $gw-app--PerformanceIndicator--spacing-inner-right-rem;
+   padding-bottom: $gw-app--PerformanceIndicator--spacing-inner-bottom-rem;
+
+   .gw-PerformanceIndicatorWidget--Value {
+     display: block;
+     font-weight: $gw-app--PerformanceIndicator--Value--font-weight;
+     font-size: $gw-app--PerformanceIndicator--Value--font-size;
+     margin-bottom: $gw-app--PerformanceIndicator--Value--marginBottom;
+     @include gw-wrapOnWhiteSpace();
+     overflow: hidden;
+
+     width: $gw-app--PerformanceIndicator--fixed-width;
+     max-width: $gw-app--PerformanceIndicator--max-width;
+
+     @if($gw-app--PerformanceIndicator--Value--use-calculator-display) {
+       align-self: stretch;
+       background-color: $gw-app--TileWidget--bg;
+       @include gw-borderRadius();
+       padding-left: $gw-app--SPACING-rem-S;
+       padding-right: $gw-app--SPACING-rem-S;
+       padding-top: 1px;
+       box-shadow: inset 1px 1px 2px $gw-app--palette--shadow-col;
+       border: $gw-app--PerformanceIndicator--border;
+     }
+   }
+
+   .gw-PerformanceIndicatorWidget--Label {
+     display: block;
+     @include gw-wrapOnWhiteSpace();
+     white-space: pre-wrap;
+     overflow: hidden;
+     font-weight: $gw-app--PerformanceIndicator--Label--font-weight;
+     color: $gw-app--PerformanceIndicator--Label--color;
+     font-size: $gw-app--PerformanceIndicator--Label--font-size;
+
+     width: $gw-app--PerformanceIndicator--fixed-width;
+     max-width: $gw-app--PerformanceIndicator--max-width;
+     @if ($gw-app--PerformanceIndicator--align-badges-bottom == true) {
+      margin-bottom: auto; //Push all badges down to align at the base
+     }
+
+   }
+
+   .gw-PerformanceIndicatorWidget--Label:not(:last-child) {
+     //margin: $gw-app--PerformanceIndicator--Label--margin;
+   }
+
+   .gw-PerformanceIndicatorWidget--Label[data-gw-click] {
+     @include gw-link($pad-h: 0, $pad-v: 0);
+     text-align: center;
+   }
+
+   .gw-BadgeWidget {
+     @include gw-wrapOnWhiteSpace();
+     white-space: pre-wrap;
+     overflow: hidden;
+     font-weight: $gw-app--PerformanceIndicator--Badge--font-weight;
+     font-size: $gw-app--PerformanceIndicator--Badge--font-size;
+     margin-top: $gw-app--PerformanceIndicator--Badge--marginTop;
+     max-width: $gw-app--PerformanceIndicator--max-width;
+   }
+ }
+}

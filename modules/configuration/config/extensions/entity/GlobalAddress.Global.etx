@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="GlobalAddress">
+  <column
+    desc="First line of mailing address in kanji (used only for Japanese addresses and will be null otherwise)"
+    name="AddressLine1Kanji"
+    nullok="true"
+    type="addressline">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column>
+  <column
+    desc="Second line of mailing address in kanji (used only for Japanese addresses and will be null otherwise)"
+    name="AddressLine2Kanji"
+    nullok="true"
+    type="addressline">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column>
+  <column
+    desc="City in kanji (used only for Japanese addresses and will be null otherwise)"
+    name="CityKanji"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column>
+  <column
+    desc="CEDEX: Special business mail delivery flag (used only for French addresses and will be null otherwise)"
+    name="CEDEX"
+    nullok="true"
+    type="bit">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column>
+  <column
+    desc="CEDEX: Special business mail delivery bureau (used only for French addresses and will be null otherwise)"
+    name="CEDEXBureau"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="2"/>
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column>
+</extension>

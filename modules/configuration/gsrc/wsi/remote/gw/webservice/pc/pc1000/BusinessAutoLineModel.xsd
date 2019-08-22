@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.businessautolinemodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.policycontactrolemodel" schemaLocation="PolicyContactRoleModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel" schemaLocation="ClauseModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.modifiermodel" schemaLocation="ModifierModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.commercialdrivermodel" schemaLocation="CommercialDriverModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.bajurisdictionmodel" schemaLocation="BAJurisdictionModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.businessvehiclemodel" schemaLocation="BusinessVehicleModel.xsd"/>
+  <xs:element name="BusinessAutoLine" type="BusinessAutoLine" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.businessautolinemodel"/>
+  <xs:complexType name="BusinessAutoLine">
+    <xs:sequence>
+      <xs:element name="AdditionalInsureds" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="PolicyContactRole" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.policycontactrolemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BALineConditions" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Clause" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BALineCoverages" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Clause" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BALineExclusions" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Clause" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BAModifiers" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Modifier" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.modifiermodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Drivers" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="CommercialDriver" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.commercialdrivermodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Fleet" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="Jurisdictions" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="BAJurisdiction" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.bajurisdictionmodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NumAddInsured" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+      <xs:element name="PolicyType" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="Vehicles" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="BusinessVehicle" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.businessvehiclemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Non-persistent set of criteria to use in searching for a specific document template."
+  entity="DocumentTemplateSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.DocumentTemplateSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchCriteriaImpl"/>
+  <typekey
+    desc="Type of document created by the document template."
+    name="Type"
+    nullok="true"
+    typelist="DocumentType"/>
+  <column
+    desc="Comma-separated list of required keyword(s) set of the document template."
+    name="Keywords"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="The date and time to be used when filtering document templates by effective date."
+    name="effectivedate"
+    nullok="true"
+    type="datetime"/>
+  <typekey
+    desc="The language in which the document is to be generated"
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+</nonPersistentEntity>

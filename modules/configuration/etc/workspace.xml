@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="VM_PARAMETERS" value='-Xmx${maxHeap} -Djava.awt.headless=true -ea' />
+    </configuration>
+    <configuration default="true" factoryName="JUnit" type="JUnit">
+      <option name="VM_PARAMETERS" value='-Xmx${maxHeap} -Dgw.ab.env=h2mem -Dgw.tests.skip.knownbreak=true -Djava.awt.headless=true -ea'/>
+    </configuration>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dynamic.classpath" value="true" />
+    <property name="show.inlinked.gradle.project.popup" value="false" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="USE_COMPILE_SERVER" value=""/>
+  </component>
+</project>

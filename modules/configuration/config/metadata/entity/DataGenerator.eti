@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  DataGenerator  ==================================================================== -->
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Shell entity used to carry a bundle to Gosu classes that instantiate entities"
+  entity="DataGenerator"/>

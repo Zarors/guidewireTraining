@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="ChannelType_Ext" desc="">
+  <typecode
+    code="email"
+    name="Email"
+    priority="10"/>
+  <typecode
+    code="phone"
+    name="Phone"
+    priority="20"/>
+  <typecode
+    code="postalMail"
+    name="Postail Mail"
+    priority="30"/>
+  <typecode
+    code="fax"
+    name="Fax"
+    priority="40"/>
+  <typecode
+    code="other"
+    name="Other"
+    priority="50"/>
+</typelist>

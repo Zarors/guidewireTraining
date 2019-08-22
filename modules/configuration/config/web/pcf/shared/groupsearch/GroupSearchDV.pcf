@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="GroupSearchDV">
+    <Require
+      name="SearchCriteria"
+      type="GroupSearchCriteria"/>
+    <InputColumn>
+      <TextInput
+        editable="true"
+        id="GroupName"
+        label="(gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP) ? DisplayKey.get(&quot;Web.GroupSearch.GroupNamePhonetic&quot;) : DisplayKey.get(&quot;Web.GroupSearch.GroupName&quot;)"
+        value="SearchCriteria.GroupName"/>
+      <TextInput
+        editable="true"
+        id="GroupNameKanji"
+        label="DisplayKey.get(&quot;Web.GroupSearch.GroupName&quot;)"
+        value="SearchCriteria.GroupNameKanji"
+        visible="gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP"/>
+      <Label
+        label="DisplayKey.get(&quot;Web.GroupSearch.AdditionalRestrictions&quot;)"/>
+      <InputDivider/>
+      <RangeInput
+        editable="true"
+        filter="VALUE != TC_ROOT"
+        id="GroupType"
+        label="DisplayKey.get(&quot;Web.GroupSearch.GroupType&quot;)"
+        noneSelectedLabel="DisplayKey.get(&quot;Web.GroupSearch.Any&quot;)"
+        value="SearchCriteria.GroupType"
+        valueRange="GroupType.getTypeKeys(false)"
+        valueType="typekey.GroupType"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputSetRef
+        def="SearchAndResetInputSet()"/>
+    </InputFooterSection>
+  </DetailViewPanel>
+</PCF>

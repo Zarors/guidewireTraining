@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- Options for printing ListView -->
+  <Popup
+    canEdit="true"
+    countsAsWork="false"
+    id="PrintOptionPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.PrintOptions.Title&quot;)">
+    <LocationEntryPoint
+      signature="PrintOptionPopup(PrintOptions : gw.api.print.ListViewPrintOptions)"/>
+    <Variable
+      name="PrintOptions"
+      type="gw.api.print.ListViewPrintOptions"/>
+    <Screen
+      id="PrintOptionPopupScreen">
+      <Toolbar>
+        <ToolbarButton
+          action="gw.api.print.ListViewCustomPrintAction.printListViewWithSettings(PrintOptions)"
+          available="PrintOptions.Choice != &quot;customCsv&quot; || PrintOptions.ColumnHeaders.hasMatch(\elt1 -&gt; elt1.Checked)"
+          download="true"
+          id="Ok"
+          label="DisplayKey.get(&quot;Button.OK&quot;)"
+          shortcut="K"/>
+        <ToolbarButton
+          action="CurrentLocation.cancel()"
+          id="Done"
+          label="DisplayKey.get(&quot;Button.Cancel&quot;)"
+          shortcut="E"/>
+      </Toolbar>
+      <Verbatim
+        label="DisplayKey.get(&quot;Web.PrintOptions.Label.SelectPrintOptions&quot;)"/>
+      <PanelRef
+        def="PrintOptionDV(PrintOptions)"/>
+    </Screen>
+  </Popup>
+</PCF>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of load factor privileges a user has"
+  final="true"
+  name="LoadFactorType"
+  platform="true">
+  <typecode
+    code="loadfactorview"
+    desc="User can view the load factor levels of other users in the group"
+    name="View"/>
+  <typecode
+    code="loadfactoradmin"
+    desc="User can view and modify the load factor levels of other users in the group"
+    name="Admin"/>
+</typelist>

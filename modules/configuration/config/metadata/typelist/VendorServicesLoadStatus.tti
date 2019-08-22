@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="VendorServicesLoadStatus used during export/import of vendors"
+  name="VendorServicesLoadStatus">
+  <typecode
+    code="Final"
+    desc="Reviewed/Approved"
+    name="Final"/>
+  <typecode
+    code="Draft"
+    desc="Needs Review"
+    name="Draft"/>
+</typelist>

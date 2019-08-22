@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is an entity needed specifically for the TrainingApp "base application" -->
+ <entity entity="FinancialSummary" table="financialsummary" type="retireable" desc="Financial information about a contact that holds one or more policies" exportable="true" xmlns="http://guidewire.com/datamodel">
+ <implementsEntity
+    name="Extractable"/>
+	<foreignkey name="ABContact" columnName="ABContactID" fkentity="ABContact" desc="Related ABContact" nullok="true"/>
+	<column name="TotalPolicyPremiumBilled" type="currencyamount" desc="Total amount of money billed to contact for all policies held" nullok="true"/>
+	<column name="TotalPolicyPremiumPaid" type="currencyamount" desc="Total amount of money paid by contact for all policies held" nullok="true"/>
+	<column name="TotalPolicyPremiumRefunded" type="currencyamount" desc="Total amount of money refunded to contact" nullok="true"/>
+	<column name="TotalClaimPaymentsMade" type="currencyamount" desc="Total amount of money paid for claims on policies held by contact" nullok="true"/>
+	<column name="NumberOfClaims" type="integer" desc="Number of claims made against policies held by contact" nullok="true"/>
+	<column name="MostRecentClaim" type="datetime" desc="Date of most recent claim (whether money was paid or not)" nullok="true"/>
+  </entity>
+  

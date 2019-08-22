@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<typelist
+  platform="true"
+  xmlns="http://guidewire.com/typelists" name="ILElementType" desc="The type describing how the logging element is handled (e.g. Profiler-based, manual)">
+  <typecode
+    code="profilertag"
+    desc="The logging element handled by Profiler-based solution."
+    name="Profiler Tag"/>
+  <typecode
+    code="manual"
+    desc="The logging element handled by manual logging instruction put somewhere in the code."
+    name="Manual"/>
+</typelist>

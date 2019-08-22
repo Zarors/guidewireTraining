@@ -1,0 +1,99 @@
+//--------- ListView
+// Position to other widgets
+$gw-app--ListView--spacing-widget-top-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--ListView--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ListView--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ListView--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--ListView--spacing-inner-top-rem: null !default;
+$gw-app--ListView--spacing-inner-left-rem: null !default;
+$gw-app--ListView--spacing-inner-right-rem: null !default;
+$gw-app--ListView--spacing-inner-bottom-rem: null !default;
+
+
+//-------- ListView Top UI Section
+// Internal padding
+$gw-app--ListView-top-UI-section--spacing-inner-top-rem: null !default;
+$gw-app--ListView-top-UI-section--spacing-inner-left-rem: null !default;
+$gw-app--ListView-top-UI-section--spacing-inner-right-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--ListView-top-UI-section--spacing-inner-bottom-rem: null !default;
+
+// Title Position to other widgets
+$gw-app--ListView-Title--spacing-widget-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--ListView-Title--spacing-widget-left-rem: $gw-app--tables--cell--pad-h-rem !default;
+$gw-app--ListView-Title--spacing-widget-right-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--ListView-Title--spacing-widget-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+//-----LV & UI Section, Other
+$gw-app--ListView-top-UI-section--hover-col: $gw-app--palette--blue-light !default;
+$gw-app--ListView-top-UI-section--show-non-active-drag-pointer: true !default;
+$gw-app--ListView-top-UI-section--bg: $gw-app--panels--bg !default;
+$gw-app--ListView-top-UI-section--title--font-weight: lighter !default;
+$gw-app--ListView-top-UI-section--title--font-size-em: gw-emFixed(1.3) !default;
+$gw-app--ListView-top-UI-section--col: $gw-app--palette--offblack !default;
+$gw-app--ListView--bumper--bg: $gw-app--ListView-top-UI-section--bg !default;
+
+$gw-app--ListView--row-even--bg: $gw-app--tables--rows--even !default;
+$gw-app--ListView--row-odd--bg: $gw-app--tables--rows--odd !default;
+$gw-app--ListView--cell--hover: $gw-app--tables--cell--hover-bg !default;
+
+$gw-app--ListView--row-selected-bg: $gw-app--palette--blue-active !default;
+$gw-app--ListView--row-selected-col: null !default;
+$gw-app--ListView--row-list-detail-rows-clickable: true !default;
+
+$gw-app--ListView--collapsed-cell--col: $gw-app--border--col-lighter !default;
+
+$gw-app--ListView--row--highlighted-style--bg: $gw-app--palette--yellow !default;
+$gw-app--ListView--row--highlighted-style--col: null !default;
+$gw-app--ListView--row--highlighted-style--weight: null !default;
+
+$gw-app--ListView--row--archived-style--bg: null !default;
+$gw-app--ListView--row--archived-style--col: null !default;
+$gw-app--ListView--row--archived-style--weight: null !default;
+$gw-app--ListView--row--archived-style--use-filter: true !default;
+
+$gw-app--ListView--row--title-style--bg: $gw-app--panels--bg !default;
+$gw-app--ListView--row--title-style--col: $gw-app--panels--col !default;
+$gw-app--ListView--row--title-style--weight: gw-weight(bold) !default;
+
+$gw-app--ListView--row--sub-header-style--bg: $gw-app--panels--bg !default;
+$gw-app--ListView--row--sub-header-style--col: $gw-app--panels--col !default;
+$gw-app--ListView--row--sub-header-style--weight: null !default;
+
+$gw-app--ListView--columns-button-icon: "table" !default;
+$gw-app--ListView--columns-button-bg: $gw-app--panels--bg !default;
+$gw-app--ListView--columns-button-col: $gw-app--panels--col !default;
+$gw-app--ListView--columns-button-hover-bg: $gw-app--menus--hover--bg !default;
+$gw-app--ListView--columns-button-hover-col: $gw-app--menus--hover--col !default;
+$gw-app--ListView--columns-button-active-bg: $gw-app--menus--hover--bg !default;
+$gw-app--ListView--columns-button-active-col: $gw-app--menus--hover--col !default;
+$gw-app--ListView--columns-button-border-col: $gw-app--inputs--border--col !default;
+$gw-app--ListView--columns-menu-not-grouped-col: $gw-app--menus--divider-col !default;
+$gw-app--ListView--columns-menu-not-grouped-icon: "group_by_field" !default;
+$gw-app--ListView--columns-menu-grouped-col: $gw-app--menus--col !default;
+$gw-app--ListView--columns-menu-grouped-icon: "group_by_field" !default;
+$gw-app--ListView--columns-menu-any-grouped-hover-col: $gw-app--palette--blue !default;
+$gw-app--ListView--columns-menu-reset-margin-h: gw-remScaled(.5) !default;
+$gw-app--ListView--columns-menu-reset-margin-v: gw-remScaled(.3) !default;
+$gw-app--ListView--columns-menu-reset-expand-pad-h: gw-remScaled(.1) !default;
+
+$gw-app--ListView--footer-row-border-col: null !default;
+$gw-app--ListView--footer-row-col: $gw-app--palette--offblack !default;
+$gw-app--ListView--footer-font-weight: gw-weight(semibold) !default;
+$gw-app--ListView--footer-pad-v-rem: $gw-app--tables--cell--pad-v-rem !default;
+$gw-app--ListView--footer-bg: null !default;
+
+$gw-app--ListView--use-row-list-as-default-styling: false !default;
+$gw-app--ListView--style-outer-UI-for-all-LVInputs-to-match-standard-InputColumn-label-above: true !default;
+$gw-app--ListView--use-minimal-column-button-when-floating: true !default;
+
+$gw-app--tables--cell--type-general-min-width: null !default;
+$gw-app--tables--cell--type-text-area-min-width-em: gw-emFixed(25) !default;
+$gw-app--tables--cell--type-currency-min-width-em: gw-emFixed(7) !default;
+$gw-app--tables--cell--type-date-min-width-em: gw-emFixed(7) !default;
+$gw-app--tables--cell--type-email-min-width-em: gw-emFixed(13) !default;
+$gw-app--tables--cell--type-percent-min-width-em: null !default;
+$gw-app--tables--cell--type-phone-min-width-em: 13ch !default;
+$gw-app--tables--cell--type-bool-min-width-em: gw-emFixed(1) !default;
+$gw-app--tables--cell--type-exactnumber-min-width-em: gw-emFixed(5) !default;

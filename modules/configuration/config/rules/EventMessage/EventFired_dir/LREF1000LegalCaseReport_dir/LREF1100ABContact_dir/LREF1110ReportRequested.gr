@@ -1,0 +1,29 @@
+package rules.EventMessage.EventFired_dir.LREF1000LegalCaseReport_dir.LREF1100ABContact_dir
+
+@gw.rules.RuleName("LREF1110 - Report Requested")
+internal class LREF1110ReportRequested {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.EventName == "LegalCaseReportRequested"
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("\n*** Stage 2 -- Generating the message payload ***")
+print("    Event Fired rules: " + actions.Rule.DisplayName )
+//messageContext root must be cast to appropriate type
+var anABContact = messageContext.Root as ABContact
+
+var payload = anABContact.PublicID + "," + (anABContact as ABDoctor).DoctorCategory
+var msg = messageContext.createMessage(payload)
+print("    Using String for payload")
+print("    createMessage() called")
+
+/*end00rule*/
+
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Contact type representing legal venues."
+  displayName="Legal Venue"
+  entity="ABLegalVenue"
+  final="false"
+  supertype="ABPlace">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABLegalVenue"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABLegalVenueImpl"/>
+  <typekey
+    desc="Type of court."
+    name="VenueType"
+    nullok="true"
+    typelist="VenueType"/>
+</subtype>

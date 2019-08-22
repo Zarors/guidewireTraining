@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of sql statements"
+  final="true"
+  name="SQLStatementType"
+  platform="true">
+  <typecode
+    code="select"
+    desc="Select statement"
+    name="Select"/>
+  <typecode
+    code="update"
+    desc="Update statement"
+    name="Update"/>
+  <typecode
+    code="insert"
+    desc="Insert statement"
+    name="Insert"/>
+  <typecode
+    code="delete"
+    desc="Delete statement"
+    name="Delete"/>
+  <typecode
+    code="createtable"
+    desc="Create table statement"
+    name="Create table"/>
+  <typecode
+    code="dropsequence"
+    desc="Drop sequence statement"
+    name="Drop sequence"/>
+  <typecode
+    code="droptable"
+    desc="Drop table statement"
+    name="Drop table"/>
+  <typecode
+    code="renametable"
+    desc="Rename table statement"
+    name="Rename table"/>
+  <typecode
+    code="truncatetable"
+    desc="Truncate table statement"
+    name="Truncate table"/>
+  <typecode
+    code="createindex"
+    desc="Create index statement"
+    name="Create index"/>
+  <typecode
+    code="dropindex"
+    desc="Drop index statement"
+    name="Drop index"/>
+  <typecode
+    code="addcolumn"
+    desc="Add column statement"
+    name="Add column"/>
+  <typecode
+    code="dropcolumn"
+    desc="Drop column statement"
+    name="Drop column"/>
+  <typecode
+    code="renamecolumn"
+    desc="Rename column statement"
+    name="Rename column"/>
+  <typecode
+    code="columnnullability"
+    desc="Change column nullability statement"
+    name="Change column nullability"/>
+  <typecode
+    code="updatedbstats"
+    desc="Update db statistics statement"
+    name="Update db statistics"/>
+  <typecode
+    code="createfk"
+    desc="Create foreign key statement"
+    name="Create foreign key"/>
+  <typecode
+    code="dropfk"
+    desc="Drop foreign key statement"
+    name="Drop foreign key"/>
+  <typecode
+    code="createpk"
+    desc="Create primary key statement"
+    name="Create primary key"/>
+  <typecode
+    code="droppk"
+    desc="Drop primary key statement"
+    name="Drop primary key"/>
+  <typecode
+    code="other"
+    desc="Other statement type"
+    name="Other"/>
+  <typecode
+    code="deletedbstats"
+    desc="Delete db statistics statement"
+    name="Delete db statistics"/>
+  <typecode
+    code="altertabledegree"
+    desc="Alter table degree statement"
+    name="Alter table degree"/>
+  <typecode
+    code="altercolumn"
+    desc="Alter table (column) statement"
+    name="Alter column"/>
+  <typecode
+    code="disableidentityinsert"
+    desc="Disable identity insert statement"
+    name="Disable identity insert"/>
+  <typecode
+    code="enableidentityinsert"
+    desc="Enable identity insert statement"
+    name="Enable identity insert"/>
+</typelist>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!-- others -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a duplicate contact linking to both the original contact and the found duplicate contact."
+  entity="DuplicateContactPair"
+  exportable="false"
+  platform="false"
+  table="duplicatecontactpair"
+  type="versionable">
+  <implementsInterface
+    iface="gw.ab.contact.entity.DuplicateContactPair"
+    impl="com.guidewire.ab.domain.contact.impl.DuplicateContactPairImpl"/>
+  <foreignkey
+    archivingOwner="none"
+    columnName="ContactID"
+    desc="The original contact."
+    fkentity="ABContact"
+    importableagainstexistingobject="false"
+    name="Contact"
+    nullok="true">
+    <tag
+      name="CrossDomainPublicID"
+      value="ContactPairCrossPID"/>
+  </foreignkey>
+  <foreignkey
+    archivingOwner="none"
+    columnName="DuplicateContactID"
+    desc="The found duplicate contact."
+    fkentity="ABContact"
+    importableagainstexistingobject="false"
+    name="DuplicateContact"
+    nullok="true">
+    <tag
+      name="CrossDomainPublicID"
+      value="DuplicateContactPairCrossPID"/>
+  </foreignkey>
+  <foreignkey
+    columnName="DuplicateContactBatchRunID"
+    desc="The corresponding batch run where this contact was found."
+    fkentity="DuplicateContactBatchRun"
+    importableagainstexistingobject="false"
+    name="BatchRun"
+    nullok="false"/>
+  <column
+    desc="Flag indicating the found duplicate is an exact match."
+    name="Exact"
+    nullok="false"
+    type="bit"/>
+  <column
+    name="ContactPairCrossPID"
+    nullok="true"
+    type="publicid"/>
+  <column
+    name="DuplicateContactPairCrossPID"
+    nullok="true"
+    type="publicid"/>
+</entity>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<plugin
+  name="BackgroundTaskLoadBalancingPlugin">
+  <plugin-gosu
+    disabled="false"
+    gosuclass="gw.api.system.cluster.DefaultBackgroundTaskLoadBalancingPlugin">
+    <param
+      name="startablePluginLoadBalancingMode"
+      value="notransfer"/>
+    <param
+      name="messageDestinationLoadBalancingMode"
+      value="notransfer"/>
+    <param
+      name="messageProcessorsLoadBalancingMode"
+      value="dynamic"/>
+  </plugin-gosu>
+</plugin>

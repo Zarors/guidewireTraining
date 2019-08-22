@@ -1,0 +1,70 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "Contact API"
+  description: "Contact API"
+basePath: /trn/ta/contact/v1
+x-gw-schema-import:
+ contact: trn.ta.contact-1.0
+ contactnote: trn.ta.contactnote-1.0
+x-gw-apihandlers:
+- trainingapp.restapi.ContactAPIHandler
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /contacts/{contactId}:
+    get:
+      summary: "Retrieves a contact details"
+      operationId: getContact
+      x-gw-permissions:
+      - abview
+      parameters:
+      - $ref: "#/parameters/contactId"
+      - name: filter
+        in: query
+        type: string
+        enum: ["contact_details", "contactnote_details"]
+      responses:
+        '200':
+          description: "Contact details returned"
+          schema:
+            $ref: "contact#/definitions/ContactDetails"
+    patch:
+      summary: "Updates a contact"
+      operationId: updateContact
+      produces:
+      - text/plain
+      parameters:
+      - $ref: "#/parameters/contactId"
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: "contact#/definitions/ContactUpdate"
+      responses:
+        '200':
+          description: "Contact was updated"
+          schema:
+            type: string
+  /contacts/{contactId}/note:
+    post:
+      summary: "Adds a note to a contact"
+      operationId: createContactNote
+      parameters:
+      - $ref: "#/parameters/contactId"
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: "contactnote#/definitions/ContactNoteDetails"
+      responses:
+        '201':
+          description: "Note was added to the contact"
+parameters:
+  contactId:
+    name: contactId
+    in: path
+    type: string
+    required: true

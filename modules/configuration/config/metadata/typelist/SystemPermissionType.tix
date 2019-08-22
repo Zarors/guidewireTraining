@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<internaltypelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="SystemPermissionType"
+  desc="Defines all permissions that can be granted to users via privileges and roles">
+  <typecode
+    name="Client Application"
+    desc="Client Application (should not access via UI)"
+    code="clientapp"/>
+  <!-- Service Provider Management (Reviews) permissions -->
+  <typecode
+    name="View review summaries list"
+    desc="Permission to view the list of Reviews Summaries and the reviews tab on an ABContact"
+    code="revsumviewlist"/>
+  <typecode
+    name="View review summary details"
+    desc="Permission view the Review Summary page to see the category scores for each summarized Review"
+    code="revsumviewdetail"/>
+  <!-- RETIRED PERMISSIONS  override permissions defined at platform level that are not applicable to ab, yet.  User/Group Admin -->
+  <typecode
+    name="Create activity pattern"
+    desc="Permission to create new activity patterns"
+    code="actpatcreate"
+    retired="true"/>
+  <typecode
+    name="Edit activity pattern"
+    desc="Permission to edit activity patterns"
+    code="actpatedit"
+    retired="true"/>
+  <typecode
+    name="Delete activity pattern"
+    desc="Permission to delete activity patterns"
+    code="actpatdelete"
+    retired="true"/>
+  <typecode
+    name="View activity pattern"
+    desc="Permission to view the list of activity patterns or activity pattern details"
+    code="actpatview"
+    retired="true"/>
+  <typecode
+    name="Manage attributes"
+    desc="Permission to create, edit, or delete user attributes"
+    code="attrmanage"
+    retired="true"/>
+  <typecode
+    name="View attributes"
+    desc="Permission to view the list of user attributes or attribute details"
+    code="attrview"
+    retired="true"/>
+  <typecode
+    name="View authority limit profiles"
+    desc="Permission to view authority limit profiles"
+    code="alpview"
+    retired="true"/>
+  <typecode
+    name="Always access debug tools"
+    desc="Permission to access debug tools, even when they are disabled by a configuration parameter"
+    code="debugtools"
+    retired="true"/>
+  <typecode
+    name="Manage load factors"
+    desc="Permission to modify the load factors on all users and groups"
+    code="manageldfctrs"
+    retired="true"/>
+  <typecode
+    name="Edit user attributes"
+    desc="Permission to edit attributes for a user"
+    code="usereditattrs"
+    retired="true"/>
+  <!-- Supervisor -->
+  <typecode
+    name="Make activities mandatory"
+    desc="Permission to set whether an activity is mandatory"
+    code="actmakemand"
+    retired="true"/>
+  <typecode
+    name="View Team"
+    desc="Permission to view the Team tab"
+    code="viewteam"
+    retired="true"/>
+  <!-- Adjuster -->
+  <typecode
+    name="Own activity"
+    desc="Permission to own an activity and to see the Desktop Activities page"
+    code="actown"
+    retired="true"/>
+  <!-- Assignment search result view permissions -->
+  <typecode
+    name="View global workload"
+    desc="Permission to view global workload statistics of other users"
+    code="viewworkload"
+    retired="true"/>
+  <typecode
+    name="View activity calendar"
+    desc="Permission to view activity calendar of other users"
+    code="viewactcal"
+    retired="true"/>
+  <!-- Additions are out of order - see the Permission classes for a more
+         reasonable ordering and grouping -->
+  <typecode
+    name="Manage security zones"
+    desc="Permission to create, edit, and delete security zones"
+    code="seczonemanage"
+    retired="true"/>
+  <typecode
+    name="Reassign owned activities"
+    desc="Permission to reassign your own activities"
+    code="actraown"
+    retired="true"/>
+  <typecode
+    name="Reassign unowned activities"
+    desc="Permission to reassign activities owned by other users"
+    code="actraunown"
+    retired="true"/>
+  <!-- Task creation -->
+  <typecode
+    name="Create activities"
+    desc="Permission to create new activities"
+    code="actcreate"
+    retired="true"/>
+  <!-- Documents permissions -->
+  <typecode
+    name="View all documents"
+    desc="Permission to view all documents, regardless of the permissions set on the individual documents"
+    code="docviewall"
+    retired="true"/>
+  <typecode
+    name="Modify all documents"
+    desc="Permission to edit or delete all documents, regardless of the permissions set on the individual documents"
+    code="docmodifyall"
+    retired="true"/>
+  <!-- Notes permissions -->
+  <typecode
+    name="Create notes"
+    desc="Permission to add notes"
+    code="notecreate"
+    retired="true"/>
+  <typecode
+    name="Edit note body"
+    desc="Permission to edit the body of notes"
+    code="noteeditbody"
+    retired="true"/>
+  <typecode
+    name="Edit note"
+    desc="Permission to edit the notes"
+    code="noteedit"
+    retired="true"/>
+  <typecode
+    name="Delete notes"
+    desc="Permission to remove notes"
+    code="notedelete"
+    retired="true"/>
+  <typecode
+    name="Review assignments"
+    desc="Permission to review and approve manually-approved assignables"
+    code="actreviewassign"
+    retired="true"/>
+  <typecode
+    name="Edit unowned activities"
+    desc="Permission to modify (edit/skip/close) activities owned by other users"
+    code="acteditunowned"
+    retired="true"/>
+  <!-- Permission to modify authority limits for a user -->
+  <typecode
+    name="Grant authority limits"
+    desc="Permission to grant or change an authority limit for a user"
+    code="usergrantauth"
+    retired="true"/>
+  <typecode
+    name="Approve any approval activity"
+    desc="Permission to approve any approval activity even if the activity is assigned to someone else; the approver is still subject to authority limit restrictions"
+    code="actapproveany"
+    retired="true"/>
+  <typecode
+    name="View activities"
+    desc="Permission to view activities"
+    code="actview"
+    retired="true"/>
+  <typecode
+    name="Print listviews"
+    desc="Permission to print listviews"
+    code="lvprint"
+    retired="true"/>
+  <!-- UI Permissions -->
+  <typecode
+    name="View Desktop"
+    desc="Permission to view the Desktop"
+    code="viewdesktop"
+    retired="true"/>
+  <typecode
+    name="View Search"
+    desc="Permission to view the Search tab"
+    code="viewsearch"
+    retired="true"/>
+  <typecode
+    name="View All activity queues"
+    desc="Permission to view all activity queues, even those in other security zones"
+    code="actviewallqueues"
+    retired="true"/>
+  <typecode
+    name="Get next activity from queue"
+    desc="Permission to get the next activity off of a queue"
+    code="actqueuenext"
+    retired="true"/>
+  <typecode
+    name="Pick activity from queue"
+    desc="Permission to pick an activity from a queue"
+    code="actqueuepick"
+    retired="true"/>
+  <typecode
+    name="Assign activity from queue"
+    code="actqueueassign"
+    desc="Permission to assign an activity from a queue"
+    retired="true"/>
+  <!-- Inetsoft related permissions -->
+  <typecode
+    name="Administer reports"
+    desc="Administer report server settings"
+    code="reporting_admin"
+    retired="true"/>
+  <typecode
+    name="View Report tab"
+    desc="Permission to view the Report tab, if the add-on reporting module is installed"
+    code="reporting_view"
+    retired="true"/>
+  <!-- Address Book permissions -->
+  <typecode
+    name="View local contacts"
+    desc="Permission to view and search local contact entries"
+    code="ctcview"
+    retired="true"/>
+  <typecode
+    name="Create local contacts"
+    desc="Permission to create a new local contact"
+    code="ctccreate"
+    retired="true"/>
+  <typecode
+    name="Edit local contacts"
+    desc="Permission to edit an existing local contact"
+    code="ctcedit"
+    retired="true"/>
+  <!-- Calendar permissions -->
+  <typecode
+    name="View holidays"
+    desc="Permission to view a list of holidays or holiday details"
+    code="holidayview"
+    retired="true"/>
+  <typecode
+    name="Manage holidays"
+    desc="Permission to create, edit, and delete holidays"
+    code="holidaymanage"
+    retired="true"/>
+  <typecode
+    name="View merge"
+    code="abviewmerge"
+    desc="Permission to view the merge pages"/>
+  <typecode
+    name="View pending"
+    code="abviewpending"
+    desc="Permission to view the pending changes page"/>
+  <typecode
+    code="editobfuscatedusercontact"
+    desc="Permission to edit obfuscated user contacts"
+    name="Edit obfuscated user contact"/>
+</internaltypelistextension>

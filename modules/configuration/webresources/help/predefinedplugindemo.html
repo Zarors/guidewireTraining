@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Predefined Plugins Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading1">Predefined Plugins Demo</p>
+
+<p class="heading2">What Is A Predefined Plugin?</p>
+
+<p class="body">Guidewire applications include plugins that can be grouped into three functional categories. A <strong>predefined plugin</strong> is a Gosu or Java class which implements a set of methods triggered by internal Guidewire code that relate to fundamental application behavior. (There are also <strong>messaging plugins</strong>, which are used to send asynchronous messages and potentially process replies to those messages, and <strong>startable plugins</strong>, which listen for and process incoming messages unrelated to any outbound Guidewire message.)</p>
+
+<p class="heading2">What Is The Predefined Plugin Demo?</p>
+
+<p class="body">TrainingApp has a predfined IExchangeRateSet plugin. This plugin is designed to retrieve a set of exchange rates for all currencies known to TrainingApp. The Predefined Plugin Demo lets you query for a new set of exchange rates and see the most recently retrieved rates.</p>
+
+<p class="heading2">How Do I Use The Demo?</p>
+
+<p class="body">Click the "Invoke ExchangeRateSet Plugin" button. This executes the plugin, which creates a new set of exchange rates and displays them on the screen. There are two ways that you can tell you are viewing new exchange rates:</p>
+
+<ul class="body">
+	<li><p class="body">The Retrieved On column shows the date and time the exchange rates were retrieved.</li>
+	<li><p class="body">The base exchange rate (from USD to any other non-USD currency) increments by 1.</li>
+</ul>
+
+<p class="heading2">How Is This Demo Implemented?</p>
+
+<p class="body">The "Invoke ExchangeRateSet Plugin" button calls the gw.api.util.CurrencyUtil.invokeMarketExchangeRateSetPlugin() method, which executes the ExchangeRateSet plugin. In the TrainingApp base application, the class registered as the plugin is trainingapp.demo.plugin.ExchangeRatePlugin.</p>
+
+<p class="body">The ExchangeRatePlugin class does not attempt to retrieve any real exchange rates. It simply sets the exchange rates from the base currency (USD) to all non-base currencies to an integer value. This value increases by 1 every time the plugin is called, which simulates the change of exchange rates over time.</p>
+
+<p class="heading2">Is This How Exchange Rates Are Done In Real Applications?</p>
+
+<p class="body">Absolutely not. This demo was created to demonstrate simple predfined plugin functionality, not to replicate a real-world implementation of exchange rates. There are two significant ways in which this demo is not real-world:</p>
+
+<ul class="body">
+	<li><p class="body">The demo requires manual action for new exchange rates to be retrieved. In a real implementation, the exchange rates would be retrieved automatically and periodically, such as through a batch process.</li>
+	<li><p class="body">The plugin uses a simple, sequentially incremented integer value for all base-to-non-base exchange rates. In a real implementation, the exchange rates would be determined by calling some outside system.</li>
+</ul>
+
+<p class="heading2">Where Can I Find The Code That Is Used By This Page?</p>
+<ul class="body">
+     <li><p class="body">IntegrationPredefinedPluginDemoPage</p>
+          <ul class="body">
+               <li><p class="body">"Invoke ExchangeRateSet Plugin" button's action property</p>
+          </ul>
+     <li><p class="body">Plugin Registry</p>
+          <ul class="body">
+               <li><p class="body">plugins -> gw -> plugin -> exchangerate -> IExchangeRateSetPlugin</p>
+          </ul>
+     </li>
+     <li><p class="body">Gosu classes</p>
+          <ul class="body">
+               <li><p class="body">trainingapp.demo.plugin.ExchangeRatePlugin</p>
+          </ul>
+     </li>
+</ul>
+
+</body>
+</html>

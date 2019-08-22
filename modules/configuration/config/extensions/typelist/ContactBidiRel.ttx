@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- NOTE: Entries in this typelist must correspond to entries in abcontact-relationship-config.xml. -->
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="ContactBidiRel"/>

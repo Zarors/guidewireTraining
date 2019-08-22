@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- Note that this name, "DocumentSearchResultBase", violates the naming convention of using "Document", fully spelled out.
+  The violation is required because of length limits on subtype names, since this extends SearchResult -->
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Array of document search results"
+  entity="DocumentSearchResult"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.DocumentSearchResultPublicMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentSearchResultImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.impl.DocumentSearchResultInternalMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentSearchResultImpl"/>
+  <column
+    default="0"
+    desc="Gets the total number of results. Should only be populated if the corresponding DocumentSearchResultSpec has includeTotal = true."
+    name="TotalResults"
+    nullok="true"
+    type="integer"/>
+</nonPersistentEntity>

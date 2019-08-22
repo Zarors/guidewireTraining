@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="GroupDetailScreen">
+    <Require
+      name="Group"
+      type="Group"/>
+    <Toolbar>
+      <ToolbarButtonSetRef
+        toolbarButtonSet="GroupDetailToolbarButtonSet(Group)"/>
+    </Toolbar>
+    <CardViewPanel>
+      <Card
+        id="GroupDetail_BasicCard"
+        shortcut="P"
+        title="DisplayKey.get(&quot;Web.Admin.GroupDetail.Basic&quot;)">
+        <PanelRef
+          def="GroupDetailDV(Group)">
+          <Toolbar/>
+        </PanelRef>
+        <PanelRef
+          def="LocalizedValuesDV(Group, { &quot;Name&quot; }, { (gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP) ? DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.NamePhonetic&quot;) : DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Name&quot;) })"/>
+      </Card>
+      <Card
+        id="GroupDetail_RegionsCard"
+        shortcut="I"
+        title="DisplayKey.get(&quot;Web.Admin.GroupDetail.Regions&quot;)">
+        <PanelRef
+          def="GroupRegionLV(Group)">
+          <Toolbar>
+            <IteratorButtons
+              iterator="GroupRegionLV.GroupRegionLV"
+              removeShortcut="E"/>
+          </Toolbar>
+        </PanelRef>
+      </Card>
+    </CardViewPanel>
+  </Screen>
+</PCF>

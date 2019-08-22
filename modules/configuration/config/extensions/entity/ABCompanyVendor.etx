@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><extension entityName="ABCompanyVendor" xmlns="http://guidewire.com/datamodel"> 
+	<!-- BEGIN :: Fields needed for TrainingApp "base application" -->
+	<edgeForeignKey name="FinanceManager" fkentity="ABPerson" edgeTableName="financemanager"  extractable="true" nullok="true" />
+	<edgeForeignKey name="PaymentContact" fkentity="ABPerson" edgeTableName="paymentcontact" extractable="true" nullok="true" />
+	<typekey name="FinanceMgrRelationship" typelist="ManagerRelationshipType" desc="Relationship To Finance Manager" nullok="true" />
+	<!-- END :: Fields needed for TrainingApp "base application" -->	
+</extension>

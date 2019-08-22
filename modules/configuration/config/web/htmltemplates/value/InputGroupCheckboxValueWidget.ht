@@ -1,0 +1,1 @@
+<input name="${renderId}" type="checkbox" checked="${expanded}" disabled="${disabled}" class="${noTrack ? 'gw-noTrack'}"/>

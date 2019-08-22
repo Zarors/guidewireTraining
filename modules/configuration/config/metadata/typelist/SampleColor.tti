@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Sample color type list"
+  final="true"
+  name="SampleColor"
+  platform="true">
+  <typecode
+    code="ffffff"
+    desc="White (retired)"
+    name="White (retired)"
+    retired="true">
+    <categorylist
+      typelist="PrimaryColor"/>
+    <categorylist
+      typelist="SampleTheme"/>
+  </typecode>
+  <typecode
+    code="000000"
+    desc="Black"
+    name="Black">
+    <category
+      code="cold"
+      typelist="SampleTheme"/>
+  </typecode>
+  <typecode
+    code="ff0000"
+    desc="Red"
+    name="Red">
+    <category
+      code="ff0000"
+      typelist="PrimaryColor"/>
+    <category
+      code="warm"
+      typelist="SampleTheme"/>
+  </typecode>
+  <typecode
+    code="00ff00"
+    desc="Green"
+    name="Green">
+    <category
+      code="00ff00"
+      typelist="PrimaryColor"/>
+    <category
+      code="cold"
+      typelist="SampleTheme"/>
+  </typecode>
+  <typecode
+    code="1589ff"
+    desc="Dodger Blue"
+    name="Dodger Blue">
+    <categorylist
+      typelist="PrimaryColor"/>
+    <category
+      code="cold"
+      typelist="SampleTheme"/>
+  </typecode>
+  <typecode
+    code="ff00ff"
+    desc="Magenta"
+    name="Magenta">
+    <category
+      code="ff0000"
+      typelist="PrimaryColor"/>
+    <category
+      code="0000ff"
+      typelist="PrimaryColor"/>
+    <category
+      code="warm"
+      typelist="SampleTheme"/>
+  </typecode>
+  <typecode
+    code="ff8040"
+    desc="Orange"
+    name="Orange">
+    <categorylist
+      typelist="PrimaryColor"/>
+    <category
+      code="warm"
+      typelist="SampleTheme"/>
+  </typecode>
+</typelist>

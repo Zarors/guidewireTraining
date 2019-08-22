@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="EFTDataRowSet">
+    <Require
+      name="eftData"
+      type="gw.web.merge.MergeContactsEFTDataHolder.DataSelection[]"/>
+    <Require
+      name="wrappedDuplicateContactPair"
+      type="gw.web.merge.DuplicatePairWrapper"/>
+    <RowIterator
+      editable="true"
+      elementName="eftDataElement"
+      id="EFTDataRowIterator"
+      pageSize="0"
+      value="wrappedDuplicateContactPair.Pair == null ? null : eftData"
+      valueType="gw.web.merge.MergeContactsEFTDataHolder.DataSelection[]">
+      <Row>
+        <BooleanRadioCell
+          editable="true"
+          id="eftPrimary"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Addresses.Primary&quot;)"
+          validationExpression="eftDataElement.isInvalid() ? DisplayKey.get(&quot;Web.Contact.EFT.Primary.Validation&quot;) : null"
+          value="eftDataElement.Data.IsPrimary"/>
+        <CheckBoxCell
+          editable="true"
+          id="eftInclude"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Addresses.Include&quot;)"
+          value="eftDataElement.Included"/>
+        <TextCell
+          id="accountName"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.EFT.AccountName&quot;)"
+          value="eftDataElement.Data.AccountName"/>
+        <TextCell
+          id="bankName"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.EFT.BankName&quot;)"
+          value="eftDataElement.Data.BankName"/>
+        <TypeKeyCell
+          id="accountType"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.EFT.AccountType&quot;)"
+          value="eftDataElement.Data.BankAccountType"
+          valueType="typekey.BankAccountType"/>
+        <PrivacyCell
+          encryptionExpression="eftDataElement.Data.maskBankAccountNumber(VALUE)"
+          id="accountNumber"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.EFT.AccountNumber&quot;)"
+          value="eftDataElement.Data.BankAccountNumber"/>
+        <TextCell
+          id="routingNumber"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.EFT.RoutingNumber&quot;)"
+          value="eftDataElement.Data.BankRoutingNumber"/>
+      </Row>
+    </RowIterator>
+  </RowSet>
+</PCF>

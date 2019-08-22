@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canEdit="false"
+    id="InitiateBackoutPopup"
+    title="&quot;Verify Typekeys&quot;">
+    <LocationEntryPoint
+      signature="InitiateBackoutPopup(Page : gw.api.tools.UpgradeInfoPageHelper)"/>
+    <Variable
+      name="Page"
+      type="gw.api.tools.UpgradeInfoPageHelper"/>
+    <Variable
+      name="noBatchRoleInClusterVisible"
+      initialValue="(!Page.areVerifyTypecodeResultsReady() and !Page.canRunVerifyTypecodesProcessInCluster())"
+      type="boolean"/>
+    <Screen
+      id="StartBackoutScreen">
+      <DetailViewPanel>
+        <InputColumn
+          labelWidth="900">
+          <TextInput
+            id="toBackout"
+            label="(Page.areVerifyTypecodeResultsReady() and Page.TypecodeUsages.Empty) ? DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.NoProblems&quot;) : DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.ToBackOut&quot;)"
+            value="&quot;&quot;"/>
+          <TextInput
+            id="noBatchRoleInCluster"
+            visible="noBatchRoleInClusterVisible"
+            label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.NoBatchRoleInCluster&quot;) "
+            value="&quot;&quot;"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        id="toolbar"
+        visible="not Page.TypecodeVerificationStarted">
+        <Toolbar>
+          <ToolbarButton
+            action="Page.startProcessToVerifyUpgradedTypecodes()"
+            id="VerifyTypekeys"
+            label="DisplayKey.get(&quot;Java.Database.Rolling.Upgrade.VerifyTypekeys&quot;)"/>
+          <ToolbarButton
+            action="CurrentLocation.cancel()"
+            id="Cancel"
+            label="DisplayKey.get(&quot;Button.Cancel&quot;)"/>
+        </Toolbar>
+        <DetailViewPanel>
+          <InputColumn/>
+        </DetailViewPanel>
+      </PanelRef>
+      <DetailViewPanel
+        id="ReportDV"
+        visible="Page.TypecodeVerificationStarted">
+        <Variable
+          initialValue="Page.TypecodeUsages.countWhere( \ elt -&gt; not elt.Fixed )"
+          name="numUnfixed"
+          recalculateOnRefresh="true"
+          type="int"/>
+        <InputColumn
+          labelWidth="900"
+          refreshOnProgressComplete="true">
+          <ListViewInput
+            labelAbove="true"
+            visible="Page.areVerifyTypecodeResultsReady()">
+            <Toolbar>
+              <ToolbarButton
+                action="CurrentLocation.commit(); Page.startProcessToCompleteRollingUpgradeBackOut()"
+                id="StartBackout"
+                label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.StartProcess&quot;)"
+                visible="Page.TypecodeUsages.Empty"/>
+              <ToolbarButton
+                action="Page.startProcessToVerifyUpgradedTypecodes()"
+                id="RunAgain"
+                label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.RunAgain&quot;)"
+                visible="not Page.TypecodeUsages.Empty"/>
+              <ToolbarInput
+                id="NumFixed"
+                value="(numUnfixed &gt; 0 ? DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Unfixed&quot;, numUnfixed, Page.TypecodeUsages.size()) : DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.AllRowsFixed&quot;) )"
+                valueType="java.lang.String"
+                visible="!Page.TypecodeUsages.Empty">
+                <PostOnChange/>
+              </ToolbarInput>
+            </Toolbar>
+            <ListViewPanel
+              id="ReportLV">
+              <RowIterator
+                editable="true"
+                elementName="reportItem"
+                id="UsagesIterator"
+                value="Page.TypecodeUsages"
+                valueType="java.util.List&lt;entity.TypecodeUsageReport&gt;">
+                <Row>
+                  <LinkCell
+                    align="center"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Fixed&quot;)">
+                    <Link
+                      action="reportItem.Fixed = not reportItem.Fixed"
+                      icon="&quot;square&quot;"
+                      iconType="gwFontGlyph"
+                      id="No"
+                      tooltip="DisplayKey.get(&quot;Button.No&quot;)"
+                      visible="not reportItem.Fixed"/>
+                    <Link
+                      action="reportItem.Fixed = not reportItem.Fixed"
+                      icon="&quot;check-square&quot;"
+                      iconType="gwFontGlyph"
+                      id="Yes"
+                      tooltip="DisplayKey.get(&quot;Button.Yes&quot;)"
+                      visible="reportItem.Fixed"/>
+                  </LinkCell>
+                  <TextCell
+                    id="tableName"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Table&quot;)"
+                    value="reportItem.TableName"/>
+                  <TextCell
+                    id="column"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Column&quot;)"
+                    value="reportItem.ColumnName"/>
+                  <TextCell
+                    id="typelist"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Typelist&quot;)"
+                    value="reportItem.Typelist"/>
+                  <TextCell
+                    align="right"
+                    id="count"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Count&quot;)"
+                    value="reportItem.Count"
+                    valueType="java.lang.Long"/>
+                  <TextCell
+                    align="left"
+                    id="empty"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.UpgradeInfo.InitiateBackout.Message&quot;)"
+                    value="reportItem.ReportItem.replace(&quot;is: &quot;, &quot;is:\n&quot;)"
+                    width="1000"
+                    wrap="true"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </ListViewInput>
+          <ProgressInput
+            id="VerifyProgress"
+            percentage="Page.VerifyTypecodeCompletePercent"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

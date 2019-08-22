@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- ### ==================================================================================================
+  ### Assignable foreign key data distribution size and count pairs (owned by Foreign data distribution)
+  ### ================================================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores assignable foreign key data distribution size count pairs."
+  entity="AssignableForKeySizeCntDD"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="assignableforkeysizecntdd"
+  type="keyable">
+  <column
+    desc="Number of foreign keys for one value."
+    name="DistSize"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Count of sets of that size."
+    name="DistCount"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="AssignableForKeyDataDistID"
+    desc="AssignableForKeyDataDist for this object."
+    exportable="false"
+    fkentity="AssignableForKeyDataDist"
+    ignoreforevents="true"
+    name="AssignableForKeyDataDist"
+    nullok="false"/>
+</entity>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- ListView that displays the results of a Group search that allows the user to
+    select one of the results by clicking on the appropriate "Select" button.
+
+    This version is AB-specific in that the Organization column is removed
+    since AB has no concept of multiple organizations. -->
+  <ListViewPanel
+    id="GroupSearchPickerResultsLV">
+    <Require
+      name="groupList"
+      type="gw.api.database.IQueryBeanResult&lt;Group&gt;"/>
+    <Require
+      name="restrictedGroup"
+      type="Group"/>
+    <RowIterator
+      canPick="restrictedGroup == null or (group != restrictedGroup and not restrictedGroup.isAncestor(group))"
+      editable="false"
+      elementName="group"
+      pickValue="group"
+      value="groupList"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.Group&gt;">
+      <Row>
+        <GroupCell
+          id="Web_GroupSearchResults_Name"
+          label="DisplayKey.get(&quot;Web.GroupSearchResults.Name&quot;)"
+          sortBy="group.Name"
+          sortOrder="1"
+          value="group"/>
+        <GroupCell
+          id="Web_GroupSearchResults_ParentGroup"
+          label="DisplayKey.get(&quot;Web.GroupSearchResults.ParentGroup&quot;)"
+          sortBy="group.Parent.Name"
+          value="group.Parent"/>
+        <TypeKeyCell
+          id="Web_GroupSearchResults_Type"
+          label="DisplayKey.get(&quot;Web.GroupSearchResults.Type&quot;)"
+          value="group.GroupType"
+          valueType="typekey.GroupType"/>
+        <TextCell
+          id="Web_GroupSearchResults_Relationship"
+          label="DisplayKey.get(&quot;Web.GroupSearchResults.Relationship&quot;)"
+          value="getRelationshipForGroups(group)"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+function getRelationshipForGroups(group : Group) : String {
+  if (restrictedGroup != null) {
+    if (group == restrictedGroup) {
+      return DisplayKey.get("Web.GroupSearchResults.Relationship.Current");
+    } else if (restrictedGroup.isAncestor(group)) {
+      return DisplayKey.get("Web.GroupSearchResults.Relationship.ChildOfCurrent");
+    }
+  }
+  return "";
+}
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

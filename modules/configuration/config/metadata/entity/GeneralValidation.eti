@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="General validation error or warning raised on an entity"
+  entity="GeneralValidation"
+  platform="true"
+  supertype="ValidationIssue"/>

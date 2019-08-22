@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Versionable"
+  platform="true">
+  <implementsEntity
+    name="KeyableBean"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.VersionablePublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.AbstractVersionableBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.impl.VersionableInternal"
+    impl="com.guidewire.pl.system.entity.proxy.AbstractVersionableBeanProxy"/>
+  <column
+    default="0"
+    desc="Auto-incremented object version"
+    ignoreforevents="true"
+    loadable="false"
+    name="BeanVersion"
+    nullok="true"
+    setterScriptability="hidden"
+    type="version"/>
+</delegate>

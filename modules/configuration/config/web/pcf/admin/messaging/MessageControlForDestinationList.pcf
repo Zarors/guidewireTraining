@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="MessageControlForDestinationList"
+    parent="MessagingDestinationControlList()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList&quot;, DestinationName, gw.api.util.StringUtil.formatNumber(DestinationId, &quot;Integer&quot;))">
+    <LocationEntryPoint
+      signature="MessageControlForDestinationList(DestinationId : int, DestinationName : String)"/>
+    <Variable
+      name="DestinationId"
+      type="int"/>
+    <Variable
+      name="DestinationName"
+      type="String"/>
+    <ScreenRef
+      def="MessageControlForDestinationListScreen(DestinationId, DestinationName)"/>
+  </Page>
+</PCF>

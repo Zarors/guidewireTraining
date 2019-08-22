@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Table linking ReviewsSummaries to Category Scores"
+  entity="ReviewSummaryCategoryScore"
+  exportable="true"
+  platform="false"
+  table="reviewsumcatscore"
+  type="joinarray">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.CommonCategoryScore"
+    impl="com.guidewire.ab.domain.addressbook.impl.ReviewSummaryCategoryScoreImpl"/>
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ReviewSummaryCategoryScore"
+    impl="com.guidewire.ab.domain.addressbook.impl.ReviewSummaryCategoryScoreImpl"/>
+  <implementsEntity
+    name="Extractable"/>
+  <foreignkey
+    columnName="ReviewSummaryID"
+    desc="Associated Review."
+    fkentity="ReviewSummary"
+    name="ReviewSummary"
+    nullok="false"/>
+  <typekey
+    desc="Category of this QuestionSet."
+    name="ReviewCategory"
+    nullok="true"
+    typelist="ReviewCategory"/>
+  <column
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <index
+    name="reviewcatscu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ReviewSummaryID"/>
+    <indexcol
+      keyposition="2"
+      name="ReviewCategory"/>
+  </index>
+</entity>

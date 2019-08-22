@@ -1,0 +1,1 @@
+${icon}<div :if="text" class="gw-label">${text}</div>

@@ -1,0 +1,1538 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.webservice.ab.ab1000.MessagingToolsAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/ab/ws/gw/webservice/ab/ab1000/MessagingToolsAPI" name="MessagingToolsAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/messaging" xmlns:pogo2="http://guidewire.com/gw/api/webservice/messagingTools" xmlns:pogo3="http://guidewire.com/ab/typekey" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/ab/ws/gw/webservice/ab/ab1000/MessagingToolsAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/ab/ws/gw/webservice/ab/ab1000/MessagingToolsAPI" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/ab/typekey"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/messagingTools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/messaging"/>
+      <!-- resyncABContact(int, String) -->
+      <xs:element name="resyncABContact">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="abcontactID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resyncABContactResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="DataConversionException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- purgeCompletedMessages(Date) -->
+      <xs:element name="purgeCompletedMessages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cutoff" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="purgeCompletedMessagesResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- suspendDestinationBothDirections(int) -->
+      <xs:element name="suspendDestinationBothDirections">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="suspendDestinationBothDirectionsResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- resumeDestinationBothDirections(int) -->
+      <xs:element name="resumeDestinationBothDirections">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resumeDestinationBothDirectionsResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- configureDestination(int, int, Integer, Long, Integer, Integer, Integer, Integer) -->
+      <xs:element name="configureDestination">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="timeToWaitInSec" type="xs:int"/>
+            <xs:element name="maxretries" type="xs:int" minOccurs="0"/>
+            <xs:element name="initialretryinterval" type="xs:long" minOccurs="0"/>
+            <xs:element name="retrybackoffmultiplier" type="xs:int" minOccurs="0"/>
+            <xs:element name="pollinterval" type="xs:int" minOccurs="0"/>
+            <xs:element name="numsenderthreads" type="xs:int" minOccurs="0"/>
+            <xs:element name="chunksize" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="configureDestinationResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getConfiguration(int) : ExternalDestinationConfig -->
+      <xs:element name="getConfiguration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getConfigurationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ExternalDestinationConfig" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getMessageIdBySenderRefId(String, int) : Long -->
+      <xs:element name="getMessageIdBySenderRefId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="senderRefID" type="xs:string" minOccurs="0"/>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMessageIdBySenderRefIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- ackMessage(Acknowledgement) : boolean -->
+      <xs:element name="ackMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ack" type="pogo2:Acknowledgement" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ackMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="SOAPSenderException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- retryMessage(long) : boolean -->
+      <xs:element name="retryMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="messageID" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retryMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- skipMessage(long) : boolean -->
+      <xs:element name="skipMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="messageID" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="skipMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- retryRetryableErrorMessages(int) : boolean -->
+      <xs:element name="retryRetryableErrorMessages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retryRetryableErrorMessagesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- retryRetryableSomeErrorMessages(int, int) : boolean -->
+      <xs:element name="retryRetryableSomeErrorMessages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="retryLimit" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retryRetryableSomeErrorMessagesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- retryRetryableErrorMessagesForCategory(int, ErrorCategory) : boolean -->
+      <xs:element name="retryRetryableErrorMessagesForCategory">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="category" type="pogo3:ErrorCategory" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retryRetryableErrorMessagesForCategoryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getMessageStatisticsForSafeOrderedObject(int, String) : MessageStatisticsData -->
+      <xs:element name="getMessageStatisticsForSafeOrderedObject">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="safeOrderedObjectId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMessageStatisticsForSafeOrderedObjectResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:MessageStatisticsData" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getTotalStatistics(int) : MessageStatisticsData -->
+      <xs:element name="getTotalStatistics">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTotalStatisticsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:MessageStatisticsData" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- suspendDestination(int, MessageProcessingDirection) : boolean -->
+      <xs:element name="suspendDestination">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="direction" type="pogo:MessageProcessingDirection" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="suspendDestinationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- resumeDestination(int, MessageProcessingDirection) : boolean -->
+      <xs:element name="resumeDestination">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="direction" type="pogo:MessageProcessingDirection" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resumeDestinationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- isSuspended(int, MessageProcessingDirection) : boolean -->
+      <xs:element name="isSuspended">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="direction" type="pogo:MessageProcessingDirection" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isSuspendedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- isResumed(int, MessageProcessingDirection) : boolean -->
+      <xs:element name="isResumed">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+            <xs:element name="direction" type="pogo:MessageProcessingDirection" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isResumedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getDestinationStatus(int) : String -->
+      <xs:element name="getDestinationStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="destID" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDestinationStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/messaging" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ab/typekey"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/messagingTools"/>
+      <xs:complexType name="ExternalDestinationConfig">
+        <xs:sequence>
+          <xs:element name="ChunkSize" type="xs:int" minOccurs="0"/>
+          <xs:element name="InitialRetryInterval" type="xs:long" minOccurs="0"/>
+          <xs:element name="MaxRetries" type="xs:int" minOccurs="0"/>
+          <xs:element name="MultiThreadNonSafeOrderedMessages" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="NumSenderThreads" type="xs:int" minOccurs="0"/>
+          <xs:element name="PollInterval" type="xs:int" minOccurs="0"/>
+          <xs:element name="RetryBackoffMultiplier" type="xs:int" minOccurs="0"/>
+          <xs:element name="ShutdownTimeout" type="xs:int" minOccurs="0"/>
+          <xs:element name="SingleThreadOnNonSafeOrderedMessages" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="MessageProcessingDirection">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="inbound"/>
+          <xs:enumeration value="outbound"/>
+          <xs:enumeration value="both"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/messagingTools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ab/typekey"/>
+      <xs:import namespace="http://guidewire.com/gw/api/messaging"/>
+      <xs:complexType name="Acknowledgement">
+        <xs:sequence>
+          <xs:element name="AckCode" type="xs:string" minOccurs="0"/>
+          <xs:element name="CustomEvents" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo2:CustomEvents" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Duplicate" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Error" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ErrorDescription" type="xs:string" minOccurs="0"/>
+          <xs:element name="FieldChanges" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo2:FieldChanges" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="MessageID" type="xs:long" minOccurs="0"/>
+          <xs:element name="Retryable" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CustomEvents">
+        <xs:sequence>
+          <xs:element name="Events" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ObjectKey" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FieldChanges">
+        <xs:sequence>
+          <xs:element name="FieldValues" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo2:FieldChangeValue" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ObjectKey" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FieldChangeValue">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+          <xs:element name="Value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageStatisticsData">
+        <xs:sequence>
+          <xs:element name="Failed" type="xs:int" minOccurs="0"/>
+          <xs:element name="Inflight" type="xs:int" minOccurs="0"/>
+          <xs:element name="Retry" type="xs:int" minOccurs="0"/>
+          <xs:element name="Unsent" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/ab/typekey" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/messagingTools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/messaging"/>
+      <xs:simpleType name="ErrorCategory">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="MessagingToolsAPIPortType">
+    <wsdl:operation name="resyncABContact">
+      <wsdl:input name="resyncABContact" message="tns:resyncABContact"/>
+      <wsdl:output name="resyncABContactResponse" message="tns:resyncABContactResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If abcontact cannot be found -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+    </wsdl:operation>
+    <wsdl:operation name="purgeCompletedMessages">
+      <wsdl:input name="purgeCompletedMessages" message="tns:purgeCompletedMessages"/>
+      <wsdl:output name="purgeCompletedMessagesResponse" message="tns:purgeCompletedMessagesResponse"/>
+      <!-- if cutoff date is null -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="suspendDestinationBothDirections">
+      <wsdl:input name="suspendDestinationBothDirections" message="tns:suspendDestinationBothDirections"/>
+      <wsdl:output name="suspendDestinationBothDirectionsResponse" message="tns:suspendDestinationBothDirectionsResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if destination id is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="resumeDestinationBothDirections">
+      <wsdl:input name="resumeDestinationBothDirections" message="tns:resumeDestinationBothDirections"/>
+      <wsdl:output name="resumeDestinationBothDirectionsResponse" message="tns:resumeDestinationBothDirectionsResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if destination id is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="configureDestination">
+      <wsdl:input name="configureDestination" message="tns:configureDestination"/>
+      <wsdl:output name="configureDestinationResponse" message="tns:configureDestinationResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if destination id is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getConfiguration">
+      <wsdl:input name="getConfiguration" message="tns:getConfiguration"/>
+      <wsdl:output name="getConfigurationResponse" message="tns:getConfigurationResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if destination id is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageIdBySenderRefId">
+      <wsdl:input name="getMessageIdBySenderRefId" message="tns:getMessageIdBySenderRefId"/>
+      <wsdl:output name="getMessageIdBySenderRefIdResponse" message="tns:getMessageIdBySenderRefIdResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if destination id is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="ackMessage">
+      <wsdl:input name="ackMessage" message="tns:ackMessage"/>
+      <wsdl:output name="ackMessageResponse" message="tns:ackMessageResponse"/>
+      <!-- [If the ack could not be committed to the database, If processing was in error] -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- If caller has not supplied valid acknowledgement -->
+      <wsdl:fault name="SOAPSenderException" message="tns:SOAPSenderException"/>
+    </wsdl:operation>
+    <wsdl:operation name="retryMessage">
+      <wsdl:input name="retryMessage" message="tns:retryMessage"/>
+      <wsdl:output name="retryMessageResponse" message="tns:retryMessageResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="skipMessage">
+      <wsdl:input name="skipMessage" message="tns:skipMessage"/>
+      <wsdl:output name="skipMessageResponse" message="tns:skipMessageResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableErrorMessages">
+      <wsdl:input name="retryRetryableErrorMessages" message="tns:retryRetryableErrorMessages"/>
+      <wsdl:output name="retryRetryableErrorMessagesResponse" message="tns:retryRetryableErrorMessagesResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if destId is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableSomeErrorMessages">
+      <wsdl:input name="retryRetryableSomeErrorMessages" message="tns:retryRetryableSomeErrorMessages"/>
+      <wsdl:output name="retryRetryableSomeErrorMessagesResponse" message="tns:retryRetryableSomeErrorMessagesResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableErrorMessagesForCategory">
+      <wsdl:input name="retryRetryableErrorMessagesForCategory" message="tns:retryRetryableErrorMessagesForCategory"/>
+      <wsdl:output name="retryRetryableErrorMessagesForCategoryResponse" message="tns:retryRetryableErrorMessagesForCategoryResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageStatisticsForSafeOrderedObject">
+      <wsdl:input name="getMessageStatisticsForSafeOrderedObject" message="tns:getMessageStatisticsForSafeOrderedObject"/>
+      <wsdl:output name="getMessageStatisticsForSafeOrderedObjectResponse" message="tns:getMessageStatisticsForSafeOrderedObjectResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalStatistics">
+      <wsdl:input name="getTotalStatistics" message="tns:getTotalStatistics"/>
+      <wsdl:output name="getTotalStatisticsResponse" message="tns:getTotalStatisticsResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="suspendDestination">
+      <wsdl:input name="suspendDestination" message="tns:suspendDestination"/>
+      <wsdl:output name="suspendDestinationResponse" message="tns:suspendDestinationResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- If caller has not supplied valid direction -->
+      <wsdl:fault name="SOAPSenderException" message="tns:SOAPSenderException"/>
+      <!-- If processing was in error -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+    </wsdl:operation>
+    <wsdl:operation name="resumeDestination">
+      <wsdl:input name="resumeDestination" message="tns:resumeDestination"/>
+      <wsdl:output name="resumeDestinationResponse" message="tns:resumeDestinationResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- If caller has not supplied valid direction -->
+      <wsdl:fault name="SOAPSenderException" message="tns:SOAPSenderException"/>
+      <!-- If processing was in error -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isSuspended">
+      <wsdl:input name="isSuspended" message="tns:isSuspended"/>
+      <wsdl:output name="isSuspendedResponse" message="tns:isSuspendedResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isResumed">
+      <wsdl:input name="isResumed" message="tns:isResumed"/>
+      <wsdl:output name="isResumedResponse" message="tns:isResumedResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDestinationStatus">
+      <wsdl:input name="getDestinationStatus" message="tns:getDestinationStatus"/>
+      <wsdl:output name="getDestinationStatusResponse" message="tns:getDestinationStatusResponse"/>
+      <!-- if there are permission/authentication issues -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if ack is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MessagingToolsAPISoap12Binding" type="tns:MessagingToolsAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="resyncABContact">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="resyncABContact">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resyncABContactResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="purgeCompletedMessages">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="purgeCompletedMessages">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="purgeCompletedMessagesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="suspendDestinationBothDirections">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="suspendDestinationBothDirections">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendDestinationBothDirectionsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeDestinationBothDirections">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="resumeDestinationBothDirections">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeDestinationBothDirectionsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="configureDestination">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="configureDestination">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="configureDestinationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getConfiguration">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getConfiguration">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getConfigurationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageIdBySenderRefId">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getMessageIdBySenderRefId">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageIdBySenderRefIdResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ackMessage">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="ackMessage">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ackMessageResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPSenderException">
+        <soap12:fault name="SOAPSenderException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryMessage">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="retryMessage">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryMessageResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="skipMessage">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="skipMessage">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="skipMessageResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableErrorMessages">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="retryRetryableErrorMessages">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryRetryableErrorMessagesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableSomeErrorMessages">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="retryRetryableSomeErrorMessages">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryRetryableSomeErrorMessagesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableErrorMessagesForCategory">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="retryRetryableErrorMessagesForCategory">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryRetryableErrorMessagesForCategoryResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageStatisticsForSafeOrderedObject">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getMessageStatisticsForSafeOrderedObject">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageStatisticsForSafeOrderedObjectResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalStatistics">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getTotalStatistics">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTotalStatisticsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="suspendDestination">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="suspendDestination">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendDestinationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPSenderException">
+        <soap12:fault name="SOAPSenderException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeDestination">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="resumeDestination">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeDestinationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPSenderException">
+        <soap12:fault name="SOAPSenderException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isSuspended">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isSuspended">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isSuspendedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isResumed">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isResumed">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isResumedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDestinationStatus">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getDestinationStatus">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDestinationStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MessagingToolsAPISoap11Binding" type="tns:MessagingToolsAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="resyncABContact">
+      <soap11:operation style="document"/>
+      <wsdl:input name="resyncABContact">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resyncABContactResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="purgeCompletedMessages">
+      <soap11:operation style="document"/>
+      <wsdl:input name="purgeCompletedMessages">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="purgeCompletedMessagesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="suspendDestinationBothDirections">
+      <soap11:operation style="document"/>
+      <wsdl:input name="suspendDestinationBothDirections">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendDestinationBothDirectionsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeDestinationBothDirections">
+      <soap11:operation style="document"/>
+      <wsdl:input name="resumeDestinationBothDirections">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeDestinationBothDirectionsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="configureDestination">
+      <soap11:operation style="document"/>
+      <wsdl:input name="configureDestination">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="configureDestinationResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getConfiguration">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getConfiguration">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getConfigurationResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageIdBySenderRefId">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getMessageIdBySenderRefId">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageIdBySenderRefIdResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ackMessage">
+      <soap11:operation style="document"/>
+      <wsdl:input name="ackMessage">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ackMessageResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPSenderException">
+        <soap11:fault name="SOAPSenderException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryMessage">
+      <soap11:operation style="document"/>
+      <wsdl:input name="retryMessage">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryMessageResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="skipMessage">
+      <soap11:operation style="document"/>
+      <wsdl:input name="skipMessage">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="skipMessageResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableErrorMessages">
+      <soap11:operation style="document"/>
+      <wsdl:input name="retryRetryableErrorMessages">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryRetryableErrorMessagesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableSomeErrorMessages">
+      <soap11:operation style="document"/>
+      <wsdl:input name="retryRetryableSomeErrorMessages">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryRetryableSomeErrorMessagesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retryRetryableErrorMessagesForCategory">
+      <soap11:operation style="document"/>
+      <wsdl:input name="retryRetryableErrorMessagesForCategory">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retryRetryableErrorMessagesForCategoryResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageStatisticsForSafeOrderedObject">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getMessageStatisticsForSafeOrderedObject">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageStatisticsForSafeOrderedObjectResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalStatistics">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getTotalStatistics">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTotalStatisticsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="suspendDestination">
+      <soap11:operation style="document"/>
+      <wsdl:input name="suspendDestination">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendDestinationResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPSenderException">
+        <soap11:fault name="SOAPSenderException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeDestination">
+      <soap11:operation style="document"/>
+      <wsdl:input name="resumeDestination">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeDestinationResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPSenderException">
+        <soap11:fault name="SOAPSenderException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isSuspended">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isSuspended">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isSuspendedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isResumed">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isResumed">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isResumedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDestinationStatus">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getDestinationStatus">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDestinationStatusResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MessagingToolsAPI">
+    <wsdl:port name="MessagingToolsAPISoap12Port" binding="tns:MessagingToolsAPISoap12Binding">
+      <soap12:address location="local:///gw/webservice/ab/ab1000/MessagingToolsAPI"/>
+    </wsdl:port>
+    <wsdl:port name="MessagingToolsAPISoap11Port" binding="tns:MessagingToolsAPISoap11Binding">
+      <soap11:address location="local:///gw/webservice/ab/ab1000/MessagingToolsAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="resyncABContact">
+    <wsdl:part name="parameters" element="tns:resyncABContact"/>
+  </wsdl:message>
+  <wsdl:message name="resyncABContactResponse">
+    <wsdl:part name="parameters" element="tns:resyncABContactResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="DataConversionException">
+    <wsdl:part name="DataConversionException" element="tns:DataConversionException"/>
+  </wsdl:message>
+  <wsdl:message name="purgeCompletedMessages">
+    <wsdl:part name="parameters" element="tns:purgeCompletedMessages"/>
+  </wsdl:message>
+  <wsdl:message name="purgeCompletedMessagesResponse">
+    <wsdl:part name="parameters" element="tns:purgeCompletedMessagesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="suspendDestinationBothDirections">
+    <wsdl:part name="parameters" element="tns:suspendDestinationBothDirections"/>
+  </wsdl:message>
+  <wsdl:message name="suspendDestinationBothDirectionsResponse">
+    <wsdl:part name="parameters" element="tns:suspendDestinationBothDirectionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="resumeDestinationBothDirections">
+    <wsdl:part name="parameters" element="tns:resumeDestinationBothDirections"/>
+  </wsdl:message>
+  <wsdl:message name="resumeDestinationBothDirectionsResponse">
+    <wsdl:part name="parameters" element="tns:resumeDestinationBothDirectionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="configureDestination">
+    <wsdl:part name="parameters" element="tns:configureDestination"/>
+  </wsdl:message>
+  <wsdl:message name="configureDestinationResponse">
+    <wsdl:part name="parameters" element="tns:configureDestinationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getConfiguration">
+    <wsdl:part name="parameters" element="tns:getConfiguration"/>
+  </wsdl:message>
+  <wsdl:message name="getConfigurationResponse">
+    <wsdl:part name="parameters" element="tns:getConfigurationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageIdBySenderRefId">
+    <wsdl:part name="parameters" element="tns:getMessageIdBySenderRefId"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageIdBySenderRefIdResponse">
+    <wsdl:part name="parameters" element="tns:getMessageIdBySenderRefIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ackMessage">
+    <wsdl:part name="parameters" element="tns:ackMessage"/>
+  </wsdl:message>
+  <wsdl:message name="ackMessageResponse">
+    <wsdl:part name="parameters" element="tns:ackMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="tns:SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPSenderException">
+    <wsdl:part name="SOAPSenderException" element="tns:SOAPSenderException"/>
+  </wsdl:message>
+  <wsdl:message name="retryMessage">
+    <wsdl:part name="parameters" element="tns:retryMessage"/>
+  </wsdl:message>
+  <wsdl:message name="retryMessageResponse">
+    <wsdl:part name="parameters" element="tns:retryMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="skipMessage">
+    <wsdl:part name="parameters" element="tns:skipMessage"/>
+  </wsdl:message>
+  <wsdl:message name="skipMessageResponse">
+    <wsdl:part name="parameters" element="tns:skipMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="retryRetryableErrorMessages">
+    <wsdl:part name="parameters" element="tns:retryRetryableErrorMessages"/>
+  </wsdl:message>
+  <wsdl:message name="retryRetryableErrorMessagesResponse">
+    <wsdl:part name="parameters" element="tns:retryRetryableErrorMessagesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="retryRetryableSomeErrorMessages">
+    <wsdl:part name="parameters" element="tns:retryRetryableSomeErrorMessages"/>
+  </wsdl:message>
+  <wsdl:message name="retryRetryableSomeErrorMessagesResponse">
+    <wsdl:part name="parameters" element="tns:retryRetryableSomeErrorMessagesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="retryRetryableErrorMessagesForCategory">
+    <wsdl:part name="parameters" element="tns:retryRetryableErrorMessagesForCategory"/>
+  </wsdl:message>
+  <wsdl:message name="retryRetryableErrorMessagesForCategoryResponse">
+    <wsdl:part name="parameters" element="tns:retryRetryableErrorMessagesForCategoryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageStatisticsForSafeOrderedObject">
+    <wsdl:part name="parameters" element="tns:getMessageStatisticsForSafeOrderedObject"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageStatisticsForSafeOrderedObjectResponse">
+    <wsdl:part name="parameters" element="tns:getMessageStatisticsForSafeOrderedObjectResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getTotalStatistics">
+    <wsdl:part name="parameters" element="tns:getTotalStatistics"/>
+  </wsdl:message>
+  <wsdl:message name="getTotalStatisticsResponse">
+    <wsdl:part name="parameters" element="tns:getTotalStatisticsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="suspendDestination">
+    <wsdl:part name="parameters" element="tns:suspendDestination"/>
+  </wsdl:message>
+  <wsdl:message name="suspendDestinationResponse">
+    <wsdl:part name="parameters" element="tns:suspendDestinationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="resumeDestination">
+    <wsdl:part name="parameters" element="tns:resumeDestination"/>
+  </wsdl:message>
+  <wsdl:message name="resumeDestinationResponse">
+    <wsdl:part name="parameters" element="tns:resumeDestinationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="isSuspended">
+    <wsdl:part name="parameters" element="tns:isSuspended"/>
+  </wsdl:message>
+  <wsdl:message name="isSuspendedResponse">
+    <wsdl:part name="parameters" element="tns:isSuspendedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="isResumed">
+    <wsdl:part name="parameters" element="tns:isResumed"/>
+  </wsdl:message>
+  <wsdl:message name="isResumedResponse">
+    <wsdl:part name="parameters" element="tns:isResumedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDestinationStatus">
+    <wsdl:part name="parameters" element="tns:getDestinationStatus"/>
+  </wsdl:message>
+  <wsdl:message name="getDestinationStatusResponse">
+    <wsdl:part name="parameters" element="tns:getDestinationStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

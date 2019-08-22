@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<internalExtension xmlns="http://guidewire.com/datamodel" entityName="Document">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.impl.DocumentInternalMethods"
+    impl="com.guidewire.ab.domain.document.impl.DocumentCoreExtInternalMethodsImpl"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.document.impl.DocumentCoreExtInternalMethods"
+    impl="com.guidewire.ab.domain.document.impl.DocumentCoreExtInternalMethodsImpl"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.document.impl.DocumentCoreExtMethods"
+    impl="com.guidewire.ab.domain.document.impl.DocumentCoreExtMethodsImpl"/>
+  <description><![CDATA[Reference to an external document]]></description>
+  <array
+    arrayentity="ABContactDocumentLink"
+    cascadeDelete="true"
+    desc="Links to ABContact for this Document"
+    getterScriptability="doesNotExist"
+    name="ABContactDocumentLinks"
+    setterScriptability="doesNotExist"/>
+</internalExtension>

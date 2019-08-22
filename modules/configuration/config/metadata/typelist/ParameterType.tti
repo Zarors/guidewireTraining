@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Value type of a system or component parameter"
+  final="true"
+  name="ParameterType"
+  platform="true">
+  <typecode
+    code="String"
+    desc="String (default)"
+    name="String"/>
+  <typecode
+    code="Integer"
+    desc="Integer"
+    name="Integer"/>
+  <typecode
+    code="Boolean"
+    desc="Boolean"
+    name="Boolean"/>
+  <typecode
+    code="Datetime"
+    desc="Date/Time"
+    name="Datetime"/>
+  <typecode
+    code="LongText"
+    desc="String (clob)"
+    name="LongText"/>
+</typelist>

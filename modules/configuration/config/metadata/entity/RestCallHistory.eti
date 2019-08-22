@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="History of REST calls"
+  entity="RestCallHistory"
+  platform="true"
+  supertype="InboundHistory">
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.rest.profiler.RestCallHistoryImpl"/>
+  <column
+    desc="The name of the server receiving the request."
+    name="ServerName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The Swagger api that contains this operations."
+    name="SwaggerApi"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The name of the handler operation."
+    name="OperationName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The http operation path and method."
+    name="HttpOperation"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The traceability id of the request. The size is dependent on implementation of TraceabilityIDPlugin."
+    name="TraceabilityId"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="64"/>
+  </column>
+  <events/>
+</subtype>

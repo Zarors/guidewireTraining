@@ -1,0 +1,11 @@
+.gw-button-secondary {
+  @include gw-button--secondary();
+}
+
+.gw-button {
+  @include gw-button--normal();
+}
+
+.gw-search-icon {
+  @include gw-icon($gw-app--default-search-icon);
+}

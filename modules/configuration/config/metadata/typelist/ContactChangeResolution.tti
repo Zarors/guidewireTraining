@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Resolution status of a PendingContactChange"
+  name="ContactChangeResolution"
+  platform="true"
+  tableName="contactchangeres">
+  <typecode
+    code="approved"
+    desc="Approved"
+    name="Approved"/>
+  <typecode
+    code="rejected"
+    desc="Rejected"
+    name="Rejected"/>
+</typelist>

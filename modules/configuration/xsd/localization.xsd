@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            targetNamespace="http://guidewire.com/localization" xmlns="http://guidewire.com/localization">
+
+  <xsd:element name="CurrencyFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="negativePattern" type="xsd:string" use="required"/>
+      <xsd:attribute name="positivePattern" type="xsd:string" use="required"/>
+      <xsd:attribute name="zeroValue" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Same as CurrencyFormat, but everything is optional. -->
+  <xsd:element name="CurrencyFormatOverride">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="negativePattern" type="xsd:string"/>
+      <xsd:attribute name="positivePattern" type="xsd:string"/>
+      <xsd:attribute name="zeroValue" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Currency display properties can be overriden by Locale. -->
+  <xsd:element name="CurrencyTypeOverride">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="CurrencyFormatOverride" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+      <xsd:attribute name="code" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="DateFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="long" type="xsd:string" use="required"/>
+      <xsd:attribute name="medium" type="xsd:string" use="required"/>
+      <xsd:attribute name="short" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="FlexibleDateFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="year-month-day" type="xsd:string" use="optional"/>
+      <xsd:attribute name="year-month" type="xsd:string" use="optional"/>
+      <xsd:attribute name="month-day" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="CalendarWidget">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="yearMonth" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="JapaneseImperialDateFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="long" type="xsd:string" use="required"/>
+      <xsd:attribute name="medium" type="xsd:string" use="required"/>
+      <xsd:attribute name="short" type="xsd:string" use="required"/>
+      <xsd:attribute name="yearSymbol" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="CalendarType">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="Gregorian"/>
+      <xsd:enumeration value="JapaneseImperial"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:element name="GWLocale">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="CurrencyFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="CurrencyTypeOverride" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="DateFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="FlexibleDateFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="JapaneseImperialDateFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="NumberFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="TimeFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="NameFormat" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="CalendarWidget" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+      <xsd:attribute name="code" type="xsd:string" use="required"/>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="firstDayOfWeek" type="xsd:integer" use="optional"/>
+      <xsd:attribute name="typecode" type="xsd:string" use="required"/>
+      <xsd:attribute name="defaultCalendar" type="CalendarType" use="optional"/>
+      <xsd:attribute name="enableJapaneseCalendar" type="xsd:boolean" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Localization">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="GWLocale" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="NumberFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="decimalSymbol" type="xsd:string" use="required"/>
+      <xsd:attribute name="negativeEntryPattern" type="xsd:string"/>
+      <xsd:attribute name="thousandsSymbol" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="TimeFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="long" type="xsd:string" use="required"/>
+      <xsd:attribute name="medium" type="xsd:string" use="required"/>
+      <xsd:attribute name="short" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="NameFormat">
+    <xsd:complexType>
+      <xsd:attribute name="PCFMode" type="xsd:string"/>
+      <xsd:attribute name="textFormatMode" type="xsd:string"/>
+      <xsd:attribute name="visibleFields" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Identifiers for the components in the system"
+  final="true"
+  name="ComponentType"
+  platform="true">
+  <typecode
+    code="db"
+    desc="Database"
+    name="Database"/>
+  <typecode
+    code="fs"
+    desc="Filesystem"
+    name="Filesystem"/>
+  <typecode
+    code="session"
+    desc="Session Manager"
+    name="SessionManager"/>
+  <typecode
+    code="tm"
+    desc="Transaction Manager"
+    name="TransactionManager"/>
+  <typecode
+    code="assigneng"
+    desc="Assignment Engine"
+    name="AssignmentEngine"/>
+  <typecode
+    code="clock"
+    desc="Database Clock"
+    name="DBClock"/>
+  <typecode
+    code="escalation"
+    desc="Escalation Manager"
+    name="EscalationManager"/>
+  <typecode
+    code="ruleeng"
+    desc="Rule Engine"
+    name="RuleEngine"/>
+  <typecode
+    code="segmenteng"
+    desc="Segmentation Engine"
+    name="SegmentationEngine"/>
+  <typecode
+    code="statemach"
+    desc="State Machine"
+    name="StateMachine"/>
+  <typecode
+    code="workplan"
+    desc="Workplan Generator"
+    name="WorkplanGenerator"/>
+  <typecode
+    code="statistics"
+    desc="Calculates statistics on a scheduled basis"
+    name="StatisticsCalculator"/>
+  <typecode
+    code="cache"
+    desc="Server cache"
+    name="Cache"/>
+  <typecode
+    code="businesscalendar"
+    desc="Business calendar for use in statistics calculations"
+    name="BusinessCalendar"/>
+  <typecode
+    code="eventcenter"
+    desc="Handles sending of remote events"
+    name="EventCenter"/>
+  <typecode
+    code="auth"
+    desc="Manages users and passwords in the product database"
+    name="AuthenticationManager"/>
+  <typecode
+    code="scheduler"
+    desc="Schedules tasks to be executed in the future"
+    name="Scheduler"/>
+  <typecode
+    code="lifecyclemgr"
+    desc="Manages entity lifecycle rulesets"
+    name="EntityLifecycleManager"/>
+  <typecode
+    code="searcheng"
+    desc="Search Engine"
+    name="SearchEngine"/>
+  <typecode
+    code="approval"
+    desc="Approval Engine"
+    name="ApprovalEngine"/>
+  <typecode
+    code="validation"
+    desc="Validation Manager"
+    name="ValidationManager"/>
+  <typecode
+    code="deduction"
+    desc="Deduction Engine"
+    name="DeductionEngine"/>
+  <typecode
+    code="notification"
+    desc="Notification Engine"
+    name="NotificationEngine"/>
+  <typecode
+    code="qplexor"
+    desc="Manages sync messages and acknowledgements"
+    name="QPlexor"/>
+  <typecode
+    code="eventdispatcher"
+    desc="Receives sync events and generates messages"
+    name="EventDispatcher"/>
+  <typecode
+    code="velocity"
+    desc="Velocity template support"
+    name="VelocitySupport"/>
+  <typecode
+    code="configuration"
+    desc="Configuration component"
+    name="Configuration"/>
+  <typecode
+    code="clusterchannel"
+    desc="Cluster communication channel"
+    name="ClusterChannel"/>
+  <typecode
+    code="jmxagent"
+    desc="Manages an MBeanServer and JMX adaptors"
+    name="JMXAgent"/>
+</typelist>

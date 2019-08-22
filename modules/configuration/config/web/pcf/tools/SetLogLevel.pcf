@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    canVisit="perm.User.EditLog or perm.User.DevAllAccess"
+    countsAsWork="false"
+    id="SetLogLevel"
+    parent="ServerTools()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel&quot;)">
+    <LocationEntryPoint
+      signature="SetLogLevel()"/>
+    <Variable
+      initialValue="new gw.api.tools.SetLogLevelData()"
+      name="Data"
+      type="gw.api.tools.SetLogLevelData"/>
+    <Variable
+      name="PickedLoggerName"
+      type="String"/>
+    <Variable
+      name="PickedLoggerLevel"
+      type="gw.logging.LogLevel"/>
+    <Screen
+      id="SetLogLevelScreen">
+      <DetailViewPanel>
+        <InputColumn>
+          <InputSet>
+            <RangeInput
+              editable="true"
+              id="Logger"
+              label="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.Loggers&quot;)"
+              value="PickedLoggerName"
+              valueRange="Data.LoggerNames.toList()"
+              valueType="java.lang.String">
+              <PostOnChange
+                onChange="PickedLoggerLevel = Data.getLoggerLevel(PickedLoggerName)"/>
+            </RangeInput>
+            <TextInput
+              id="CurConfigLevel"
+              label="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.CurLevel.Configured&quot;)"
+              outputConversion="VALUE != null ? VALUE.Name : DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.NoneLevel&quot;)"
+              value="Data.getLoggerLevel(PickedLoggerName)"
+              valueType="gw.logging.LogLevel"
+              visible="PickedLoggerName != null"/>
+            <TextInput
+              id="CurActualLevel"
+              label="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.CurLevel.Actual&quot;)"
+              outputConversion="VALUE != null ? VALUE.Name : DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.NoneLevel&quot;)"
+              value="Data.getActualLoggerLevel(PickedLoggerName)"
+              valueType="gw.logging.LogLevel"
+              visible="PickedLoggerName != null"/>
+            <RangeInput
+              editable="true"
+              id="NewLevel"
+              label="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.NewLevel.Configured&quot;)"
+              noneSelectedLabel="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.NoneLevel&quot;)"
+              optionLabel="VALUE.Name"
+              sortValueRange="false"
+              value="PickedLoggerLevel"
+              valueRange="gw.logging.LogLevel.values()"
+              valueType="gw.logging.LogLevel"
+              visible="PickedLoggerName != null">
+              <PostOnChange/>
+            </RangeInput>
+            <ButtonInput
+              action="Data.updateLoggerLevel(PickedLoggerName, PickedLoggerLevel)"
+              hideIfDisabled="false"
+              id="SetLevel"
+              value="DisplayKey.get(&quot;Web.InternalTools.SetLogLevel.SetLevel&quot;)"
+              visible="PickedLoggerName != null and Data.getLoggerLevel(PickedLoggerName) != PickedLoggerLevel"/>
+          </InputSet>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

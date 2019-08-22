@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<DataTypeDef xmlns="http://guidewire.com/datatype" type="com.guidewire.pl.metadata.datatype2.impl.PositiveCurrencyAmountDataTypeDef" valueType="gw.api.financials.CurrencyAmount">
+  <ParameterDef name="validator" desc="The name of a ValidatorDef (fieldvalidators.xml) that should be used to validate values of this data type." required="false" type="java.lang.String"/>
+  <ParameterDef name="currencyProperty" desc="The name of a property on the owning entity, whose value contains the currency portion of the gw.api.financials.CurrencyAmount. If null, then the currency is assumed to be the default application currency." required="false" type="java.lang.String"/>
+</DataTypeDef>

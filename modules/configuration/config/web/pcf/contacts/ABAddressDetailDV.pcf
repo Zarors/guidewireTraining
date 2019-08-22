@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ABAddressDetailDV">
+    <Require
+      name="address"
+      type="Address"/>
+    <InputColumn>
+      <InputSetRef
+        def="AddressOwnerInputSet(new gw.api.address.SecondaryAddressOwner(address), true)"
+        mode="gw.api.address.AddressCountrySettings.getSettings(address.Country).PCFMode"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

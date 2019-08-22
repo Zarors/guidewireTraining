@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    afterCancel="root = new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+    afterCommit="root = new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+    beforeCommit="new gw.web.ABContactContactHelper(contact).checkForChangedElements()"
+    canEdit="perm.ABContact.edit(contact)"
+    canVisit="perm.ABContact.view(contact)"
+    handlesValidationIssue="(VALUE typeis ABContact) and !VALUE.isNew()"
+    id="ContactDetail"
+    infoBar="ContactInfoBar(contact)"
+    parent="ABContactSearch()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.ContactDetail.Title&quot;, contact)"
+    validationParameter="contact">
+    <LocationEntryPoint
+      signature="ContactDetail(contact : ABContact)"/>
+    <Variable
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="new gw.web.ContactDetailsVendorHelper(contact)"
+      name="contactDetailsVendorHelper"
+      type="gw.web.ContactDetailsVendorHelper"/>
+    <Variable
+      initialValue="new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+      name="root"
+      type="gw.api.tree.RowTreeRootNode"/>
+    <ScreenRef
+      def="ABContactDetailScreen(contact, false)"/>
+  </Page>
+</PCF>

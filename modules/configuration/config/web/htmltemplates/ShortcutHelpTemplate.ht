@@ -1,0 +1,10 @@
+<div id="gw-ShortcutPopupHelp">
+  <div id="gw-ShortcutPopupHelp--inner">
+      <div id="gw-ShortcutPopupHelp--title" class="gw-label">${title}</div>
+      <div :for="shortcutHelpEntry" :in="shortcutHelpEntries"
+           class="gw-ShortcutPopupHelp--entry">${shortcutHelpEntry}</div>
+      <div id="gw-ShortcutPopupHelp--bottom">
+        <div id="gw-ShortcutPopupHelp--close" data-gw-click="gwApp.closeShortcutHelp">${closeLabel}</div>
+      </div>
+  </div>
+</div>

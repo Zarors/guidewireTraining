@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    id="MessagePayloadPopup"
+    parent="MessagingDestinationControlList()"
+    title="DisplayKey.get(&quot;Web.Admin.MessagePayload&quot;)">
+    <LocationEntryPoint
+      signature="MessagePayloadPopup(MessageId : long)"/>
+    <Variable
+      name="MessageId"
+      type="long"/>
+    <Variable
+      initialValue="gw.api.admin.MessagingUtil.getMessage(MessageId)"
+      name="Message"
+      type="Message"/>
+    <ScreenRef
+      def="MessagePayloadScreen(Message)"/>
+  </Popup>
+</PCF>

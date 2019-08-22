@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="DocumentSearchCriteria">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.impl.DocumentSearchCriteriaInternalMethods"
+    impl="com.guidewire.ab.domain.document.impl.DocumentSearchCriteriaCoreExtMethodsImpl"/>
+  <foreignkey
+    desc="The ABContact the Document is linked to."
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="true"/>
+  <foreignkey
+    desc="The ABContact the Document is not already linked to."
+    fkentity="ABContact"
+    name="NotABContact"
+    nullok="true"/>
+</internalExtension>

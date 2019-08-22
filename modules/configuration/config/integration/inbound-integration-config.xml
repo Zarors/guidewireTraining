@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<integration xmlns="http://guidewire.com/config/integration/inbound">
+    <threadpools>
+        <!-- Use unmanaged threads (FIXED, CACHED, SINGLE or FORKJOIN) for Tomcat or Jetty -->
+        <unmanaged-threadpool-forkjoin name="gw_default" disabled="false"/>
+        <unmanaged-threadpool-fixed name="fixed_default" disabled="true">
+            <!-- Use default size -->
+            <size/>
+        </unmanaged-threadpool-fixed>
+        <unmanaged-threadpool-fixed name="fixed_explicit_size" disabled="true">
+            <size>20</size>
+        </unmanaged-threadpool-fixed>
+        <unmanaged-threadpool-cached name="cached_default" disabled="true"/>
+        <unmanaged-threadpool-single name="single_default" disabled="true"/>
+        <!-- Use J2EE JSR-236 managed threads (J2EE_MANAGED) for Websphere, Weblogic or JBoss -->
+        <j2ee-managed-threadpool name="j2ee_default" disabled="false" env="jmsintegration">
+            <!-- Use default JNDI -->
+            <jndi/>
+        </j2ee-managed-threadpool>
+        <j2ee-managed-threadpool name="j2ee_explicit_jndi" disabled="true" env="jmsintegration">
+            <jndi>java:comp/CustomManagedScheduledExecutorService</jndi>
+        </j2ee-managed-threadpool>
+    </threadpools>
+    <integrations>
+        <file-integration name="exampleFileIntegrationMinimal" disabled="true" env="fileintegration">
+            <threadpool>gw_default</threadpool>
+            <pollinginterval/>
+            <throttleinterval/>
+            <ordered/>
+            <stoponerror/>
+            <transactional/>
+            <osgiservice/>
+            <traceabilityidcreationpoint/>
+            <pluginhandler/>
+            <processingmode/>
+            <incoming>/tmp/file/incoming</incoming>
+            <processing>/tmp/file/processing</processing>
+            <error>/tmp/file/error</error>
+            <done>/tmp/file/done</done>
+            <charset/>
+            <createdirectories/>
+        </file-integration>
+        <file-integration name="exampleFileIntegration" disabled="false" env="fileintegration">
+            <threadpool>gw_default</threadpool>
+            <pollinginterval>15</pollinginterval>
+            <throttleinterval>5</throttleinterval>
+            <ordered>true</ordered>
+            <stoponerror>false</stoponerror>
+            <transactional>false</transactional>
+            <osgiservice>true</osgiservice>
+            <traceabilityidcreationpoint>INBOUND_INTEGRATION_FILE</traceabilityidcreationpoint>
+            <pluginhandler>InboundFileIntegrationHandler</pluginhandler>
+            <processingmode>line</processingmode>
+            <incoming>/tmp/file/incoming</incoming>
+            <processing>/tmp/file/processing</processing>
+            <error>/tmp/file/error</error>
+            <done>/tmp/file/done</done>
+            <charset>UTF-8</charset>
+            <createdirectories>true</createdirectories>
+        </file-integration>
+        <file-integration name="exampleFileIntegrationMessageReply" disabled="false" env="fileintegration">
+            <threadpool>gw_default</threadpool>
+            <pollinginterval>15</pollinginterval>
+            <throttleinterval>5</throttleinterval>
+            <ordered>false</ordered>
+            <stoponerror>false</stoponerror>
+            <transactional>false</transactional>
+            <osgiservice>true</osgiservice>
+            <traceabilityidcreationpoint>OUTBOUND_MESSAGE_REPLY</traceabilityidcreationpoint>
+            <pluginhandler>InboundFileIntegrationMessageReplyHandler</pluginhandler>
+            <processingmode>file</processingmode>
+            <incoming>/tmp/reply/incoming</incoming>
+            <processing>/tmp/reply/processing</processing>
+            <error>/tmp/reply/error</error>
+            <done>/tmp/reply/done</done>
+            <charset>UTF-8</charset>
+            <createdirectories>true</createdirectories>
+        </file-integration>
+        <jms-integration name="exampleJmsIntegrationMinimal" disabled="true" env="jmsintegration">
+            <threadpool>j2ee_default</threadpool>
+            <pollinginterval/>
+            <throttleinterval/>
+            <ordered/>
+            <stoponerror/>
+            <transactional/>
+            <osgiservice/>
+            <traceabilityidcreationpoint/>
+            <pluginhandler>InboundJMSIntegrationHandler</pluginhandler>
+            <connectionfactoryjndi>defaultCF</connectionfactoryjndi>
+            <destinationjndi>gw/dest</destinationjndi>
+            <user/>
+            <password/>
+            <durablesubscription/>
+            <nolocal/>
+            <messageselector/>
+            <messagereceivetimeout/>
+            <batchlimit/>
+            <jndi-properties/>
+        </jms-integration>
+        <jms-integration name="exampleJmsIntegration" disabled="false" env="jmsintegration">
+            <threadpool>j2ee_default</threadpool>
+            <pollinginterval>15</pollinginterval>
+            <throttleinterval>5</throttleinterval>
+            <ordered>true</ordered>
+            <stoponerror>false</stoponerror>
+            <transactional>true</transactional>
+            <osgiservice>true</osgiservice>
+            <traceabilityidcreationpoint>INBOUND_INTEGRATION_JMS</traceabilityidcreationpoint>
+            <pluginhandler>InboundJMSIntegrationHandler</pluginhandler>
+            <connectionfactoryjndi>defaultCF</connectionfactoryjndi>
+            <destinationjndi>gw/dest</destinationjndi>
+            <user>gw</user>
+            <password>passw0rd</password>
+            <durablesubscription/>
+            <nolocal/>
+            <messageselector/>
+            <messagereceivetimeout>5</messagereceivetimeout>
+            <batchlimit>5</batchlimit>
+            <jndi-properties>
+                <jndi-property>
+                    <key>k1</key>
+                    <value>v1</value>
+                </jndi-property>
+                <jndi-property>
+                    <key>k2</key>
+                    <value>v1</value>
+                </jndi-property>
+            </jndi-properties>
+        </jms-integration>
+        <custom-integration name="exampleCustomIntegrationMinimal" disabled="true" env="customintegration">
+            <threadpool>gw_default</threadpool>
+            <pollinginterval/>
+            <throttleinterval/>
+            <ordered/>
+            <stoponerror/>
+            <transactional/>
+            <osgiservice/>
+            <traceabilityidcreationpoint/>
+            <workagentimpl>examples.pl.plugins.integration.inbound.custom.CustomInboundIntegration</workagentimpl>
+            <parameters/>
+        </custom-integration>
+        <custom-integration name="exampleCustomIntegration" disabled="false" env="customintegration">
+            <threadpool>gw_default</threadpool>
+            <pollinginterval>15</pollinginterval>
+            <throttleinterval>5</throttleinterval>
+            <ordered>true</ordered>
+            <stoponerror>false</stoponerror>
+            <transactional>false</transactional>
+            <osgiservice>false</osgiservice>
+            <traceabilityidcreationpoint>INBOUND_INTEGRATION_CUSTOM</traceabilityidcreationpoint>
+            <workagentimpl>examples.pl.plugins.integration.inbound.custom.CustomInboundIntegration</workagentimpl>
+            <parameters>
+                <parameter>
+                    <key>k1</key>
+                    <value>v1</value>
+                </parameter>
+                <parameter>
+                    <key>k2</key>
+                    <value>v2</value>
+                </parameter>
+            </parameters>
+        </custom-integration>
+    </integrations>
+</integration>

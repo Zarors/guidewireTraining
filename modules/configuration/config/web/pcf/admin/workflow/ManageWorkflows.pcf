@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    canVisit="perm.System.workflowmanage"
+    countsAsWork="false"
+    id="ManageWorkflows"
+    parent="WorkflowSearch()"
+    showUpLink="true"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.Workflow.Manage.Title&quot;)">
+    <LocationEntryPoint
+      signature="ManageWorkflows(workflows : Workflow[])"/>
+    <LocationEntryPoint
+      signature="ManageWorkflows(workflowQuery : gw.api.database.IQueryBeanResult&lt;Workflow&gt;, criteria : WorkflowSearchCriteria)"/>
+    <Variable
+      name="workflows"
+      type="Workflow[]"/>
+    <Variable
+      name="workflowQuery"
+      type="gw.api.database.IQueryBeanResult&lt;Workflow&gt;"/>
+    <Variable
+      name="criteria"
+      type="WorkflowSearchCriteria"/>
+    <Variable
+      initialValue="0"
+      name="MaxWaitSecs"
+      type="int"/>
+    <Variable
+      initialValue="new gw.api.web.admin.workflow.ManageWorkflows(null, workflows, workflowQuery, criteria)"
+      name="helper"
+      type="gw.api.web.admin.workflow.ManageWorkflows"/>
+    <Screen
+      id="ManageWorkflowsScreen">
+      <Toolbar>
+        <ToolbarButton
+          action="helper.refresh()"
+          id="refresh"
+          label="DisplayKey.get(&quot;Button.Refresh&quot;)"
+          visible=""/>
+        <ToolbarButton
+          action="helper.execute(CurrentLocation)"
+          available="helper.ActionType != null"
+          id="execute"
+          label="DisplayKey.get(&quot;Web.Admin.Workflow.Manage.Execute&quot;)"
+          shortcut="U"/>
+        <ToolbarButton
+          action="CurrentLocation.cancel(); WorkflowSearch.go()"
+          id="cancel"
+          label="DisplayKey.get(&quot;Web.Admin.Workflow.Manage.Cancel&quot;)"
+          shortcut="C"/>
+        <ToolbarButton
+          action="CurrentLocation.cancel(); WorkflowDetail.go(helper.Workflow)"
+          id="detail"
+          label="DisplayKey.get(&quot;Web.Admin.WorkflowDetail&quot;)"
+          shortcut="E"
+          visible="helper.Workflow != null"/>
+      </Toolbar>
+      <Verbatim
+        id="EditCount"
+        label="DisplayKey.get(&quot;Web.Admin.Workflow.Manage.EditCount&quot;, helper.Count)"/>
+      <Verbatim
+        id="message"
+        label="helper.Message"
+        warning="true"/>
+      <DetailViewPanel
+        editable="not helper.Waiting">
+        <InputColumn>
+          <InputSet
+            visible="helper.CurrentStep != null">
+            <TextInput
+              id="Type"
+              label="DisplayKey.get(&quot;Web.Admin.Workflows.Type&quot;)"
+              value="helper.WorkflowType"
+              valueType="gw.entity.TypeKey"/>
+            <TextInput
+              id="CurrentStep"
+              label="DisplayKey.get(&quot;Web.Admin.WorkflowDetail.CurrentStep&quot;)"
+              value="helper.CurrentStep"/>
+          </InputSet>
+          <Choice
+            id="WaitChoice"
+            option="ManageWorkflowActionType.TC_WAIT.Code"
+            value="helper.ActionType"
+            valueType="java.lang.String">
+            <TextInput
+              editable="true"
+              id="MaxWait"
+              label="DisplayKey.get(&quot;Web.Admin.Workflow.Manage.Wait&quot;)"
+              value="MaxWaitSecs"
+              valueType="java.lang.Integer"
+              visible="helper.Workflow != null and helper.ActiveWorkItem != null"/>
+            <ProgressInput
+              actionOnComplete="helper.Waiting = false"
+              id="WaitActiveWorkItem"
+              labelAbove="true"
+              percentage="helper.performWaitAndReturnPercent(MaxWaitSecs * 1000, 0, 0)"
+              visible="helper.Waiting"/>
+          </Choice>
+          <Choice
+            id="InvokeTriggerChoice"
+            option="ManageWorkflowActionType.TC_INVOKETRIGGER.Code"
+            value="helper.ActionType"
+            valueType="java.lang.String">
+            <RangeInput
+              editable="true"
+              id="InvokeTrigger"
+              label="ManageWorkflowActionType.TC_INVOKETRIGGER"
+              value="helper.TriggerKey"
+              valueRange="helper.Triggers"
+              valueType="typekey.WorkflowTriggerKey"
+              visible="helper.Triggers.length != 0"/>
+          </Choice>
+          <Choice
+            id="SuspendChoice"
+            option="ManageWorkflowActionType.TC_SUSPEND.Code"
+            value="helper.ActionType"
+            valueType="java.lang.String">
+            <TextInput
+              id="Suspend"
+              label="ManageWorkflowActionType.TC_SUSPEND"
+              value="null"
+              valueType="java.lang.Object"
+              visible="helper.SuspendAvailable"/>
+          </Choice>
+          <Choice
+            id="ResumeChoice"
+            option="ManageWorkflowActionType.TC_RESUME.Code"
+            value="helper.ActionType"
+            valueType="java.lang.String">
+            <TextInput
+              id="Resume"
+              label="ManageWorkflowActionType.TC_RESUME"
+              value="null"
+              valueType="java.lang.Object"
+              visible="helper.ResumeAvailable"/>
+          </Choice>
+          <Choice
+            id="TimeoutChoice"
+            option="ManageWorkflowActionType.TC_SETTIMEOUT.Code"
+            value="helper.ActionType"
+            valueType="java.lang.String">
+            <RangeInput
+              editable="true"
+              id="ForceBranch"
+              label="DisplayKey.get(&quot;Web.Admin.Workflow.Manage.TimeoutBranch&quot;)"
+              optionLabel="VALUE.localizeDisplayName()"
+              value="helper.ForceBranch"
+              valueRange="helper.TimeoutBranches"
+              valueType="com.guidewire.pl.system.workflow.engine.config.WorkflowTimeout"
+              visible="helper.TimeoutBranches.length != 0"/>
+          </Choice>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    id="StartRollingUpgradePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Java.Database.Rolling.Upgrade.StartRollingTitle&quot;)">
+    <LocationEntryPoint
+      signature="StartRollingUpgradePopup(Page : gw.api.tools.UpgradeInfoPageHelper)"/>
+    <Variable
+      name="Page"
+      type="gw.api.tools.UpgradeInfoPageHelper"/>
+    <Screen
+      id="StartRollingUpgradeScreen">
+      <Variable
+        initialValue="initConds()"
+        name="conditions"
+        type="gw.upgrade.UpgradeCondition[]"/>
+      <PanelSet>
+        <Verbatim
+          label="DisplayKey.get('Web.InternalTools.infoPages.UpgradeInfo.StartRolling.Recommendation')"/>
+        <DetailViewPanel>
+          <InputColumn>
+            <ContentInput>
+              <Link
+                id="RecommendLabel"
+                label="DisplayKey.get('Web.InternalTools.infoPages.UpgradeInfo.StartRolling.RecommendSchemaVerifier')"/>
+              <Link
+                action="CurrentLocation.cancel(); DatabaseTableInfo.go()"
+                id="RecommendGoTo"
+                label="DisplayKey.get('Web.InternalTools.infoPages.UpgradeInfo.StartRolling.RecommendSchemaVerifier.GoTo')"/>
+            </ContentInput>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelSet>
+      <PanelSet>
+        <Verbatim
+          label="DisplayKey.get(&quot;Web.InternalTools.infoPages.UpgradeInfo.StartRolling.BeforeBeginning&quot;)"/>
+      </PanelSet>
+      <PanelSet>
+        <ListViewPanel
+          id="StartRollingUpgradeConditionsLV">
+          <RowIterator
+            canPick="false"
+            checkBoxVisible="false"
+            editable="true"
+            elementName="condition"
+            id="iterator"
+            pageSize="0"
+            value="conditions"
+            valueType="gw.upgrade.UpgradeCondition[]">
+            <Row>
+              <CheckBoxCell
+                editable="true"
+                id="Checked"
+                value="condition.Checked">
+                <PostOnChange/>
+              </CheckBoxCell>
+              <TextCell
+                id="condition"
+                value="condition.Condition"
+                wrap="true"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </PanelSet>
+      <PanelSet>
+        <Verbatim
+          label="DisplayKey.get(&quot;Web.InternalTools.infoPages.UpgradeInfo.StartRolling.UpgradeEachInstance&quot;)"/>
+      </PanelSet>
+      <PanelRef
+        id="toolbar">
+        <Toolbar>
+          <ToolbarButton
+            action="Page.startRollingUpgrade(); CurrentLocation.commit()"
+            available="conditions.allMatch( \ cond -&gt; cond.Checked)"
+            id="StartRolling"
+            label="DisplayKey.get(&quot;Java.Database.Rolling.Upgrade.StartRolling&quot;)"/>
+          <EditButtons
+            cancelVisible="true"
+            editVisible="false"
+            id="editButtons"
+            updateVisible="false"/>
+        </Toolbar>
+        <DetailViewPanel>
+          <InputColumn/>
+        </DetailViewPanel>
+      </PanelRef>
+    </Screen>
+    <Code><![CDATA[uses gw.upgrade.UpgradeCondition
+
+function initConds() : UpgradeCondition[] {
+ var msgs : UpgradeCondition[] = {
+   new UpgradeCondition(DisplayKey.get("Web.InternalTools.infoPages.UpgradeInfo.StartRolling.Condition1")),
+   new UpgradeCondition(DisplayKey.get("Web.InternalTools.infoPages.UpgradeInfo.StartRolling.Condition2")),
+   new UpgradeCondition(DisplayKey.get("Web.InternalTools.infoPages.UpgradeInfo.StartRolling.Condition3"))
+ }
+ return msgs
+}]]></Code>
+  </Popup>
+</PCF>

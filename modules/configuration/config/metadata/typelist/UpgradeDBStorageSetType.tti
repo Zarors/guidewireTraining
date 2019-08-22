@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of database storage sets persited before and after an upgrade"
+  final="true"
+  name="UpgradeDBStorageSetType"
+  platform="true">
+  <typecode
+    code="sqlserverdatabase"
+    desc="Storage info for a SQL Server database"
+    name="SQL Server database"/>
+  <typecode
+    code="sqlserverdataspace"
+    desc="Storage info for a SQL Server database dataspace"
+    name="SQL Server database dataspace"/>
+  <typecode
+    code="sqlservertempdb"
+    desc="Storage info for a SQL Server database tempdb"
+    name="SQL Server database tempdb"/>
+  <typecode
+    code="sqlservertablesindexes"
+    desc="Storage info for a SQL Server database tables and indexes"
+    name="SQL Server database tables and indexes"/>
+  <typecode
+    code="oracletablespacedef"
+    desc="Tablespace storage definitions for Oracle"
+    name="Oracle tablespace storage definition"/>
+  <typecode
+    code="oracletablesdef"
+    desc="Table Storage definitions for Oracle"
+    name="Oracle tables storage definition"/>
+  <typecode
+    code="oracleindexesdef"
+    desc="Indexes storage definitions for Oracle"
+    name="Oracle indexes storage definition"/>
+  <typecode
+    code="oraclelobsdef"
+    desc="LOB storage info for Oracle"
+    name="Oracle LOB storage definition"/>
+  <typecode
+    code="oracletablespace"
+    desc="Storage info for Oracle tablespaces"
+    name="Oracle tablespaces"/>
+  <typecode
+    code="oracletables"
+    desc="Storage info for Oracle tables"
+    name="Oracle tables"/>
+  <typecode
+    code="oracleindexes"
+    desc="Storage info for Oracle indexes"
+    name="Oracle indexes"/>
+  <typecode
+    code="oraclelobs"
+    desc="Storage info for Oracle LOBs"
+    name="Oracle LOBs"/>
+  <typecode
+    code="postgresqldatabase"
+    desc="Storage info for a PostgreSQL database"
+    name="PostgreSQL database"/>
+  <typecode
+    code="postgresqltables"
+    desc="Storage info for PostgreSQL tables"
+    name="PostgreSQL tables"/>
+  <typecode
+    code="postgresqlindexes"
+    desc="Storage info for PostgreSQL indexes"
+    name="PostgreSQL indexes"/>
+</typelist>

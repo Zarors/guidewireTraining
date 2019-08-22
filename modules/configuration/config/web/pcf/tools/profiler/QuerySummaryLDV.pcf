@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- Profiler page for displaying details of a set of arbitrary queries.
+    WARNING: Internal Guidewire file. DO NOT EDIT.
+
+    @see ArgsSummaryLDV
+    @see StackSummaryLDV
+    @author Carson Gross -->
+  <ListDetailPanel
+    id="QuerySummaryLDV"
+    selectionName="SelectedQuerySummary"
+    selectionType="gw.api.profiler.QuerySummary">
+    <Require
+      name="querySummaries"
+      type="gw.api.profiler.QuerySummary[]"/>
+    <PanelRef>
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Profiler.QueryDetails&quot;)"/>
+      <Toolbar/>
+      <ListViewPanel
+        id="QueryDetailsLV">
+        <RowIterator
+          editable="false"
+          elementName="querySummary"
+          value="querySummaries"
+          valueType="gw.api.profiler.QuerySummary[]">
+          <Row>
+            <TextCell
+              footerLabel="DisplayKey.get(&quot;Web.Profiler.Total&quot;)"
+              id="CallStack"
+              label="DisplayKey.get(&quot;Web.Profiler.CallStack&quot;)"
+              value="querySummary.getDomainStackTrace(100)"/>
+            <TextCell
+              id="Args"
+              label="DisplayKey.get(&quot;Web.Profiler.QueryArgs&quot;)"
+              value="querySummary.getShortArgs(30)"/>
+            <TextCell
+              footerSumValue="querySummary.Time"
+              id="QueryTime"
+              label="DisplayKey.get(&quot;Web.Profiler.QueryTime&quot;)"
+              sortDirection="descending"
+              sortOrder="1"
+              value="querySummary.Time"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              footerSumValue="querySummary.RowCount"
+              id="TotalRowCount"
+              label="DisplayKey.get(&quot;Web.Profiler.TotalRowCount&quot;)"
+              sortDirection="descending"
+              sortOrder="2"
+              value="querySummary.RowCount"
+              valueType="java.lang.Integer"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </PanelRef>
+    <CardViewPanel>
+      <Card
+        id="FilteredStackTrace"
+        title="DisplayKey.get(&quot;Web.Profiler.FilteredStackTrace&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <pre><%=SelectedQuerySummary.FilteredStackTrace %></pre>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+      <Card
+        id="FullStackTrace"
+        title="DisplayKey.get(&quot;Web.Profiler.FullStackTrace&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <pre><%=SelectedQuerySummary.FullStackTrace%></pre>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+      <Card
+        id="PCFStackTrace"
+        title="DisplayKey.get(&quot;Web.Profiler.PCFStackTrace&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <pre><%=SelectedQuerySummary.PcfStackTrace%></pre>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+      <Card
+        id="SQL"
+        title="DisplayKey.get(&quot;Web.Profiler.SQL&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <% printContent(SelectedQuerySummary.PrettyPrintedSQL, false) %>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+      <Card
+        id="Args"
+        title="DisplayKey.get(&quot;Web.Profiler.Args&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <% printContent(SelectedQuerySummary.Args, false) %>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+    </CardViewPanel>
+  </ListDetailPanel>
+</PCF>

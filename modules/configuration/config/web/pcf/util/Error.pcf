@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="false"
+    id="Error"
+    parent="ErrorGroup()"
+    title="DisplayKey.get(&quot;Web.Error&quot;)">
+    <LocationEntryPoint
+      signature="Error(Message : String, Exception : String, StackTrace : String)"/>
+    <Variable
+      name="Message"
+      type="String"/>
+    <Variable
+      name="Exception"
+      type="String"/>
+    <Variable
+      name="StackTrace"
+      type="String"/>
+    <Screen
+      id="ErrorScreen">
+      <Messages
+        hideIfReadOnly="true"/>
+      <DetailViewPanel
+        id="ErrorScreenDV">
+        <InputColumn>
+          <Label
+            label="Message"/>
+          <TextAreaInput
+            id="Exception"
+            labelAbove="true"
+            numRows="10"
+            value="Exception"
+            visible="Exception != null"/>
+          <InputDivider
+            visible="StackTrace != null"/>
+          <TextAreaInput
+            id="StackTrace"
+            labelAbove="true"
+            numRows="10"
+            value="StackTrace"
+            visible="StackTrace != null"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

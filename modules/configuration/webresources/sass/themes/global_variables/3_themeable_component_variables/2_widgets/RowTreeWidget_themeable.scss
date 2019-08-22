@@ -1,0 +1,10 @@
+$gw-app--RowTree--row-fixed-h-em: null !default;
+$gw-app--RowTree--expand-glyph: "caret-right-solid" !default;
+$gw-app--RowTree--collapse-glyph: "caret-up-solid" !default;
+$gw-app--RowTree--expand-collapse-glyph-size-em: gw-emFixed(.9) !default;
+$gw-app--RowTree--expand-collapse-marker-height-em: gw-emFixed(1.2) !default;
+$gw-app--RowTree--expand-collapse-size-em: $gw-app--inputs--checkbox-size-em !default;
+$gw-app--RowTree--expand-collapse-margin-right-em: gw-emFixed(.6) !default;
+$gw-app--RowTree--expand-collapse-glyph-as-button: true !default;
+$gw-app--RowTree--show-ancestor-lines: true !default;
+$gw-app--RowTree--show-leaf-dot: true !default;

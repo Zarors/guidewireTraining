@@ -1,0 +1,17 @@
+<WidgetTemplate name="GroupWidgetTemplate" valueType="entity.Group" inputWidgetName="GroupInput" cellWidgetName="GroupCell">
+
+  <TemplateAttribute name="searchLocation" default="pcf.GroupSearchPopup.push()" type="expression"/>
+  <TemplateAttribute name="selectLocation" default="pcf.OrganizationGroupTreePopup.push()" type="expression"/>
+  <TemplateAttribute name="valueRange" default="gw.api.admin.BaseAdminUtil.getGroupsForCurrentUser()" type="expression"/>
+
+  <ExpressionRangeValue valueRange="#{valueRange}">
+
+    <MenuItem id="GroupSearchMenuIcon" label="DisplayKey.get('Java.GroupValueWidget.SearchGroup')"
+                    action="#{searchLocation}"/>
+
+    <MenuItem id="GroupPickerMenuIcon" label="DisplayKey.get('Java.GroupValueWidget.SelectGroup')"
+                    action="#{selectLocation}"/>
+
+  </ExpressionRangeValue>
+
+</WidgetTemplate>

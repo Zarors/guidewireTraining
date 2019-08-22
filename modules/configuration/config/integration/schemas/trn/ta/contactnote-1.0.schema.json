@@ -1,0 +1,23 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "definitions" : {
+    "ContactNoteDetails" : {
+      "type" : "object",
+      "properties" : {
+        "ContactNoteType" : {
+          "type" : "string",
+          "x-gw-type" : "typekey.ContactNoteType"
+        },
+        "Confidential" : {
+          "type" : "boolean"
+        },
+        "Subject" : {
+          "type": "string"
+        },
+        "Body" : {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

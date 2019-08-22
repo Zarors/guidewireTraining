@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title><%= title %></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Page-Enter" content="RevealTrans(Duration=0,Transition=0)">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="SHORTCUT ICON" href="<%= resourceDir %>images/favicon.ico">
+
+  <script>
+    // PL-18010 Avoid race conditions where frames within the set use each others' data
+    function onFramesetLoaded() {
+      window.document_frame.initDocumentOperations();
+    }
+  </script>
+
+</head>
+<frameset id="toplevel_frameset" border="1" bordercolor="#000000" frameborder="1" framespacing="0" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" rows="100%,0,0,0,0" onload="onFramesetLoaded()" onbeforeunload="if (top_frame.EventHandlers) return top_frame.EventHandlers.beforeUnloadAppHandler()">
+  <frame name="top_frame" id="top_frame" frameborder="0" src="<%= topFrame %><%= frameParam %>=<%= mainFrame %>&r=<%= randParam %>&__navigator_index=<%= navigatorIndex %>"/>
+  <%--This frame exist for use when some javascript needs a hidden frame to target. Nothing should ever assume that its contents are in a particular state, and it may be overwritten at any time--%>
+  <frame name="utility_frame" id="utility_frame" src="<%= topFrame %><%= frameParam %>=<%= blankFrame %>&r=<%= randParam %>&__navigator_index=<%= navigatorIndex %>" width="0" height="0" noresize/>
+</frameset>
+</html>

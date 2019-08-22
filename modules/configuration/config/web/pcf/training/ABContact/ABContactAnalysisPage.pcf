@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Page
+    canEdit="true"
+    id="ABContactAnalysisPage"
+    title="DisplayKey.get(&quot;Training.Analysis&quot;)">
+    <LocationEntryPoint
+      signature="ABContactAnalysisPage(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Screen>
+      <PanelRef
+        def="ABContactAnalysisDV(anABContact)"/>
+    </Screen>
+  </Page>
+</PCF>

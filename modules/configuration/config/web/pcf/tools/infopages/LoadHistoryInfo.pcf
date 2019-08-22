@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    countsAsWork="false"
+    id="LoadHistoryInfo"
+    parent="InfoPages()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistoryInfo&quot;)">
+    <Variable
+      initialValue="new gw.api.tools.LoadHistoryHelper()"
+      name="PageHelper"
+      type="gw.api.tools.LoadHistoryHelper"/>
+    <Screen
+      id="LoadHistoryInfoScreen">
+      <PanelRef
+        def="LoadHistoryLV(PageHelper, getLoadCommands(), true)">
+        <Toolbar>
+          <ToolbarButton
+            action="null"
+            id="LoadHistoryInfo_RefreshButton"
+            label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+          <EditButtons
+            id="editbuttons"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+    <Code><![CDATA[
+function getLoadCommands() : gw.api.database.IQueryBeanResult<LoadCommand>
+      {
+      return gw.api.database.Query.make(LoadCommand).select()
+      }
+    ]]></Code>
+  </Page>
+</PCF>

@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ContactBasicsDV"
+    mode="ABPerson|ABPersonVendor|ABAdjudicator|ABUserContact|ABDoctor|ABAttorney|ABPolicyPerson">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="contact.CategoryScores != null and contact.CategoryScores.length &gt; 0"
+      name="hasCategoryScores"
+      type="Boolean"/>
+    <Variable
+      initialValue="new gw.web.ContactDetailsVendorHelper(contact)"
+      name="contactDetailsVendorHelper"
+      type="gw.web.ContactDetailsVendorHelper"/>
+    <InputColumn>
+      <TextInput
+        boldLabel="true"
+        boldValue="true"
+        id="CreateStatus"
+        label="DisplayKey.get(&quot;Web.ContactDetail.CreateStatus&quot;)"
+        value="contact.CreateStatus.DisplayName"
+        visible="contact.CreateStatus != ContactCreationApprovalStatus.TC_APPROVED"/>
+      <InputDivider
+        visible="contact.CreateStatus != ContactCreationApprovalStatus.TC_APPROVED"/>
+      <Label
+        label="contact.getSubtype().DisplayName"/>
+      <InputSetRef
+        def="GlobalPersonNameInputSet(new gw.api.name.ContactNameOwner(new gw.api.name.ABPersonNameDelegate(contact as ABPerson)))"
+        mode="gw.api.name.NameLocaleSettings.PCFMode"/>
+      <InputSet
+        visible="isPersonOnly(contact)">
+        <TextInput
+          editable="true"
+          id="FormerName"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Name.FormerName&quot;)"
+          value="(contact as ABPerson).FormerName"/>
+      </InputSet>
+      <InputSetRef
+        def="TagsInputSet(contact)"/>
+      <TypeKeyInput
+        editable="true"
+        id="VendorAvailability"
+        label="DisplayKey.get(&quot;Web.ContactDetail.VendorAvailability&quot;)"
+        required="contact.Vendor"
+        value="contact.VendorAvailability"
+        valueType="typekey.VendorAvailabilityType"
+        visible="contact.Vendor">
+        <PostOnChange/>
+      </TypeKeyInput>
+      <TextInput
+        editable="true"
+        id="VendorUnavailableMessageInput"
+        label="DisplayKey.get(&quot;Web.ContactDetail.VendorUnavailableMessage&quot;)"
+        maxChars="255"
+        value="contact.VendorUnavailableMessage"
+        visible="contactDetailsVendorHelper.ShowVendorUnavailableMessage"/>
+      <InputDivider/>
+      <InputSetRef
+        def="PrimaryAddressInputSet((contact as ABPerson))"/>
+      <InputDivider
+        visible="hasCategoryScores or (contact.Score != null)"/>
+      <Label
+        label="DisplayKey.get(&quot;Web.Reviews.ReviewPerformance&quot;)"
+        visible="hasCategoryScores or (contact.Score != null)"/>
+      <TextInput
+        id="score"
+        label="DisplayKey.get(&quot;Web.Reviews.OverallScore&quot;)"
+        value="contact.Score"
+        valueType="java.lang.Integer"
+        visible="contact.Score != null"/>
+      <ListViewInput
+        label="DisplayKey.get(&quot;Web.Reviews.CategoryScores&quot;)"
+        visible="hasCategoryScores">
+        <Toolbar/>
+        <ListViewPanel
+          id="CategoryScoresLV">
+          <RowIterator
+            editable="false"
+            elementName="categoryScore"
+            pageSize="0"
+            value="contact.getSortedCategoryScores()"
+            valueType="entity.ABContactCategoryScore[]">
+            <Row>
+              <TypeKeyCell
+                enableSort="false"
+                id="Category"
+                label="DisplayKey.get(&quot;Web.Reviews.Category&quot;)"
+                value="categoryScore.ReviewCategory"
+                valueType="typekey.ReviewCategory"/>
+              <TextCell
+                enableSort="false"
+                id="Score"
+                label="DisplayKey.get(&quot;Web.Reviews.Score&quot;)"
+                value="categoryScore.Score"
+                valueType="java.lang.Integer"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </ListViewInput>
+    </InputColumn>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo&quot;)"/>
+      <InputSetRef
+        def="ABUserContactBasicsInputSet(contact)"
+        mode="contact.Subtype"/>
+      <InputSetRef
+        def="ABAdjudicatorBasicsInputSet(contact)"
+        mode="contact.Subtype"/>
+      <TypeKeyInput
+        editable="true"
+        id="Currency"
+        label="DisplayKey.get(&quot;Web.ContactDetail.PreferredCurrency&quot;)"
+        value="(contact as ABPerson).PreferredCurrency"
+        valueType="typekey.Currency"
+        visible="gw.api.util.CurrencyUtil.isMultiCurrencyMode()"/>
+      <InputSet
+        visible="isPersonOnly(contact) or isAdjudicator(contact) or isPolicyPerson(contact)">
+        <PrivacyInput
+          editable="true"
+          encryptionExpression="(contact as ABPerson).maskTaxId(VALUE)"
+          id="TaxID"
+          label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.TaxID&quot;)"
+          value="(contact as ABPerson).TaxID"/>
+      </InputSet>
+      <InputSet
+        visible="isPersonOnly(contact)">
+        <TypeKeyInput
+          editable="true"
+          id="TaxFilingStatus"
+          label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.TaxFilingStatus&quot;)"
+          value="(contact as ABPerson).TaxFilingStatus"
+          valueType="typekey.TaxFilingStatusType"/>
+        <DateInput
+          editable="true"
+          id="DateOfBirth"
+          label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.DateOfBirth&quot;)"
+          value="(contact as ABPerson).DateOfBirth"/>
+        <TypeKeyInput
+          editable="true"
+          id="Gender"
+          label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.Gender&quot;)"
+          value="(contact as ABPerson).Gender"
+          valueType="typekey.GenderType"/>
+        <TypeKeyInput
+          editable="true"
+          id="MaritalStatus"
+          label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.MaritalStatus&quot;)"
+          value="(contact as ABPerson).MaritalStatus"
+          valueType="typekey.MaritalStatus"/>
+        <ABContactInput
+          editable="true"
+          forceContactSubtype="entity.ABPerson"
+          id="Guardian"
+          label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.Guardian&quot;)"
+          newContactMenu="NewPersonOnlyPickerMenuItemSet"
+          parentContact="contact"
+          value="(contact as ABPerson).Guardian"
+          valueType="entity.ABPerson"/>
+        <InputDivider/>
+        <Label
+          label="DisplayKey.get(&quot;Web.ContactDetail.Company&quot;)"/>
+        <TextInput
+          editable="true"
+          id="Occupation"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Company.Occupation&quot;)"
+          value="(contact as ABPerson).Occupation"/>
+      </InputSet>
+      <InputSet
+        visible="isPersonOnly(contact) or isAdjudicator(contact)">
+        <ABContactInput
+          editable="true"
+          id="Organization"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Company.Organization&quot;)"
+          parentContact="contact"
+          value="(contact as ABPerson).Employer"
+          valueType="entity.ABCompany"/>
+      </InputSet>
+      <InputSetRef
+        def="ABPersonVendorSpecialtyInputSet(contact as ABPerson)"
+        mode="contact.Subtype"/>
+      <InputSetRef
+        def="ABPersonVendorInputSet(contact as ABPerson)"
+        mode="contact.Subtype"/>
+      <InputDivider/>
+      <InputSet
+        visible="isPersonOnly(contact)">
+        <Label
+          label="DisplayKey.get(&quot;Web.ContactDetail.DriversLicense&quot;)"/>
+        <TextInput
+          editable="true"
+          id="LicenseNumber"
+          label="DisplayKey.get(&quot;Web.ContactDetail.DriversLicense.LicenseNumber&quot;)"
+          value="(contact as ABPerson).LicenseNumber"/>
+        <TypeKeyInput
+          editable="true"
+          filter="VALUE.hasCategory(JurisdictionType.TC_DRIVING_LIC)"
+          id="LicenseState"
+          label="DisplayKey.get(&quot;Web.ContactDetail.DriversLicense.LicenseState&quot;)"
+          value="(contact as ABPerson).LicenseState"
+          valueType="typekey.Jurisdiction"/>
+        <InputDivider/>
+      </InputSet>
+      <TextAreaInput
+        boldLabel="true"
+        editable="true"
+        id="Notes"
+        label="DisplayKey.get(&quot;Web.ContactDetail.Notes&quot;)"
+        numRows="3"
+        value="(contact as ABPerson).Notes"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputDivider/>
+      <ListViewInput
+        boldLabel="true"
+        def="ContactEFTLV(contact)"
+        label="DisplayKey.get(&quot;Web.ContactDetail.EFT&quot;)"
+        labelAbove="true">
+        <Toolbar>
+          <IteratorButtons
+            iterator="ContactEFTLV.ContactEFTLV"/>
+        </Toolbar>
+      </ListViewInput>
+    </InputFooterSection>
+    <Code><![CDATA[function isVendor(aContact : ABContact) : boolean {
+      return aContact typeis ABPersonVendor;
+      }
+
+      function isAdjudicator(aContact : ABContact) : boolean {
+      return aContact typeis ABAdjudicator;
+      }
+
+      function isPersonOnly(aContact : ABContact) : boolean {
+      return aContact.Subtype==TC_ABPERSON;
+      }
+
+      function isPolicyPerson(aContact : ABContact) : boolean {
+      return aContact typeis ABPolicyPerson;
+      }]]></Code>
+  </DetailViewPanel>
+</PCF>

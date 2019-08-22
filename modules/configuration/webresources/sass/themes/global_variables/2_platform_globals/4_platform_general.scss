@@ -1,0 +1,20 @@
+// General UI
+$gw-app--base-font-size--in-px: gw-pxFixed(13) !default;
+$gw-app--font-family: Arial, Helvetica, sans-serif !default;
+$gw-app--font-family--monospace: Monaco, "Lucida Console", monospace !default;
+$gw-app--font-size--smaller-px: gw-pxFixed(11) !default;
+$gw-app--font-size--tiny-px: gw-pxFixed(10) !default;
+$gw-app--font-family--small: Bookman, Arial, Helvetica, sans-serif !default;
+$gw-app--border-radius-px: gw-pxFixed(3) !default;
+$gw-app--focus--outline-width-px: gw-pxFixed(1) !default;
+$gw-app--focus--outline-offset-px: gw-pxFixed(-3) !default;
+$gw-app--bold-label-weight: gw-weight("semibold") !default;
+$gw-app--default-focus-outline-col: $gw-app--palette--blue-focus !default;
+
+// Other
+$gw-app--loading-glyph: "spinner" !default;
+$gw-media--tablet--width-px: 1024px; //px-allowed
+$gw-media--phone--width-px: 768px; //px-allowed
+//NOTE: the glyph conversion map is designed to support Font Awesome 5 pro.
+//See $gw-convert-gw-icons-to-other-libraries-map
+$gw-app--force-all-gw-icons-to-another-library-using-conversion-map: true !default;

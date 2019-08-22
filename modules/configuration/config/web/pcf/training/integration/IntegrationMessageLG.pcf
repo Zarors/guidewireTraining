@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <LocationGroup
+    id="IntegrationMessageLG"
+    title="DisplayKey.get(&quot;Training.IntegrationMessaging&quot;)">
+    <LocationEntryPoint
+      signature="IntegrationMessageLG()"/>
+    <LocationRef
+      location="IntegrationMessageTablePage()"/>
+    <LocationRef
+      location="IntegrationMessageHistoryTablePage()"/>
+    <LocationRef
+      location="IntegrationMessageGeneratorPage()"/>
+    <LocationRef
+      location="IntegrationMessageExceptionPage()"/>
+    <LocationRef
+      location="IntegrationMessageSafeOrderingPage()"/>
+    <LocationRef
+      location="IntegrationMessageAcknowledgementPage()"/>
+    <LocationRef
+      location="IntegrationMessageAdminPage()"/>
+  </LocationGroup>
+</PCF>

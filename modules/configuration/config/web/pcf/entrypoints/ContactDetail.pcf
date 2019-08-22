@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <EntryPoint
+    authenticationRequired="true"
+    failurePage="ABContactSearch"
+    id="ContactDetail"
+    location="ContactDetail(contact)">
+    <EntryPointParameter
+      conversionExpression="gw.api.web.contact.ABContactParamUtil.convertStringParam(VALUE) as ABContact"
+      locationParam="contact"
+      type="ABContact"
+      urlParam="ABContactLinkId"/>
+  </EntryPoint>
+</PCF>

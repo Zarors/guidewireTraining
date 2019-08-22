@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="ABPersonVendorSpecialtyInputSet"
+    mode="ABDoctor">
+    <Require
+      name="person"
+      type="ABPerson"/>
+    <TextInput
+      editable="true"
+      id="MedicalLicense"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Doctor.MedicalLicense&quot;)"
+      value="(person as ABDoctor).MedicalLicense"/>
+    <TypeKeyInput
+      editable="true"
+      id="DoctorSpecialty"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Doctor.DoctorSpecialty&quot;)"
+      value="(person as ABDoctor).DoctorSpecialty"
+      valueType="typekey.SpecialtyType"/>
+  </InputSet>
+</PCF>

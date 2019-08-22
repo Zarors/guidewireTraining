@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <PanelSet
+    id="WorkQueueExecutorsPanelSet">
+    <Require
+      name="Helper"
+      type="gw.api.web.tools.WorkQueueInfoPage"/>
+    <Require
+      name="Queue"
+      type="gw.api.web.tools.WorkQueueDisplayInfo"/>
+    <Variable
+      initialValue="Helper.getWorkQueueExecutorInfoArray(Queue)"
+      name="Executors"
+      recalculateOnRefresh="true"
+      type="gw.api.web.tools.WorkQueueExecutorDisplayInfo[]"/>
+    <Verbatim
+      label="getMaxNumberOfExecutorsShownText()"
+      labelStyleClass="alertBar"
+      visible="isMaximumNumberOfExecutorsShown()"/>
+    <ListDetailPanel
+      id="WorkQueueExecutorLDV"
+      selectionName="SelectedExecutor"
+      selectionType="gw.api.web.tools.WorkQueueExecutorDisplayInfo">
+      <ListViewPanel
+        id="ExecutorDetailLV">
+        <RowIterator
+          editable="false"
+          elementName="executor"
+          id="ExecutorsList"
+          pageSize="0"
+          value="Executors"
+          valueType="gw.api.web.tools.WorkQueueExecutorDisplayInfo[]">
+          <Row>
+            <TextCell
+              enableSort="false"
+              id="Hostname"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Hostname&quot;)"
+              value="executor.HostName"/>
+            <TextCell
+              enableSort="false"
+              id="MaxWorkers"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.MaxWorkers&quot;)"
+              value="executor.MaxNumberOfWorkers"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              enableSort="false"
+              id="ProcessedItemsCount"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.ProcessedItemCount&quot;)"
+              value="executor.Summary.Processed"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              enableSort="false"
+              id="ExceptionsCount"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Exceptions&quot;)"
+              value="executor.Summary.Exceptions"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              enableSort="false"
+              id="FailedCount"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Failed&quot;)"
+              value="executor.Summary.Failed"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              enableSort="false"
+              id="Status"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Status&quot;)"
+              value="executor.Status.toString()"/>
+            <DateCell
+              dateFormat="short"
+              enableSort="false"
+              id="StartedTime"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Started&quot;)"
+              timeFormat="medium"
+              value="executor.StartTime"/>
+            <TextCell
+              enableSort="false"
+              id="UpTime"
+              label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.UpTime&quot;)"
+              outputConversion="VALUE.DisplayString"
+              value="executor.UpTime"
+              valueType="gw.api.web.tools.Duration"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+      <CardViewPanel
+        id="WorkersDV">
+        <Card
+          id="Tasks"
+          title="DisplayKey.get(&quot;Web.WorkQueueWorkers.Title&quot;)">
+          <PanelRef>
+            <Toolbar>
+              <IteratorButtons
+                iterator="TaskIterator"/>
+            </Toolbar>
+            <ListViewPanel
+              id="WorkersLV">
+              <RowIterator
+                editable="false"
+                elementName="task"
+                id="TaskIterator"
+                pageSize="25"
+                value="gw.api.database.Query.make(InstrumentedWorkerTask).compare(&quot;InstrumentedWorkExecutorID&quot;, Equals, SelectedExecutor.InstrumentedExecutor.ID.Value).select()"
+                valueType="gw.api.database.IQueryBeanResult&lt;entity.InstrumentedWorkerTask&gt;">
+                <ToolbarFilter
+                  label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.TaskFilter&quot;)"
+                  name="TaskFilter">
+                  <ToolbarFilterOption
+                    filter="new gw.api.filters.StandardQueryFilter(&quot;All&quot;, \ q -&gt; {})"/>
+                  <ToolbarFilterOption
+                    filter="new gw.api.filters.StandardQueryFilter(&quot;With errors&quot;, \ q -&gt; q.compare(&quot;Exceptions&quot;, gw.api.database.Relop.GreaterThan, 0))"/>
+                </ToolbarFilter>
+                <Row>
+                  <TextCell
+                    enableSort="false"
+                    id="InstanceId"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.InstanceId&quot;)"
+                    value="task.InstanceNumber"
+                    valueType="java.lang.Integer"/>
+                  <TextCell
+                    enableSort="false"
+                    id="WriterId"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.WriterId&quot;)"
+                    value="task.ProcessHistoryID"
+                    valueType="java.lang.Long"/>
+                  <BooleanRadioCell
+                    enableSort="false"
+                    id="Success"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Success&quot;)"
+                    value="task.RanToCompletion"/>
+                  <TextCell
+                    id="CheckedOutItemsCount"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.CheckedOut&quot;)"
+                    value="task.WorkitemsCheckedOut"
+                    valueType="java.lang.Integer"/>
+                  <TextCell
+                    id="ProcessedItemsCount"
+                    label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.ProcessedItemCount&quot;)"
+                    value="task.WorkitemsProcessed"
+                    valueType="java.lang.Integer"/>
+                  <TextCell
+                    id="ExceptionCount"
+                    label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Exceptions&quot;)"
+                    value="task.Exceptions"
+                    valueType="java.lang.Integer"/>
+                  <TextCell
+                    id="OrphansCount"
+                    label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Orphans&quot;)"
+                    value="task.OrphansAdopted"
+                    valueType="java.lang.Integer"/>
+                  <TextCell
+                    id="FailedCount"
+                    label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Failed&quot;)"
+                    value="task.WorkitemsFailed"
+                    valueType="java.lang.Integer"/>
+                  <TextCell
+                    id="SkippedCount"
+                    label="DisplayKey.get(&quot;Web.WorkQueueExecutorsLv.Skipped&quot;)"
+                    value="task.WorkitemsSkipped"
+                    valueType="java.lang.Integer"/>
+                  <DateCell
+                    dateFormat="short"
+                    id="StartedTime"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Started&quot;)"
+                    sortDirection="descending"
+                    sortOrder="1"
+                    timeFormat="medium"
+                    value="task.StartTime"/>
+                  <DateCell
+                    dateFormat="short"
+                    enableSort="false"
+                    id="EndedTime"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Ended&quot;)"
+                    timeFormat="medium"
+                    value="task.EndTime"/>
+                  <BooleanRadioCell
+                    enableSort="false"
+                    id="Active"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Active&quot;)"
+                    value="task.EndTime == null"/>
+                  <TextCell
+                    enableSort="false"
+                    id="ConsecutiveErrors"
+                    label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.ConsecutiveErrors&quot;)"
+                    value="task.ConsecutiveExceptions"
+                    valueType="java.lang.Integer"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+      </CardViewPanel>
+    </ListDetailPanel>
+    <Code><![CDATA[function isMaximumNumberOfExecutorsShown() : boolean {
+  if (Executors == null) {
+    return false
+  }
+  return Executors.Count >= Helper.MaxSizeOfExecutorsArray;
+}
+
+function getMaxNumberOfExecutorsShownText() : String {
+  if (Executors == null) {
+    return ""
+  }
+  return Executors.allMatch(\ w -> w.ActiveStatus) 
+      ? DisplayKey.get("Web.InternalTools.WorkQueueInfo.OnlyActiveExecutorsAreShown") : DisplayKey.get("Web.InternalTools.WorkQueueInfo.OnlyLastNRecordsAreShown", Executors.Count)
+}
+
+function formatDuration(milis: java.lang.Long) : String {
+  if (milis == null) {
+    return ""
+  }
+  return gw.api.web.tools.Duration.shortFormatMillisecs(milis)
+}]]></Code>
+  </PanelSet>
+</PCF>

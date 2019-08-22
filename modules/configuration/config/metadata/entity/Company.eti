@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Company subtype -->
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents an company/business as a primary subtype of Contact."
+  entity="Company"
+  final="false"
+  platform="true"
+  priority="1"
+  supertype="Contact"/>

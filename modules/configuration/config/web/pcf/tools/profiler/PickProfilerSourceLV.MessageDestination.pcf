@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="MessageDestination">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="instrumentedMessage"
+      toRemove="deleteProfilerData(instrumentedMessage)"
+      value="gw.api.database.Query.make(InstrumentedMessage).compare(&quot;ProfilerData&quot;, NotEquals, null).select()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.InstrumentedMessage&gt;">
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.Profiler.MessageDestination&quot;)"
+        name="messageDestinationChooser">
+        <ToolbarFilterOptionGroup
+          filters="new gw.api.filters.MessageDestinationFilterSet().getFilterOptions()"/>
+      </ToolbarFilter>
+      <ToolbarFlag
+        condition="instrumentedMessage.EndTime != null"
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="instrumentedMessage.EndTime == null"
+        name="CannotDelete"/>
+      <Row>
+        <TextCell
+          id="MessageDestinationID"
+          label="DisplayKey.get(&quot;Web.Profiler.DestinationID&quot;)"
+          sortOrder="1"
+          value="instrumentedMessage.DestinationID"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          enableSort="false"
+          id="MessageDestinationName"
+          label="DisplayKey.get(&quot;Web.Profiler.DestinationName&quot;)"
+          value="instrumentedMessage.Name"/>
+        <DateCell
+          dateFormat="short"
+          id="StartTime"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Started&quot;)"
+          sortDirection="descending"
+          sortOrder="4"
+          timeFormat="short"
+          value="instrumentedMessage.StartTime"/>
+        <DateCell
+          dateFormat="short"
+          id="EndTime"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Ended&quot;)"
+          timeFormat="short"
+          value="instrumentedMessage.EndTime"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[function deleteProfilerData(instrumentedMessage : InstrumentedMessage) {
+  gw.transaction.Transaction.runWithNewBundle( \ bundle -> {
+      var localSource = bundle.add( instrumentedMessage )
+      localSource.ProfilerData = null
+    }
+  )
+}]]></Code>
+  </ListViewPanel>
+</PCF>

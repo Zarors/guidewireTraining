@@ -1,0 +1,51 @@
+.gw-ToolbarWidget {
+  display: flex;
+  &:empty {
+    display: none;
+  }
+
+  // Position to other widgets
+  margin-top: $gw-app--ToolbarWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--ToolbarWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--ToolbarWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--ToolbarWidget--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-left: $gw-app--ToolbarWidget--spacing-inner-left-rem;
+  padding-right: $gw-app--ToolbarWidget--spacing-inner-right-rem;
+  padding-top: $gw-app--ToolbarWidget--spacing-inner-top-rem;
+  padding-bottom: $gw-app--ToolbarWidget--spacing-inner-bottom-rem;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+
+  > .gw-ToolbarDividerWidget + .gw-ToolbarDividerWidget {
+    display: none;
+  }
+  > .gw-ToolbarDividerWidget:first-child {
+    display: none;
+  }
+  > .gw-ToolbarDividerWidget:last-child {
+    display: none;
+  }
+
+  .gw-StyleContainer--ToolbarWidget:not(.gw-WizardButtonsWidget):not(.gw-StandardWizardButtonsWidget):not(.gw-ToolbarWidget) {
+    margin-top: $gw-app--ToolbarWidget-children--spacing-widget-top-rem;
+    margin-left: $gw-app--ToolbarWidget-children--spacing-widget-left-rem;
+    margin-right: $gw-app--ToolbarWidget-children--spacing-widget-right-rem;
+    margin-bottom: $gw-app--ToolbarWidget-children--spacing-widget-bottom-rem;
+  }
+
+  .gw-ToolbarDividerWidget {
+    display: inline-block;
+    align-self: center;
+    width: $gw-app--ToolbarDivider--width-px;
+    height: $gw-app--ToolbarDivider--height-em;
+    border-radius: 0;
+    background-color: $gw-app--ToolbarDivider--bg;
+  }
+}
+

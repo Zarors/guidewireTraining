@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Status of a DataChange."
+  final="false"
+  name="DataChangeStatus"
+  platform="true">
+  <typecode
+    code="Open"
+    desc="The gosu was added but not yet run"
+    name="Open"/>
+  <typecode
+    code="Discarded"
+    desc="The gosu was discarded without being run"
+    name="Discard"/>
+  <typecode
+    code="Executing"
+    desc="The gosu is being executed"
+    name="Executing"/>
+  <typecode
+    code="Failed"
+    desc="The gosu was executed but threw an exception"
+    name="Failed"/>
+  <typecode
+    code="Completed"
+    desc="The gosu was executed and did not throw an exception"
+    name="Completed"/>
+</typelist>

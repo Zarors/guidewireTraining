@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.User.ViewCluster or perm.User.DevAllAccess"
+    id="ClusterComponents"
+    parent="ServerTools()"
+    title="DisplayKey.get(&quot;Web.InternalTools.ClusterComponents.Title&quot;)">
+    <Variable
+      initialValue="new gw.api.tools.ClusterComponentsData(java.util.concurrent.TimeUnit.DAYS.toHours(7))"
+      name="data"
+      type="gw.api.tools.ClusterComponentsData"/>
+    <Screen>
+      <Toolbar>
+        <ToolbarButton
+          action="ClusterComponentsDownloadConfigurePopup.push()"
+          id="DownloadReport"
+          label="DisplayKey.get(&quot;Button.Download&quot;)"/>
+        <ToolbarRangeInput
+          id="TypeFilter"
+          label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponents.Types&quot;)"
+          noneSelectedLabel="DisplayKey.get(&quot;Java.ListView.Filter.All&quot;)"
+          optionLabel="VALUE.DisplayName"
+          value="data.SelectedType"
+          valueRange="data.ComponentTypes"
+          valueType="gw.api.system.cluster.ComponentType">
+          <PostOnChange/>
+        </ToolbarRangeInput>
+        <ToolbarFilter
+          iterator="ComponentsLV.Iterator"
+          label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponents.LV.State&quot;)"
+          name="StateFilter">
+          <ToolbarFilterOptionGroup
+            filters="gw.api.tools.ClusterComponentFilters.StateFilters.toTypedArray()"/>
+        </ToolbarFilter>
+        <ToolbarButton
+          action="ClusterComponentsFilterByComponentPopup.push(data)"
+          id="FilterByComponent"
+          label="data.HiddenComponentCount &gt; 0 ? DisplayKey.get(&quot;Web.InternalTools.ClusterComponents.FilterByComponent.WithHidden&quot;, data.HiddenComponentCount) : DisplayKey.get(&quot;Web.InternalTools.ClusterComponents.FilterByComponent&quot;)"/>
+        <ToolbarButton
+          action="data.reload()"
+          id="RefreshButton"
+          label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+      </Toolbar>
+      <PanelRef
+        def="ClusterComponentsLV(data, data.VisibleComponents, true)"
+        id="ComponentsLV"/>
+    </Screen>
+  </Page>
+</PCF>

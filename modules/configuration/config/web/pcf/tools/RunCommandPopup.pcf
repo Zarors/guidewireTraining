@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    afterCommit="methodInfo.CallHandler.handleCall( command, new Object[0] )"
+    canEdit="true"
+    id="RunCommandPopup"
+    returnType="Object"
+    startInEditMode="true"
+    title="&quot;Parameters for &quot; + methodInfo.Name">
+    <LocationEntryPoint
+      signature="RunCommandPopup(command : gw.command.BaseCommand, methodInfo : gw.lang.reflect.IMethodInfo)"/>
+    <Variable
+      name="command"
+      type="gw.command.BaseCommand"/>
+    <Variable
+      name="methodInfo"
+      type="gw.lang.reflect.IMethodInfo"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"
+          showUpdateConfirmMessage="false"
+          updateLabel="&quot;Run&quot;"
+          updateShortcut="R"/>
+      </Toolbar>
+      <ListViewPanel
+        editable="true">
+        <RowIterator
+          editable="true"
+          elementName="arg"
+          value="command.Arguments"
+          valueType="java.util.List&lt;gw.command.Argument&lt;java.lang.Object&gt;&gt;">
+          <RowSetRef
+            def="ArgumentRowSet(arg)"
+            mode="arg.IsDate ? &quot;Date&quot; : (arg.Suggestions.HasElements ? &quot;String&quot; : &quot;Generic&quot;)"/>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

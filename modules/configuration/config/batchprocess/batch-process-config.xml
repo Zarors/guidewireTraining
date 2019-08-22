@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<batch-process-config xmlns="http://guidewire.com/batch-process-config">
+
+  <settings defaultServer="#batch" startupDelay="0, 5, 15, 90, 180" startupTimeout="600" pollInterval="60"/>
+  <settings defaultServer="#batch" startupDelay="0, 5, 15, 90, 180" startupTimeout="60" pollInterval="10" env="test"/>
+
+</batch-process-config>

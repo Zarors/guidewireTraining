@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="CommonContact"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.CommonContactAdapter"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.CommonContactPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.CommonContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.CommonContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactImplCallback"/>
+  <fulldescription><![CDATA[
+      This is a shared delegate/interface which allows code to operate on those common
+      properties held by either Contact or ABContact entities. This allows code-sharing in cases where code might
+      be used by both ContactManager and another Guidewire application.
+    ]]></fulldescription>
+</delegate>

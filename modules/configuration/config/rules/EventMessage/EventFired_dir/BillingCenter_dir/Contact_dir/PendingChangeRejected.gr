@@ -1,0 +1,30 @@
+package rules.EventMessage.EventFired_dir.BillingCenter_dir.Contact_dir
+uses gw.plugin.Plugins
+uses gw.plugin.ClientSystemPlugin
+uses gw.plugin.AsyncMessageType
+
+@gw.rules.RuleName("PendingChangeRejected")
+internal class PendingChangeRejected {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.EventName == "ABContactPendingChangeRejected"
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+var pending = new gw.web.PendingChangesWebUtil().ClientChangeContext
+if (pending.Resolution != ContactChangeResolution.TC_ALREADY_APPLIED) {
+  var contact = messageContext.Root as ABContact
+  var plugin = Plugins.get("BillingSystemPlugin") as ClientSystemPlugin
+  if (plugin != null) {
+    plugin.createAsyncMessage(messageContext, contact, AsyncMessageType.RejectChange)
+  }
+}
+/*end00rule*/
+
+  }
+}

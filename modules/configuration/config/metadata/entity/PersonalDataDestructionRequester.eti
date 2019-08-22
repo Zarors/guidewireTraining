@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<entity
+  loadable="false"
+  platform="true"
+  xmlns="http://guidewire.com/datamodel"
+  entity="PersonalDataDestructionRequester"
+  desc="Request information for contact personal data destruction"
+  table="pddestructrequester"
+  type="editable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.personaldata.PersonalDataDestructionRequesterPublicMethods"
+    impl="com.guidewire.pl.domain.personaldata.PersonalDataDestructionRequesterImpl"/>
+  <column
+    desc="The id of the person/company making the request to destroy personal data."
+    name="RequesterID"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="64"/>
+  </column>
+  <foreignkey
+    columnName="PDDestructionRequest"
+    desc="Personal data destruction request"
+    fkentity="PersonalDataDestructionRequest"
+    name="PersonalDataDestructionRequest"
+    nullok="false"/>
+  <index
+    desc="For each requester there should be a unique requestID"
+    name="UniqueRequester">
+    <indexcol
+      keyposition="2"
+      name="PublicID"/>
+    <indexcol
+      keyposition="1"
+      name="RequesterID"/>
+    <indexcol
+      keyposition="3"
+      name="PDDestructionRequest"/>
+  </index>
+</entity>

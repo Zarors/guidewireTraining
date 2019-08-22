@@ -1,0 +1,2599 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.SystemToolsAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI" name="SystemToolsAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/webservice/systemTools" xmlns:pogo2="http://guidewire.com/gw/api/tools" xmlns:pogo3="http://guidewire.com/gw/api/database" xmlns:pogo4="http://guidewire.com/gw/util" xmlns:pogo5="http://guidewire.com/gw/api/system/cluster" xmlns:pogo6="http://guidewire.com/gw/api/system/server" xmlns:pogo7="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <!-- getVersion() : ServerVersion -->
+      <xs:element name="getVersion">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getVersionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ServerVersion" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- submitDBCCBatchJob(String[], String[]) : ProcessID -->
+      <xs:element name="submitDBCCBatchJob">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="tablesToCheck" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="consistencyCheckTypesToCheck" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="submitDBCCBatchJobResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ServerStateException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getDBCCState() : WorkItemSetState -->
+      <xs:element name="getDBCCState">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getDBCCStateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- submitUpdateStats(String, boolean) -->
+      <xs:element name="submitUpdateStats">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+            <xs:element name="incremental" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="submitUpdateStatsResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- cancelUpdateStats() -->
+      <xs:element name="cancelUpdateStats">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="cancelUpdateStatsResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getUpdateStatsState() : WorkItemSetState -->
+      <xs:element name="getUpdateStatsState">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getUpdateStatsStateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getRecentQueryStoreRuntimeStatsIntervalInfo(int) : QueryStoreRuntimeStatsIntervalDTO[] -->
+      <xs:element name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="numIntervals" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRecentQueryStoreRuntimeStatsIntervalInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo:QueryStoreRuntimeStatsIntervalDTO" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PermissionException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- submitSqlServerPerfReportWithoutQueryStoreBatchJob(boolean) : ProcessID -->
+      <xs:element name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="includeDatabaseStatistics" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- submitSqlServerPerfReportWithQueryStoreBatchJob(boolean, long, long) : ProcessID -->
+      <xs:element name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="includeDatabaseStatistics" type="xs:boolean"/>
+            <xs:element name="beginIntervalID" type="xs:long"/>
+            <xs:element name="endIntervalID" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="submitSqlServerPerfReportWithQueryStoreBatchJobResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getRecentAWRSnapshotInfo(int) : DatabaseSnapshotInfo[] -->
+      <xs:element name="getRecentAWRSnapshotInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="numSnapshots" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRecentAWRSnapshotInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo3:DatabaseSnapshotInfo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- submitAwrReportBatchJob(AWRReportUserSettings) : ProcessID -->
+      <xs:element name="submitAwrReportBatchJob">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="awrReportUserSettings" type="pogo3:AWRReportUserSettings" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="submitAwrReportBatchJobResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getPerfReportsInfo(int) : String[] -->
+      <xs:element name="getPerfReportsInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="numDownloads" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPerfReportsInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getUpdateTableStatisticsData() : UpdateTableStatisticsData[] -->
+      <xs:element name="getUpdateTableStatisticsData">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getUpdateTableStatisticsDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo:UpdateTableStatisticsData" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getIncrementalUpdateTableStatisticsData() : UpdateTableStatisticsData[] -->
+      <xs:element name="getIncrementalUpdateTableStatisticsData">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getIncrementalUpdateTableStatisticsDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo:UpdateTableStatisticsData" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- reportDatabaseCatalogStatistics() : byte[] -->
+      <xs:element name="reportDatabaseCatalogStatistics">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="reportDatabaseCatalogStatisticsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:hexBinary" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- reportPartialDatabaseCatalogStatistics(String[], String[], String[]) : byte[] -->
+      <xs:element name="reportPartialDatabaseCatalogStatistics">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="tables" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="stagingTables" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="typelistTables" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="reportPartialDatabaseCatalogStatisticsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:hexBinary" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- verifyDatabaseSchema() : String[] -->
+      <xs:element name="verifyDatabaseSchema">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="verifyDatabaseSchemaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- setRunlevel(SystemRunlevel) -->
+      <xs:element name="setRunlevel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="runLevel" type="pogo:SystemRunlevel" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setRunlevelResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getRunlevel() : SystemRunlevel -->
+      <xs:element name="getRunlevel">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getRunlevelResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:SystemRunlevel" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getHighestRunlevel() : SystemRunlevel -->
+      <xs:element name="getHighestRunlevel">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getHighestRunlevelResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:SystemRunlevel" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getActiveSessionData() : SessionData[] -->
+      <xs:element name="getActiveSessionData">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getActiveSessionDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo:SessionData" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- updateLoggingLevel(String, SystemOutLogger.LoggingLevel) -->
+      <xs:element name="updateLoggingLevel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="logger" type="xs:string" minOccurs="0"/>
+            <xs:element name="level" type="pogo4:SystemOutLogger.LoggingLevel" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateLoggingLevelResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- reloadLoggingConfig() -->
+      <xs:element name="reloadLoggingConfig">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="reloadLoggingConfigResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getLoggingCategories() : String[] -->
+      <xs:element name="getLoggingCategories">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getLoggingCategoriesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- verifyConfig(String, String, FilenameDigestPair[]) : String -->
+      <xs:element name="verifyConfig">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="appVerifiersConfigFP" type="xs:string" minOccurs="0"/>
+            <xs:element name="plVerifiersConfigFP" type="xs:string" minOccurs="0"/>
+            <xs:element name="fileDigestPairs" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo2:FilenameDigestPair" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="verifyConfigResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- verifyConfigUsingRemoteExtCfg(String, String, FilenameDigestPair[]) : String -->
+      <xs:element name="verifyConfigUsingRemoteExtCfg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="appVerifiersConfigFP" type="xs:string" minOccurs="0"/>
+            <xs:element name="plVerifiersConfigFP" type="xs:string" minOccurs="0"/>
+            <xs:element name="compressedFiles" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo2:FilenameDigestPair" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="verifyConfigUsingRemoteExtCfgResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- startFullUpgrade() -->
+      <xs:element name="startFullUpgrade">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="startFullUpgradeResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getServerRoles() : String[] -->
+      <xs:element name="getServerRoles">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getServerRolesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getServerId() : String -->
+      <xs:element name="getServerId">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getServerIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getClusterState() : ClusterState -->
+      <xs:element name="getClusterState">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getClusterStateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo5:ClusterState" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- nodeFailed(String, boolean) -->
+      <xs:element name="nodeFailed">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serverId" type="xs:string" minOccurs="0"/>
+            <xs:element name="evenIfInCluster" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nodeFailedResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- scheduleShutdown(String, ShutdownOptions) : boolean -->
+      <xs:element name="scheduleShutdown">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serverId" type="xs:string" minOccurs="0"/>
+            <xs:element name="options" type="pogo6:ShutdownOptions" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="scheduleShutdownResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- cancelShutdown(String) : boolean -->
+      <xs:element name="cancelShutdown">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serverId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelShutdownResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- completeFailedFailover(ComponentType, String) -->
+      <xs:element name="completeFailedFailover">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="componentType" type="pogo5:ComponentType" minOccurs="0"/>
+            <xs:element name="componentId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="completeFailedFailoverResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- requestComponentTransfer(ComponentType, String, String) -->
+      <xs:element name="requestComponentTransfer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="componentType" type="pogo5:ComponentType" minOccurs="0"/>
+            <xs:element name="componentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="targetOwner" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestComponentTransferResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getMetadataHashes() : List<MetadataHash> -->
+      <xs:element name="getMetadataHashes">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getMetadataHashesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo7:MetadataHash" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/systemTools" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:complexType name="ServerVersion">
+        <xs:sequence>
+          <xs:element name="AppVersion" type="xs:string" minOccurs="0"/>
+          <xs:element name="CustomerVersion" type="xs:string" minOccurs="0"/>
+          <xs:element name="PlatformVersion" type="xs:string" minOccurs="0"/>
+          <xs:element name="SchemaVersion" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryStoreRuntimeStatsIntervalDTO">
+        <xs:sequence>
+          <xs:element name="EndIntervalTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="ID" type="xs:long" minOccurs="0"/>
+          <xs:element name="StartIntervalTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateTableStatisticsData">
+        <xs:sequence>
+          <xs:element name="StatisticsUpdateStatements" minOccurs="0" gw:viewas="array">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TableName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SystemRunlevel">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="STARTING"/>
+          <xs:enumeration value="MAINTENANCE"/>
+          <xs:enumeration value="DAEMONS"/>
+          <xs:enumeration value="MULTIUSER"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SessionData">
+        <xs:sequence>
+          <xs:element name="SessionId" type="xs:string" minOccurs="0"/>
+          <xs:element name="UserId" type="xs:string" minOccurs="0"/>
+          <xs:element name="UserName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/tools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <xs:complexType name="ProcessID">
+        <xs:sequence>
+          <xs:element name="Pid" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FilenameDigestPair">
+        <xs:sequence>
+          <xs:element name="Digest" type="xs:string" minOccurs="0"/>
+          <xs:element name="Filename" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/database" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <xs:complexType name="DatabaseSnapshotInfo">
+        <xs:sequence>
+          <xs:element name="BeginIntervalTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:element name="Id" type="xs:int" minOccurs="0"/>
+          <xs:element name="SnapTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="SnapshotChosen" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="StartupTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AWRReportUserSettings">
+        <xs:sequence>
+          <xs:element name="BeginSnapId" type="xs:int" minOccurs="0"/>
+          <xs:element name="CapturePeakedBindVariables" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="CapturePeakedBindVariablesFromAWR" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ConcurrentBatchProcessAndWorkerAnalysis" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ConcurrentHistoryAnalysis" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ConcurrentMessagingAnalysis" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="EndSnapId" type="xs:int" minOccurs="0"/>
+          <xs:element name="GenerateCallsToASHScripts" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="InMemorySQLMonitorIncludeAllExecutions" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="IncludeDatabaseStatistics" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="IncludeMetadataForInstrumentationTables" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="IncludeNativeOracleAWRReport" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="OnDiskSQLMonitorIncludeAllExecutions" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ProbeInMemorySQLMonitor" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ProbeOnDiskSQLMonitor" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ProbeVDollarTables" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="SearchForQueriesOnlyInFirstSnapshot" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="SearchForQueriesOnlyInLastSnapshot" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="SearchForQueriesWithMultiplePlans" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/util" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <xs:simpleType name="SystemOutLogger.LoggingLevel">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="TRACE"/>
+          <xs:enumeration value="DEBUG"/>
+          <xs:enumeration value="INFO"/>
+          <xs:enumeration value="WARN"/>
+          <xs:enumeration value="ERROR"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/system/cluster" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <xs:complexType name="ClusterState">
+        <xs:sequence>
+          <xs:element name="Members" minOccurs="0" gw:viewas="list">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo5:ClusterMemberState" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="UnassignedComponents" minOccurs="0" gw:viewas="list">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo5:ComponentInfo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ClusterMemberState">
+        <xs:sequence>
+          <xs:element name="BgTasksStopped" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Components" minOccurs="0" gw:viewas="list">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo5:ComponentInfo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="InCluster" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="LastUpdateTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="PlannedShutdownInitiated" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="PlannedShutdownTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Roles" minOccurs="0" gw:viewas="list">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Runlevel" type="pogo6:Runlevel" minOccurs="0"/>
+          <xs:element name="ServerId" type="xs:string" minOccurs="0"/>
+          <xs:element name="ServerStarted" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="UserSessions" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ComponentInfo">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:string" minOccurs="0"/>
+          <xs:element name="LeaseExpiration" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+          <xs:element name="ReplacementId" type="xs:string" minOccurs="0"/>
+          <xs:element name="RetryFailover" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="ServerId" type="xs:string" minOccurs="0"/>
+          <xs:element name="StartRequested" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Started" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="State" type="pogo5:ComponentState" minOccurs="0"/>
+          <xs:element name="Stopped" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="TerminateRequested" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="TransferRequested" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="TransferTarget" type="xs:string" minOccurs="0"/>
+          <xs:element name="Type" type="pogo5:ComponentType" minOccurs="0"/>
+          <xs:element name="UniqueId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ComponentState">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UNASSIGNED"/>
+          <xs:enumeration value="ASSIGNED"/>
+          <xs:enumeration value="LEASE_EXPIRED"/>
+          <xs:enumeration value="STOPPED"/>
+          <xs:enumeration value="TRANSFERRED"/>
+          <xs:enumeration value="FAILED"/>
+          <xs:enumeration value="FAILOVER_IN_PROGRESS"/>
+          <xs:enumeration value="FAILOVER_POSTPONED"/>
+          <xs:enumeration value="REQUIRES_MANUAL_INTERVENTION"/>
+          <xs:enumeration value="RESTART_POSTPONED"/>
+          <xs:enumeration value="TERMINATED_BY_SERVER_RESTART"/>
+          <xs:enumeration value="TERMINATED_BY_AUTOMATIC_FAILOVER"/>
+          <xs:enumeration value="TERMINATED_BY_MANUAL_FAILOVER"/>
+          <xs:enumeration value="FAILED_FAILOVER_COMPLETION"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ComponentType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="WORK_QUEUE"/>
+          <xs:enumeration value="SYSTEM"/>
+          <xs:enumeration value="BATCH_PROCESS"/>
+          <xs:enumeration value="STARTABLE_PLUGIN"/>
+          <xs:enumeration value="MESSAGE_DESTINATION"/>
+          <xs:enumeration value="MESSAGE_PREPROCESSOR"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/system/server" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <xs:simpleType name="Runlevel">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NONE"/>
+          <xs:enumeration value="GUIDEWIRE_STARTUP"/>
+          <xs:enumeration value="SHUTDOWN"/>
+          <xs:enumeration value="NODAEMONS"/>
+          <xs:enumeration value="DAEMONS"/>
+          <xs:enumeration value="MULTIUSER"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ShutdownOptions">
+        <xs:sequence>
+          <xs:element name="ShutdownMessage" type="xs:string" minOccurs="0"/>
+          <xs:element name="ShutdownMessageDisplayKey" type="xs:string" minOccurs="0"/>
+          <xs:element name="ShutdownTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="TerminateBatchProcesses" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="WholeClusterStop" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/SystemToolsAPI/MetadataHash" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/system/server"/>
+      <xs:import namespace="http://guidewire.com/gw/api/system/cluster"/>
+      <xs:import namespace="http://guidewire.com/gw/util"/>
+      <xs:import namespace="http://guidewire.com/gw/api/database"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <xs:complexType name="MetadataHash">
+        <xs:sequence>
+          <xs:element name="Hash" type="xs:string" minOccurs="0"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="SystemToolsAPIPortType">
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersion" message="tns:getVersion"/>
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="submitDBCCBatchJob">
+      <wsdl:input name="submitDBCCBatchJob" message="tns:submitDBCCBatchJob"/>
+      <wsdl:output name="submitDBCCBatchJobResponse" message="tns:submitDBCCBatchJobResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDBCCState">
+      <wsdl:input name="getDBCCState" message="tns:getDBCCState"/>
+      <wsdl:output name="getDBCCStateResponse" message="tns:getDBCCStateResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="submitUpdateStats">
+      <wsdl:input name="submitUpdateStats" message="tns:submitUpdateStats"/>
+      <wsdl:output name="submitUpdateStatsResponse" message="tns:submitUpdateStatsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelUpdateStats">
+      <wsdl:input name="cancelUpdateStats" message="tns:cancelUpdateStats"/>
+      <wsdl:output name="cancelUpdateStatsResponse" message="tns:cancelUpdateStatsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateStatsState">
+      <wsdl:input name="getUpdateStatsState" message="tns:getUpdateStatsState"/>
+      <wsdl:output name="getUpdateStatsStateResponse" message="tns:getUpdateStatsStateResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+      <wsdl:input name="getRecentQueryStoreRuntimeStatsIntervalInfo" message="tns:getRecentQueryStoreRuntimeStatsIntervalInfo"/>
+      <wsdl:output name="getRecentQueryStoreRuntimeStatsIntervalInfoResponse" message="tns:getRecentQueryStoreRuntimeStatsIntervalInfoResponse"/>
+      <!-- SOAPException -->
+      <wsdl:fault name="PermissionException" message="tns:PermissionException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+      <wsdl:input name="submitSqlServerPerfReportWithoutQueryStoreBatchJob" message="tns:submitSqlServerPerfReportWithoutQueryStoreBatchJob"/>
+      <wsdl:output name="submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse" message="tns:submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+      <wsdl:input name="submitSqlServerPerfReportWithQueryStoreBatchJob" message="tns:submitSqlServerPerfReportWithQueryStoreBatchJob"/>
+      <wsdl:output name="submitSqlServerPerfReportWithQueryStoreBatchJobResponse" message="tns:submitSqlServerPerfReportWithQueryStoreBatchJobResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentAWRSnapshotInfo">
+      <wsdl:input name="getRecentAWRSnapshotInfo" message="tns:getRecentAWRSnapshotInfo"/>
+      <wsdl:output name="getRecentAWRSnapshotInfoResponse" message="tns:getRecentAWRSnapshotInfoResponse"/>
+      <!-- SOAPException -->
+      <wsdl:fault name="PermissionException" message="tns:PermissionException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="submitAwrReportBatchJob">
+      <wsdl:input name="submitAwrReportBatchJob" message="tns:submitAwrReportBatchJob"/>
+      <wsdl:output name="submitAwrReportBatchJobResponse" message="tns:submitAwrReportBatchJobResponse"/>
+      <!-- SOAPException -->
+      <wsdl:fault name="PermissionException" message="tns:PermissionException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getPerfReportsInfo">
+      <wsdl:input name="getPerfReportsInfo" message="tns:getPerfReportsInfo"/>
+      <wsdl:output name="getPerfReportsInfoResponse" message="tns:getPerfReportsInfoResponse"/>
+      <!-- SOAPException -->
+      <wsdl:fault name="PermissionException" message="tns:PermissionException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateTableStatisticsData">
+      <wsdl:input name="getUpdateTableStatisticsData" message="tns:getUpdateTableStatisticsData"/>
+      <wsdl:output name="getUpdateTableStatisticsDataResponse" message="tns:getUpdateTableStatisticsDataResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getIncrementalUpdateTableStatisticsData">
+      <wsdl:input name="getIncrementalUpdateTableStatisticsData" message="tns:getIncrementalUpdateTableStatisticsData"/>
+      <wsdl:output name="getIncrementalUpdateTableStatisticsDataResponse" message="tns:getIncrementalUpdateTableStatisticsDataResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="reportDatabaseCatalogStatistics">
+      <wsdl:input name="reportDatabaseCatalogStatistics" message="tns:reportDatabaseCatalogStatistics"/>
+      <wsdl:output name="reportDatabaseCatalogStatisticsResponse" message="tns:reportDatabaseCatalogStatisticsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="reportPartialDatabaseCatalogStatistics">
+      <wsdl:input name="reportPartialDatabaseCatalogStatistics" message="tns:reportPartialDatabaseCatalogStatistics"/>
+      <wsdl:output name="reportPartialDatabaseCatalogStatisticsResponse" message="tns:reportPartialDatabaseCatalogStatisticsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="verifyDatabaseSchema">
+      <wsdl:input name="verifyDatabaseSchema" message="tns:verifyDatabaseSchema"/>
+      <wsdl:output name="verifyDatabaseSchemaResponse" message="tns:verifyDatabaseSchemaResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setRunlevel">
+      <wsdl:input name="setRunlevel" message="tns:setRunlevel"/>
+      <wsdl:output name="setRunlevelResponse" message="tns:setRunlevelResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors setting the run level -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getRunlevel">
+      <wsdl:input name="getRunlevel" message="tns:getRunlevel"/>
+      <wsdl:output name="getRunlevelResponse" message="tns:getRunlevelResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getHighestRunlevel">
+      <wsdl:input name="getHighestRunlevel" message="tns:getHighestRunlevel"/>
+      <wsdl:output name="getHighestRunlevelResponse" message="tns:getHighestRunlevelResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveSessionData">
+      <wsdl:input name="getActiveSessionData" message="tns:getActiveSessionData"/>
+      <wsdl:output name="getActiveSessionDataResponse" message="tns:getActiveSessionDataResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateLoggingLevel">
+      <wsdl:input name="updateLoggingLevel" message="tns:updateLoggingLevel"/>
+      <wsdl:output name="updateLoggingLevelResponse" message="tns:updateLoggingLevelResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if logger is not defined -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+    </wsdl:operation>
+    <wsdl:operation name="reloadLoggingConfig">
+      <wsdl:input name="reloadLoggingConfig" message="tns:reloadLoggingConfig"/>
+      <wsdl:output name="reloadLoggingConfigResponse" message="tns:reloadLoggingConfigResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getLoggingCategories">
+      <wsdl:input name="getLoggingCategories" message="tns:getLoggingCategories"/>
+      <wsdl:output name="getLoggingCategoriesResponse" message="tns:getLoggingCategoriesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="verifyConfig">
+      <wsdl:input name="verifyConfig" message="tns:verifyConfig"/>
+      <wsdl:output name="verifyConfigResponse" message="tns:verifyConfigResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="verifyConfigUsingRemoteExtCfg">
+      <wsdl:input name="verifyConfigUsingRemoteExtCfg" message="tns:verifyConfigUsingRemoteExtCfg"/>
+      <wsdl:output name="verifyConfigUsingRemoteExtCfgResponse" message="tns:verifyConfigUsingRemoteExtCfgResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="startFullUpgrade">
+      <wsdl:input name="startFullUpgrade" message="tns:startFullUpgrade"/>
+      <wsdl:output name="startFullUpgradeResponse" message="tns:startFullUpgradeResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getServerRoles">
+      <wsdl:input name="getServerRoles" message="tns:getServerRoles"/>
+      <wsdl:output name="getServerRolesResponse" message="tns:getServerRolesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getServerId">
+      <wsdl:input name="getServerId" message="tns:getServerId"/>
+      <wsdl:output name="getServerIdResponse" message="tns:getServerIdResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getClusterState">
+      <wsdl:input name="getClusterState" message="tns:getClusterState"/>
+      <wsdl:output name="getClusterStateResponse" message="tns:getClusterStateResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="nodeFailed">
+      <wsdl:input name="nodeFailed" message="tns:nodeFailed"/>
+      <wsdl:output name="nodeFailedResponse" message="tns:nodeFailedResponse"/>
+      <!-- If the node is in the cluster and evenIfInCluster is false -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="scheduleShutdown">
+      <wsdl:input name="scheduleShutdown" message="tns:scheduleShutdown"/>
+      <wsdl:output name="scheduleShutdownResponse" message="tns:scheduleShutdownResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelShutdown">
+      <wsdl:input name="cancelShutdown" message="tns:cancelShutdown"/>
+      <wsdl:output name="cancelShutdownResponse" message="tns:cancelShutdownResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="completeFailedFailover">
+      <wsdl:input name="completeFailedFailover" message="tns:completeFailedFailover"/>
+      <wsdl:output name="completeFailedFailoverResponse" message="tns:completeFailedFailoverResponse"/>
+      <!-- If the component not found -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="requestComponentTransfer">
+      <wsdl:input name="requestComponentTransfer" message="tns:requestComponentTransfer"/>
+      <wsdl:output name="requestComponentTransferResponse" message="tns:requestComponentTransferResponse"/>
+      <!-- If the component not found -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMetadataHashes">
+      <wsdl:input name="getMetadataHashes" message="tns:getMetadataHashes"/>
+      <wsdl:output name="getMetadataHashesResponse" message="tns:getMetadataHashesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SystemToolsAPISoap12Binding" type="tns:SystemToolsAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getVersion">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getVersion">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitDBCCBatchJob">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="submitDBCCBatchJob">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitDBCCBatchJobResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDBCCState">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getDBCCState">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDBCCStateResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitUpdateStats">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="submitUpdateStats">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitUpdateStatsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelUpdateStats">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="cancelUpdateStats">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelUpdateStatsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateStatsState">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getUpdateStatsState">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUpdateStatsStateResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRecentQueryStoreRuntimeStatsIntervalInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap12:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitSqlServerPerfReportWithQueryStoreBatchJobResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentAWRSnapshotInfo">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getRecentAWRSnapshotInfo">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRecentAWRSnapshotInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap12:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitAwrReportBatchJob">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="submitAwrReportBatchJob">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitAwrReportBatchJobResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap12:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPerfReportsInfo">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getPerfReportsInfo">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPerfReportsInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap12:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateTableStatisticsData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getUpdateTableStatisticsData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUpdateTableStatisticsDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getIncrementalUpdateTableStatisticsData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getIncrementalUpdateTableStatisticsData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getIncrementalUpdateTableStatisticsDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reportDatabaseCatalogStatistics">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="reportDatabaseCatalogStatistics">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reportDatabaseCatalogStatisticsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reportPartialDatabaseCatalogStatistics">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="reportPartialDatabaseCatalogStatistics">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reportPartialDatabaseCatalogStatisticsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyDatabaseSchema">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="verifyDatabaseSchema">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyDatabaseSchemaResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setRunlevel">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setRunlevel">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setRunlevelResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRunlevel">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getRunlevel">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRunlevelResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHighestRunlevel">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getHighestRunlevel">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHighestRunlevelResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveSessionData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getActiveSessionData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getActiveSessionDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateLoggingLevel">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="updateLoggingLevel">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateLoggingLevelResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reloadLoggingConfig">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="reloadLoggingConfig">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reloadLoggingConfigResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLoggingCategories">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getLoggingCategories">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLoggingCategoriesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyConfig">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="verifyConfig">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyConfigResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyConfigUsingRemoteExtCfg">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="verifyConfigUsingRemoteExtCfg">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyConfigUsingRemoteExtCfgResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startFullUpgrade">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="startFullUpgrade">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startFullUpgradeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getServerRoles">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getServerRoles">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerRolesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getServerId">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getServerId">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerIdResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getClusterState">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getClusterState">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getClusterStateResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="nodeFailed">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="nodeFailed">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="nodeFailedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="scheduleShutdown">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="scheduleShutdown">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="scheduleShutdownResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelShutdown">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="cancelShutdown">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelShutdownResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeFailedFailover">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="completeFailedFailover">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeFailedFailoverResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestComponentTransfer">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="requestComponentTransfer">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestComponentTransferResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMetadataHashes">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getMetadataHashes">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMetadataHashesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SystemToolsAPISoap11Binding" type="tns:SystemToolsAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getVersion">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getVersion">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitDBCCBatchJob">
+      <soap11:operation style="document"/>
+      <wsdl:input name="submitDBCCBatchJob">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitDBCCBatchJobResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDBCCState">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getDBCCState">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDBCCStateResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitUpdateStats">
+      <soap11:operation style="document"/>
+      <wsdl:input name="submitUpdateStats">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitUpdateStatsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelUpdateStats">
+      <soap11:operation style="document"/>
+      <wsdl:input name="cancelUpdateStats">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelUpdateStatsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateStatsState">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getUpdateStatsState">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUpdateStatsStateResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRecentQueryStoreRuntimeStatsIntervalInfoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap11:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+      <soap11:operation style="document"/>
+      <wsdl:input name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+      <soap11:operation style="document"/>
+      <wsdl:input name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitSqlServerPerfReportWithQueryStoreBatchJobResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentAWRSnapshotInfo">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getRecentAWRSnapshotInfo">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRecentAWRSnapshotInfoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap11:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitAwrReportBatchJob">
+      <soap11:operation style="document"/>
+      <wsdl:input name="submitAwrReportBatchJob">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitAwrReportBatchJobResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap11:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPerfReportsInfo">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getPerfReportsInfo">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPerfReportsInfoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap11:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateTableStatisticsData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getUpdateTableStatisticsData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUpdateTableStatisticsDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getIncrementalUpdateTableStatisticsData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getIncrementalUpdateTableStatisticsData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getIncrementalUpdateTableStatisticsDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reportDatabaseCatalogStatistics">
+      <soap11:operation style="document"/>
+      <wsdl:input name="reportDatabaseCatalogStatistics">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reportDatabaseCatalogStatisticsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reportPartialDatabaseCatalogStatistics">
+      <soap11:operation style="document"/>
+      <wsdl:input name="reportPartialDatabaseCatalogStatistics">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reportPartialDatabaseCatalogStatisticsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyDatabaseSchema">
+      <soap11:operation style="document"/>
+      <wsdl:input name="verifyDatabaseSchema">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyDatabaseSchemaResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setRunlevel">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setRunlevel">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setRunlevelResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRunlevel">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getRunlevel">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRunlevelResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHighestRunlevel">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getHighestRunlevel">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHighestRunlevelResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveSessionData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getActiveSessionData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getActiveSessionDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateLoggingLevel">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateLoggingLevel">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateLoggingLevelResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reloadLoggingConfig">
+      <soap11:operation style="document"/>
+      <wsdl:input name="reloadLoggingConfig">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reloadLoggingConfigResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLoggingCategories">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getLoggingCategories">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLoggingCategoriesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyConfig">
+      <soap11:operation style="document"/>
+      <wsdl:input name="verifyConfig">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyConfigResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyConfigUsingRemoteExtCfg">
+      <soap11:operation style="document"/>
+      <wsdl:input name="verifyConfigUsingRemoteExtCfg">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyConfigUsingRemoteExtCfgResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startFullUpgrade">
+      <soap11:operation style="document"/>
+      <wsdl:input name="startFullUpgrade">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startFullUpgradeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getServerRoles">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getServerRoles">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerRolesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getServerId">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getServerId">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerIdResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getClusterState">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getClusterState">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getClusterStateResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="nodeFailed">
+      <soap11:operation style="document"/>
+      <wsdl:input name="nodeFailed">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="nodeFailedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="scheduleShutdown">
+      <soap11:operation style="document"/>
+      <wsdl:input name="scheduleShutdown">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="scheduleShutdownResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelShutdown">
+      <soap11:operation style="document"/>
+      <wsdl:input name="cancelShutdown">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelShutdownResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeFailedFailover">
+      <soap11:operation style="document"/>
+      <wsdl:input name="completeFailedFailover">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeFailedFailoverResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestComponentTransfer">
+      <soap11:operation style="document"/>
+      <wsdl:input name="requestComponentTransfer">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestComponentTransferResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMetadataHashes">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getMetadataHashes">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMetadataHashesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemToolsAPI">
+    <wsdl:port name="SystemToolsAPISoap12Port" binding="tns:SystemToolsAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/SystemToolsAPI"/>
+    </wsdl:port>
+    <wsdl:port name="SystemToolsAPISoap11Port" binding="tns:SystemToolsAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/SystemToolsAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="getVersion">
+    <wsdl:part name="parameters" element="tns:getVersion"/>
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="parameters" element="tns:getVersionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="submitDBCCBatchJob">
+    <wsdl:part name="parameters" element="tns:submitDBCCBatchJob"/>
+  </wsdl:message>
+  <wsdl:message name="submitDBCCBatchJobResponse">
+    <wsdl:part name="parameters" element="tns:submitDBCCBatchJobResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ServerStateException">
+    <wsdl:part name="ServerStateException" element="tns:ServerStateException"/>
+  </wsdl:message>
+  <wsdl:message name="getDBCCState">
+    <wsdl:part name="parameters" element="tns:getDBCCState"/>
+  </wsdl:message>
+  <wsdl:message name="getDBCCStateResponse">
+    <wsdl:part name="parameters" element="tns:getDBCCStateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="submitUpdateStats">
+    <wsdl:part name="parameters" element="tns:submitUpdateStats"/>
+  </wsdl:message>
+  <wsdl:message name="submitUpdateStatsResponse">
+    <wsdl:part name="parameters" element="tns:submitUpdateStatsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="cancelUpdateStats">
+    <wsdl:part name="parameters" element="tns:cancelUpdateStats"/>
+  </wsdl:message>
+  <wsdl:message name="cancelUpdateStatsResponse">
+    <wsdl:part name="parameters" element="tns:cancelUpdateStatsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getUpdateStatsState">
+    <wsdl:part name="parameters" element="tns:getUpdateStatsState"/>
+  </wsdl:message>
+  <wsdl:message name="getUpdateStatsStateResponse">
+    <wsdl:part name="parameters" element="tns:getUpdateStatsStateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getRecentQueryStoreRuntimeStatsIntervalInfo">
+    <wsdl:part name="parameters" element="tns:getRecentQueryStoreRuntimeStatsIntervalInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getRecentQueryStoreRuntimeStatsIntervalInfoResponse">
+    <wsdl:part name="parameters" element="tns:getRecentQueryStoreRuntimeStatsIntervalInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="PermissionException">
+    <wsdl:part name="PermissionException" element="tns:PermissionException"/>
+  </wsdl:message>
+  <wsdl:message name="submitSqlServerPerfReportWithoutQueryStoreBatchJob">
+    <wsdl:part name="parameters" element="tns:submitSqlServerPerfReportWithoutQueryStoreBatchJob"/>
+  </wsdl:message>
+  <wsdl:message name="submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse">
+    <wsdl:part name="parameters" element="tns:submitSqlServerPerfReportWithoutQueryStoreBatchJobResponse"/>
+  </wsdl:message>
+  <wsdl:message name="submitSqlServerPerfReportWithQueryStoreBatchJob">
+    <wsdl:part name="parameters" element="tns:submitSqlServerPerfReportWithQueryStoreBatchJob"/>
+  </wsdl:message>
+  <wsdl:message name="submitSqlServerPerfReportWithQueryStoreBatchJobResponse">
+    <wsdl:part name="parameters" element="tns:submitSqlServerPerfReportWithQueryStoreBatchJobResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getRecentAWRSnapshotInfo">
+    <wsdl:part name="parameters" element="tns:getRecentAWRSnapshotInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getRecentAWRSnapshotInfoResponse">
+    <wsdl:part name="parameters" element="tns:getRecentAWRSnapshotInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="submitAwrReportBatchJob">
+    <wsdl:part name="parameters" element="tns:submitAwrReportBatchJob"/>
+  </wsdl:message>
+  <wsdl:message name="submitAwrReportBatchJobResponse">
+    <wsdl:part name="parameters" element="tns:submitAwrReportBatchJobResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getPerfReportsInfo">
+    <wsdl:part name="parameters" element="tns:getPerfReportsInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getPerfReportsInfoResponse">
+    <wsdl:part name="parameters" element="tns:getPerfReportsInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getUpdateTableStatisticsData">
+    <wsdl:part name="parameters" element="tns:getUpdateTableStatisticsData"/>
+  </wsdl:message>
+  <wsdl:message name="getUpdateTableStatisticsDataResponse">
+    <wsdl:part name="parameters" element="tns:getUpdateTableStatisticsDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getIncrementalUpdateTableStatisticsData">
+    <wsdl:part name="parameters" element="tns:getIncrementalUpdateTableStatisticsData"/>
+  </wsdl:message>
+  <wsdl:message name="getIncrementalUpdateTableStatisticsDataResponse">
+    <wsdl:part name="parameters" element="tns:getIncrementalUpdateTableStatisticsDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="reportDatabaseCatalogStatistics">
+    <wsdl:part name="parameters" element="tns:reportDatabaseCatalogStatistics"/>
+  </wsdl:message>
+  <wsdl:message name="reportDatabaseCatalogStatisticsResponse">
+    <wsdl:part name="parameters" element="tns:reportDatabaseCatalogStatisticsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="reportPartialDatabaseCatalogStatistics">
+    <wsdl:part name="parameters" element="tns:reportPartialDatabaseCatalogStatistics"/>
+  </wsdl:message>
+  <wsdl:message name="reportPartialDatabaseCatalogStatisticsResponse">
+    <wsdl:part name="parameters" element="tns:reportPartialDatabaseCatalogStatisticsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="verifyDatabaseSchema">
+    <wsdl:part name="parameters" element="tns:verifyDatabaseSchema"/>
+  </wsdl:message>
+  <wsdl:message name="verifyDatabaseSchemaResponse">
+    <wsdl:part name="parameters" element="tns:verifyDatabaseSchemaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setRunlevel">
+    <wsdl:part name="parameters" element="tns:setRunlevel"/>
+  </wsdl:message>
+  <wsdl:message name="setRunlevelResponse">
+    <wsdl:part name="parameters" element="tns:setRunlevelResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getRunlevel">
+    <wsdl:part name="parameters" element="tns:getRunlevel"/>
+  </wsdl:message>
+  <wsdl:message name="getRunlevelResponse">
+    <wsdl:part name="parameters" element="tns:getRunlevelResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getHighestRunlevel">
+    <wsdl:part name="parameters" element="tns:getHighestRunlevel"/>
+  </wsdl:message>
+  <wsdl:message name="getHighestRunlevelResponse">
+    <wsdl:part name="parameters" element="tns:getHighestRunlevelResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getActiveSessionData">
+    <wsdl:part name="parameters" element="tns:getActiveSessionData"/>
+  </wsdl:message>
+  <wsdl:message name="getActiveSessionDataResponse">
+    <wsdl:part name="parameters" element="tns:getActiveSessionDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateLoggingLevel">
+    <wsdl:part name="parameters" element="tns:updateLoggingLevel"/>
+  </wsdl:message>
+  <wsdl:message name="updateLoggingLevelResponse">
+    <wsdl:part name="parameters" element="tns:updateLoggingLevelResponse"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="tns:RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="reloadLoggingConfig">
+    <wsdl:part name="parameters" element="tns:reloadLoggingConfig"/>
+  </wsdl:message>
+  <wsdl:message name="reloadLoggingConfigResponse">
+    <wsdl:part name="parameters" element="tns:reloadLoggingConfigResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getLoggingCategories">
+    <wsdl:part name="parameters" element="tns:getLoggingCategories"/>
+  </wsdl:message>
+  <wsdl:message name="getLoggingCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:getLoggingCategoriesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="verifyConfig">
+    <wsdl:part name="parameters" element="tns:verifyConfig"/>
+  </wsdl:message>
+  <wsdl:message name="verifyConfigResponse">
+    <wsdl:part name="parameters" element="tns:verifyConfigResponse"/>
+  </wsdl:message>
+  <wsdl:message name="verifyConfigUsingRemoteExtCfg">
+    <wsdl:part name="parameters" element="tns:verifyConfigUsingRemoteExtCfg"/>
+  </wsdl:message>
+  <wsdl:message name="verifyConfigUsingRemoteExtCfgResponse">
+    <wsdl:part name="parameters" element="tns:verifyConfigUsingRemoteExtCfgResponse"/>
+  </wsdl:message>
+  <wsdl:message name="startFullUpgrade">
+    <wsdl:part name="parameters" element="tns:startFullUpgrade"/>
+  </wsdl:message>
+  <wsdl:message name="startFullUpgradeResponse">
+    <wsdl:part name="parameters" element="tns:startFullUpgradeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getServerRoles">
+    <wsdl:part name="parameters" element="tns:getServerRoles"/>
+  </wsdl:message>
+  <wsdl:message name="getServerRolesResponse">
+    <wsdl:part name="parameters" element="tns:getServerRolesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getServerId">
+    <wsdl:part name="parameters" element="tns:getServerId"/>
+  </wsdl:message>
+  <wsdl:message name="getServerIdResponse">
+    <wsdl:part name="parameters" element="tns:getServerIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getClusterState">
+    <wsdl:part name="parameters" element="tns:getClusterState"/>
+  </wsdl:message>
+  <wsdl:message name="getClusterStateResponse">
+    <wsdl:part name="parameters" element="tns:getClusterStateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="nodeFailed">
+    <wsdl:part name="parameters" element="tns:nodeFailed"/>
+  </wsdl:message>
+  <wsdl:message name="nodeFailedResponse">
+    <wsdl:part name="parameters" element="tns:nodeFailedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="scheduleShutdown">
+    <wsdl:part name="parameters" element="tns:scheduleShutdown"/>
+  </wsdl:message>
+  <wsdl:message name="scheduleShutdownResponse">
+    <wsdl:part name="parameters" element="tns:scheduleShutdownResponse"/>
+  </wsdl:message>
+  <wsdl:message name="cancelShutdown">
+    <wsdl:part name="parameters" element="tns:cancelShutdown"/>
+  </wsdl:message>
+  <wsdl:message name="cancelShutdownResponse">
+    <wsdl:part name="parameters" element="tns:cancelShutdownResponse"/>
+  </wsdl:message>
+  <wsdl:message name="completeFailedFailover">
+    <wsdl:part name="parameters" element="tns:completeFailedFailover"/>
+  </wsdl:message>
+  <wsdl:message name="completeFailedFailoverResponse">
+    <wsdl:part name="parameters" element="tns:completeFailedFailoverResponse"/>
+  </wsdl:message>
+  <wsdl:message name="requestComponentTransfer">
+    <wsdl:part name="parameters" element="tns:requestComponentTransfer"/>
+  </wsdl:message>
+  <wsdl:message name="requestComponentTransferResponse">
+    <wsdl:part name="parameters" element="tns:requestComponentTransferResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getMetadataHashes">
+    <wsdl:part name="parameters" element="tns:getMetadataHashes"/>
+  </wsdl:message>
+  <wsdl:message name="getMetadataHashesResponse">
+    <wsdl:part name="parameters" element="tns:getMetadataHashesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

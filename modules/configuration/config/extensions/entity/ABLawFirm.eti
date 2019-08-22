@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><subtype xmlns="http://guidewire.com/datamodel" displayName="Law Firm" entity="ABLawFirm" supertype="ABCompanyVendor">
+  <typekey desc="Law firm specialty" name="LawFirmSpecialty" nullok="true" typelist="LegalSpecialty"/>
+</subtype>

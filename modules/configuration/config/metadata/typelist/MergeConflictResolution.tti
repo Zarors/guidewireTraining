@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Identifies how a merge conflict was resolved."
+  final="true"
+  name="MergeConflictResolution"
+  platform="true">
+  <typecode
+    code="no_conflict"
+    desc="No merge conflict detected."
+    name="No conflict"/>
+  <typecode
+    code="old_retained"
+    desc="The previously existing value (with a later effective date) was retained."
+    name="Old value retained"/>
+  <typecode
+    code="new_merged_forward"
+    desc="The new value (with an earlier effective date) was merged forward."
+    name="New value merged forward"/>
+  <typecode
+    code="user_change"
+    desc="The user manually changed the value after the merge."
+    name="User change post-merge"/>
+</typelist>

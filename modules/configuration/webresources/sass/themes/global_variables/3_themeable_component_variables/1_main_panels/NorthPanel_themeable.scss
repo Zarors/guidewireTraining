@@ -1,0 +1,54 @@
+$gw-app--top-nav--bg: $gw-app--section-primary--bg !default;
+$gw-app--top-nav--col: $gw-app--section-primary--col !default;
+$gw-app--top-nav--hover-bg: $gw-app--section-primary--hover-bg !default;
+$gw-app--top-nav--hover-col: $gw-app--section-primary--hover-col !default;
+$gw-app--top-nav--border-col: $gw-app--section-primary--divider-col !default;
+
+// Internal padding
+$gw-app--NorthPanel--spacing-inner-top-rem: null !default;
+$gw-app--NorthPanel--spacing-inner-left-rem: null !default;
+$gw-app--NorthPanel--spacing-inner-right-rem: null !default;
+$gw-app--NorthPanel--spacing-inner-bottom-rem: null !default;
+
+// Other
+$gw-app--NorthPanel--bg: $gw-app--top-nav--bg !default;
+$gw-app--NorthPanel--col: $gw-app--top-nav--col !default;
+$gw-app--NorthPanel--border--col: $gw-app--top-nav--border-col !default;
+$gw-app--NorthPanel--button--col: $gw-app--NorthPanel--col !default;
+$gw-app--NorthPanel--button--bg: $gw-app--NorthPanel--bg !default;
+$gw-app--NorthPanel--icon--col: $gw-app--panels--icon-col !default;
+$gw-app--NorthPanel--button--active--col: $gw-app--menus--active--col !default;
+$gw-app--NorthPanel--button--active--bg: $gw-app--menus--active--bg !default;
+$gw-app--NorthPanel--button--hover--col: $gw-app--menus--hover--col !default;
+$gw-app--NorthPanel--button--hover--bg: $gw-app--menus--hover--bg !default;
+
+$gw-app--NorthPanel--border--width-px: $gw-app--border-width-px !default;
+
+$gw-app--NorthPanel--button--pad-v-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--NorthPanel--button--pad-h-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--NorthPanel--button--expand-pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--NorthPanel--button--margin-right-offset-rem: gw-remScaled(.2) !default;
+
+$gw-app--NorthPanel--font-size-em: gw-emFixed(1) !default;
+$gw-app--NorthPanel--menu-icon-size-em: gw-emFixed(1.3) !default;
+$gw-app--NorthPanel--tab-width-submenu-min-width: gw-emFixed(12) !default;
+$gw-app--NorthPanel--menu-item-label-max-width: gw-emFixed(25) !default;
+
+$gw-app--NorthPanel--drop-shadow: null !default;
+$gw-app--NorthPanel--active-tab-has-caret: false !default; //NOTE: turning the caret on and the north panel drop shadow on, will not look correct
+
+$gw-app--NorthPanel--progress--bg: $gw-app--palette--blue !default;
+
+$gw-app--NorthPanel--unsaved-work-active-color: $gw-app--palette--new !default;
+
+//This is an example of a way to get the old "glowing green effect behind the unsaved work button"
+//$gw-app--NorthPanel--unsaved-work-active-background: radial-gradient(circle, #{transparentize($gw-app--palette--new, 0)} 0%, #{transparentize($gw-app--palette--new, 0)} 30%, #{transparentize($gw-app--palette--new, 1)} 30%) !default;
+$gw-app--NorthPanel--unsaved-work-active-background: null;
+
+$gw-app--NorthPanel--unsaved-work-glyph: "bookmark-solid" !default;
+$gw-app--NorthPanel--hamburger-menu-glyph: "bars-solid" !default;
+$gw-app--NorthPanel--options-glyph: "cog-solid" !default;
+$gw-app--NorthPanel--tab-expand-glyph: "caret-down-solid" !default;
+
+$gw-app--NorthPanel--use-pill-buttons: false !default;
+$gw-app--NorthPanel--logo-above-tabs: false !default;

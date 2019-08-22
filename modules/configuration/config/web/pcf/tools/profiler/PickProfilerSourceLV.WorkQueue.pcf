@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="WorkQueue">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="instrumentedWorkerTask"
+      toRemove="deleteProfilerData(instrumentedWorkerTask)"
+      value="gw.api.profiler.WorkQueueProfilerPageHelper.getQuery()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.InstrumentedWorkerTask&gt;">
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.Profiler.WorkQueueType&quot;)"
+        name="workQueueTypeChooser">
+        <ToolbarFilterOptionGroup
+          filters="new gw.api.filters.WorkQueueFilterSet().FilterOptions"/>
+      </ToolbarFilter>
+      <ToolbarFlag
+        condition="instrumentedWorkerTask.EndTime != null"
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="instrumentedWorkerTask.EndTime == null"
+        name="CannotDelete"/>
+      <Row>
+        <TypeKeyCell
+          enableSort="false"
+          id="WorkQueueName"
+          label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.WorkQueueName&quot;)"
+          value="instrumentedWorkerTask.InstrumentedWorkExecutor.WorkQueueID"
+          valueType="typekey.BatchProcessType"/>
+        <TextCell
+          enableSort="false"
+          id="AppServerName"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Hostname&quot;)"
+          sortOrder="2"
+          value="instrumentedWorkerTask.InstrumentedWorkExecutor.AppServerName"/>
+        <TextCell
+          id="InstanceNumber"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.InstanceId&quot;)"
+          sortOrder="3"
+          value="instrumentedWorkerTask.InstanceNumber"
+          valueType="java.lang.Integer"/>
+        <DateCell
+          dateFormat="short"
+          id="StartTime"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Started&quot;)"
+          sortDirection="descending"
+          sortOrder="4"
+          timeFormat="short"
+          value="instrumentedWorkerTask.StartTime"/>
+        <DateCell
+          dateFormat="short"
+          id="EndTime"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Ended&quot;)"
+          timeFormat="short"
+          value="instrumentedWorkerTask.EndTime"/>
+        <TextCell
+          enableSort="false"
+          id="Duration"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkersLv.Duration&quot;)"
+          outputConversion="VALUE.DisplayString"
+          value="new gw.api.web.tools.Duration(instrumentedWorkerTask.StartTime, instrumentedWorkerTask.EndTime)"
+          valueType="gw.api.web.tools.Duration"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[function deleteProfilerData(instrumentedTask : InstrumentedWorkerTask) {
+  gw.transaction.Transaction.runWithNewBundle( \ bundle -> {
+      var localSource = bundle.add( instrumentedTask )
+      localSource.ProfilerData = null
+    }
+  )
+}]]></Code>
+  </ListViewPanel>
+</PCF>

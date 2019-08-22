@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    id="IntegrationPredefinedPluginDemoPage"
+    title="DisplayKey.get(&quot;Training.PredefinedPlugins&quot;)">
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <ContentInput>
+            <Link
+              action="PredefinedPluginDemoExitPoint.push()"
+              id="DisplayInstructions"
+              label="DisplayKey.get(&quot;Training.DisplayInstructions&quot;)"/>
+          </ContentInput>
+        </InputColumn>
+      </DetailViewPanel>
+      <DetailViewPanel>
+        <InputColumn>
+          <Label
+            id="ActiveExchangeRateSetLabel"
+            label="DisplayKey.get(&quot;Training.ActiveExchangeRates&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        def="ExchangeRateLV()">
+        <Toolbar>
+          <ToolbarButton
+            action="gw.api.util.CurrencyUtil.invokeMarketExchangeRateSetPlugin()"
+            id="ToolbarButton"
+            label="DisplayKey.get(&quot;Training.InvokeExchangeRateSetPlugin&quot;)"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+    <Code><![CDATA[uses gw.api.path.Paths
+
+    uses gw.api.database.QuerySelectColumns
+
+      function queryExchangeRates(): gw.api.database.IQueryBeanResult<entity.ExchangeRate> {
+        var erQuery = gw.api.database.Query.make(ExchangeRate)
+        var resultSet = erQuery.select()
+        resultSet.orderByDescending(QuerySelectColumns.path(Paths.make(ExchangeRate#ID)))
+        resultSet.thenBy(QuerySelectColumns.path(Paths.make(ExchangeRate#BaseCurrency)))
+        resultSet.thenBy(QuerySelectColumns.path(Paths.make(ExchangeRate#PriceCurrency)))
+        return resultSet
+      }]]></Code>
+  </Page>
+</PCF>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores zipped database performance reports in the database."
+  entity="DBPerfReport"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="dbperfreport"
+  type="keyable">
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="mediumtext"/>
+  <column
+    desc="Start time of data distribution process."
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="End time of data distribution process."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="0 for STARTED, 1 for SUCCESSFULLY_COMPLETED, 2 for FAILED"
+    name="Status"
+    nullok="false"
+    type="integer"/>
+  <column
+    name="PerfDownload"
+    nullok="true"
+    type="blob"/>
+  <column
+    name="ErrorMessages"
+    nullok="true"
+    type="text"/>
+</entity>

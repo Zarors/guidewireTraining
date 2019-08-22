@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Contact notes"
+  entity="ContactNote"
+  exportable="true"
+  table="contactnote"
+  type="retireable">
+  <implementsEntity
+    name="Extractable"/>
+  <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+  <column
+    desc="Subject"
+    name="Subject"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Body"
+    name="Body"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="250"/>
+  </column>
+  <column
+    desc="IsConfidential"
+    name="IsConfidential"
+    nullok="true"
+    type="bit"/>
+  <typekey
+    desc="Contact note type"
+    name="ContactNoteType"
+    nullok="true"
+    typelist="ContactNoteType"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="Associated contact"
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="true"/>
+</entity>

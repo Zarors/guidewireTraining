@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageTransport"
+  name="documentStoreTransport">
+  <plugin-gosu
+    disabled="false"
+    gosuclass="gw.plugin.document.impl.DocumentStoreTransport"/>
+</plugin>

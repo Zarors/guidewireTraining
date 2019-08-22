@@ -1,0 +1,156 @@
+
+/*
+ This file contains maps and methods that build out all of the css classes relating to colors being dynamically selected
+ on the server via gosu expressions.
+ It handles all hard coded list of themeColorTypes. ie: warning, error, info, etc.
+
+ Each color or theme type builds out a class for each of the colorExpressionCssTypes, ie: color, background-color, border-color
+ The server places css classes on widgets in the format of gw-app--expressions--background-color--red, that then map to these generated classes.
+*/
+
+
+
+$gw-colorExpressionThemeColorTypes: (
+        new: $gw-app--palette--new,
+        blank: $gw-app--palette--blank,
+        disabled: $gw-app--palette--disabled,
+        active: $gw-app--palette--active,
+        inactive: $gw-app--palette--inactive,
+
+        urgencynone: $gw-app--palette--urgencynone,
+        urgencylow: $gw-app--palette--urgencylow,
+        urgencymedium: $gw-app--palette--urgencymedium,
+        urgencyhigh: $gw-app--palette--urgencyhigh,
+        urgencycritical: $gw-app--palette--urgencycritical,
+
+        importancenone: $gw-app--palette--importancenone,
+        importancelow: $gw-app--palette--importancelow,
+        importancemedium: $gw-app--palette--importancemedium,
+        importancehigh: $gw-app--palette--importancehigh,
+        importancecritical: $gw-app--palette--importancecritical,
+
+        numbersnegative: $gw-app--palette--numbersnegative,
+        numbersneutral: $gw-app--palette--numbersneutral,
+        numberspositive: $gw-app--palette--numberspositive,
+
+        progressunstarted: $gw-app--palette--progressunstarted,
+        progressinprogress: $gw-app--palette--progressinprogress,
+        progressblocked: $gw-app--palette--progressblocked,
+        progressoverdue: $gw-app--palette--progressoverdue,
+        progresscomplete: $gw-app--palette--progresscomplete,
+        progressabandoned: $gw-app--palette--progressabandoned,
+
+        actionsafe: $gw-app--palette--actionsafe,
+        actionneutral: $gw-app--palette--actionneutral,
+        actiondanger: $gw-app--palette--actiondanger,
+
+        outcomepositive: $gw-app--palette--outcomepositive,
+        outcomeneutral: $gw-app--palette--outcomeneutral,
+        outcomenegative: $gw-app--palette--outcomenegative,
+
+        alertwarning: $gw-app--palette--alertwarning,
+        alerterror: $gw-app--palette--alerterror,
+        alertinfo: $gw-app--palette--alertinfo,
+        alertsuccess: $gw-app--palette--alertsuccess,
+        alertneutral: $gw-app--palette--alertneutral,
+
+        tier4: $gw-app--palette--tier4,
+        tier3: $gw-app--palette--tier3,
+        tier2: $gw-app--palette--tier2,
+        tier1: $gw-app--palette--tier1,
+
+        highlight: $gw-app--palette--highlight,
+        highlightalt: $gw-app--palette--highlightalt,
+
+        callout: $gw-app--palette--callout,
+        calloutalt: $gw-app--palette--calloutalt,
+
+        appfont: $gw-app--col,
+        applightfont: $gw-app--col-opposite,
+        appbg: $gw-app--bg,
+
+        //NOTE: error_blink, custom, etc, are handled by keyframes below
+);
+
+$gw-colorExpressionCssTypes: (
+        color, background-color, border-color, stroke, fill
+);
+
+@mixin gw-colorExpressions($varColorPairs, $colorExpressionCssTypes) {
+  @each $name, $col in $varColorPairs {
+    @each $type in $colorExpressionCssTypes {
+      .gw-app--gwcolor--#{$type}--#{$name} {
+        //One of the only places we use !important, because they represent specific PCF settings
+        //And we want to be able to use defaults in sass on widgets, without worrying about specificity
+        #{$type}: #{$col} !important;
+      }
+    }
+  }
+}
+
+@include gw-colorExpressions($gw-colorExpressionThemeColorTypes, $gw-colorExpressionCssTypes);
+
+//Charts palette
+$CHARTS_COLOR_STEP: 15%;
+$BASE_PALETTE_LENGTH: length($gw-app--ChartPanel--color-palette);
+
+@mixin gw-colorChart($colorHex, $i) {
+  .gw-ChartPanelWidget .gw-chartcolor-#{$i}, .gw-TileChartPanelWidget .gw-chartcolor-#{$i} {
+    fill: $colorHex;
+    stroke: $colorHex;
+    background-color: $colorHex;
+  }
+}
+
+@for $i from 1 through length($gw-app--ChartPanel--color-palette) {
+  $currentColor: nth($gw-app--ChartPanel--color-palette, $i);
+
+  //create classes for basic colors
+  @include gw-colorChart($currentColor, $i);
+
+  //create classes for lightened colors
+  @include gw-colorChart(lighten($currentColor, $CHARTS_COLOR_STEP), $i + $BASE_PALETTE_LENGTH);
+
+  //create classes for darkened colors
+  @include gw-colorChart(darken($currentColor, $CHARTS_COLOR_STEP), $i + 2 * $BASE_PALETTE_LENGTH);
+}
+
+// Special logic just for the custom theme type, essentially its expected
+@each $type in $gw-colorExpressionCssTypes {
+  .gw-app--gwcolor--#{$type}--custom {
+    //Nothing
+  }
+
+  .gw-app--gwcolor--#{$type}--blinknew {
+    @include gw-animation(gw-#{$type}-blinknew 2s infinite);
+  }
+
+  .gw-app--gwcolor--#{$type}--blinkerror {
+    @include gw-animation(gw-#{$type}-blinkerror 2s infinite);
+  }
+
+  @include gw-keyframes(gw-#{$type}-blinknew) {
+    0% {
+      #{$type}: $gw-app--palette--new;
+    }
+    50% {
+      #{$type}: inherit;
+    }
+    100% {
+      #{$type}: $gw-app--palette--new;
+    }
+  }
+
+  @include gw-keyframes(gw-#{$type}-blinkerror) {
+    0% {
+      #{$type}: $gw-app--palette--error;
+    }
+    50% {
+      #{$type}: inherit;
+    }
+    100% {
+      #{$type}: $gw-app--palette--error;
+    }
+  }
+
+}

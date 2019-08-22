@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.User.importadmindata"
+    id="ImportResults"
+    parent="ImportWizard()"
+    title="DisplayKey.get(&quot;Web.Admin.ImportResults&quot;)">
+    <LocationEntryPoint
+      signature="ImportResults(ImportDataInfo : gw.api.admin.ImportDataInfo)"/>
+    <Variable
+      name="ImportDataInfo"
+      type="gw.api.admin.ImportDataInfo"/>
+    <Screen
+      id="ImportResultsScreen">
+      <Toolbar/>
+      <PanelRef
+        def="ImportResultsDV(ImportDataInfo)"/>
+    </Screen>
+  </Page>
+</PCF>

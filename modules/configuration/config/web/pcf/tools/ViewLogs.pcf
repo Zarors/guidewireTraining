@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    canVisit="perm.User.ViewLog or perm.User.DevAllAccess"
+    countsAsWork="false"
+    id="ViewLogs"
+    parent="ServerTools()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.ViewLogs&quot;)">
+    <LocationEntryPoint
+      signature="ViewLogs()"/>
+    <Variable
+      initialValue="1000"
+      name="maxLinesValue"
+      type="int"/>
+    <Variable
+      name="logFile"
+      type="java.nio.file.Path"/>
+    <Variable
+      initialValue="&quot;&quot;"
+      name="filter"
+      type="String"/>
+    <Variable
+      name="logText"
+      type="String"/>
+    <Screen
+      id="ViewLogsScreen">
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="LogFile"
+            label="DisplayKey.get(&quot;Web.InternalTools.ViewLogs.LogFile&quot;)"
+            optionLabel="VALUE.FileName.toString()"
+            value="logFile"
+            valueRange="gw.api.system.logging.LogViewerUtil.getLogFiles()"
+            valueType="java.nio.file.Path">
+            <PostOnChange
+              onChange="logText = null"/>
+          </RangeInput>
+          <TextInput
+            editable="true"
+            id="LogFilter"
+            label="DisplayKey.get(&quot;Web.InternalTools.ViewLogs.LogFilterRegex&quot;)"
+            value="filter"/>
+          <TextInput
+            editable="true"
+            id="MaxLines"
+            label="DisplayKey.get(&quot;Web.InternalTools.ViewLogs.MaxLines&quot;)"
+            value="maxLines"
+            valueType="java.lang.Integer"/>
+          <ButtonInput
+            action="logText = gw.api.system.logging.LogViewerUtil.readLog(logFile, maxLines, filter)"
+            align="center"
+            available="logFile != null"
+            id="ViewLogs"
+            value="DisplayKey.get(&quot;Web.InternalTools.ViewLogs.ViewLogs&quot;)"/>
+          <ButtonInput
+            action="LogViewer.push(logFile.toString())"
+            align="center"
+            available="logFile != null"
+            id="StreamLogs"
+            value="DisplayKey.get(&quot;LogViewer.Button&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <DetailViewPanel>
+        <InputColumn>
+          <TextAreaInput
+            id="LogDisplay"
+            labelAbove="true"
+            numRows="50"
+            value="logText"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[property get maxLines():java.lang.Integer {
+        return maxLinesValue
+      }
+      /**
+       * Set the maximum length to a number between 1 and 10,000.
+       * This will ensure that no strange memory issues occur.
+       */
+      property set maxLines(len:java.lang.Integer){
+         if (len == null) {
+            throw new gw.api.util.DisplayableException(DisplayKey.get("Web.InternalTools.ViewLogs.MaxLinesNotSpecifiedMsg"))
+         }
+         if (len <= 0){
+            throw new gw.api.util.DisplayableException(DisplayKey.get("Web.InternalTools.ViewLogs.MaxLinesTooSmallMsg"))
+         }
+         if (len > 10000){
+            throw new gw.api.util.DisplayableException(DisplayKey.get("Web.InternalTools.ViewLogs.MaxLinesTooBigMsg"))
+         }
+         maxLinesValue = len
+      }]]></Code>
+  </Page>
+</PCF>

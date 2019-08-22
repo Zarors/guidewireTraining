@@ -1,0 +1,311 @@
+// ============== Cell Styling For All Cell Types ===================
+.gw-CellWidget, .gw-FooterCellWidget, .gw-HeaderCellWidget, .gw-LinkCellWidget, .gw-FormatCellWidget, .gw-ListDetailSelectButtonCellWidget {
+  overflow: hidden;
+
+  .gw-emptyLabel {
+    display: none;
+  }
+
+  // ============= Wrap and Multi Content Cell Behavior =============
+  .gw-multi-content-cell {
+    display: flex;
+    align-items: stretch;
+
+    & > .gw-IteratorEntryCheckBoxWidget {
+      margin-right: $gw-app--SPACING-rem-S;
+    }
+  }
+
+  &.gw-possibly-wrap-cell-contents {
+    .gw-multi-content-cell {
+      flex-wrap: wrap;
+    }
+
+    .gw-vw--value {
+      @include gw-wrapNever();
+    }
+
+    .gw-readonly, .gw-actionValue {
+      .gw-vw--value {
+        @include gw-wrapOnWhiteSpace();
+        .gw-ActionValueWidget, .gw-label {
+          @include gw-wrapOnWhiteSpace()
+        }
+      }
+    }
+  }
+
+  &:not(.gw-possibly-wrap-cell-contents) {
+    .gw-multi-content-cell {
+      flex-wrap: nowrap;
+    }
+
+    .gw-vw--value {
+      @include gw-wrapNever();
+    }
+  }
+
+  // ============ Cells Set to Stacked or not Stacked ================
+  &.gw-stacked {
+    .gw-multi-content-cell {
+      flex-direction: column;
+    }
+  }
+
+  &:not(.gw-stacked) {
+    .gw-multi-content-cell {
+      flex-direction: row;
+    }
+  }
+
+  // ============ Cell Alignment ======================================
+  &.gw-align-h--left {
+    .gw-cell-inner {
+      text-align: left;
+      .gw-header-content-wrapper {
+        justify-content: flex-start;
+      }
+
+      .gw-vw--value {
+        input[type="text"] {
+          text-align: left;
+        }
+      }
+    }
+
+    &.gw-stacked {
+      .gw-multi-content-cell {
+        justify-content: flex-start;
+      }
+    }
+
+    &:not(.gw-stacked) {
+      .gw-multi-content-cell {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &.gw-align-h--right {
+    .gw-cell-inner {
+      text-align: right;
+      .gw-header-content-wrapper {
+        justify-content: flex-end;
+      }
+
+      .gw-vw--value {
+        input[type="text"] {
+          text-align: right;
+        }
+      }
+    }
+
+    &.gw-stacked {
+      .gw-multi-content-cell {
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+    }
+
+    &:not(.gw-stacked) {
+      .gw-multi-content-cell {
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &.gw-align-h--center {
+    .gw-cell-inner {
+      text-align: center;
+      .gw-header-content-wrapper {
+        justify-content: center;
+      }
+
+      .gw-vw--value {
+        input[type="text"] {
+          text-align: center;
+        }
+      }
+    }
+
+    &.gw-stacked {
+      .gw-multi-content-cell {
+        align-items: center;
+      }
+    }
+
+    &:not(.gw-stacked) {
+      .gw-multi-content-cell {
+        justify-content: center;
+      }
+    }
+  }
+
+
+  min-width: gw-lineHeightInFixedEms(); // This is purposeful, so we at least always collapse a visible cell down to a small square
+
+  & > .gw-cell-inner {
+    min-height: gw-lineHeightInFixedEms();
+  }
+
+  // ================== Cell Inner Handles Scrolling ===============
+  .gw-cell-inner {
+    display: inline-block;
+    vertical-align: top;
+
+    & > div {
+      vertical-align: top;
+    }
+
+    overflow: auto;
+    width: 100%; //NOTE: do not change this trying to fix a bug, the mins and maxes are set on the td.
+    @include gw-wrapNever();
+
+    .gw-StyleContainer--CellWidget {
+      .gw-TextAreaValueWidget & .gw-readonly {
+        background-color: transparent;
+      }
+    }
+
+    // ============== Mins and Maxes for all Value Widgets in Readonly Mode inside of Cells ==============
+    > .gw-actionValue, & > .gw-ValueWidget { //TODO: this should move into the value widget "in cells" section of ValueWidget.scss
+      &:not(.gw-HeaderCellValueWidget):not(.gw-FooterCellValueWidget):not(.gw-ImplicitHeaderCellValue) {
+        .gw-vw--value {
+          min-width: $gw-app--tables--cell--type-general-min-width;
+        }
+
+        &.gw-TextAreaValueWidget {
+          .gw-vw--value {
+            textarea {
+              min-width: $gw-app--tables--cell--type-text-area-min-width-em;
+            }
+          }
+        }
+
+        &.gw-EmptyFooterCellValueWidget, .gw-EmptyHeaderCellValueWidget {
+          @include gw-hidden();
+        }
+
+        &.gw-PrivacyValueWidget, &.gw-BasePickerValueWidget {
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--currency, &.gw-MonetaryAmountValueWidget, &.gw-CurrencyValueWidget {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-currency-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--email {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-email-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--percent {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-percent-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--date {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-date-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            //max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--phone {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-phone-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--bool {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-bool-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            //max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+
+        &.gw-sizing-data-type--exact {
+          .gw-vw--value {
+            min-width: $gw-app--tables--cell--type-exactnumber-min-width-em;
+          }
+          &:not(.gw-readonly):not(.gw-actionValue) .gw-vw--value {
+            max-width: $gw-app--inputs--general-editable-max-width-em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ============= Non Header Cell Padding ============================
+.gw-CellWidget, .gw-LinkCellWidget, .gw-FormatCellWidget, .gw-TemplateCellWidget, .gw-ListDetailSelectButtonCellWidget {
+  & > .gw-cell-inner {
+    padding: $gw-app--tables--cell--pad-v-rem $gw-app--tables--cell--pad-h-rem;
+  }
+}
+
+.gw-FooterCellWidget {
+  & > .gw-cell-inner {
+    padding: $gw-app--ListView--footer-pad-v-rem $gw-app--tables--cell--pad-h-rem;
+  }
+}
+
+// ============= Generic Cell and Footer Widget Styling =============
+.gw-CellWidget, .gw-FooterCellWidget {
+
+  &.gw-possibly-wrap-cell-contents {
+    div {
+      flex-shrink: 1;
+    }
+    .gw-cell-inner {
+      .gw-readonly, .gw-actionValue {
+        .gw-vw--value {
+          @include gw-wrapOnWhiteSpace();
+        }
+      }
+    }
+  }
+
+  &:not(.gw-possibly-wrap-cell-contents) {
+    .gw-cell-inner {
+      .gw-readonly, .gw-actionValue {
+        .gw-vw--value {
+          @include gw-textEllipse();
+        }
+      }
+    }
+  }
+}
+
+// ============= Smart Header Cells =================================
+
+tr.gw-isSmartHeader > td.gw-CellWidget {
+
+  &.gw-required div.gw-value-readonly-wrapper {
+    @include gw-requiredAfter();
+  }
+
+}

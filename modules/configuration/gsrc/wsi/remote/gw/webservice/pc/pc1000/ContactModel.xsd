@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.contactmodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.addressmodel" schemaLocation="AddressModel.xsd"/>
+  <xs:element name="Contact" type="Contact" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.contactmodel"/>
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element name="entity-Person" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FirstName" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+            <xs:element name="FirstNameKanji" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+            <xs:element name="LastName" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+            <xs:element name="LastNameKanji" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+            <xs:element name="Particle" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddressBookUID" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="EmailAddress1" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="EmailAddress2" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="HomePhone" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="NameKanji" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="PrimaryAddress" type="Address" minOccurs="0" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.addressmodel"/>
+      <xs:element name="PrimaryPhone" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="PublicID" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="SecondaryAddresses" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Address" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.addressmodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Subtype" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="WorkPhone" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

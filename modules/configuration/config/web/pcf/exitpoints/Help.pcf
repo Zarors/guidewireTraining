@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ExitPoint
+    height="600"
+    id="Help"
+    popup="true"
+    url="{skin}help/index.html"
+    width="800">
+    <ExitPointParameter
+      defaultValue="gw.api.web.WebUtil.getLocalizedResourcesPath()"
+      locationParam="skin"
+      type="String"
+      urlParam="skin"/>
+  </ExitPoint>
+</PCF>

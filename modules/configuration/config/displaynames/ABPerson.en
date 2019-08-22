@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Entity
+  name="ABPerson">
+  <Columns>
+    <Column
+      beanPath="ABPerson.LastName"
+      name="lastName"
+      sortBeanPath="ABPerson.LastNameDenorm"
+      sortOrder="1"/>
+    <Column
+      beanPath="ABPerson.FirstName"
+      name="firstName"
+      sortBeanPath="ABPerson.FirstNameDenorm"
+      sortOrder="3"/>
+    <Column
+      beanPath="ABPerson.Suffix"
+      name="suffix"
+      sortOrder="5"/>
+    <Column
+      beanPath="ABPerson.LastNameKanji"
+      name="lastNameKanji"
+      sortOrder="2"/>
+    <Column
+      beanPath="ABPerson.FirstNameKanji"
+      name="firstNameKanji"
+      sortOrder="4"/>
+    <Column
+      beanPath="ABPerson.Prefix"
+      name="prefix"
+      sortOrder="6"/>
+    <Column
+      beanPath="ABPerson.Particle"
+      name="particle"
+      sortOrder="7"/>
+    <Column
+      beanPath="ABPerson.MiddleName"
+      name="middleName"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.name.NameFormatter
+uses gw.api.name.ABPersonNameFieldImpl
+uses gw.api.name.NameOwnerFieldId
+
+var person = new ABPersonNameFieldImpl(){
+  :FirstName = firstName,
+  :MiddleName = middleName,
+  :LastName = lastName,
+  :FirstNameKanji = firstNameKanji,
+  :LastNameKanji = lastNameKanji,
+  :Particle = particle,
+  :Prefix = prefix,
+  :Suffix = suffix
+}
+
+return new NameFormatter().format(person, " ", NameOwnerFieldId.DISPLAY_NAME_FIELDS)
+]]></DisplayName>
+</Entity>

@@ -1,0 +1,694 @@
+/**
+  LV Styling is broken down by ListViewStyleEnum:
+    1. Minimal
+    2. Row List (also the default)
+    3. Grid
+    4. Columns
+    5. Custom (no style)
+ */
+
+//===============================================
+//  Functional Styling for the General LV
+//===============================================
+
+/**
+ * Colors for the list view columns button, which brings up the menu used to hide/show and group/ungroup columns.
+ * The keys in this map must match the names of the parameters to the gw-menuItem mixin, which is ultimately what
+ * styles the button
+ *
+ * TODO: it would be nice to use different colors according to the overall LV styling, e.g. minimal vs grid
+ */
+$gw-columns-button--colors: (
+        bg: $gw-app--ListView--columns-button-bg,
+        col: $gw-app--ListView--columns-button-col,
+        hover-bg: $gw-app--ListView--columns-button-hover-bg,
+        hover-col: $gw-app--ListView--columns-button-hover-col,
+        active-bg: $gw-app--ListView--columns-button-active-bg,
+        active-col: $gw-app--ListView--columns-button-active-col,
+        border-color: $gw-app--ListView--columns-button-border-col
+);
+
+.gw-ListViewWidget {
+  display: block;
+
+  &:not(.gw-StyleContainer--InputWidget) {
+    margin-top: $gw-app--ListView--spacing-widget-top-rem;
+    margin-left: $gw-app--ListView--spacing-widget-left-rem;
+    margin-right: $gw-app--ListView--spacing-widget-right-rem;
+    margin-bottom: $gw-app--ListView--spacing-widget-bottom-rem;
+
+    padding-top: $gw-app--ListView--spacing-inner-top-rem;
+    padding-left: $gw-app--ListView--spacing-inner-left-rem;
+    padding-right: $gw-app--ListView--spacing-inner-right-rem;
+    padding-bottom: $gw-app--ListView--spacing-inner-bottom-rem;
+  }
+
+  //This causes the LVs table section to be at least the width of the LV header section
+  //But if the LV isn't set to stretch with a growing cell, then all cells will stretch evenly
+  .gw-ListViewWidget--table {
+    min-width: 100%;
+  }
+
+  @mixin gw-LV-stretch() {
+
+    &:not(.gw-StyleContainer--PanelRowWidget):not(.gw-StyleContainer--InputWidget) {
+      align-self: stretch;
+
+      .gw-ListView--inner {
+        display: block;
+      }
+    }
+
+    &.gw-StyleContainer--PanelRowWidget, &.gw-StyleContainer--InputWidget {
+      flex-grow: 1;
+
+      .gw-ListView--inner {
+        display: block;
+      }
+    }
+  }
+
+  .gw-ListView--inner {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    position: relative;
+
+    .gw-ListView--table-wrapper {
+      overflow: auto;
+    }
+  }
+
+  &.gw-LV-stretch {
+    @include gw-LV-stretch();
+  }
+}
+
+//===============================================
+//  Functional Styling for LV Major Sections
+//===============================================
+.gw-ListViewWidget {
+  .gw-ListView--empty-info-row {
+    display: block;
+    background-color: $gw-app--tables--rows--odd;
+    padding: $gw-app--tables--cell--pad-v-rem $gw-app--tables--cell--pad-h-rem;
+    text-align: center;
+  }
+
+  .gw-ListView--UI-section {
+    padding-top: $gw-app--ListView-top-UI-section--spacing-inner-top-rem;
+    padding-left: $gw-app--ListView-top-UI-section--spacing-inner-left-rem;
+    padding-right: $gw-app--ListView-top-UI-section--spacing-inner-right-rem;
+    padding-bottom: $gw-app--ListView-top-UI-section--spacing-inner-bottom-rem;
+
+    display: flex;
+    &:empty {
+      display: none;
+    }
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-shrink: 1;
+
+    @include gw-borderCap($top: true);
+
+    .gw-ListView--UI-left {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-shrink: 1;
+      align-items: center;
+
+      .gw-ListView--UI--title {
+        display: inline-block;
+        text-align: left;
+        @include gw-wrapOnWhiteSpace();
+        // Position to other widgets
+        margin-top: $gw-app--ListView-Title--spacing-widget-top-rem;
+        margin-right: $gw-app--ListView-Title--spacing-widget-right-rem;
+        margin-bottom: $gw-app--ListView-Title--spacing-widget-bottom-rem;
+        margin-left: $gw-app--ListView-Title--spacing-widget-left-rem;
+
+        &:empty {
+          display: none;
+        }
+      }
+
+      .gw-ListView--UI-filters {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: $gw-app--SPACING-rem-M;
+
+        &:empty {
+          display: none;
+        }
+      }
+    }
+
+    @mixin gw-LV-columns-menu-button($pad-v: $gw-app--SPACING-rem-S, $pad-h: $gw-app--SPACING-rem-S, $border-w: 0, $margin-left: $gw-app--SPACING-rem-M, $force-no-expand: false, $force-border-on: true) {
+      .gw-ListView--UI--columns-menu {
+        @include gw-button--dropdown($pad-v, $colors: $gw-columns-button--colors, $glyph: $gw-app--ListView--columns-button-icon, $pad-h: $pad-h, $force-no-expand: $force-no-expand, $expand-pad-h: $gw-app--ListView--columns-menu-reset-expand-pad-h, $force-border-on: $force-border-on);
+        display: inline-block;
+        border-width: $border-w;
+        align-self: flex-start;
+        margin-left: $margin-left;
+      }
+    }
+
+    .gw-ListView--UI-right {
+      display: flex;
+      position: relative;
+      align-self: stretch;
+      align-items: center;
+      padding: $gw-app--SPACING-rem-S 0 $gw-app--SPACING-rem-S $gw-app--SPACING-rem-M;
+
+      &:empty {
+        display: none;
+      }
+
+      .gw-ListView--UI--columns-menu {
+        & > .gw-action--inner {
+          .gw-label {
+            display: none; //TODO: make this a styling option
+          }
+          border-width: 0;
+        }
+
+        .gw-ListView--UI--columns-menu--reset-prefs {
+          & > .gw-action--inner {
+            @include gw-button--secondary($pad-h: $gw-app--SPACING-rem-M);
+            margin: $gw-app--ListView--columns-menu-reset-margin-v $gw-app--ListView--columns-menu-reset-margin-h;
+          }
+          border-bottom: gw-pxFixed(1) solid $gw-app--menus--divider-col;
+        }
+
+        .gw-columns-menu--clientMenuItem {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          background-color: $gw-app--menus--bg;
+          color: $gw-app--menus--col;
+          padding: $gw-app--menus--pad-v-rem $gw-app--menus--pad-h-rem $gw-app--menus--pad-v-rem $gw-app--menus--pad-v-rem;
+
+          &:hover {
+            background-color: $gw-app--menus--hover--bg;
+            color: $gw-app--menus--hover--col;
+          }
+
+          .gw-toggle-column-visibility {
+            width: gw-lineHeightInFixedEms();
+            text-align: center;
+            flex-grow: 0;
+            @include gw-convertCheckbox();
+          }
+
+          .gw-toggle-column-grouping {
+            width: gw-lineHeightInFixedEms();
+            margin-left: $gw-app--SPACING-rem-S;
+            text-align: center;
+            flex-grow: 0;
+
+            @include gw-clickable($gw-app--menus--col);
+            outline-offset: gw-pxFixed(1);
+
+            &:not(.gw-grouped) {
+              @include gw-iconAfter($gw-app--ListView--columns-menu-not-grouped-icon, $width: gw-lineHeightInFixedEms(), $v-align: middle, $color: $gw-app--ListView--columns-menu-not-grouped-col);
+            }
+
+            &.gw-grouped {
+              visibility: visible;
+              @include gw-iconAfter($gw-app--ListView--columns-menu-grouped-icon, $width: gw-lineHeightInFixedEms(), $v-align: middle, $color: $gw-app--ListView--columns-menu-grouped-col);
+            }
+
+            // This has the same specificity as the previous 2 rules; important it's last so it takes precedence
+            &:hover {
+              @include gw-iconAfter($gw-app--ListView--columns-menu-grouped-icon, $width: gw-lineHeightInFixedEms(), $v-align: middle, $color: $gw-app--ListView--columns-menu-any-grouped-hover-col);
+            }
+
+          }
+
+          .gw-columns-menu-item-label {
+            vertical-align: middle;
+            padding-left: $gw-app--SPACING-rem-M;
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+
+    // This class is used if the UI Section has only the columns menu in it,
+    // in which case we position the columns menu button to the right of the LV
+    &.gw-columns-menu-only {
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      border: 0px solid transparent;
+
+      .gw-ListView--UI-right {
+        padding: 0;
+        margin: 0;
+        @if($gw-app--ListView--use-minimal-column-button-when-floating) {
+          @include gw-LV-columns-menu-button($margin-left: 0px, $force-no-expand: true, $force-border-on: false, $pad-v: 1px, $pad-h: 1px);
+          .gw-ListView--UI--columns-menu {
+            background-color: transparent;
+            position: absolute;
+            right: -.5em;
+            margin-bottom: -1px;
+            bottom: -.5em;
+
+            & > .gw-action--inner {
+              background-color: transparent;
+              border-color: transparent;
+            }
+          }
+        } @else {
+          @include gw-LV-columns-menu-button($margin-left: 0px, $force-no-expand: true);
+          .gw-ListView--UI--columns-menu {
+            position: absolute;
+            left: 100%;
+            top: 100%;
+          }
+        }
+      }
+    }
+
+    &:not(.gw-columns-menu-only) {
+      .gw-ListView--UI-right {
+        @include gw-LV-columns-menu-button();
+      }
+    }
+  }
+
+  .gw-ListViewWidget--table {
+
+    .gw-isSmartHeader {
+
+    }
+  }
+}
+
+//===============================================
+//  Mixins for Building out Each Type of LV
+//===============================================
+@mixin gw-highlightSelectedRow($bg: $gw-app--ListView--row-selected-bg, $col: $gw-app--ListView--row-selected-col) {
+  &.gw-selected {
+    background-color: $bg;
+    color: $col;
+  }
+
+  &.gw-listDetail:not(.gw-selected):not(.gw-header-row) {
+    @include gw-clickable(inherit);
+  }
+
+}
+
+@mixin gw-LV-cell-borders($v-borders, $h-borders, $border-col, $outside-borders, $bg: null, $col: null, $weight: null) {
+  background-color: $bg;
+  color: $col;
+  font-weight: $weight;
+
+  @if($h-borders) {
+    border-top: gw-border($border-col);
+    border-bottom: gw-border($border-col);
+  }
+
+  @if ($v-borders and $outside-borders) {
+    border-left: gw-border($border-col);
+    border-right: gw-border($border-col);
+  } @else if ($v-borders) {
+    & + td {
+      border-left: gw-border($border-col);
+    }
+  } @else if ($outside-borders) {
+    &.gw-first-cell {
+      border-left: gw-border($border-col);
+    }
+
+    &.gw-last-cell {
+      border-right: gw-border($border-col);
+    }
+  }
+}
+
+@mixin gw-rowStyles($standard-rows-have-v-borders, $first-cells-are-headers: false, $border-col: $gw-app--tables--style-list--border-col) {
+  & > td:not(.gw-header), & > th:not(.gw-header) {
+    @if($first-cells-are-headers) {
+      &:not(.gw-first-cell) {
+        background-color: transparent;
+      }
+    } @else {
+      background-color: transparent;
+    }
+  }
+
+  &:hover:not(.gw-header-row):not(.gw-isSmartHeader):not(.gw-RowGroup):not(.gw-selected) {
+    background-color: $gw-app--ListView--cell--hover;
+  }
+
+  &.gw-isArchivedStyle {
+    background-color: $gw-app--ListView--row--archived-style--bg;
+    color: $gw-app--ListView--row--archived-style--col;
+    font-weight: $gw-app--ListView--row--archived-style--weight;
+
+    @if($gw-app--ListView--row--archived-style--use-filter) {
+      @include gw-retired();
+    }
+  }
+
+  &.gw-isHighlighted {
+    background-color: $gw-app--ListView--row--highlighted-style--bg;
+    color: $gw-app--ListView--row--highlighted-style--col;
+    font-weight: $gw-app--ListView--row--highlighted-style--weight;
+  }
+
+  &.gw-sub-header-style {
+    background-color: $gw-app--ListView--row--sub-header-style--bg;
+    color: $gw-app--ListView--row--sub-header-style--col;
+    font-weight: $gw-app--ListView--row--sub-header-style--weight;
+  }
+
+  &.gw-title-style {
+    background-color: $gw-app--ListView--row--title-style--bg;
+    color: $gw-app--ListView--row--title-style--col;
+    font-weight: $gw-app--ListView--row--title-style--weight;
+  }
+
+  &.gw-RowGroup {
+    background-color: $gw-app--tables--group--bg;
+    color: $gw-app--tables--group--col;
+    &:hover {
+      background-color: $gw-app--tables--group--hover--bg;
+      color: $gw-app--tables--group--hover--col;
+    }
+  }
+
+  @include gw-highlightSelectedRow();
+}
+
+@mixin gw-LV-build-UI-section($ui-section-bg, $ui-section-col, $extra-padding-inside-first-and-last-cell, $ui-section-has-borders, $border-col, $has-outside-v-borders, $ui-section-size, $ui-section-weight) {
+  .gw-ListView--UI-section {
+    background-color: $ui-section-bg;
+    color: $ui-section-col;
+
+    @if ($extra-padding-inside-first-and-last-cell != true) {
+      //padding-left: $gw-app--tables--cell--pad-h-rem;
+    }
+
+    @if($ui-section-has-borders) {
+      border-top: gw-border($border-col);
+      @include gw-borderCap($top: true);
+
+      @if ($has-outside-v-borders) {
+        border-left: gw-border($border-col);
+        border-right: gw-border($border-col);
+      }
+    }
+
+    .gw-ListView--UI-left {
+
+      .gw-ListView--UI--title {
+        font-size: $ui-section-size;
+        font-weight: $ui-section-weight;
+        color: $ui-section-col;
+        margin-right: $gw-app--SPACING-rem-L;
+      }
+    }
+  }
+}
+
+@mixin gw-LV-STYLE(
+  $has-outside-v-borders: false,
+  $standard-rows-have-v-borders: false,
+  $headers-have-v-borders: $gw-app--tables--style-list--headers-have-v-borders,
+  $headers-have-h-borders: $gw-app--tables--style-list--headers-have-h-borders,
+  
+  $ui-section-has-borders: false,
+  $ui-section-bg: $gw-app--ListView-top-UI-section--bg,
+  $ui-section-col: $gw-app--ListView-top-UI-section--col,
+  $ui-section-weight: $gw-app--ListView-top-UI-section--title--font-weight,
+  $ui-section-size: $gw-app--ListView-top-UI-section--title--font-size-em,
+  
+  $smart-bg: $gw-app--HeaderCell--bg,
+  $smart-col: $gw-app--HeaderCell--col,
+  $smart-alt-bg: $gw-app--HeaderCell--bg,
+  
+  $header-bg: $gw-app--HeaderCell--bg,
+  $header-alt-bg: $gw-app--HeaderCell--bg,
+  $header-col: $gw-app--HeaderCell--col,
+  $header-weight: $gw-app--HeaderCell--weight,
+  
+  $first-column-use-header-colors: false,
+  $border-col: $gw-app--tables--style-list--border-col,
+  $extra-padding-inside-first-and-last-cell: true,
+  $show-bumper: true
+
+) {
+
+  tr, td, th {
+    border: none;
+    background-color: $gw-app--tables--rows--odd;
+  }
+
+  .gw-ListView--inner {
+    @if ($extra-padding-inside-first-and-last-cell != true) {
+      // Can be used to adjust overall LV alignment within its container, if different ratios of padding for title and cell are used
+    }
+  }
+
+  &:not(.gw-StyleContainer--InputWidget) {
+    @include gw-LV-build-UI-section($ui-section-bg, $ui-section-col, $extra-padding-inside-first-and-last-cell, $ui-section-has-borders, $border-col, $has-outside-v-borders, $ui-section-size, $ui-section-weight)
+  }
+
+  &.gw-StyleContainer--InputWidget {
+    @if($gw-app--ListView--style-outer-UI-for-all-LVInputs-to-match-standard-InputColumn-label-above != true) {
+      @include gw-LV-build-UI-section($ui-section-bg, $ui-section-col, $extra-padding-inside-first-and-last-cell, $ui-section-has-borders, $border-col, $has-outside-v-borders, null, gw-weight(semibold))
+    } @else {
+      @include gw-LV-build-UI-section(transparent, $gw-app--InputWidget-in-InputColumn--label-col, false, false, $border-col, false, inherit, gw-weight(normal));
+    }
+  }
+
+  .gw-ListViewWidget--table {
+    > tbody {
+      > tr {
+        @if($extra-padding-inside-first-and-last-cell) {
+          &:not(.gw-header-row) {
+            > .gw-first-cell {
+              .gw-cell-inner {
+                //padding-left: $gw-app--ListView-top-UI-section--spacing-inner-left-rem;
+              }
+            }
+
+            > .gw-last-cell {
+              .gw-cell-inner {
+                //padding-right: $gw-app--ListView-top-UI-section--spacing-inner-right-rem;
+              }
+            }
+          }
+
+          &.gw-header-row {
+            > .gw-first-cell {
+              .gw-header-content-wrapper {
+                //padding-left: $gw-app--ListView-top-UI-section--spacing-inner-left-rem;
+              }
+            }
+
+            > .gw-last-cell {
+              .gw-header-content-wrapper {
+                //padding-right: $gw-app--ListView-top-UI-section--spacing-inner-left-rem;
+              }
+            }
+          }
+        }
+
+        &.gw-header-row {
+          background-color: $header-bg;
+          color: $header-col;
+          font-weight: $header-weight;
+          border-bottom: gw-border($border-col);
+        }
+
+        > td {
+
+          &.gw-header {
+            @include gw-LV-cell-borders(
+                    $bg: $header-bg, $col: $header-col,
+                    $v-borders: $headers-have-v-borders, $h-borders: $headers-have-h-borders,
+                    $border-col: $border-col,
+                    $outside-borders: $has-outside-v-borders, $weight: $header-weight);
+
+            &:nth-child(even) {
+              background-color: $header-alt-bg;
+            }
+
+            .gw-header-content-wrapper {
+              background-color: $header-bg;
+              color: $header-col;
+              font-weight: $header-weight;
+            }
+
+            //.gw-RowGroup .gw-isGrouped
+            .gw-isGrouped {
+              background-color: $gw-app--tables--group--bg;
+              color: $gw-app--tables--group--col;
+
+              > .gw-header-content-wrapper {
+                background-color: $gw-app--tables--group--bg;
+                color: $gw-app--tables--group--col;
+              }
+            }
+          }
+        }
+
+        &.gw-isSmartHeader {
+          background-color: $smart-bg;
+          color: $smart-col;
+          font-weight: $gw-app--HeaderCell--weight;
+
+          .gw-CellWidget {
+            font-weight: $gw-app--HeaderCell--weight;
+            @include gw-LV-cell-borders(
+                    $bg: $smart-bg, $col: $smart-col,
+                    $v-borders: $headers-have-v-borders, $h-borders: $headers-have-h-borders,
+                    $border-col: $border-col,
+                    $outside-borders: $has-outside-v-borders);
+          }
+
+          td:nth-child(even) {
+            background-color: $smart-alt-bg;
+          }
+        }
+      }
+
+      > tr:nth-child(2n).gw-standard-row {
+        background-color: $gw-app--ListView--row-odd--bg;
+        @include gw-highlightSelectedRow();
+      }
+
+      > tr:nth-child(2n+1).gw-standard-row {
+        &.gw-isAlternateStyle {
+          background-color: $gw-app--ListView--row-even--bg;
+        }
+
+        @include gw-highlightSelectedRow();
+      }
+
+      > tr.gw-footer-row {
+        background-color: $gw-app--ListView--footer-bg;
+        color: $gw-app--ListView--footer-row-col;
+        font-weight: $gw-app--ListView--footer-font-weight;
+      }
+
+      > tr:not(.gw-isSmartHeader):not(.gw-isSpacer) {
+        @include gw-rowStyles($standard-rows-have-v-borders, $first-column-use-header-colors, $border-col);
+
+        & > td:not(.gw-header), & > th:not(.gw-header) {
+          @include gw-LV-cell-borders($v-borders: $standard-rows-have-v-borders, $h-borders: true, $border-col: $border-col, $outside-borders: $has-outside-v-borders);
+        }
+
+        &.gw-RowGroup {
+          background-color: $gw-app--tables--group--bg;
+          color: $gw-app--tables--group--col;
+          &:hover {
+            background-color: $gw-app--tables--group--hover--bg;
+            color: $gw-app--tables--group--hover--col;
+          }
+        }
+      }
+    }
+  }
+
+  .gw-ListView--empty-info-row {
+    border-bottom: gw-border($border-col);
+
+    @if ($has-outside-v-borders) {
+      border-left: gw-border($border-col);
+      border-right: gw-border($border-col);
+    }
+  }
+
+  @if($show-bumper) {
+    .gw-ListView--bottom-bumper {
+      background-color: $gw-app--ListView--bumper--bg;
+      padding-bottom: $gw-app--SPACING-rem-M;
+
+      @if($ui-section-has-borders) {
+        border-bottom: gw-border($border-col);
+      }
+
+      @if ($has-outside-v-borders) {
+        border-left: gw-border($border-col);
+        border-right: gw-border($border-col);
+      }
+    }
+  } @else {
+    .gw-ListView--bottom-bumper {
+      display: none;
+    }
+  }
+}
+
+// For Reference: this columns menu button is the minimum required styling to function
+//.gw-ListViewWidget {
+//  .gw-ListView--UI-right {
+//    @include gw-LV-columns-menu-button();
+//  }
+//}
+
+.gw-ListViewWidget {
+  @mixin buildLVListStyle() {
+    @include gw-LV-STYLE();
+  }
+
+  @mixin buildLVMinStyle {
+    @include gw-LV-STYLE(
+            $ui-section-bg: transparent, $ui-section-col: inherit,
+            $show-bumper: false, $smart-bg: transparent,
+            $smart-col: inherit, $smart-alt-bg: transparent,
+            $header-bg: transparent, $header-alt-bg: transparent, $header-col: inherit,
+            $border-col: $gw-app--tables--style-min--border-col,
+            $headers-have-v-borders: false, $headers-have-h-borders: false,
+            $ui-section-has-borders: false
+    );
+  }
+
+  @mixin buildLVGridStyle {
+    @include gw-LV-STYLE(
+            $standard-rows-have-v-borders: true, $extra-padding-inside-first-and-last-cell: false,
+            $has-outside-v-borders: true, $show-bumper: false,
+            $ui-section-bg: transparent, $ui-section-col: inherit,
+            $border-col: $gw-app--tables--style-grid--border-col, $headers-have-v-borders: true,
+            $headers-have-h-borders: true, $ui-section-has-borders: false);
+  }
+
+  &.gw-LV-list {
+    @include buildLVListStyle();
+  }
+
+  &.gw-LV-min {
+    @include buildLVMinStyle();
+  }
+
+  &.gw-LV-grid {
+    @include buildLVGridStyle();
+  }
+
+  @if($gw-app--ListView--use-row-list-as-default-styling == true) {
+    &.gw-LV-default {
+      @include buildLVListStyle();
+    }
+  } @else {
+    &.gw-LV-default {
+      @include buildLVGridStyle();
+    }
+  }
+}
+
+
+
+
+
+
+

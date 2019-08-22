@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Possible values to sort notes by"
+  final="false"
+  name="SortByRange"
+  platform="true">
+  <typecode
+    code="author"
+    desc="Sort by Author"
+    name="Author"
+    priority="1"/>
+  <typecode
+    code="date"
+    desc="Sort by Date"
+    name="Date"
+    priority="2"/>
+  <typecode
+    code="subject"
+    desc="Sort by Subject"
+    name="Subject"
+    priority="3"/>
+  <typecode
+    code="topic"
+    desc="Sort by Topic"
+    name="Topic"
+    priority="4"/>
+</typelist>

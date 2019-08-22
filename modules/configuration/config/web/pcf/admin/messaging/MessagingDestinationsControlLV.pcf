@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="MessagingDestinationsControlLV">
+    <ExposeIterator
+      flags="ResumedDestination,SuspendedDestination,RestartableDestination"
+      valueType="gw.api.admin.MessageDestinationInfo"
+      widget="MessagingDestinationsControlLV"/>
+    <RowIterator
+      editable="false"
+      elementName="Destination"
+      hasCheckBoxes="true"
+      value="gw.api.admin.MessagingUtil.DestinationInfo"
+      valueType="gw.api.admin.MessageDestinationInfo[]">
+      <ToolbarFlag
+        condition="Destination.isSuspendOperationAllowed(both)"
+        name="ResumedDestination"/>
+      <ToolbarFlag
+        condition="Destination.isResumeOperationAllowed(both)"
+        name="SuspendedDestination"/>
+      <ToolbarFlag
+        condition="Destination.RestartOperationAllowed"
+        name="RestartableDestination"/>
+      <Row>
+        <TextCell
+          action="MessageControlForDestinationList.go(Destination.DestId, Destination.ComponentInfo.Name)"
+          align="left"
+          hideChildrenIfReadOnly="false"
+          id="DestinationName"
+          label="DisplayKey.get(&quot;Web.Admin.MessagingDestinationControlLV.DestinationName&quot;)"
+          value="Destination.ComponentInfo.Name">
+          <MenuItemIterator
+            elementName="destAction"
+            id="resumeSuspendOptions"
+            value="Destination.ResumeSuspendOptions"
+            valueType="java.util.List&lt;gw.api.admin.MessageDestinationInfo.DestinationAction&gt;">
+            <MenuItem
+              action="gw.api.admin.DestinationMessageStatisticsUtil.performDestinationAction( Destination.DestId, destAction)"
+              id="option"
+              label="destAction.LocalizedDisplayName"/>
+          </MenuItemIterator>
+        </TextCell>
+        <TextCell
+          action="MessageControlForDestinationList.go(Destination.DestId, Destination.ComponentInfo.Name)"
+          align="left"
+          id="DestinationID"
+          label="DisplayKey.get(&quot;Web.Admin.MessagingDestinationControlLV.DestinationID&quot;)"
+          value="Destination.DestId"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          align="left"
+          id="Status"
+          label="DisplayKey.get(&quot;Web.Admin.MessagingDestinationControlLV.Status&quot;)"
+          value="Destination.ComponentInfo.State == ASSIGNED ? Destination.Status.Description : Destination.ComponentInfo.State.getDisplayName(Destination.ComponentInfo) "/>
+        <TextCell
+          align="left"
+          id="ServerId"
+          label="DisplayKey.get(&quot;Web.Admin.MessagingDestinationControlLV.ServerId&quot;)"
+          value="Destination.ComponentInfo.ServerId "/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

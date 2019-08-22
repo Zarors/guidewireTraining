@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Represents the result of definitive match search."
+  final="true"
+  name="ContactMatchResultType"
+  platform="true">
+  <typecode
+    code="CLOSE_MATCH"
+    desc="At least one contact in the Address Book closely matched a given contact."
+    name="Close match"/>
+  <typecode
+    code="POSSIBLE_MATCH"
+    desc="One or more contacts in the Address Book possibly matched a given contact."
+    name="Plausible match"/>
+  <typecode
+    code="PLAUSIBLE_MATCH"
+    desc="A definitive match was found that matches a contact in the Address Book in terms of potential match fields."
+    name="Plausible match"/>
+  <typecode
+    code="IMPLAUSIBLE_MATCH"
+    desc="A definitive match was found, but the contact does not match in terms of potential match fields."
+    name="Implausible match"/>
+  <typecode
+    code="INCOMPATIBLE_TYPE"
+    desc="A definitive match was found, but its type is incompatible with the type of the candidate contact. That is, the matched contact could not be cast to the type of the candidate contact."
+    name="Incompatible type match"/>
+  <typecode
+    code="NO_MATCH"
+    desc="No match was found."
+    name="No match"/>
+</typelist>

@@ -1,0 +1,264 @@
+//TODO: revisit if this min is causing spacing problems
+$gw-InputColumn--row-min-height: calc(#{gw-emFixed($gw-app--line-height-unitless + (4 / gw-stripUnit($gw-app--base-font-size--in-px)))} + #{$gw-app--inputs--pad-v-rem * 2});
+
+.gw-InputColumnWidget {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  min-width: $gw-app--InputColumn--min-width-em;
+  max-width: $gw-app--InputColumn--max-width-em;
+
+  // Position to other widgets
+  margin-top: $gw-app--InputColumn--spacing-widget-top-rem;
+  margin-left: $gw-app--InputColumn--spacing-widget-left-rem;
+  margin-right: $gw-app--InputColumn--spacing-widget-right-rem;
+  margin-bottom: $gw-app--InputColumn--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--InputColumn--spacing-inner-top-rem;
+  padding-left: $gw-app--InputColumn--spacing-inner-left-rem;
+  padding-right: $gw-app--InputColumn--spacing-inner-right-rem;
+  padding-bottom: $gw-app--InputColumn--spacing-inner-bottom-rem;
+
+  &.gw-has-borders {
+    @include gw-borderRadius();
+    border: gw-border($gw-app--DetailView--divider-col);
+    @if ($gw-app--InputColumn--spacing-inner-bottom-rem == null or gw-stripUnit($gw-app--InputColumn--spacing-inner-bottom-rem) == 0) {
+      padding-bottom: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem;
+    }
+  }
+
+  &.gw-highlight-background {
+    @include gw-borderRadius();
+    background-color: $gw-app--InputColumn--highlight-bg;
+
+    @if ($gw-app--InputColumn--spacing-inner-bottom-rem == null or gw-stripUnit($gw-app--InputColumn--spacing-inner-bottom-rem) == 0) {
+      padding-bottom: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem;
+    }
+  }
+}
+
+.gw-columnDivider + .gw-InputColumnWidget {
+  // This causes the divider to only be the height of the right hand input column
+  // IF the first column is much taller it can be distracting to not go all the way down
+  // This was also the way it was in 9, but would be nice to fix.
+  border-left: gw-border($gw-app--DetailView--divider-col);
+
+  &.gw-highlight-background {
+    // If there's a column divider, but this input column is also set to highlight background, then set all of its borders
+    border: gw-border($gw-app--DetailView--divider-col);
+  }
+}
+
+//$widgetName: "InputWidget-in-InputColumn"
+@mixin gw-formatInputWidgetsInInputColumnLikes(
+    $marg-top: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem,
+    $marg-left: $gw-app--InputWidget-in-InputColumn--spacing-widget-left-rem,
+    $marg-right: $gw-app--InputWidget-in-InputColumn--spacing-widget-right-rem,
+    $marg-bottom: $gw-app--InputWidget-in-InputColumn--spacing-widget-bottom-rem,
+    $pad-top: $gw-app--InputWidget-in-InputColumn--spacing-inner-top-rem,
+    $pad-left: $gw-app--InputWidget-in-InputColumn--spacing-inner-left-rem,
+    $pad-right: $gw-app--InputWidget-in-InputColumn--spacing-inner-right-rem,
+    $pad-bottom: $gw-app--InputWidget-in-InputColumn--spacing-inner-bottom-rem,
+    $label-pad-right: $gw-app--InputWidget-in-InputColumn--row-label-pad-right-rem,
+    $label-col: $gw-app--InputWidget-in-InputColumn--label-col) {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+
+  &:not(.gw-LabelWidget):not(.gw-InputGroupWidget):not(.gw-InputColumnSubGroupWidget) {
+    // Position to other widgets
+    margin-top: $marg-top;
+    margin-left: $marg-left;
+    margin-right: $marg-right;
+    margin-bottom: $marg-bottom;
+
+    // Internal padding
+    padding-top: $pad-top;
+    padding-left: $pad-left;
+    padding-right: $pad-right;
+    padding-bottom: $pad-bottom;
+  }
+
+  .gw-ContentInputWidget--children {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .gw-vw--value {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    > textarea, select[multiselect] {
+      flex-grow: 1;
+    }
+  }
+
+  &:not(.gw-labelAbove) {
+    align-items: flex-start;
+
+    & > .gw-label {
+      @include gw-wrapOnWhiteSpace();
+      flex-shrink: 0;
+      color: $label-col;
+      margin-right: $label-pad-right;
+      width: $gw-app--InputColumn--fallback-label-size-em;
+      margin-top: $gw-app--InputColumn--label-margin-top-rem;
+      border-top: gw-border(transparent);
+      border-bottom: gw-border(transparent); //.gw-vw--value has a transparent border for error display, the label needs the same invisible border so that we can space things correctly
+    }
+
+    & > .gw-value {
+      display: inline-block;
+      position: relative;
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-height: $gw-InputColumn--row-min-height;
+
+      > .gw-required, > .gw-TemplateValueWidget > .gw-required {
+        @include gw-required();
+      }
+    }
+
+    &.gw-ContentInputWidget > .gw-value {
+      display: inline-flex;
+    }
+
+    // We do most of our alignment based on a value widget having a gw-vw-value section
+    // This widget just has a single button in it, so vertical alignment is off
+    &.gw-ButtonInputWidget > .gw-value {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  &.gw-labelAbove {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    & > .gw-label {
+      max-width: $gw-app--InputColumn--max-label-above-width-em;
+      display: block;
+      @include gw-wrapOnWhiteSpace();
+    }
+
+    > .gw-value {
+      display: block;
+      position: relative;
+      > .gw-required, > .gw-TemplateValueWidget > .gw-required {
+        @include gw-required();
+      }
+    }
+
+    &.gw-ContentInputWidget > .gw-value {
+      display: flex;
+    }
+
+    // We do most of our alignment based on a value widget having a gw-vw-value section
+    // This widget just has a single button in it, so vertical alignment is off
+    &.gw-ButtonInputWidget > .gw-value {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+//Note: not listing InputGroup and InputColumnSubGroup here
+.gw-StyleContainer--InputSectionWidget,
+.gw-StyleContainer--ConfirmPasswordInputWidget,
+.gw-StyleContainer--InputColumnWidget,
+.gw-StyleContainer--TableLayoutDetailViewWidget, //Table-Layout DetailViews contain Inputs directly
+.gw-StyleContainer--ChoiceWidget {
+  @include gw-formatInputWidgetsInInputColumnLikes();
+}
+
+.gw-StyleContainer--FormatCellWidget {
+  @include gw-formatInputWidgetsInInputColumnLikes(
+          $marg-left: 0,
+          $marg-right: 0,
+          $pad-left: 0,
+          $pad-right: 0
+  );
+}
+
+.gw-StyleContainer--InputGroupWidget {
+  @include gw-formatInputWidgetsInInputColumnLikes(
+          $marg-top: $gw-app--InputWidget-in-InputGroup--spacing-widget-top-rem,
+          $marg-left: $gw-app--InputWidget-in-InputGroup--spacing-widget-left-rem,
+          $marg-right: $gw-app--InputWidget-in-InputGroup--spacing-widget-right-rem,
+          $marg-bottom: $gw-app--InputWidget-in-InputGroup--spacing-widget-bottom-rem,
+          $pad-top: $gw-app--InputWidget-in-InputGroup--spacing-inner-top-rem,
+          $pad-left: $gw-app--InputWidget-in-InputGroup--spacing-inner-left-rem,
+          $pad-right: $gw-app--InputWidget-in-InputGroup--spacing-inner-right-rem,
+          $pad-bottom: $gw-app--InputWidget-in-InputGroup--spacing-inner-bottom-rem,
+          $label-pad-right: $gw-app--InputWidget-in-InputGroup--row-label-pad-right-rem,
+          $label-col: $gw-app--InputWidget-in-InputGroup--label-col);
+}
+
+.gw-StyleContainer--InputColumnSubGroupWidget {
+  @include gw-formatInputWidgetsInInputColumnLikes(
+          $marg-top: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-top-rem,
+          $marg-left: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-left-rem,
+          $marg-right: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-right-rem,
+          $marg-bottom: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-bottom-rem,
+          $pad-top: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-top-rem,
+          $pad-left: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-left-rem,
+          $pad-right: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-right-rem,
+          $pad-bottom: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-bottom-rem,
+          $label-pad-right: $gw-app--InputWidget-in-InputColumnSubGroup--row-label-pad-right-rem,
+          $label-col: $gw-app--InputWidget-in-InputColumnSubGroup--label-col);
+}
+
+/**
+  We allow setting specific defaults per language, in addition to allowing each app to modify the overall label values
+ */
+@mixin gw-buildI18nLabelWidths($map-name) {
+
+  @each $lang-code, $lang-val in $map-name {
+    .gw-lang-#{$lang-code} {
+      .gw-StyleContainer--InputSectionWidget,
+      .gw-StyleContainer--ConfirmPasswordInputWidget,
+      .gw-StyleContainer--InputColumnWidget,
+      .gw-StyleContainer--TableLayoutDetailViewWidget,
+      .gw-StyleContainer--ChoiceWidget,
+      .gw-StyleContainer--FormatCellWidget,
+      .gw-StyleContainer--InputGroupWidget,
+      .gw-StyleContainer--InputColumnSubGroupWidget {
+
+        &:not(.gw-labelAbove) {
+          & > .gw-label {
+            width: $lang-val;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Normal Language Values
+@include gw-buildI18nLabelWidths($gw-app--i18n--label-width-overrides);
+
+// Per App Overrides
+.gw-app-CM {
+  @include gw-buildI18nLabelWidths($gw-app--i18n--label-width-CM-specific-overrides);
+}
+
+.gw-app-BC {
+  @include gw-buildI18nLabelWidths($gw-app--i18n--label-width-BC-specific-overrides);
+}
+
+.gw-app-CC {
+  @include gw-buildI18nLabelWidths($gw-app--i18n--label-width-CC-specific-overrides);
+}
+
+.gw-app-PC {
+  @include gw-buildI18nLabelWidths($gw-app--i18n--label-width-PC-specific-overrides);
+}
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="GroupUsersLV">
+    <ExposeIterator
+      valueType="entity.GroupUser"
+      widget="GroupUsersLV"/>
+    <Require
+      name="Group"
+      type="Group"/>
+    <RowIterator
+      conversionExpression="var GU = new GroupUser(); GU.User = PickedValue; return GU"
+      editable="true"
+      elementName="GroupUser"
+      hideCheckBoxesIfReadOnly="true"
+      pickLocation="UserSearchPopup.push(Group.Organization)"
+      toAdd="Group.addToUsers(GroupUser)"
+      toRemove="Group.removeFromUsers(GroupUser)"
+      value="Group.Users"
+      valueType="entity.GroupUser[]">
+      <Row
+        editable="not GroupUser.User.Contact.Obfuscated or perm.System.editobfuscatedusercontact">
+        <UserCell
+          editable="true"
+          id="GroupUsers_User"
+          label="DisplayKey.get(&quot;Web.Admin.EditableGroupUserList.GroupUsers.User&quot;)"
+          required="true"
+          sortOrder="1"
+          unique="true"
+          value="GroupUser.User"
+          valueType="entity.User"/>
+        <BooleanRadioCell
+          editable="true"
+          id="GroupUsers_Member"
+          label="DisplayKey.get(&quot;Web.Admin.EditableGroupUserList.GroupUsers.Member&quot;)"
+          required="true"
+          value="GroupUser.Member"/>
+        <BooleanRadioCell
+          editable="true"
+          id="GroupUsers_Manager"
+          label="DisplayKey.get(&quot;Web.Admin.EditableGroupUserList.GroupUsers.Manager&quot;)"
+          required="true"
+          value="GroupUser.Manager"/>
+        <TypeKeyCell
+          id="ProximitySearchStatus"
+          label="DisplayKey.get(&quot;Web.Admin.EditableGroupUserList.ProximitySearchStatus&quot;)"
+          value="gw.api.geocode.GeocodeScriptHelper.categorizeGeocodeStatus(GroupUser.User.Contact.PrimaryAddress.GeocodeStatus)"
+          valueType="typekey.ProximitySearchStatus"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

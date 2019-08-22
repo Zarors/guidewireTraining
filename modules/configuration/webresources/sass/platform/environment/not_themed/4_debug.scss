@@ -1,0 +1,142 @@
+@mixin gw-debug-outline($col: hotpink, $offset: -5px) { //px-allowed
+  outline-color: $col;
+  outline-style: dashed;
+  outline-width: 3px; //@px-allowed
+  outline-offset: $offset; //@px-allowed
+}
+.gw-debug-has-pcf-width {
+  &, & > div, & > div > div {
+    @include gw-debug-outline();
+  }
+}
+
+.gw-debug-has-pcf-height {
+  &, & > div, & > div > div {
+    @include gw-debug-outline(red);
+  }
+}
+
+
+.gw-debug-show-widget-types-as-inline-titles {
+  @mixin gw-debugWidgetTitle($title, $bg: #3b79ff, $col: white) {
+    @include gw-debug-outline($bg, 0px); //px-allowed
+    margin: 9px; //px-allowed
+    padding: 0 1px 1px 1px; //px-allowed
+
+    &:before {
+      font-family: Bookman;
+      font-size: 11px; //px-allowed
+      content: $title;
+      background-color: $bg;
+      color: $col;
+      display: block;
+      padding: 3px; //px-allowed
+      text-align: center;
+    }
+
+  }
+
+  .gw-ScreenWidget {
+    @include gw-debugWidgetTitle("Screen Widget", black);
+  }
+
+  .gw-PanelRowWidget {
+    @include gw-debugWidgetTitle("Panel Row", #6e44ff);
+  }
+
+  .gw-PanelColumnWidget {
+    @include gw-debugWidgetTitle("Panel Column", #ff4033);
+  }
+
+  .gw-PanelSetWidget {
+    @include gw-debugWidgetTitle("Panel Set", #1e6c15);
+  }
+
+  .gw-DetailViewWidget {
+    @include gw-debugWidgetTitle("Detail View", #af5901);
+  }
+
+  .gw-InputColumnWidget {
+    @include gw-debugWidgetTitle("Input Column", #2f3b7c);
+  }
+
+  .gw-PanelIteratorWidget {
+    @include gw-debugWidgetTitle("Panel Iterator", #1c7a77);
+  }
+
+  .gw-PanelIteratorEntryWidget {
+    @include gw-debugWidgetTitle("Panel Iterator Entry", #6b1153);
+  }
+
+  .gw-ListViewWidget {
+    @include gw-debugWidgetTitle("List View", #685a0c);
+  }
+
+  .gw-InfoBarElement {
+    @include gw-debugWidgetTitle("Info Bar Element", #4a6b00);
+  }
+
+  .gw-LabelWidget {
+    @include gw-debugWidgetTitle("Label Widget", #634b00);
+  }
+
+  .gw-VerbatimWidget {
+    @include gw-debugWidgetTitle("Verbatim Widget", #00436d);
+  }
+
+  .gw-AlertBarWidget {
+    @include gw-debugWidgetTitle("Alert Bar", #710f0f);
+  }
+
+  .gw-CardWidget {
+    @include gw-debugWidgetTitle("Card Widget", #6e44ff);
+  }
+
+  .gw-CardTabsWidget {
+    @include gw-debugWidgetTitle("Card Tabs Widget", #6e44ff);
+  }
+
+  .gw-ToolbarWidget {
+    @include gw-debugWidgetTitle("Toolbar Widget", #922520);
+  }
+
+  .gw-InputWidget {
+    @include gw-debugWidgetTitle("Input Widget", #7722ff);
+  }
+
+  .gw-InputWidget.gw-labelAbove {
+    @include gw-debugWidgetTitle("Input Widget /w Label Above", #1a4aff);
+  }
+
+  .gw-ChoiceWidget {
+    @include gw-debugWidgetTitle("Choice Widget", #2b0840);
+  }
+
+  .gw-FormatCellWidget {
+    @include gw-debugWidgetTitle("Format Cell", #980000);
+  }
+
+  .gw-LinkCellWidget {
+    @include gw-debugWidgetTitle("Link Cell", #860600);
+  }
+
+  .gw-ContentInputWidget {
+    @include gw-debugWidgetTitle("Content Input", #800400);
+  }
+
+  .gw-ContentInputWidget.gw-labelAbove {
+    @include gw-debugWidgetTitle("Content Input Label Above", #800400);
+  }
+
+  .gw-isSmartHeader {
+    @include gw-debugWidgetTitle("Smart Header Row", #ac5122);
+  }
+
+  .gw-TemplateInputWidget {
+    @include gw-debugWidgetTitle("Template Input Widget", #ac5122);
+  }
+
+  .gw-TemplateCellWidget {
+    @include gw-debugWidgetTitle("Template Cell Widget", #922520);
+  }
+}

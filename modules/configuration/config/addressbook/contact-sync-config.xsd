@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Describes Contact fields which should not be synced with the Address Book -->
+  <xsd:element name="ContactSyncConfigFile">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ContactSyncEntityConfig" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ContactSyncEntityConfig">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="IgnoreProperty"/>
+        <xsd:element name="IncludeRelationship" type="RelationshipSyncConfig"/>
+        <xsd:element name="ExcludeRelationship" type="RelationshipSyncConfig"/>
+      </xsd:choice>
+      <xsd:attribute name="entity" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Property to ignore when syncing. Note that this only applies to "exportable" properties. -->
+  <xsd:element name="IgnoreProperty">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:NMTOKEN" use="required"/>
+      <xsd:attribute name="appliesToSubtypes" type="xsd:boolean" default="true"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="RelationshipSyncConfig">
+    <xsd:attribute name="contactBidiRelCode" type="xsd:NMTOKEN" use="required"/>
+    <xsd:attribute name="appliesToSubtypes" type="xsd:boolean" default="true"/>
+  </xsd:complexType>
+
+</xsd:schema>

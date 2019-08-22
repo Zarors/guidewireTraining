@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/country" xmlns="http://guidewire.com/country">
+  
+  <xsd:element name="Country">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="PCFMode" type="xsd:string"/>
+      <xsd:attribute name="postalCodeDisplayKey" type="xsd:string"/>
+      <xsd:attribute name="cityDisplayKey" type="xsd:string"/>
+      <xsd:attribute name="stateDisplayKey" type="xsd:string"/>
+      <xsd:attribute name="visibleFields" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

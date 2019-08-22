@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The class of the activity"
+  final="true"
+  name="ActivityClass"
+  platform="true">
+  <typecode
+    code="task"
+    desc="Task"
+    name="Task"/>
+  <typecode
+    code="event"
+    desc="Event"
+    name="Event"/>
+</typelist>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  HistoryEventContainer Delegate  ==================================================================== -->
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="HistoryEventContainer">
+  <implementsInterface
+    iface="gw.ab.history.entity.HistoryEventContainer"
+    impl="com.guidewire.ab.domain.history.impl.HistoryEventContainerImpl"/>
+</delegate>

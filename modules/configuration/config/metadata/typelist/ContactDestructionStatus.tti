@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="ContactDestructionStatus" desc="Status in the Contact Purge Process">
+  <typecode
+    code="New"
+    desc="New Request"
+    name="New">
+    <category
+      code="DestructionStatusNotProcessed"
+      typelist="ContactDestructionStatusCategory"/>
+    <category
+      code="ReadyToAttemptDestruction"
+      typelist="ContactDestructionStatusCategory"/>
+  </typecode>
+  <typecode
+    code="ReRun"
+    desc="The contact destruction request needs to be rerun"
+    name="ReRun">
+    <category
+      code="ReadyToAttemptDestruction"
+      typelist="ContactDestructionStatusCategory"/>
+  </typecode>
+  <typecode
+    code="ManualInterventionRequired"
+    desc="Requires manual intervention from a person."
+    name="Manual Intervention Required"></typecode>
+  <typecode
+    code="Partial"
+    desc="The contact was partially purged"
+    name="Partial">
+    <category
+      code="ReadyToBeNotified"
+      typelist="ContactDestructionStatusCategory"/>
+    <category
+      code="DestructionStatusFinished"
+      typelist="ContactDestructionStatusCategory"/>
+  </typecode>
+  <typecode
+    code="NotDestroyed"
+    desc="Contact was looked at and was determined that it should not be destroyed."
+    name="Not Destroyed">
+    <category
+      code="ReadyToBeNotified"
+      typelist="ContactDestructionStatusCategory"/>
+    <category
+      code="DestructionStatusFinished"
+      typelist="ContactDestructionStatusCategory"/>
+  </typecode>
+  <typecode
+    code="Completed"
+    desc="Request has been processed and the contact should have been destroyed."
+    name="Completed">
+    <category
+      code="ReadyToBeNotified"
+      typelist="ContactDestructionStatusCategory"/>
+    <category
+      code="DestructionStatusFinished"
+      typelist="ContactDestructionStatusCategory"/>
+  </typecode>
+</typelist>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ArchiveDocumentReferenceItem"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="archivedocrefitem"
+  type="editable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.extract.ArchiveDocumentReferenceItemPublicMethods"
+    impl="com.guidewire.pl.domain.extract.impl.ArchiveDocumentReferenceItemImpl"/>
+  <fulldescription><![CDATA[
+        Keep track of one bean in database that is directly referenced by one bean from an archive document.
+        One bean in database can be referenced by more than one archive document, in which case there are multiple
+        ArchiveDocumentReferenceItem rows for it.
+
+    ]]></fulldescription>
+  <foreignkey
+    fkentity="ArchiveDocumentReferences"
+    name="Root"
+    nullok="false"
+    setterScriptability="hidden"/>
+  <column
+    desc="PublicID of the referenced object."
+    name="ReferencedEntityPublicID"
+    nullok="false"
+    setterScriptability="hidden"
+    type="publicid"/>
+  <column
+    desc="Name of the entity of the referenced object. For instances of subtypes, this is always the subtype root entity."
+    name="ReferencedEntity"
+    nullok="false"
+    setterScriptability="hidden"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="1024"/>
+  </column>
+</entity>

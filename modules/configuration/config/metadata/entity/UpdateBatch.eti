@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="A container for a set of update operations that are sent together to the addressbook as a single transaction"
+  entity="UpdateBatch"
+  exportable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.addressbook.impl.UpdateBatchInternalMethods"
+    impl="com.guidewire.pl.domain.addressbook.impl.UpdateBatchImpl"/>
+  <fulldescription><![CDATA[
+      UpdateBatch has been deprecated since ClaimCenter 8.0 along with the IAddressBookAdapter.
+  ]]></fulldescription>
+  <array
+    arrayentity="CreateUpdateOp"
+    desc="List of objects to be created in the Address Book."
+    name="CreateUpdateOps"
+    owner="true"/>
+  <array
+    arrayentity="FieldChangeUpdateOp"
+    desc="List of changes to fields' values in different entities.  Notice that in this list every entry may apply to a different entity."
+    name="FieldChangeUpdateOps"
+    owner="true"/>
+  <array
+    arrayentity="DeleteUpdateOp"
+    desc="List of entities to be deleted from the Address Book."
+    name="DeleteUpdateOps"
+    owner="true"/>
+  <array
+    arrayentity="ValidationWarning"
+    desc="List of validation warnings to be ignored by Address Book"
+    name="ValidationWarningsToIgnore"
+    owner="true"/>
+</nonPersistentEntity>

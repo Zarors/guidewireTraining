@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="ArchiveItemListScreen">
+    <Require
+      name="archiveDetailsData"
+      type="gw.api.archiving.ArchiveDetailsData"/>
+    <PanelRef
+      def="ArchiveItemListLDV(archiveDetailsData)">
+      <Toolbar>
+        <ToolbarButton
+          action="archiveDetailsData.resetExcludedFlag(); CurrentLocation.cancel()"
+          id="ResetAll"
+          label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ResetItems&quot;)"
+          visible="!archiveDetailsData.Skipped"/>
+        <CheckedValuesToolbarButton
+          allCheckedRowsAction="gw.transaction.Transaction.runWithNewBundle(\ bundle -&gt; { CheckedValues.each(\ k -&gt; {var rootInfo = bundle.add(k as KeyableBean) as RootInfo; rootInfo.resetToPreArchivedState() })}); if (archiveDetailsData.QueryForRootInfos.select().Count == 0) {CurrentLocation.cancel()}"
+          id="ResetSelected"
+          iterator="ArchiveItemListLDV.ArchiveItemListLV"
+          label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ResetSelected&quot;)"
+          visible="!archiveDetailsData.Skipped"/>
+      </Toolbar>
+    </PanelRef>
+  </Screen>
+</PCF>

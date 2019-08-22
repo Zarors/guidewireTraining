@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Phone Normalizer WorkItem implementation. This should work for most work queues."
+  entity="PhoneNormalizerWorkItem"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="phonenormalizerworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItem"/>
+  <typekey
+    desc="The queue."
+    name="QueueType"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <column
+    desc="Entity name for the associated ID"
+    name="EntityTypeName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Entity IDs that contain normalizable phone data"
+    exportable="false"
+    getterScriptability="doesNotExist"
+    name="TargetIDs"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    type="longtext">
+    <columnParam
+      name="logicalSize"
+      value="1932735283"/>
+  </column>
+  <index
+    desc="index to speed up selection of work items by status"
+    expectedtobecovering="true"
+    name="PheItemIndex"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="QueueType"/>
+    <indexcol
+      keyposition="2"
+      name="Status"/>
+    <indexcol
+      keyposition="3"
+      name="Priority"
+      sortascending="false"/>
+    <indexcol
+      keyposition="4"
+      name="CreationTime"/>
+    <indexcol
+      keyposition="5"
+      name="EntityTypeName"/>
+    <indexcol
+      keyposition="6"
+      name="ID"/>
+  </index>
+</entity>

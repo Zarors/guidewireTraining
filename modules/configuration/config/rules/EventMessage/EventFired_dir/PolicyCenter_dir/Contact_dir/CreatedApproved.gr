@@ -1,0 +1,23 @@
+package rules.EventMessage.EventFired_dir.PolicyCenter_dir.Contact_dir
+uses gw.plugin.ClientSystemPlugin
+uses gw.plugin.Plugins
+uses gw.plugin.AsyncMessageType
+
+@gw.rules.RuleName("CreatedApproved")
+internal class CreatedApproved {
+  static function doCondition(messageContext  :  entity.MessageContext) : boolean {
+/*start00rule*/
+return messageContext.EventName == "ABContactCreatedApproved"
+/*end00rule*/
+}
+
+  static function doAction(messageContext  :  entity.MessageContext, actions : gw.rules.Action) {
+/*start00rule*/
+var contact = messageContext.Root as ABContact
+  var plugin = Plugins.get("PolicySystemPlugin") as ClientSystemPlugin
+  if(plugin != null) {
+    plugin.createAsyncMessage(messageContext, contact, AsyncMessageType.Update)
+  } 
+/*end00rule*/
+  }
+}

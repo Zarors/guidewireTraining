@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageRequest"
+  name="BankAccountVerificationRequest">
+  <plugin-gosu
+    gosuclass="trainingapp.messaging.bank.BankAccountVerificationRequest"/>
+</plugin>

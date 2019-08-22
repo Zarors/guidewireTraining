@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- NOTE pdalbora 14-Mar-2005: This typelist is now obsolete. I would delete it, but we don't have upgrader
+  support for detecting whether any of the typecodes will be orphaned, since that detection normally
+  requires that the typelist itself exists. -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="This typelist is obsolete and should not be used"
+  final="true"
+  name="ContactRelCons"
+  platform="true">
+  <typecode
+    code="exclusive"
+    desc="Exclusive"
+    name="Exclusive"/>
+</typelist>

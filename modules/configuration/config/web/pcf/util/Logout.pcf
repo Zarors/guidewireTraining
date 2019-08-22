@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ExitPoint
+    id="Logout"
+    logout="true"
+    popup="false"
+    url="{exitUrl}">
+    <LocationEntryPoint
+      signature="Logout(url : String)"/>
+    <ExitPointParameter
+      locationParam="url"
+      type="String"
+      urlParam="exitUrl"/>
+  </ExitPoint>
+</PCF>

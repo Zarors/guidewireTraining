@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<FieldValidators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/metadata/fieldvalidation.xsd">
+  <ValidatorDef
+      description="Validator.PostalCode.FiveDigit"
+      input-mask="#####"
+      name="PostalCode"
+      value="[0-9]{5}"/>
+</FieldValidators>

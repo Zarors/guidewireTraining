@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The status code for auto-sync"
+  final="true"
+  name="AutoSync"
+  platform="true">
+  <typecode
+    code="Disallow"
+    desc="Disallow"
+    name="Disallow"/>
+  <typecode
+    code="Allow"
+    desc="Allow"
+    name="Allow"/>
+  <typecode
+    code="Suspended"
+    desc="Suspended"
+    name="Suspended"/>
+</typelist>

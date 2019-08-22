@@ -1,0 +1,60 @@
+// Position to other widgets
+$gw-app--CardView--spacing-widget-top-rem: null !default;
+$gw-app--CardView--spacing-widget-left-rem: null !default;
+$gw-app--CardView--spacing-widget-right-rem: null !default;
+$gw-app--CardView--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--CardView--spacing-inner-top-rem: null !default;
+$gw-app--CardView--spacing-inner-left-rem: null !default;
+$gw-app--CardView--spacing-inner-right-rem: null !default;
+$gw-app--CardView--spacing-inner-bottom-rem: null !default;
+
+$gw-app--CardTab--use-top-active-border: false !default;
+$gw-app--CardView--bg: $gw-app--bg !default;
+
+
+//---------------------------- CARD
+// Position to other widgets
+$gw-app--Card--spacing-widget-top-rem: null !default;
+$gw-app--Card--spacing-widget-left-rem: null !default;
+$gw-app--Card--spacing-widget-right-rem: null !default;
+$gw-app--Card--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--Card--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--Card--spacing-inner-left-rem: null !default;
+$gw-app--Card--spacing-inner-right-rem: null !default;
+$gw-app--Card--spacing-inner-bottom-rem: null !default;
+
+
+//---------------------------- CARD TABS
+// Position to other widgets
+$gw-app--CardTabs--spacing-widget-top-rem: null !default;
+$gw-app--CardTabs--spacing-widget-left-rem: null !default;
+$gw-app--CardTabs--spacing-widget-right-rem: null !default;
+$gw-app--CardTabs--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--CardTabs--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--CardTabs--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--CardTabs--spacing-inner-right-rem: null !default;
+$gw-app--CardTabs--spacing-inner-bottom-rem: null !default;
+
+$gw-app--CardTabs--border-col: $gw-app--border--col !default;
+
+
+//--------------------------- CARD TAB
+// Position to other widgets - not supported
+
+// Internal padding
+$gw-app--CardTab--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--CardTab--spacing-inner-left-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--CardTab--spacing-inner-right-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--CardTab--spacing-inner-bottom-rem: $gw-app--SPACING-rem-M !default;
+
+//Values for standard card tabs
+$gw-app--CardTab--standard--inactive-bg: $gw-app--panels--bg !default;
+$gw-app--CardTab--standard--inactive-col: $gw-app--panels--col !default;
+$gw-app--CardTab--standard--active-bg: $gw-app--CardView--bg !default;
+$gw-app--CardTab--standard--active-col: $gw-app--palette--left-nav--bg !default;

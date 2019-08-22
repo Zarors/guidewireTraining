@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="RelatedABContactSearchCriteria"
+  extendable="true">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.RelatedABContactSearchCriteria"
+    impl="com.guidewire.ab.domain.addressbook.impl.RelatedABContactSearchCriteriaImpl"/>
+  <typekey
+    desc="Role of related contact"
+    name="RoleOfRelatedContact"
+    nullok="true"
+    typelist="ContactBidiRel"/>
+  <foreignkey
+    columnName="RelatedContactID"
+    desc="The related contact, if known."
+    fkentity="ABContact"
+    name="RelatedContact"
+    nullok="true"/>
+  <typekey
+    desc="ABContact class, like ABPerson, ABCompany, and ABVenue."
+    name="ContactSubtype"
+    nullok="false"
+    typelist="ABContact"/>
+  <column
+    desc="First Name"
+    name="FirstName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Keyword is the general term for Name (Companies and Places) and LastName (for Persons)"
+    name="Keyword"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Name of person's employer"
+    name="OrganizationName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    default="false"
+    desc="Preferred vendors only"
+    name="PreferredVendors"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Tax ID for the contact (SSN or EIN)."
+    name="TaxID"
+    nullok="true"
+    type="ssn"/>
+  <column
+    desc="Employee ID number. Applies to UserContacts."
+    name="EmployeeNumber"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Minimum Score for returned Contacts"
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <typekey
+    desc="The company's vendor type."
+    name="VendorType"
+    nullok="true"
+    typelist="VendorType"/>
+</nonPersistentEntity>

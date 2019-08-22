@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Instrumentation information for a run of a distributed worker instance."
+  entity="InstrumentedWorkerTask"
+  exportable="false"
+  final="true"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="instrumentedworkertask"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.entity.DoesNotValidateOnCommit"
+    impl="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkerTaskImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkerTaskInternalMethods"
+    impl="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkerTaskImpl"/>
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkerTaskImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workqueue.InstrumentedWorkerTaskPublicMethods"
+    impl="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkerTaskImpl"/>
+  <column
+    desc="The writer batch job that created all workitem processed by this run."
+    name="ProcessHistoryID"
+    nullok="true"
+    type="softentityreference"/>
+  <column
+    desc="Executor instance that created this task."
+    name="InstrumentedWorkExecutorID"
+    nullok="false"
+    type="softentityreference"/>
+  <column
+    desc="Timestamp when the instance was started."
+    name="StartTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the instance was shutdown."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The instance number on this app server."
+    name="InstanceNumber"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="false"
+    desc="Whether the worker batch ran to completion, or failed or was interrupted."
+    name="RanToCompletion"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="0"
+    desc="The number of workitems checked out."
+    name="WorkitemsCheckedOut"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of workitems skipped."
+    name="WorkitemsSkipped"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of workitems processed successfully."
+    name="WorkitemsProcessed"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of workitems processed after previous attempt failed with some kind of error (including CDC)."
+    name="WorkitemsProcessedAfterError"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of workitems processed after previous attempt failed with CDC."
+    name="WorkitemsProcessedAfterCdc"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of exceptions caught during workitem processing."
+    name="Exceptions"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of exceptions caught during workitem processing."
+    name="Cdcs"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of orphaned workitems reclaimed."
+    name="OrphansAdopted"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of workitems marked as failed."
+    name="WorkitemsFailed"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="The number of milliseconds spent processing work items."
+    name="WorkElapsed"
+    nullok="false"
+    type="longint"/>
+  <column
+    default="0"
+    desc="The number of milliseconds spent managing the work queue."
+    name="ManagementElapsed"
+    nullok="false"
+    type="longint"/>
+  <column
+    default="0"
+    desc="Count of the number of consecutive work items that resulted in an exception."
+    name="ConsecutiveExceptions"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Raw Profiler data"
+    name="ProfilerData"
+    nullok="true"
+    type="blob"/>
+  <column
+    desc="Optional custom instrumentation"
+    getterScriptability="doesNotExist"
+    name="CustomInstrumentationData"
+    nullok="true"
+    setterScriptability="doesNotExist"
+    type="mediumtext"/>
+  <index
+    desc="ProcessHistoryID index"
+    name="instrworkertask1"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="ProcessHistoryID"/>
+  </index>
+  <index
+    desc="Index for searching most recent workers by an executor."
+    name="instrworkertask2"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="InstrumentedWorkExecutorID"/>
+    <indexcol
+      keyposition="2"
+      name="StartTime"
+      sortascending="false"/>
+  </index>
+</entity>

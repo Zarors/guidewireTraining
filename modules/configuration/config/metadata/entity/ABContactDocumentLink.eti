@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entity
+  setterScriptability="hidden"
+  xmlns="http://guidewire.com/datamodel"
+  desc="Associates ABContacts with Documents. It supports many contacts associated to the same document and viceversa."
+  entity="ABContactDocumentLink"
+  exportable="true"
+  table="abcontactdocumentlink"
+  type="joinarray">
+  <implementsInterface
+  	iface="gw.ab.contact.entity.ABContactDocumentLink"
+    impl="com.guidewire.ab.domain.contact.impl.ABContactDocumentLinkImpl"/>
+  <implementsEntity
+    name="Extractable"/>
+  <foreignkey
+    columnName="DocumentID"
+    desc="Associated Document. Warning: even though there is always a Document associated with this entity, this field may be null when the IDocumentMetadataSource plugin is enabled. To reliably get the associated Document, use the LinkedDocument property."
+    fkentity="Document"
+    name="Document"
+    nullok="false"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="ABContact the Document is associated to in this ABContactDocumentLink"
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="false"/>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.ABContactDocumentDBCheckBuilder"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.CommitCallback"
+    impl="com.guidewire.ab.domain.contact.impl.ABContactDocumentLinkImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.DocumentJoiningBean"
+    impl="com.guidewire.ab.domain.contact.impl.ABContactDocumentLinkImpl"/>
+  <index
+    desc="Used to ensure uniqueness. There should be at most one combination of abcontact and document"
+    name="contactdocumentu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ABContactID"/>
+    <indexcol
+      keyposition="2"
+      name="DocumentID"/>
+  </index>
+</entity>

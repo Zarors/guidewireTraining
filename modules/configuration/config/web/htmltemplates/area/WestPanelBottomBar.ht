@@ -1,0 +1,8 @@
+<div id="${renderId}">
+    <div class="gw-west-panel--chat-button" data-gw-click="gwChat.button.toggleOpen" id="WestPanel-ToggleChat">
+        <div class="gw-icon"></div>
+    </div>
+    <div class="gw-west-panel--minmax-button" data-gw-click="gwWestPanel.toggleMinMax" id="WestPanel-ToggleMinMax">
+        <div class="gw-icon"></div>
+    </div>
+</div>

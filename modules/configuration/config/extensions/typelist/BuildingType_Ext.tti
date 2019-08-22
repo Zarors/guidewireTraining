@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="BuildingType_Ext"
+  name="BuildingType_Ext">
+  <typecode
+    code="residential_single"
+    desc="Residential - single dwelling"
+    name="Residential - single dwelling"
+    priority="10"/>
+  <typecode
+    code="residential_mutli"
+    desc="Residential - multiple dwelling"
+    name="Residential - multiple dwelling"
+    priority="20"/>
+  <typecode
+    code="office"
+    desc="Office building"
+    name="Office building"
+    priority="30"/>
+  <typecode
+    code="industrial"
+    desc="Factory or manufacturing"
+    name="Industrial building"
+    priority="40"/>
+  <typecode
+    code="hotel"
+    desc="Hotel"
+    name="Hotel"
+    priority="50"/>
+  <typecode
+    code="other"
+    desc="Other"
+    name="Other"
+    priority="60"/>
+</typelist>

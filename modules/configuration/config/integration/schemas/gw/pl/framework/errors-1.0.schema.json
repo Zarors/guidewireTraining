@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  // TODO - AHK - REST - Descriptions
+  "definitions": {
+    "ErrorInfo" : {
+      "type" : "object",
+      "properties" : {
+        "statusCode" : {
+          "type" : "integer"
+        },
+        "userMessage" : {
+          "type" : "string"
+        },
+        "developerMessage" : {
+          "type" : "string"
+        },
+        "details" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ErrorDetails"
+          }
+        }
+      }
+    },
+    "ErrorDetails" : {
+      "type" : "object",
+      "properties" : {
+        "parameterName" : {
+          "type" : "string"
+        },
+        "parameterLocation" : {
+          // TODO - AHK - REST - Enumeration?
+          "type" : "string"
+        },
+        "lineNumber" : {
+          "type" : "integer"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "stackTrace" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <title>Guidewire JavaScript Inspector</title>
+  <script type="text/javascript" src="<%= jsDir %>global.js?ver=<%= AppVersion %>"></script>
+  <script>
+    function inspect(strValue) {
+      document.getElementById('lValue').innerHTML = strValue;
+      document.getElementById('rValue').innerHTML = opener.inspectValues(strValue);
+    }
+  </script>
+</head>
+<body onload="document.getElementById('toInspect').focus()">
+  <form name="main" onsubmit="inspect(document.getElementById('toInspect').value)" action="javascript:void(0)">
+  <font face=Arial size=2>
+  <b>Guidewire JavaScript Inspector:</b>
+  <br><br>
+  <input type="text" size=60 name="toInspect"> <input type=submit value=Inspect><hr>
+  <b><span id="lValue"></span></b>&nbsp;=&nbsp;<span id="rValue"></span>
+  </font>
+  </form>
+</body>
+</html>

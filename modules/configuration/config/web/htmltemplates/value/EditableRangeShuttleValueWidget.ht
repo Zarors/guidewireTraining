@@ -1,0 +1,15 @@
+<select name="${renderId}" multiple class="gw-hidden ${reflectionApplies ? 'gw-value-select-reflector'}" ${systemAttributes}>
+    <option :for="option" :in="range" value="${option.value}" selected="${option.selected}">${option.label || '&nbsp;'}</option>
+</select>
+<select size="${numRows}" multiple disabled="${disabled}" id="${renderId}_select-left"
+        class="gw-selection-list ${reflectionApplies ? 'gw-value-select-reflector'}" ${systemAttributes}>
+  <option :for="option" :in="notSelectedOptions" value="${option.value}">${option.label || '&nbsp;'}</option>
+</select>
+<div class="gw-button-section">
+    <div class="gw-shuttle-right-button ${disabledClass} ${disabledRightButton}" id="${renderId}_add" data-gw-tooltip="${addTooltip}" data-gw-click="gwRangeValue.moveRight"><div class="gw-icon"></div></div>
+    <div class="gw-shuttle-left-button ${disabledClass} ${disabledLeftButton}" id="${renderId}_remove" data-gw-tooltip="${removeTooltip}" data-gw-click="gwRangeValue.moveLeft"><div class="gw-icon"></div></div>
+</div>
+<select size="${numRows}" multiple disabled="${disabled}" id="${renderId}_select-right"
+        class="gw-selection-list ${reflectionApplies ? 'gw-value-select-reflector'}" ${systemAttributes}>
+  <option :for="option" :in="selectedOptions" value="${option.value}">${option.label || '&nbsp;'}</option>
+</select>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    countsAsWork="false"
+    id="ConfigurationInfo"
+    parent="InfoPages()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.Configuration.InfoPage&quot;)">
+    <Screen>
+      <Variable
+        initialValue="new gw.api.tools.ConfigurationDumpHelper()"
+        name="dumpDownloadHelper"
+        type="gw.api.tools.ConfigurationDumpHelper"/>
+      <Toolbar>
+        <ToolbarButton
+          action="dumpDownloadHelper.downloadZip()"
+          download="true"
+          id="ConfigurationInfo_DownloadButton"
+          label="DisplayKey.get(&quot;Button.Download&quot;)"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <ListViewInput
+            boldLabel="true"
+            label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.Configuration.ConfigParameters&quot;)"
+            labelAbove="true">
+            <Toolbar/>
+            <ListViewPanel
+              id="ParameterLV">
+              <RowIterator
+                editable="false"
+                elementName="param"
+                pageSize="0"
+                value="com.guidewire.pl.system.dependency.ServerDependencies.getSystemConfiguration().getParameterDefinitions().where(\ p -&gt; p.EntityName == null)"
+                valueType="java.util.List&lt;gw.api.system.ParameterKey&lt;java.lang.Object&gt;&gt;">
+                <Row>
+                  <TextCell
+                    id="Name"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.Configuration.Name&quot;)"
+                    value="param.Name"
+                    width="350"/>
+                  <TextAreaCell
+                    id="Value"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.Configuration.Value&quot;)"
+                    value="param.Value"
+                    valueType="java.lang.Object"
+                    width="650"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </ListViewInput>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

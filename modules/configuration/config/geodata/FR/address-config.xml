@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddressConfig xmlns="http://guidewire.com/address-config">
+  <AddressDef name="FR">
+    <Match>
+      <Field name="Country" value="FR"/>
+    </Match>
+    <Fields>
+      <Field name="PostalCode" zonecode="postalcode">
+        <AutoFillFromZone code="city"/>
+        <ValidatorDef value="[0-9]{5}" description="Validator.PostalCode.FiveDigit" input-mask="#####"/>
+      </Field>
+      <Field name="City" zonecode="city">
+        <AutoFillFromZone code="postalcode"/>
+      </Field>
+    </Fields>
+  </AddressDef>
+</AddressConfig>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ToolbarButtonSet
+    id="GroupDetailToolbarButtonSet">
+    <Require
+      name="group"
+      type="Group"/>
+    <EditButtons/>
+    <ToolbarButton
+      action="gw.api.admin.BaseAdminUtil.deleteGroup(group); AdminForward.go()"
+      available="group.SafeToDelete"
+      confirmMessage="DisplayKey.get(&quot;Web.Admin.GroupDetail.DeleteConfirm&quot;)"
+      hideIfEditable="true"
+      id="GroupDetailPage_RegionsCard_DeleteButton"
+      label="DisplayKey.get(&quot;Button.Delete&quot;)"
+      visible="perm.Group.delete"/>
+    <ToolbarDivider/>
+  </ToolbarButtonSet>
+</PCF>

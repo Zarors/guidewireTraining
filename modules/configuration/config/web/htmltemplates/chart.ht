@@ -1,0 +1,20 @@
+<div style="height:400px;width:400px;">
+  <canvas id="${renderId}" width="400" height="400">
+  </canvas>
+  <script>
+    var div = document.getElementById("${renderId}");
+    var myChart = new Chart(div, {
+      type: "${type}",
+      data: ${data},
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+</div>

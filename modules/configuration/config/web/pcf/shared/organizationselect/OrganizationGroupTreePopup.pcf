@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="OrganizationGroupTreePopup"
+    returnType="Group"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.BrowseGroups&quot;)">
+    <LocationEntryPoint
+      signature="OrganizationGroupTreePopup()"/>
+    <LocationEntryPoint
+      signature="OrganizationGroupTreePopup(OrganizationSelection : OrganizationSelection)"/>
+    <LocationEntryPoint
+      signature="OrganizationGroupTreePopup(OrganizationSelection : OrganizationSelection, RestrictedGroup : Group)"/>
+    <Variable
+      name="OrganizationSelection"
+      type="OrganizationSelection"/>
+    <Variable
+      name="RestrictedGroup"
+      type="Group"/>
+    <Screen
+      id="OrganizationGroupTreePopupScreen">
+      <Toolbar/>
+      <TreeViewPanel
+        id="OrganizationGroupTreePopup">
+        <Variable
+          initialValue="gw.api.admin.GroupPickerTreeNode.createNode(OrganizationSelection.Organization)"
+          name="rootGroup"
+          type="gw.api.admin.GroupPickerTreeNode"/>
+        <TreeView
+          canClickElement="gw.api.admin.GroupPickerTreeNode.verifyNoCyclesCreated(group, RestrictedGroup)"
+          elementLabel="group"
+          elementName="group"
+          elementType="Group"
+          id="OrganizationGroupTreePopupPicker"
+          onClickElement="CurrentLocation.pickValueAndCommit(group)"
+          value="rootGroup"/>
+      </TreeViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

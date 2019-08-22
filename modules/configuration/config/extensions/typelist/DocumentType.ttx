@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="DocumentType">
+  <typecode
+    code="email"
+    desc="Email"
+    name="Email"/>
+  <typecode
+    code="letter_received"
+    desc="Letter received"
+    name="Letter received"/>
+  <typecode
+    code="letter_sent"
+    desc="Letter sent"
+    name="Letter sent"/>
+  <typecode
+    code="sla"
+    desc="Service Level Agreement"
+    name="Service Level Agreement"/>
+  <typecode
+    code="w9"
+    desc="W-9"
+    name="W-9"/>
+  <typecode
+    code="other"
+    desc="Other"
+    name="Other"/>
+</typelistextension>

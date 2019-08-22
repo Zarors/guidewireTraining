@@ -1,0 +1,28 @@
+<div id="${renderId}" ${outerClasses} ${outerStyles} ${outerAttributes} data-gw-draggable="?{draggable} gwListView" data-gw-drag-id="${renderId}_drag">
+    <div class="gw-header-content-wrapper">
+        <div class="gw-header--inner gw-header--icon" id="${renderId}_inner">
+            ${iconHTML}
+            <div class="gw-label">${headerLabel}</div>
+        </div>
+
+        <div :if="sortable" id="${renderId}_toggleSort" class="gw-sort--section" data-gw-click="?{sortable} gwListView.headerAction act:${SORT_NEXT} id:${renderId}">
+            <div class="gw-sort-icon--up"></div>
+            <div class="gw-sort-icon--down"></div>
+        </div>
+    </div>
+
+    <div :if="draggable" class="gw-dragContainer" id="${renderId}_drag">
+        <div class="gw-header-content-wrapper gw-copy">
+            <div class="gw-header--inner gw-header--icon">
+                ${iconHTML}
+                <div class="gw-label">${headerLabel}</div>
+            </div>
+
+        <div :if="sortable" class="gw-sort--section">
+            <div class="gw-sort-icon--up"></div>
+            <div class="gw-sort-icon--down"></div>
+            </div>
+        </div>
+        <div class="gw-pointer"><div class="gw-drag-mouse-cover"></div></div>
+    </div>
+</div>

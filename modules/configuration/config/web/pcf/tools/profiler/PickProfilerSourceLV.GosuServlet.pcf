@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="GosuServlet">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="gosuServletCallHistory"
+      pickValue="gosuServletCallHistory.ProfilerData"
+      toRemove="deleteProfilerData(gosuServletCallHistory)"
+      value="gw.api.database.Query.make(GosuServletCallHistory).select()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.GosuServletCallHistory&gt;">
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.Profiler.GosuServlets&quot;)"
+        name="gosuServletChooser">
+        <ToolbarFilterOptionGroup
+          filters="gw.api.profiler.GosuServletProfilerPageHelper.getAllServletTypeNameFilters()"/>
+      </ToolbarFilter>
+      <ToolbarFlag
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="false"
+        name="CannotDelete"/>
+      <Row>
+        <TextCell
+          id="ServerName"
+          label="DisplayKey.get(&quot;Web.Profiler.GosuServletProfilerServerId&quot;)"
+          sortOrder="1"
+          value="gosuServletCallHistory.ServerName"/>
+        <TextCell
+          id="GosuServlet"
+          label="DisplayKey.get(&quot;Web.Profiler.GosuServletProfilerServletTypeName&quot;)"
+          sortOrder="2"
+          value="gosuServletCallHistory.GosuServletType"/>
+        <DateCell
+          dateFormat="short"
+          id="StartDate"
+          label="DisplayKey.get(&quot;Web.Profiler.StartDate&quot;)"
+          sortDirection="descending"
+          sortOrder="3"
+          timeFormat="short"
+          value="gosuServletCallHistory.StartDate"/>
+        <DateCell
+          dateFormat="short"
+          id="CompleteDate"
+          label="DisplayKey.get(&quot;Web.Profiler.CompleteDate&quot;)"
+          timeFormat="short"
+          value="gosuServletCallHistory.CompleteDate"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[function deleteProfilerData(gosuServletCallHistory : GosuServletCallHistory) {
+  gw.transaction.Transaction.runWithNewBundle( \ bundle -> {
+      bundle.delete( gosuServletCallHistory )
+    }
+  )
+}]]></Code>
+  </ListViewPanel>
+</PCF>

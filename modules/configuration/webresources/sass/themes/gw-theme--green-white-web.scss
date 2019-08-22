@@ -1,0 +1,291 @@
+@import "./partials/platform_colors_base";
+@import "./partials/web-green-white-spacious/_colors_base";
+@import "./partials/web-green-white-spacious/_spacing";
+
+
+// General
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900');
+$gw-app--base-font-size--in-px: gw-pxFixed(14);
+$gw-app--font-size--smaller-px: gw-pxFixed(12);
+$gw-app--font-family: 'Source Sans Pro', sans-serif;
+$gw-app--border-radius-px: gw-pxFixed(4);
+
+// Globals
+$gw-app--col: $gw-app--palette--black;
+$gw-app--bg: $gw-app--palette--white;
+$gw-app--menus--bg: $gw-app--bg;
+$gw-app--menus--col: $gw-app--col;
+$gw-app--menus--hover--bg: $gw-app--palette--blue-hint;
+$gw-app--menus--hover--col: $gw-app--menus--col;
+$gw-app--menus--shadow: gw-pxFixed(2) gw-pxFixed(2) gw-pxFixed(4) $gw-app--palette--shadow-col;
+
+// Buttons
+$gw-app--buttons--bg: $gw-app--palette--green;
+$gw-app--buttons--hover--bg: $gw-app--buttons--bg;
+$gw-app--buttons--disabled-bg: $gw-theme-green-white-palette--buttons-disabled-bg;
+$gw-app--buttons--disabled-col: $gw-app--palette--gray-9;
+$gw-app--buttons--hover-shadow: 0 gw-pxFixed(2) gw-pxFixed(4) 0 $gw-app--palette--shadow-col;
+$gw-app--buttons--shadow: none;
+$gw-app--buttons--disabled-shadow: none;
+$gw-app--buttons--have-borders: false;
+$gw-app--buttons--pad-h-rem: $gw-app--SPACING-rem-L;
+
+$gw-app--section-primary--bg: $gw-app--palette--offwhite;
+
+// Links
+$gw-app--links--col: $gw-app--palette--blue;
+$gw-app--links--hover--col: $gw-app--links--col;
+
+// Panels
+$gw-app--panels--bg: $gw-app--palette--offwhite;
+$gw-app--panels--have-borders: false;
+
+// Inputs
+$gw-app--inputs--checkbox-checked-col: $gw-app--palette--white;
+$gw-app--inputs--checkbox-checked-bg: $gw-app--palette--left-nav--border-col;
+$gw-app--inputs--changed--col: $gw-app--col;
+$gw-app--inputs--editable-inner-shadow: none;
+$gw-app--inputs--checkbox-checked-glyph: "check";
+$gw-app--inputs--checkbox-size-em: gw-emFixed(16/14);
+$gw-app--inputs--checkbox-glyph-size-em: gw-emFixed(12/14);
+$gw-app--inputs--radio-checked-glyph: "circle";
+$gw-app--inputs--radio-size-em: gw-emFixed(16/14);
+$gw-app--inputs--radio-glyph-size-em: gw-emFixed(8/14);
+$gw-app--inputs--select--behave-like-secondary: false;
+
+// Progress Bar
+$gw-app--progress-bar--holder-inset-shadow: inset 0 1px 0 0 $gw-app--menus--shadow; //@px-allowed
+$gw-app--progress-bar--holder-outset-shadow: 0 1px 2px 0 $gw-app--menus--shadow; //@px-allowed
+$gw-app--progress-bar--bar-outset-shadow: 0 0 0 0 transparent;
+
+$gw-app--progress-bar--inner-bar-has-right-border: false;
+$gw-app--progress-bar--holder-has-input-border: false;
+
+// InputColumn_themeable
+$gw-app--InputColumn--required--col: $gw-theme-green-white-palette--required-star-col;
+$gw-app--InputColumn--required--size-em: gw-emFixed(10/14);
+$gw-app--InputColumn--required--left-em: gw-emFixed(-1.6);
+$gw-app--InputColumn--required--top-em:  gw-emFixed(.76);
+
+$gw-app--InputDivider--spacing-widget-right-rem: $gw-app--SPACING-rem-M;
+$gw-app--InputDivider--spacing-widget-left-rem: $gw-app--SPACING-rem-M;
+
+
+// NorthPanel_themeable
+$gw-app--NorthPanel--bg: $gw-theme-green-white-palette--top-nav-bg;
+$gw-app--NorthPanel--button--active--col: $gw-theme-green-white-palette--blue-selected;
+$gw-app--NorthPanel--button--active--bg: $gw-app--NorthPanel--bg;
+$gw-app--NorthPanel--button--hover--col: $gw-app--palette--blue;
+$gw-app--NorthPanel--button--hover--bg: $gw-app--NorthPanel--bg;
+$gw-app--NorthPanel--button--pad-v-rem: $gw-app--SPACING-rem-L;
+$gw-app--NorthPanel--button--pad-h-rem: $gw-app--SPACING-rem-L;
+$gw-app--NorthPanel--button--expand-pad-h-rem: $gw-app--SPACING-rem-S;
+$gw-app--NorthPanel--font-size-em: gw-emFixed(16/14);
+$gw-app--NorthPanel--unsaved-work-glyph: "pencil-square-o";
+$gw-app--NorthPanel--hamburger-menu-glyph: "ellipsis-h";
+$gw-app--NorthPanel--options-glyph: "settings";
+
+// WestPanel_themeable
+$gw-app--WestPanel--button-active-border-width-px: gw-pxFixed(6);
+$gw-app--WestPanel--button--glyph-open: "angle-down";
+$gw-app--WestPanel--button--glyph-close: "angle-up";
+$gw-app--WestPanel--use-UI-bar: false;
+$gw-app--WestPanel--minimized-view-pad-h-rem: gw-remScaled(16/14);
+
+$gw-app--MenuActionsWidget--bg: $gw-theme-green-white-palette--west-panel-dark-green;
+$gw-app--MenuActionsWidget--col: $gw-app--palette--white;
+$gw-app--MenuActionsWidget--hover-bg: $gw-app--palette--green;
+$gw-app--MenuActionsWidget--hover-col: $gw-app--palette--white;
+$gw-app--MenuActionsWidget--active-bg: $gw-app--palette--green;
+$gw-app--MenuActionsWidget--active-col: $gw-app--palette--white;
+$gw-app--MenuActionsWidget--show-button-icon: false;
+//This doesn't yet work in Firefox because of a overflow flexbox rendering issue.
+$gw-app--WestPanel--submenu--min-use-circular-background: false;
+$gw-app--WestPanel--min-label-font-size: 11px;
+$gw-app--MenuActionsWidget--has-button-appearance: true;
+$gw-app--MenuActionsWidget--minimized-margin-h-rem: $gw-app--SPACING-rem-S;
+
+// Position to other widgets
+$gw-app--MenuActionsWidget--spacing-widget-top-rem: $gw-app--SPACING-rem-L;
+$gw-app--MenuActionsWidget--spacing-widget-left-rem: $gw-app--SPACING-rem-L;
+$gw-app--MenuActionsWidget--spacing-widget-right-rem: $gw-app--SPACING-rem-L;
+$gw-app--MenuActionsWidget--spacing-widget-bottom-rem: $gw-app--SPACING-rem-L;
+
+// Internal padding
+$gw-app--MenuActionsWidget--spacing-inner-top-rem: $gw-app--SPACING-rem-M;
+$gw-app--MenuActionsWidget--spacing-inner-left-rem: $gw-app--SPACING-rem-M;
+$gw-app--MenuActionsWidget--spacing-inner-right-rem: $gw-app--SPACING-rem-L;
+$gw-app--MenuActionsWidget--spacing-inner-bottom-rem: $gw-app--SPACING-rem-M;
+
+// CardViewWidget_themeable
+$gw-app--CardTab--use-top-active-border: true;
+$gw-app--Card--spacing-inner-top-rem: $gw-app--SPACING-rem-S;
+$gw-app--CardTab--standard--inactive-bg: $gw-app--palette--gray-E;
+$gw-app--CardTab--standard--inactive-col: $gw-app--col;
+$gw-app--CardTab--standard--active-col: $gw-app--palette--blue;
+
+// DateValueWidget_themeable
+$gw-app--DateValue--use-compact-pickers: false;
+$gw-app--DateValue--date-picker--padding-px: gw-pxFixed(12);
+$gw-app--DateValue--date-picker--calendar-margin-top-px: gw-pxFixed(8);
+$gw-app--DateValue--date-picker--button-margins-px: gw-pxFixed(4);
+$gw-app--DateValue--date-picker--margin-v-px: 0;
+$gw-app--DateValue--date-picker--bg: $gw-app--palette--offwhite;
+$gw-app--DateValue--date-picker--col: $gw-app--col;
+$gw-app--DateValue--date-picker--month-prev-glyph: "chevron-left";
+$gw-app--DateValue--date-picker--month-next-glyph: "chevron-right";
+$gw-app--DateValue--date-picker--month-prev-next-are-secondary: false;
+$gw-app--DateValue--date-picker--month-prev-next-hover-bg: darken($gw-app--DateValue--date-picker--bg, 15%);
+$gw-app--DateValue--date-picker--cell-header-weight: gw-weight("normal");
+$gw-app--DateValue--date-picker--cell-header-bg: $gw-app--DateValue--date-picker--bg;
+$gw-app--DateValue--date-picker--cell-hover-bg: lighten($gw-app--buttons--hover--bg, 40%);
+$gw-app--DateValue--date-picker--cell-hover-col: $gw-app--DateValue--date-picker--col;
+$gw-app--DateValue--date-picker--cell-standard-day-bg: $gw-app--palette--white;
+$gw-app--DateValue--date-picker--cell-other-month--bg: $gw-app--DateValue--date-picker--bg;
+$gw-app--DateValue--date-picker--cell-inputted-value-day-bg:  $gw-app--buttons--bg;
+$gw-app--DateValue--date-picker--cell-inputted-value-day-col: $gw-app--palette--white;
+$gw-app--DateValue--date-picker--cell-inputted-value-day-weight:  gw-weight("semibold");
+$gw-app--DateValue--date-picker--cell-today-bg:  $gw-app--palette--blue-hint;
+$gw-app--DateValue--date-picker--cell-today-col:  $gw-app--DateValue--date-picker--col;
+$gw-app--DateValue--date-picker--footer-top-margin-px:  $gw-app--DateValue--date-picker--padding-px;
+$gw-app--DateValue--date-picker--cell-vertical-align: middle;
+$gw-app--DateValue--date-picker--use-icons: false;
+$gw-app--DateValue--date-picker--today-glyph: none;
+$gw-app--DateValue--date-picker--current-glyph: none;
+$gw-app--DateValue--date-picker--cell-font-size-em:  gw-pxFixed(14);
+$gw-app--DateValue--date-picker--cell-width-em:  gw-pxFixed(36);
+$gw-app--DateValue--date-picker--cell-height-em:  gw-pxFixed(32);
+
+// InputGroupWidget_themeable
+$gw-app--InputGroup--bg: $gw-app--palette--offwhite;
+$gw-app--InputGroup--header-border-top: 1px solid $gw-app--palette--gray-B; //px-allowed
+$gw-app--InputGroup--header-border-bottom: 0 solid transparent;
+
+// MenuIconWidget_themeable
+$gw-app--MenuIcon--is-small: false;
+
+
+// RangeValueWidget_themeable
+$gw-app--RangeRadioValueWidget--padding-left-rem: $gw-app--SPACING-rem-M;
+$gw-app--RangeShuttleValueWidget--remove-glyph: "chevron-left";
+$gw-app--RangeShuttleValueWidget--add-glyph: "chevron-right";
+$gw-app--RangeShuttleValueWidget--button-margin-h-rem: $gw-app--SPACING-rem-S;
+$gw-app--RangeShuttleValueWidget--min-height-em:  gw-emFixed(7);
+
+// RowTreeWidget_themeable
+$gw-app--RowTree--expand-glyph: "chevron-right";
+$gw-app--RowTree--collapse-glyph: "chevron-down";
+$gw-app--RowTree--expand-collapse-glyph-as-button: false;
+$gw-app--RowTree--show-leaf-dot: false;
+
+// ScreenWidget_themeable
+$gw-app--Screen--spacing-inner-left-rem: $gw-theme--green-white-web--SPACING-mainpage-left-rem;
+$gw-app--Screen--spacing-inner-right-rem: $gw-theme--green-white-web--SPACING-mainpage-right-rem;
+$gw-app--Screen--spacing-inner-bottom-rem: $gw-theme--green-white-web--SPACING-mainpage-bottom-rem;
+
+// SouthPanelWidget_themeable
+$gw-app--SouthPanel--min-height-em:  gw-emFixed(40/14);
+$gw-app--SouthPanel--force-titles-to-standard-text: true;
+$gw-app--SouthPanel--top-section-bg: $gw-app--palette--offwhite;
+$gw-app--SouthPanel--use-float-toggle: true;
+
+//TitleBar_themeable
+$gw-app--TitleBar--screen--font-size-em: gw-emFixed(32/14);
+$gw-app--TitleBar--screen--subtitle--font-size-em: gw-emFixed(18/14);
+$gw-app--TitleBar--screen--font-weight:  gw-weight(light);
+$gw-app--TitleBar--use-alternate-breadcrumb-ux: true;
+$gw-app--TitleBar--panel--font-size-em: gw-emFixed(24/14);
+$gw-app--TitleBar--panel--font-weight: gw-weight(light);
+$gw-app--TitleBar--screen--subtitle-font-weight: gw-weight(light);
+$gw-app--TitleBar--panel--subtitle-font-weight: gw-weight(semi-bold);
+
+$gw-app--TitleBar--screen--spacing-inner-left-rem: $gw-app--SPACING-rem-XL + $gw-app--SPACING-rem-M;
+$gw-app--TitleBar--screen--spacing-inner-right-rem: $gw-app--SPACING-rem-XL;
+
+$gw-app--Verbatim--weight: gw-weight(semibold);
+
+// Wizards_themeable
+$gw-app--wizards--step-button--use-shadow-for-depth: false;
+$gw-app--wizards--step-button--focus-offset-px: gw-pxFixed(-2);
+$gw-app--wizards--step-button--expand-glyph-open: "angle-down";
+$gw-app--wizards--step-button--expand-glyph-close: "angle-up";
+$gw-app--wizards--step-button--disabled-col: $gw-theme-green-white-palette--left-nav-disabled-col;
+$gw-app--wizards--title-area--pad-h-rem: $gw-app--SPACING-rem-XL;
+$gw-app--wizards--title-area--pad-v-rem: $gw-app--SPACING-rem-XL;
+$gw-app--wizards--title--col: $gw-app--palette--left-nav--col;
+$gw-app--wizards--container-top-border: 2px solid $gw-theme-green-white-palette--wizard-border-col; //@px-allowed
+$gw-app--wizards--container-bottom-border: 2px solid $gw-theme-green-white-palette--wizard-border-col; //@px-allowed
+$gw-app--wizards--hide-minimized-labels-and-icons-in-minimized-view: true;
+
+// Dashboards
+$gw-app--Dashboard--margin: 0;
+$gw-app--PerformanceIndicator--Value--use-calculator-display: false;
+$gw-app--PerformanceIndicator--fixed-width: 140px;
+$gw-app--PerformanceIndicator--border: 0px solid transparent;
+$gw-app--PerformanceIndicator--box-shadow: none;
+$gw-app--PerformanceIndicator--bg: transparent;
+
+$gw-app--PerformanceIndicator--Value--font-size: gw-emFixed(26/14);
+$gw-app--PerformanceIndicator--Value--font-weight: gw-weight(semi-bold);
+$gw-app--PerformanceIndicator--Value--marginBottom: 1px;
+
+$gw-app--PerformanceIndicator--Label--font-size: gw-emFixed(14/14);
+
+$gw-app--PerformanceIndicator--Badge--font-size: 12px;
+$gw-app--PerformanceIndicator--Badge--font-weight: gw-weight(semi-bold);
+$gw-app--PerformanceIndicator--Badge--marginTop: 6px;
+$gw-app--PerformanceIndicator--align-badges-bottom: false;
+
+$gw-app--PerformanceIndicator--spacing-widget-left-rem: $gw-app--SPACING-rem-XS;
+$gw-app--PerformanceIndicator--spacing-widget-right-rem: $gw-app--SPACING-rem-XS;
+
+
+// ICONS
+$gw-app--NorthPanel--unsaved-work-glyph: "unsaved_work";
+$gw-app--NorthPanel--hamburger-menu-glyph: "more";
+$gw-app--MenuActionsWidget--expand--glyph: "action_menu";
+$gw-app--WestPanel--button--glyph-open: "angle-down";
+$gw-app--WestPanel--button--glyph-close: "angle-up";
+$gw-app--WestPanel--floatToggle--open-glyph: "Dots_vertical";
+$gw-app--WestPanel--floatToggle--close-glyph: "Dots_vertical";
+$gw-app--SouthPanel--floatToggle--open-glyph: "Dots_horizontal";
+$gw-app--SouthPanel--floatToggle--close-glyph: "Dots_horizontal";
+$gw-app--RowTree--expand-glyph: "chevron-right";
+$gw-app--RowTree--collapse-glyph: "chevron-down";
+$gw-app--RowTree--expand-collapse-glyph-size-em: gw-emFixed(1);
+$gw-app--RangeShuttleValueWidget--remove-glyph: "chevron-left";
+$gw-app--RangeShuttleValueWidget--add-glyph: "chevron-right";
+$gw-app--DateValue--date-picker--month-prev-glyph: "chevron-left";
+$gw-app--DateValue--date-picker--month-next-glyph: "chevron-right";
+$gw-app--wizards--step-button--expand-glyph-open: "angle-down";
+$gw-app--wizards--step-button--expand-glyph-close: "angle-up";
+
+// Messages Widget
+$gw-app--MessagesWidget--show-help-sub-title: false;
+$gw-app--MessagesWidget--show-group-header-icon: false;
+
+//Tooltips
+$gw-app--tooltips--bg: $gw-app--bg;
+
+//InfoBar
+$gw-app--InfoBarElement--value-font-weight: gw-weight(semi-bold);
+$gw-app--InfoBarElement--icon-font-size: 1.42em; // (20/14)
+$gw-app--InfoBar--spacing-inner-right-rem: $gw-app--SPACING-rem-XL;
+$gw-app--InfoBar--spacing-inner-left-rem: $gw-app--SPACING-rem-XL;
+$gw-app--InfoBar--info-bar-bg: #DEE1E5;
+$gw-app--InfoBar--info-bar-border-bottom: 1px solid #DDD;
+
+// Alert Bar
+$gw-app--AlertBar--border-col: $gw-app--palette--gray-B;
+
+// Other
+$gw-app--force-all-gw-icons-to-another-library-using-conversion-map: false;
+$gw-app--ListView--use-row-list-as-default-styling: true;
+$gw-app--ListView--style-outer-UI-for-all-LVInputs-to-match-standard-InputColumn-label-above: false;
+
+$gw-app--tables--style-list--headers-have-v-borders: true;
+$gw-app--tables--style-list--headers-have-h-borders: true;
+$gw-app--ListView--use-minimal-column-button-when-floating: false;
+$gw-app--ListView--columns-button-icon: "table";
+$gw-app--ListView-top-UI-section--bg: #E8E8E8;
+$gw-app--ListView--bumper--bg: $gw-app--panels--bg;

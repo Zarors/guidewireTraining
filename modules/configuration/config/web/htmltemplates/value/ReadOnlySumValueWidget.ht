@@ -1,0 +1,2 @@
+<div :wrapIf="altValue" class="gw-SumValue--modelValue">${sumValue ? sumValue : sumLabel}</div>
+<div :if="altValue" class="gw-SumValue--altValue">${altValue}</div>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    id="ClusterComponentsFilterByComponentPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentsFilterByComponentPopup.Title&quot;)">
+    <LocationEntryPoint
+      signature="ClusterComponentsFilterByComponentPopup(data: gw.api.tools.ClusterComponentsData)"/>
+    <Variable
+      name="data"
+      type="gw.api.tools.ClusterComponentsData"/>
+    <Variable
+      initialValue="data.buildFilterData().toTypedArray()"
+      name="items"
+      type="gw.api.tools.ClusterComponentsData.FilterItem[]"/>
+    <Screen>
+      <Toolbar>
+        <CheckedValuesToolbarButton
+          allCheckedRowsAction="data.updateFilter(CheckedValues.toSet()); CurrentLocation.cancel()"
+          id="Select"
+          iterator="ItemIterator"
+          label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentsFilterByComponentPopup.Apply&quot;)"
+          showConfirmMessage="false"/>
+        <ToolbarButton
+          action="gw.api.tools.ClusterComponentsData.FilterItem.bulkSetChecked(CurrentLocation, &quot;ItemIterator&quot;, items, true)"
+          id="SelectAll"
+          label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentsFilterByComponentPopup.SelectAll&quot;)"/>
+        <ToolbarButton
+          action="gw.api.tools.ClusterComponentsData.FilterItem.bulkSetChecked(CurrentLocation, &quot;ItemIterator&quot;, items, false)"
+          id="Clear"
+          label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentsFilterByComponentPopup.Clear&quot;)"/>
+      </Toolbar>
+      <ListViewPanel>
+        <RowIterator
+          checkBoxVisible="true"
+          editable="false"
+          elementName="item"
+          hasCheckBoxes="true"
+          id="ItemIterator"
+          pageSize="0"
+          startChecked="item.Checked"
+          value="items"
+          valueType="gw.api.tools.ClusterComponentsData.FilterItem[]">
+          <Row>
+            <TextCell
+              id="Name"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentsFilterByComponentPopup.Name&quot;)"
+              sortOrder="2"
+              value="item.Name ?: item.Code"/>
+            <TextCell
+              groupedOnEnter="true"
+              id="Type"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentsFilterByComponentPopup.Type&quot;)"
+              sortOrder="1"
+              value="item.Type.DisplayName"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

@@ -1,0 +1,1275 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.TableImportAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/TableImportAPI" name="TableImportAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/tools" xmlns:pogo2="http://guidewire.com/gw/api/webservice/tableImport" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/TableImportAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/TableImportAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/tableImport"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <!-- clearErrorTable() -->
+      <xs:element name="clearErrorTable">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="clearErrorTableResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- clearErrorTableAsBatchProcess() : ProcessID -->
+      <xs:element name="clearErrorTableAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="clearErrorTableAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- clearExclusionTable() -->
+      <xs:element name="clearExclusionTable">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="clearExclusionTableResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- clearExclusionTableAsBatchProcess() : ProcessID -->
+      <xs:element name="clearExclusionTableAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="clearExclusionTableAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- clearStagingTables() -->
+      <xs:element name="clearStagingTables">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="clearStagingTablesResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- clearStagingTablesAsBatchProcess() : ProcessID -->
+      <xs:element name="clearStagingTablesAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="clearStagingTablesAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- deleteExcludedRowsFromStagingTables() -->
+      <xs:element name="deleteExcludedRowsFromStagingTables">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="deleteExcludedRowsFromStagingTablesResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- deleteExcludedRowsFromStagingTablesAsBatchProcess() : ProcessID -->
+      <xs:element name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="deleteExcludedRowsFromStagingTablesAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- populateExclusionTable() -->
+      <xs:element name="populateExclusionTable">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="populateExclusionTableResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- populateExclusionTableAsBatchProcess() : ProcessID -->
+      <xs:element name="populateExclusionTableAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="populateExclusionTableAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- updateStatisticsOnStagingTables() -->
+      <xs:element name="updateStatisticsOnStagingTables">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="updateStatisticsOnStagingTablesResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- updateStatisticsOnStagingTablesAsBatchProcess() : ProcessID -->
+      <xs:element name="updateStatisticsOnStagingTablesAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="updateStatisticsOnStagingTablesAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- integrityCheckStagingTableContents(Boolean, Boolean, Boolean, Integer) : TableImportResult -->
+      <xs:element name="integrityCheckStagingTableContents">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clearErrorTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="populateExclusionTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="allowRefsToExistingNonAdminRows" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="numThreadsIntegrityChecking" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="integrityCheckStagingTableContentsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:TableImportResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- integrityCheckStagingTableContentsAsBatchProcess(Boolean, Boolean, Boolean, Integer) : ProcessID -->
+      <xs:element name="integrityCheckStagingTableContentsAsBatchProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clearErrorTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="populateExclusionTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="allowRefsToExistingNonAdminRows" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="numThreadsIntegrityChecking" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="integrityCheckStagingTableContentsAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- integrityCheckStagingTableContentsAndLoadSourceTables(Boolean, Boolean, Boolean, Boolean, Integer) : TableImportResult -->
+      <xs:element name="integrityCheckStagingTableContentsAndLoadSourceTables">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clearErrorTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="populateExclusionTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="updateDBStatisticsWithEstimates" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="allowRefsToExistingNonAdminRows" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="numThreadsIntegrityChecking" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="integrityCheckStagingTableContentsAndLoadSourceTablesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:TableImportResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables(Boolean, Boolean, Boolean, Integer) : TableImportResult -->
+      <xs:element name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clearErrorTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="populateExclusionTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="updateDBStatisticsWithEstimates" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="numThreadsIntegrityChecking" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:TableImportResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess(Boolean, Boolean, Boolean, Integer) : ProcessID -->
+      <xs:element name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clearErrorTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="populateExclusionTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="updateDBStatisticsWithEstimates" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="numThreadsIntegrityChecking" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess(Boolean, Boolean, Boolean, Boolean, Integer) : ProcessID -->
+      <xs:element name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clearErrorTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="populateExclusionTable" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="updateDBStatisticsWithEstimates" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="allowRefsToExistingNonAdminRows" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="numThreadsIntegrityChecking" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- encryptDataOnStagingTables() : int -->
+      <xs:element name="encryptDataOnStagingTables">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="encryptDataOnStagingTablesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- encryptDataOnStagingTablesAsBatchProcess() : ProcessID -->
+      <xs:element name="encryptDataOnStagingTablesAsBatchProcess">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="encryptDataOnStagingTablesAsBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getLoadHistoryReportsInfo(int) : String[] -->
+      <xs:element name="getLoadHistoryReportsInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="numDownloads" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLoadHistoryReportsInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PermissionException">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/tools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/tableImport"/>
+      <xs:complexType name="ProcessID">
+        <xs:sequence>
+          <xs:element name="Pid" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/tableImport" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:complexType name="TableImportResult">
+        <xs:sequence>
+          <xs:element name="LoadCommandID" type="xs:string" minOccurs="0"/>
+          <xs:element name="NumErrors" type="xs:int" minOccurs="0"/>
+          <xs:element name="StrErrorMessage" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="TableImportAPIPortType">
+    <wsdl:operation name="clearErrorTable">
+      <wsdl:documentation>@deprecated: Use {@link #clearErrorTableAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="clearErrorTable" message="tns:clearErrorTable"/>
+      <wsdl:output name="clearErrorTableResponse" message="tns:clearErrorTableResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearErrorTableAsBatchProcess">
+      <wsdl:input name="clearErrorTableAsBatchProcess" message="tns:clearErrorTableAsBatchProcess"/>
+      <wsdl:output name="clearErrorTableAsBatchProcessResponse" message="tns:clearErrorTableAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearExclusionTable">
+      <wsdl:documentation>@deprecated: Use {@link #clearExclusionTableAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="clearExclusionTable" message="tns:clearExclusionTable"/>
+      <wsdl:output name="clearExclusionTableResponse" message="tns:clearExclusionTableResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearExclusionTableAsBatchProcess">
+      <wsdl:input name="clearExclusionTableAsBatchProcess" message="tns:clearExclusionTableAsBatchProcess"/>
+      <wsdl:output name="clearExclusionTableAsBatchProcessResponse" message="tns:clearExclusionTableAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTables">
+      <wsdl:documentation>@deprecated: Use {@link #clearStagingTablesAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="clearStagingTables" message="tns:clearStagingTables"/>
+      <wsdl:output name="clearStagingTablesResponse" message="tns:clearStagingTablesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTablesAsBatchProcess">
+      <wsdl:input name="clearStagingTablesAsBatchProcess" message="tns:clearStagingTablesAsBatchProcess"/>
+      <wsdl:output name="clearStagingTablesAsBatchProcessResponse" message="tns:clearStagingTablesAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExcludedRowsFromStagingTables">
+      <wsdl:documentation>@deprecated: Use {@link #deleteExcludedRowsFromStagingTablesAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="deleteExcludedRowsFromStagingTables" message="tns:deleteExcludedRowsFromStagingTables"/>
+      <wsdl:output name="deleteExcludedRowsFromStagingTablesResponse" message="tns:deleteExcludedRowsFromStagingTablesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+      <wsdl:input name="deleteExcludedRowsFromStagingTablesAsBatchProcess" message="tns:deleteExcludedRowsFromStagingTablesAsBatchProcess"/>
+      <wsdl:output name="deleteExcludedRowsFromStagingTablesAsBatchProcessResponse" message="tns:deleteExcludedRowsFromStagingTablesAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="populateExclusionTable">
+      <wsdl:documentation>@deprecated: Use {@link #populateExclusionTableAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="populateExclusionTable" message="tns:populateExclusionTable"/>
+      <wsdl:output name="populateExclusionTableResponse" message="tns:populateExclusionTableResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="populateExclusionTableAsBatchProcess">
+      <wsdl:input name="populateExclusionTableAsBatchProcess" message="tns:populateExclusionTableAsBatchProcess"/>
+      <wsdl:output name="populateExclusionTableAsBatchProcessResponse" message="tns:populateExclusionTableAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatisticsOnStagingTables">
+      <wsdl:documentation>@deprecated: Use {@link #updateStatisticsOnStagingTablesAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="updateStatisticsOnStagingTables" message="tns:updateStatisticsOnStagingTables"/>
+      <wsdl:output name="updateStatisticsOnStagingTablesResponse" message="tns:updateStatisticsOnStagingTablesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatisticsOnStagingTablesAsBatchProcess">
+      <wsdl:input name="updateStatisticsOnStagingTablesAsBatchProcess" message="tns:updateStatisticsOnStagingTablesAsBatchProcess"/>
+      <wsdl:output name="updateStatisticsOnStagingTablesAsBatchProcessResponse" message="tns:updateStatisticsOnStagingTablesAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContents">
+      <wsdl:documentation>@deprecated: Use {@link #integrityCheckStagingTableContentsAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="integrityCheckStagingTableContents" message="tns:integrityCheckStagingTableContents"/>
+      <wsdl:output name="integrityCheckStagingTableContentsResponse" message="tns:integrityCheckStagingTableContentsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAsBatchProcess">
+      <wsdl:input name="integrityCheckStagingTableContentsAsBatchProcess" message="tns:integrityCheckStagingTableContentsAsBatchProcess"/>
+      <wsdl:output name="integrityCheckStagingTableContentsAsBatchProcessResponse" message="tns:integrityCheckStagingTableContentsAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAndLoadSourceTables">
+      <wsdl:documentation>@deprecated: Use {@link #integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess(Boolean, Boolean, Boolean, Boolean, Integer)} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="integrityCheckStagingTableContentsAndLoadSourceTables" message="tns:integrityCheckStagingTableContentsAndLoadSourceTables"/>
+      <wsdl:output name="integrityCheckStagingTableContentsAndLoadSourceTablesResponse" message="tns:integrityCheckStagingTableContentsAndLoadSourceTablesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+      <wsdl:documentation>@deprecated: Use {@link #integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess(Boolean, Boolean, Boolean, Integer)} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables" message="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables"/>
+      <wsdl:output name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse" message="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+      <wsdl:input name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess" message="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess"/>
+      <wsdl:output name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse" message="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+      <wsdl:input name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess" message="tns:integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess"/>
+      <wsdl:output name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse" message="tns:integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="encryptDataOnStagingTables">
+      <wsdl:documentation>@deprecated: Use {@link #encryptDataOnStagingTablesAsBatchProcess()} and use MaintenanceToolsAPI#batchProcessStatusByID to poll for completion</wsdl:documentation>
+      <wsdl:input name="encryptDataOnStagingTables" message="tns:encryptDataOnStagingTables"/>
+      <wsdl:output name="encryptDataOnStagingTablesResponse" message="tns:encryptDataOnStagingTablesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="encryptDataOnStagingTablesAsBatchProcess">
+      <wsdl:input name="encryptDataOnStagingTablesAsBatchProcess" message="tns:encryptDataOnStagingTablesAsBatchProcess"/>
+      <wsdl:output name="encryptDataOnStagingTablesAsBatchProcessResponse" message="tns:encryptDataOnStagingTablesAsBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getLoadHistoryReportsInfo">
+      <wsdl:input name="getLoadHistoryReportsInfo" message="tns:getLoadHistoryReportsInfo"/>
+      <wsdl:output name="getLoadHistoryReportsInfoResponse" message="tns:getLoadHistoryReportsInfoResponse"/>
+      <!-- SOAPException -->
+      <wsdl:fault name="PermissionException" message="tns:PermissionException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TableImportAPISoap12Binding" type="tns:TableImportAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="clearErrorTable">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearErrorTable">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearErrorTableResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearErrorTableAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearErrorTableAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearErrorTableAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearExclusionTable">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearExclusionTable">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearExclusionTableResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearExclusionTableAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearExclusionTableAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearExclusionTableAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearStagingTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearStagingTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTablesAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearStagingTablesAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearStagingTablesAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExcludedRowsFromStagingTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="deleteExcludedRowsFromStagingTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteExcludedRowsFromStagingTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteExcludedRowsFromStagingTablesAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="populateExclusionTable">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="populateExclusionTable">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="populateExclusionTableResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="populateExclusionTableAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="populateExclusionTableAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="populateExclusionTableAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatisticsOnStagingTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="updateStatisticsOnStagingTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateStatisticsOnStagingTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatisticsOnStagingTablesAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="updateStatisticsOnStagingTablesAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateStatisticsOnStagingTablesAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContents">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContents">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContentsAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAndLoadSourceTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContentsAndLoadSourceTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsAndLoadSourceTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="encryptDataOnStagingTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="encryptDataOnStagingTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="encryptDataOnStagingTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="encryptDataOnStagingTablesAsBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="encryptDataOnStagingTablesAsBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="encryptDataOnStagingTablesAsBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLoadHistoryReportsInfo">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getLoadHistoryReportsInfo">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLoadHistoryReportsInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap12:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TableImportAPISoap11Binding" type="tns:TableImportAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="clearErrorTable">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearErrorTable">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearErrorTableResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearErrorTableAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearErrorTableAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearErrorTableAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearExclusionTable">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearExclusionTable">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearExclusionTableResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearExclusionTableAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearExclusionTableAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearExclusionTableAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearStagingTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearStagingTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTablesAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearStagingTablesAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearStagingTablesAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExcludedRowsFromStagingTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="deleteExcludedRowsFromStagingTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteExcludedRowsFromStagingTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteExcludedRowsFromStagingTablesAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="populateExclusionTable">
+      <soap11:operation style="document"/>
+      <wsdl:input name="populateExclusionTable">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="populateExclusionTableResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="populateExclusionTableAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="populateExclusionTableAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="populateExclusionTableAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatisticsOnStagingTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateStatisticsOnStagingTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateStatisticsOnStagingTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatisticsOnStagingTablesAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateStatisticsOnStagingTablesAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateStatisticsOnStagingTablesAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContents">
+      <soap11:operation style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContents">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContentsAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAndLoadSourceTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContentsAndLoadSourceTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsAndLoadSourceTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="encryptDataOnStagingTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="encryptDataOnStagingTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="encryptDataOnStagingTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="encryptDataOnStagingTablesAsBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="encryptDataOnStagingTablesAsBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="encryptDataOnStagingTablesAsBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLoadHistoryReportsInfo">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getLoadHistoryReportsInfo">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLoadHistoryReportsInfoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PermissionException">
+        <soap11:fault name="PermissionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TableImportAPI">
+    <wsdl:port name="TableImportAPISoap12Port" binding="tns:TableImportAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/TableImportAPI"/>
+    </wsdl:port>
+    <wsdl:port name="TableImportAPISoap11Port" binding="tns:TableImportAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/TableImportAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="clearErrorTable">
+    <wsdl:part name="parameters" element="tns:clearErrorTable"/>
+  </wsdl:message>
+  <wsdl:message name="clearErrorTableResponse">
+    <wsdl:part name="parameters" element="tns:clearErrorTableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="clearErrorTableAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:clearErrorTableAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="clearErrorTableAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:clearErrorTableAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="clearExclusionTable">
+    <wsdl:part name="parameters" element="tns:clearExclusionTable"/>
+  </wsdl:message>
+  <wsdl:message name="clearExclusionTableResponse">
+    <wsdl:part name="parameters" element="tns:clearExclusionTableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="clearExclusionTableAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:clearExclusionTableAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="clearExclusionTableAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:clearExclusionTableAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="clearStagingTables">
+    <wsdl:part name="parameters" element="tns:clearStagingTables"/>
+  </wsdl:message>
+  <wsdl:message name="clearStagingTablesResponse">
+    <wsdl:part name="parameters" element="tns:clearStagingTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="clearStagingTablesAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:clearStagingTablesAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="clearStagingTablesAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:clearStagingTablesAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="deleteExcludedRowsFromStagingTables">
+    <wsdl:part name="parameters" element="tns:deleteExcludedRowsFromStagingTables"/>
+  </wsdl:message>
+  <wsdl:message name="deleteExcludedRowsFromStagingTablesResponse">
+    <wsdl:part name="parameters" element="tns:deleteExcludedRowsFromStagingTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="deleteExcludedRowsFromStagingTablesAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:deleteExcludedRowsFromStagingTablesAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="deleteExcludedRowsFromStagingTablesAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:deleteExcludedRowsFromStagingTablesAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="populateExclusionTable">
+    <wsdl:part name="parameters" element="tns:populateExclusionTable"/>
+  </wsdl:message>
+  <wsdl:message name="populateExclusionTableResponse">
+    <wsdl:part name="parameters" element="tns:populateExclusionTableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="populateExclusionTableAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:populateExclusionTableAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="populateExclusionTableAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:populateExclusionTableAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateStatisticsOnStagingTables">
+    <wsdl:part name="parameters" element="tns:updateStatisticsOnStagingTables"/>
+  </wsdl:message>
+  <wsdl:message name="updateStatisticsOnStagingTablesResponse">
+    <wsdl:part name="parameters" element="tns:updateStatisticsOnStagingTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateStatisticsOnStagingTablesAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:updateStatisticsOnStagingTablesAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="updateStatisticsOnStagingTablesAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:updateStatisticsOnStagingTablesAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContents">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContents"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsResponse">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsAndLoadSourceTables">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsAndLoadSourceTables"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsAndLoadSourceTablesResponse">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsAndLoadSourceTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables">
+    <wsdl:part name="parameters" element="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTables"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse">
+    <wsdl:part name="parameters" element="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess">
+    <wsdl:part name="parameters" element="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:integrityCheckZoneStagingTableContentsAndLoadZoneSourceTablesAdBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:integrityCheckStagingTableContentsAndLoadSourceTablesAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="encryptDataOnStagingTables">
+    <wsdl:part name="parameters" element="tns:encryptDataOnStagingTables"/>
+  </wsdl:message>
+  <wsdl:message name="encryptDataOnStagingTablesResponse">
+    <wsdl:part name="parameters" element="tns:encryptDataOnStagingTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="encryptDataOnStagingTablesAsBatchProcess">
+    <wsdl:part name="parameters" element="tns:encryptDataOnStagingTablesAsBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="encryptDataOnStagingTablesAsBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:encryptDataOnStagingTablesAsBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getLoadHistoryReportsInfo">
+    <wsdl:part name="parameters" element="tns:getLoadHistoryReportsInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getLoadHistoryReportsInfoResponse">
+    <wsdl:part name="parameters" element="tns:getLoadHistoryReportsInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="PermissionException">
+    <wsdl:part name="PermissionException" element="tns:PermissionException"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

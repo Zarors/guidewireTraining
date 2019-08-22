@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Queue of Addresses to be geocoded. This is a system-internal entity."
+  entity="GeocodeWorkItem"
+  ignoreForEvents="true"
+  loadable="false"
+  platform="true"
+  table="geocodeworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItem"/>
+  <fulldescription><![CDATA[Queue of Addresses to be geocoded. Work items are recorded as the ID value of Address entities. This is a system-internal entity.
+    ]]></fulldescription>
+  <foreignkey
+    columnName="AddressID"
+    desc="Address to be geocoded."
+    fkentity="Address"
+    name="Address"
+    nullok="false"/>
+</entity>

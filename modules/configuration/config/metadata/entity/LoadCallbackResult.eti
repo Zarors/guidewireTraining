@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Timed loader callback results."
+  entity="LoadCallbackResult"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadcallbackresult"
+  type="keyable">
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <implementsEntity
+    name="OrdereddLoaderObject"/>
+  <column
+    desc="Name of loader callback result."
+    name="Name"
+    nullok="false"
+    type="shorttext"/>
+  <foreignkey
+    columnName="LoadCallbackID"
+    desc="Parent."
+    fkentity="LoadCallback"
+    name="LoadCallback"
+    nullok="false"/>
+  <column
+    desc="Number of rows affected."
+    name="AffectedRowCount"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="SQL text."
+    name="SQLText"
+    nullok="true"
+    type="longtext"/>
+  <!-- Unique index on LoadCallbackID, ExecutionOrder -->
+  <index
+    desc="(LoadCommandID, ExecutionOrder) is unique across load callback results"
+    name="loadcallbackru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCallbackID"/>
+    <indexcol
+      keyposition="2"
+      name="ExecutionOrder"/>
+  </index>
+</entity>

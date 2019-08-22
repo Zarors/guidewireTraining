@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  extendable="true"
+  name="AddressBookLinkable"
+  platform="true">
+  <fulldescription><![CDATA[
+      This delegate indicates that this bean can be linked/synced with an external Address Book as a "child" entity of
+      an AddressBookConvertable; entities implementing this interface must NOT have their own an AddressBookUID field, as this is now
+      defined by this delegate.
+    ]]></fulldescription>
+  <column
+    desc="The system uses this value when it is integrated with ContactManager and the related contact is linked.  In this case, the ID represents the ID of the corresponding entity in ContactManager. This value is null if the object is not linked."
+    name="AddressBookUID"
+    nullok="true"
+    type="externalid"/>
+</delegate>

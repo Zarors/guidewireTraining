@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Before and after table registry entries within an upgrade."
+  entity="UpgradeTableRegistry"
+  exportable="false"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="upgradetableregistry"
+  type="keyable">
+  <foreignkey
+    columnName="UpgradeInstanceID"
+    desc="Parent"
+    fkentity="UpgradeInstance"
+    name="UpgradeInstance"
+    nullok="false"/>
+  <column
+    desc="Table name"
+    name="TableName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Table registry entry before upgrade"
+    name="IDNameBeforeUpgrade"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="8"/>
+  </column>
+  <column
+    desc="Table registry entry after upgrade"
+    name="IDNameAfterUpgrade"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="8"/>
+  </column>
+  <!-- Unique index on UpgradeInstanceID, TableName -->
+  <index
+    desc="Used to ensure uniqueness of the (UpgradeInstanceID, TableName) pair"
+    name="utabregu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UpgradeInstanceID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+  </index>
+</entity>

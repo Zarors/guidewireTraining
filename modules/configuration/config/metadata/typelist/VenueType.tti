@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!-- VenueType -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The types of legal venues."
+  name="VenueType"
+  platform="true">
+  <typecode
+    code="County"
+    desc="County"
+    name="County"/>
+  <typecode
+    code="State"
+    desc="State"
+    name="State"/>
+  <typecode
+    code="Fed"
+    desc="Federal"
+    name="Federal"/>
+  <typecode
+    code="Muni"
+    desc="Municipal"
+    name="Municipal"/>
+  <typecode
+    code="WcAppeals"
+    desc="Workers' Comp Appeals Board"
+    name="Workers' Comp Appeals Board"/>
+  <typecode
+    code="Supreme"
+    desc="Supreme Court"
+    name="Supreme Court"/>
+  <typecode
+    code="ADR"
+    desc="Alternative dispute resolution"
+    name="Alternative dispute resolution"/>
+  <typecode
+    code="StateSup"
+    desc="State Supreme Court"
+    name="State Supreme Court"/>
+</typelist>

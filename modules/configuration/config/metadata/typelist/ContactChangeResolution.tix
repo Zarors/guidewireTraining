@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<internaltypelistextension
+        xmlns="http://guidewire.com/typelists"
+        name="ContactChangeResolution"
+        desc="Internal extension of the ContactChangeResolution">
+    <typecode
+            name="Already Applied"
+            desc="Already Applied"
+            code="already_applied"/>
+</internaltypelistextension>

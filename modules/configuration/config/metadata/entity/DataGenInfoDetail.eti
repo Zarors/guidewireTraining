@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  Detailed description for data gen
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Details for data gen."
+  entity="DataGenInfoDetail"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="datageninfodetail"
+  type="keyable">
+  <foreignkey
+    columnName="DataGenInfoID"
+    desc="Parent."
+    fkentity="DataGenInfo"
+    name="DataGenInfo"
+    nullok="false"/>
+  <column
+    desc="# of tabs for readability"
+    name="NumIndents"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="display order within parent"
+    name="DisplayOrder"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Line for detailed description."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <!-- Unique index on DataGenInfoID, DisplayOrder -->
+  <index
+    desc="Used to ensure the uniqueness of the (DataGenInfoID, DisplayOrder) pair"
+    name="dgendetailsu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="DataGenInfoID"/>
+    <indexcol
+      keyposition="2"
+      name="DisplayOrder"/>
+  </index>
+</entity>

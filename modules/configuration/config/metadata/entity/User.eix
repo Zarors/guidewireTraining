@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="User">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.community.impl.UserCoreExtMethods"
+    impl="com.guidewire.ab.domain.community.impl.UserCoreExtMethodsImpl"/>
+  <description>Internal system users.</description>
+  <events/>
+</internalExtension>

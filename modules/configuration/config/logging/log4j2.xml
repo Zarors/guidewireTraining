@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+##### Logging Configuration #####
+
+This file consists of a series of category and appender configurations that
+determine which log messages are recorded and where they are recorded.
+-->
+
+<Configuration status="warn">
+  <Properties>
+    <!--
+    The UI has a log viewer that is accessible from the Administration screen.
+    The following property tells it where to find the log files.
+
+    Important: The file appenders should create log files in this directory!
+    -->
+    <Property name="guidewire.logDirectory">/GW10/TrainingApp/logs</Property>
+
+    <!--
+    "shardId" is configured by the server dynamically.  Use $${gw:shardId} in the pattern to add
+    this to each log statement.  Default to blank here for non-server processes such as dropDb.
+    -->
+    <Property name="shardId"/>
+
+    <!--
+    "serverId" is configured by the server dynamically.  Default to blank here for
+    non-server processes such as dropDb
+    -->
+    <Property name="serverId"/>
+
+    <Property name="file.defaultPattern">${gw:serverId} %-8.24X{userID} %36.36X{traceabilityID} %d{yyyy-MM-dd HH:mm:ss,SSS} %p %notEmpty{&lt;%marker&gt; }%m%n</Property>
+  </Properties>
+  <Appenders>
+
+    <!--
+    ##### Console #####
+
+    This appender logs to the server console using log4j's ConsoleAppender
+    -->
+    <Console name="Console" follow="true">
+      <PatternLayout pattern="${gw:serverId} %-8.24X{userID} %36.36X{traceabilityID} %d{yyyy-MM-dd HH:mm:ss,SSS} %p %notEmpty{&lt;%marker&gt; }%m%n" charset="UTF-8"/>
+    </Console>
+
+    <!--
+    ##### DailyFileLog #####
+
+    This appender logs to a file, using log4j's DailyRollingFileAppender,
+    which logs messages to a file, and rolls them over into backups
+    at user chosen time intervals. This one is configured to roll over at
+    midnight each day
+    -->
+    <RollingFile name="DailyFileLog" fileName="${guidewire.logDirectory}/ablog.log"
+                 filePattern="${guidewire.logDirectory}/ablog.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+
+    <!--
+    ##### Rule Engine #####
+
+    Set up the logging for Rules Engine. Messages sent to any of the
+    RuleEngine.* categories will go to the file /Guidewire/ContactManager/logs/ruleengine.log
+    and no place else. These log messages are generated solely by the rules
+    engines as it executes Gosu in the server.
+    -->
+    <!--
+    <RollingFile name="RuleEngineLog" fileName="${guidewire.logDirectory}/ruleengine.log"
+                 filePattern="${guidewire.logDirectory}/ruleengine.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+
+    <!--
+    ##### All Plugins #####
+
+    Defines the log file for ALL plugins. Categories for plugins are defined with
+    the structure "plugin.<PLUGINNAME>". One should consult the plugin developers
+    for the list of plugin names that exist in the system
+    -->
+    <!--
+    <RollingFile name="PluginsLog" fileName="${guidewire.logDirectory}/plugins.log"
+                 filePattern="${guidewire.logDirectory}/plugins.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+
+    <!--
+    ##### All API calls #####
+
+    Defines the log file for ALL API calls.
+    -->
+    <!--
+    <RollingFile name="APILog" fileName="${guidewire.logDirectory}/api.log"
+                 filePattern="${guidewire.logDirectory}/api.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+
+    <!--
+    ##### Database #####
+
+    Defines the log file for interaction with the database.
+    -->
+    <!--
+    <RollingFile name="DatabaseLog" fileName="${guidewire.logDirectory}/database.log"
+                 filePattern="${guidewire.logDirectory}/database.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+
+    <!--
+    ##### Messaging #####
+
+    Defines the log file for messaging.
+    -->
+    <!--
+    <RollingFile name="MessagingLog" fileName="${guidewire.logDirectory}/messaging.log"
+                 filePattern="${guidewire.logDirectory}/messaging.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+
+    <!--
+    ##### Phone Normalizer #####
+
+    Defines the log file for phone normalizer batch process
+    -->
+    <!--
+    <RollingFile name="Globalization.PhoneNormalizer" fileName="${guidewire.logDirectory}/phonenormalizer.log"
+                 filePattern="${guidewire.logDirectory}/phonenormalizer.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+
+    <!--
+    <RollingFile name="VelocityLog" fileName="${guidewire.logDirectory}/velocity.log"
+                 filePattern="${guidewire.logDirectory}/velocity.log%d{.yyyy-MM-dd}">
+      <PatternLayout pattern="${file.defaultPattern}" charset="UTF-8"/>
+      <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+    -->
+  </Appenders>
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="DailyFileLog"/>
+    </Root>
+
+    <!--
+    <Logger name="RuleEngine" additivity="false" level="info">
+      <AppenderRef ref="RuleEngineLog"/>
+    </Logger>
+    -->
+
+    <!--
+    <Logger name="Plugin" additivity="false" level="debug">
+      <AppenderRef ref="PluginsLog"/>
+    </Logger>
+    -->
+
+    <!--
+    <Logger name="Api" additivity="false" level="debug">
+      <AppenderRef ref="APILog"/>
+    </Logger>
+    -->
+
+    <!--
+    <Logger name="Server.Database" additivity="false" level="debug">
+      <AppenderRef ref="DatabaseLog"/>
+    </Logger>
+    -->
+
+    <!--
+    <Logger name="Messaging" additivity="false" level="debug">
+      <AppenderRef ref="MessagingLog"/>
+    </Logger>
+    -->
+
+    <!--
+    <Logger name="Messaging.Events" level="debug">
+      <AppenderRef ref="MessagingLog"/>
+    </Logger>
+    -->
+
+    <Logger name="Globalization.PhoneNormalizer" level="off"/>
+
+    <Logger name="Globalization.ViableNumber" level="off"/>
+
+    <Logger name="OSGi" level="warn"/>
+
+    <!--################# Non-ContactManager Applications #################-->
+
+    <!--
+    ##### Velocity #####
+
+    Tone down Velocity logging
+    -->
+    <Logger name="TemplateEngine" level="warn"/>
+
+    <!--
+    Disable the preceeding line and enable the following line to make Velocity
+    log to a file. We have to set the above line just to reduce Velocity log
+    messages, even when we don't actually want to do any logging.
+    -->
+    <!--
+    <Logger name="TemplateEngine" level="debug">
+      <AppenderRef ref="VelocityLog"/>
+    </Logger>
+    -->
+
+    <!--
+    ##### HttpClient #####
+
+    Ignore all those "Response content length is not known" messages
+    -->
+    <Logger name="org.apache.http" level="error"/>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Entity to keep track of rolling upgrades."
+  entity="RollingUpgradeConfig"
+  exportable="false"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="rolling"
+  type="nonkeyable">
+  <column
+    name="config"
+    nullok="false"
+    type="blob"/>
+  <column
+    desc="Fingerprint of configuration"
+    name="configFP"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    name="source"
+    nullok="false"
+    type="bit"/>
+  <index
+    desc="Only 1 rolling upgrade, and no more"
+    name="source"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="source"/>
+  </index>
+</entity>

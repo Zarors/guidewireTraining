@@ -1,0 +1,27 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Primary Address Removed History Event")
+internal class PrimaryAddressRemovedHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.New
+and aBContact.PrimaryAddress == null
+and aBContact.ChangedFields.contains("PrimaryAddress")
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var history = aBContact.addHistory(CustomHistoryType.TC_PRIMARYADDRESSREMOVED, DisplayKey.get("Rules.Preupdate.Address.AddressRemoved.Primary"))
+var fieldsToTrack = new java.util.HashMap<String, String>()
+              {"PrimaryAddress" -> "Web.Addresses.Primary"}
+history.createTrackedChanges(aBContact, fieldsToTrack)
+/*end00rule*/
+
+  }
+}

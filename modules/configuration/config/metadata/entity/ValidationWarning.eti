@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Describes a single validation warning sent to the address book"
+  entity="ValidationWarning"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <column
+    name="Warning"
+    nullok="true"
+    type="mediumtext"/>
+  <foreignkey
+    columnName="UpdateBatchID"
+    desc="Associated UpdateBatch."
+    fkentity="UpdateBatch"
+    name="UpdateBatch"
+    nullok="false"/>
+</nonPersistentEntity>

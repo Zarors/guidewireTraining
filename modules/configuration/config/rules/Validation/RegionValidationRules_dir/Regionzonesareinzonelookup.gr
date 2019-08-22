@@ -1,0 +1,38 @@
+package rules.Validation.RegionValidationRules_dir
+uses gw.api.locale.DisplayKey
+uses gw.api.util.StringUtil;
+uses gw.api.util.ArrayUtil;
+
+@gw.rules.RuleName("Region zones are in zone lookup")
+internal class Regionzonesareinzonelookup {
+  static function doCondition(region : entity.Region) : boolean {
+    
+/*start00rule*/
+return true
+/*end00rule*/
+
+  }
+
+  static function doAction(region : entity.Region, actions : gw.rules.Action) {
+
+/*start00rule*/
+
+var badRegionZones : RegionZone[] = region.validateZones(); 
+if (badRegionZones != null && badRegionZones.length != 0) {
+  var badZonesStr =  new String[badRegionZones.length];
+  var i : int = 0;
+  while (i < badRegionZones.length) {
+    badZonesStr[i] = badRegionZones[i].Code;
+    i = i + 1;
+  }
+
+  if (region.getOrganization() != null) {
+    region.reject( null, null, TC_LOADSAVE, DisplayKey.get("Rules.Validation.Region.NoZonesInOrgOrLookupDataset") + ArrayUtil.toString( badZonesStr));
+  } else {
+    region.reject( null, null, TC_LOADSAVE, DisplayKey.get("Rules.Validation.Region.NoZonesInLookupDataset") + ArrayUtil.toString( badZonesStr));
+  }
+}
+/*end00rule*/
+
+  }
+}

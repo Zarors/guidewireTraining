@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  entity="Dwelling_Ext"
+  supertype="Coverable_Ext">
+  <column
+    name="Metraje"
+    nullok="true"
+    type="integer"></column>
+  <typekey
+    name="TipoDeTecho"
+    nullok="true"
+    typelist="TipoTecho_Ext"/>
+  <typekey
+    name="TipoDeCalefaccion"
+    nullok="true"
+    typelist="Calefaccion_Ext"/>
+  <typekey
+    name="MaterialDeConstruccion"
+    nullok="true"
+    typelist="MatConstruccion_Ext"/>
+  <typekey
+    name="TipoDeOcupacion"
+    nullok="true"
+    typelist="Ocupacion_Ext"/>
+</subtype>

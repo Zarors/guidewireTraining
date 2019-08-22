@@ -1,0 +1,3 @@
+<div class="gw-SouthPanelWidget--bottom-section">
+    ${:children}
+</div>

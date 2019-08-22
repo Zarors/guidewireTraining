@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="UserSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.community.impl.UserSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.UserSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.UserSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.UserSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.UserSearchCriteriaImpl"/>
+  <fulldescription><![CDATA[
+      Encapsulates the search criteria for a User search. Key points in the system for user search include, the user
+      search from the admin page, user picker on assignment pages, and the general user search page.
+      
+    ]]></fulldescription>
+  <column
+    desc="Name of group the user belongs to."
+    name="GroupName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="100"/>
+  </column>
+  <column
+    default="true"
+    desc="Include in search users who might be the default owner."
+    name="IncludeDefaultOwner"
+    nullok="true"
+    type="bit"/>
+  <column
+    default="true"
+    desc="Include in search system users."
+    name="IncludeSystemUsers"
+    nullok="true"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Include in the search users not in any group"
+    name="NotInAnyGroup"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Username"
+    name="Username"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <foreignkey
+    columnName="ParentGroupID"
+    desc="Parent of the group."
+    fkentity="Group"
+    name="ParentGroup"
+    nullok="true"/>
+  <foreignkey
+    columnName="RoleID"
+    desc="The role which the user has."
+    fkentity="Role"
+    name="Role"
+    nullok="true"/>
+  <foreignkey
+    columnName="OrganizationID"
+    desc="The organization the user belongs to."
+    fkentity="Organization"
+    name="Organization"
+    nullok="true"/>
+  <foreignkey
+    columnName="ContactID"
+    desc="The user's contact information."
+    fkentity="ContactSearchCriteria"
+    name="Contact"
+    nullok="true"/>
+  <typekey
+    desc="Type of group."
+    name="GroupType"
+    nullok="true"
+    typelist="GroupType"/>
+</nonPersistentEntity>

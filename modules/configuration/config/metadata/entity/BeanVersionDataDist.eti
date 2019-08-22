@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- ### =================================================================
+   ### Bean version data distribution (owned by Table data distribution)
+   ### ================================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores bean version data distributions."
+  entity="BeanVersionDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="beanversiondatadist"
+  type="keyable">
+  <column
+    desc="Bean version."
+    name="BeanVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Count of # of rows with this bean version."
+    name="BeanCount"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <index
+    desc="Ensure uniqueness of BeanVersion per TableDataDistribution."
+    name="bversionddu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="TableDataDistID"/>
+    <indexcol
+      keyposition="2"
+      name="BeanVersion"/>
+  </index>
+</entity>

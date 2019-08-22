@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <MenuTree
+    height="300"
+    id="AdminMenuTree">
+    <Variable
+      initialValue="new gw.api.admin.ABGroupTreeNode()"
+      name="group"
+      type="gw.api.admin.ABGroupTreeNode"/>
+    <TreeView
+      elementLabel="element"
+      elementName="element"
+      id="AdminMenuTree"
+      onClickElement="if(element typeis User) {UserDetailPage.go(element)} else if(element typeis Group) {GroupDetailPage.go(element)}"
+      value="group"/>
+  </MenuTree>
+</PCF>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    canVisit="perm.ABContact.create(ContactType) and ContactTagType.userHasCreatePermissionForAtLeastOneContactTagType()"
+    id="NewContactPopup"
+    returnType="ABContact"
+    startInEditMode="true"
+    title="gw.api.contact.NewContactUtil.getDisplayKeyForContactSubtype(ContactType.RelativeName)">
+    <LocationEntryPoint
+      signature="NewContactPopup(ContactType : Type, parentContact : ABContact)"/>
+    <Variable
+      initialValue="new gw.api.web.contact.NewABContactHelper()"
+      name="PageHelper"
+      type="gw.api.web.contact.NewABContactHelper"/>
+    <Variable
+      name="ContactType"
+      type="Type"/>
+    <Variable
+      name="parentContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="PageHelper.newABContact(ContactType)"
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="new gw.web.ContactDetailsVendorHelper(contact)"
+      name="contactDetailsVendorHelper"
+      type="gw.web.ContactDetailsVendorHelper"/>
+    <ScreenRef
+      def="ABContactDetailScreen(contact, true, false, false)"/>
+  </Popup>
+</PCF>

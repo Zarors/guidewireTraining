@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+   ###  SystemParameter (systemparameter)
+   ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Name/value pairs for system parameters."
+  entity="SystemParameter"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="systemparameter"
+  type="nonkeyable">
+  <column
+    desc="Property name."
+    name="Name"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="120"/>
+  </column>
+  <column
+    desc="Property value."
+    name="Value"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="300"/>
+  </column>
+  <!-- Unique index on (name) -->
+  <index
+    desc="Unique index for system parameters"
+    name="systemparameteru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+  </index>
+</entity>

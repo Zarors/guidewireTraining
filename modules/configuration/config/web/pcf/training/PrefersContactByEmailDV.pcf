@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <DetailViewPanel
+    id="PrefersContactByEmailDV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn
+      id="InputColID">
+      <BooleanRadioInput
+        editable="true"
+        id="PrefersContactByEmail"
+        label="DisplayKey.get(&quot;Training.PrefersContactByEmail&quot;)"
+        value="anABContact.PrefersContactByEmail"
+        valueType="java.lang.Boolean"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

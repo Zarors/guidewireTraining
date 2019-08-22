@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            targetNamespace="http://guidewire.com/plugin-config" xmlns="http://guidewire.com/plugin-config">
+
+  <xsd:element name="plugin-config">
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element ref="plugin-settings"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="plugin-settings">
+    <xsd:complexType>
+      <xsd:attribute name="defaultServer" type="xsd:string" use="required"/>
+      <xsd:attribute name="pollInterval" type="xsd:int" use="optional"/>
+      <xsd:attribute name="server" type="xsd:string" use="optional"/>
+      <xsd:attribute name="env" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

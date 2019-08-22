@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    editable="true"
+    id="DBStatisticsRequestLV">
+    <Require
+      name="TablePickers"
+      type="gw.api.tools.PickerRow[]"/>
+    <RowIterator
+      editable="true"
+      elementName="Row"
+      pageSize="60"
+      value="TablePickers"
+      valueType="gw.api.tools.PickerRow[]">
+      <Row>
+        <CheckBoxCell
+          editable="true"
+          id="selector"
+          validationLabel="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DataDistribution.TableChosen&quot;)"
+          value="Row.Chosen"/>
+        <TextCell
+          id="tname"
+          value="Row.DisplayName"
+          width="1000"
+          wrap="true"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

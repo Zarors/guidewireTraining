@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Describes the status of a geocode on an Address: customers may modify it for different geocoding providers."
+  final="true"
+  name="GeocodeStatus"
+  platform="true">
+  <typecode
+    code="none"
+    desc="An Address has never been submitted for geocoding."
+    name="None"/>
+  <typecode
+    code="failure"
+    desc="The Geocoding service was unable to geocode the address."
+    name="Failure"/>
+  <typecode
+    code="city"
+    desc="The Geocoding service was only able to locate the city from the supplied address."
+    name="City"/>
+  <typecode
+    code="postalcode"
+    desc="The Geocoding service was only able to locate the postal code from the supplied address."
+    name="Postal Code"/>
+  <typecode
+    code="street"
+    desc="The Geocoding service was only able to locate the street from the supplied address."
+    name="Street"/>
+  <typecode
+    code="exact"
+    desc="The Geocoding service was able to find an exact match for the supplied address."
+    name="Exact"/>
+</typelist>

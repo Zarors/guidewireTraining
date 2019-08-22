@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--======================== TOP LEVEL ELEMENTS ============================-->
+
+  <!--
+      Outer-most tag delineating the definition of an (internal) workflow.
+      A workflow XML file defines a template for a workflow. Within the
+      application, there can be multiple instances of the workflow running
+      simultaneously, each at its own step and state.
+  -->
+  <xsd:element name="Workflow">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Context" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Start" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="Step" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Finish" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Layout" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <!--
+        This workflow's unique name. Within the application,
+        new instances of a workflow are instantiated by providing the
+        subtype.
+        -->
+      <xsd:attribute name="subtype" type="xsd:string" use="required"/>
+      <!--
+        The workflow's version number. Once a workflow has been instantiated
+        in production, the workflow's definition should not be changed. Instead,
+        a new version of the workflow should be created, as indicated by a
+        different version number.
+        -->
+      <xsd:attribute name="version" type="xsd:integer" use="required"/>
+      <!--
+        A step is "immediate" if it doesn't block, but instead transistions to
+        another step. To catch infinite loops, the workflow engine will halt if
+        it executes more than "maxImmediateSteps" in a row.
+        -->
+      <xsd:attribute name="maxImmediateSteps" type="xsd:integer" use="optional" default="500"/>
+        <!--
+          This is an gosu expression that will override the default locale specified for the
+          workflow.  This expression should result in a ILocale.
+          -->
+        <xsd:attribute name="locale" type="xsd:string" use="optional"/>
+        <xsd:attribute name="language" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Context entities for the workflow.
+    -->
+  <xsd:element name="Context">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Symbol" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="Symbol">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:NMTOKEN" use="required"/>
+      <xsd:attribute name="type" type="xsd:NMTOKEN" use="required"/>
+      <xsd:attribute name="value" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Gosu executed when the workflow is started.
+    -->
+  <xsd:element name="Start">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <!--
+            The first Step to go to in the application.
+            -->
+          <xsd:attribute name="firstStep" type="xsd:string" use="required"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Gosu executed when the workflow completes (i.e., reaches and goes through one of its
+    Outcome states).
+    -->
+  <xsd:element name="Finish">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--======================== STEPS ============================-->
+
+  <!-- Abstract representation of a Step in the Workflow.
+       You never create a Step directly; you use one of the Steps
+       defined below -->
+  <xsd:element name="Step" abstract="true"/>
+
+  <!--
+    A workflow Step that will immediately branch to another step.
+    The "Go" elements in the AutoStep are evaluated one at a time; the
+    first whose "if" evaluates to true is taken.  Note that the last "Go"
+    element must not have an "if" attribute.
+    -->
+  <xsd:element name="AutoStep" substitutionGroup="Step">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Assert" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Enter" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Event" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Notification" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Exit" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Go" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="StepLocalization" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!--
+        The ID of this Step. Step IDs are used as values of the "nextStep" attribute.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid that is used by the workflow editor to associate
+           ui components with this step-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    A workflow Step that creates a single integration message, and
+    then waits until the message has been replied to before proceeding.
+    Once the message has been acked or skipped, the "Go" elements
+    are evaluated one at a time; the
+    first whose "if" evaluates to true is taken.  Note that the last "Go"
+    element must not have an "if" attribute.
+    -->
+  <xsd:element name="MessageStep" substitutionGroup="Step">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Assert" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Enter" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Event" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Notification" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Exit" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Go" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="StepLocalization" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!--
+        The ID of this Step. Step IDs are used as values of the "nextStep" attribute.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="required"/>
+      <!-- Destination id for the message -->
+      <xsd:attribute name="destid" type="xsd:integer" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid that is used by the workflow editor to associate
+           ui components with this step-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    A workflow Step that will branch to another step only after one
+    or more Activities are completed.  Once all Activities are complete,
+    the "Go" elements in the ActivityStep are evaluated one at a time; the
+    first whose "if" evaluates to true is taken.  Note that the last "Go"
+    element must not have an "if" attribute.
+    -->
+  <xsd:element name="ActivityStep" substitutionGroup="Step">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Assert" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Enter" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Event" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Notification" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Activity" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="Trigger" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Timeout" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Exit" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Go" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="StepLocalization" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!--
+        The ID of this Step. Step IDs are used as values of the "nextStep" attribute.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid that is used by the workflow editor to associate
+           ui components with this step-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    A Step that waits for either a manual trigger to be invoked from outside workflow,
+    or for a timeout to elapse.
+    -->
+  <xsd:element name="ManualStep" substitutionGroup="Step">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Assert" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Enter" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Event" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Notification" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Exit" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Trigger" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Timeout" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="StepLocalization" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!--
+        The ID of this Step. Step IDs are used as values of the "nextStep" attribute.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid that is used by the workflow editor to associate
+           ui components with this step-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Identifies a workflow outcome, or terminal state. When a workflow instance
+    enters any Outcome, the workflow is complete, and its Enter element (if any)
+    is executed. A workflow may have multiple outcomes.
+    -->
+  <xsd:element name="Outcome" substitutionGroup="Step">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Assert" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Enter" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="Event" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Notification" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="StepLocalization" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!--
+        The ID of this Outcome step. Step IDs are used as values of the "nextStep" attribute.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid that is used by the workflow editor to associate
+           ui components with this step-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="StepLocalization">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Name of the step appropriate for this locale. -->
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <!-- Code of a valid locale. -->
+      <xsd:attribute name="locale" type="xsd:NMTOKEN"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--======================== INNER STEP ELEMENTS ============================-->
+
+  <!--
+    At the beginning of a step, verifies that "condition" is true and fails with
+    an error if it is not.
+    -->
+  <xsd:element name="Assert">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <!--
+            The Gosu condition that must be true.  Should evaluate to a Boolean.
+            -->
+          <xsd:attribute name="condition" type="xsd:string" use="required"/>
+          <!--
+            String literal error message that is logged if the assertion failes (i.e. condition != true)
+            -->
+          <xsd:attribute name="message" type="xsd:string" use="optional"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Gosu executed on entry to a Step. -->
+  <xsd:element name="Enter">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string"/>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Generates a new blocking activity. -->
+  <xsd:element name="Activity">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Init" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <!-- The name of the activity. -->
+      <xsd:attribute name="name" type="xsd:string" use="optional"/>
+      <!--
+        The name of the activity's pattern. The pattern controls which type
+        of activity is created, and effects the rules used to assign it to
+        members of the community.
+        -->
+      <xsd:attribute name="pattern" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Generates a new non-blocking activity. -->
+  <xsd:element name="Notification">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Init" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <!-- The name of the activity. -->
+      <xsd:attribute name="name" type="xsd:string" use="optional"/>
+      <!--
+        The name of the activity's pattern. The pattern controls which type
+        of activity is created, and effects the rules used to assign it to
+        members of the community.
+        -->
+      <xsd:attribute name="pattern" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Generates a new event. -->
+  <xsd:element name="Event">
+    <xsd:complexType>
+      <!-- The entity the event is to be generated on. -->
+      <xsd:attribute name="entity" type="xsd:string" use="required"/>
+      <!-- The name of the event to generate. -->
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Gosu executed on exit from a Step -->
+  <xsd:element name="Exit">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Within a Step, directs to go to a different step if "if" is true.
+    -->
+  <xsd:element name="Go">
+    <xsd:complexType mixed="true">
+      <!--
+        The id by which the branch is referred to.  Defaults to the value of "nextStep"
+        if not stated.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+      <!--
+        A boolean-valued Gosu expression that controls when this branch
+        is taken. This element is required for all "Go" elements in a list
+        except the last one, where it is forbidden.
+        -->
+      <xsd:attribute name="if" type="xsd:string" use="optional"/>
+      <!--
+        ID of the step to go to if condition evaluates to true
+        -->
+      <xsd:attribute name="nextStep" type="xsd:string" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+
+      <!-- Optional layoutid used to associate a ui component with this branch-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Like a "Go" but instead of explicitly checking for a condition
+    the trigger only executes if manually invoked from outside the Workflow code.
+    -->
+  <xsd:element name="Trigger">
+    <xsd:complexType mixed="true">
+      <xsd:sequence>
+        <xsd:element ref="Available" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!--
+        The id by which the trigger is referred to from the code that manually invokes it.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="required"/>
+      <!--
+        ID of the step to go to if condition evaluates to true
+        -->
+      <xsd:attribute name="nextStep" type="xsd:string" use="required"/>
+      <!--
+        Permission expression for limiting who can invoke the Trigger
+        -->
+      <xsd:attribute name="perm" type="xsd:string" use="optional"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid used to associate a ui component with this branch-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Allows you to put conditions on the availability of a given Trigger
+    -->
+  <xsd:element name="Available">
+    <xsd:complexType>
+      <!--
+        Gosu expression which must evaluate to a boolean.
+        If false, the enclosing Trigger cannot be selected.
+        -->
+      <xsd:attribute name="test" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    A special "Go" in a that is executed either after a certain amount of time
+    has elapsed, or after reaching some fixed date/time.
+    -->
+  <xsd:element name="Timeout">
+    <xsd:complexType mixed="true">
+      <!--
+        The id by which the branch is referred to.  Defaults to the value of "nextStep"
+        if not stated.
+        -->
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+      <!--
+        Specifies the amount of time that must pass in this step before the timeout is
+        invoked.  Entered in time format, i.e. "4d" for four days, "300s" for 300 seconds, etc.
+        You must use the timeDelta or the timeAbsolute attribute, but not both.
+        -->
+      <xsd:attribute name="timeDelta" type="xsd:string" use="optional"/>
+      <!--
+        Gosu expression specifying an absolute date for the timeout.  This is usually
+        calculated off some business object, i.e. "PolicyPeriod.EffectiveDate" or what-not.
+        You must use the timeDelta or the timeAbsolute attribute, but not both.
+        -->
+      <xsd:attribute name="timeAbsolute" type="xsd:string" use="optional"/>
+      <!--
+        ID of the step to go to if the timeout is invoked
+        -->
+      <xsd:attribute name="nextStep" type="xsd:string" use="required"/>
+      <!-- Optional internal description with no actual effect on behavior -->
+      <xsd:attribute name="desc" type="xsd:string" use="optional"/>
+      <!-- Optional layoutid used to associate a ui component with this branch-->
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Optional Gosu executed just before the Activity of an ActivityStep is
+    created. Typically used to assign the activity. Any activity that is not
+    explicitly assigned is auto-assigned.
+    -->
+  <xsd:element name="Init">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string"/>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- ==================================== UI CONFIGURATION ==================================== -->
+  <!-- ==================================== (used in Studio) ==================================== -->
+  <!--
+    The layout of the workflow steps and branches
+    -->
+  <xsd:element name="Layout">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="BoxUI" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ArrowUI" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- UI configuration for a step that appears as a box in Studio -->
+  <xsd:element name="BoxUI">
+    <xsd:complexType>
+      <xsd:attribute name="x" type="xsd:integer" use="required"/>
+      <xsd:attribute name="y" type="xsd:integer" use="required"/>
+      <xsd:attribute name="width" type="xsd:integer" use="required"/>
+      <xsd:attribute name="height" type="xsd:integer" use="required"/>
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- UI configuration for a branch that appears as an arrow in Studio -->
+  <xsd:element name="ArrowUI">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="PointUI" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="layoutid" type="xsd:string" use="optional"/>
+      <xsd:attribute name="visible" type="xsd:boolean" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- UI configuration for a single point in an arrow -->
+  <xsd:element name="PointUI">
+    <xsd:complexType>
+      <xsd:attribute name="x" type="xsd:integer" use="required"/>
+      <xsd:attribute name="y" type="xsd:integer" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

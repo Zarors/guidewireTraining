@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- ### =============================================================
+  ### Type key data distribution (owned by Table data distribution)
+  ### ============================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores type key data distribution."
+  entity="TypeKeyDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="typekeydatadist"
+  type="keyable">
+  <column
+    desc="Name of type key."
+    name="TypeKeyName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Count of # of non null values."
+    name="NumNonNull"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <array
+    arrayentity="TypeCodeCountDataDist"
+    desc="Collection of TypeCodeCountDataDists linked to this ArrayDataDist."
+    exportable="true"
+    name="TypeCodeCountDataDists"
+    owner="true"/>
+</entity>

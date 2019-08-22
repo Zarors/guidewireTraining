@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    id="MBeansLV">
+    <Require
+      name="BeanCategory"
+      type="String"/>
+    <Require
+      name="GWMBeansData"
+      type="gw.api.tools.MBeansData"/>
+    <RowIterator
+      editable="false"
+      elementName="GWMBean"
+      pageSize="0"
+      value="GWMBeansData.getAllBeans(BeanCategory)"
+      valueType="gw.plugin.management.GWMBean[]">
+      <Row>
+        <TextCell
+          action="MBean.go(BeanCategory, GWMBeansData, GWMBean.BeanName)"
+          id="BeanName"
+          label="DisplayKey.get(&quot;Web.InternalTools.MBean.BeanName&quot;)"
+          value="GWMBean.BeanName"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

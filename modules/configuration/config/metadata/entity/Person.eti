@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a person as a primary subtype of Contact."
+  entity="Person"
+  final="false"
+  platform="true"
+  priority="2"
+  supertype="Contact">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.ContactPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.PersonImpl"/>
+  <implementsEntity
+    name="GlobalPersonName"/>
+  <fulldescription><![CDATA[
+        Represents a person as a primary subtype of Contact.<p/>
+        Person extends Contact with additional information about individuals that is not applicable to companies or
+        places.
+    ]]></fulldescription>
+  <typekey
+    desc="Mobile phone country."
+    name="CellPhoneCountry"
+    nullok="true"
+    typelist="PhoneCountryCode"/>
+  <column
+    desc="Mobile phone number associated with the contact."
+    name="CellPhone"
+    nullok="true"
+    type="phone">
+    <columnParam
+      name="phonecountrycodeProperty"
+      value="CellPhoneCountry"/>
+    <columnParam
+      name="extensionProperty"
+      value="CellPhoneExtension"/>
+  </column>
+  <column
+    desc="Mobile phone extension."
+    name="CellPhoneExtension"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Date of birth."
+    name="DateOfBirth"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="First name."
+    name="FirstName"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="firstname"/>
+  <column
+    desc="Person's former name, if any."
+    name="FormerName"
+    nullok="true"
+    type="lastname"/>
+  <column
+    desc="Last name."
+    name="LastName"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="lastname"/>
+  <column
+    desc="Driver's license number."
+    name="LicenseNumber"
+    nullok="true"
+    type="driverlicense"/>
+  <column
+    desc="Middle name or initial."
+    name="MiddleName"
+    nullok="true"
+    type="firstname"/>
+  <column
+    desc="Number of dependents the employee has."
+    name="NumDependents"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Number of dependents under 18."
+    name="NumDependentsU18"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Number of dependents over 18 and under 25."
+    name="NumDependentsU25"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Occupation."
+    name="Occupation"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <typekey
+    desc="Gender."
+    name="Gender"
+    nullok="true"
+    typelist="GenderType"/>
+  <typekey
+    desc="Driver's license jurisdiction."
+    name="LicenseState"
+    nullok="true"
+    typelist="Jurisdiction"/>
+  <typekey
+    desc="Marital status."
+    name="MaritalStatus"
+    nullok="true"
+    typelist="MaritalStatus"/>
+  <typekey
+    desc="Prefix for the person's name."
+    name="Prefix"
+    nullok="true"
+    typelist="NamePrefix"/>
+  <typekey
+    desc="Suffix for the person's name."
+    name="Suffix"
+    nullok="true"
+    typelist="NameSuffix"/>
+  <typekey
+    desc="State-specific field."
+    name="TaxFilingStatus"
+    nullok="true"
+    typelist="TaxFilingStatusType"/>
+</subtype>

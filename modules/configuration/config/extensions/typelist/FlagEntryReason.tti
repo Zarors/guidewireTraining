@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="FlagEntryReason"
+  name="FlagEntryReason">
+  <typecode
+    code="invalid_address"
+    desc="Invalid address"
+    name="Primary address is no longer valid."/>
+  <typecode
+    code="no_email"
+    desc="No email"
+    name="No email address for this contact."/>
+  <typecode
+    code="vendor_fax"
+    desc="No vendor fax"
+    name="Preferred vendor with no fax number."/>
+  <typecode
+    code="fraudulent_activity"
+    desc="Report of insurance fraud"
+    name="Report of insurance fraud."/>
+  <typecode
+    code="doctor_specialty_unspecified"
+    desc="Doctor Specialty Unspecified"
+    name="Doctor specialty is unspecified."/>
+  <typecode
+    code="overdue_legal_report"
+    desc="Legal case report is overdue."
+    name="Legal case report is overdue."/>
+</typelist>

@@ -1,0 +1,41 @@
+.heading1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	color: #003366;
+}
+.body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+}
+.heading2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #003366;
+}
+.heading3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #003366;
+}
+.copyright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+
+.header {
+	color: #FFFFFF;
+	background-color: #117C8C;
+}
+
+.evenrow {
+	background-color: #D3D7E5;
+}
+
+.oddrow {
+	background-color: #EAECF3;
+}

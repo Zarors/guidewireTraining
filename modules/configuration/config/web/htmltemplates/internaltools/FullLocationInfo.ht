@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Info: ${locationName}</title>
+  <style>
+    table.schemaTable  {
+      width: 100%;
+    }
+    .schemaTable tr {
+      border: 1px solid black;
+    }
+    .schemaTable td {
+      padding: 3px 6px;
+    }
+    .varName {
+      color: #920092;
+    }
+    .varValue {
+      color: #00610f;
+    }
+    div.linker {
+      display: inline-block;
+      border-left: 2px solid black;
+      padding: 3px 6px 0;
+      height: 100%;
+      position: relative;
+    }
+    .type {
+      padding: 0;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .spacer {
+      display: inline-block;
+      border-left: 1px dotted dimgrey;
+      padding: 3px 6px 0;
+      height: 100%;
+      position: relative;
+    }
+    .collapser {
+      font-style: italic;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h3>Page Include Structure (Location Stack):</h3>
+<table :for="location" :in="locations">
+  <:control :for="entry" :in="location">
+    <tr>
+      <th style="text-align: left;">
+        <:control :for="i" :in="entry.depth">&nbsp;</:control> - <a href="?handlerName=pcffile&id=${entry.id}&mode=${entry.mode}">${entry.file}</a>
+      </th>
+    </tr>
+    <tr :for="variable" :in="entry.variables">
+      <td>
+        <:control :for="i" :in="entry.depth">&nbsp;</:control>&nbsp;&nbsp; - <code>var <span class="varName">${variable.name}</span> : ${variable.type} = <span class="varValue">"${variable.value}"</span></code>
+      </td>
+    </tr>
+  </:control>
+</table>
+<br/><br/>
+<:control :for="widgetTable" :in="widgetTables">
+  <br/>
+  <h3>${widgetTable.title}</h3>
+  <div class="collapseWrapper">
+    <div class="collapsible" style="display: none">
+      <table class="schemaTable" style="border-collapse: collapse">
+        <tr>
+          <th>Widget</th>
+          <th>ID</th>
+          <th>Render ID</th>
+          <th>File</th>
+          <th>Label</th>
+        </tr>
+        <tr :for="widget" :in="widgetTable.widgets">
+          <th class="type"><div :for="i" :in="widget.depth" class="spacer">&nbsp;</div><div class="linker">${widget.type}</div></th>
+          <td>${widget.id}</td>
+          <td>${widget.renderId}</td>
+          <td>
+            <a :wrapIf="widget.root" href="?handlerName=pcffile&id=${widget.id}&mode=${widget.mode}">${widget.file}</a>:${widget.lineNum}
+          </td>
+          <td>${widget.label}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</:control>
+
+<script>
+  var collapseWrappers = document.getElementsByClassName("collapseWrapper");
+  var wrapper, collapsible;
+
+  for(var i = 0; i < collapseWrappers.length; i++) {
+    wrapper = collapseWrappers[i];
+    collapsible = wrapper.getElementsByClassName("collapsible")[0];
+    var collapser = document.createElement("div");
+    collapser.className += " collapser";
+    collapser.innerHTML = "+ Expand";
+    collapser.onclick = function(e) {
+      var target = e.target;
+      var parent = target.parentNode;
+      var toToggle = parent.getElementsByClassName("collapsible")[0];
+      if(toToggle.style.display == "none") {
+        toToggle.style.display = "block";
+        target.innerHTML = "- Collapse";
+      } else {
+        toToggle.style.display = "none";
+        target.innerHTML = "+ Expand";
+      }
+      e.preventDefault();
+    };
+    wrapper.insertBefore(collapser, collapsible);
+  }
+</script>
+</body>
+</html>

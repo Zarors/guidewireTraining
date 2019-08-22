@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="ContactTagPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Contacts.ContactTagPopup.ContactTags&quot;)">
+    <LocationEntryPoint
+      signature="ContactTagPopup(contact:ABContact)"/>
+    <Variable
+      name="contact"
+      type="ABContact"/>
+    <Screen
+      editable="true">
+      <Toolbar>
+        <EditButtons/>
+      </Toolbar>
+      <DetailViewPanel
+        editable="true">
+        <InputColumn>
+          <InputSetRef
+            def="TagsInputSet(contact)"
+            editable="true"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

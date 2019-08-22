@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListDetailPanel
+    id="WorkQueueWorkItemsLDV"
+    selectionName="SelectedWorkItem"
+    selectionType="WorkItem">
+    <Require
+      name="Helper"
+      type="gw.api.web.tools.WorkQueueInfoPage"/>
+    <Require
+      name="Queue"
+      type="gw.api.web.tools.WorkQueueDisplayInfo"/>
+    <PanelRef
+      def="WorkQueueWorkItemsLV(Helper, Queue)"
+      mode="Queue.QueueType">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.WorkQueueWorkItems.Title&quot;)"/>
+      <Toolbar>
+        <CheckedValuesToolbarButton
+          allCheckedRowsAction="Helper.restart(CheckedValues)"
+          id="WorkItem_Restart"
+          iterator="WorkQueueWorkItemsLV.WorkQueueWorkItemsLV"
+          label="DisplayKey.get(&quot;Web.WorkQueueWorkItems.Restart&quot;)"
+          shortcut="M"/>
+      </Toolbar>
+    </PanelRef>
+    <CardViewPanel
+      id="WorkItemExceptionCV">
+      <Card
+        id="WorkItemExceptionCard"
+        title="DisplayKey.get(&quot;Web.WorkItem.Exception&quot;)"
+        visible="SelectedWorkItem.Exception != null">
+        <DetailViewPanel
+          id="WorkItemExceptionDV">
+          <InputColumn>
+            <TextInput
+              id="Exception"
+              labelAbove="true"
+              value="SelectedWorkItem.Exception"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </Card>
+    </CardViewPanel>
+  </ListDetailPanel>
+</PCF>

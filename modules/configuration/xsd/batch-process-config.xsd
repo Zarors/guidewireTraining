@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/batch-process-config" xmlns="http://guidewire.com/batch-process-config">
+
+  <xsd:element name="batch-process-config">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="settings" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="batch-process" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="settings">
+    <xsd:complexType>
+      <xsd:attribute name="defaultServer" type="xsd:string" use="required"/>
+      <xsd:attribute name="env" type="xsd:string" use="optional"/>
+      <xsd:attribute name="startupDelay" type="xsd:string" use="required"/>
+      <xsd:attribute name="startupTimeout" type="xsd:int" use="required"/>
+      <xsd:attribute name="pollInterval" type="xsd:int" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="batch-process">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="typeCode" type="xsd:string" use="required"/>
+      <xsd:attribute name="env" type="xsd:string" use="optional"/>
+      <xsd:attribute name="server" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="param">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:boolean" use="required" default="true"/>
+      <xsd:attribute name="env" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

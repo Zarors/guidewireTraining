@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><extension xmlns="http://guidewire.com/datamodel" entityName="EFTDataDelegate">
+  <column desc="The name on the account" name="AccountName" nullok="true" type="varchar">
+    <columnParam name="size" value="100"/>
+  </column>
+  <column desc="The name of the bank" name="BankName" nullok="true" type="varchar">
+    <columnParam name="size" value="100"/>
+  </column>
+  <typekey desc="The type of bank accout e.g. checking, savings etc" name="BankAccountType" nullok="true" typelist="BankAccountType"/>
+  <column desc="The bank account number" name="BankAccountNumber" nullok="true" type="varchar">
+    <columnParam name="size" value="20"/>
+    <columnParam name="encryption" value="true"/>
+  </column>
+  <column desc="The routing number is a nine digit bank code used in the United States" name="BankRoutingNumber" nullok="true" type="varchar">
+    <columnParam name="size" value="20"/>
+  </column>
+  <column desc="Indicates if this is the primary EFT record for the contact" name="IsPrimary" nullok="true" type="bit"/>
+</extension>

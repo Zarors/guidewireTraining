@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="The change to production data."
+  entity="DataChange"
+  exportable="true"
+  extendable="true"
+  loadable="false"
+  platform="true"
+  table="datachange"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.history.DataChangePublicMethods"
+    impl="com.guidewire.pl.domain.history.impl.DataChangeImpl"/>
+  <column
+    desc="Description of the change requested."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="An external reference for tracking change requests."
+    name="ExternalReference"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="64"/>
+  </column>
+  <column
+    desc="Date the gosu was added."
+    name="CreateDate"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    columnName="CreateUserID"
+    desc="The user who created the gosu."
+    exportable="true"
+    exportasid="true"
+    fkentity="User"
+    name="CreateUser"
+    nullok="true"/>
+  <column
+    desc="The time the gosu was executed."
+    name="ExecuteDate"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    columnName="ExecuteUserID"
+    desc="The user who executed the gosu."
+    exportable="true"
+    exportasid="true"
+    fkentity="User"
+    name="ExecuteUser"
+    nullok="true"/>
+  <typekey
+    name="Status"
+    nullok="true"
+    typelist="DataChangeStatus"/>
+  <column
+    desc="The gosu to execute."
+    name="Gosu"
+    nullok="true"
+    type="longtext"/>
+  <column
+    desc="The result of executing the gosu."
+    name="Result"
+    nullok="true"
+    type="longtext"/>
+  <events>
+    <event
+      description="This event is raised if editor of the gosu script is the same person who executed the gosu script"
+      name="DataChangeEditorIsExecutor"/>
+  </events>
+  <index
+    desc="Index for tracking external references."
+    name="datachangeu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ExternalReference"/>
+  </index>
+</entity>

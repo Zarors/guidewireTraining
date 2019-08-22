@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="For internal Guidewire use only."
+  entity="Parameter"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="parameter"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.parameter.impl.ParameterInternalMethods"
+    impl="com.guidewire.pl.domain.parameter.impl.ParameterImpl"/>
+  <typekey
+    desc="Component defining the parameter, or null if it is a system-wide parameter."
+    name="ComponentType"
+    nullok="true"
+    typelist="ComponentType"/>
+  <column
+    desc="Name of the parameter"
+    name="ParameterName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <typekey
+    desc="Identifies the value type (string, longtext, integer, boolean, or date)."
+    name="ParameterType"
+    nullok="false"
+    typelist="ParameterType"/>
+  <column
+    desc="For a string parameter, the parameter value."
+    name="StringValue"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <column
+    desc="For a long text parameter (clob), the parameter value."
+    name="LongTextValue"
+    nullok="true"
+    type="longtext"/>
+  <column
+    desc="For an integer parameter, the parameter value."
+    name="IntValue"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="For a boolean parameter, the parameter value."
+    name="BooleanValue"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="For a date or time parameter, the parameter value."
+    name="DateValue"
+    nullok="true"
+    type="datetime"/>
+  <!-- Unique index on (componenttype, parametername) -->
+  <index
+    desc="Enforce uniqueness of component type plus parameter name"
+    name="parameteru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ComponentType"/>
+    <indexcol
+      keyposition="2"
+      name="ParameterName"/>
+    <indexcol
+      keyposition="3"
+      name="Retired"/>
+  </index>
+  <index
+    desc="Speed up access of search by parameter name"
+    name="parameter1">
+    <indexcol
+      keyposition="1"
+      name="ParameterName"/>
+  </index>
+  <!-- Generated no match consistency checks -->
+  <dbcheckbuilder
+    className="com.guidewire.pl.system.parameter.dbchecks.ParameterDBCheckBuilder"/>
+</entity>

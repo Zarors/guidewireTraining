@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<work-queues xmlns="http://guidewire.com/work-queue" defaultServer="#workqueue">
+  <!-- ==============================================================================
+    Distributed Work Queue Parameters
+
+
+    NOTES:
+     Work queues provide a way to distribute load for processing-intensive
+     tasks across multiple servers or instances within a server.
+
+     For each workqueue, you may declare as many worker instances as you
+     wish, specifying for each one what server and environment (e.g. dev, test, prod)
+     it should run on.  If no worker is specified for a queue no instance
+     will be started. If a worker element has no server attributes specified
+     the defaultServer attribute will be used (i.e. the specified number of workers
+     will be started on every server matches the defaultServer).
+
+     Worker definitions include a number of parameters designed to tune
+     latency and load characteristics.  When a new workitem is added to the
+     queue, a notification is broadcast to all servers in the cluster, and
+     workers wake up to compete for the workitem.
+
+     By setting maxpollinterval (default 60,000 milliseconds) you can define
+     how often workers wake up automatically, even if no notification is
+     received.  This default may not be appropriate for large numbers of
+     workers and may need to be increased to prevent excessive numbers of
+     queries for workitems.
+
+     The batchsize attribute to a worker controls how many workitems it will
+     attempt to check out when searching for more workitems.  Larger batchsizes
+     are more efficient, but may not result in good load distribution.
+     Default is 10.
+
+     The workqueue defines a progressinterval attribute, which is used
+     to recover from error situations.  Any workitems checked out
+     longer than this interval will be assumed to have been failed or
+     dropped by a crashing server, and will be reassigned to a new
+     worker instance.  It is important that this interval be much
+     larger than the normal time required to process a workitem.
+
+     The retryLimit attribute on the workqueue element specifies how
+     many times a failing work item must be retried before being marked as failed
+     (default value is specified in the WorkItemRetryLimit config parameter).
+     The retryInterval specifies how many miliseconds to wait before
+     retrying a work item (default is 0).
+
+  ============================================================================== -->
+  <work-queue progressinterval="600000" workQueueClass="com.guidewire.ab.domain.geodata.geocode.ABGeocodeWorkQueue">
+    <worker batchsize="100" instances="1"/>
+  </work-queue>
+  <work-queue progressinterval="600000" workQueueClass="com.guidewire.ab.domain.contact.ABContactScoringWorkQueue">
+    <worker instances="1"/>
+  </work-queue>
+  <work-queue progressinterval="600000" workQueueClass="com.guidewire.ab.domain.contact.DuplicateContactsFinderWorkQueue">
+    <worker batchsize="100" instances="4"/>
+  </work-queue>
+  <work-queue progressinterval="600000" workQueueClass="com.guidewire.ab.domain.contact.VerifyMinimumCriteriaWorkQueue">
+    <worker batchsize="100" instances="1"/>
+  </work-queue>
+  <work-queue workQueueClass="com.guidewire.pl.system.database.checker.DBConsistencyCheckWorkQueue" progressinterval="86400000">
+    <worker instances="1" batchsize="1"/>
+  </work-queue>
+  <work-queue workQueueClass="com.guidewire.pl.system.database.dbstatistics.DBStatisticsWorkItemWorkQueue" progressinterval="86400000" retryLimit="0">
+    <worker instances="1" batchsize="1"/>
+  </work-queue>
+  <!-- PLEASE replace with app specific version -->
+  <work-queue workQueueClass="com.guidewire.pl.domain.phone.CompactPhoneNormalizerWorkQueue" progressinterval="600000">
+    <worker instances="16" batchsize="100"/>
+  </work-queue>
+  <work-queue workQueueClass="gw.personaldata.PersonalDataContactDestructionWorkQueue" progressinterval="30000">
+    <worker instances="1"/>
+  </work-queue>
+  <work-queue workQueueClass="gw.personaldata.RemoveOldContactDestructionRequestWorkQueue" progressinterval="30000">
+    <worker instances="1"/>
+  </work-queue>
+  <work-queue workQueueClass="gw.personaldata.PersonalDataDestructionNotifyExternalSystemsWorkQueue" progressinterval="30000">
+    <worker instances="1"/>
+  </work-queue>
+</work-queues>

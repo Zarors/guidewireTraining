@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ContactBasicsDV"
+    mode="default">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Web.ContactDetail.UndefinedType&quot;, contact.Subtype)"
+        visible="contact != null"/>
+      <Label
+        label="DisplayKey.get(&quot;Web.ContactDetail.NullType&quot;)"
+        visible="contact == null"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

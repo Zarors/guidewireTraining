@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="true"
+         version="3.0">
+
+<!-- General information -->
+  <display-name>ContactManager</display-name>
+  <description>Startup for ContactManager</description>
+
+  <!-- Initialization parameters -->
+  <context-param>
+    <description>Various databse drivers</description>
+    <param-name>jdbc.drivers</param-name>
+    <param-value>com.microsoft.jdbc.sqlserver.SQLServerDriver:oracle.jdbc.driver.OracleDriver</param-value>
+
+  </context-param>
+  <servlet>
+    <servlet-name>gosu-servlets</servlet-name>
+    <servlet-class>com.guidewire.pl.system.servlet.GosuServlet</servlet-class>
+  </servlet>
+
+  <!-- PerfDataGen servlet; generates perf data -->
+  <servlet>
+    <servlet-name>perfdatagen</servlet-name>
+    <servlet-class>com.guidewire.pl.system.performance.servlet.PerfDataGenServlet</servlet-class>
+  </servlet>
+
+  <!-- doc literal webservice servlet. Must be configured to load before GenericStartupServlet -->
+  <servlet>
+    <servlet-name>webservices</servlet-name>
+    <servlet-class>gw.internal.xml.ws.server.PLWebservicesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <!-- Guidewire startup servlet; launches application server -->
+  <servlet>
+    <servlet-name>GenericStartupServlet</servlet-name>
+    <servlet-class>com.guidewire.pl.system.servlet.GuidewireStartupServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <!-- WebFacesServlet; handles all UI requests using JSF -->
+  <servlet>
+    <servlet-name>WebUI</servlet-name>
+    <servlet-class>com.guidewire.pl.web.controller.WebServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+
+  <!-- REST servlet driven by Swagger specifications -->
+  <servlet>
+    <servlet-name>swagger-rest</servlet-name>
+    <servlet-class>com.guidewire.pl.rest.SwaggerRestServlet</servlet-class>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+
+  <!-- Various testing servlets -->
+  <servlet>
+    <servlet-name>ping-server</servlet-name>
+    <servlet-class>com.guidewire.pl.system.servlet.PingServerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>http-hello</servlet-name>
+    <servlet-class>com.guidewire.pl.system.servlet.HttpHelloServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletTestRunner</servlet-name>
+    <servlet-class>com.guidewire.testharness.cactus.GWServletTestRunner</servlet-class>
+    <init-param>
+      <param-name>xsl-stylesheet</param-name>
+      <param-value>pages/cactus-report.xsl</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletRedirector</servlet-name>
+    <servlet-class>com.guidewire.testharness.cactus.GWServletTestRedirector</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NewTestServlet</servlet-name>
+    <servlet-class>gw.testharness.v3.PLRemoteTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NodeControllerServlet</servlet-name>
+    <servlet-class>gw.testharness.clustering.NodeControllerServlet</servlet-class>
+  </servlet>
+
+  <!-- Internal servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>gosu-servlets</servlet-name>
+    <url-pattern>/service/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- Test servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>ping-server</servlet-name>
+    <url-pattern>/ping</url-pattern>
+  </servlet-mapping>
+
+  <!-- @{removeBlockStart: build:production} This block will be removed when building WAR/EAR for production to disable testing servlets -->
+  <servlet-mapping>
+    <servlet-name>perfdatagen</servlet-name>
+    <url-pattern>/perfdatagen/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>http-hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletTestRunner</servlet-name>
+    <url-pattern>/ServletTestRunner</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletRedirector</servlet-name>
+    <url-pattern>/ServletRedirector</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewTestServlet</servlet-name>
+    <url-pattern>/NewTestServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NodeControllerServlet</servlet-name>
+    <url-pattern>/NodeControllerServlet/*</url-pattern>
+  </servlet-mapping>
+  <!-- @{removeBlockEnd} -->
+
+  <!-- mapping for doc literal webservice -->
+  <servlet-mapping>
+    <servlet-name>webservices</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+
+  
+  <!-- Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>WebUI</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <!-- AJAX Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>WebUI</servlet-name>
+    <url-pattern>*.ajax</url-pattern>
+  </servlet-mapping>
+
+  <!-- REST servlet mapping -->
+  <servlet-mapping>
+    <servlet-name>swagger-rest</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- Container session configuration -->
+  <session-config>
+    <session-timeout>240</session-timeout>
+  </session-config>
+
+  <!-- Needed for app servers that do not have a default mime mapping for xml (WebLogic for instance) -->
+  <mime-mapping>
+    <extension>xml</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>ttf</extension>
+    <mime-type>application/x-font-ttf</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>woff</extension>
+    <mime-type>application/font-woff</mime-type>
+  </mime-mapping>
+
+  <!-- This filter adds max-age cache control parameters to particular resources.
+
+   The font-cache-duration parameter specifies the number of hours that browsers should be
+   allowed to cache font files for.  The default is 720 hours (30 days).
+
+   The image-cache-duration parameter specifies the number of hours that browsers should be
+   allowed to cache image files for.  The default is 720 hours (30 days).
+
+   The generated-cache-duration parameter specifies the number of hosue that browsers should be
+   allowed to cache generated files. The default is 24 hours.
+
+   The generated-paths parameter specifies the paths that contain files that are "generated". The
+   cache duration for these files will be set to match the generated-cache-duration parameter.
+
+   The cached-forever-files parameter specifies a comma-delimited list of files that the browser
+   should be allowed to cache "forever."  These files are specifically always referred to be a URL
+   that includes the build number, and thus are safe to cache indefinitely.
+
+   This filter is not necessary for correct operation of the application, and can be removed or
+   replaced in deployments as you see fit.
+-->
+  <filter>
+    <filter-name>CacheExpirationFilter</filter-name>
+    <filter-class>gw.servlet.filter.CacheExpirationFilter</filter-class>
+    <init-param>
+      <param-name>font-cache-duration</param-name>
+      <param-value>720</param-value>
+    </init-param>
+    <init-param>
+      <param-name>image-cache-duration</param-name>
+      <param-value>720</param-value>
+    </init-param>
+    <init-param>
+      <param-name>generated-cache-duration</param-name>
+      <param-value>4</param-value>
+    </init-param>
+    <init-param>
+      <param-name>generated-paths</param-name>
+      <param-value>/resources/js/gen/,/resources/css/gen/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cached-forever-files</param-name>
+      <param-value>font.css</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CacheExpirationFilter</filter-name>
+    <!-- font resources -->
+    <url-pattern>*.woff</url-pattern>
+    <url-pattern>*.woff2</url-pattern>
+    <url-pattern>*.ttf</url-pattern>
+    <url-pattern>*.eot</url-pattern>
+    <url-pattern>*.svg</url-pattern>
+    <!-- image resources -->
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.jpeg</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <!-- generated resources -->
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.js</url-pattern>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>com.guidewire.pl.system.websocket.WebSocketServletContextListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>com.guidewire.pl.system.websocket.WebSocketServletRequestListener</listener-class>
+  </listener>
+
+  <!--
+  Servlet filter to mitigate Cross-Site Request Forgery (CSRF), attacks. Make the client custom filter mapping use the servlet name instead of the URL pattern tag and place it's mapping after the CSRF filter mapping. so that the CSRF token gets processed properly. Wrong filter processing may result in error logs like the following:
+  INFO  Security CSRF token was generated: 03787
+  ERROR Security CSRF token mismatched. Expected: 03787, Received: bb8eb3
+  -->
+  <filter>
+    <filter-name>CSRFTokenFilter</filter-name>
+    <filter-class>com.guidewire.pl.web.controller.csrf.CSRFTokenFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CSRFTokenFilter</filter-name>
+    <servlet-name>WebUI</servlet-name>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>com.guidewire.pl.web.controller.csrf.CSRFTokenSessionListener</listener-class>
+  </listener>
+
+  <!-- excluding modules, bundles, and some other directories from the list of downloadable web resources -->
+  <security-constraint>
+    <display-name>excluded</display-name>
+    <web-resource-collection>
+      <web-resource-name>No Access</web-resource-name>
+      <url-pattern>/bundles/*</url-pattern>
+      <url-pattern>/modules/*</url-pattern>
+      <url-pattern>/oracle/*</url-pattern>
+      <url-pattern>/sqlserver/*</url-pattern>
+    </web-resource-collection>
+    <!-- auth constraint with NO roles means the listed resources are not accessible -->
+    <auth-constraint />
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+</web-app>

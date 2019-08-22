@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Example List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading2">TrainingApp9-General-1-9.0.0 (ContactManager 9.0.0 Ferrite (GA) Patch 1)</p>
+<p class="heading2">Welcome to TrainingApp</p>
+<p class="body">TrainingApp is an application built specifically to train people on the fundamentals of Guidewire configuration and integration.
+As a starting point, it has several advantages over the genuine Guidewire applications:</p>
+<ul>
+	<li><p class="body">Its business functionality does not require detailed knowledge of insurance.</li>
+	<li><p class="body">It has at least one simple example of all the fundamental Guidewire configuration and integration functionality.</li>
+	<li><p class="body">It is a smaller application, which means it can be (re)started more rapidly than the other applications.</li>
+</ul>
+</p>
+
+<p class="heading2">Example List</p>
+
+<p class="body">The following tables list common configuration and integration functionality and where you can go in TrainingApp to find an example of it.</p>
+<!----------------------Data Model--------------------------------------->
+<p class="heading2">Data Model</p>
+<table width="95%" border="1" cellpadding="2" cellspacing="0">
+  <tr align="left" valign="top" class="body header">
+       <td width="200" nowrap><strong>Functionality</strong></td>
+       <td width="350"><strong>Example</strong></td>
+       <td width="350"><strong>Related Config Files</strong></td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Delegate</p></td>
+       <td>Verifiable_Ext delegate (implemented by VendorEvaluation)<br></td>
+       <td>Verifiable_Ext.eti and VendorEvaluation.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Edge foreign key</p></td>
+       <td>ABCompanyVendor entity (FinanceManager and PaymentContact are self-referencing fields)</td>
+       <td>ABCompanyVendor.etx</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Entity (creating subtype)</p></td>
+       <td>ABAutoScrapYard_Ext entity</td>
+       <td>ABAutoScrapYard_Ext.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Entity (creating "top-level")</p></td>
+       <td>Building_Ext entity</td>
+       <td>Building_Ext.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Entity (extending base subtype)</p></td>
+       <td>ABPersonVendor entity</td>
+       <td>ABPersonVendor.etx</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Entity (extending base "top-level")</p></td>
+       <td>User entity</td>
+       <td>User.etx</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Field validator</p></td>
+       <td>Routing Number widget (on Detail screen's Bank Account card's Routing Number widget)</td>
+       <td>RoutingNumber in fieldvalidators.xml</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>One-to-one</p></td>
+       <td>ABContact and FinancialSummary (on FinancialSummary card for ABPolicyPerson and ABPolicyCompany contacts)</td>
+       <td>ABContact.etx and FinancialSummary.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>triggersValidation array tag</p></td>
+       <td>ABContact's BankAccounts array (changes to a bank account trigger ABContact preupdate rules,
+           including rule ABPU1040, which reacts to changes in bank accounts)</td>
+       <td>ABContact.etx</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Typecode category (keyfilter)</p></td>
+       <td>ABDoctor's DoctorCategory and DoctorSpecialty (on Details screen's Person Info card for ABDoctors)</td>
+       <td>DoctorCategoryType.tti, SpecialtyType.ttx and ABDoctor.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Typelist filter (typefilter)</p></td>
+       <td>ABPolicyCompany's CompanyCollateralVerified field (on Details screen's Company Info card for ABPolicyCompanies)</td>
+       <td>YesNo.tti and ABPolicyCompany.etx</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Typelist (simple)</p></td>
+       <td>BankAccount's AccountType field (on Details screen's Bank Accounts card)</td>
+       <td>BankAccountType typelist and BankAccount.eti</td>
+  </tr>
+</table>
+
+<!----------------------UI Containers---------------------------------------->
+
+<p class="heading2">UI Containers</p>
+<table width="95%" border="1" cellpadding="2" cellspacing="0">
+  <tr align="left" valign="top" class="body header">
+       <td width="200" nowrap><strong>Functionality</strong></td>
+       <td width="350"><strong>Example</strong></td>
+       <td width="350"><strong>Related Config Files</strong></td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Card view</p></td>
+       <td>ABContactSummaryCV<br>(on Summary screen)</td>
+       <td>ABContactSummaryCV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Comment (for PCF element)</p></td>
+       <td>VendorEvaluationDV's Total Score field</td>
+       <td>VendorEvaluationDV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Container (declared inline)</p></td>
+       <td>DetailView declared inline in ABPersonDetailsPage (on Detail screen's Financial summary card), and ABContactNotesLV, which is declared inline 
+	   in ABContactNotesPage (on Notes screen)</td>
+       <td>ABPersonDetailsPage.pcf and ABContactNotesPage.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Detail view (declared inline)</p></td>
+       <td>PhoneAndAddressDV, which is declared inline in ABContactDetailsCV<br>(on Detail screen's Phone & Addresses card)</td>
+       <td>ABContactDetailsCV.pcf (Phone & Addresses card)</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Detail view (reusable)</p></td>
+       <td>ABContactSummaryDV<br>(on Summary screen)</td>
+       <td>ABContactSummaryDV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Display key (using parameter)</p></td>
+       <td>ABContactLG's Addresses screen link label<br>(on Contact tab's side bar)</td>
+       <td>ABContactLG.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Input set (reused)</p></td>
+       <td>ContactInsightsInputSet is referenced in ABContactDetailsCompanyDV, ABContactDetailsPersonDV,and ABContactDetailsPlaceDV.<br> 
+	   (on Company Summary, Person Summary and Place Summary screens).</td>
+       <td>ContactInsightsInputSet.pcf, ABContactDetailsCompanyDV.pcf, ABContactDetailsPersonDV.pcf and ABContactDetailsPlaceDV.pcf</td>
+   </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Input set (shared logic)</p></td>
+       <td>ABContactDetailsCompanyDV's FinancialPersonnelInputSet<br>(on Details screen's Company Info card for ABCompanies)</td>
+       <td>ABContactDetailsCompanyDV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>List view (declared inline)</p></td>
+       <td>ABContactNotesLV, which is declared inline in ABContactNotesScreen<br>(on Notes screen)</td>
+       <td>ABContactNotesPage.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>List view (editable cells)</p></td>
+       <td>BankAccountsLV<br>(on Details screen's Bank Accounts card)</td>
+       <td>BankAccountsLV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>List view (editable via popup)</p></td>
+       <td>VendorEvaluationsLV and VendorEvaluationPopup<br>(on Details screen's Vendor Info card for ABPersonVendors and ABCompanyVendors)</td>
+       <td>VendorEvaluationsLV.pcf and VendorEvaluationPopup.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>List view (reusable)</p></td>
+       <td>ABContactAddressesLV<br>(on top half of Addresses screen)</td>
+       <td>ABContactAddressesLV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>List view (uneditable)</p></td>
+       <td>ABContactHistoryLV<br>(on History screen)</td>
+       <td>ABContactHistoryPage.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>List view (via list view input)</p></td>
+       <td>FlagEntriesLV<br>(on Summary screen)</td>
+       <td>ABContactSummaryDV.pcf, FlagEntriesLV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Listdetail view</p></td>
+       <td>ABContactAddressesLDV<br>(on Addresses screen)</td>
+       <td>ABContactAddressesLDV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Modal container set</p></td>
+       <td>ABContactDetailsPersonDV's embedded ABPersonSubtypeInfoInputSet<br>(on Details screen's Person Info card for ABPersons)</td>
+       <td>ABContactDetailsPersonDV.pcf and ABPersonSubtypeInfoInputSet.(various).pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Modal container (with default mode)</p></td>
+       <td>ABPersonSubtypeInfoInputSet.default<br>(on Details screen's Person Info card for ABPersons)</td>
+       <td>ABPersonSubtypeInfoInputSet.default</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Modal container (with multiple modes)</p></td>
+       <td>ABPersonSubtypeInfoInputSet.Person (for Person and PolicyPerson)<br>(on Details screen's Person Info card for ABPersons)</td>
+       <td>ABPersonSubtypeInfoInputSet.Person</td>
+  </tr>
+</table>
+
+<!---------------------UI Locations-------------------------------------->
+
+<p class="heading3">UI Locations</p>
+<table width="95%" border="1" cellpadding="2" cellspacing="0">
+  <tr align="left" valign="top" class="body header">
+       <td width="200" nowrap><strong>Functionality</strong></td>
+       <td width="350"><strong>Example</strong></td>
+       <td width="350"><strong>Related Config Files</strong></td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Exit point (to static HTML)</p></td>
+       <td>ExampleListExitPoint<br>
+           (You've already found it!)</td>
+       <td>ExampleListExitPoint.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Exit point (to external application)</p></td>
+       <td>Go to Guidewire | Go by Exit Point<br>
+           (in Search Tabs Actions menu)</td>
+       <td>URLNavMenuItemSet.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>External navigation (full browser)</p></td>
+       <td>Go to Guidewire | Go by Javascript<br>
+           (in Search Tabs Actions menu)</td>
+       <td>URLNavMenuItemSet.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>External navigation (mini browser)</p></td>
+       <td>Go to Guidewire (via Exit Point)<br>
+           (in Search Tabs Actions menu)</td>
+       <td>URLNavMenuItemSet.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Forward</p></td>
+       <td>ContactTabForward<br>
+           (For users who have viewed a contact, it forwards to ABContactLG using latest contact. For users who have never viewed a contact, it forwards to NoContactPage.)</td>
+       <td>ContactTabForward.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Location group</p></td>
+       <td>ABContactLG<br>
+           (on Contact tab)</td>
+       <td>ABContactLG.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Location group (child)</p></td>
+       <td>AdminAssignedUserLG<br>
+           (from Admininstration tab's Contact Assignment screen)</td>
+       <td>AdminAssignedUserLG.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Location<br>(with multiple entry points)</p></td>
+       <td>ContactNoteWorksheet<br>
+           (on Contact tab, click Menu Action -> New Note, or click on any existing note)</td>
+       <td>ContactNoteWorksheet.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Page</p></td>
+       <td>ABContactSummaryPage<br>
+           (it displays ABSummaryPage when Summary screen link is clicked)</td>
+       <td>ABContactSummaryPage.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Popup (for view/edit and create)</p></td>
+       <td>VendorEvaluationPopup<br>
+           (on Details screen's Vendor Info card for ABPersonVendors and ABCompanyVendors, click Add)</td>
+       <td>VendorEvaluationPopup.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Popup (for view/edit only)</p></td>
+       <td>FlagEntryPopup<br>
+           (on Summary screen's Flag Entries list, click View or View/Edit)<br>
+	     NOTE: Only users with flagentryresolve permission (such as su) can access the popup in edit mode.</td>
+       <td>FlagEntryPopup.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Popup (popped search)</p></td>
+       <td>There is no example of this in TrainingApp.
+           </td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Wizard</p></td>
+       <td>There is no example of this in TrainingApp. Refer to PC's JobWizard, BC's PaymentWizard, or CC's FNOLWizard</td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Worksheet (no scope)</p></td>
+       <td>UserPreferencesWorksheet<br>
+           (click Preferences in tab bar)</td>
+       <td>UserPreferencesWorksheet.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Worksheet (with scope)</p></td>
+       <td>ContactNoteWorksheet<br>
+           (on Contact tab, click Menu Action -> New Note, or click on any existing note)</td>
+       <td>ContactNoteWorksheet.pcf</td>
+  </tr>
+</table>
+
+<!---------------------------Gosu----------------------------------------->
+
+<p class="heading3">Gosu</p>
+<table width="95%" border="1" cellpadding="2" cellspacing="0">
+  <tr align="left" valign="top" class="body header">
+       <td width="200" nowrap><strong>Functionality</strong></td>
+       <td width="350"><strong>Example</strong></td>
+       <td width="350"><strong>Related Config Files</strong></td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Business rule</p></td>
+       <td>"ABPU1020 - Assigned user changed" rule<br>
+           (To trigger, on Summary screen, change a contact's assigned user. Then check History to see entry created by rule.)</td>
+       <td>Rule Sets / Pre-update / ABContact Pre-update / ABPU1000 - Subtype ABContact / ABPU1020 - Assigned user changed</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Enhancement function</p></td>
+       <td>ABContact's deleteSecondaryAddresses function<br>
+           (To execute, on Addresses screen's toolbar, click "Delete Secondary Addresses" button.)</td>
+       <td>acme.ta.enhancements.entity.ABContactEnhancement</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Enhancement getter</p></td>
+       <td>ABPerson's Age property<br>
+           (on Details screen's Person Info card for ABPolicyPersons)</td>
+       <td>acme.ta.enhancements.entity.ABPersonEnhancement</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Enhancement setter</p></td>
+       <td>ABPolicyPerson's HeightInInches property<br>
+           (To see it in action, view the Details screen's Person Info card for ABPolicyPersons. Enter and view values for the height. Then, in Preferences worksheet, change the system of measurement to US
+Customary and back to metric and modify and view the height value.)</td>
+       <td>acme.ta.enhancements.entity.ABPersonEnhancement</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Gosu class</p></td>
+       <td>trainingapp.base2.RecentlyViewedContactUtil<br>
+           (used to determine which contacts a given user recently viewed, used for Contact tab functionality)</td>
+       <td>trainingapp.base.RecentlyViewedContactUtil</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>PCF function</p></td>
+       <td>FlagEntryLV's popupButtonText function<br>
+	     (in Summary screen's Flag Entries list)</td>
+       <td>FlagEntryLV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Script parameter</p></td>
+       <td>RecordInHistory_ChangesToAssignedUser<br>
+           (used to determine if changes to assigned user are stored in history)</td>
+       <td>Tools menu -> Script Parameters, and<br>
+           Administration tab's Script Parameters screen<br><br>
+		   ScriptParameters.xml and acme.ta.scriptparameter.ScriptParametersEnhancement.gsx</td>
+  </tr>
+</table>
+
+<!----------------------Cross-Section Functionality--------------------------------------->
+
+<p class="heading3">Cross-Section Functionality</p>
+<table width="95%" border="1" cellpadding="2" cellspacing="0">
+  <tr align="left" valign="top" class="body header">
+       <td width="200" nowrap><strong>Functionality</strong></td>
+       <td width="350"><strong>Example</strong></td>
+       <td width="350"><strong>Related Config Files</strong></td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Conditional attribute<br>(no postOnChange)</p></td>
+       <td>visibility of Financial Summary card<br>
+           (on Details screen's card view)</td>
+       <td>ABPersonDetailsPage.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Conditional attribute<br>(required with postOnChange)</p></td>
+       <td>ABPersonSubtypeInfoInputSet.Person's State and Driver's License fields<br>
+           (on Details screen's Person Info card for ABPersons)</td>
+       <td>ABPersonSubtypeInfoInputSet.Person</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Conditional attribute<br>(visible with postOnChange)</p></td>
+       <td>ABContactDetailsCompanyDV's Inspection Date and Inspection Required fields<br>
+           (on Details screen's Company Info card for ABCompanies)</td>
+       <td>ABContactDetailsCompanyDV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Dependent dropdown (keyfilter)</p></td>
+       <td>ABDoctor's DoctorCategory (DoctorCategoryType) and DoctorSpecialty (SpecialtyType)<br>
+           (on Details screen's Person Info card for ABDoctors)</td>
+       <td>DoctorCategoryType.tti, SpecialityType.ttx,<br>
+           and ABDoctor.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Dynamic dropdown<br>(range element)</p></td>
+       <td>ABContactDetailsCompanyDV's Primary Contact widget <br>
+           (on Details screen's Company Info card for ABCompanies)</td>
+       <td>ABContactDetailsCompanyDV.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Entity name</p></td>
+       <td>ABContact<br>
+           (on InfoBar, immediately after bold "subtype :" label)</td>
+       <td>Entity Names / ABContact</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Entity name, datetime used in</p></td>
+       <td>ContactNote<br>
+           (on ABContactNotesPage; base app example uses short format, but commented-out version uses long format)</td>
+       <td>Entity Names / ContactNote</td>
+  </tr>  
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Entity name, typekey used in</p></td>
+       <td>User<br>
+           (on Admin tab's Search for Users screen; if user's Vacation Status is not "At work", Vaction Status appears in parenthesis after user's name)</td>
+       <td>Entity Names / User</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>onChange</p></td>
+       <td>FlagEntryDV's Resolution field<br>
+           (on Summary screen's Flag Entries list, click View or View/Edit)</td>
+       <td>FlagEntryDV.pcf, FlagEntryEnhancement's setFieldsOnResolution() function</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Validation, field-level in data model</p></td>
+       <td>Bank Account's Routing Number field<br>
+           (on Details screen's Bank Accounts card)</td>
+       <td>fieldvalidators.xml and BankAccount.eti</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Validation, field-level in UI</p></td>
+       <td>DateOfBirth widget for ABPerson<br>
+           (on Details screen's Person Info card)</td>
+       <td>ABContactDetailsPersonDV.pcf</td>
+  </tr>
+</table>
+
+<!------------------------------------------------------------------------->
+
+<p class="heading3">Integration-Specific Functionality</p>
+
+<p class="body">This section lists functionality that is typically or exclusively used for implementing integration points.</p>
+
+<table width="95%" border="1" cellpadding="2" cellspacing="0">
+  <tr align="left" valign="top" class="body header">
+       <td width="200" nowrap><strong>Functionality</strong></td>
+       <td width="350"><strong>Example</strong></td>
+       <td width="350"><strong>Related Files</strong></td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Batch process, custom</p></td>
+       <td>Flag Overdue Legal Reports batch process</td>
+       <td>acme.ta.batch.ProcessesPlugin, acme.ta.batch.legalreport.FlagOverdueLegalReportsBatch</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Bundle manipulation</p></td>
+       <td>The BundleExamples class</td>
+       <td>trainingapp.demo.gosu.BundleExamples class</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Class (used as return type by Guidewire web service)</p></td>
+       <td>ContactInfo</td>
+       <td>acme.ta.webservice.contact.ContactInfo</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Gosu query</p></td>
+       <td>Contact tab (which automatically queries for and displays the contact last viewed by the current user)</td>
+       <td>ContactTabForward.pcf, trainingapp.base2.RecentlyViewedContactUtil</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Gosu template</p></td>
+       <td>Payload for bank account verification for checking and savings accounts</td>
+       <td>Event Fired rule BAEF1111 - Field Changed, acme.ta.messaging.bank.BankAccountDataTemplate</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Java (extension to Java type)</p></td>
+       <td>isLeapYear() extension to java.util.Calendar</td>
+       <td>acme.ta.enhancements.java.CalendarEnhancement</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Java (Java class used in Gosu)</p></td>
+       <td>ABLawFirm preupdate rule that creates note with suggested hourly rate</td>
+       <td>com.acme.ta.classes.ABLawFirmUtil<br>
+           (in modules/configuration/plugins/Gosu/classes),<br>
+           Preupdate rule ABPU4000 - Subtype ABLawFirm</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Java (Java type used in Gosu)</p></td>
+       <td>Printing user data to file</td>
+       <td>trainingapp.demo.java.JavaTypeExamples class</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (asynchronous reply)</p></td>
+       <td>Legal Case Report<br>
+           (on Details screen's Person Info card for ABDoctors<br>
+		Click "Request Case Report"<br>
+		ExternalApp must be running to get reply</td>
+       <td>acme.ta.messaging.legalreport.LegalReportTranport, acme.ta.messaging.legalreport.LegalReportAPI</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (destination)</p></td>
+       <td>Bank Account Verification destination</td>
+       <td>n/a</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (Event Fired rule)</p></td>
+       <td>Rule to generate messages for bank account verification</td>
+       <td>Event Fired -> BAEF1000 - BankAccount and its children</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (late binding)</p></td>
+       <td>Bank account verification for savings accounts, which have an "ageInSeconds" name/value pair updated via late binding</td>
+       <td>acme.ta.messaging.bank.BankAccountVerificationRequest</td>
+  </tr>
+<tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (payload generation via Gosu template</p></td>
+       <td>Payload for bank account verification for checking and savings accounts</td>
+       <td>Event Fired rule BAEF1111 - Field Changed, acme.ta.messaging.bank.BankAccountDataTemplate</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (payload generation via XML model</p></td>
+       <td>Payload for bank account verification for retirement accounts</td>
+       <td>Event Fired rule BAEF1111 - Field Changed, acme.ta.messaging.bank.BankAccountXMLModel</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (message transport plugin to console)</p></td>
+       <td>Bank Account Verification messages</td>
+       <td>acme.ta.messaging.bank.BankAccountVerificationTransport</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (message transport plugin to file)</p></td>
+       <td>Vendor Recommendation messages</td>
+       <td>acme.ta.messaging.vendorrecommendation.VendorRecommendationTransport</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (message transport plugin to web service)</p></td>
+       <td>Legal Case Report messages</td>
+       <td>acme.ta.messaging.legalreport.LegalReportTransport</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (message reply plugin)</p></td>
+       <td>Sample reply plugin</td>
+       <td>trainingapp.demo.SampleReplyPlugin</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (message request plugin)</p></td>
+       <td>Bank account messages have age in seconds added via late binding</td>
+       <td>acme.ta.messaging.bank.BankAccountVerificationRequest</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (plugin)</p></td>
+       <td>See: <em>Messaging (message request plugin)</em>,<br><em>Messaging (message transport plugin)</em>,<br>and <em>Messaging (message reply plugin)</em></td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (safe ordering)</p></td>
+       <td>Safe Ordering Demo (Admin tab -> Training: Messaging -> Safe Ordering)</td>
+       <td>IntegrationMessageSafeOrderingPage.pcf</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (setting SenderRefID)</p></td>
+       <td>Legal Report messages</td>
+       <td>acme.ta.messaging.legalreport.LegalReportTransport</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Messaging (synchronous reply)</p></td>
+       <td>Bank Account messages</td>
+       <td>acme.ta.messaging.bank.BankAccountVerificationTransport</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Messaging (asynchronous reply)</p></td>
+       <td>Legal Report messages<br>
+	     ExternalApp must be running</td>
+       <td>acme.ta.messaging.legalreport.LegalReportAPI</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Plugin (message reply)</p></td>
+       <td>See: <em>Messaging (message reply plugin)</em></td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Plugin (message request)</p></td>
+       <td>See: <em>Messaging (message request plugin)</em></td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Plugin (message transport)</p></td>
+       <td>See: <em>Messaging (message transport plugin)</em></td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Plugin (predefined)</p></td>
+       <td>See: <em>Predefined plugin</em></td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Plugin (startable)</p></td>
+       <td>See: <em>Startable plugin</em></td>
+       <td>&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Plugin parameters</p></td>
+       <td>ExchangeRate plugin that prints user name and password to console<br>Note: This class exists but is not implemented in the TrainingApp base application.</td>
+       <td>To implement, create this plugin registry element for IExchangeRateSetPlugin:<br>Type: Gosu<br>Class: "acme.ta.plugin.exchangerate.AcmeIExchangeRateSetPluginWithParameters"</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Predefined plugin (Gosu)</p></td>
+       <td>ExchangeRate plugin</td>
+       <td>IntegrationPredefinedPluginDemoPage.pcf, Plugin registry element at Plugins -> gw -> plugin -> exchangerate -> IExchangeRatePlugin, acme.ta.plugin.exchangerate.AcmeIExchangeRateSetPlugin</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Predefined plugin (Java)</p></td>
+       <td>ExchangeRate plugin that is identical to the Gosu version of AcmeIExchangeRatePlugin<br>Note: This class exists but is not implemented in the TrainingApp base application.</td>
+       <td>To implement, create this plugin registry element for IExchangeRateSetPlugin:<br>Type: Gosu<br>Class: "com.acme.ta.plugin.exchangerate.AcmeIExchangeRatePlugin"<br>Plugin Directory: "exchangerate"</td>
+  </tr>
+
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>SequenceUtility</p></td>
+       <td>SequenceUtil is used to increment the name and base currency value of each successively retrieved exchange rate set.</td>
+       <td>IntegrationPredefinedPluginDemoPage.pcf, acme.ta.plugin.exchangerate.AcmeIExchangeRateSetPlugin</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Startable plugin</p></td>
+       <td>Sample startable plugin</td>
+       <td>Plugin registry element at Plugins -> api -> startable -> IStartablePlugin -> ExampleIStartablePlugin, trainingapp.demo.ExampleIStartablePlugin</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Web service (external RPCE web service used by Guidewire)</p></td>
+       <td>ChemicalSymbol</td>
+       <td>RPC-Encoded Web Services node</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Web service (external WSI web service used by Guidewire)</p></td>
+       <td>StockQuotesWSC</td>
+       <td>acme.ta.webservice.stocks.StockQuotesWSC</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Web service (Gosu class used by Guidewire web service)</p></td>
+       <td>ContactInfo</td>
+       <td>acme.ta.webservice.contact.ContactInfo</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Web service (Guidewire web service used by external systems)</p></td>
+        <td>ContactAPI</td>
+       <td>acme.ta.webservice.contact.ContactAPI</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>Web service collection</p></td>
+       <td>stockquotesWSC</td>
+       <td>acme.ta.webservice.stocks.StockQuotesWSC</td>
+  </tr>
+  <tr align="left" valign="top" class="body">
+       <td width="200" nowrap><p>Web service endpoint</p></td>
+       <td>ChemicalSymbol</td>
+       <td>RPC-Encoded Web Services node</td>
+  </tr>
+  <tr align="left" valign="top" class="body oddrow">
+       <td width="200" nowrap><p>XML model</p></td>
+       <td>Payload for bank account verification for retirement accounts</td>
+       <td>Event Fired rule BAEF1111 - Field Changed, acme.ta.messaging.bank.BankAccountXMLModel</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="IProcessesPlugin"
+  name="IProcessesPlugin">
+  <plugin-gosu
+    gosuclass="trn.ta.batch.ProcessesPlugin"/>
+</plugin>

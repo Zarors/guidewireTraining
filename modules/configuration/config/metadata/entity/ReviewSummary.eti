@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="A summary of a service provider review, created from a given Review in ClaimCenter."
+  entity="ReviewSummary"
+  exportable="true"
+  extendable="true"
+  platform="false"
+  table="reviewsummary"
+  type="retireable">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ReviewSummary"
+    impl="com.guidewire.ab.domain.addressbook.impl.ReviewSummaryImpl"/>
+  <implementsEntity
+    name="ABLinkable"/>
+  <implementsEntity
+    name="Extractable"/>
+  <column
+    desc="Short name of this review type."
+    name="Name"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+  <column
+    desc="Associated part of a claim for this review type."
+    name="RelatedTo"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <column
+    desc="Claim Number associated with this review."
+    name="ClaimNumber"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <column
+    desc="Name of the Review Type associated with this review."
+    name="ReviewType"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <foreignkey
+    columnName="ABContactID"
+    desc="Associated Contact."
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="false"/>
+  <column
+    desc="User who created the review"
+    name="ReviewedBy"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <column
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Optionally associated sub-Contact (Service Person or similar)."
+    name="Subcontact"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <column
+    desc="Date of the service being reviewed"
+    name="ServiceDate"
+    nullok="true"
+    type="datetime"/>
+  <array
+    arrayentity="ReviewSummaryCategoryScore"
+    desc="List of categories and their scores, associated with this Review."
+    name="CategoryScores"/>
+  <column
+    desc="Boolean field to mark a review as included in the total for the contact."
+    name="Tallied"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Description of the accident or loss."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Comments about the review."
+    name="Comments"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="The PublicID of the Review in ClaimCenter, intended as an cross-reference for informational purposes only."
+    name="ClaimCenterUID"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <typekey
+    name="ServiceType"
+    nullok="true"
+    typelist="ReviewServiceType"/>
+</entity>

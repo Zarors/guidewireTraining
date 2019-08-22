@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="pcf.ScriptParametersPage.go()"
+    canEdit="perm.ScriptParameter.edit"
+    canVisit="perm.ScriptParameter.view"
+    id="ScriptParameterDetail"
+    parent="ScriptParametersPage()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.ScriptParameter&quot;, ScriptParameterPack.Name)">
+    <LocationEntryPoint
+      signature="ScriptParameterDetail(ScriptParameterPack : com.guidewire.pl.system.gosu.entity.ScriptParameterPack)"/>
+    <Variable
+      name="ScriptParameterPack"
+      type="com.guidewire.pl.system.gosu.entity.ScriptParameterPack"/>
+    <Variable
+      initialValue="gw.lang.ScriptParameters.getOrCreateParameter(ScriptParameterPack)"
+      name="ScriptParameter"
+      type="entity.ScriptParameter"/>
+    <ScreenRef
+      def="ScriptParameterDetailScreen(ScriptParameter)"/>
+  </Page>
+</PCF>

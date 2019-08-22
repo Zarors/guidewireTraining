@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="LoadStepsLV">
+    <Require
+      name="PageHelper"
+      type="gw.api.tools.LoadHistoryHelper"/>
+    <Require
+      name="History"
+      type="LoadCommand"/>
+    <Require
+      name="DispSteps"
+      type="gw.api.tools.LoadStepDisplayable[]"/>
+    <Require
+      name="ShowLinksAndCount"
+      type="boolean"/>
+    <RowIterator
+      editable="true"
+      elementName="DispStep"
+      id="LoadOpsRowIt"
+      value="DispSteps"
+      valueType="gw.api.tools.LoadStepDisplayable[]">
+      <Variable
+        initialValue="DispStep.LoadStep.Operations.length"
+        name="NumOps"
+        type="int"/>
+      <Row>
+        <TextCell
+          action="LoadHistoryOps.drilldown(History, DispStep, PageHelper)"
+          available="NumOps &gt; 0 and ShowLinksAndCount"
+          id="steptypecell"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StepType&quot;)"
+          value="DispStep.DispStepType"/>
+        <TextCell
+          align="center"
+          id="stepexecuteordercell"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ExecutionOrder&quot;)"
+          value="DispStep.LoadStep.ExecutionOrder"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          id="stepstarttimecell"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StartTime&quot;)"
+          value="gw.api.util.StringUtil.formatDate(DispStep.LoadStep.StartTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+        <TextCell
+          id="stependtimecell"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.EndTime&quot;)"
+          value="gw.api.util.StringUtil.formatDate(DispStep.LoadStep.EndTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+        <TextCell
+          align="right"
+          id="stepdurationcell"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Duration&quot;)"
+          sortBy="DispStep.LoadStep.getDuration()"
+          value="gw.api.util.StringUtil.formatNumber(DispStep.LoadStep.getDuration() / 1000.0, &quot;###,##0.0&quot;)"/>
+        <TextCell
+          align="center"
+          id="numopscell"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.NumberOps&quot;)"
+          sortBy="DispStep.LoadStep.Operations.length"
+          value="gw.api.util.StringUtil.formatNumber(NumOps, &quot;####0&quot;)"
+          visible="ShowLinksAndCount"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

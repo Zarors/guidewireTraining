@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ExitPoint
+    id="ReportView"
+    popup="true"
+    url="{baseURL}/service/reportview/{name}/{subPath}/">
+    <LocationEntryPoint
+      signature="ReportView(name : String, subPath : String)"/>
+    <ExitPointParameter
+      defaultValue="com.guidewire.pl.system.dependency.PLDependencies.WebController.BaseURL"
+      locationParam="baseURL"
+      type="String"
+      urlParam="baseURL"/>
+    <ExitPointParameter
+      locationParam="name"
+      type="String"
+      urlParam="name"/>
+    <ExitPointParameter
+      locationParam="subPath"
+      type="String"
+      urlParam="subPath"/>
+  </ExitPoint>
+</PCF>

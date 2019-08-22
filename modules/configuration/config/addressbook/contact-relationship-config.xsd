@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="ContactRelationshipConfigFile">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ContactRelationshipPair" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ContactRelationshipPair">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Primary" type="Accessor" minOccurs="1" maxOccurs="1" />
+        <xsd:element name="Inverse" type="Accessor" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+      <xsd:attribute name="contactRelCode" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="Accessor">
+    <xsd:attribute name="name" type="xsd:NMTOKEN" use="required"/>
+    <xsd:attribute name="cardinality" type="Cardinality" default="zeroormore"/>
+    <xsd:attribute name="contactBidiRelCode" type="xsd:NMTOKEN" use="required"/>
+    <xsd:attribute name="entity" type="xsd:NMTOKEN"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="Cardinality">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="zeroorone"/>
+      <xsd:enumeration value="zeroormore"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

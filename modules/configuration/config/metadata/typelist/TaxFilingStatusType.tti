@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="State-specific field"
+  final="false"
+  name="TaxFilingStatusType"
+  platform="true"/>

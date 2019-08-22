@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="A context for packaging rule sets, libraries, script parameters, and other configurable resources."
+  name="ResourceContext">
+  <typecode
+    code="wc"
+    desc="Guidewire Workers Compensation related resources"
+    name="Guidewire WC"/>
+  <typecode
+    code="base"
+    desc="Guidewire Base Configuration related resources"
+    name="Guidewire Base"/>
+  <typecode
+    code="sample"
+    desc="Guidewire Sample Data related resources"
+    name="Guidewire Sample Data"/>
+</typelistextension>

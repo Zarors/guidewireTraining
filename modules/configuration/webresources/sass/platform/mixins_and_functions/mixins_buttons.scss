@@ -1,0 +1,441 @@
+@mixin gw-button-gradient($bg: $gw-app--buttons--bg, $top-col: null, $line-percent: 49%) {
+  $line-percent: gw-stripUnit($line-percent);
+  @if ($line-percent > 1) {
+    $line-percent: $line-percent / 100;
+  }
+  $line-percent-plus-1: percentage($line-percent + .01);
+  $line-percent: percentage($line-percent);
+
+  @if ($top-col == null) {
+    $top-col: lighten($bg, 8%);
+  }
+  background: linear-gradient(to bottom, #{$top-col} 0%, #{lighten($top-col, 3%)} #{$line-percent}, #{$bg} #{$line-percent-plus-1}, #{darken($bg, 3%)} 100%);
+}
+
+// Call to set the active/hover/etc states for button, when gw-button--normal is too opinionated
+@mixin gw-button--colors($bg: $gw-app--buttons--bg, $col: null, $border-width: null, $border-color: null, $allow-expand-divider: true, $forced-expand-divider-col: null, $add-gradient: false) {
+  @if ($border-color != null) {
+    border-color: $border-color;
+  } @else if ($bg != null && bg != none) {
+    border-color: darken($bg, $gw-app--buttons--border-darken-percent);
+  }
+
+  @if ($border-width) {
+    border-width: $border-width;
+  }
+  border-style: solid;
+  @if ($add-gradient) {
+    @include gw-button-gradient($bg);
+  } @else {
+    background-color: $bg;
+  }
+
+  color: $col;
+
+  @if ($col) {
+    &.gw-focus {
+      outline-color: $col;
+
+      @include gw-ie11Only {
+        outline-color: invert;
+      }
+    }
+  }
+
+  @if ($allow-expand-divider) {
+    & + .gw-action--divider {
+      .gw-action--divider-inner {
+        @if ($forced-expand-divider-col == null) {
+          opacity: .6;
+          background-color: $col; //NOTE: functions as a border, so uses text color, not bg color
+        } @else {
+          background-color: $forced-expand-divider-col;
+        }
+      }
+    }
+  }
+}
+
+/**
+  Used to make a widget using the structure of a menu item and subMenus look like a button widget.
+*/
+@mixin gw-button--asMenuItem($force-expand-only: false, $is-secondary: false, $is-small: false, $expand-glyph: $gw-app--buttons--expand-glyph) {
+
+  $bg: $gw-app--buttons--bg;
+  $col: $gw-app--buttons--col;
+  $hover-bg: $gw-app--buttons--hover--bg;
+  $hover-col: $gw-app--buttons--hover--col;
+  $active-bg: $gw-app--buttons--active--bg;
+  $active-col: $gw-app--buttons--active--col;
+  $pad-v: $gw-app--buttons--pad-v-rem;
+  $inner-action--pad-h: $gw-app--buttons--pad-h-rem;
+  $expand--pad-h: $gw-app--menus--expand--pad-h-rem;
+  $border-col: null;
+
+  @if ($is-secondary) {
+    $bg: $gw-app--buttons--secondary--bg;
+    $col: $gw-app--buttons--secondary--col;
+    $hover-bg: $gw-app--buttons--secondary--hover--bg;
+    $hover-col: $gw-app--buttons--secondary--hover--col;
+    $active-bg: $gw-app--buttons--secondary--active--bg;
+    $active-col: $gw-app--buttons--secondary--active--col;
+    $border-col: $gw-app--buttons--secondary--border-col;
+  }
+
+  @if ($is-small) {
+    $inner-action--pad-h: $gw-app--buttons--small-pad-h-rem;
+    $pad-v: $gw-app--buttons--small-pad-v-rem;
+    $expand--pad-h: $gw-app--buttons--small-pad-h-rem;
+  }
+
+  @if ($force-expand-only) {
+    $expand--pad-h: $pad-v;
+  }
+
+  @include gw-menuItem(
+          $bg: $bg,
+          $col: $col,
+          $hover-bg: $hover-bg,
+          $hover-col: $hover-col,
+          $active-bg: $active-bg,
+          $active-col: $active-col,
+          $pad-v: $pad-v,
+          $inner-action--pad-h: $inner-action--pad-h,
+          $expand--pad-h: $expand--pad-h,
+          $is-button: true,
+          $glyph: $expand-glyph,
+          $force-no-expand: false,
+          $force-expand-only: $force-expand-only,
+          $border-color: $border-col
+  );
+
+  @if ($gw-app--buttons--shadow != null) {
+    &:not(.gw-disabled):not([disabled]) {
+      box-shadow: $gw-app--buttons--shadow;
+    }
+  }
+
+  @if ($gw-app--buttons--disabled-shadow != null) {
+    &.gw-disabled, &[disabled] {
+      box-shadow: $gw-app--buttons--disabled-shadow;
+    }
+  }
+
+  @if ($gw-app--buttons--hover-shadow != null) {
+    &:hover:not(.gw-disabled):not([disabled]) {
+      box-shadow: $gw-app--buttons--hover-shadow;
+    }
+  }
+
+  @include gw-subMenu();
+  @include gw-wrapNever();
+}
+
+/**
+ Gives the element a pointer cursor, and handles disabled and focus
+*/
+@mixin gw-clickable($focus-col, $focus-offset: null) {
+  user-select: none;
+  &:not(.gw-disabled) {
+    cursor: pointer;
+  }
+  @include gw-disabled();
+
+  &.gw-focus {
+    @include gw-addFocusOutline($focus-col, $focus-offset);
+  }
+}
+
+/**
+ Used by gw-button--normal. Sets up a button without any hover or active states, but still adds focus and disabled states.
+*/
+@mixin gw-button--base(
+  $bg: $gw-app--buttons--bg,
+  $col: $gw-app--buttons--col,
+  $pad-v: $gw-app--buttons--pad-v-rem,
+  $pad-h: $gw-app--buttons--pad-h-rem,
+  $focus-offset: $gw-app--buttons--focus-offset-px,
+  $border-width: $gw-app--border-width-px,
+  $border-color: null,
+  $force-border-on: false,
+  $allow-expand-divider: true,
+  $forced-expand-divider-col: $gw-app--buttons--expand-divider-col,
+  $add-gradient: false,
+  $disabled-bg: null,
+  $disabled-col: null,
+  $add-disabled-state: true
+) {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  padding: $pad-v $pad-h;
+  font-weight: gw-weight(normal);
+  font-size: gw-emFixed(1);
+  @include gw-textEllipse();
+
+  &.gw-focus {
+    @include gw-addFocusOutline($col, $focus-offset);
+  }
+
+  .gw-minimized-view {
+    display: none; //This will be overriden on a per widget basis, based on how the widget determines its container to be in a minimized state.
+  }
+
+  @if ($gw-app--buttons--have-borders == false and $force-border-on != true) {
+    $border-color: $bg;
+  }
+
+  @include gw-button--colors($bg, $col, $border-width, $border-color, $allow-expand-divider: $allow-expand-divider, $forced-expand-divider-col: $forced-expand-divider-col, $add-gradient: $add-gradient);
+  @if ($add-disabled-state) {
+    @include gw-disabled($disabled-bg, $disabled-col);
+  }
+}
+
+/**
+ Used to make most buttons in the app. Adds standard colors, padding, hover, active, and disabled states.
+*/
+@mixin gw-button--normal(
+  $bg: $gw-app--buttons--bg,
+  $col: $gw-app--buttons--col,
+  $hover-bg: $gw-app--buttons--hover--bg,
+  $hover-col: $gw-app--buttons--hover--col,
+  $active-bg: $gw-app--buttons--active--bg,
+  $active-col: $gw-app--buttons--active--col,
+  $pad-v: $gw-app--buttons--pad-v-rem,
+  $pad-h: $gw-app--buttons--pad-h-rem,
+  $focus-offset: $gw-app--focus--outline-offset-px,
+  $disabled-bg: $gw-app--buttons--disabled-bg,
+  $disabled-col: $gw-app--buttons--disabled-col,
+  $is-small: false,
+  $is-square: false,
+  $use-button-shadows: true,
+  $hover-border-col: null,
+  $active-border-col: null,
+  $add-gradient: false
+) {
+
+  @if ($is-small) {
+    $pad-h: $gw-app--buttons--small-pad-h-rem;
+    $pad-v: $gw-app--buttons--small-pad-v-rem;
+  }
+
+  @if ($is-square) {
+    $pad-h: $pad-v;
+  }
+
+  $border-color: null;
+  @if ($gw-app--buttons--have-borders == false) {
+    $border-color: $bg;
+  }
+
+  @include gw-button--base($bg, $col, $pad-v, $pad-h, $focus-offset, $border-color: $border-color, $add-gradient: $add-gradient);
+
+  @if ($gw-app--buttons--shadow != null) {
+    &:not(.gw-disabled):not([disabled]) {
+      box-shadow: $gw-app--buttons--shadow;
+    }
+  }
+
+  @if ($gw-app--buttons--disabled-shadow != null) {
+    &.gw-disabled, &[disabled] {
+      box-shadow: $gw-app--buttons--disabled-shadow;
+    }
+  }
+
+  &:hover:not(.gw-disabled):not([disabled]) {
+    @if ($hover-border-col != null) {
+      $border-color: $hover-border-col;
+    } @else if ($gw-app--buttons--have-borders == false) {
+      $border-color: $hover-bg;
+    }
+    @include gw-button--colors($hover-bg, $hover-col, null, $border-color, $add-gradient: $add-gradient);
+
+    @if ($gw-app--buttons--hover-shadow != null and $use-button-shadows) {
+      box-shadow: $gw-app--buttons--hover-shadow;
+    }
+  }
+
+  &.gw-active:not(.gw-disabled):not([disabled]) {
+    @if ($active-border-col != null) {
+      $border-color: $active-border-col;
+    } @else if ($gw-app--buttons--have-borders == false) {
+      $border-color: $active-bg;
+    }
+    @include gw-button--colors($active-bg, $active-col, null, $border-color, $add-gradient: $add-gradient);
+  }
+
+  &.gw-disabled, &[disabled] {
+    @if ($gw-app--buttons--have-borders == false) {
+      border-color: $disabled-bg;
+    }
+    background-color: $disabled-bg; //TODO: this ends up being in conflict with the standard gw-disabled(), should probably remove or rectify
+    color: $disabled-col;
+  }
+
+  @include gw-borderRadius();
+}
+
+/**
+  Calls Button Normal, but sets the colors and borders to render a light interior button, with a thick contrasted border.
+*/
+@mixin gw-button--secondary($pad-h: $gw-app--buttons--pad-h-rem, $is-small: false, $pad-v: $gw-app--buttons--pad-v-rem, $border-color: $gw-app--buttons--secondary--border-col, $col: $gw-app--buttons--secondary--col, $is-square: false, $bg: $gw-app--buttons--secondary--bg, $allow-active-shadows: true) {
+  $hover-bg: $gw-app--buttons--secondary--hover--bg;
+  $hover-col: $gw-app--buttons--secondary--hover--col;
+  $active-bg: $gw-app--buttons--secondary--active--bg;
+  $active-col: $gw-app--buttons--secondary--active--col;
+  $border-width: $gw-app--buttons--secondary--border-width-px;
+  $hover-border-col: $gw-app--buttons--secondary--hover--border-col;
+  $active-border-col: $gw-app--buttons--secondary--active--border-col;
+
+  $disabled-bg: $gw-app--buttons--disabled-bg;
+  $disabled-col: $gw-app--buttons--disabled-col;
+
+  @if ($is-small) {
+    $pad-h: $gw-app--buttons--small-pad-h-rem;
+    $pad-v: $gw-app--buttons--small-pad-v-rem;
+  }
+
+  @if ($is-square) {
+    $pad-h: $pad-v;
+  }
+
+  @include gw-button--base($bg, $col, $pad-v, $pad-h, $gw-app--focus--outline-offset-px, $border-color: $border-color, $border-width: $border-width, $force-border-on: true);
+
+  @if ($allow-active-shadows and $gw-app--buttons--shadow != null) {
+    &:not(.gw-disabled):not([disabled]) {
+      box-shadow: $gw-app--buttons--shadow;
+    }
+  }
+
+  @if ($gw-app--buttons--disabled-shadow != null) {
+    &.gw-disabled, &[disabled] {
+      box-shadow: $gw-app--buttons--disabled-shadow;
+    }
+  }
+
+  &:hover:not(.gw-disabled):not([disabled]) {
+    @include gw-button--colors($hover-bg, $hover-col, $border-color: $hover-border-col);
+
+    @if ($gw-app--buttons--hover-shadow != null) {
+      box-shadow: $gw-app--buttons--hover-shadow;
+    }
+  }
+
+  &.gw-active:not(.gw-disabled):not([disabled]) {
+    @include gw-button--colors($active-bg, $active-col, $border-color: $hover-border-col);
+  }
+
+  &.gw-disabled, &[disabled] {
+    @if ($gw-app--buttons--have-borders == false) {
+      border-color: $disabled-bg;
+    }
+    background-color: $disabled-bg;
+    color: $disabled-col;
+  }
+
+  @include gw-borderRadius();
+}
+
+@mixin gw-button--asCustomSelect($col: $gw-app--inputs--select-col, $border-col: $gw-app--inputs--border--col, $glyph-col: null, $glyph-pad-left: $gw-app--inputs--pad-h-rem) {
+
+  @include gw-menuItem(
+          $bg: $gw-app--inputs--select-bg,
+          $col: $col,
+          $hover-bg: $gw-app--inputs--select-hover-bg,
+          $hover-col: $gw-app--inputs--select-hover-col,
+          $active-bg: $gw-app--inputs--select-active-bg,
+          $active-col: $gw-app--inputs--select-active-col,
+          $pad-v: $gw-app--inputs--pad-v-rem,
+          $inner-action--pad-h: $gw-app--inputs--pad-h-rem,
+          $is-button: true,
+          $border-color: $border-col,
+          $force-no-expand: true
+  );
+
+  @include gw-wrapNever();
+  @include gw-subMenu();
+}
+
+$gw-button--dropdown--normal-colors: (
+        bg: $gw-app--buttons--bg,
+        col: $gw-app--buttons--col,
+        hover-bg: $gw-app--buttons--hover--bg,
+        hover-col: $gw-app--buttons--hover--col,
+        active-bg: $gw-app--buttons--active--bg,
+        active-col: $gw-app--buttons--active--col
+);
+
+$gw-button--dropdown--secondary-colors: (
+        bg: $gw-app--buttons--secondary--bg,
+        col: $gw-app--buttons--secondary--col,
+        hover-bg: $gw-app--buttons--secondary--hover--bg,
+        hover-col: $gw-app--buttons--secondary--hover--col,
+        active-bg: $gw-app--buttons--secondary--active--bg,
+        active-col: $gw-app--buttons--secondary--active--col
+);
+
+@mixin gw-button--dropdown($pad-v: $gw-app--buttons--pad-v-rem, $colors: $gw-button--dropdown--normal-colors, $glyph: $gw-app--inputs--select-glyph, $add-gradient: false, $pad-h: $gw-app--buttons--pad-h-rem, $force-no-expand: true, $expand-pad-h: $gw-app--menus--expand--pad-h-rem, $force-border-on: $force-border-on) {
+  @include gw-menuItem(
+          $colors...,
+          $pad-v: $pad-v,
+          $inner-action--pad-h: $pad-h,
+          $is-button: true,
+          $force-no-expand: $force-no-expand,
+          $add-gradient: $add-gradient,
+          $expand--pad-h: $expand-pad-h,
+          $force-border-on: $force-border-on
+  );
+
+  @include gw-wrapNever();
+
+  & > .gw-action--inner > .gw-icon {
+    @include gw-icon($glyph);
+  }
+
+  @include gw-subMenu();
+}
+
+@mixin gw-button--panelIcon($glyph: null, $pad-v: $gw-app--buttons--pad-v-rem, $pad-h: $gw-app--buttons--pad-h-rem, $font-size: gw-emFixed(1), $hov-bg: $gw-app--menus--hover--bg, $hov-col: $gw-app--menus--hover--col, $bg: transparent,  $col: null, $disabled-bg: transparent, $disabled-col: $gw-app--buttons--disabled-bg, $is-square: false) {
+  @if($is-square) {
+    $pad-h: $pad-v;
+  }
+
+  @include gw-button--base($bg, $col, $pad-v, $pad-h, $disabled-bg: $disabled-bg, $disabled-col: $disabled-col);
+  @if ($glyph != null) {
+    .gw-icon {
+      @include gw-iconVerticalCenter($glyph, $font-size);
+    }
+  }
+
+  &:hover:not(.gw-disabled):not([disabled]) {
+    @include gw-button--colors($hov-bg, $hov-col);
+  }
+}
+
+@mixin gw-link($col: $gw-app--links--col, $hovCol: $gw-app--links--hover--col, $pad-v: null, $pad-h: null, $disabled-col: $gw-app--links--disabled-col) {
+  &:not(.gw-mini-button):not(.gw-big-button) {
+    cursor: pointer;
+    padding: $pad-v $pad-h;
+    color: $col;
+    &:hover {
+      color: $hovCol;
+      @if ($gw-app--links--underline-on-hover) {
+        text-decoration: underline;
+      }
+    }
+
+    outline-offset: gw-pxFixed($gw-app--links--outline-offset-px);
+    position: relative;
+    @include gw-disabled(transparent, $disabled-col);
+  }
+}
+
+@mixin gw-actionableText() {
+  &.gw-actionable {
+    cursor: pointer;
+  }
+  &.gw-readonly {
+    cursor: default;
+  }
+}

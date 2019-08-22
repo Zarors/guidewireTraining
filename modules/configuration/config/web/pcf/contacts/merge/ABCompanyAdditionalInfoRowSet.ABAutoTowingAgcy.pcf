@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ABCompanyAdditionalInfoRowSet"
+    mode="ABAutoTowingAgcy">
+    <Require
+      name="contact"
+      type="ABCompany"/>
+    <Require
+      name="duplicate"
+      type="ABCompany"/>
+    <Require
+      name="merged"
+      type="ABCompany"/>
+    <Variable
+      initialValue="{contact, duplicate, merged}"
+      name="contacts"
+      type="ABCompany[]"/>
+    <Row>
+      <TextCell
+        bold="true"
+        colspan="4"
+        id="additionalInfo"
+        value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.AdditionalInfo&quot;)"/>
+    </Row>
+    <Row>
+      <TextCell
+        id="autoTowingLicenseLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.AutoTowingAgcy.BusinessLicense&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="autoTowingLicense"
+        value="contacts"
+        valueType="entity.ABCompany[]">
+        <TextCell
+          editable="aContact == merged"
+          id="autoTowingLicense"
+          value="(aContact as ABAutoTowingAgcy).AutoTowingLicense"/>
+      </CellIterator>
+    </Row>
+  </RowSet>
+</PCF>

@@ -1,0 +1,27 @@
+package rules.Validation.ABContactValidationRules_dir.DefaultValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Require Past DOB")
+internal class RequirePastDOB {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return (aBContact typeis ABPerson) and (aBContact.DateOfBirth) != null
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// Require that the DateOfBirth, if specified, is in the past.
+
+if (gw.api.util.DateUtil.compareIgnoreTime(
+    (aBContact as ABPerson).DateOfBirth,
+    gw.api.util.DateUtil.currentDate() ) > 0)
+  aBContact.reject( TC_LOADSAVE, DisplayKey.get("Rules.Validation.ABContact.DateOfBirthInPast"), null, null )
+/*end00rule*/
+
+  }
+}

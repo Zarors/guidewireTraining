@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="AssignmentSearchInputSet">
+    <Require
+      name="assignmentSearchTypes"
+      type="AssignmentSearchType[]"/>
+    <Require
+      name="searchResult"
+      type="gw.api.assignment.AssignmentSearchResult"/>
+    <Require
+      name="searchCriteria"
+      type="gw.api.assignment.AssignmentSearchCriteria"/>
+    <RangeInput
+      editable="assignmentSearchTypes.length &gt; 1"
+      id="SearchFor"
+      label="DisplayKey.get(&quot;Web.Assignment.Search.SearchFor&quot;)"
+      value="searchCriteria.SearchType"
+      valueRange="assignmentSearchTypes"
+      valueType="typekey.AssignmentSearchType">
+      <PostOnChange
+        onChange="if (searchResult != null) { searchResult.clear() }"/>
+    </RangeInput>
+    <TextInput
+      editable="true"
+      id="Username"
+      label="DisplayKey.get(&quot;Web.Assignment.Search.Username&quot;)"
+      value="searchCriteria.UserCriteria.Username"
+      visible="searchCriteria.SearchType == TC_USER"/>
+    <InputSetRef
+      def="PLNameInputSet(new gw.api.name.UserSearchNameOwner(searchCriteria.UserCriteria.Contact))"
+      editable="true"
+      mode="&quot;Person&quot;"
+      visible="searchCriteria.SearchType == TC_USER"/>
+    <TextInput
+      editable="true"
+      id="GroupCriteriaName"
+      label="gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP ? DisplayKey.get(&quot;Web.Assignment.Search.GroupNamePhonetic&quot;) : DisplayKey.get(&quot;Web.Assignment.Search.GroupName&quot;)"
+      value="searchCriteria.GroupCriteria.GroupName"
+      visible="searchCriteria.SearchType == TC_GROUP"/>
+    <TextInput
+      editable="true"
+      id="GroupCriteriaNameKanji"
+      label="DisplayKey.get(&quot;Web.Assignment.Search.GroupName&quot;)"
+      value="(searchCriteria.GroupCriteria as GroupSearchCriteria).GroupNameKanji"
+      visible="searchCriteria.SearchType == TC_GROUP and gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP"/>
+    <TextInput
+      editable="true"
+      id="GroupName"
+      label="(gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP) ? DisplayKey.get(&quot;Web.Assignment.Search.GroupNamePhonetic&quot;) : DisplayKey.get(&quot;Web.Assignment.Search.GroupName&quot;)"
+      value="searchCriteria.QueueCriteria.QueueGroupName"
+      visible="searchCriteria.SearchType == TC_QUEUE"/>
+    <TextInput
+      editable="true"
+      id="GroupNameKanji"
+      label="DisplayKey.get(&quot;Web.Assignment.Search.GroupName&quot;)"
+      value="searchCriteria.QueueCriteria.QueueGroupNameKanji"
+      visible="searchCriteria.SearchType == TC_QUEUE and gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP"/>
+    <TextInput
+      editable="true"
+      id="QueueName"
+      label="DisplayKey.get(&quot;Web.Assignment.Search.QueueName&quot;)"
+      value="searchCriteria.QueueCriteria.QueueName"
+      visible="searchCriteria.SearchType == TC_QUEUE"/>
+  </InputSet>
+</PCF>

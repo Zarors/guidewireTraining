@@ -1,0 +1,1587 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Dan Gordon</Author>
+  <LastAuthor>Guidewire</LastAuthor>
+  <Revision>1</Revision>
+  <TotalTime>0</TotalTime>
+  <LastPrinted>2003-10-01T19:57:39Z</LastPrinted>
+  <Created>2003-06-30T22:39:25Z</Created>
+  <LastSaved>2017-04-14T18:32:47Z</LastSaved>
+  <Version>15.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>10560</WindowHeight>
+  <WindowWidth>23040</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Font ss:FontName="Arial" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s63">
+   <Borders/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s64">
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Bold="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s67">
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s68">
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s69">
+   <Borders/>
+  </Style>
+  <Style ss:ID="s70">
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s71">
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+ </Styles>
+ <Names>
+  <NamedRange ss:Name="autoglass" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="autorental" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="autorepair" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="closeownclaim" ss:RefersTo="=roleprivileges!#REF!"/>
+  <NamedRange ss:Name="independentautoinspector" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="independentpropertyinspector" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="towingservice" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="vehiclecollision" ss:RefersTo="=#REF!"/>
+  <NamedRange ss:Name="viewfinsum" ss:RefersTo="=roleprivileges!#REF!"/>
+  <NamedRange ss:Name="viewtransactions" ss:RefersTo="=roleprivileges!#REF!"/>
+ </Names>
+ <Worksheet ss:Name="activity-patterns">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="13.2">
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">DUMMY WORKSHEET - DO NOT DELETE</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>16</ActiveRow>
+     <ActiveCol>9</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="roleprivileges">
+  <Names>
+   <NamedRange ss:Name="Print_Area" ss:RefersTo="=roleprivileges!#REF!"/>
+  </Names>
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="188" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s63" ss:DefaultRowHeight="13.2">
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="75"/>
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="42.6"/>
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="82.8"/>
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="120.60000000000001"/>
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="100.8"/>
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="114.6"/>
+   <Row>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">type</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">data-set</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">entityid</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">permission</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">role</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:0</Data></Cell>
+    <Cell><Data ss:Type="String">abcreate</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:1</Data></Cell>
+    <Cell><Data ss:Type="String">abcreatepref</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:2</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abdelete</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:3</Data></Cell>
+    <Cell><Data ss:Type="String">abdeletepref</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:4</Data></Cell>
+    <Cell><Data ss:Type="String">abedit</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:5</Data></Cell>
+    <Cell><Data ss:Type="String">abeditpref</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:6</Data></Cell>
+    <Cell><Data ss:Type="String">abview</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:7</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abviewsearch</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:8</Data></Cell>
+    <Cell><Data ss:Type="String">anytagcreate</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:9</Data></Cell>
+    <Cell><Data ss:Type="String">anytagdelete</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:10</Data></Cell>
+    <Cell><Data ss:Type="String">anytagedit</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:11</Data></Cell>
+    <Cell><Data ss:Type="String">anytagview</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:12</Data></Cell>
+    <Cell><Data ss:Type="String">clientapp</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:13</Data></Cell>
+    <Cell><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:14</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abcreate</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:15</Data></Cell>
+    <Cell><Data ss:Type="String">abcreatepref</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:16</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abdelete</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:17</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abdeletepref</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:18</Data></Cell>
+    <Cell><Data ss:Type="String">abedit</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:19</Data></Cell>
+    <Cell><Data ss:Type="String">abeditpref</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:20</Data></Cell>
+    <Cell><Data ss:Type="String">abview</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">default_data:21</Data></Cell>
+    <Cell><Data ss:Type="String">abviewmerge</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">default_data:22</Data></Cell>
+    <Cell><Data ss:Type="String">abviewpending</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:23</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abviewsearch</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:24</Data></Cell>
+    <Cell><Data ss:Type="String">anytagcreate</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:25</Data></Cell>
+    <Cell><Data ss:Type="String">anytagdelete</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:26</Data></Cell>
+    <Cell><Data ss:Type="String">anytagedit</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:27</Data></Cell>
+    <Cell><Data ss:Type="String">anytagview</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:28</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:29</Data></Cell>
+    <Cell><Data ss:Type="String">abview</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_viewer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:30</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abviewsearch</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_viewer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:31</Data></Cell>
+    <Cell><Data ss:Type="String">anytagview</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_viewer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:32</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">contact_viewer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:33</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">ruleadmin</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">rule_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:34</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">rule_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:35</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abcreate</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:36</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abcreatepref</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:37</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:38</Data></Cell>
+    <Cell><Data ss:Type="String">abdeletepref</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:39</Data></Cell>
+    <Cell><Data ss:Type="String">abedit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:40</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abeditpref</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:41</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">default_data:42</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abviewmerge</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">default_data:43</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">abviewpending</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:44</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">abviewsearch</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:45</Data></Cell>
+    <Cell><Data ss:Type="String">anytagcreate</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:46</Data></Cell>
+    <Cell><Data ss:Type="String">anytagdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:47</Data></Cell>
+    <Cell><Data ss:Type="String">anytagedit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:48</Data></Cell>
+    <Cell><Data ss:Type="String">anytagview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:49</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">archive</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:50</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">attrmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:51</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">attrview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:52</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">buswkmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:53</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">buswkview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:54</Data></Cell>
+    <Cell><Data ss:Type="String">clientapp</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:55</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">debugtools</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:56</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">docedit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:57</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">docview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:58</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">eventmessageview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:59</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupcreate</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:60</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:61</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupedit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:62</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">grouptreeview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:63</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:64</Data></Cell>
+    <Cell><Data ss:Type="String">holidaymanage</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:65</Data></Cell>
+    <Cell><Data ss:Type="String">holidayview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:66</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">integadmin</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:67</Data></Cell>
+    <Cell><Data ss:Type="String">internaltools</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:68</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">noteview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:69</Data></Cell>
+    <Cell><Data ss:Type="String">orgcreate</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:70</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">orgdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:71</Data></Cell>
+    <Cell><Data ss:Type="String">orgeditbasic</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:72</Data></Cell>
+    <Cell><Data ss:Type="String">orgsearch</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:73</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">orgviewbasic</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:74</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">purge</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:75</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">regionmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:76</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">regionview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:77</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">resyncmessage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:78</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">retrymessage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:79</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">revsumviewdetail</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:80</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">revsumviewlist</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:81</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">rolemanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:82</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">roleview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:83</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">ruleadmin</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:84</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">scrprmmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:85</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">scrprmview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:86</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">seczonemanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:87</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">skipmessage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:88</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">soapadmin</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:89</Data></Cell>
+    <Cell><Data ss:Type="String">toolsbatchprocessedit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:90</Data></Cell>
+    <Cell><Data ss:Type="String">toolsbatchprocessview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:91</Data></Cell>
+    <Cell><Data ss:Type="String">toolsCacheinfoview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:92</Data></Cell>
+    <Cell><Data ss:Type="String">toolsclusteredit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:93</Data></Cell>
+    <Cell><Data ss:Type="String">toolsclusterview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:94</Data></Cell>
+    <Cell><Data ss:Type="String">toolsinfoview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:95</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">toolsJMXBeansEdit</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:96</Data></Cell>
+    <Cell><Data ss:Type="String">toolsJMXBeansview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:97</Data></Cell>
+    <Cell><Data ss:Type="String">toolsjprofileredit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:98</Data></Cell>
+    <Cell><Data ss:Type="String">toolslogedit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:99</Data></Cell>
+    <Cell><Data ss:Type="String">toolslogview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:100</Data></Cell>
+    <Cell><Data ss:Type="String">toolsPluginedit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:101</Data></Cell>
+    <Cell><Data ss:Type="String">toolsPluginview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:102</Data></Cell>
+    <Cell><Data ss:Type="String">toolsprofileredit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:103</Data></Cell>
+    <Cell><Data ss:Type="String">toolsprofilerview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:104</Data></Cell>
+    <Cell><Data ss:Type="String">toolsworkqueueedit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:105</Data></Cell>
+    <Cell><Data ss:Type="String">toolsworkqueueview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:106</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usercreate</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:107</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">userdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:108</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">useredit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:109</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usereditattrs</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:110</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:111</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usergrantroles</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:112</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">userview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:113</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">userviewall</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:114</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">workflowmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:115</Data></Cell>
+    <Cell><Data ss:Type="String">workflowview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:116</Data></Cell>
+    <Cell><Data ss:Type="String">zonemanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:117</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">zoneview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:118</Data></Cell>
+    <Cell><Data ss:Type="String">toolsbatchprocessview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:119</Data></Cell>
+    <Cell><Data ss:Type="String">toolsCacheinfoview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:120</Data></Cell>
+    <Cell><Data ss:Type="String">toolsclusterview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:121</Data></Cell>
+    <Cell><Data ss:Type="String">toolsinfoview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:122</Data></Cell>
+    <Cell><Data ss:Type="String">toolsJMXBeansview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:123</Data></Cell>
+    <Cell><Data ss:Type="String">toolslogview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:124</Data></Cell>
+    <Cell><Data ss:Type="String">toolsPluginview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:125</Data></Cell>
+    <Cell><Data ss:Type="String">toolsprofilerview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:126</Data></Cell>
+    <Cell><Data ss:Type="String">toolsworkqueueview</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:127</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">attrmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:128</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">attrview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:129</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">debugtools</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:130</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">eventmessageview</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:131</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupcreate</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:132</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:133</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupedit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:134</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">grouptreeview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:135</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">groupview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:136</Data></Cell>
+    <Cell><Data ss:Type="String">holidaymanage</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:137</Data></Cell>
+    <Cell><Data ss:Type="String">holidayview</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:138</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">regionmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:139</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">regionview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:140</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">resyncmessage</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:141</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">retrymessage</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:142</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">rolemanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:143</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">roleview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:144</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">scrprmmanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:145</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">scrprmview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:146</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">seczonemanage</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:147</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">skipmessage</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:148</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">soapadmin</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:149</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usercreate</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:150</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">userdelete</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:151</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">useredit</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:152</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usereditattrs</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:153</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:154</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">usergrantroles</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:155</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">userview</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">user_admin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:156</Data></Cell>
+    <Cell><Data ss:Type="String">admindatachangeview</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:157</Data></Cell>
+    <Cell><Data ss:Type="String">wsdatachangeedit</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:158</Data></Cell>
+    <Cell><Data ss:Type="String">admindatachangeexec</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:159</Data></Cell>
+    <Cell><Data ss:Type="String">changecontactsubtype</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:160</Data></Cell>
+    <Cell><Data ss:Type="String">changecontactsubtype</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">contact_subtype</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:161</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">soapadmin</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">contact_subtype</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:162</Data></Cell>
+    <Cell><Data ss:Type="String">docdelete</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:163</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">docview</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:164</Data></Cell>
+    <Cell><Data ss:Type="String">docedit</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:165</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">docdelete</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:166</Data></Cell>
+    <Cell><Data ss:Type="String">docview</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:167</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">docedit</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:168</Data></Cell>
+    <Cell><Data ss:Type="String">docdelete</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">default_data:169</Data></Cell>
+    <Cell><Data ss:Type="String">doccreate</Data></Cell>
+    <Cell><Data ss:Type="String">contact_manager</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:170</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">doccreate</Data></Cell>
+    <Cell><Data ss:Type="String">client_app</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:171</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">doccreate</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:172</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">editobfuscatedusercontact</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:173</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">editobfuscatedusercontact</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:174</Data></Cell>
+    <Cell><Data ss:Type="String">useredit</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:175</Data></Cell>
+    <Cell><Data ss:Type="String">usereditattrs</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:176</Data></Cell>
+    <Cell><Data ss:Type="String">usereditlang</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:177</Data></Cell>
+    <Cell><Data ss:Type="String">usergrantroles</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:178</Data></Cell>
+    <Cell><Data ss:Type="String">userview</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:179</Data></Cell>
+    <Cell><Data ss:Type="String">userviewall</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:180</Data></Cell>
+    <Cell><Data ss:Type="String">groupcreate</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:181</Data></Cell>
+    <Cell><Data ss:Type="String">groupdelete</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:182</Data></Cell>
+    <Cell><Data ss:Type="String">groupedit</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:183</Data></Cell>
+    <Cell><Data ss:Type="String">grouptreeview</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:184</Data></Cell>
+    <Cell><Data ss:Type="String">groupview</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:185</Data></Cell>
+    <Cell><Data ss:Type="String">requestcontactdestruction</Data></Cell>
+    <Cell><Data ss:Type="String">superuser</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">RolePrivilege</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">default_data:186</Data></Cell>
+    <Cell><Data ss:Type="String">requestcontactdestruction</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <PageMargins x:Bottom="0.78749999999999998" x:Left="0.78749999999999998"
+     x:Right="0.78749999999999998" x:Top="0.78749999999999998"/>
+   </PageSetup>
+   <Print>
+    <FitHeight>0</FitHeight>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <Selected/>
+   <TopRowVisible>156</TopRowVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>168</ActiveRow>
+     <ActiveCol>4</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="roles">
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="11" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="13.2">
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="181.79999999999998"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="42.6"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="158.4"/>
+   <Column ss:StyleID="s69" ss:Width="225"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="126"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="99.6"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="291"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="123.6"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="130.80000000000001"/>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Roles</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999" ss:StyleID="s70">
+    <Cell><Data ss:Type="String">type</Data></Cell>
+    <Cell><Data ss:Type="String">data-set</Data></Cell>
+    <Cell><Data ss:Type="String">entityid</Data></Cell>
+    <Cell><Data ss:Type="String">description</Data></Cell>
+    <Cell><Data ss:Type="String">name</Data></Cell>
+    <Cell><Data ss:Type="String">carrierinternalrole</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">rule_admin</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Description.Rule_Admin}</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Name.Rule_Admin}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999" ss:StyleID="s63">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Role</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">superuser</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">${AdminData.Role.Description.All_Permissions}</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">${AdminData.Role.Name.All_Permissions}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">user_admin</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Description.User_Admin}</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Name.User_Admin}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_viewer</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">${AdminData.Role.Description.Contact_Viewer}</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">${AdminData.Role.Name.Contact_Viewer}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">contact_manager</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">${AdminData.Role.Description.Contact_Manager}</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">${AdminData.Role.Name.Contact_Manager}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">client_app</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">${AdminData.Role.Description.Client_App}</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">${AdminData.Role.Name.Client_App}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.049999999999999">
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">toolview</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Description.Toolview}</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Name.Toolview}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Role</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">contact_subtype</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Description.Contact_Subtype}</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Name.Contact_Subtype}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Role</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="Number">0</Data></Cell>
+    <Cell><Data ss:Type="String">data_protection_officer</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Description.Data_Protection_Officer}</Data></Cell>
+    <Cell><Data ss:Type="String">${AdminData.Role.Name.Data_Protection_Officer}</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">true</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <PageMargins x:Bottom="0.78749999999999998" x:Left="0.78749999999999998"
+     x:Right="0.78749999999999998" x:Top="0.78749999999999998"/>
+   </PageSetup>
+   <Print>
+    <FitHeight>0</FitHeight>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <LeftColumnVisible>2</LeftColumnVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>13</ActiveRow>
+     <ActiveCol>3</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <Sorting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Sort>entityid</Sort>
+  </Sorting>
+ </Worksheet>
+</Workbook>

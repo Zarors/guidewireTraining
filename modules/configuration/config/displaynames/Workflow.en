@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Entity
+  name="Workflow">
+  <Columns>
+    <Column
+      beanPath="Workflow.Subtype"
+      name="subType"/>
+    <Column
+      beanPath="Workflow.PublicID"
+      name="id"/>
+  </Columns>
+  <DisplayName><![CDATA[
+    subType + "-" + id
+  ]]></DisplayName>
+</Entity>

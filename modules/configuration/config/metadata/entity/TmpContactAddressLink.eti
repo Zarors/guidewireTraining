@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Temporary table for linking new addresses to their contacts."
+  entity="TmpContactAddressLink"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="tmpContactAddressLink"
+  temporary="true"
+  type="keyable">
+  <column
+    desc="Address to which this entry's contact links."
+    name="TempAddressID"
+    nullok="false"
+    type="softentityreference"/>
+</entity>

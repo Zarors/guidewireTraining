@@ -1,0 +1,25 @@
+# This file can include two sorts of things: type names and static method invocations.
+# Note that comment lines (like this one) start with a # character
+#
+# The type names can currently be either Gosu or Java types.   They must be the fully-qualified
+# name of the type. Java types listed here will simply cause the associated Class to be loaded.  
+# Gosu types listed here will be parsed and compiled down to bytecode, along with all blocks and 
+# inner classes of that type.  To populate the list of types, the recommended approach is to
+# do whatever actions you need to via the UI, then go and visit the "Loaded Gosu Classes"
+# page in the UI (under Internal Tools) and copy and paste the list here.  The next time you
+# start the server, those types will be compiled on startup, which should make the initial usage
+# of those actions faster.
+#
+# Static method invocations have the syntax type#method.  The method being referenced must be
+# a static, no-arg method, and the method can be on either a Java or Gosu type.  Out of the box,
+# some actions are included on the gw.api.startup.PreloadActions class.  For example, to cause all
+# Gosu types to be loaded from disk, you can use:
+#   gw.api.startup.PreloadActions#headerCompileAllGosuClasses
+# You're free, of course, to add in your own static methods to use in this fashion. 
+
+# Actions
+# gw.api.startup.PreloadActions#headerCompileAllGosuClasses
+# gw.api.startup.PreloadActions#loadAllSOAPTypeNames
+# gw.api.startup.PreloadActions#loadAllPCFTypes
+
+# Types

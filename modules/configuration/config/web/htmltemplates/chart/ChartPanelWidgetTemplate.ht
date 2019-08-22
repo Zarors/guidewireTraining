@@ -1,0 +1,9 @@
+<div class="gw-chart">
+  <div class="gw-chart-title">${title}</div>
+  <div class="gw-chart-legend ${hasDualLegend ? 'gw-chart-legend-dual'}" style="?{legendWidth}width:${legendWidth}%">
+    <div class="gw-chart-legend-left"></div>
+    <div class="gw-chart-legend-right"></div>
+  </div>
+  <svg></svg>
+</div>
+<input type="hidden" data-gw-chart-id="${renderId}" data-gw-chart-spec="${chartJson}" data-gw-chart-should-render>

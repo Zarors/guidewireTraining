@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="PhoneAndAddressesDV"
+    mode="ABCompany|ABCompanyVendor|ABAutoRepairShop|ABAutoScrapYard_Ext|ABAutoTowingAgcy|ABLawFirm|ABMedicalCareOrg|ABPolicyCompany">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        id="Phone"
+        label="DisplayKey.get(&quot;Training.PhoneNumbers&quot;)"/>
+      <InputSetRef
+        def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(anABContact, ABContact#WorkPhone), DisplayKey.get(&quot;Web.ContactDetail.Phone.Work&quot;), false))"
+        id="WorkPhone"/>
+      <InputSetRef
+        def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(anABContact, ABContact#FaxPhone), DisplayKey.get(&quot;Web.ContactDetail.Phone.Fax&quot;), false))"
+        id="FaxPhone"/>
+      <Label
+        id="PrimaryAddress"
+        label="DisplayKey.get(&quot;Training.PrimaryAddress&quot;)"/>
+      <InputSetRef
+        def="AddressOwnerInputSet(anABContact.AddressOwner, true)"
+        id="BasicAddressInputSet"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

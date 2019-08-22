@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.accountcontactrolemodel">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.contactmodel" schemaLocation="ContactModel.xsd"/>
+  <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.accountcontactrolemodel" name="AccountContactRole" nillable="true" type="AccountContactRole"/>
+  <xs:complexType name="AccountContactRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entity-Driver" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.util.Date" minOccurs="0" name="DateCompletedTrainingClass" nillable="true" type="xs:dateTime"/>
+            <xs:element gw:type="java.lang.Boolean" minOccurs="0" name="GoodDriverDiscount" nillable="true" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="NumberofAccidents" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="NumberofViolations" nillable="true" type="xs:string"/>
+            <xs:element gw:type="java.lang.Boolean" minOccurs="0" name="Student" nillable="true" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="TrainingClassType" nillable="true" type="xs:string"/>
+            <xs:element gw:type="java.lang.Integer" minOccurs="0" name="YearLicensed" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="entity-NamedInsured" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="BusOpsDescription" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IndustryCode" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element gw:type="java.lang.String" minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="OrgType" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="entity-OwnerOfficer" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RelationshipTitle" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AccountContact" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.contactmodel" minOccurs="0" name="Contact" nillable="true" type="Contact"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Subtype" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

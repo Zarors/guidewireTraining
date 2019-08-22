@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="History of Gosu servlet calls"
+  entity="GosuServletCallHistory"
+  platform="true"
+  supertype="InboundHistory">
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.profiler.impl.GosuServletCallHistoryImpl"/>
+  <column
+    desc="The name of the server receiving the request."
+    name="ServerName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The name of the Gosu servlet."
+    name="GosuServletType"
+    nullok="false"
+    type="shorttext"/>
+  <events/>
+</subtype>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<AddressConfig xmlns="http://guidewire.com/address-config">
+  <AddressDef name="CA">
+    <Match>
+      <Field name="Country" value="CA"/>
+    </Match>
+    <Fields>
+      <Field name="City" zonecode="city">
+        <AutoFillFromZone code="postalcode"/>
+        <AutoFillFromZone code="province"/>
+      </Field>
+      <Field name="State" zonecode="province">
+        <AutoFillFromZone code="postalcode"/>
+        <AutoFillFromZone code="city"/>
+      </Field>
+      <Field name="PostalCode" zonecode="postalcode" autoCompleteTriggerChars="2">
+        <AutoFillFromZone code="city"/>
+        <AutoFillFromZone code="province"/>
+        <ValidatorDef description="Validator.PostalCode.CA" input-mask="### ###" value="[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]"/>
+      </Field>
+    </Fields>
+  </AddressDef>
+
+</AddressConfig>

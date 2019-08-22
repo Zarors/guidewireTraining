@@ -1,0 +1,81 @@
+
+// ========= Inputs ==========
+$gw-app--DateValue--date-input-min-width-em: gw-emFixed(7) !default;
+$gw-app--DateValue--time-input-min-width-em: gw-emFixed(6) !default;
+$gw-app--DateValue--date-input-max-width-em: null !default;
+$gw-app--DateValue--time-input-max-width-em: gw-emFixed(6) !default;
+
+$gw-app--DateValue--JIC-max-width-em: null !default;
+$gw-app--DateValue--JIC-era-input-min-width-em: gw-emFixed(7) !default;
+$gw-app--DateValue--JIC-date-input-min-width-em: gw-emFixed(7) !default;
+$gw-app--DateValue--JIC-time-input-min-width-em: gw-emFixed(6) !default;
+$gw-app--DateValue--JIC-era-input-max-width-em: gw-emFixed(7) !default;
+$gw-app--DateValue--JIC-date-input-max-width-em: null !default;
+$gw-app--DateValue--JIC-time-input-max-width-em: gw-emFixed(7) !default;
+
+$gw-app--DateValue--ampm-width-em: gw-emFixed(2.6) !default;
+
+// ================= Pickers =================
+$gw-app--DateValue--use-compact-pickers: true !default;
+$gw-app--DateValue--date-picker--padding-px: gw-pxFixed(2) !default;
+$gw-app--DateValue--date-picker--calendar-margin-top-px: $gw-app--DateValue--date-picker--padding-px !default;
+$gw-app--DateValue--date-picker--button-margins-px: $gw-app--DateValue--date-picker--padding-px !default;
+$gw-app--DateValue--date-picker--margin-v-px: $gw-app--border-width-px !default;
+$gw-app--DateValue--date-picker--select-custom-pad-v-rem: $gw-app--buttons--pad-v-rem + (.25 / gw-applicationBaseFontSizeStripped());
+
+$gw-app--DateValue--date-picker--shadow: 0 0 #{gw-pxFixed(6)} #{gw-pxFixed(1)} $gw-app--palette--shadow-col !default;
+$gw-app--DateValue--date-picker--bg: $gw-app--section-primary--bg !default;
+$gw-app--DateValue--date-picker--col: $gw-app--col !default;
+
+// ================ Date Picker ===============
+$gw-app--DateValue--date-picker--month-prev-glyph: "caret-left-solid" !default;
+$gw-app--DateValue--date-picker--month-next-glyph: "caret-right-solid" !default;
+$gw-app--DateValue--date-picker--month-prev-next-are-secondary: true !default;
+$gw-app--DateValue--date-picker--month-prev-next-col: null !default;
+$gw-app--DateValue--date-picker--month-prev-next-hover-bg: null !default;
+
+$gw-app--DateValue--date-picker--cell-border-col: $gw-app--border--col !default;
+
+$gw-app--DateValue--date-picker--cell-header-weight: gw-weight(bold) !default;
+$gw-app--DateValue--date-picker--cell-header-color: $gw-app--col !default;
+$gw-app--DateValue--date-picker--cell-header-bg: $gw-app--section-primary--bg !default;
+$gw-app--DateValue--date-picker--cell-header-height-em: null !default;
+
+$gw-app--DateValue--date-picker--cell-hover-bg: $gw-app--buttons--hover--bg !default;
+$gw-app--DateValue--date-picker--cell-hover-col: $gw-app--buttons--hover--col !default;
+
+$gw-app--DateValue--date-picker--cell-standard-day-bg: $gw-app--bg !default;
+$gw-app--DateValue--date-picker--cell-standard-day-col: $gw-app--col !default;
+
+$gw-app--DateValue--date-picker--cell-other-month--bg: $gw-app--buttons--disabled-bg !default;
+$gw-app--DateValue--date-picker--cell-other-month--col: $gw-app--buttons--disabled-col !default;
+
+$gw-app--DateValue--date-picker--cell-inputted-value-day-bg: null !default;
+$gw-app--DateValue--date-picker--cell-inputted-value-day-col: null !default;
+$gw-app--DateValue--date-picker--cell-inputted-value-day-weight: null !default;
+
+$gw-app--DateValue--date-picker--cell-today-bg: $gw-app--palette--left-nav--bg !default;
+$gw-app--DateValue--date-picker--cell-today-col: $gw-app--palette--left-nav--col !default;
+
+$gw-app--DateValue--date-picker--footer-top-margin-px: $gw-app--DateValue--date-picker--padding-px !default;
+
+$gw-app--DateValue--date-picker--cell-keyboard-nav-border-col: $gw-app--default-focus-outline-col !default;
+$gw-app--DateValue--date-picker--cell-vertical-align: top !default;
+
+$gw-app--DateValue--date-picker--use-icons: true !default;
+$gw-app--DateValue--date-picker--today-glyph: "calendar-light" !default;
+$gw-app--DateValue--date-picker--current-glyph: "bullseye" !default;
+
+$gw-app--DateValue--date-picker--cell-font-size-em: gw-emFixed(.9) !default;
+$gw-app--DateValue--date-picker--cell-width-em: gw-emFixed(3) !default;
+$gw-app--DateValue--date-picker--cell-height-em: gw-emFixed(3) !default;
+
+$gw-app--DateValue--date-picker--small-cell--width-em: gw-emFixed(1.8) !default;
+$gw-app--DateValue--date-picker--small-cell--height-em: gw-emFixed(1.8) !default;
+$gw-app--DateValue--date-picker--small--font-size-em: gw-emFixed(.9) !default;
+
+// ================= Time Picker =========
+$gw-app--DateValue--midnight-time-glyph: "fast-forward-solid" !default;
+$gw-app--DateValue--accept-time-glyph: "check-solid" !default;
+$gw-app--DateValue--restore-time-glyph: "undo-solid" !default;
+$gw-app--DateValue--current-time-glyph: "clock" !default;

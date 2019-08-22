@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="GroupSearchResultsLV">
+    <Require
+      name="GroupList"
+      type="gw.api.database.IQueryBeanResult&lt;Group&gt;"/>
+    <RowIterator
+      appendPageInfo="true"
+      editable="false"
+      elementName="Group"
+      value="GroupList"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.Group&gt;">
+      <Row>
+        <GroupCell
+          action="GroupDetailPopup.push(Group)"
+          id="Name"
+          label="DisplayKey.get(&quot;Web.Admin.GroupSearchResults.Name&quot;)"
+          sortBy="Group.Name"
+          sortOrder="1"
+          value="Group"/>
+        <GroupCell
+          id="ParentGroup"
+          label="DisplayKey.get(&quot;Web.Admin.GroupSearchResults.ParentGroup&quot;)"
+          sortBy="Group.Parent.Name"
+          value="Group.Parent"/>
+        <TypeKeyCell
+          id="Type"
+          label="DisplayKey.get(&quot;Web.Admin.GroupSearchResults.Type&quot;)"
+          value="Group.GroupType"
+          valueType="typekey.GroupType"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

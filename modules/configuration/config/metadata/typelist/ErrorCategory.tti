@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of error for messages that are in error"
+  final="false"
+  name="ErrorCategory"
+  platform="true"/>

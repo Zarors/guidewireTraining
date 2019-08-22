@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="RoleDetailScreen">
+    <Require
+      name="Role"
+      type="Role"/>
+    <Toolbar>
+      <EditButtons
+        editVisible="perm.Role.edit or perm.User.grantroles"/>
+    </Toolbar>
+    <CardViewPanel>
+      <Card
+        id="RoleDetail_RolesCard"
+        shortcut="B"
+        title="DisplayKey.get(&quot;Web.Admin.RoleDetail.Screen.Basics&quot;)">
+        <PanelRef
+          def="RoleDetailDV(Role)"
+          editable="perm.Role.edit"/>
+        <PanelRef
+          def="LocalizedValuesDV(Role, { &quot;Name&quot;, &quot;Description&quot;}, { DisplayKey.get(&quot;Web.Admin.RoleDetailDV.Name&quot;), DisplayKey.get(&quot;Web.Admin.RoleDetailDV.Description&quot;)})"/>
+      </Card>
+      <Card
+        id="RoleDetail_UserCard"
+        shortcut="R"
+        title="DisplayKey.get(&quot;Web.Admin.RoleDetail.Screen.Users&quot;)">
+        <PanelRef
+          def="RoleUsersLV(Role)"
+          editable="perm.User.grantroles">
+          <Toolbar>
+            <IteratorButtons
+              iterator="RoleUsersLV.RoleUsersLV"/>
+          </Toolbar>
+        </PanelRef>
+      </Card>
+    </CardViewPanel>
+  </Screen>
+</PCF>

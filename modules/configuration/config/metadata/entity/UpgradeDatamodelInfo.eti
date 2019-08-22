@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Capture info at time of each deployment"
+  entity="UpgradeDatamodelInfo"
+  extendable="false"
+  final="true"
+  instrumentationtable="true"
+  platform="true"
+  table="upgradedatamodelinfo"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.commons.metadata.internal.version.MetadataVersionProvider"
+    impl="com.guidewire.pl.domain.archiving.impl.UpgradeDatamodelInfoImpl"/>
+  <column
+    desc="Platform Major Schema Version at time of deployment"
+    name="PlatformMajorVers"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Platform Minor Schema Version at time of deployment"
+    name="PlatformMinorVers"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Application Major Schema Version at time of deployment"
+    name="ApplicationMajorVers"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Application Minor Schema Version at time of deployment"
+    name="ApplicationMinorVers"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Extensions Version at time of deployment"
+    name="ExtensionsVers"
+    nullok="false"
+    type="integer"/>
+  <index
+    desc="Unique index across all version info"
+    name="datamodel"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="PlatformMajorVers"/>
+    <indexcol
+      keyposition="2"
+      name="PlatformMinorVers"/>
+    <indexcol
+      keyposition="3"
+      name="ApplicationMajorVers"/>
+    <indexcol
+      keyposition="4"
+      name="ApplicationMinorVers"/>
+    <indexcol
+      keyposition="5"
+      name="ExtensionsVers"/>
+  </index>
+</entity>

@@ -1,0 +1,3 @@
+<div class="gw-BulletPointTextValueWidget--inner">
+  <div class="gw-icon"></div><div class="gw-action" data-gw-click="${action}">${currentValue}</div>
+</div>

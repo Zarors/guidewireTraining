@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization
+   xmlns="http://guidewire.com/xml"
+   xmlns:tns="http://guidewire.com/xml"
+   xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+   xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <RuleTreeExport>
+    <rule
+       active="true"
+       entity-name="ABContact"
+       id="1"
+       name="Default Validation Rules"
+       rule-set-type="V"
+       stop-execution="false"
+       xsi:type="RuleNode">
+      <res-ctx length="0"/>
+      <condition>true</condition>
+      <action xsi:null="true"/>
+    </rule>
+    <children>
+      <RuleTreeExport>
+        <rule
+           active="false"
+           entity-name="ABContact"
+           id="2"
+           name="Require Phone Number"
+           rule-set-type="V"
+           stop-execution="false"
+           xsi:type="RuleNode">
+          <res-ctx length="0"/>
+          <condition>ABContact.WorkPhone == null &amp;&amp;
+ABContact.HomePhone == null &amp;&amp;
+ABContact.FaxPhone == null &amp;&amp;
+(!(ABContact typeis ABPerson) || ((ABContact as ABPerson).CellPhone == null))
+</condition>
+          <action>ABContact.reject( &quot;loadsave&quot;, &quot;Must specify at least one phone number&quot;, null, null )
+</action>
+        </rule>
+        <children/>
+      </RuleTreeExport>
+      <RuleTreeExport>
+        <rule
+           active="false"
+           entity-name="ABContact"
+           id="3"
+           name="Require Primary Number"
+           rule-set-type="V"
+           stop-execution="false"
+           xsi:type="RuleNode">
+          <res-ctx length="0"/>
+          <condition>ABContact.PrimaryPhone == null
+</condition>
+          <action>var count = 0;
+if (ABContact.WorkPhone != null)
+  count = count+1;
+if (ABContact.HomePhone != null)
+  count = count+1;
+if (ABContact.FaxPhone != null)
+  count = count+1;
+if ((ABContact typeis ABPerson) &amp;&amp; ((ABContact as ABPerson).CellPhone != null))
+  count = count+1;
+if (count &gt;= 2 )
+  ABContact.reject( &quot;loadsave&quot;, &quot;Please specify which phone number is primary&quot;, null, null )
+</action>
+        </rule>
+        <children/>
+      </RuleTreeExport>
+      <RuleTreeExport>
+        <rule
+           active="true"
+           entity-name="ABContact"
+           id="4"
+           name="Require Past DOB"
+           rule-set-type="V"
+           stop-execution="false"
+           xsi:type="RuleNode">
+          <res-ctx length="0"/>
+          <condition>(ABContact typeis ABPerson) and ((ABContact as ABPerson).DateOfBirth) != null</condition>
+          <action>
+// Require that the DateOfBirth, if specified, is in the past.
+
+if (gw.api.util.DateUtil.compareIgnoreTime(
+    (ABContact as ABPerson).DateOfBirth,
+    gw.api.util.DateUtil.currentDate() ) &gt; 0)
+  ABContact.reject( &quot;loadsave&quot;, &quot;Date of Birth must be in the past&quot;, null, null )
+</action>
+        </rule>
+        <children/>
+      </RuleTreeExport>
+    </children>
+  </RuleTreeExport>
+</serialization>

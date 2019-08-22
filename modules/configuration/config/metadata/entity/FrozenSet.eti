@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  entity="FrozenSet"
+  loadable="false"
+  platform="true"
+  table="frozenset"
+  type="keyable">
+  <column
+    name="FreezeTimestamp"
+    nullok="false"
+    type="datetime"/>
+  <column
+    name="Description"
+    type="shorttext"
+    nullok="false"/>
+</entity>

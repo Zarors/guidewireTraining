@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<extension
+        xmlns="http://guidewire.com/datamodel"
+        entityName="NameCriteria">
+    <column
+            desc="The company name, if searching for a company, in kanji.  Used only for Japanese names and will be null otherwise."
+            name="CompanyNameKanji"
+            nullok="true"
+            type="companyname"/>
+    <column
+            desc="The first name, if searching for a person, in kanji.  Used only for Japanese names and will be null otherwise."
+            name="FirstNameKanji"
+            nullok="true"
+            type="firstname"/>
+    <column
+            desc="The last name, if searching for a person, in kanji.  Used only for Japanese names and will be null otherwise."
+            name="LastNameKanji"
+            nullok="true"
+            type="lastname"/>
+    <column
+            desc="The last name or the first name in kanji.  Used only for Japanese names and will be null otherwise."
+            name="NameKanji"
+            nullok="true"
+            type="shorttext"/>
+</extension>

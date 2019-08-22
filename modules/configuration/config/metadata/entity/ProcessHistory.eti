@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Process run history"
+  entity="ProcessHistory"
+  exportable="false"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="processhistory"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.batchprocessing.impl.ProcessHistoryInternalMethods"
+    impl="com.guidewire.pl.domain.batchprocessing.impl.ProcessHistoryImpl"/>
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.batchprocessing.impl.ProcessHistoryImpl"/>
+  <typekey
+    desc="The process this entry refers to."
+    name="ProcessType"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <column
+    desc="The Id of the lease."
+    name="LeaseId"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="36"/>
+  </column>
+  <column
+    desc="Server id."
+    name="ServerId"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The date this process has been requested to start."
+    name="CreationDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="The date this process was actually started."
+    name="StartDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The date this process completed."
+    name="CompleteDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Whether or not the process ran to completion, or failed or was interrupted."
+    name="RanToCompletion"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="The total number of operations the process performed."
+    name="OpsPerformed"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="The number of operations that failed."
+    name="FailedOps"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Whether the failure was internal."
+    name="InternalFailure"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="If not successful, the reason the process failed."
+    name="FailureReason"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Return value."
+    name="ReturnValue"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Raw Profiler data"
+    name="ProfilerData"
+    nullok="true"
+    type="blob"/>
+  <column
+    default="false"
+    desc="Completion Notification Sent"
+    name="NotificationSent"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Whether this was a scheduled run"
+    name="Scheduled"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Short description of a run."
+    name="Description"
+    nullok="true"
+    type="shorttext"/>
+  <events/>
+  <index
+    desc="Index on ProcessType"
+    name="ProcessType"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ProcessType"/>
+    <indexcol
+      keyposition="2"
+      name="CreationDate"
+      sortascending="false"/>
+    <indexcol
+      keyposition="3"
+      name="ID"
+      sortascending="true"/>
+  </index>
+  <index
+    desc="Index on NotificationSent for ProcessCompletionMonitor"
+    name="NotificationSent">
+    <indexcol
+      keyposition="1"
+      name="NotificationSent"/>
+  </index>
+</entity>

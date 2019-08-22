@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="ABPersonVendorInputSet"
+    mode="ABPersonVendor|ABAttorney|ABDoctor">
+    <Require
+      name="person"
+      type="ABPerson"/>
+    <BooleanRadioInput
+      editable="perm.ABContact.createpreferred"
+      id="IsPreferredVendor"
+      label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.IsPreferredVendor&quot;)"
+      value="(person as ABPersonVendor).Preferred"/>
+    <InputDivider/>
+    <Label
+      label="DisplayKey.get(&quot;Web.ContactDetail.Phone&quot;)"/>
+    <ABContactInput
+      editable="true"
+      forceContactSubtype="entity.ABPerson"
+      id="PrimaryContact"
+      label="DisplayKey.get(&quot;Web.ContactDetail.PrimaryContact&quot;)"
+      newContactMenu="NewPersonOnlyPickerMenuItemSet"
+      parentContact="person"
+      value="person.PrimaryContact"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(person, ABContact#WorkPhone), DisplayKey.get(&quot;Web.ContactDetail.Phone.Work&quot;), false))"
+      editable="true"
+      id="Work"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(person,ABPerson#HomePhone), DisplayKey.get(&quot;Web.ContactDetail.Phone.Home&quot;), false))"
+      editable="true"
+      id="Home"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(person, ABPerson#CellPhone), DisplayKey.get(&quot;Web.ContactDetail.Phone.Cell&quot;), false))"
+      editable="true"
+      id="Cell"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(person, ABPerson#FaxPhone), DisplayKey.get(&quot;Web.ContactDetail.Phone.Fax&quot;), false))"
+      editable="true"
+      id="Fax"/>
+    <TypeKeyInput
+      editable="true"
+      id="PrimaryPhone"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Phone.PrimaryPhone&quot;)"
+      validationExpression="                 if (person.PrimaryPhone == null or                     (person.PrimaryPhone == TC_WORK and person.WorkPhone != null) or                     (person.PrimaryPhone == TC_HOME and person.HomePhone != null) or                     (person.PrimaryPhone == TC_MOBILE and person.CellPhone != null)) {                   return null;                 } else {                   return DisplayKey.get(&quot;Web.ContactDetail.Phone.PrimaryPhone.Error&quot;);                 }"
+      value="person.PrimaryPhone"
+      valueType="typekey.PrimaryPhoneType"/>
+    <InputDivider/>
+    <Label
+      label="DisplayKey.get(&quot;Web.ContactDetail.Email&quot;)"/>
+    <TextInput
+      editable="true"
+      formatType="email"
+      id="Email1"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Email.Primary&quot;)"
+      value="person.EmailAddress1"/>
+    <TextInput
+      editable="true"
+      formatType="email"
+      id="Email2"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Email.Secondary&quot;)"
+      value="person.EmailAddress2"/>
+    <InputDivider/>
+    <Label
+      label="DisplayKey.get(&quot;Web.ContactDetail.TaxInfo&quot;)"/>
+    <PrivacyInput
+      editable="true"
+      encryptionExpression="person.maskTaxId(VALUE)"
+      id="SSN"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Name.TaxID.SSN&quot;)"
+      value="person.TaxID"/>
+    <BooleanRadioInput
+      editable="true"
+      id="W9received"
+      label="DisplayKey.get(&quot;Web.ContactDetail.TaxInfo.W9received&quot;)"
+      value="(person as ABPersonVendor).W9Received"/>
+    <DateInput
+      editable="true"
+      id="W9receivedDate"
+      label="DisplayKey.get(&quot;Web.ContactDetail.TaxInfo.W9receivedDate&quot;)"
+      value="(person as ABPersonVendor).W9ReceivedDate"/>
+    <DateInput
+      editable="true"
+      id="W9ValidFrom"
+      label="DisplayKey.get(&quot;Web.ContactDetail.TaxInfo.W9ValidFrom&quot;)"
+      value="(person as ABPersonVendor).W9ValidFrom"/>
+    <DateInput
+      editable="true"
+      id="W9ValidTo"
+      label="DisplayKey.get(&quot;Web.ContactDetail.TaxInfo.W9ValidTo&quot;)"
+      value="(person as ABPersonVendor).W9ValidTo"/>
+  </InputSet>
+</PCF>

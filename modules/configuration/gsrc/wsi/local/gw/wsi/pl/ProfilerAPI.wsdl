@@ -1,0 +1,504 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.ProfilerAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ProfilerAPI" name="ProfilerAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/ProfilerAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ProfilerAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <!-- setEnableProfilerForBatchProcessAndWorkQueue(boolean, String, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForBatchProcessAndWorkQueue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="type" type="xs:string" minOccurs="0"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForBatchProcessAndWorkQueueResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- setEnableProfilerForBatchProcess(boolean, String, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForBatchProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="type" type="xs:string" minOccurs="0"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForBatchProcessResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- setEnableProfilerForWorkQueue(boolean, String, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForWorkQueue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="type" type="xs:string" minOccurs="0"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForWorkQueueResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- setEnableProfilerForMessageDestination(boolean, int, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForMessageDestination">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="destinationID" type="xs:int"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForMessageDestinationResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- setEnableProfilerForWebService(boolean, String, String, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForWebService">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="serviceName" type="xs:string" minOccurs="0"/>
+            <xs:element name="operationName" type="xs:string" minOccurs="0"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForWebServiceResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- setEnableProfilerForStartablePlugin(boolean, String, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForStartablePlugin">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="pluginName" type="xs:string" minOccurs="0"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForStartablePluginResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- setEnableProfilerForSubsequentWebSessions(String, boolean, boolean, boolean, boolean, boolean, int, boolean) -->
+      <xs:element name="setEnableProfilerForSubsequentWebSessions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="enable" type="xs:boolean"/>
+            <xs:element name="hiResTime" type="xs:boolean"/>
+            <xs:element name="enableStackTracing" type="xs:boolean"/>
+            <xs:element name="enableQueryOptimizerTracing" type="xs:boolean"/>
+            <xs:element name="enableExtendedQueryTracing" type="xs:boolean"/>
+            <xs:element name="dbmsCounterThresholdMs" type="xs:int"/>
+            <xs:element name="diffDbmsCounters" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEnableProfilerForSubsequentWebSessionsResponse">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="ProfilerAPIPortType">
+    <wsdl:operation name="setEnableProfilerForBatchProcessAndWorkQueue">
+      <wsdl:input name="setEnableProfilerForBatchProcessAndWorkQueue" message="tns:setEnableProfilerForBatchProcessAndWorkQueue"/>
+      <wsdl:output name="setEnableProfilerForBatchProcessAndWorkQueueResponse" message="tns:setEnableProfilerForBatchProcessAndWorkQueueResponse"/>
+      <!-- if no batch process exists with the given name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForBatchProcess">
+      <wsdl:input name="setEnableProfilerForBatchProcess" message="tns:setEnableProfilerForBatchProcess"/>
+      <wsdl:output name="setEnableProfilerForBatchProcessResponse" message="tns:setEnableProfilerForBatchProcessResponse"/>
+      <!-- if no batch process exists with the given name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForWorkQueue">
+      <wsdl:input name="setEnableProfilerForWorkQueue" message="tns:setEnableProfilerForWorkQueue"/>
+      <wsdl:output name="setEnableProfilerForWorkQueueResponse" message="tns:setEnableProfilerForWorkQueueResponse"/>
+      <!-- if no batch process exists with the given name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForMessageDestination">
+      <wsdl:input name="setEnableProfilerForMessageDestination" message="tns:setEnableProfilerForMessageDestination"/>
+      <wsdl:output name="setEnableProfilerForMessageDestinationResponse" message="tns:setEnableProfilerForMessageDestinationResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForWebService">
+      <wsdl:input name="setEnableProfilerForWebService" message="tns:setEnableProfilerForWebService"/>
+      <wsdl:output name="setEnableProfilerForWebServiceResponse" message="tns:setEnableProfilerForWebServiceResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForStartablePlugin">
+      <wsdl:input name="setEnableProfilerForStartablePlugin" message="tns:setEnableProfilerForStartablePlugin"/>
+      <wsdl:output name="setEnableProfilerForStartablePluginResponse" message="tns:setEnableProfilerForStartablePluginResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForSubsequentWebSessions">
+      <wsdl:input name="setEnableProfilerForSubsequentWebSessions" message="tns:setEnableProfilerForSubsequentWebSessions"/>
+      <wsdl:output name="setEnableProfilerForSubsequentWebSessionsResponse" message="tns:setEnableProfilerForSubsequentWebSessionsResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProfilerAPISoap12Binding" type="tns:ProfilerAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="setEnableProfilerForBatchProcessAndWorkQueue">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForBatchProcessAndWorkQueue">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForBatchProcessAndWorkQueueResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForWorkQueue">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForWorkQueue">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForWorkQueueResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForMessageDestination">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForMessageDestination">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForMessageDestinationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForWebService">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForWebService">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForWebServiceResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForStartablePlugin">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForStartablePlugin">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForStartablePluginResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForSubsequentWebSessions">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setEnableProfilerForSubsequentWebSessions">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForSubsequentWebSessionsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProfilerAPISoap11Binding" type="tns:ProfilerAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="setEnableProfilerForBatchProcessAndWorkQueue">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForBatchProcessAndWorkQueue">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForBatchProcessAndWorkQueueResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForWorkQueue">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForWorkQueue">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForWorkQueueResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForMessageDestination">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForMessageDestination">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForMessageDestinationResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForWebService">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForWebService">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForWebServiceResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForStartablePlugin">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForStartablePlugin">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForStartablePluginResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setEnableProfilerForSubsequentWebSessions">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setEnableProfilerForSubsequentWebSessions">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setEnableProfilerForSubsequentWebSessionsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProfilerAPI">
+    <wsdl:port name="ProfilerAPISoap12Port" binding="tns:ProfilerAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/ProfilerAPI"/>
+    </wsdl:port>
+    <wsdl:port name="ProfilerAPISoap11Port" binding="tns:ProfilerAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/ProfilerAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="setEnableProfilerForBatchProcessAndWorkQueue">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForBatchProcessAndWorkQueue"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForBatchProcessAndWorkQueueResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForBatchProcessAndWorkQueueResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForBatchProcess">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForWorkQueue">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForWorkQueue"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForWorkQueueResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForWorkQueueResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForMessageDestination">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForMessageDestination"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForMessageDestinationResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForMessageDestinationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForWebService">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForWebService"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForWebServiceResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForWebServiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForStartablePlugin">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForStartablePlugin"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForStartablePluginResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForStartablePluginResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForSubsequentWebSessions">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForSubsequentWebSessions"/>
+  </wsdl:message>
+  <wsdl:message name="setEnableProfilerForSubsequentWebSessionsResponse">
+    <wsdl:part name="parameters" element="tns:setEnableProfilerForSubsequentWebSessionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

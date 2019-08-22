@@ -1,0 +1,1642 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.webservice.ab.ab1000.MaintenanceToolsAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/ab/ws/gw/webservice/ab/ab1000/MaintenanceToolsAPI" name="MaintenanceToolsAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/tools" xmlns:pogo2="http://guidewire.com/gw/api/webservice/maintenanceTools" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/ab/ws/gw/webservice/ab/ab1000/MaintenanceToolsAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/ab/ws/gw/webservice/ab/ab1000/MaintenanceToolsAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/maintenanceTools"/>
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <!-- getValidBatchProcessNames() : String[] -->
+      <xs:element name="getValidBatchProcessNames">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getValidBatchProcessNamesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- isBatchProcessNameValid(String) : boolean -->
+      <xs:element name="isBatchProcessNameValid">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="processName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isBatchProcessNameValidResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- startBatchProcess(String) : ProcessID -->
+      <xs:element name="startBatchProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="processName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="startBatchProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- startBatchProcessWithArguments(String, String[]) : ProcessID -->
+      <xs:element name="startBatchProcessWithArguments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="processName" type="xs:string" minOccurs="0"/>
+            <xs:element name="arguments" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="startBatchProcessWithArgumentsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- requestTerminationOfBatchProcessByName(String) : boolean -->
+      <xs:element name="requestTerminationOfBatchProcessByName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="processName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestTerminationOfBatchProcessByNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- requestTerminationOfBatchProcessByID(ProcessID) : boolean -->
+      <xs:element name="requestTerminationOfBatchProcessByID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pid" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestTerminationOfBatchProcessByIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- batchProcessStatusByName(String) : ProcessStatus -->
+      <xs:element name="batchProcessStatusByName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="processName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="batchProcessStatusByNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:ProcessStatus" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- batchProcessStatusByID(ProcessID) : ProcessStatus -->
+      <xs:element name="batchProcessStatusByID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pid" type="pogo:ProcessID" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="batchProcessStatusByIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:ProcessStatus" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getWorkQueueConfig(String) : WorkQueueConfig -->
+      <xs:element name="getWorkQueueConfig">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getWorkQueueConfigResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:WorkQueueConfig" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- setWorkQueueConfig(String, WorkQueueConfig) -->
+      <xs:element name="setWorkQueueConfig">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+            <xs:element name="config" type="pogo2:WorkQueueConfig" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setWorkQueueConfigResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getWorkQueueNames() : String[] -->
+      <xs:element name="getWorkQueueNames">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getWorkQueueNamesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- notifyQueueWorkers(String) -->
+      <xs:element name="notifyQueueWorkers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="notifyQueueWorkersResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- stopWorkQueueWorkers(String) -->
+      <xs:element name="stopWorkQueueWorkers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="stopWorkQueueWorkersResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- startWorkQueueWorkers(String) -->
+      <xs:element name="startWorkQueueWorkers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="startWorkQueueWorkersResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getWQueueStatus(String) : WQueueStatus -->
+      <xs:element name="getWQueueStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getWQueueStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo2:WQueueStatus" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getNumActiveWorkItems(String) : int -->
+      <xs:element name="getNumActiveWorkItems">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getNumActiveWorkItemsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- waitOnActiveWorkItems(String) : boolean -->
+      <xs:element name="waitOnActiveWorkItems">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="queueName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="waitOnActiveWorkItemsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- isPluginStarted(String) : boolean -->
+      <xs:element name="isPluginStarted">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pluginName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isPluginStartedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- startPlugin(String) -->
+      <xs:element name="startPlugin">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pluginName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="startPluginResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- startPluginWithTimeout(String, long) -->
+      <xs:element name="startPluginWithTimeout">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pluginName" type="xs:string" minOccurs="0"/>
+            <xs:element name="timeout" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="startPluginWithTimeoutResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- stopPlugin(String) -->
+      <xs:element name="stopPlugin">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pluginName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="stopPluginResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- stopPluginWithTimeout(String, long) -->
+      <xs:element name="stopPluginWithTimeout">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pluginName" type="xs:string" minOccurs="0"/>
+            <xs:element name="timeout" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="stopPluginWithTimeoutResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- changeSubtype(String, String) -->
+      <xs:element name="changeSubtype">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="publicID" type="xs:string" minOccurs="0"/>
+            <xs:element name="targetType" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changeSubtypeResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WebServiceException">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/tools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/maintenanceTools"/>
+      <xs:complexType name="ProcessID">
+        <xs:sequence>
+          <xs:element name="Pid" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/maintenanceTools" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/tools"/>
+      <xs:complexType name="ProcessStatus">
+        <xs:sequence>
+          <xs:element name="Complete" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="DateCompleted" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="DateCreated" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="DetailedStatus" type="xs:string" minOccurs="0"/>
+          <xs:element name="Executing" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="FailedOps" type="xs:int" minOccurs="0"/>
+          <xs:element name="FailureReason" type="xs:string" minOccurs="0"/>
+          <xs:element name="OpsCompleted" type="xs:int" minOccurs="0"/>
+          <xs:element name="OpsExpected" type="xs:int" minOccurs="0"/>
+          <xs:element name="Progress" type="xs:string" minOccurs="0"/>
+          <xs:element name="ReturnValue" type="xs:string" minOccurs="0"/>
+          <xs:element name="ServerId" type="xs:string" minOccurs="0"/>
+          <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Starting" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="StartingOrExecuting" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Success" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Type" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WorkQueueConfig">
+        <xs:sequence>
+          <xs:element name="BatchSize" type="xs:int" minOccurs="0"/>
+          <xs:element name="Instances" type="xs:int" minOccurs="0"/>
+          <xs:element name="MaxPollInterval" type="xs:long" minOccurs="0"/>
+          <xs:element name="ThrottleInterval" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WQueueStatus">
+        <xs:sequence>
+          <xs:element name="Executors" minOccurs="0" gw:viewas="array">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo2:WQueueExecutorDetails" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="NumActiveExecutors" type="xs:int" minOccurs="0"/>
+          <xs:element name="NumActiveWorkItems" type="xs:int" minOccurs="0"/>
+          <xs:element name="QueueName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WQueueExecutorDetails">
+        <xs:sequence>
+          <xs:element name="Active" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="EndTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Hostname" type="xs:string" minOccurs="0"/>
+          <xs:element name="MaxNumOfWorkers" type="xs:int" minOccurs="0"/>
+          <xs:element name="StartTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Tasks" minOccurs="0" gw:viewas="array">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo2:WQTaskDetails" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WQTaskDetails">
+        <xs:sequence>
+          <xs:element name="Active" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ConsecutiveExceptions" type="xs:int" minOccurs="0"/>
+          <xs:element name="EndTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+          <xs:element name="Exceptions" type="xs:int" minOccurs="0"/>
+          <xs:element name="Hostname" type="xs:string" minOccurs="0"/>
+          <xs:element name="InstanceId" type="xs:int" minOccurs="0"/>
+          <xs:element name="ItemsCheckedOut" type="xs:int" minOccurs="0"/>
+          <xs:element name="ItemsFailed" type="xs:int" minOccurs="0"/>
+          <xs:element name="ItemsProcessed" type="xs:int" minOccurs="0"/>
+          <xs:element name="ItemsSkipped" type="xs:int" minOccurs="0"/>
+          <xs:element name="OrphansAdopted" type="xs:int" minOccurs="0"/>
+          <xs:element name="StartTime" type="xs:dateTime" minOccurs="0" gw:type="java.util.Date"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="MaintenanceToolsAPIPortType">
+    <wsdl:operation name="getValidBatchProcessNames">
+      <wsdl:input name="getValidBatchProcessNames" message="tns:getValidBatchProcessNames"/>
+      <wsdl:output name="getValidBatchProcessNamesResponse" message="tns:getValidBatchProcessNamesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isBatchProcessNameValid">
+      <wsdl:input name="isBatchProcessNameValid" message="tns:isBatchProcessNameValid"/>
+      <wsdl:output name="isBatchProcessNameValidResponse" message="tns:isBatchProcessNameValidResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="startBatchProcess">
+      <wsdl:input name="startBatchProcess" message="tns:startBatchProcess"/>
+      <wsdl:output name="startBatchProcessResponse" message="tns:startBatchProcessResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no process exists with the given process name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="startBatchProcessWithArguments">
+      <wsdl:input name="startBatchProcessWithArguments" message="tns:startBatchProcessWithArguments"/>
+      <wsdl:output name="startBatchProcessWithArgumentsResponse" message="tns:startBatchProcessWithArgumentsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no process exists with the given process name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="requestTerminationOfBatchProcessByName">
+      <wsdl:input name="requestTerminationOfBatchProcessByName" message="tns:requestTerminationOfBatchProcessByName"/>
+      <wsdl:output name="requestTerminationOfBatchProcessByNameResponse" message="tns:requestTerminationOfBatchProcessByNameResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="requestTerminationOfBatchProcessByID">
+      <wsdl:input name="requestTerminationOfBatchProcessByID" message="tns:requestTerminationOfBatchProcessByID"/>
+      <wsdl:output name="requestTerminationOfBatchProcessByIDResponse" message="tns:requestTerminationOfBatchProcessByIDResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- Invalid processID -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="batchProcessStatusByName">
+      <wsdl:input name="batchProcessStatusByName" message="tns:batchProcessStatusByName"/>
+      <wsdl:output name="batchProcessStatusByNameResponse" message="tns:batchProcessStatusByNameResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no process exists with the given process name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="batchProcessStatusByID">
+      <wsdl:input name="batchProcessStatusByID" message="tns:batchProcessStatusByID"/>
+      <wsdl:output name="batchProcessStatusByIDResponse" message="tns:batchProcessStatusByIDResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no process exists with the given process id or invalid ProcessID. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkQueueConfig">
+      <wsdl:input name="getWorkQueueConfig" message="tns:getWorkQueueConfig"/>
+      <wsdl:output name="getWorkQueueConfigResponse" message="tns:getWorkQueueConfigResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="setWorkQueueConfig">
+      <wsdl:input name="setWorkQueueConfig" message="tns:setWorkQueueConfig"/>
+      <wsdl:output name="setWorkQueueConfigResponse" message="tns:setWorkQueueConfigResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkQueueNames">
+      <wsdl:input name="getWorkQueueNames" message="tns:getWorkQueueNames"/>
+      <wsdl:output name="getWorkQueueNamesResponse" message="tns:getWorkQueueNamesResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="notifyQueueWorkers">
+      <wsdl:input name="notifyQueueWorkers" message="tns:notifyQueueWorkers"/>
+      <wsdl:output name="notifyQueueWorkersResponse" message="tns:notifyQueueWorkersResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="stopWorkQueueWorkers">
+      <wsdl:input name="stopWorkQueueWorkers" message="tns:stopWorkQueueWorkers"/>
+      <wsdl:output name="stopWorkQueueWorkersResponse" message="tns:stopWorkQueueWorkersResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="startWorkQueueWorkers">
+      <wsdl:input name="startWorkQueueWorkers" message="tns:startWorkQueueWorkers"/>
+      <wsdl:output name="startWorkQueueWorkersResponse" message="tns:startWorkQueueWorkersResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWQueueStatus">
+      <wsdl:input name="getWQueueStatus" message="tns:getWQueueStatus"/>
+      <wsdl:output name="getWQueueStatusResponse" message="tns:getWQueueStatusResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getNumActiveWorkItems">
+      <wsdl:input name="getNumActiveWorkItems" message="tns:getNumActiveWorkItems"/>
+      <wsdl:output name="getNumActiveWorkItemsResponse" message="tns:getNumActiveWorkItemsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="waitOnActiveWorkItems">
+      <wsdl:input name="waitOnActiveWorkItems" message="tns:waitOnActiveWorkItems"/>
+      <wsdl:output name="waitOnActiveWorkItemsResponse" message="tns:waitOnActiveWorkItemsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no work queue exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isPluginStarted">
+      <wsdl:input name="isPluginStarted" message="tns:isPluginStarted"/>
+      <wsdl:output name="isPluginStartedResponse" message="tns:isPluginStartedResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If no plugin exists with the given name. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="startPlugin">
+      <wsdl:input name="startPlugin" message="tns:startPlugin"/>
+      <wsdl:output name="startPluginResponse" message="tns:startPluginResponse"/>
+      <!-- if invalid plugin name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="startPluginWithTimeout">
+      <wsdl:input name="startPluginWithTimeout" message="tns:startPluginWithTimeout"/>
+      <wsdl:output name="startPluginWithTimeoutResponse" message="tns:startPluginWithTimeoutResponse"/>
+      <!-- if invalid plugin name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="stopPlugin">
+      <wsdl:input name="stopPlugin" message="tns:stopPlugin"/>
+      <wsdl:output name="stopPluginResponse" message="tns:stopPluginResponse"/>
+      <!-- if invalid plugin name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="stopPluginWithTimeout">
+      <wsdl:input name="stopPluginWithTimeout" message="tns:stopPluginWithTimeout"/>
+      <wsdl:output name="stopPluginWithTimeoutResponse" message="tns:stopPluginWithTimeoutResponse"/>
+      <!-- if invalid plugin name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="changeSubtype">
+      <wsdl:input name="changeSubtype" message="tns:changeSubtype"/>
+      <wsdl:output name="changeSubtypeResponse" message="tns:changeSubtypeResponse"/>
+      <!-- if contact not found or target type is invalid -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if not currently in maintenance mode -->
+      <wsdl:fault name="WebServiceException" message="tns:WebServiceException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MaintenanceToolsAPISoap12Binding" type="tns:MaintenanceToolsAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getValidBatchProcessNames">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getValidBatchProcessNames">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getValidBatchProcessNamesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isBatchProcessNameValid">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isBatchProcessNameValid">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isBatchProcessNameValidResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startBatchProcess">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="startBatchProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startBatchProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startBatchProcessWithArguments">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="startBatchProcessWithArguments">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startBatchProcessWithArgumentsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestTerminationOfBatchProcessByName">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="requestTerminationOfBatchProcessByName">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestTerminationOfBatchProcessByNameResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestTerminationOfBatchProcessByID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="requestTerminationOfBatchProcessByID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestTerminationOfBatchProcessByIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="batchProcessStatusByName">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="batchProcessStatusByName">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="batchProcessStatusByNameResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="batchProcessStatusByID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="batchProcessStatusByID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="batchProcessStatusByIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkQueueConfig">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getWorkQueueConfig">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWorkQueueConfigResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setWorkQueueConfig">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="setWorkQueueConfig">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setWorkQueueConfigResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkQueueNames">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getWorkQueueNames">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWorkQueueNamesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="notifyQueueWorkers">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="notifyQueueWorkers">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="notifyQueueWorkersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="stopWorkQueueWorkers">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="stopWorkQueueWorkers">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stopWorkQueueWorkersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startWorkQueueWorkers">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="startWorkQueueWorkers">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startWorkQueueWorkersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWQueueStatus">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getWQueueStatus">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWQueueStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNumActiveWorkItems">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getNumActiveWorkItems">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNumActiveWorkItemsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="waitOnActiveWorkItems">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="waitOnActiveWorkItems">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitOnActiveWorkItemsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isPluginStarted">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isPluginStarted">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isPluginStartedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startPlugin">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="startPlugin">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startPluginResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startPluginWithTimeout">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="startPluginWithTimeout">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startPluginWithTimeoutResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="stopPlugin">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="stopPlugin">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stopPluginResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="stopPluginWithTimeout">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="stopPluginWithTimeout">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stopPluginWithTimeoutResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeSubtype">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="changeSubtype">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeSubtypeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WebServiceException">
+        <soap12:fault name="WebServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MaintenanceToolsAPISoap11Binding" type="tns:MaintenanceToolsAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getValidBatchProcessNames">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getValidBatchProcessNames">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getValidBatchProcessNamesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isBatchProcessNameValid">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isBatchProcessNameValid">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isBatchProcessNameValidResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startBatchProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="startBatchProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startBatchProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startBatchProcessWithArguments">
+      <soap11:operation style="document"/>
+      <wsdl:input name="startBatchProcessWithArguments">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startBatchProcessWithArgumentsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestTerminationOfBatchProcessByName">
+      <soap11:operation style="document"/>
+      <wsdl:input name="requestTerminationOfBatchProcessByName">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestTerminationOfBatchProcessByNameResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestTerminationOfBatchProcessByID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="requestTerminationOfBatchProcessByID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestTerminationOfBatchProcessByIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="batchProcessStatusByName">
+      <soap11:operation style="document"/>
+      <wsdl:input name="batchProcessStatusByName">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="batchProcessStatusByNameResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="batchProcessStatusByID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="batchProcessStatusByID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="batchProcessStatusByIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkQueueConfig">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getWorkQueueConfig">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWorkQueueConfigResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setWorkQueueConfig">
+      <soap11:operation style="document"/>
+      <wsdl:input name="setWorkQueueConfig">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setWorkQueueConfigResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkQueueNames">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getWorkQueueNames">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWorkQueueNamesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="notifyQueueWorkers">
+      <soap11:operation style="document"/>
+      <wsdl:input name="notifyQueueWorkers">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="notifyQueueWorkersResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="stopWorkQueueWorkers">
+      <soap11:operation style="document"/>
+      <wsdl:input name="stopWorkQueueWorkers">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stopWorkQueueWorkersResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startWorkQueueWorkers">
+      <soap11:operation style="document"/>
+      <wsdl:input name="startWorkQueueWorkers">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startWorkQueueWorkersResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWQueueStatus">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getWQueueStatus">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWQueueStatusResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNumActiveWorkItems">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getNumActiveWorkItems">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNumActiveWorkItemsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="waitOnActiveWorkItems">
+      <soap11:operation style="document"/>
+      <wsdl:input name="waitOnActiveWorkItems">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitOnActiveWorkItemsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isPluginStarted">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isPluginStarted">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isPluginStartedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startPlugin">
+      <soap11:operation style="document"/>
+      <wsdl:input name="startPlugin">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startPluginResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startPluginWithTimeout">
+      <soap11:operation style="document"/>
+      <wsdl:input name="startPluginWithTimeout">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="startPluginWithTimeoutResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="stopPlugin">
+      <soap11:operation style="document"/>
+      <wsdl:input name="stopPlugin">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stopPluginResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="stopPluginWithTimeout">
+      <soap11:operation style="document"/>
+      <wsdl:input name="stopPluginWithTimeout">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stopPluginWithTimeoutResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeSubtype">
+      <soap11:operation style="document"/>
+      <wsdl:input name="changeSubtype">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeSubtypeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WebServiceException">
+        <soap11:fault name="WebServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MaintenanceToolsAPI">
+    <wsdl:port name="MaintenanceToolsAPISoap12Port" binding="tns:MaintenanceToolsAPISoap12Binding">
+      <soap12:address location="local:///gw/webservice/ab/ab1000/MaintenanceToolsAPI"/>
+    </wsdl:port>
+    <wsdl:port name="MaintenanceToolsAPISoap11Port" binding="tns:MaintenanceToolsAPISoap11Binding">
+      <soap11:address location="local:///gw/webservice/ab/ab1000/MaintenanceToolsAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="getValidBatchProcessNames">
+    <wsdl:part name="parameters" element="tns:getValidBatchProcessNames"/>
+  </wsdl:message>
+  <wsdl:message name="getValidBatchProcessNamesResponse">
+    <wsdl:part name="parameters" element="tns:getValidBatchProcessNamesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="isBatchProcessNameValid">
+    <wsdl:part name="parameters" element="tns:isBatchProcessNameValid"/>
+  </wsdl:message>
+  <wsdl:message name="isBatchProcessNameValidResponse">
+    <wsdl:part name="parameters" element="tns:isBatchProcessNameValidResponse"/>
+  </wsdl:message>
+  <wsdl:message name="startBatchProcess">
+    <wsdl:part name="parameters" element="tns:startBatchProcess"/>
+  </wsdl:message>
+  <wsdl:message name="startBatchProcessResponse">
+    <wsdl:part name="parameters" element="tns:startBatchProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="startBatchProcessWithArguments">
+    <wsdl:part name="parameters" element="tns:startBatchProcessWithArguments"/>
+  </wsdl:message>
+  <wsdl:message name="startBatchProcessWithArgumentsResponse">
+    <wsdl:part name="parameters" element="tns:startBatchProcessWithArgumentsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="requestTerminationOfBatchProcessByName">
+    <wsdl:part name="parameters" element="tns:requestTerminationOfBatchProcessByName"/>
+  </wsdl:message>
+  <wsdl:message name="requestTerminationOfBatchProcessByNameResponse">
+    <wsdl:part name="parameters" element="tns:requestTerminationOfBatchProcessByNameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="requestTerminationOfBatchProcessByID">
+    <wsdl:part name="parameters" element="tns:requestTerminationOfBatchProcessByID"/>
+  </wsdl:message>
+  <wsdl:message name="requestTerminationOfBatchProcessByIDResponse">
+    <wsdl:part name="parameters" element="tns:requestTerminationOfBatchProcessByIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="batchProcessStatusByName">
+    <wsdl:part name="parameters" element="tns:batchProcessStatusByName"/>
+  </wsdl:message>
+  <wsdl:message name="batchProcessStatusByNameResponse">
+    <wsdl:part name="parameters" element="tns:batchProcessStatusByNameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="batchProcessStatusByID">
+    <wsdl:part name="parameters" element="tns:batchProcessStatusByID"/>
+  </wsdl:message>
+  <wsdl:message name="batchProcessStatusByIDResponse">
+    <wsdl:part name="parameters" element="tns:batchProcessStatusByIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkQueueConfig">
+    <wsdl:part name="parameters" element="tns:getWorkQueueConfig"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkQueueConfigResponse">
+    <wsdl:part name="parameters" element="tns:getWorkQueueConfigResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setWorkQueueConfig">
+    <wsdl:part name="parameters" element="tns:setWorkQueueConfig"/>
+  </wsdl:message>
+  <wsdl:message name="setWorkQueueConfigResponse">
+    <wsdl:part name="parameters" element="tns:setWorkQueueConfigResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkQueueNames">
+    <wsdl:part name="parameters" element="tns:getWorkQueueNames"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkQueueNamesResponse">
+    <wsdl:part name="parameters" element="tns:getWorkQueueNamesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="notifyQueueWorkers">
+    <wsdl:part name="parameters" element="tns:notifyQueueWorkers"/>
+  </wsdl:message>
+  <wsdl:message name="notifyQueueWorkersResponse">
+    <wsdl:part name="parameters" element="tns:notifyQueueWorkersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="stopWorkQueueWorkers">
+    <wsdl:part name="parameters" element="tns:stopWorkQueueWorkers"/>
+  </wsdl:message>
+  <wsdl:message name="stopWorkQueueWorkersResponse">
+    <wsdl:part name="parameters" element="tns:stopWorkQueueWorkersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="startWorkQueueWorkers">
+    <wsdl:part name="parameters" element="tns:startWorkQueueWorkers"/>
+  </wsdl:message>
+  <wsdl:message name="startWorkQueueWorkersResponse">
+    <wsdl:part name="parameters" element="tns:startWorkQueueWorkersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getWQueueStatus">
+    <wsdl:part name="parameters" element="tns:getWQueueStatus"/>
+  </wsdl:message>
+  <wsdl:message name="getWQueueStatusResponse">
+    <wsdl:part name="parameters" element="tns:getWQueueStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getNumActiveWorkItems">
+    <wsdl:part name="parameters" element="tns:getNumActiveWorkItems"/>
+  </wsdl:message>
+  <wsdl:message name="getNumActiveWorkItemsResponse">
+    <wsdl:part name="parameters" element="tns:getNumActiveWorkItemsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="waitOnActiveWorkItems">
+    <wsdl:part name="parameters" element="tns:waitOnActiveWorkItems"/>
+  </wsdl:message>
+  <wsdl:message name="waitOnActiveWorkItemsResponse">
+    <wsdl:part name="parameters" element="tns:waitOnActiveWorkItemsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="isPluginStarted">
+    <wsdl:part name="parameters" element="tns:isPluginStarted"/>
+  </wsdl:message>
+  <wsdl:message name="isPluginStartedResponse">
+    <wsdl:part name="parameters" element="tns:isPluginStartedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="startPlugin">
+    <wsdl:part name="parameters" element="tns:startPlugin"/>
+  </wsdl:message>
+  <wsdl:message name="startPluginResponse">
+    <wsdl:part name="parameters" element="tns:startPluginResponse"/>
+  </wsdl:message>
+  <wsdl:message name="startPluginWithTimeout">
+    <wsdl:part name="parameters" element="tns:startPluginWithTimeout"/>
+  </wsdl:message>
+  <wsdl:message name="startPluginWithTimeoutResponse">
+    <wsdl:part name="parameters" element="tns:startPluginWithTimeoutResponse"/>
+  </wsdl:message>
+  <wsdl:message name="stopPlugin">
+    <wsdl:part name="parameters" element="tns:stopPlugin"/>
+  </wsdl:message>
+  <wsdl:message name="stopPluginResponse">
+    <wsdl:part name="parameters" element="tns:stopPluginResponse"/>
+  </wsdl:message>
+  <wsdl:message name="stopPluginWithTimeout">
+    <wsdl:part name="parameters" element="tns:stopPluginWithTimeout"/>
+  </wsdl:message>
+  <wsdl:message name="stopPluginWithTimeoutResponse">
+    <wsdl:part name="parameters" element="tns:stopPluginWithTimeoutResponse"/>
+  </wsdl:message>
+  <wsdl:message name="changeSubtype">
+    <wsdl:part name="parameters" element="tns:changeSubtype"/>
+  </wsdl:message>
+  <wsdl:message name="changeSubtypeResponse">
+    <wsdl:part name="parameters" element="tns:changeSubtypeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WebServiceException">
+    <wsdl:part name="WebServiceException" element="tns:WebServiceException"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

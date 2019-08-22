@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The status of the archive source"
+  final="true"
+  name="ArchiveSourceStatus"
+  platform="true">
+  <typecode
+    code="notstarted"
+    desc="archiving has not been started yet"
+    name="Not Started"
+    priority="1"/>
+  <typecode
+    code="notenabled"
+    desc="archiving has not been enabled"
+    name="Not Enabled"
+    priority="1"/>
+  <typecode
+    code="notconfig"
+    desc="The service has not been configured"
+    name="Not Configured"
+    priority="1"/>
+  <typecode
+    code="available"
+    desc="The service is available"
+    name="Available"
+    priority="1"/>
+  <typecode
+    code="queue"
+    desc="The service is not available but allow queuing of user request"
+    name="Queue Available"
+    priority="1"/>
+  <typecode
+    code="failure"
+    desc="The last attempt to archive failed"
+    name="Failure"
+    priority="1"/>
+  <typecode
+    code="manually"
+    desc="The service was manually flaged unavailable"
+    name="Manually Flagged"
+    priority="1"/>
+</typelist>

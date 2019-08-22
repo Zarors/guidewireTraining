@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Forward
+    canVisit="perm.User.view"
+    id="AdminForward">
+    <LocationEntryPoint
+      signature="AdminForward()"/>
+    <ForwardCondition
+      action="AdminPlace.go()"/>
+    <ForwardCondition
+      action="Admin.go()"/>
+  </Forward>
+</PCF>

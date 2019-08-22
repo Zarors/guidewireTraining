@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Group Assignment State table -->
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="GroupAssignmentState">
+  <description>Assignment state data for a particular group.</description>
+  <implementsEntity
+    name="LastAssignedUserContainer"/>
+  <events/>
+</internalExtension>

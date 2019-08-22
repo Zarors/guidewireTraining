@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<plugin
+    interface="InboundIntegrationMessageReplyHandler"
+    name="InboundJMSIntegrationMessageReplyHandler">
+  <plugin-java
+    disabled="false"
+    env="jmsintegration"
+    javaclass="gw.plugin.integration.inbound.logging.reply.JMSIntegrationMessageReplyHandler">
+  </plugin-java>
+</plugin>

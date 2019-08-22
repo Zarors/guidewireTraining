@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Forward
+    id="ContactTabForward">
+    <Variable
+      initialValue="trainingapp.base.RecentlyViewedContactUtil.lastViewedContact()"
+      name="lastViewedContact"
+      type="ABContact"/>
+    <ForwardCondition
+      action="NoContactPage.go()"
+      condition="lastViewedContact == null"/>
+    <ForwardCondition
+      action="ABContactLG.go(lastViewedContact)"/>
+  </Forward>
+</PCF>

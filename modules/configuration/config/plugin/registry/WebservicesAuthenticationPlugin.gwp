@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="WebservicesAuthenticationPlugin">
+  <plugin-java
+    javaclass="gw.plugin.security.DefaultWebservicesAuthenticationPlugin"/>
+</plugin>

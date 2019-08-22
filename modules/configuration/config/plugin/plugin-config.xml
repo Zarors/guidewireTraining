@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<plugin-config xmlns="http://guidewire.com/plugin-config">
+
+  <!-- Default startable plugin role = #startable, polling interval = 60 seconds. -->
+  <plugin-settings defaultServer="#startable" pollInterval="60"/>
+
+  <!-- For automated testing, role=#startable, polling interval = 1 second -->
+  <plugin-settings defaultServer="#startable" pollInterval="1" env="test"/>
+
+  <!-- Server and env settings can be be overridden for individual plugins
+       using the related fields in the respective .gwp files.
+    -->
+
+</plugin-config>

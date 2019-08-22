@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Localization xmlns="http://guidewire.com/localization">
+  <GWLocale
+    code="fr_FR"
+	name="French (France)"
+	typecode="fr_FR">
+    <NameFormat
+      textFormatMode="France"
+      visibleFields="Prefix,FirstName,MiddleName,Particle,LastName,Suffix,Name"/>
+  </GWLocale>
+</Localization>

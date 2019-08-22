@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="DatabaseStorageDV"
+    mode="OneAtATime">
+    <Require
+      name="ParameterSet"
+      type="gw.api.database.DatabaseParameterSet"/>
+    <Variable
+      initialValue="ParameterSet.NameValuePairArrays[0]"
+      name="NameValuePairs"
+      type="gw.util.Pair[]"/>
+    <InputColumn>
+      <ListViewInput>
+        <Toolbar>
+          <ToolbarRangeInput
+            editable="true"
+            id="rangeInput"
+            label="ParameterSet.RowItemLabel"
+            optionLabel="getOptionLabel(VALUE) as java.lang.String"
+            sortValueRange="false"
+            value="NameValuePairs"
+            valueRange="ParameterSet.NameValuePairArrays"
+            valueType="gw.util.Pair&lt;java.lang.Object, java.lang.Object&gt;[]">
+            <PostOnChange/>
+          </ToolbarRangeInput>
+        </Toolbar>
+        <ListViewPanel
+          editable="false"
+          id="DatabaseStorageLV">
+          <RowIterator
+            editable="false"
+            elementName="onerow"
+            pageSize="0"
+            value="NameValuePairs"
+            valueType="gw.util.Pair&lt;java.lang.Object, java.lang.Object&gt;[]">
+            <Row>
+              <TextCell
+                id="name"
+                label="DisplayKey.get('Web.InternalTools.InfoPages.DatabaseStorageDV.Attribute')"
+                value="onerow.First"
+                valueType="java.lang.Object"/>
+              <TextCell
+                id="value"
+                label="DisplayKey.get('Web.InternalTools.InfoPages.DatabaseStorageDV.Value')"
+                value="onerow.Second"
+                valueType="java.lang.Object"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </ListViewInput>
+    </InputColumn>
+    <Code><![CDATA[uses gw.util.Pair
+function getOptionLabel(attributePairs: Pair[]): Object {
+  var optionLabel = ""
+  for (i in ParameterSet.KeyColumns) {
+    optionLabel +=  ((attributePairs[i].Second as String)  + " ")
+  }
+  return optionLabel
+}]]></Code>
+  </DetailViewPanel>
+</PCF>

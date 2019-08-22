@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="A tracked change."
+  displayName="Tracked Change"
+  entity="TrackedChange"
+  final="true"
+  table="trackedchange"
+  type="versionable">
+  <implementsInterface
+    iface="gw.ab.history.entity.TrackedChange"
+    impl="com.guidewire.ab.domain.history.impl.TrackedChangeImpl"/>
+  <implementsEntity
+    name="Extractable"/>
+  <column
+    desc="Field"
+    name="Field"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="DisplayKey for Field"
+    name="DisplayKey"
+    nullok="true"
+    type="longtext"/>
+  <column
+    desc="Old value"
+    name="OldValue"
+    nullok="true"
+    type="longtext"/>
+  <column
+    desc="New value"
+    name="NewValue"
+    nullok="true"
+    type="longtext"/>
+  <foreignkey
+    columnName="HistoryID"
+    desc="History"
+    fkentity="History"
+    name="History"
+    nullok="false"
+    setterScriptability="hidden"/>
+</entity>

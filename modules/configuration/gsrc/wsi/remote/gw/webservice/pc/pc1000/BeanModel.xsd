@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://guidewire.com/ctc/beanmodel" elementFormDefault="qualified" xmlns="http://guidewire.com/ctc/beanmodel" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="xmlBackedInstance">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="field">
+          <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="value" type="xsd:string"/>
+            <xsd:attribute name="origValue" type="xsd:string"/>
+            <xsd:attribute name="type" type="xsd:QName"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="fk">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="xmlBackedInstance" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="origValue" type="xsd:string"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="array">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="xmlBackedInstance" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:attribute name="entityType" type="xsd:string"/>
+      <xsd:attribute name="action" type="xsd:string"/>
+      <xsd:attribute name="External_UpdateApp" type="xsd:string"/>
+      <xsd:attribute name="External_UpdateUser" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="What kind of date search we are doing"
+  final="true"
+  name="DateSearchType"
+  platform="true">
+  <typecode
+    code="fromlist"
+    desc="Selected from a list"
+    name="List"/>
+  <typecode
+    code="enteredrange"
+    desc="An entered range"
+    name="Enter Dates"/>
+</typelist>

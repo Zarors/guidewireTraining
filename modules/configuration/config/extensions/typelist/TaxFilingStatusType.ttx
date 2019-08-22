@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="type of employee"
+  name="TaxFilingStatusType">
+  <typecode
+    code="single"
+    desc="Single"
+    name="Single"
+    priority="1"/>
+  <typecode
+    code="married-joint"
+    desc="Married filing jointly"
+    name="Married filing jointly"
+    priority="2"/>
+  <typecode
+    code="married-separate"
+    desc="Married filing separately"
+    name="Married filing separately"
+    priority="3"/>
+  <typecode
+    code="headofhousehold"
+    desc="Head of household"
+    name="Head of household"
+    priority="4"/>
+  <typecode
+    code="widow"
+    desc="Qualifying widow(er) with dependent child"
+    name="Qualifying widow(er) with dependent child"
+    priority="5"/>
+</typelistextension>

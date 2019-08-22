@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../app-ab/pcf.xsd">
+  <!-- Do not move, rename or modify the signature of this PDF. It shadows a Platform PCF for multifile upload functionality. -->
+  <PanelSet
+    id="DocumentDetailsEditLVPanelSet">
+    <Require
+      name="DocumentApplicationContext"
+      type="gw.document.DocumentApplicationContext"/>
+    <Require
+      name="DocumentCreationInfos"
+      type="java.util.Collection&lt;gw.document.DocumentCreationInfo&gt;"/>
+    <Expose
+      name="DocumentDetailsEditLV"
+      widget="DocumentDetailsEditLV.DocumentDetailsEditLV"/>
+    <ExposeIterator
+      name="DocumentCreationInfoIterator"
+      valueType="gw.document.DocumentCreationInfo"
+      widget="DocumentDetailsEditLV.DocumentCreationInfoIterator"/>
+    <PanelRef def="DocumentDetailsEditLV(DocumentApplicationContext,DocumentCreationInfos)"/>
+  </PanelSet>
+</PCF>

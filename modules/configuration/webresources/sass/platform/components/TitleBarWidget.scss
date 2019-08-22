@@ -1,0 +1,103 @@
+.gw-TitleBarWidget {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: stretch;
+
+  &.gw-isScreenTitle {
+    // Position to other widgets
+    margin-top: $gw-app--TitleBar--screen--spacing-widget-top-rem;
+    margin-left: $gw-app--TitleBar--screen--spacing-widget-left-rem;
+    margin-right: $gw-app--TitleBar--screen--spacing-widget-right-rem;
+    margin-bottom: $gw-app--TitleBar--screen--spacing-widget-bottom-rem;
+
+    // Internal padding
+    padding-top: $gw-app--TitleBar--screen--spacing-inner-top-rem;
+    padding-left: $gw-app--TitleBar--screen--spacing-inner-left-rem;
+    padding-right: $gw-app--TitleBar--screen--spacing-inner-right-rem;
+    padding-bottom: $gw-app--TitleBar--screen--spacing-inner-bottom-rem;
+
+    
+    font-family: $gw-app--TitleBar--screen--font-family;
+    font-weight: $gw-app--TitleBar--screen--font-weight;
+    color: $gw-app--TitleBar--screen--col;
+    background-color: $gw-app--TitleBar--screen--bg;
+
+    .gw-TitleBar--icon {
+      margin-right: $gw-app--TitleBar--screen--icon-margin-right-rem;
+      font-size: $gw-app--TitleBar--screen--font-size-em;
+    }
+
+    .gw-TitleBar--titles--container {
+      flex-direction: row;
+      align-items: center;
+      margin-right: $gw-app--SPACING-rem-XL;
+
+      vertical-align: baseline;
+      align-self: baseline;
+
+      .gw-TitleBar--title {
+        font-size: $gw-app--TitleBar--screen--font-size-em;
+        @include gw-wrapOnWhiteSpace();
+      }
+
+      .gw-TitleBar--subtitle {
+        font-size: $gw-app--TitleBar--screen--subtitle--font-size-em;
+        padding-top: $gw-app--TitleBar--screen--subtitle--pad-top-rem;
+        font-weight: $gw-app--TitleBar--screen--subtitle-font-weight;
+        @include gw-wrapOnWhiteSpace();
+      }
+    }
+
+    .gw-BreadcrumbLinkWidget, .gw-UpLinkButtonWidget {
+      @if($gw-app--TitleBar--use-alternate-breadcrumb-ux) {
+        @include gw-button--secondary($is-small: true);
+        margin-right: $gw-app--SPACING-rem-XL;
+      } @else {
+        @include gw-link();
+        align-self: baseline;
+      }
+    }
+  }
+
+  &:not(.gw-isScreenTitle) {
+    // Position to other widgets
+    margin-top: $gw-app--TitleBar--panel--spacing-widget-top-rem;
+    margin-left: $gw-app--TitleBar--panel--spacing-widget-left-rem;
+    margin-right: $gw-app--TitleBar--panel--spacing-widget-right-rem;
+    margin-bottom: $gw-app--TitleBar--panel--spacing-widget-bottom-rem;
+
+    // Internal padding
+    padding-top: $gw-app--TitleBar--panel--spacing-inner-top-rem;
+    padding-left: $gw-app--TitleBar--panel--spacing-inner-left-rem;
+    padding-right: $gw-app--TitleBar--panel--spacing-inner-right-rem;
+    padding-bottom: $gw-app--TitleBar--panel--spacing-inner-bottom-rem;
+    
+    font-family: $gw-app--TitleBar--panel--font-family;
+    font-weight: $gw-app--TitleBar--panel--font-weight;
+    color: $gw-app--TitleBar--panel--col;
+    background-color: $gw-app--TitleBar--panel--bg;
+    border-top: $gw-app--TitleBar--panel--border-top--width-px solid $gw-app--TitleBar--panel--border-top--col;
+    border-bottom: gw-border($gw-app--TitleBar--panel--border-bottom--col);
+
+    .gw-TitleBar--icon {
+      margin-right: $gw-app--TitleBar--panel--icon-margin-right-rem;
+    }
+
+    .gw-TitleBar--title {
+      font-size: $gw-app--TitleBar--panel--font-size-em;
+    }
+    .gw-TitleBar--subtitle {
+      font-size: $gw-app--TitleBar--panel--subtitle--font-size-em;
+      font-weight: $gw-app--TitleBar--panel--subtitle-font-weight;
+    }
+  }
+
+  .gw-TitleBar--icon {
+    position: relative;
+    height: 100%;
+  }
+}

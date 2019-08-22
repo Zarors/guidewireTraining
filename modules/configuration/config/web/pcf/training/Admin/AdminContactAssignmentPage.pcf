@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    id="AdminContactAssignmentPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Training.AssignmentTransfer&quot;)">
+    <LocationEntryPoint
+      signature="AdminContactAssignmentPage()"/>
+    <Variable
+      initialValue="null"
+      name="CurrentUser"
+      type="User"/>
+    <Variable
+      initialValue="null"
+      name="TargetUser"
+      type="User"/>
+    <Variable
+      initialValue="null"
+      name="ResultString"
+      type="String"/>
+    <Variable
+      name="CurrentUserContacts"
+      type="gw.api.database.IQueryBeanResult&lt;entity.ABContact&gt;"/>
+    <Variable
+      name="TargetUserContacts"
+      type="gw.api.database.IQueryBeanResult&lt;entity.ABContact&gt;"/>
+    <Screen>
+      <DetailViewPanel
+        columnDivider="false">
+        <InputColumn>
+          <Label
+            id="ContactAssignmentLabel"
+            label="DisplayKey.get(&quot;Training.ContactAssignmentExplained&quot;)"/>
+          <RangeInput
+            editable="true"
+            id="OriginalUser"
+            label="DisplayKey.get(&quot;Training.CurrentUser&quot;)"
+            value="CurrentUser"
+            valueRange="queryForUsers()"
+            valueType="User">
+            <PostOnChange
+              onChange="CurrentUserContacts = trainingapp.base.AssignedUserUtil.getAssignedContacts(CurrentUser)"/>
+          </RangeInput>
+          <ListViewInput
+            label="DisplayKey.get(&quot;Training.CurrentUsersContacts&quot;)">
+            <Toolbar/>
+            <ListViewPanel>
+              <RowIterator
+                editable="false"
+                elementName="CurrentContact"
+                id="CurrentUserContacts"
+                pageSize="5"
+                value="CurrentUserContacts"
+                valueType="gw.api.database.IQueryBeanResult&lt;entity.ABContact&gt;">
+                <Row>
+                  <TextCell
+                    enableSort="false"
+                    id="ContactName"
+                    label="DisplayKey.get(&quot;Training.Name&quot;)"
+                    value="CurrentContact.DisplayName"/>
+                  <UserCell
+                    id="AssignedUser"
+                    label="DisplayKey.get(&quot;Training.AssignedUser&quot;)"
+                    value="CurrentContact.AssignedUser"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </ListViewInput>
+          <InputDivider/>
+          <RangeInput
+            editable="true"
+            id="TargetUser"
+            label="DisplayKey.get(&quot;Training.TargetUser&quot;)"
+            value="TargetUser"
+            valueRange="queryForUsers()"
+            valueType="User">
+            <PostOnChange
+              onChange="TargetUserContacts = trainingapp.base.AssignedUserUtil.getAssignedContacts(TargetUser)"/>
+          </RangeInput>
+          <ListViewInput
+            label="DisplayKey.get(&quot;Training.TargetUsersContacts&quot;)">
+            <Toolbar/>
+            <ListViewPanel>
+              <RowIterator
+                editable="false"
+                elementName="CurrentContact"
+                id="TargetUserContacts"
+                pageSize="5"
+                value="TargetUserContacts"
+                valueType="gw.api.database.IQueryBeanResult&lt;entity.ABContact&gt;">
+                <Row>
+                  <TextCell
+                    enableSort="false"
+                    id="ContactName"
+                    label="DisplayKey.get(&quot;Training.Name&quot;)"
+                    value="CurrentContact.DisplayName"/>
+                  <UserCell
+                    id="AssignedUser"
+                    label="DisplayKey.get(&quot;Training.AssignedUser&quot;)"
+                    value="CurrentContact.AssignedUser"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </ListViewInput>
+          <InputDivider/>
+          <ButtonInput
+            action="ResultString = trainingapp.base.AssignedUserUtil.transferAssignedUser( CurrentUser, TargetUser )"
+            id="TransferContacts"
+            value="DisplayKey.get(&quot;Training.TransferContactAssignment&quot;)"/>
+          <TextInput
+            id="ResultString"
+            label="DisplayKey.get(&quot;Training.Results&quot;)"
+            value="ResultString"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[/* This function is used to populate the Employer dynamic dropdown.
+*/
+function queryForUsers () :
+                gw.api.database.IQueryBeanResult<entity.User> {
+
+  var userQuery = gw.api.database.Query.make(User)
+  var resultSet = userQuery.select()
+  return resultSet
+  
+}
+]]></Code>
+  </Page>
+</PCF>

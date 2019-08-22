@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="IntegrationMessageSafeOrderingPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Training.SafeOrdering&quot;)">
+    <Variable
+      name="selectedABPerson"
+      type="ABPerson"/>
+    <Variable
+      initialValue="&quot;&quot;"
+      name="newABPersonOccupation"
+      type="String"/>
+    <Variable
+      initialValue="true"
+      name="acknowledgeABPersonMessage"
+      type="boolean"/>
+    <Variable
+      name="selectedUser"
+      type="User"/>
+    <Variable
+      name="newUserJobTitle"
+      type="String"/>
+    <Variable
+      initialValue="true"
+      name="acknowledgeUserMessage"
+      type="boolean"/>
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <ContentInput>
+            <Link
+              action="SafeOrderingDemoExitPoint.push()"
+              id="DisplayInstructions"
+              label="DisplayKey.get(&quot;Training.DisplayInstructions&quot;)"/>
+          </ContentInput>
+          <Label
+            label="DisplayKey.get(&quot;Training.SafeOrdering&quot;)"/>
+          <RangeInput
+            editable="true"
+            id="SelectedABPerson"
+            label="DisplayKey.get(&quot;Training.SelectABPerson&quot;)"
+            value="selectedABPerson"
+            valueRange="gw.api.database.Query.make(ABPerson).select()"
+            valueType="ABPerson"/>
+          <TextInput
+            editable="true"
+            id="NewABPersonOccupation"
+            label="DisplayKey.get(&quot;Training.ChangeOccupation&quot;)"
+            value="newABPersonOccupation">
+            <Reflect
+              triggerIds="SelectedABPerson"
+              value="VALUE.Occupation"/>
+          </TextInput>
+          <CheckBoxInput
+            editable="true"
+            id="AcknowledgeABPersonMessage"
+            label="DisplayKey.get(&quot;Training.AcknowledgeMessage&quot;)"
+            value="acknowledgeABPersonMessage"/>
+          <ButtonInput
+            action="sendABPersonMessage()"
+            id="SendABPersonMessage"
+            label="DisplayKey.get(&quot;Training.SendMessage&quot;)"
+            value="DisplayKey.get(&quot;Training.Send&quot;)"/>
+          <InputDivider/>
+          <Label
+            label="DisplayKey.get(&quot;Training.NonSafeOrdering&quot;)"/>
+          <RangeInput
+            editable="true"
+            id="SelectedABUser"
+            label="DisplayKey.get(&quot;Training.SelectUser&quot;)"
+            value="selectedUser"
+            valueRange="gw.api.database.Query.make(User).select()"
+            valueType="User"/>
+          <TextInput
+            editable="true"
+            id="NewUserJobTitle"
+            label="DisplayKey.get(&quot;Training.ChangeOccupation&quot;)"
+            value="newUserJobTitle">
+            <Reflect
+              triggerIds="SelectedABPerson"
+              value="VALUE.Occupation"/>
+          </TextInput>
+          <CheckBoxInput
+            editable="true"
+            id="AcknowledgeUserMessage"
+            label="DisplayKey.get(&quot;Training.AcknowledgeMessage&quot;)"
+            value="acknowledgeUserMessage"/>
+          <ButtonInput
+            action="sendUserMessage()"
+            id="SendUserMessage"
+            label="DisplayKey.get(&quot;Training.SendMessage&quot;)"
+            value="DisplayKey.get(&quot;Training.Send&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[function sendABPersonMessage() : void {
+   selectedABPerson.Occupation = newABPersonOccupation
+   if (acknowledgeABPersonMessage) {
+      selectedABPerson.addEvent("SafeOrderingDemoWithAck")
+   } else {
+      selectedABPerson.addEvent("SafeOrderingDemoNoAck")
+   }
+   gw.transaction.Transaction.getCurrent().commit()
+}
+
+
+function sendUserMessage() : void {
+   selectedUser.JobTitle = newUserJobTitle
+   if (acknowledgeUserMessage) {
+      selectedUser.addEvent("SafeOrderingDemoWithAck")
+   } else {
+      selectedUser.addEvent("SafeOrderingDemoNoAck")
+   }
+   gw.transaction.Transaction.getCurrent().commit()
+}]]></Code>
+  </Page>
+</PCF>

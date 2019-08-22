@@ -1,0 +1,16 @@
+{
+    PrimaryAddress{
+        ...addressParts
+    },
+    AllAddresses {
+        ...addressParts
+    }
+}
+fragment addressParts on Address {
+    AddressType
+    City
+    State
+}
+
+
+

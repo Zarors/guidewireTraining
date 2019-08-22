@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- ### ==========================================================================
+  ### Type Key Type Code data distribution (owned by Type Key data distribution)
+  ### ========================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores value bins and date bin array for date binned distribution."
+  entity="DateBinnedDDDateBin"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="datebinneddddatebin"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.DateBinnedDDDateBinInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.DateBinnedDDDateBinImpl"/>
+  <column
+    desc="First day in days +/- date of distribution for this date bin, must be positive or zero if EndDays is positive"
+    name="StartDays"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Last day in days +/- date of distribution for this date bin, must be negative or zero if StartDays is negative"
+    name="EndDays"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Count of items in this date bin"
+    name="Count"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="DateBinnedDDValueID"
+    desc="DateBinnedDDValue for this object."
+    exportable="false"
+    fkentity="DateBinnedDDValue"
+    ignoreforevents="true"
+    name="Value"
+    nullok="false"/>
+</entity>

@@ -1,0 +1,108 @@
+.gw-animation--spin {
+  @include gw-animation(gw-spin 2s infinite linear);
+}
+
+.gw-animation--pulse {
+  z-index: 200;
+  @include gw-animation(gw-pulse 1.5s);
+}
+
+.gw-animation--hugepulse {
+  z-index: 200;
+  @include gw-animation(gw-hugepulse 1.5s);
+  animation-iteration-count: 2;
+}
+
+.gw-animation--focus {
+  z-index: 200;
+  @include gw-animation(gw-pulse-focus 1.5s);
+}
+
+.gw-animation--highlight-swap {
+  z-index: 200;
+  @include gw-animation(gw-highlight 1s);
+}
+
+@include gw-keyframes(gw-slide-background) {
+  0% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+
+@include gw-keyframes(gw-highlight) {
+  0% {
+    @include gw-filter(invert(100%));
+  }
+  100% {
+    @include gw-filter(invert(0%));
+  }
+}
+
+@include gw-keyframes(gw-spin) {
+  0% {
+    @include gw-transform(rotate(0deg));
+  }
+  100% {
+    @include gw-transform(rotate(360deg));
+  }
+}
+@include gw-keyframes(gw-hugepulse) {
+  0% {
+    @include gw-transform(scale(1));
+  }
+  25% {
+    @include gw-transform(scale(1.75));
+  }
+  50% {
+    @include gw-transform(scale(1));
+  }
+  75% {
+    @include gw-transform(scale(1.75));
+  }
+  100% {
+    @include gw-transform(scale(1));
+  }
+}
+
+@include gw-keyframes(gw-pulse) {
+  0% {
+    @include gw-transform(scale(1));
+  }
+  25% {
+    @include gw-transform(scale(1.06));
+  }
+  50% {
+    @include gw-transform(scale(1));
+  }
+  75% {
+    @include gw-transform(scale(1.04));
+  }
+  100% {
+    @include gw-transform(scale(1));
+  }
+}
+
+@include gw-keyframes(gw-pulse-focus) {
+  0% {
+    @include gw-ie11Only() {
+      border-color: white;
+    }
+
+    @include gw-filter(invert(100%))
+  }
+  25% {
+  }
+  50% {
+    @include gw-ie11Only() {
+      border-color: black;
+    }
+  }
+  75% {
+  }
+  100% {
+    @include gw-ie11Only() {
+      border-color: white;
+    }
+    @include gw-filter(invert(0%))
+  }
+}
+

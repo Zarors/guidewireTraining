@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  desc="Stores metadata for database generation info."
+  entity="DataGenInfo"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="datageninfo"
+  type="keyable">
+  <column
+    desc="Info logged by the generation process."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Time this generation happened."
+    name="PerformDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    name="BuildVersion"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <typekey
+    desc="the action type this data-gen performed"
+    name="Action"
+    nullok="true"
+    typelist="DataGenActionType"/>
+  <typekey
+    name="Status"
+    nullok="true"
+    typelist="DataGenStatusType"/>
+  <array
+    arrayentity="DataGenInfoDetail"
+    desc="Detailed description."
+    name="Details"
+    owner="true"/>
+</entity>

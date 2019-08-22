@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Assignment state data for a particular group."
+  entity="GroupAssignmentState"
+  extendable="true"
+  loadable="false"
+  lockable="true"
+  platform="true"
+  table="group_assign"
+  type="retireable">
+  <implementsEntity
+    name="LastAssignedUserContainerBase"/>
+  <fulldescription><![CDATA[
+        Maintains round-robin assignment state for a particular group or for a particular group and all
+        its subgroups. This is an internal class which should only be used by the internals of the
+        assignment engine.
+      
+    ]]></fulldescription>
+  <foreignkey
+    columnName="GroupID"
+    desc="The group this state is tracking."
+    fkentity="Group"
+    name="Group"
+    nullok="false"/>
+  <column
+    default="false"
+    desc="Is this assignment state for just this group, or does it include the sub groups as well."
+    name="IncludeSubGroups"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="The current load of the group for assignment review activities."
+    name="ReviewLoad"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="The current load of the group for activities."
+    name="ActivityLoad"
+    nullok="true"
+    type="integer"/>
+  <typekey
+    desc="The group type this state is tracking."
+    name="GroupType"
+    nullok="true"
+    typelist="GroupType"/>
+  <array
+    arrayentity="GroupUserAssignmentState"
+    desc="Users belonging to this group."
+    name="Users"
+    owner="true"/>
+  <index
+    desc="Enforce uniqueness, each group can have at most two assignment state entries one with and one without include sub groups"
+    name="groupassign1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GroupID"/>
+    <indexcol
+      keyposition="2"
+      name="IncludeSubGroups"/>
+    <indexcol
+      keyposition="3"
+      name="GroupType"/>
+    <indexcol
+      keyposition="4"
+      name="Retired"/>
+  </index>
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.assignment.dbchecks.GroupAssignmentStateDBCheckBuilder"/>
+</entity>

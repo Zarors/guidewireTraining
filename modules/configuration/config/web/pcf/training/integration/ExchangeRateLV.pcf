@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    id="ExchangeRateLV">
+    <RowIterator
+      editable="false"
+      elementName="currentExchangeRate"
+      pageSize="25"
+      value="queryExchangeRates()"
+      valueType="gw.api.database.IQueryBeanResult&lt;ExchangeRate&gt;">
+      <Row>
+        <DateCell
+          dateFormat="short"
+          id="RetrievedOn"
+          label="DisplayKey.get(&quot;Training.RetrievedOn&quot;)"
+          timeFormat="short"
+          value="currentExchangeRate.CreateTime"/>
+        <TypeKeyCell
+          id="BaseCurrency"
+          label="DisplayKey.get(&quot;Training.BaseCurrency&quot;)"
+          value="currentExchangeRate.BaseCurrency"
+          valueType="typekey.Currency"/>
+        <TypeKeyCell
+          id="PriceCurrency"
+          label="DisplayKey.get(&quot;Training.PriceCurrency&quot;)"
+          value="currentExchangeRate.PriceCurrency"
+          valueType="typekey.Currency"/>
+        <TextCell
+          enableSort="false"
+          id="Rate"
+          label="DisplayKey.get(&quot;Training.Rate&quot;)"
+          value="currentExchangeRate.Rate"
+          valueType="java.math.BigDecimal"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[uses gw.api.database.QuerySelectColumns
+uses gw.api.path.Paths
+
+uses gw.api.database.IQuerySelectColumn
+
+function queryExchangeRates () : gw.api.database.IQueryBeanResult<entity.ExchangeRate> {
+
+  var rateSetQuery = gw.api.database.Query.make(ExchangeRateSet)
+  var rateSetResult = rateSetQuery.select()
+  var mostRecentSet = rateSetResult.orderByDescending(QuerySelectColumns.path(Paths.make(ExchangeRateSet#CreateTime))).FirstResult.ID
+
+  var rateQuery = gw.api.database.Query.make(ExchangeRate)
+  rateQuery.compare(ExchangeRate#ExchangeRateSet, Equals, mostRecentSet)
+  var rateQueryResult = rateQuery.select()
+  rateQueryResult.thenBy(QuerySelectColumns.path(Paths.make(ExchangeRate#BaseCurrency)))
+  rateQueryResult.thenBy(QuerySelectColumns.path(Paths.make(ExchangeRate#PriceCurrency)))
+  return rateQueryResult
+}]]></Code>
+  </ListViewPanel>
+</PCF>

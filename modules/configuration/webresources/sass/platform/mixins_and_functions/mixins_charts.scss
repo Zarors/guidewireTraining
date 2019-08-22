@@ -1,0 +1,16 @@
+@mixin gw-chartLegend() {
+  &.gw-interactive .gw-chart-legend-entry {
+    cursor: pointer;
+  }
+
+  .gw-chart-legend-entry-inactive {
+    color: $gw-app--palette--gray-A;
+
+    .gw-chart-legend-marker {
+      opacity: 0.5;
+      fill: $gw-app--palette--gray-A;
+      stroke: $gw-app--palette--gray-A;
+      background-color: $gw-app--palette--gray-A;
+    }
+  }
+}

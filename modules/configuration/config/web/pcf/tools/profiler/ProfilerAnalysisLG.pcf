@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <LocationGroup
+    canVisit="perm.User.ViewProfiler or perm.User.DevAllAccess"
+    id="ProfilerAnalysisLG"
+    tabBar="InternalToolsTabBar()"
+    title="DisplayKey.get(&quot;Web.Profiler.Analysis&quot;)">
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.Web&quot;)"
+      location="ProfilerAnalysisPage(&quot;Web&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.BatchProcesses&quot;)"
+      location="ProfilerAnalysisPage(&quot;BatchProcess&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.WorkQueues&quot;)"
+      location="ProfilerAnalysisPage(&quot;WorkQueue&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.MessageDestinations&quot;)"
+      location="ProfilerAnalysisPage(&quot;MessageDestination&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.WebServices&quot;)"
+      location="ProfilerAnalysisPage(&quot;WebService&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.RestOperation&quot;)"
+      location="ProfilerAnalysisPage(&quot;RestOperation&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.StartablePlugins&quot;)"
+      location="ProfilerAnalysisPage(&quot;StartablePlugin&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.Upgrade&quot;)"
+      location="ProfilerAnalysisPage(&quot;Upgrade&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.AnalyzeByTimeRange&quot;)"
+      location="ProfilerAnalysisPage(&quot;ByTime&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.AnalyzeSaved&quot;)"
+      location="ProfilerAnalysisPage(&quot;SavedFile&quot;)"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Profiler.GosuServlets&quot;)"
+      location="ProfilerAnalysisPage(&quot;GosuServlet&quot;)"/>
+  </LocationGroup>
+</PCF>

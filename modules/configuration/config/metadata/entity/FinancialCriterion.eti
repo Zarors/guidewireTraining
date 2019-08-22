@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="FinancialCriterion"
+  extendable="false"
+  final="false"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.FinancialCriterionPublicMethods"
+    impl="com.guidewire.pl.domain.custom.impl.FinancialCriterionImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.service.search.SearchCriterionChoice"
+    impl="com.guidewire.pl.domain.custom.impl.FinancialCriterionImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.impl.FinancialCriterionInternalMethods"
+    impl="com.guidewire.pl.domain.custom.impl.FinancialCriterionImpl"/>
+  <fulldescription><![CDATA[
+        A component used as part of a larger search criteria entity. Encapsulates the information
+        entered by the user to restrict the search to entities with a money field within a given range.
+        Specifies the money field to be restricted and a range of allowable values.
+        <p>
+        Supports configurable search. (See the Configuration Guide for details of customizing search screens.).
+      
+    ]]></fulldescription>
+  <column
+    desc="The chosen configurable search option, specifies the money field to be restricted."
+    name="ChosenOption"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="The low end (inclusive) of the allowable range of money values."
+    name="AmountStart"
+    nullok="false"
+    type="money"/>
+  <column
+    desc="The high end (inclusive) of the allowable range of money values."
+    name="AmountEnd"
+    nullok="false"
+    type="money"/>
+</nonPersistentEntity>

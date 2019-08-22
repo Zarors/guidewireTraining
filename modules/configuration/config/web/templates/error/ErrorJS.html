@@ -1,0 +1,50 @@
+<style>
+#renderError {
+  border: 2px solid black;
+  padding: 5px;
+  width: 300px;
+  font-family: Arial;
+  font-size: 9pt;
+  color: black;
+  background-color: white;
+}
+
+#renderErrorTitle {
+  font-size: 12pt;
+  color: red;
+}
+
+#renderErrorDescription {
+}
+
+.error_details1 {
+  padding-left: 15px;
+  align:center;
+}
+
+.error_details2 {
+  padding-left: 15px;
+  align:center;
+}
+
+.error_details3 {
+  font-size: 11;
+}
+</style>
+<script>
+top.smokeTestAlertMsg = <%= ErrorMessageJS %>;
+window.errorOnPage = true;
+function toggleDetails() {
+  var divs = document.getElementsByName('error_details');
+  for (var i = 0; i < divs.length; i++) {
+    toggleDiv(divs[i]);
+  }
+}
+function toggleDiv(div) {
+  if(div.style.display == 'none') {
+    div.style.display = 'inline';
+  } else {
+    div.style.display = 'none';
+  }
+}
+</script>

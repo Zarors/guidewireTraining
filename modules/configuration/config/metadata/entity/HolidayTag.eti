@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A tag that observes a certain holiday."
+  entity="HolidayTag"
+  extendable="false"
+  platform="true"
+  table="holiday_tag"
+  type="versionable">
+  <typekey
+    desc="The code for this holiday tag."
+    name="HolidayTagCode"
+    nullok="false"
+    typelist="HolidayTagCode"/>
+  <foreignkey
+    columnName="HolidayId"
+    desc="The holiday."
+    fkentity="Holiday"
+    name="Holiday"
+    nullok="false"/>
+  <index
+    desc="Enforce uniquneness, a particular holiday tag code can only appear once per holiday"
+    name="holidaytagu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="HolidayId"/>
+    <indexcol
+      keyposition="2"
+      name="HolidayTagCode"/>
+  </index>
+</entity>

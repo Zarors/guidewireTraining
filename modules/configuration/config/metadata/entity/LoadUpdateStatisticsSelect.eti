@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Timed loader update statistics selects."
+  entity="LoadUpdateStatisticsSelect"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadupdatestatisticsselect"
+  type="keyable">
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <implementsEntity
+    name="OrdereddLoaderObject"/>
+  <column
+    desc="Affected staging table."
+    name="TableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="insert/select."
+    name="Query"
+    nullok="true"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="65000"/>
+  </column>
+  <foreignkey
+    columnName="LoadOperationID"
+    desc="Parent."
+    fkentity="LoadOperation"
+    name="LoadOperation"
+    nullok="false"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Denorm FK for unique index."
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <!-- Unique index on LoadCommandID, Table, ExecutionOrder -->
+  <index
+    desc="(LoadCommandID, TableName, ExecutionOrder) is unique across load update statistics selects"
+    name="loadupdselectu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+    <indexcol
+      keyposition="3"
+      name="ExecutionOrder"/>
+  </index>
+</entity>

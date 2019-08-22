@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="DatabaseParameters"
+    parent="InfoPages()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseParameters&quot;)">
+    <Variable
+      initialValue="new gw.api.database.DatabaseParameterSet[0]"
+      name="ParameterSets"
+      type="gw.api.database.DatabaseParameterSet[]"/>
+    <Screen>
+      <Variable
+        initialValue="gw.api.tools.DatabaseParametersHelper.getParameterSetNames( ParameterSets )"
+        name="ParameterSetNames"
+        recalculateOnRefresh="true"
+        type="String[]"/>
+      <Variable
+        name="ParameterSetName"
+        type="String"/>
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseParameters.Parameters&quot;)"/>
+      <Verbatim
+        label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseParameters.ParametersNotAvailable&quot;)"
+        visible="ParameterSets.length == 0"/>
+      <Verbatim
+        id="ScreenMsg"
+        label="DisplayKey.get(&quot;Java.DatabaseParameters.ScreenMessage&quot;)"/>
+      <DetailViewPanel>
+        <InputColumn>
+          <ButtonInput
+            action="ParameterSets = gw.api.tools.DatabaseParametersHelper.getParameters()"
+            id="RefreshParametersButton"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseParameters.RefreshParameters&quot;)"/>
+          <ButtonInput
+            action="gw.api.tools.DatabaseParametersHelper.download()"
+            download="true"
+            id="DownloadParms"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseParameters.Download&quot;)"/>
+          <RangeInput
+            editable="true"
+            id="paramSetPicker"
+            label="DisplayKey.get(&quot;Java.DatabaseParameters.View&quot;)"
+            sortValueRange="false"
+            value="ParameterSetName"
+            valueRange="ParameterSetNames"
+            valueType="java.lang.String">
+            <PostOnChange/>
+          </RangeInput>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        def="DatabaseParametersLV(gw.api.tools.DatabaseParametersHelper.getSetByName( ParameterSetName, ParameterSets))">
+        <Toolbar/>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

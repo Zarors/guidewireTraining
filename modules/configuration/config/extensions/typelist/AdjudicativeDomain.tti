@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="specialty types for adjudicators"
+  final="false"
+  name="AdjudicativeDomain">
+  <typecode
+    code="Disputes"
+    desc="Alternative Dispute Resolutions (ADR)"
+    name="Alternative Dispute Resolutions (ADR)"/>
+  <typecode
+    code="Appeals"
+    desc="Appeals"
+    name="Appeals"/>
+  <typecode
+    code="Municipal"
+    desc="Municipal"
+    name="Municipal"/>
+  <typecode
+    code="County"
+    desc="County"
+    name="County"/>
+  <typecode
+    code="Federal"
+    desc="Federal"
+    name="Federal"/>
+  <typecode
+    code="Supreme"
+    desc="Supreme"
+    name="Supreme"/>
+</typelist>

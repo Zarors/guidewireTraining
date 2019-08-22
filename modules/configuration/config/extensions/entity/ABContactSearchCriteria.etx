@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><extension xmlns="http://guidewire.com/datamodel" entityName="ABContactSearchCriteria">
+  <column desc="Company/Last Name in kanji.  Used only for Japanese names and will be null otherwise." name="KeywordKanji" nullok="true" type="companyname"/>
+  <column desc="First Name in kanji.  Used only for Japanese names and will be null otherwise." name="FirstNameKanji" nullok="true" type="shorttext"/>
+  <typekey desc="Adjudicative Domain" name="AdjudicativeDomain" nullok="true" typelist="AdjudicativeDomain"/>
+  <typekey desc="Attorney's specialty" name="AttorneySpecialty" nullok="true" typelist="LegalSpecialty"/>
+  <typekey desc="Doctor's specialty" name="DoctorSpecialty" nullok="true" typelist="SpecialtyType"/>
+  <typekey desc="Medical specialty type" name="MedicalOrgSpecialty" nullok="true" typelist="SpecialtyType"/>
+  <typekey desc="Law firm Specialty" name="LawFirmSpecialty" nullok="true" typelist="LegalSpecialty"/>
+  <!-- Example for adding a denorm field to the criteria. Also need to edit search-config, add a SearchColumn to ABContact
+        and ensure the column on Address supports linguistic search
+    <column name="CityKanjiDenorm" nullok="true" type="varchar">
+        <columnParam name="size" value="60"/>
+      </column> -->
+</extension>

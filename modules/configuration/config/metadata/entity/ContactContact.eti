@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="The purpose of this table is to avoid a self-referencing foreign key on contact, and to allow contacts to relate to one another in different ways."
+  edgeTable="true"
+  entity="ContactContact"
+  exportable="true"
+  extendable="true"
+  platform="true"
+  table="contactcontact"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.contact.impl.ContactContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.ContactContactPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ContactContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactContactImplCallback"
+    impl="com.guidewire.pl.domain.contact.impl.ContactContactImpl"/>
+  <implementsEntity
+    name="CommonContactContact"/>
+  <implementsEntity
+    name="AddressBookLinkable"/>
+  <fulldescription><![CDATA[<p>
+      Links <code>Contact</code> objects to other contacts. Each link has a specific relationship. See the <code>ContactRel</code> typelist for
+      a list of the possible link relationships. The purpose of this table is to avoid a self-referencing foreign key on
+      <code>Contact</code>, and to allow contacts to relate to one another in different ways.</p>
+      <p>For example, imagine a <code>ContactContact</code> entity with the following values:</p>
+      <ul><li>SourceContactID: ID of Person A</li>
+          <li>Relationship: Employer</li>
+          <li>RelatedContactID: ID of Company B</li>
+      </ul>
+      <p>
+      Then the relationship between A and B is: Company B is the Employer of Person A.</p>
+    ]]></fulldescription>
+  <typekey
+    desc="Relationship between the two contacts."
+    name="Relationship"
+    nullok="false"
+    typelist="ContactRel"/>
+  <foreignkey
+    archivingOwner="source"
+    columnName="RelatedContactID"
+    desc="&quot;RelatedContactID&quot; is the &quot;Relationship&quot; of &quot;SourceContactID&quot;."
+    fkentity="Contact"
+    importableagainstexistingobject="false"
+    name="RelatedContact"
+    nullok="false"/>
+  <foreignkey
+    columnName="SourceContactID"
+    desc="&quot;SourceContactID&quot; has &quot;RelatedContactID&quot; as &quot;Relationship&quot;."
+    fkentity="Contact"
+    importableagainstexistingobject="false"
+    name="SourceContact"
+    nullok="false"/>
+  <index
+    desc="Enforce uniqueness, a particular contact can be related to another contact in the same way only once"
+    name="contactcontact1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="SourceContactID"/>
+    <indexcol
+      keyposition="2"
+      name="RelatedContactID"/>
+    <indexcol
+      keyposition="3"
+      name="Relationship"/>
+  </index>
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.contact.dbchecks.ContactRelationshipConstraintsDBCheckBuilder"/>
+</entity>

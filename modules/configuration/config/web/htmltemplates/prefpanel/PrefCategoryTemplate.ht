@@ -1,0 +1,4 @@
+<div id="gw-PrefCategory--${categoryName}" class="gw-Pref--category">
+    <div class="gw-Pref--category-label">${categoryLabel}</div>
+    ${:children}
+</div>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- Typelists related to rules -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of rule sets"
+  final="false"
+  name="RuleSetType"
+  platform="true">
+  <!-- rulesets for the server engines -->
+  <typecode
+    code="V"
+    desc="Validation rules"
+    name="Validation"/>
+  <typecode
+    code="A"
+    desc="Assignment rules"
+    name="Assignment"/>
+  <typecode
+    code="AR"
+    desc="Archiving rules"
+    name="Archive"/>
+  <typecode
+    code="E"
+    desc="Exception rules"
+    name="Exception"/>
+  <typecode
+    code="WP"
+    desc="Workplan rules"
+    name="Workplan"/>
+  <!-- entity lifecycle rulesets -->
+  <typecode
+    code="L"
+    desc="Rules executed on a imported claim"
+    name="Loaded"/>
+  <typecode
+    code="PR"
+    desc="Rules executed on a new claim before it has been set up"
+    name="Pre-setup"/>
+  <typecode
+    code="PO"
+    desc="Rules executed on a new claim after it has been set up"
+    name="Post-setup"/>
+  <typecode
+    code="C"
+    desc="Actions to be taken after closing a claim or exposure"
+    name="Closed"/>
+  <typecode
+    code="PU"
+    desc="Rules execute after validating, but before updating an editable entity"
+    name="Pre-update"/>
+  <typecode
+    code="EM"
+    desc="Rules for generating integration event messages"
+    name="Event Message"/>
+  <!-- Approval Engine rule sets -->
+  <typecode
+    code="AP"
+    desc="Used to find the user who must approve an approval batch"
+    name="Approval Routing"/>
+  <typecode
+    code="TAR"
+    desc="Used to determine whether or not a transaction needs approval"
+    name="Transaction Approval"/>
+</typelist>

@@ -1,0 +1,26 @@
+<div :if="paging.pagingInfo" class="gw--paging-info">
+      ${paging.pagingInfo}
+    </div>
+<div id="${renderId}-first" class="gw-paging--button-first gw-paging--button ${!paging.showFirst ? 'gw-disabled'}"
+     data-gw-click="gwListView.page page:${paging.first} renderId:${renderId}"
+     data-gw-tooltip="${paging.firstTooltip}"></div>
+<div id="${renderId}-prev" class="gw-paging--button-prev gw-paging--button ${!paging.showPrev ? 'gw-disabled'}"
+     data-gw-click="gwListView.page page:${paging.prev} renderId:${renderId}"
+     data-gw-tooltip="${paging.prevTooltip}"></div>
+<div id="${renderId}-preLabel" class="gw-paging--label-pre"></div>
+<input id="${renderId}-input" maxlength="${paging.maxNumDigits}" style="min-width: ${paging.maxNumDigits}em"
+       class="gw-paging--input gw-noTrack" value="${paging.current}"
+       data-gw-blur="resetValue reset:${paging.current}"
+       data-gw-key="gwListView.page page:value key:13 renderId:${renderId}"
+       data-gw-input="gwInputs.verifyDigitOnly"
+       data-gw-total-entries="${paging.totalEntries}" disabled="${disabled}" />
+<div id="${renderId}-postLabel" class="gw-paging--label-post">
+  <div id="${renderId}-totalDivider" class="gw-page-total-divider"></div>
+  ${paging.total}
+</div>
+<div id="${renderId}-next" class="gw-paging--button-next gw-paging--button ${!paging.showNext ? 'gw-disabled'}"
+     data-gw-click="gwListView.page page:${paging.next} renderId:${renderId}"
+     data-gw-tooltip="${paging.nextTooltip}"></div>
+<div id="${renderId}-last" class="gw-paging--button-last gw-paging--button ${!paging.showLast ? 'gw-disabled'}"
+     data-gw-click="gwListView.page page:${paging.last} renderId:${renderId}"
+     data-gw-tooltip="${paging.lastTooltip}"></div>

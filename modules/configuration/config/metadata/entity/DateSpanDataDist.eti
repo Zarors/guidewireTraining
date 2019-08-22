@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores maximum and minimum dates for each date columnn of a table."
+  entity="DateSpanDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="datespandatadist"
+  type="keyable">
+  <column
+    desc="Date column name."
+    name="DateColName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Latest date stored."
+    name="MaxDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Earliest date stored."
+    name="MinDate"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+</entity>

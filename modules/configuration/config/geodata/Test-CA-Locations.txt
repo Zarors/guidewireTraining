@@ -1,0 +1,86 @@
+# Short list for dev and test purposes
+A0A 1A0,NL,Aquaforte
+A0A 1B0,NL,Avondale
+A0A 1C0,NL,Bay Bulls
+A0A 1E0,NL,Bay de Verde
+A0A 1G0,NL,Bay Roberts
+A0A 1H0,NL,Bell Island Front
+A0A 1J0,NL,Shea Heights
+A0A 1K0,NL,Brigus
+A0A 1L0,NL,Broad Cove BDV
+A0A 1M0,NL,Burnt Point BDV
+A0A 1N0,NL,Calvert
+A0A 1P0,NL,Cape Broyle
+A0A 1R0,NL,Caplin Cove BDV
+A0A 1S0,NL,Cappahayden
+A0A 1V0,NL,Chapel Cove
+A0A 1W0,NL,Clarkes Beach
+A0A 1X0,NL,Coleys Point South
+A0A 1Y0,NL,Colliers Riverhead
+A0A 1Z0,NL,Conception Harbour
+A0A 2B0,NL,Cupids
+A0A 2G0,NL,Fermeuse
+A0A 2H0,NL,Ferryland
+A0A 2L0,NL,Grates Cove
+A0A 2M0,NL,Harbour Grace
+A0A 2N0,NL,Harbour Grace South
+A0A 2P0,NL,Harbour Main
+A0A 2R0,NL,Holyrood
+A0A 2S0,NL,Jobs Cove
+A0A 2V0,NL,Lance Cove
+A0A 2W0,NL,Lower Island Cove
+A0A 2X0,NL,Makinsons
+A0A 2Z0,NL,Marysvale
+A0A 3A0,NL,Mobile
+A0A 3B0,NL,Northern Bay
+A0A 3C0,NL,North Valley
+A0A 3E0,NL,Ochre Pit Cove
+A0A 3G0,NL,Old Perlican
+A0A 3H0,NL,Petty Harbour
+A0A 3J0,NL,Port de Grave
+A0A 3L0,NL,Pouch Cove
+A0A 3M0,NL,Red Head Cove
+A0A 3N0,NL,Renews
+A0A 3P0,NL,Riverhead Harbour Grace
+A0A 3R0,NL,St Shotts
+A0A 3S0,NL,Salmon Cove BDV
+A0A 3V0,NL,Shearstown
+A0A 3W0,NL,South River
+A0A 3X0,NL,Spaniards Bay
+A0A 4A0,NL,Tors Cove
+A0A 4B0,NL,Trepassey
+A0A 4E0,NL,Upper Island Cove
+A0A 4G0,NL,Victoria CB
+A0A 4H0,NL,Bell Island
+A0A 4J0,NL,Western Bay
+A0A 4K0,NL,Witless Bay
+A0A 4L0,NL,Woodfords
+A0B 1A0,NL,Arnolds Cove
+A0B 1B0,NL,Bellevue
+A0B 1C0,NL,Blaketown
+A0B 1E0,NL,Branch
+A0B 1G0,NL,Brigus Junction
+A0B 1H0,NL,Brownsdale
+A0B 1J0,NL,Cavendish
+A0B 1K0,NL,Chance Cove
+A0B 1L0,NL,Chapel ARM
+B1B 1N2,NS,Broughton
+B1B 1N3,NS,Broughton
+B1B 1P1,NS,Round Island
+B1B 1P2,NS,Round Island
+B1B 1R4,NS,Homeville
+B1B 1R5,NS,Homeville
+B1B 1R8,NS,South Head
+B1B 1R9,NS,South Head
+B1B 1T1,NS,Homeville
+B1B 1T6,NS,Black Brook
+B1B 1T9,NS,Port Morien
+B1B 1W1,NS,Tower Road
+B1B 1W2,NS,Tower Road
+B1B 1W3,NS,Tower Road
+B1B 1Y4,NS,Birch Grove
+B1B 1Y5,NS,Port Morien
+B1B 1Y6,NS,Port Morien
+M4A 1V8,ON,North York
+M5E 2A2,ON,Toronto
+A0C 9Z9,BC,TestCity

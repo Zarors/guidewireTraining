@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<database-config
+  xmlns="http://guidewire.com/database-config">
+  <!-- H2 (meant for demo/quickstart use only!) -->
+  <database
+    name="ContactManagerDatabase"
+    dbtype="h2">
+    <dbcp-connection-pool
+      jdbc-url="jdbc:h2:file:/GW10/TrainingApp/db/ab"/>
+  </database>
+
+  <!-- H2 database in memory -->
+  <database
+    name="ContactManagerDatabase"
+    dbtype="h2"
+    env="h2mem">
+    <dbcp-connection-pool
+      jdbc-url="jdbc:h2:mem:ab"/>
+  </database>
+
+
+  <!-- Oracle
+  <database
+    name="ContactManagerDatabase"
+    dbtype="oracle">
+    <dbcp-connection-pool
+      jdbc-url="jdbc:oracle:thin:<USER>/<PASSWORD>@<HOSTNAME>:<PORT>:<ORACLE_SID>"/>
+    <upgrade
+      defer-create-nonessential-indexes="false"
+      ora-parallel-query="enable"
+      ora-parallel-dml="enable"
+      degree-of-parallelism="4"
+      degree-parallel-ddl="4">
+      <ora-db-ddl>
+        <tablespaces
+          admin="AB_OP"
+          index="AB_INDEX"
+          op="AB_OP"
+          staging="AB_STAGING"
+          typelist="AB_OP"
+          lob="AB_LOB">
+      </ora-db-ddl>
+      <versiontriggers
+        dbmsperfinfothreshold="600"/>
+    </upgrade>
+    <loader
+      before-gen-ids-callback-degree-of-parallelism="6"
+      before-insert-select-callback-degree-of-parallelism="6"
+      after-insert-select-callback-degree-of-parallelism="6"
+      insert-select-degree-of-parallelism="6"
+      fk-enable-degree-of-parallelism="6"
+      row-counts-degree-of-parallelism="6">
+      <callback
+        name="TAccountLineItemPopulateLoaderCallback"
+        before-gen-ids-callback-degree-of-parallelism="4"
+        before-insert-select-callback-degree-of-parallelism="4"
+        after-insert-select-callback-degree-of-parallelism="4"
+        insert-select-degree-of-parallelism="4"/>
+      <callback
+        name="TAccountPopulateLoaderCallback-degree-of-parallelism"
+        before-gen-ids-callback-degree-of-parallelism="4"
+        before-insert-select-callback-degree-of-parallelism="4"
+        after-insert-select-callback-degree-of-parallelism="4"
+        insert-select-degree-of-parallelism="4"/>
+    </loader>
+  </database>
+  -->
+
+  <!-- SQL Server
+  <database
+    name="ContactManagerDatabase"
+    dbtype="sqlserver">
+    <dbcp-connection-pool
+      jdbc-url="jdbc:sqlserver://<HOSTNAME>:<PORT>;DatabaseName=<DBNAME>;User=<USER>;Password=<PASSWORD>"/>
+    <upgrade
+      defer-create-nonessential-indexes="false">
+      <versiontriggers
+        dbmsperfinfothreshold="600"/>
+    </upgrade>
+  </database>
+  -->
+
+  <!-- SQL Server with filegroups
+  <database
+    name="ContactManagerDatabase"
+    dbtype="sqlserver">
+    <dbcp-connection-pool
+      jdbc-url="jdbc:sqlserver://<HOSTNAME>:<PORT>;DatabaseName=<DBNAME>;User=<USER>;Password=<PASSWORD>"/>
+    <upgrade
+      defer-create-nonessential-indexes="false">
+      <versiontriggers
+        dbmsperfinfothreshold="600"/>
+      <mssql-db-ddl>
+        <mssql-filegroups
+          admin="ADMINFG"
+          index="INDEXFG"
+          op="OPFG"
+          staging="STAGINGFG"
+          typelist="TYPELISTFG"
+          lob="LOBSFG"/>
+      </mssql-db-ddl>
+    </upgrade>
+  </database>
+  -->
+</database-config>

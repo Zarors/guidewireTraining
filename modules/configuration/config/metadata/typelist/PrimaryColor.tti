@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Primary Colors"
+  name="PrimaryColor"
+  platform="true">
+  <typecode
+    code="ff0000"
+    desc="Red"
+    name="Red"/>
+  <typecode
+    code="00ff00"
+    desc="Green"
+    name="Green"/>
+  <typecode
+    code="0000ff"
+    desc="Blue"
+    name="Blue"/>
+</typelist>

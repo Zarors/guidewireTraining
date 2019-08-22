@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <CardViewPanel
+    id="ArchiveExcludeDetailsCV">
+    <Require
+      name="archiveCountSummary"
+      type="gw.api.archiving.ArchiveCountSummary"/>
+    <Variable
+      initialValue="archiveCountSummary == null? null : new gw.api.archiving.ArchiveSkippedDetails(archiveCountSummary)"
+      name="archiveSkippedDetails"
+      type="gw.api.archiving.ArchiveSkippedDetails"/>
+    <Variable
+      initialValue="archiveCountSummary == null? null : new gw.api.archiving.ArchiveExcludedBecauseOfRulesDetails(archiveCountSummary)"
+      name="archiveExcludedBecauseOfRulesDetails"
+      type="gw.api.archiving.ArchiveExcludedBecauseOfRulesDetails"/>
+    <Variable
+      initialValue="archiveCountSummary == null? null : new gw.api.archiving.ArchiveExcludedBecauseOfFailureDetails(archiveCountSummary)"
+      name="archiveExcludedBecauseOfFailureDetails"
+      type="gw.api.archiving.ArchiveExcludedBecauseOfFailureDetails"/>
+    <Card
+      id="Archived"
+      title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Archived&quot;)"
+      visible="gw.api.web.tools.ArchiveInfoPage.isDevMode()">
+      <DetailViewPanel>
+         <InputColumn>
+           <TextAreaInput
+             available="gw.api.web.tools.ArchiveInfoPage.isDevMode()"
+             id="AllArchived"
+             numRows="20"
+             value="gw.api.archiving.ArchivedSummary.getArchivedRootInfoAsStringLimitedBy(archiveCountSummary.createQueryForArchived(), gw.api.archiving.ArchiveDetails.RESULT_SIZE_DISPLAY_LIMIT)"
+             visible="gw.api.web.tools.ArchiveInfoPage.isDevMode()"/>
+         </InputColumn>
+      </DetailViewPanel>
+    </Card>
+    <Card
+      id="Skipped"
+      title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Skipped&quot;)"
+      visible="archiveCountSummary != null &amp;&amp; (archiveCountSummary typeis gw.api.archiving.ArchiveCountSummarySinceLastRun)">
+      <PanelRef
+        def="ArchiveExcludeDetailsLV(archiveSkippedDetails)"
+        id="ArchiveSkippedDetails"
+        visible="archiveCountSummary.SkippedCount &gt; 0 &amp;&amp; archiveSkippedDetails.canDisplay()">
+        <Toolbar/>
+      </PanelRef>
+      <PanelRef
+        visible="archiveCountSummary.SkippedCount == 0 || !archiveSkippedDetails.canDisplay()">
+        <DetailViewPanel>
+          <InputColumn>
+            <Label
+              id="NoneSkipped"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.NoneSkipped&quot;)"
+              visible="archiveCountSummary.SkippedCount == 0"/>
+            <Label
+              id="TooManyUniqueResultsSkipped"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.TooManyUniqueResults&quot;, gw.api.archiving.ArchiveDetails.RESULT_SIZE_DISPLAY_LIMIT)"
+              visible="!archiveSkippedDetails.canDisplay()"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+    </Card>
+    <Card
+      id="ExcludedBecauseOfRules"
+      title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ExcludedBecauseOfRules&quot;)"
+      visible="archiveCountSummary != null">
+      <PanelRef
+        def="ArchiveExcludeDetailsLV(archiveExcludedBecauseOfRulesDetails)"
+        id="ArchiveExcludedBecauseOfRulesDetails"
+        visible="archiveCountSummary.ExcludedBecauseOfRulesCount &gt; 0 &amp;&amp; archiveExcludedBecauseOfRulesDetails.canDisplay()">
+        <Toolbar/>
+      </PanelRef>
+      <PanelRef
+        visible="archiveCountSummary.ExcludedBecauseOfRulesCount == 0 || !archiveExcludedBecauseOfRulesDetails.canDisplay()">
+        <DetailViewPanel>
+          <InputColumn>
+            <Label
+              id="NoneExcludedBecauseOfRules"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.NoneExcludedBecauseOfRules&quot;)"
+              visible="archiveCountSummary.ExcludedBecauseOfRulesCount == 0"/>
+            <Label
+              id="TooManyUniqueResultsRules"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.TooManyUniqueResults&quot;, gw.api.archiving.ArchiveDetails.RESULT_SIZE_DISPLAY_LIMIT)"
+              visible="!archiveExcludedBecauseOfRulesDetails.canDisplay()"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+    </Card>
+    <Card
+      id="ExcludedBecauseOfFailure"
+      title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ExcludedBecauseOfFailure&quot;)"
+      visible="archiveCountSummary != null">
+      <PanelRef
+        def="ArchiveExcludeDetailsLV(archiveExcludedBecauseOfFailureDetails)"
+        id="ArchiveExcludedBecauseOfFailureDetails"
+        visible="archiveCountSummary.ExcludedBecauseOfFailureCount &gt; 0 &amp;&amp; archiveExcludedBecauseOfFailureDetails.canDisplay()">
+        <Toolbar/>
+      </PanelRef>
+      <PanelRef
+        visible="archiveCountSummary.ExcludedBecauseOfFailureCount == 0 || !archiveExcludedBecauseOfFailureDetails.canDisplay()">
+        <DetailViewPanel>
+          <InputColumn>
+            <Label
+              id="NoneExcludedBecauseOfFailure"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.NoneExcludedBecauseOfFailure&quot;)"
+              visible="archiveCountSummary.ExcludedBecauseOfFailureCount == 0"/>
+            <Label
+              id="TooManyUniqueResultsFailure"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.TooManyUniqueResults&quot;, gw.api.archiving.ArchiveDetails.RESULT_SIZE_DISPLAY_LIMIT)"
+              visible="!archiveExcludedBecauseOfFailureDetails.canDisplay()"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+    </Card>
+  </CardViewPanel>
+</PCF>

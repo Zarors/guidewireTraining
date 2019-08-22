@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!-- ### ==========================
+     ### Database Update Statistics
+     ### ========================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores update statistics info in the database."
+  entity="DatabaseUpdateStats"
+  exportable="false"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="databaseupdatestats"
+  type="keyable">
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="mediumtext"/>
+  <column
+    desc="Query used to determine if threshold exceeded."
+    name="updateStatisticsSQL"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Start time of update statistics process."
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="End time of update statistics process."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="0"
+    desc="Major Schema Version at time of collection "
+    name="MajorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Minor Schema Version at time of collection "
+    name="MinorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Platform Major Schema Version at time of collection "
+    name="PlatformMajorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Platform Minor Schema Version at time of collection "
+    name="PlatformMinorSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Extensions Schema Version at time of collection "
+    name="ExtensionsSchemaVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="false"
+    desc="Whether update is incremental."
+    name="Incremental"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="0"
+    desc="incremental threshold percent."
+    name="incrementalThresholdPercent"
+    nullok="false"
+    type="integer"/>
+  <typekey
+    default="Batch"
+    desc="Type of process running the operation."
+    name="RunnerType"
+    nullok="false"
+    typelist="DBUpdateStatsRunnerType"/>
+  <array
+    arrayentity="TableUpdateStats"
+    desc="Collection of TableUpdateStats linked to this DatabaseUpdateStats."
+    exportable="true"
+    name="TableUpdateStats"
+    owner="true"/>
+</entity>

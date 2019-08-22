@@ -1,0 +1,8 @@
+<div id="${renderId}" ${outerClasses} ${outerStyles} ${outerAttributes}>
+    <div class="gw-radio-wrapper">
+        <div id="${renderId}_radio" tabindex="0" data-gw-group="${name}" class="gw-radio-button ${checked ? 'gw-checked'}"
+             disabled="${disabled}" data-gw-click="gwRadioButtonGroup.radioButtonSelect"></div>
+        <input class="gw-hidden" type="checkbox" name="${name}" value="${renderId}" disabled="${disabled}"
+               checked="${checked}"/>
+    </div>
+</div>

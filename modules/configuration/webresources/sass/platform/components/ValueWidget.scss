@@ -1,0 +1,305 @@
+// This file has 4 sections:
+// 1. All Value Widgets
+// 2. Value Widgets inside of InputWidgets that are NOT inside of Cell Widgets.
+// 3. Value Widgets inside of InputWidgets that ARE inside of Cell Widgets.
+// 4. Value Widgets inside of CellWidgets directly.
+
+// ========== Apply this to all Value Widgets ===========
+
+#gw-root-form.gw-highlight-changed-data {
+  .gw-ValueWidget {
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select,
+    optgroup {
+      &.gw-changed {
+        background-color: $gw-app--inputs--changed--bg;
+        color: $gw-app--inputs--changed--col;
+      }
+    }
+
+    &.gw-changed {
+      optgroup, input:not([type="checkbox"]):not([type="radio"]), textarea, .gw-select-wrapper select {
+        background-color: $gw-app--inputs--changed--bg;
+        color: $gw-app--inputs--changed--col;
+      }
+
+      input[type="checkbox"], .gw-radio-wrapper .gw-radio-button, .gw-radio-wrapper input {
+        box-shadow: $gw-app--inputs--changed--small-input-box-shadow;
+      }
+    }
+  }
+
+  .gw-changed.gw-DateValueWidget {
+    .gw-vw--value {
+      .gw-date-icon, .gw-time-icon {
+        color: $gw-app--inputs--changed--col;
+      }
+    }
+  }
+}
+
+// select elements should never inherit alignment, and should always be left aligned
+.gw-ValueWidget {
+  select {
+    text-align: left !important;
+  }
+
+  .gw-vw--children:empty {
+    display: none;
+  }
+}
+
+// Anything we determine to be currency related, and that server logic, or client reflection has deemed to be "negative"
+.gw-sizing-data-type--currency, .gw-MonetaryAmountValueWidget, .gw-CurrencyValueWidget {
+  &.gw-negative, .gw-negative {
+    color: $gw-app--palette--numbersnegative;
+  }
+}
+
+// ========== Value Widgets in an Input Widget that are NOT in a CellWidget, ie in Input Columns ===========
+.gw-InputWidget:not(.gw-StyleContainer--CellWidget):not(.gw-ListViewInputWidget),
+.gw-TemplateInputWidget:not(.gw-StyleContainer--CellWidget){
+  .gw-value {
+    //overflow: auto; Disable scrolling of value widgets for now, as it hides the required stars and error tabs //TODO: fix one day
+    min-width: $gw-app--ValueWidget-value-min-width-em;
+  }
+
+  &:not(.gw-labelAbove) {
+    .gw-value {
+      max-width: $gw-app--ValueWidget-value-max-width-em;
+    }
+
+    .gw-ValueWidget:not(.gw-StyleContainer--CellWidget) {
+      &.gw-readonly {
+        @include gw-pad-for-input-readonly-mode();
+      }
+
+      &:not(.gw-readonly) {
+        &.gw-BooleanValueWidget,
+        &.gw-BooleanCheckboxValueWidget,
+        &.gw-BooleanRadioValueWidget,
+        &.gw-TypeKeyRadioValueWidget,
+        &.gw-CheckboxGroupRangeValueWidget,
+        &.gw-CheckboxGroupTypeKeyValueWidget,
+        &.gw-RangeRadioValueWidget{
+          @include gw-pad-for-input-readonly-mode(true);
+        }
+      }
+    }
+
+    .gw-vw--value {
+      min-height: $gw-InputColumn--row-min-height;
+    }
+  }
+
+  & > .gw-value {
+    .gw-ValueWidget:not(.gw-StyleContainer--CellWidget) {
+      @include gw-wrapNever();
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      & > div {
+        display: inline-block;
+      }
+
+      .gw-vw--value {
+        height: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        border: $gw-app--border-width-px solid transparent;
+
+        &:empty {
+          display: none;
+        }
+      }
+
+      .gw-vw--children {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        max-width: 100%;
+        align-self: center;
+        flex-shrink: 0;
+
+        &:empty {
+          display: none;
+        }
+      }
+
+      &.gw-readonly {
+
+        .gw-vw--value {
+          text-align: left;
+          &.gw-align-h--center {
+            text-align: center;
+          }
+          &.gw-align-h--right {
+            text-align: right;
+          }
+          .gw-value-readonly-wrapper {
+            @include gw-wrapOnWhiteSpace;
+            width: 100%;
+          }
+          .gw-ActionValueWidget {
+            width: 100%;
+          }
+        }
+      }
+
+      > div {
+        > input[type="text"], & > input[type="password"], & > textarea, & > select {
+          flex-grow: 1;
+        }
+      }
+
+      &.gw-ValueWidget--invalid {
+        select, input, textarea {
+          background-color: $gw-app--inputs--error--bg;
+          color: $gw-app--inputs--error--col;
+        }
+
+        .gw-vw--value {
+          @include gw-stateInsetHighlightError();
+          @include gw-borderRadius();
+          border: gw-border($gw-app--panels--error--border-col);
+        }
+      }
+    }
+  }
+}
+
+// Prefix and Suffixes, same in both locations
+.gw-ValueWidget {
+  &.gw-inputHasPrefix {
+    > .gw-vw--value {
+      > .gw-ValueWidget--prefix {
+        padding: $gw-app--inputs--pad-v-rem $gw-app--inputs--pad-h-rem;
+        border: gw-border($gw-app--inputs--border--col);
+        @include gw-borderCap($left: true);
+        max-width: 40%;
+      }
+
+      > input, > textarea {
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &.gw-inputHasSuffix {
+    > .gw-vw--value {
+      > .gw-ValueWidget--suffix {
+        padding: $gw-app--inputs--pad-v-rem $gw-app--inputs--pad-h-rem;
+        border: gw-border($gw-app--inputs--border--col);
+        @include gw-borderCap($right: true);
+        max-width: 40%;
+      }
+
+      > input, > textarea {
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}
+
+// ========== Value Widgets directly in a CellWidget ===============
+.gw-ValueWidget.gw-StyleContainer--CellWidget {
+  display: flex;
+  align-items: center;
+
+  .gw-vw--value {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    flex-wrap: nowrap;
+
+
+    .gw-ValueWidget--prefix, .gw-ValueWidget--suffix {
+
+    }
+
+    > input[type="text"], & > input[type="password"], & > textarea, & > select {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    > .gw-value-readonly-wrapper {
+      flex-shrink: 1;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &.gw-inputHasSuffix, &.gw-inputHasPrefix {
+
+    .gw-vw--value {
+      align-items: stretch;
+    }
+  }
+
+  .gw-vw--children {
+    display: flex;
+    align-items: center;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &.gw-ValueWidget--invalid {
+    select, input, textarea {
+      background-color: $gw-app--panels--error--bg;
+    }
+
+    .gw-vw--value {
+      @include gw-stateInsetHighlightError();
+      @include gw-borderRadius();
+      border: gw-border($gw-app--panels--error--border-col);
+    }
+  }
+}
+
+// ========== Value Widgets in an Input Widget in a CellWidget, hopefully NOT in an Input Column ===========
+
+.gw-InputWidget.gw-StyleContainer--CellWidget {
+  .gw-ValueWidget:not(.gw-DateValueWidget) {
+    display: inline-block; //TODO: flex boxes here elements are causing odd shrink/grow behavior. But there is some expected functionality with space-between vw values and vw children that this will break.
+    vertical-align: middle;
+
+    .gw-vw--value {
+      .gw-ValueWidget--prefix, .gw-ValueWidget--suffix {
+        display: inline-block;
+      }
+      display: inline-block;
+      vertical-align: baseline; //TODO: this continues to be correct in some ways that we use inputs in cells, and wrong in others //Middle vs. baseline
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    .gw-vw--children {
+      display: inline-block;
+      vertical-align: baseline; //TODO: this continues to be correct in some ways that we use inputs in cells, and wrong in others //Middle vs. baseline
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+}

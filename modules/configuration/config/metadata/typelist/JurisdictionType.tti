@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Used to categorize Jurisdications.  Each Jurisdiction can be associated with one or more JurisdictionTypes"
+  final="false"
+  name="JurisdictionType"
+  platform="true"/>

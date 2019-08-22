@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageTransport"
+  name="MessageGeneratorTransport">
+  <plugin-gosu
+    gosuclass="trainingapp.demo.messagegenerator.MessageGeneratorTransport"/>
+</plugin>

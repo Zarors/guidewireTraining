@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<viewEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Displays pending creates efficiently in the PendingChanges screen"
+  entity="PendingContactCreateView"
+  exportable="false"
+  final="false"
+  primaryEntity="PendingContactCreate"
+  supertypeEntity="PendingContactChangeView">
+  <fulldescription><![CDATA[<p>Aggregates the information needed to display one PendingContactChange in the PendingContactChange.</p>
+    ]]></fulldescription>
+  <viewEntityTypekey
+    name="ABContactSubtype"
+    path="ABContact.Subtype"/>
+  <viewEntityColumn
+    name="ABContactID"
+    path="ABContact"/>
+  <viewEntityLink
+    name="PendingContactCreate"
+    path="ID"/>
+</viewEntity>

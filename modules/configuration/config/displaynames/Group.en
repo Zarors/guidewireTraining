@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Entity
+  name="Group">
+  <Columns>
+    <Column
+      beanPath="Group.Name"
+      name="Name"
+      sortOrder="0"/>
+    <Column
+      beanPath="Group.NameKanji"
+      name="NameKanji"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.util.LocaleUtil
+
+return (LocaleUtil.CurrentLanguageType.Code.startsWith("ja") and NameKanji.HasContent) ? NameKanji : Name]]></DisplayName>
+</Entity>

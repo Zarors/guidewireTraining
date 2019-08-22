@@ -1,0 +1,50 @@
+$gw-app--DashboardScreen--bg: $gw-app--palette--offwhite !default;
+$gw-app--Dashboard--margin: $gw-app--SPACING-rem-M !default;
+
+$gw-app--DashboardColumn--horizontal-spacing: $gw-app--SPACING-rem-XL !default;
+
+// =====================================
+// == TILE
+// =====================================
+$gw-app--TileWidget--bg: $gw-app--bg !default;
+$gw-app--TileWidget--title-text--margin-right: $gw-app--SPACING-rem-M !default;
+$gw-app--TileWidget--header--padding: $gw-app--SPACING-rem-XL $gw-app--SPACING-rem-XL $gw-app--SPACING-rem-XS $gw-app--SPACING-rem-XL !default;
+$gw-app--TileWidget--footer--padding: $gw-app--TileWidget--header--padding !default;
+$gw-app--TileWidget--border-color: $gw-app--palette--gray-B;
+$gw-app--TileWidget--margin: 0 0 $gw-app--SPACING-rem-L 0 !default;
+$gw-app--TileWidget--child-vertical-spacing: $gw-app--SPACING-rem-XL !default;
+$gw-app--TileWidget--border-radius: $gw-app--border-radius-px !default;
+$gw-app--TileWidget--padding: 0 0 $gw-app--SPACING-rem-XL 0 !default;
+
+$gw-app--DetailViewTileWidget--input--min-width: gw-emFixed(146/14) !default;
+$gw-app--DetailViewTileWidget--action--padding: $gw-app--SPACING-rem-L !default;
+
+$gw-app--TileInputColumnDetailViewWidget--padding: $gw-app--SPACING-rem-XL !default;
+$gw-app--TileInputColumn--topMargin: gw-remScaled(32/14) !default;
+
+$gw-app--TileTemplateWidget--margin: $gw-app--SPACING-rem-M 0 0 0 !default;
+
+// =====================================
+// == TILE CHART PANEL
+// =====================================
+$gw-tcp-wide-tile-legend-width: 50% !default;
+$gw-tcp-max-chart-size-px: gw-pxFixed(800) !default;
+$gw-tcp-min-chart-size-px: gw-pxFixed(200) !default;
+$gw-tcp-min-chart-height-px: gw-pxFixed(240) !default;
+$gw-tcp-min-input-column-width: gw-remScaled(200/14) !default;
+$gw-tcp-min-chart-panel-width: gw-remScaled(400/14) !default;
+
+$gw-tcp-min-legend-width: gw-emFixed(85/14) !default;
+$gw-tcp-text-to-marker-padding: gw-remScaled(1) !default;
+$gw-tcp-legend-horizontal-padding-bottom: $gw-app--SPACING-rem-M !default;
+$gw-tcp-legend-entry-padding-top: gw-remFixed(0) !default;
+$gw-tcp-content-padding: $gw-app--SPACING-rem-XL !default;
+$gw-tcp-tile-bottom-margin: $gw-app--SPACING-rem-L !default;
+$gw-tcp-spacer-max-width: gw-emFixed(80/14) !default;
+$gw-tcp-spacer-min-width: $gw-app--SPACING-rem-XL !default;
+$gw-tcp-input-column-padding: $gw-app--SPACING-rem-L !default;
+
+$gw-app--TileChartPanelWidget--padding: $gw-app--SPACING-rem-S $gw-tcp-content-padding 0 $gw-tcp-content-padding;
+
+// Tile Pie Chart styles
+$gw-tcp-pie-chart-size: gw-pxFixed(160) !default;

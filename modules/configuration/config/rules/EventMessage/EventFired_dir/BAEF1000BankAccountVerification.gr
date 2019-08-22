@@ -1,0 +1,26 @@
+package rules.EventMessage.EventFired_dir
+
+@gw.rules.RuleName("BAEF1000 - Bank Account Verification")
+internal class BAEF1000BankAccountVerification {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+// Bank Account Verification messaging destination
+return messageContext.DestID == 13
+
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("\n*** Stage 1 -- Triggering the message ***")
+print("    Event Fired rule set: " + actions.Rule.DisplayName )
+print("    Messaging Destination ID is " + messageContext.DestID)
+// execute child rules
+
+/*end00rule*/
+
+  }
+}

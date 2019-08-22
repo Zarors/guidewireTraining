@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>rsmith</Author>
+  <LastAuthor>Guidewire</LastAuthor>
+  <LastPrinted>2006-07-02T21:02:29Z</LastPrinted>
+  <Created>2002-10-16T01:03:39Z</Created>
+  <LastSaved>2007-09-19T17:48:12Z</LastSaved>
+  <Version>11.9999</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>6345</WindowHeight>
+  <WindowWidth>11445</WindowWidth>
+  <WindowTopX>345</WindowTopX>
+  <WindowTopY>60</WindowTopY>
+  <TabRatio>666</TabRatio>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s24">
+   <Font x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+ </Styles>
+ <Names>
+  <NamedRange ss:Name="Base_Date" ss:RefersTo="='#NOTE'!#REF!"/>
+  <NamedRange ss:Name="Max_model_number" ss:RefersTo="='#NOTE'!#REF!"/>
+  <NamedRange ss:Name="Max_revision_number" ss:RefersTo="='#NOTE'!#REF!"/>
+ </Names>
+ <Worksheet ss:Name="#NOTE">
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="4" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="15.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="103.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="166.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="222.75"/>
+   <Column ss:Width="151.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="107.25"/>
+   <Column ss:Index="8" ss:Width="101.25"/>
+   <Column ss:Width="225"/>
+   <Row ss:Index="2">
+    <Cell ss:Index="2" ss:StyleID="s24"><Data ss:Type="String">NOTE THAT THIS EXCEL FILE IS NO LONGER USED TO GENERATE SAMPLE DATA.</Data></Cell>
+   </Row>
+   <Row ss:Index="4">
+    <Cell ss:Index="2" ss:StyleID="s24"><Data ss:Type="String">INSTEAD, IT IS ALL DONE THROUGH GOSU.</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <Scale>82</Scale>
+    <HorizontalResolution>1200</HorizontalResolution>
+    <VerticalResolution>1200</VerticalResolution>
+   </Print>
+   <PageBreakZoom>60</PageBreakZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <PageBreaks xmlns="urn:schemas-microsoft-com:office:excel">
+   <ColBreaks>
+    <ColBreak>
+     <Column>5</Column>
+    </ColBreak>
+   </ColBreaks>
+  </PageBreaks>
+ </Worksheet>
+</Workbook>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="DuplicateRelatedContactsLV">
+    <Require
+      name="wrappedContact"
+      type="gw.web.merge.ABContactWrapper"/>
+    <Require
+      name="relatedContacts"
+      type="gw.web.merge.MergeContactsLinkedContactsHolder.RelatedContactData[]"/>
+    <RowIterator
+      editable="true"
+      elementName="relatedContactData"
+      value="wrappedContact.WrappedContact == null ? null : relatedContacts"
+      valueType="gw.web.merge.MergeContactsLinkedContactsHolder.RelatedContactData[]">
+      <Row>
+        <CheckBoxCell
+          editable="true"
+          id="Included"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Addresses.Include&quot;)"
+          value="relatedContactData.Included"/>
+        <TextCell
+          action="gw.api.web.contact.ABContactUtil.viewContact(true, relatedContactData.ContactContact.getOtherContact(wrappedContact.WrappedContact), CurrentLocation)"
+          id="Name"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RelatedContacts.Name&quot;)"
+          value="relatedContactData.ContactContact.getOtherContact(wrappedContact.WrappedContact)"
+          valueType="entity.ABContact"/>
+        <RangeCell
+          editable="true"
+          id="Relationship"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RelatedContacts.Relationship&quot;)"
+          required="true"
+          value="new gw.web.ABContactContactLVWrapper(relatedContactData.ContactContact, wrappedContact.WrappedContact).BidiRel"
+          valueRange="wrappedContact.WrappedContact == null ? null : wrappedContact.WrappedContact.getPossibleBidiRelsToContact(relatedContactData.ContactContact.SrcABContact)"
+          valueType="typekey.ContactBidiRel"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

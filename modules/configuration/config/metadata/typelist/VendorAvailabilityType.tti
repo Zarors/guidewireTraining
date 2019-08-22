@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The availability values a vendor can have."
+  final="true"
+  name="VendorAvailabilityType">
+  <typecode
+    code="available"
+    desc="The vendor is available."
+    name="Available"/>
+  <typecode
+    code="unavailable"
+    desc="The vendor is unavailable."
+    name="Unavailable"/>
+</typelist>

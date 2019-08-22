@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="RegionSearchDV">
+    <Require
+      name="SearchCriteria"
+      type="gw.api.admin.RegionSearchCriteria"/>
+    <Variable
+      initialValue="gw.api.admin.BaseAdminUtil.getDefaultCountry()"
+      name="country"
+      type="Country"/>
+    <Variable
+      initialValue="new gw.api.admin.ZoneAutocompleteHandler(country)"
+      name="zoneHandler"
+      type="gw.api.admin.ZoneAutocompleteHandler"/>
+    <InputColumn>
+      <TextInput
+        editable="true"
+        id="Name"
+        label="DisplayKey.get(&quot;Web.Admin.RegionSearch.Name&quot;)"
+        required="false"
+        value="SearchCriteria.RegionName"/>
+      <RangeInput
+        editable="gw.api.admin.BaseAdminUtil.getRegionZoneTypes(country).length &gt; 0"
+        id="zoneType"
+        label="DisplayKey.get(&quot;Web.Admin.RegionSearch.ZoneType&quot;)"
+        noneSelectedLabel="DisplayKey.get(&quot;Java.Select.All&quot;)"
+        required="false"
+        value="SearchCriteria.ZoneType"
+        valueRange="gw.api.admin.BaseAdminUtil.getRegionZoneTypes(country)"
+        valueType="typekey.ZoneType"/>
+      <TextInput
+        autoComplete="zoneHandler"
+        autoCompleteArgIds="zoneType"
+        editable="gw.api.admin.BaseAdminUtil.getRegionZoneTypes(country).length &gt; 0"
+        id="Code"
+        label="DisplayKey.get(&quot;Web.Admin.RegionSearch.Code&quot;)"
+        required="false"
+        value="SearchCriteria.ZoneCode"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputSetRef
+        def="SearchAndResetInputSet()"/>
+    </InputFooterSection>
+  </DetailViewPanel>
+</PCF>

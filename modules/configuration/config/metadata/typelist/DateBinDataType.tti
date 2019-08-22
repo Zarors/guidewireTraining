@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of data to be stored in a date binned distribution,   determining which column of a DateBinnedDDValue to display"
+  final="true"
+  name="DateBinDataType"
+  platform="true">
+  <typecode
+    code="Typekey"
+    desc="A GW Typekey column"
+    name="Typekey"/>
+  <typecode
+    code="Boolean"
+    desc="A Boolean column"
+    name="Boolean"/>
+</typelist>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/ws/soapheaders" elementFormDefault="qualified" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="authentication" nillable="true">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="username" type="xs:string"/>
+        <xs:element name="password" type="xs:string"/>
+      </xs:sequence>
+      <xs:anyAttribute namespace="##other"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gw_language" nillable="true">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:anyAttribute namespace="##other"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gw_locale" nillable="true">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:anyAttribute namespace="##other"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="locale" nillable="true">
+    <xs:annotation>
+      <xs:documentation>
+        &lt;b&gt;Deprecated&lt;/b&gt;. With Guidewire products -- gw_language and gw_locale should be used.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:anyAttribute namespace="##other"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transaction_id" nillable="true">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:anyAttribute namespace="##other"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="traceability_id" nillable="true">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:anyAttribute namespace="##other"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

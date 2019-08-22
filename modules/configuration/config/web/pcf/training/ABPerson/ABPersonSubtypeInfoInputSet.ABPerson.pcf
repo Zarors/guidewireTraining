@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <InputSet
+    id="ABPersonSubtypeInfoInputSet"
+    mode="ABPerson">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <Label
+      id="LicenseInfo"
+      label="DisplayKey.get(&quot;Training.LicenseInfo&quot;)"/>
+    <TextInput
+      editable="true"
+      id="DriversLicense"
+      label="DisplayKey.get(&quot;Training.DriversLicense&quot;)"
+      value="(anABContact as ABPerson).LicenseNumber">
+      <PostOnChange
+        target="State"/>
+    </TextInput>
+    <TypeKeyInput
+      editable="true"
+      id="State"
+      label="DisplayKey.get(&quot;Training.State&quot;)"
+      required="(anABContact as ABPerson).LicenseNumber != null"
+      value="(anABContact as ABPerson).LicenseState"
+      valueType="typekey.Jurisdiction"/>
+  </InputSet>
+</PCF>

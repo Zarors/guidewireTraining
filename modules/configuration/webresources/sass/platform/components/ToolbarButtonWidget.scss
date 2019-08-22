@@ -1,0 +1,4 @@
+//See ToolbarWidget for spacing
+.gw-ToolbarButtonWidget {
+  @include gw-button--asMenuItem();
+}

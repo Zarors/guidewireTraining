@@ -1,0 +1,36 @@
+.gw-BulletPointTextValueWidget {
+  .gw-BulletPointTextValueWidget--inner {
+    align-self: flex-start;
+    margin-top: $gw-app--InputColumn--label-margin-top-rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: $gw-app--BulletPointTextValue--bullet-margin-left-rem;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    > .gw-icon {
+      vertical-align: top;
+      position: relative;
+      top: $gw-app--BulletPointTextValue--bullet-vertical-offset-em;
+      display: inline-block;
+      height: gw-lineHeightInFixedEms();
+      width: $gw-app--BulletPointTextValue--bullet-size-px;
+      @include gw-iconAfter($gw-app--BulletPointTextValue--bullet-glyph, $gw-app--BulletPointTextValue--bullet-size-px, $gw-app--BulletPointTextValue--bullet-color, $display: inline-block, $position: absolute);
+      margin-right: $gw-app--BulletPointTextValue--bullet-margin-right-rem;
+    }
+
+    > .gw-action, > .gw-value-wrapper {
+      flex-shrink: 1;
+      flex-grow: 1;
+      padding: $gw-app--BulletPointTextValue--pad-v-rem 0;
+      display: inline-block;
+      @include gw-wrapOnWhiteSpace();
+    }
+
+    > .gw-action {
+      @include gw-link();
+    }
+  }
+}

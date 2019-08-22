@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../app-px/pcf.xsd">
+  <Popup
+    canEdit="true"
+    id="BulkEditDocumentDetailsPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.DocumentDetails.DocumentContents.EditDetails&quot;)">
+    <LocationEntryPoint
+      signature="BulkEditDocumentDetailsPopup(documentDetailsHelper : gw.document.DocumentDetailsApplicationHelper)"/>
+    <Variable
+      name="documentDetailsHelper"
+      type="gw.document.DocumentDetailsApplicationHelper"/>
+    <Screen
+      id="BulkEditDocumentDetailsScreen">
+      <Toolbar>
+        <EditButtons
+          editVisible="false"
+          showUpdateConfirmMessage="false"/>
+      </Toolbar>
+      <PanelRow>
+        <PanelColumn>
+          <PanelRef
+            def="DocumentDetailsEditDVPanelSet(documentDetailsHelper, false)"/>
+        </PanelColumn>
+        <PanelColumn
+          visible="documentDetailsHelper.AllowFieldsSubset">
+          <PanelSet>
+            <Verbatim
+              label="DisplayKey.get(&quot;Web.DocumentDetail.ListLabel&quot;)"/>
+            <ListViewPanel
+              id="DocumentDetailsEditLV">
+              <RowIterator
+                editable="false"
+                elementName="documentName"
+                pageSize="20"
+                type="String"
+                value="documentDetailsHelper.DocumentNames"
+                valueType="String[]">
+                <Row>
+                  <TextCell
+                    id="documentName"
+                    label="DisplayKey.get(&quot;Web.DocumentDetail.Name&quot;)"
+                    value="documentName"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </PanelSet>
+        </PanelColumn>
+      </PanelRow>
+    </Screen>
+  </Popup>
+</PCF>

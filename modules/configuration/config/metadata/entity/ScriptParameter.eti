@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="For holding user-definable scripting parameters."
+  entity="ScriptParameter"
+  extendable="true"
+  loadable="false"
+  platform="true"
+  table="scriptparameter"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.scriptparameter.impl.ScriptParameterInternalMethods"
+    impl="com.guidewire.pl.domain.scriptparameter.impl.ScriptParameterImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.scriptparameter.ScriptParameterPublicMethods"
+    impl="com.guidewire.pl.domain.scriptparameter.impl.ScriptParameterImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.scriptparameter.impl.ScriptParameterImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.pl.domain.scriptparameter.impl.ScriptParameterImpl"/>
+  <fulldescription><![CDATA[
+      Global variables that can be created in Studio, then referenced in Gosu. Can be created in Guidewire Studio from the Tools menu -> Script Parameters.
+      Created parameters can be referenced as static members off of the ScriptParameter class, for example <code>ScriptParameter.OUR_STANDARD_RATE</code>.
+      Their values can be edited in the Guidewire applications from the Administration tab.
+    ]]></fulldescription>
+  <column
+    desc="Name of the parameter."
+    name="ParameterName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <typekey
+    desc="Identifies the value type (string, integer, boolean, date, etc)."
+    name="ParameterType"
+    nullok="false"
+    typelist="ScriptParameterType"/>
+  <!-- basic value types -->
+  <column
+    desc="Value if the parameter type is Varchar (i.e. String)."
+    name="VarcharValue"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <column
+    desc="Value if the parameter type is Int."
+    name="IntegerValue"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Value if the parameter type is Bit."
+    name="BitValue"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Value if the parameter type is Datetime."
+    name="DatetimeValue"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Value if the parameter type is Decimal."
+    name="DecimalValue"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <column
+    desc="Value if the parameter type is Money."
+    name="MoneyValue"
+    nullok="true"
+    type="money"/>
+  <column
+    desc="Value if the parameter type is Non-negative money."
+    name="NonnegativemoneyValue"
+    nullok="true"
+    type="nonnegativemoney"/>
+  <column
+    desc="Value if the parameter type is a Non-negative integer."
+    name="NonnegativeintegerValue"
+    nullok="true"
+    type="nonnegativeinteger"/>
+  <column
+    desc="Value if the parameter type is Risk."
+    name="RiskValue"
+    nullok="true"
+    type="risk"/>
+  <column
+    desc="Value if the parameter type is PostalCode."
+    name="PostalCodeValue"
+    nullok="true"
+    type="postalcode"/>
+  <column
+    desc="Value if the parameter type is Speed."
+    name="SpeedValue"
+    nullok="true"
+    type="speed"/>
+  <column
+    desc="Value if the parameter type is Phone."
+    name="PhoneValue"
+    nullok="true"
+    type="phone"/>
+  <column
+    desc="Value if the parameter type is Year."
+    name="YearValue"
+    nullok="true"
+    type="year"/>
+  <column
+    desc="Value if the parameter type is Percentage."
+    name="PercentageValue"
+    nullok="true"
+    type="percentage"/>
+  <column
+    desc="Value if the parameter type is Percentagedec."
+    name="PercentagedecValue"
+    nullok="true"
+    type="percentagedec"/>
+  <column
+    desc="Value if the parameter type is Monthly frequency."
+    name="MonthlyfrequencyValue"
+    nullok="true"
+    type="monthlyfrequency"/>
+  <column
+    desc="Value if the parameter type is Weekly frequency."
+    name="WeeklyfrequencyValue"
+    nullok="true"
+    type="weeklyfrequency"/>
+  <column
+    desc="Value if the parameter type is Positive money."
+    name="PositivemoneyValue"
+    nullok="true"
+    type="positivemoney"/>
+  <column
+    desc="Value if the parameter type is Positive integer."
+    name="PositiveintegerValue"
+    nullok="true"
+    type="positiveinteger"/>
+  <!-- Allowed object types -->
+  <foreignkey
+    columnName="UserID"
+    desc="User that created the script parameter."
+    fkentity="User"
+    name="User"
+    nullok="true"/>
+  <foreignkey
+    columnName="GroupID"
+    desc="Group value."
+    fkentity="Group"
+    name="Group"
+    nullok="true"/>
+  <!-- Unique index on (parametername, retired) -->
+  <index
+    desc="Enforce uniqueness of ParameterName field"
+    name="scriptparameteru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ParameterName"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+</entity>

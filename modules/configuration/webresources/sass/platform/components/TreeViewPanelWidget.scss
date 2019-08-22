@@ -1,0 +1,29 @@
+.gw-TreeViewPanelWidget {
+  // Position to other widgets
+  margin-top: $gw-app--TreeViewPanelWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--TreeViewPanelWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--TreeViewPanelWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--TreeViewPanelWidget--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--TreeViewPanelWidget--spacing-inner-top-rem;
+  padding-left: $gw-app--TreeViewPanelWidget--spacing-inner-left-rem;
+  padding-right: $gw-app--TreeViewPanelWidget--spacing-inner-right-rem;
+  padding-bottom: $gw-app--TreeViewPanelWidget--spacing-inner-bottom-rem;
+
+  overflow: auto;
+  min-height: $gw-app--TreeViewPanelWidget--min-height;
+  min-width: $gw-app--TreeViewPanelWidget--min-width;
+
+  @if ($gw-app--TreeViewPanelWidget--has-border-radius) {
+    @include gw-borderRadius();
+  }
+
+  table.gw-TreeViewWidget {
+    td {
+      border: gw-border($gw-app--menus--divider-col);
+    }
+  }
+
+  // See treeviewwidget for internal implementation
+}

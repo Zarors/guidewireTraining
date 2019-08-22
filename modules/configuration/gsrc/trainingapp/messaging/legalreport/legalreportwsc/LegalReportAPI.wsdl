@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<wsdl:definitions targetNamespace="http://example.com/externalapp/webservice/LegalReportAPI" name="LegalReportAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://example.com/externalapp/webservice/LegalReportAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://example.com/externalapp/webservice/LegalReportAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:element name="submitReportRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="payload" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="submitReportRequestResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="LegalReportAPIPortType">
+    <wsdl:operation name="submitReportRequest">
+      <wsdl:input name="submitReportRequest" message="tns:submitReportRequest"/>
+      <wsdl:output name="submitReportRequestResponse" message="tns:submitReportRequestResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LegalReportAPISoap12Binding" type="tns:LegalReportAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="submitReportRequest">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="submitReportRequest">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitReportRequestResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LegalReportAPISoap11Binding" type="tns:LegalReportAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="submitReportRequest">
+      <soap11:operation style="document"/>
+      <wsdl:input name="submitReportRequest">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitReportRequestResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LegalReportAPI">
+    <wsdl:port name="LegalReportAPISoap12Port" binding="tns:LegalReportAPISoap12Binding">
+      <soap12:address location="http://localhost:8890/ab/ws/externalapp/webservice/LegalReportAPI"/>
+      <gwwsdl:address location="${ab}/ws/externalapp/webservice/LegalReportAPI"/>
+    </wsdl:port>
+    <wsdl:port name="LegalReportAPISoap11Port" binding="tns:LegalReportAPISoap11Binding">
+      <soap11:address location="http://localhost:8890/ab/ws/externalapp/webservice/LegalReportAPI/soap11"/>
+      <gwwsdl:address location="${ab}/ws/externalapp/webservice/LegalReportAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="submitReportRequest">
+    <wsdl:part name="parameters" element="tns:submitReportRequest"/>
+  </wsdl:message>
+  <wsdl:message name="submitReportRequestResponse">
+    <wsdl:part name="parameters" element="tns:submitReportRequestResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

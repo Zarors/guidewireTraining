@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<entity
+  loadable="false"
+  platform="true"
+  xmlns="http://guidewire.com/datamodel"
+  entity="ILElementConfig"
+  desc="Configuration of the specific Intentional Logging elements (logging points)"
+  table="ilelementconfig"
+  type="versionable">
+  <column
+    default="true"
+    desc="The field indicating if logging elements is enabled or disabled."
+    name="Enabled"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Identifier of the Element"
+    name="Identifier"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <typekey
+    default="manual"
+    desc="The type of the ILElement"
+    name="Type"
+    nullok="false"
+    typelist="ILElementType"/>
+  <index
+    desc="Only one configuration entry should be stored for each identifier"
+    name="UniqueIdentifier"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Type"/>
+    <indexcol
+      keyposition="2"
+      name="Identifier"/>
+  </index>
+</entity>

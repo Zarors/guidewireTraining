@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<typelistextension
+        xmlns="http://guidewire.com/typelists"
+        desc=""
+        name="ContactChangeResolution">
+    <typecode
+        name="More Information Required"
+        desc="More Information Required"
+        code="more_info_req"/>
+
+</typelistextension>

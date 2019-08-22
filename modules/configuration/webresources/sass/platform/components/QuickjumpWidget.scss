@@ -1,0 +1,22 @@
+.gw-QuickjumpWidget {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+
+  // Position to other widgets
+  margin-top: $gw-app--Quickjump--spacing-widget-top-rem;
+  margin-left: $gw-app--Quickjump--spacing-widget-left-rem;
+  margin-right: $gw-app--Quickjump--spacing-widget-right-rem;
+  margin-bottom: $gw-app--Quickjump--spacing-widget-bottom-rem;
+
+  
+  .gw-QuickjumpWidget--input {
+    width: $gw-app--Quickjump--width-em;
+    // Internal padding
+    padding-top: $gw-app--Quickjump--spacing-inner-top-rem;
+    padding-left: $gw-app--Quickjump--spacing-inner-left-rem;
+    padding-right: $gw-app--Quickjump--spacing-inner-right-rem;
+    padding-bottom: $gw-app--Quickjump--spacing-inner-bottom-rem;
+  }
+}

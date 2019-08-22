@@ -1,0 +1,15 @@
+<tr id="${rowId}" data-gw-click="?{clickable} gwTreeView.treeViewAction act:${selectCommand} id:${treeViewWidgetId} nodeId:${nodeId}"
+    class="?{!clickable} gw-disabled">
+  <td id="${nodeRenderId}">
+    <div class="gw-TreeView--expansion">
+      <div :for="i" :in="numIndents" class="gw-TreeView--depth-marker"></div>
+      <div :if="cycledNode" class="gw-TreeView--cycled-icon gw-icon"></div>
+      <div :unless="cycledNode" class="${controlClass} gw-icon" id="${nodeRenderId}_ctrl"
+        data-gw-click="?{controlCommand} gwTreeView.treeViewAction act:${controlCommand} id:${treeViewWidgetId} nodeId:${nodeId}">
+      </div>
+      <div class="${nodeClass}"></div>
+    </div>
+    <div id="${nodeRenderId}_label" class="gw-TreeView--node--text">${nodeLabel}</div>
+    <div :if="cycledNode"id="${nodeRenderId}_cycled_label" class="gw-TreeView--node--text">${cyclicLabel}</div>
+  </td>
+</tr>

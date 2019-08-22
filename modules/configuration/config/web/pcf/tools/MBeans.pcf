@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    canVisit="perm.User.ViewMBeans or perm.User.DevAllAccess"
+    countsAsWork="false"
+    id="MBeans"
+    parent="ServerTools()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.MBeans.Title&quot;)">
+    <LocationEntryPoint
+      signature="MBeans()"/>
+    <LocationEntryPoint
+      signature="MBeans(Result : String)"/>
+    <Variable
+      name="Result"
+      type="String"/>
+    <Variable
+      initialValue="new gw.api.tools.MBeansData()"
+      name="GWMBeansData"
+      type="gw.api.tools.MBeansData"/>
+    <Screen
+      id="MBeansScreen">
+      <Verbatim
+        label="Result"/>
+      <PanelRef
+        def="MBeansLV(&quot;&quot;, GWMBeansData)"
+        id="MBeansLV"/>
+    </Screen>
+  </Page>
+</PCF>

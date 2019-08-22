@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../schema/pcf.xsd">
+  <Popup
+    canEdit="false"
+    id="ContactHistoryDetailPopup"
+    title="DisplayKey.get(&quot;Web.ContactHistoryDetail.Title&quot;)">
+    <LocationEntryPoint
+      signature="ContactHistoryDetailPopup(history : ContactHistory)"/>
+    <Variable
+      name="history"
+      type="ContactHistory"/>
+    <ScreenRef
+      def="ContactHistoryDetailScreen(history)"/>
+  </Popup>
+</PCF>

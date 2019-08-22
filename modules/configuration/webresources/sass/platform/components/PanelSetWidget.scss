@@ -1,0 +1,26 @@
+.gw-PanelSetWidget {
+  // Position to other widgets
+  margin-top: $gw-app--PanelSet--spacing-widget-top-rem;
+  margin-left: $gw-app--PanelSet--spacing-widget-left-rem;
+  margin-right: $gw-app--PanelSet--spacing-widget-right-rem;
+  margin-bottom: $gw-app--PanelSet--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--PanelSet--spacing-inner-top-rem;
+  padding-left: $gw-app--PanelSet--spacing-inner-left-rem;
+  padding-right: $gw-app--PanelSet--spacing-inner-right-rem;
+  padding-bottom: $gw-app--PanelSet--spacing-inner-bottom-rem;
+
+  .gw-paging-widget-section {
+    display: flex;
+  }
+
+  &.gw-childrenHaveBorders {
+    .gw-tableLayout--table--row {
+      .gw-tableLayout--table--cell {
+        border: $gw-app--PanelSetAndIterator--child--border;
+        padding: $gw-app--tables--cell--pad-v-rem $gw-app--tables--cell--pad-h-rem;
+      }
+    }
+  }
+}

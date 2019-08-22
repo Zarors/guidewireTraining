@@ -1,0 +1,8 @@
+<div :if="hasHeaderContent" class="gw-InputColumnSubGroup--header">
+    ${icon}
+    <div :if="subGroupLabel" class="gw-InputColumnSubGroup--header--label gw-label gw-labelAbove">${subGroupLabel}</div>
+</div>
+<div class="gw-InputColumnSubGroup--body">
+    <div class="gw-margin-gap"></div>
+    ${:children}
+</div>

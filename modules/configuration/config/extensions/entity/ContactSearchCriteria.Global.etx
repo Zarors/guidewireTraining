@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="ContactSearchCriteria">
+  <column
+    desc="First name in kanji (used only for Japanese names)"
+    name="FirstNameKanji"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="KeywordKanji is the general term for NameKanji (Companies and Places) and LastNameKanji (for Persons)"
+    name="KeywordKanji"
+    nullok="true"
+    type="shorttext"/>
+</extension>

@@ -1,0 +1,49 @@
+// =====================================
+// == PERFORMANCE INDICATOR
+// =====================================
+// Position to other widgets
+$gw-app--PerformanceIndicatorRow--spacing-widget-top-rem: $gw-app--SPACING-rem-XS !default;
+$gw-app--PerformanceIndicatorRow--spacing-widget-left-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--PerformanceIndicatorRow--spacing-widget-right-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--PerformanceIndicatorRow--spacing-widget-bottom-rem: $gw-app--SPACING-rem-XS !default;
+
+// Internal padding
+$gw-app--PerformanceIndicatorRow--spacing-inner-top-rem: null !default;
+$gw-app--PerformanceIndicatorRow--spacing-inner-left-rem: null !default;
+$gw-app--PerformanceIndicatorRow--spacing-inner-right-rem: null !default;
+$gw-app--PerformanceIndicatorRow--spacing-inner-bottom-rem: null !default;
+
+// Position to other widgets
+$gw-app--PerformanceIndicator--spacing-widget-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--PerformanceIndicator--spacing-widget-left-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--PerformanceIndicator--spacing-widget-right-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--PerformanceIndicator--spacing-widget-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+// Internal padding
+$gw-app--PerformanceIndicator--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--PerformanceIndicator--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--PerformanceIndicator--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--PerformanceIndicator--spacing-inner-bottom-rem: $gw-app--SPACING-rem-M !default;
+
+$gw-app--PerformanceIndicator--border: 1px solid $gw-app--palette--gray-B !default;
+$gw-app--PerformanceIndicator--box-shadow: 1px 1px 3px 0px $gw-app--palette--shadow-col !default;
+$gw-app--PerformanceIndicator--bg: $gw-app--palette--offwhite !default;
+
+$gw-app--PerformanceIndicator--Value--use-calculator-display: false !default;
+
+$gw-app--PerformanceIndicator--Value--font-size: gw-emFixed(24/14) !default;
+$gw-app--PerformanceIndicator--Value--font-weight: gw-weight(normal) !default;
+$gw-app--PerformanceIndicator--Value--marginBottom: $gw-app--SPACING-rem-S !default;
+
+$gw-app--PerformanceIndicator--Label--font-size: 1em !default;
+$gw-app--PerformanceIndicator--Label--font-weight: gw-weight(normal) !default;
+$gw-app--PerformanceIndicator--Label--color: $gw-app--palette--gray-5 !default;
+
+$gw-app--PerformanceIndicator--Badge--font-size: $gw-app--font-size--smaller-px !default;
+$gw-app--PerformanceIndicator--Badge--font-weight: gw-weight(normal) !default;
+$gw-app--PerformanceIndicator--Badge--marginTop: $gw-app--SPACING-rem-S !default;
+
+$gw-app--PerformanceIndicator--fixed-width: null !default;
+$gw-app--PerformanceIndicator--min-width: 11em !default;
+$gw-app--PerformanceIndicator--max-width: gw-emFixed(18) !default;
+$gw-app--PerformanceIndicator--align-badges-bottom: true !default;

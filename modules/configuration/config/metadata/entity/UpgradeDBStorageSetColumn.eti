@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- ************************************* IMPORTANT ********************************************************************
+     If this schema is changed in a way such that the changes cannot be implemented by simply creating the new ojbects,
+    you must increment the final static int UpgraderInstrumentation.EXPECTEDUPGRADESCHEMAVERSION, which will force
+    all these tables to be dropped and recreated.
+  ************************************* IMPORTANT ********************************************************************
+
+  ### =================================================================================
+  ### Upgrade database storage set column names (owned by Upgrade database storage set)
+  ### ================================================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores ordered column names for a database storage set."
+  entity="UpgradeDBStorageSetColumn"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="upgradedbstoragesetcolumns"
+  type="keyable">
+  <foreignkey
+    columnName="UpgradeDBStorageSetID"
+    desc="Database storage set for this object"
+    exportable="false"
+    fkentity="UpgradeDBStorageSet"
+    ignoreforevents="true"
+    name="UpgradeDBStorageSet"
+    nullok="false"/>
+  <column
+    desc="Column name."
+    name="ColumnName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="0-based ordering of columnname."
+    name="ColumnOrder"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Java class of data."
+    name="ColumnClass"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="True if used to match before and after object.  False if compare before and after"
+    name="KeyColumn"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="True if column is compared side by side.  False will show differences in parentheses"
+    name="CompareColumn"
+    nullok="false"
+    type="bit"/>
+  <index
+    desc="Unique index for upgrade instrumentation"
+    name="udbsscolumnsu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UpgradeDBStorageSetID"/>
+    <indexcol
+      keyposition="2"
+      name="ColumnOrder"/>
+  </index>
+</entity>

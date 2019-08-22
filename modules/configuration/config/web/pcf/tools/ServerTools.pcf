@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <LocationGroup
+    canVisit="perm.User.ServerTools or perm.User.DevAllAccess"
+    id="ServerTools"
+    menuActions="InternalToolsMenuActions()"
+    tabBar="InternalToolsTabBar()"
+    title="null">
+    <LocationRef
+      location="BatchProcessInfo()"/>
+    <LocationRef
+      location="WorkQueueInfo()"/>
+    <LocationRef
+      location="SetLogLevel()"/>
+    <LocationRef
+      location="ViewLogs()"/>
+    <LocationRef
+      location="InfoPages()"/>
+    <LocationRef
+      location="MBeans()"/>
+    <LocationRef
+      location="StartablePlugin()"/>
+    <LocationRef
+      location="ClusterPages()"/>
+    <LocationRef
+      location="UpgradeInfo()"/>
+    <LocationRef
+      location="CentipedeCacheInfoLG()"/>
+    <LocationRef
+      location="Profiler()"/>
+    <LocationRef
+      location="JProfiler()"/>
+  </LocationGroup>
+</PCF>

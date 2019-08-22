@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ExportDataDV">
+    <Require
+      name="ExportDataInfo"
+      type="gw.api.admin.ExportDataInfo"/>
+    <InputColumn>
+      <ListViewInput
+        labelAbove="true">
+        <Toolbar>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="gw.api.admin.BaseAdminUtil.exportData(ExportDataInfo, CheckedValues)"
+            download="true"
+            id="ExportButton"
+            iterator="DataSetIterator"
+            label="DisplayKey.get(&quot;Web.Admin.ExportDataDV.ExportButton&quot;)"/>
+        </Toolbar>
+        <ListViewPanel
+          id="ExportDataSetLV">
+          <RowIterator
+            editable="false"
+            elementName="dataset"
+            hasCheckBoxes="true"
+            id="DataSetIterator"
+            pageSize="30"
+            pickWidth="0"
+            type="com.guidewire.pl.system.exim.ExportDataSet"
+            value="ExportDataInfo.AvailableDataSets as List&lt;com.guidewire.pl.system.exim.ExportDataSet&gt;"
+            valueType="java.util.List&lt;com.guidewire.pl.system.exim.ExportDataSet&gt;">
+            <Row>
+              <TextCell
+                id="DataSet"
+                label="DisplayKey.get(&quot;Web.Admin.ExportDataDV.DataSet&quot;)"
+                value="dataset.DisplayName"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </ListViewInput>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

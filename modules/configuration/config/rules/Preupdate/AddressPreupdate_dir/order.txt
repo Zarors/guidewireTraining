@@ -1,0 +1,4 @@
+ContactPrimaryAddressAddedHistoryEvent
+ContactSecondaryAddressAddedHistoryEvent
+ContactPrimaryAddressEditedHistoryEvent
+ContactSecondaryAddressEditedHistoryEvent

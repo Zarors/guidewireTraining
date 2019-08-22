@@ -1,0 +1,12 @@
+// Sizing
+$gw-app--BulletPointTextValue--bullet-margin-right-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--BulletPointTextValue--bullet-margin-left-rem: 0 !default;
+$gw-app--BulletPointTextValue--pad-v-rem: 0 !default;
+$gw-app--BulletPointTextValue--bullet-size-px: gw-pxFixed(7) !default;
+$gw-app--BulletPointTextValue--bullet-vertical-offset-em: gw-emFixed(.34) !default;
+
+// Color
+$gw-app--BulletPointTextValue--bullet-color: $gw-app--palette--offblack !default;
+
+// Other
+$gw-app--BulletPointTextValue--bullet-glyph: "circle-solid" !default;

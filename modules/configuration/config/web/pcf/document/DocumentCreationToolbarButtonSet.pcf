@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ToolbarButtonSet
+    id="DocumentCreationToolbarButtonSet">
+    <Require
+      name="documentApplicationContext"
+      type="gw.document.DocumentApplicationContext"/>
+    <Require
+      name="documentCreationInfo"
+      type="gw.document.DocumentCreationInfo"/>
+    <ToolbarButton
+      action="CurrentLocation.commit()"
+      id="NewDocumentFromTemplate_CustomUpdate"
+      label="DisplayKey.get(&quot;Button.Update&quot;)"
+      available="documentCreationInfo.File != null"/>
+    <EditButtons
+      updateVisible="false"/>
+  </ToolbarButtonSet>
+</PCF>

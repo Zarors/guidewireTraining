@@ -1,0 +1,26 @@
+.gw-tooltip {
+  position: fixed;
+  display: block;
+  left: -100vw; // Offscreen until needed
+  @include gw-z-index(tooltips);
+
+  box-shadow: $gw-app--tooltips--shadow;
+  max-width: $gw-app--tooltips--max-width-em;
+  max-height: $gw-app--tooltips--max-height-em;
+  white-space: pre-wrap;
+  padding: $gw-app--tooltips--pad-v-rem $gw-app--tooltips--pad-h-rem;
+
+  background-color: $gw-app--tooltips--bg;
+  color: $gw-app--tooltips--col;
+  border: gw-border($gw-app--tooltips--border-col);
+  @include gw-borderRadius();
+
+  transition: opacity 0s;
+  opacity: 0;
+  pointer-events: none;
+
+  &.gw-show {
+    opacity: 1;
+    transition: opacity #{$gw-app--tooltips--fade-time-seconds} ease-in;
+  }
+}

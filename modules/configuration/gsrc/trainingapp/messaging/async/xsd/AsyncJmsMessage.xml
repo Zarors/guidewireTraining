@@ -1,0 +1,4 @@
+<ext:ABPerson xmlns:ext="external.startable.abpersonmodel">
+  <ext:DisplayName>Guide Wire</ext:DisplayName>
+  <ext:DateOfBirth>1996-01-28T19:49:45.000-08:00</ext:DateOfBirth>
+</ext:ABPerson>

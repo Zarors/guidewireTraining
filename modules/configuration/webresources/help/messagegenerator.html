@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Message Generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading1">Message Generator</p>
+
+<p class="body">This page is designed to let students rapidly create an instance of an event-aware entity, thereby triggering the creation of a message.</p>
+
+<p class="heading2">How Does It Work?</p>
+
+<p class="body">Whenever this page is rendered, TrainingApp auto-generates a name for a new instance of the MessageGenerator entity. This appears in the Name field. You can modify the name if you wish, but you do not need to. Clicking either "Create..." button creates a MessageGenerator instance using the name in the Name field. The Message Generator destination (ID 21) listens for events in which a MessageGenerator instance is created.</p>
+
+<p class="body">When you click the "Create and Send Only" button:</p>
+<ol class="body">
+	<li><p class="body">An instance of MessageGenerator is created and committed. The AutoAckMessage field is set to false.</li>
+	<li><p class="body">The Message Generator destination creates a MessageContext and passes it to the Event Fired rules.</li>
+	<li><p class="body">Event Fired rule MGEF1000 creates a message. The payload is the Name field of the MessageGenerator instance. The message is then committed to the Message table.</li>
+	<li><p class="body">From the Message table, the MessageGeneratorTransport plugin prints the payload the the console.</li>
+</ol>
+</p>
+
+<p class="body">Messages created via the "Create and Send Only" button are in the Message table and can be viewed via the Message Table screen.</p>
+
+<p class="body">When you click the "Create, Send, and Acknowledge" button:</p>
+<ol class="body">
+	<li><p class="body">An instance of MessageGenerator is created and committed. The AutoAckMessage field is set to true.</li>
+	<li><p class="body">The Message Generator destination creates a MessageContext and passed it to the Event Fired rules.</li>
+	<li><p class="body">Event Fired rule MGEF1000 creates a message. The payload is the Name field of the MessageGenerator instance. The message is then committed to the Message table.</li>
+	<li><p class="body">From the Message table, the MessageGeneratorTransport plugin prints the payload the the console.</li>
+	<li><p class="body">Because the AutoAckMessage field is true, the MessageGeneratorTransport plugin also acknowledges the message.</li>
+</ol>
+</p>
+
+<p class="body">Messages created via the "Create, Send, and Acknowledge" button reside in the Message table for the short period of time between message creation and message sending. They can be viewed via the Message Table screen if you look for them immediately after creating them. Once sent and acknowledged, the message moves to the MessageHistory table and can be viewed via the MessageHistory Table screen.</p>
+
+<p class="heading2">Where Can I Find The Code That Is Used By This Page?</p>
+<ul class="body">
+     <li><p class="body">IntegrationMessageGeneratorPage's Code tab</p>
+          <ul class="body">
+               <li><p class="body">sendOnly()</p>
+               <li><p class="body">sendAndAck()</p>
+          </ul>
+     </li>
+     <li><p class="body">Message Generator destination (ID 21)</p></li>
+     <li><p class="body">Event Fired rules</p>
+          <ul class="body">
+               <li><p class="body">MGEF1000 - MessageGenerator</p>
+          </ul>
+     </li>
+     <li><p class="body">Messaging plugins</p>
+          <ul class="body">
+               <li><p class="body">trainingapp.demo.messagegenerator.MessageGeneratorRequest</p>
+               <li><p class="body">trainingapp.demo.messagegenerator.MessageGeneratorTransport</p>
+          </ul>
+     </li>
+</ul>
+
+</body>
+</html>

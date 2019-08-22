@@ -1,0 +1,17 @@
+.gw-picker-widget {
+
+  .gw-picker-button {
+    .gw-icon {
+      @include gw-icon("search", $v-align: baseline);
+    }
+  }
+
+
+  .gw-picker-clear {
+    margin-left: $gw-app--SPACING-rem-S;
+    @include gw-button--secondary();
+    .gw-icon {
+      @include gw-icon("times-circle", $v-align: baseline);
+    }
+  }
+}

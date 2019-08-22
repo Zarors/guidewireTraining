@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Screen
+    editable="true"
+    id="ProfilerConfigurationScreen">
+    <Require
+      name="enableWebProfilingActions"
+      type="block()"/>
+    <Require
+      name="disableWebProfilingActions"
+      type="block()"/>
+    <Variable
+      initialValue="new boolean[1]"
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <AlertBar
+      action="null"
+      id="RestartToTakeEffectAlert"
+      label="DisplayKey.get(&quot;Web.Profiler.RestartToTakeEffectAlert&quot;)"
+      visible="enableAlertBar[0]"/>
+    <PanelRef
+      def="EnableWebProfilerPanelSet(enableWebProfilingActions, disableWebProfilingActions)"/>
+    <PanelDivider/>
+    <PanelSet>
+      <PanelRef>
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.Profiler.EntryPointConfiguration&quot;)"/>
+        <Toolbar>
+          <ToolbarDivider/>
+          <ToolbarButton
+            action="EnableBatchProcessPopup.push(enableAlertBar)"
+            id="EnableBatchProcessButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForBatchProcess&quot;)"/>
+          <ToolbarButton
+            action="EnableWorkQueuePopup.push(enableAlertBar)"
+            id="EnableWorkQueueButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForWorkQueue&quot;)"/>
+          <ToolbarButton
+            action="EnableMessageDestinationPopup.push(enableAlertBar)"
+            id="EnableMessageDestinationButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForMessageDestination&quot;)"/>
+          <ToolbarButton
+            action="EnableRestOperationPopup.push(enableAlertBar)"
+            id="EnableRestOperationButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForRestOperation&quot;)"/>
+          <ToolbarButton
+            action="EnableWebServicePopup.push(enableAlertBar)"
+            id="EnableWebServiceButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForWebService&quot;)"/>
+          <ToolbarButton
+            action="EnableStartablePluginPopup.push(enableAlertBar)"
+            id="EnableStartablePluginButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForStartablePlugin&quot;)"/>
+          <ToolbarButton
+            action="EnableGosuServletPopup.push(enableAlertBar)"
+            id="EnableGosuServletButton"
+            label="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForGosuServlet&quot;)"/>
+        </Toolbar>
+        <ListViewPanel
+          editable="false"
+          id="ProfilerConfigLV">
+          <RowIterator
+            editable="true"
+            elementName="profilerConfig"
+            hasCheckBoxes="true"
+            hideCheckBoxesIfReadOnly="true"
+            toRemove="profilerConfig.remove()"
+            value="gw.api.database.Query.make(ProfilerConfig).compare(&quot;ProfilerEnabled&quot;, Equals, true).select()"
+            valueType="gw.api.database.IQueryBeanResult&lt;entity.ProfilerConfig&gt;">
+            <ToolbarFilter
+              label="DisplayKey.get(&quot;Web.Profiler.EntryPointType&quot;)"
+              name="ProfilerConfigType">
+              <ToolbarFilterOption
+                filter="gw.api.util.CoreFilters.ALL"/>
+              <ToolbarFilterOption
+                filter="new gw.api.profiler.ProfilerConfigTypeKeyFilter( TC_BPPROFILERCONFIG )"
+                label="getDisplayNameForType( TC_BPPROFILERCONFIG )"/>
+              <ToolbarFilterOption
+                filter="new gw.api.profiler.ProfilerConfigTypeKeyFilter( TC_WQPROFILERCONFIG )"
+                label="getDisplayNameForType( TC_WQPROFILERCONFIG )"/>
+              <ToolbarFilterOption
+                filter="new gw.api.profiler.ProfilerConfigTypeKeyFilter( TC_MDPROFILERCONFIG )"
+                label="getDisplayNameForType(TC_MDPROFILERCONFIG)"/>
+              <ToolbarFilterOption
+                filter="new gw.api.profiler.ProfilerConfigTypeKeyFilter( TC_RESTPROFILERCONFIG )"
+                label="getDisplayNameForType(TC_RESTPROFILERCONFIG)"/>
+              <ToolbarFilterOption
+                filter="new gw.api.profiler.ProfilerConfigTypeKeyFilter( TC_WSPROFILERCONFIG )"
+                label="getDisplayNameForType( TC_WSPROFILERCONFIG )"/>
+            </ToolbarFilter>
+            <Row>
+              <TextCell
+                id="EntryPointType"
+                label="DisplayKey.get(&quot;Web.Profiler.EntryPointType&quot;)"
+                required="true"
+                sortBy="profilerConfig.Subtype"
+                sortOrder="1"
+                unique="true"
+                value="getDisplayNameForType(profilerConfig.Subtype)"/>
+              <TextCell
+                id="EntryPointName"
+                label="DisplayKey.get(&quot;Web.Profiler.EntryPointName&quot;)"
+                required="true"
+                sortOrder="2"
+                unique="true"
+                value="profilerConfig.EntryPoint"/>
+              <BooleanRadioCell
+                action="toggleIndividualStacks( profilerConfig )"
+                available="profilerConfig typeis WQProfilerConfig"
+                icon="getProfilerIcon(profilerConfig typeis WQProfilerConfig, \ -&gt; (profilerConfig as WQProfilerConfig).IndividualStacks == true)"
+                iconType="svgFileName"
+                iconColor="getProfilerIconColor(profilerConfig typeis WQProfilerConfig, \ -&gt; (profilerConfig as WQProfilerConfig).IndividualStacks == true )"
+                id="IndividualStacks"
+                label="DisplayKey.get(&quot;Web.Profiler.IndividualStacks&quot;)"
+                showHeaderIcon="false"
+                value="true"
+                valueType="boolean"
+                wrapLabel="true"/>
+              <BooleanRadioCell
+                action="toggleStackTraceTracking( profilerConfig )"
+                icon="getProfilerIcon(true, \ -> profilerConfig.StackTraceTracking)"
+                iconType="svgFileName"
+                iconColor="getProfilerIconColor(true, \ -> profilerConfig.StackTraceTracking)"
+                id="StackTraceTracking"
+                label="DisplayKey.get(&quot;Web.Profiler.StackTraceTracking&quot;)"
+                showHeaderIcon="false"
+                value="true"
+                valueType="boolean"
+                wrapLabel="true"/>
+              <BooleanRadioCell
+                action="toggleQueryOptimizerTracing( profilerConfig )"
+                available="gw.api.profiler.ProfilerPageHelper.isQueryOptimizerTracingAvailable()"
+                formatType="exactNumber"
+                icon="getProfilerIcon(gw.api.profiler.ProfilerPageHelper.isQueryOptimizerTracingAvailable(), \ -> profilerConfig.QueryOptimizerTracing)"
+                iconType="svgFileName"
+                iconColor="getProfilerIconColor(gw.api.profiler.ProfilerPageHelper.isQueryOptimizerTracingAvailable(), \ -> profilerConfig.QueryOptimizerTracing)"
+                iconLabel="gw.api.profiler.ProfilerPageHelper.isQueryOptimizerTracingAvailable()?&quot;&quot;:DisplayKey.get(&quot;Web.Profiler.NotSupportedByDatabase&quot;)"
+                id="QueryOptimizerTracing"
+                label="DisplayKey.get(&quot;Web.Profiler.QueryOptimizerTracing&quot;)"
+                showHeaderIcon="false"
+                value="true"
+                valueType="boolean"
+                wrapLabel="true"/>
+              <BooleanRadioCell
+                action="toggleExtendedQueryTracing( profilerConfig )"
+                available="gw.api.profiler.ProfilerPageHelper.isExtendedQueryTracingAvailable()"
+                icon="getProfilerIcon(gw.api.profiler.ProfilerPageHelper.isExtendedQueryTracingAvailable(), \ -> profilerConfig.ExtendedQueryTracing)"
+                iconType="svgFileName"
+                iconColor="getProfilerIconColor(gw.api.profiler.ProfilerPageHelper.isExtendedQueryTracingAvailable(), \ -> profilerConfig.ExtendedQueryTracing)"
+                iconLabel="gw.api.profiler.ProfilerPageHelper.isExtendedQueryTracingAvailable()?&quot;&quot;:DisplayKey.get(&quot;Web.Profiler.NotSupportedByDatabase&quot;)"
+                id="ExtendedQueryTracing"
+                label="DisplayKey.get(&quot;Web.Profiler.ExtendedQueryTracing&quot;)"
+                showHeaderIcon="false"
+                value="true"
+                valueType="boolean"
+                wrapLabel="true"/>
+              <BooleanRadioCell
+                action="toggleDiffDbmsCounters( profilerConfig )"
+                available="gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable()"
+                icon="getProfilerIcon(gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable(), \ -> profilerConfig.DiffDbmsCounters)"
+                iconType="svgFileName"
+                iconColor="getProfilerIconColor(gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable(), \ -> profilerConfig.DiffDbmsCounters)"
+                iconLabel="gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable()?&quot;&quot;:DisplayKey.get(&quot;Web.Profiler.NotSupportedByDatabase&quot;)"
+                id="DiffDbmsCounters"
+                label="DisplayKey.get(&quot;Web.Profiler.DiffDbmsInstrumentationCounters&quot;)"
+                showHeaderIcon="false"
+                value="true"
+                valueType="boolean"
+                wrapLabel="true"/>
+              <TextCell
+                id="DbmsCounterThresholdMs"
+                label="DisplayKey.get(&quot;Web.Profiler.DbmsInstrumentationCaptureThresholdMs&quot;)"
+                sortBy="profilerConfig.DbmsCounterThresholdMs"
+                tooltip="gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable()?&quot;&quot;:DisplayKey.get(&quot;Web.Profiler.NotSupportedByDatabase&quot;)"
+                value="profilerConfig.DiffDbmsCounters ? profilerConfig.DbmsCounterThresholdMs.toString() : &quot;&quot;"
+                wrapLabel="true"/>
+              <ButtonCell
+                id="Edit"
+                value="DisplayKey.get(&quot;Web.Profiler.EditConfiguration&quot;)">
+                <MenuItem
+                  action="toggleStackTraceTracking( profilerConfig )"
+                  id="ToggleStackTraceTracking"
+                  label="profilerConfig.StackTraceTracking?DisplayKey.get(&quot;Web.Profiler.Disable&quot;,  DisplayKey.get(&quot;Web.Profiler.StackTraceTracking&quot;) ):DisplayKey.get(&quot;Web.Profiler.Enable&quot;,  DisplayKey.get(&quot;Web.Profiler.StackTraceTracking&quot;) )"/>
+                <MenuItem
+                  action="toggleQueryOptimizerTracing( profilerConfig )"
+                  id="ToggleQueryOptimizerTracing"
+                  label="profilerConfig.QueryOptimizerTracing?DisplayKey.get(&quot;Web.Profiler.Disable&quot;,  DisplayKey.get(&quot;Web.Profiler.QueryOptimizerTracing&quot;) ):DisplayKey.get(&quot;Web.Profiler.Enable&quot;,  DisplayKey.get(&quot;Web.Profiler.QueryOptimizerTracing&quot;) )"
+                  visible="gw.api.profiler.ProfilerPageHelper.isQueryOptimizerTracingAvailable()"/>
+                <MenuItem
+                  action="toggleDiffDbmsCounters( profilerConfig )"
+                  id="ToggleDiffDbmsCounters"
+                  label="profilerConfig.DiffDbmsCounters?DisplayKey.get(&quot;Web.Profiler.Disable&quot;,  DisplayKey.get(&quot;Web.Profiler.DiffDbmsInstrumentationCounters&quot;) ):DisplayKey.get(&quot;Web.Profiler.Enable&quot;,  DisplayKey.get(&quot;Web.Profiler.DiffDbmsInstrumentationCounters&quot;) )"
+                  visible="gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable()"/>
+                <MenuItem
+                  action="setDbmsCounterThresholdMs(profilerConfig, getNewDbmsCounterThresholdMs())"
+                  id="UpdateDbmsCounters"
+                  label="DisplayKey.get(&quot;Web.Profiler.Edit&quot;, DisplayKey.get(&quot;Web.Profiler.DbmsInstrumentationCaptureThresholdMs&quot;))"
+                  promptDefault="profilerConfig.DbmsCounterThresholdMs as String"
+                  promptQuestion="DisplayKey.get(&quot;Web.Profiler.NewValue&quot;, DisplayKey.get(&quot;Web.Profiler.DbmsInstrumentationCaptureThresholdMs&quot;))"
+                  visible="profilerConfig.DiffDbmsCounters &amp;&amp; gw.api.profiler.ProfilerPageHelper.isDbmsCounterSnapshotAvailable()"/>
+                <MenuItemDivider/>
+                <MenuItem
+                  action="disableProfilingFor( profilerConfig )"
+                  id="Delete"
+                  label="DisplayKey.get(&quot;Web.Profiler.DisableProfiling&quot;)"/>
+              </ButtonCell>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </PanelRef>
+    </PanelSet>
+    <Code><![CDATA[
+// new line not reformated    
+uses gw.api.web.color.GWColor
+
+uses java.lang.NumberFormatException
+uses java.util.function.Supplier
+
+function getDisplayNameForType(subtype : typekey.ProfilerConfig) : String {
+  if (subtype == TC_BPPROFILERCONFIG) {
+    return DisplayKey.get("Web.Profiler.BatchProcess")
+  } else if (subtype == TC_WQPROFILERCONFIG) {
+    return DisplayKey.get("Web.Profiler.WorkQueue")
+  } else if (subtype == TC_WSPROFILERCONFIG) {
+    return DisplayKey.get("Web.Profiler.WebService")
+  } else if (subtype == TC_MDPROFILERCONFIG) {
+    return DisplayKey.get("Web.Profiler.MessageDestination")
+  } else if (subtype == TC_RESTPROFILERCONFIG) {
+    return DisplayKey.get("Web.Profiler.RestOperation")
+  } else {
+    return subtype.DisplayName
+  }
+}
+
+function enableProfilingFor(type : typekey.ProfilerConfig, entryPointName : String) : entity.ProfilerConfig {
+  var profilerConfig : entity.ProfilerConfig
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+
+    profilerConfig = com.guidewire.pl.system.profiler.ProfilerConfiguration.getProfilerConfigOrCreateAllOffProfilerConfig(type, entryPointName)
+    profilerConfig = bundle.add(profilerConfig)
+    profilerConfig.ProfilerEnabled = true
+  })
+  return profilerConfig
+}
+
+function disableProfilingFor(profilerConfig : ProfilerConfig) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    bundle.remove(profilerConfig)
+  })
+}
+
+function toggleIndividualStacks(profilerConfig : ProfilerConfig) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    var localProfilerConfig = bundle.add(profilerConfig) as WQProfilerConfig
+    localProfilerConfig.IndividualStacks = !localProfilerConfig.IndividualStacks
+  })
+}
+
+function toggleStackTraceTracking(profilerConfig : ProfilerConfig) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    var localProfilerConfig = bundle.add(profilerConfig)
+    localProfilerConfig.StackTraceTracking = !profilerConfig.StackTraceTracking
+  })
+}
+
+function toggleQueryOptimizerTracing(profilerConfig : ProfilerConfig) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    var localProfilerConfig = bundle.add(profilerConfig)
+    localProfilerConfig.QueryOptimizerTracing = !profilerConfig.QueryOptimizerTracing
+  })
+}
+
+function toggleExtendedQueryTracing(profilerConfig : ProfilerConfig) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    var localProfilerConfig = bundle.add(profilerConfig)
+    localProfilerConfig.ExtendedQueryTracing = !profilerConfig.ExtendedQueryTracing
+  })
+}
+
+function setDbmsCounterThresholdMs(profilerConfig : ProfilerConfig, dbmsCounterThresholdMs : int) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    var localProfilerConfig = bundle.add(profilerConfig)
+    localProfilerConfig.DbmsCounterThresholdMs = dbmsCounterThresholdMs
+  })
+}
+
+function getNewDbmsCounterThresholdMs() : int {
+  try {
+    return gw.api.web.WebUtil.getActionEventParameter().toInt()
+  } catch (e : NumberFormatException) {
+    throw new com.guidewire.pl.web.controller.UserDisplayableException(DisplayKey.get("Java.Validation.Number.NotAnInteger",
+        DisplayKey.get("Web.Profiler.DbmsInstrumentationCaptureThresholdMs")), e)
+  }
+}
+
+function toggleDiffDbmsCounters(profilerConfig : ProfilerConfig) {
+  gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+    var localProfilerConfig = bundle.add(profilerConfig)
+    localProfilerConfig.DiffDbmsCounters = !profilerConfig.DiffDbmsCounters
+  })
+}
+
+function leavePopup() {
+  gw.api.profiler.WebSessionProfilerPageHelper.disableProfiler()
+}
+
+function getProfilerIcon(enabled : boolean, value : Supplier<Boolean>) : String {
+  if(!enabled) {
+    return "circle";
+  }
+  return value.get() ? "circle_checkmark" : "circle_x";
+}
+
+function getProfilerIconColor(enabled : boolean, value : Supplier<Boolean>) : GWColor {
+  if(!enabled) {
+    return GWColor.THEME_ALERT_NEUTRAL;
+  }
+  return value.get() ? GWColor.THEME_ALERT_SUCCESS : GWColor.THEME_ALERT_ERROR;
+}]]></Code>
+  </Screen>
+</PCF>

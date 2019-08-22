@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Entity
+  name="WorkflowWorkItem">
+  <Columns>
+    <Column
+      beanPath="WorkflowWorkItem.Workflow.ID"
+      name="WorkflowId"/>
+  </Columns>
+  <DisplayName><![CDATA["Workflow:" + WorkflowId]]></DisplayName>
+</Entity>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="JurisdictionType">
+  <typecode
+    code="insurance"
+    desc="Insurance"
+    name="Insurance"/>
+  <typecode
+    code="driving_lic"
+    desc="Driver's license"
+    name="Driver's license"/>
+  <typecode
+    code="vehicle_reg"
+    desc="Vehicle registration"
+    name="Vehicle registration"/>
+  <typecode
+    code="ins_tax"
+    desc="Insurance Tax"
+    name="Insurance Tax"/>
+  <typecode
+    code="cons_tax"
+    desc="Consumption tax such as sales tax or VAT"
+    name="Consumption tax"/>
+</typelistextension>

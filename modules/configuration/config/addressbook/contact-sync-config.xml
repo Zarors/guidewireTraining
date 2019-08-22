@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContactSyncConfigFile
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="contact-sync-config.xsd">
+  <!--
+    Configuration controlling behavior of syncing from Address Book. Use this file to specify which exportable
+    properties in platform are to be ignored when syncing. By default, all exportable properties are synced.
+    Properties that exist in this application's definition of Contact but not in the Address Book should be
+    specified here.
+
+    Note: This file should only be used for platform. If you have application specific configuration, then you
+          should override the corresponding contact-sync-config.xml in your application. Since this file is
+          shared by all the applications which do not override, any change here must be compatible for the
+          other applications. 
+  -->
+
+</ContactSyncConfigFile>

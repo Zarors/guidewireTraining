@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="WorkflowLogEntryDetail"
+    parent="WorkflowDetail(Workflow)"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.WorkflowLogEntryDetail&quot;)">
+    <LocationEntryPoint
+      signature="WorkflowLogEntryDetail(Workflow : Workflow, LogEntry : WorkflowTextLog)"/>
+    <Variable
+      name="Workflow"
+      type="Workflow"/>
+    <Variable
+      name="LogEntry"
+      type="WorkflowTextLog"/>
+    <Screen
+      id="WorkflowLogEntryDetailScreen">
+      <Toolbar>
+        <ToolbarButton
+          action="WorkflowDetail.go(Workflow)"
+          id="WorkflowLogEntryDetail_OKButton"
+          label="DisplayKey.get(&quot;Button.OK&quot;)"/>
+      </Toolbar>
+      <DetailViewPanel
+        id="WorkflowLogEntryDetailDV">
+        <InputColumn>
+          <TextInput
+            id="LogDate"
+            label="DisplayKey.get(&quot;Web.Admin.WorkflowLogEntryDetailDV.LogDate&quot;)"
+            value="gw.api.util.StringUtil.formatDate(LogEntry.LogDate, &quot;MM/dd/yyyy HH:mm:ss&quot;)"/>
+          <TextInput
+            id="Summary"
+            label="DisplayKey.get(&quot;Web.Admin.WorkflowLogEntryDetailDV.Summary&quot;)"
+            value="LogEntry.Summary"/>
+          <PreFormattedTextInput
+            id="Description"
+            label="DisplayKey.get(&quot;Web.Admin.WorkflowLogEntryDetailDV.Description&quot;)"
+            value="LogEntry.Description"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,9 @@
+<div class="gw-AlertBar--inner">
+  <div class="gw-icon gw-alert-icon"></div>
+  <div class="gw-AlertBar--text">
+    <div class="gw-AlertBar--label" id="${renderId}-label"
+         data-gw-click="?{hasAction} ${action}"
+         data-gw-confirm="${confirm}">${label}</div>
+  </div>
+  ${:children}
+</div>

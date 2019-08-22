@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="LegalCaseReportStatus"
+  name="LegalCaseReportStatus">
+  <typecode
+    code="never_requested"
+    desc="Never requested"
+    name="Never requested"/>
+  <typecode
+    code="requested_pending"
+    desc="Requested and pending"
+    name="Requested and pending"/>
+  <typecode
+    code="requested_received"
+    desc="Requested and received"
+    name="Requested and received"/>
+</typelist>

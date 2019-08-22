@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="perm.System.zonemanage"
+    canVisit="perm.System.zoneview"
+    id="ZonesPage"
+    title="&quot;Zones&quot;">
+    <Variable
+      initialValue="gw.api.database.Query.make(Zone).select()"
+      name="zones"
+      type="gw.api.database.IQueryBeanResult&lt;Zone&gt;"/>
+    <Screen
+      editable="true"
+      id="ZonesScreen">
+      <TitleBar
+        title="&quot;Zones&quot;"/>
+      <Toolbar/>
+      <ListViewPanel
+        id="ZonesLV">
+        <RowIterator
+          appendPageInfo="true"
+          editable="true"
+          elementName="zone"
+          hasCheckBoxes="true"
+          pageSize="30"
+          value="zones"
+          valueType="gw.api.database.IQueryBeanResult&lt;entity.Zone&gt;">
+          <ToolbarFilter
+            label="DisplayKey.get('Web.Admin.Zones.ZoneType')"
+            name="ZoneTypeFilter">
+            <ToolbarFilterOptionGroup
+              filters="new gw.api.filters.TypeKeyFilterSet( Zone.Type.TypeInfo.getProperty( &quot;ZoneType&quot; ) ).getFilterOptions()"/>
+          </ToolbarFilter>
+          <ToolbarFilter
+            label="DisplayKey.get('Web.Admin.Zones.Country')"
+            name="CountryFilter">
+            <ToolbarFilterOptionGroup
+              filters="new gw.api.filters.TypeKeyFilterSet( Zone.Type.TypeInfo.getProperty( &quot;Country&quot; ) ).getFilterOptions(getCustomCountryList(), true)"/>
+          </ToolbarFilter>
+          <Row>
+            <TextCell
+              id="Name"
+              label="DisplayKey.get('Web.Admin.Zones.Name')"
+              sortOrder="1"
+              value="zone.Name"/>
+            <TextCell
+              id="Code"
+              label="DisplayKey.get('Web.Admin.Zones.Code')"
+              value="zone.Code"/>
+            <TypeKeyCell
+              id="ZoneType"
+              label="DisplayKey.get(&quot;Web.Admin.Zones.ZoneType&quot;)"
+              value="zone.ZoneType"
+              valueType="typekey.ZoneType"/>
+            <TypeKeyCell
+              id="Country"
+              label="DisplayKey.get(&quot;Web.Admin.Zones.Country&quot;)"
+              value="zone.Country"
+              valueType="typekey.Country"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+    <Code><![CDATA[function getCustomCountryList() : java.util.List<Country> {
+  return Zone.finder.findLoadedCountries().toList()
+}]]></Code>
+  </Page>
+</PCF>

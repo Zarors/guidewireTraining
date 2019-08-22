@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="WorkflowsLV">
+    <ExposeIterator
+      flags="CanResume"
+      valueType="entity.Workflow"
+      widget="WorkflowsLV"/>
+    <Require
+      name="Workflows"
+      type="gw.api.database.IQueryBeanResult&lt;Workflow&gt;"/>
+    <Require
+      name="isParent"
+      type="boolean"/>
+    <RowIterator
+      appendPageInfo="true"
+      checkBoxVisible="Workflow.State != TC_COMPLETED"
+      editable="false"
+      elementName="Workflow"
+      hasCheckBoxes="true"
+      value="Workflows"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.Workflow&gt;">
+      <ToolbarFlag
+        condition="Workflow.State == TC_ERROR || Workflow.State == TC_SUSPENDED"
+        name="CanResume"/>
+      <Row>
+        <TypeKeyCell
+          action="WorkflowDetail.go(Workflow)"
+          align="left"
+          id="Type"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.Type&quot;)"
+          value="Workflow.Subtype"
+          valueType="typekey.Workflow"/>
+        <TextCell
+          align="left"
+          id="ProcessVersion"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.ProcessVersion&quot;)"
+          value="Workflow.ProcessVersion"
+          valueType="java.lang.Integer"/>
+        <DateCell
+          align="left"
+          dateFormat="medium"
+          id="StartTime"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.StartTime&quot;)"
+          sortDirection="descending"
+          sortOrder="1"
+          timeFormat="medium"
+          value="Workflow.CreateTime"/>
+        <DateCell
+          align="left"
+          dateFormat="medium"
+          id="UpdateTime"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.UpdateTime&quot;)"
+          timeFormat="medium"
+          value="Workflow.UpdateTime"/>
+        <TextCell
+          action="WorkflowDetail.go(Workflow.Caller)"
+          actionAvailable="Workflow.Caller != null"
+          align="left"
+          id="Parent"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.Parent&quot;)"
+          sortBy="Workflow.Caller.PublicID"
+          value="Workflow.Caller"
+          valueType="entity.Workflow"
+          visible="!isParent"/>
+        <TextCell
+          align="left"
+          enableSort="false"
+          id="Children"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.Children&quot;)"
+          value="Workflow.SubFlows.length"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          align="left"
+          id="CurrentStep"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.Step&quot;)"
+          sortBy="Workflow.CurrentStep"
+          value="Workflow.localizedCurrentStepName()"/>
+        <TypeKeyCell
+          align="left"
+          id="Status"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.Status&quot;)"
+          value="Workflow.State"
+          valueType="typekey.WorkflowState"/>
+        <TypeKeyCell
+          align="left"
+          id="ActiveState"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.ActiveState&quot;)"
+          value="Workflow.ActiveState"
+          valueType="typekey.WorkflowActiveState"/>
+        <TextCell
+          align="left"
+          enableSort="false"
+          id="WorkItemState"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.WorkItem&quot;)"
+          value="workItemDisplayValue(Workflow)"/>
+        <DateCell
+          align="left"
+          dateFormat="short"
+          id="WorkTimeout"
+          label="DisplayKey.get(&quot;Web.Admin.Workflows.TimeoutTime&quot;)"
+          timeFormat="short"
+          value="Workflow.TimeoutTime"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+function workItemDisplayValue(wf : Workflow) : String {
+        if (wf.State == TC_ACTIVE) {
+          var wi = wf.ActiveWorkflowWorkItem
+          if (wi != null) {
+            if (wi.Status == TC_CHECKEDOUT) {
+                return wi.CheckedOutBy
+            }
+            return wi.Status as String
+          }
+        }
+        return null
+      }
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

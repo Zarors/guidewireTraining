@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="MeasurementSystem"
+  name="MeasurementSystem">
+  <typecode
+    code="metric"
+    desc="Metric system"
+    name="Metric System"
+    priority="1"/>
+  <typecode
+    code="us_customary"
+    desc="US Customary system"
+    name="US Customary System"
+    priority="2"/>
+</typelist>

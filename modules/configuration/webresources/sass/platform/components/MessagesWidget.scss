@@ -1,0 +1,256 @@
+$gw-MessagesWidget-left-hand-spacing: gw-pxFixed(20);
+$gw-MessagesWidget-outline-col: $gw-app--palette--left-nav--bg;
+$gw-MessagesWidget-text-pad-left: gw-remFixed(2);
+
+.gw-MessagesWidget {
+  display: block;
+  margin-right: $gw-app--SPACING-rem-M;
+  overflow: hidden;
+  background-color: $gw-app--MessagesWidget--bg;
+
+  @include gw-stateInsetHighlight($gw-app--MessagesWidget--border-col);
+  border: gw-border($gw-app--MessagesWidget--border-col);
+  @include gw-borderRadius();
+  @include gw-filter(drop-shadow(1px 2px 2px #{$gw-app--palette--shadow-col}));
+
+  // Position to other widgets
+  margin-top: $gw-app--MessagesWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--MessagesWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--MessagesWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--MessagesWidget--spacing-widget-bottom-rem;
+
+  // Internal padding
+  max-width: $gw-app--MessagesWidget--max-width-px;
+
+  .gw-MessagesWidget--destination-group {
+    & + .gw-MessagesWidget--destination-group {
+      border-top: gw-border($gw-app--MessagesWidget--border-col);
+    }
+
+    .gw-MessagesWidget--severity-sub-group {
+      padding-bottom: $gw-app--SPACING-rem-S;
+
+      & + .gw-MessagesWidget--severity-sub-group {
+        border-top: gw-border($gw-app--MessagesWidget--border-col);
+      }
+
+      .gw-MessagesWidget--subGroup-header {
+        @include gw-wrapNever();
+        position: relative;
+        background-color: $gw-app--MessagesWidget--header-bg;
+        padding-right: $gw-app--MessagesWidget--spacing-inner-right-rem;
+        padding-top: $gw-app--MessagesWidget--spacing-inner-top-rem;
+        padding-left: $gw-app--MessagesWidget--spacing-inner-left-rem;
+        padding-bottom: $gw-app--MessagesWidget--spacing-inner-bottom-rem;
+
+        .gw-subGroupLabel {
+          font-weight: bold;
+        }
+
+        .gw-subGroupLabel, .gw-subGroupSubLabel {
+          display: block;
+          padding-right: gw-remScaled(1.4 + 2 * $gw-app--buttons--pad-h-rem);
+          padding-left: $gw-MessagesWidget-text-pad-left;
+          @include gw-wrapOnWhiteSpace();
+        }
+
+        .gw-text-small {
+          display: block;
+        }
+
+        @if ($gw-app--MessagesWidget--show-help-sub-title == false) {
+          .gw-subGroupSubLabel {
+            display: none;
+          }
+        }
+
+        .gw-toggle-button {
+          position: absolute;
+          top: $gw-app--border-width-px * 2;
+          right: $gw-app--border-width-px * 2;
+          @include gw-button--secondary($is-small: true, $is-square: true, $border-color: $gw-app--MessagesWidget--border-col);
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .gw-icon {
+          float: left;
+          @include gw-icon($gw-app--MessagesWidget--default-header-glyph);
+          margin-right: $gw-app--MessagesWidget--spacing-large-rem;
+          margin-left: $gw-app--border-width-px;
+        }
+
+        .gw-icon {
+          display: none;
+        }
+
+        &.gw-severity-error, &.gw-severity-request_validation_error, &.gw-alert-error {
+          .gw-icon {
+            color: $gw-app--palette--error;
+            @include gw-icon($gw-app--MessagesWidget--error-glyph, $v-align: baseline);
+          }
+        }
+
+        &.gw-severity-warning {
+          .gw-icon {
+            color: $gw-app--palette--warning;
+            @include gw-icon($gw-app--MessagesWidget--warning-glyph, $v-align: baseline);
+          }
+        }
+
+        &.gw-severity-info {
+          .gw-icon {
+            color: $gw-app--palette--info;
+            @include gw-icon($gw-app--MessagesWidget--info-glyph, $v-align: baseline);
+          }
+        }
+      }
+
+      .gw-severity-error, .gw-severity-request_validation_error, .gw-alert-error {
+        &[data-gw-click]:hover {
+          cursor: pointer;
+          background-color: $gw-app--MessagesWidget--bg-hover;
+          .gw-icon {
+          }
+        }
+      }
+
+      .gw-severity-warning, .gw-alert-warning {
+        &[data-gw-click]:hover {
+          cursor: pointer;
+          background-color: $gw-app--MessagesWidget--bg-hover;
+          .gw-icon {
+          }
+        }
+      }
+
+      .gw-severity-info, .gw-alert-info {
+        &[data-gw-click]:hover {
+          cursor: pointer;
+          background-color: $gw-app--MessagesWidget--bg-hover;
+          .gw-icon {
+          }
+        }
+      }
+
+      .gw-WebMessage {
+        &:last-child {
+        }
+
+        .gw-message--displayable, .gw-message--non-displayable {
+          @include gw-wrapNever();
+
+          padding-right: $gw-app--MessagesWidget--spacing-inner-right-rem;
+          padding-top: $gw-app--MessagesWidget--spacing-inner-top-rem;
+          padding-left: $gw-app--MessagesWidget--spacing-inner-left-rem;
+          padding-bottom: $gw-app--MessagesWidget--spacing-inner-bottom-rem;
+
+          .gw-icon {
+            float: left;
+            vertical-align: middle;
+            margin-right: $gw-app--MessagesWidget--spacing-large-rem;
+            margin-left: gw-pxFixed(1);
+          }
+
+          .gw-message-and-suffix {
+            display: block;
+            @include gw-wrapOnWhiteSpace();
+            max-width: $gw-app--MessagesWidget--max-width-px;
+            vertical-align: baseline;
+            padding-left: $gw-MessagesWidget-text-pad-left;
+          }
+
+          .gw-message {
+            display: inline;
+            vertical-align: baseline;
+            @include gw-wrapOnWhiteSpace();
+          }
+
+          .gw-message--action-suffix {
+            display: inline;
+            margin-left: $gw-app--SPACING-rem-XS;
+            @include gw-link();
+          }
+        }
+      }
+
+      .gw-message--non-displayable {
+        .gw-icon {
+          color: $gw-app--palette--error;
+          @include gw-icon($gw-app--MessagesWidget--non-displayable-error-glyph);
+        }
+      }
+
+      &.gw-collapsed {
+        .gw-MessagesWidget--subGroup-header {
+          border-bottom: 0 solid transparent;
+
+          @if ($gw-app--MessagesWidget--show-group-header-icon) {
+            .gw-icon {
+              display: block;
+            }
+          }
+
+          .gw-subGroupSubLabel {
+            display: none;
+          }
+        }
+
+        .gw-WebMessage {
+          display: none;
+        }
+
+        .gw-toggle-button {
+          @include gw-icon($gw-app--MessagesWidget--toggle-glyph-open, $display: block, $width: gw-emFixed(1), $height: gw-emFixed(1));
+        }
+      }
+
+      &:not(.gw-collapsed) {
+        .gw-toggle-button {
+          @include gw-icon($gw-app--MessagesWidget--toggle-glyph-close, $display: block, $width: gw-emFixed(1), $height: gw-emFixed(1));
+        }
+      }
+
+      .gw-alert-info {
+        .gw-icon {
+          color: $gw-app--palette--info;
+          @include gw-icon($gw-app--MessagesWidget--info-glyph, $v-align: baseline);
+        }
+      }
+
+      .gw-alert-warning {
+        .gw-icon {
+          color: $gw-app--palette--warning;
+          @include gw-icon($gw-app--MessagesWidget--warning-glyph, $v-align: baseline);
+        }
+      }
+
+      .gw-alert-error {
+        .gw-icon {
+          color: $gw-app--palette--error;
+          @include gw-icon($gw-app--MessagesWidget--error-glyph, $v-align: baseline);
+        }
+      }
+    }
+  }
+}
+
+#gw-body {
+  //NOTE: this is a global class, and should not be scoped to a widget
+  //It's used by messages.js
+  .gw-action--outer.gw-navHasErrors {
+    &:not(.gw-WizardMenuLinkWidget) {
+      & > .gw-action--inner {
+        @include gw-icon($gw-app--MessagesWidget--error-glyph, $color: $gw-app--palette--error, $position: relative, $pad-right: $gw-app--SPACING-rem-XS, $v-align: baseline);
+      }
+    }
+  }
+
+  .gw-action--outer.gw-navHasWarnings {
+    &:not(.gw-WizardMenuLinkWidget) {
+      & > .gw-action--inner {
+        @include gw-icon($gw-app--MessagesWidget--warning-glyph, $color: $gw-app--palette--warning, $position: relative, $pad-right: $gw-app--SPACING-rem-XS, $v-align: baseline);
+      }
+    }
+  }
+}

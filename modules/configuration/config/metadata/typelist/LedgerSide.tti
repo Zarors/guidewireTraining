@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  LedgerSide  ==================================================================== -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Defines the accounting classification of an account and the sign of a line item"
+  final="true"
+  name="LedgerSide"
+  platform="true">
+  <typecode
+    code="debit"
+    desc="Debit"
+    name="Debit"
+    priority="1"/>
+  <typecode
+    code="credit"
+    desc="Credit"
+    name="Credit"
+    priority="2"/>
+</typelist>

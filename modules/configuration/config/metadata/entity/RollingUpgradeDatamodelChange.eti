@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<entity
+  instrumentationtable="true"
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  desc="Entity to keep track of datamodel changes during a rolling upgrade."
+  entity="RollingUpgradeDatamodelChange"
+  exportable="false"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="rolling_dm"
+  type="keyable">
+  <column
+    name="changes"
+    nullok="false"
+    type="text"/>
+</entity>

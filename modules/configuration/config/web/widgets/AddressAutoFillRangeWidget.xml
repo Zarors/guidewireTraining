@@ -1,0 +1,13 @@
+<WidgetTemplate name="AddressAutoFillRangeTemplate" inputWidgetName="AddressAutoFillRangeInput">
+
+  <TemplateAttribute name="validationExpression" default="true" type="expression"/>
+  <TemplateAttribute name="required" default="false" type="xsd:boolean"/>
+  <TemplateAttribute name="available" default="true" type="xsd:boolean"/>
+
+  <ExpressionRangeValue>
+    <Link id="ManualIcon" icon="&quot;autofill&quot;" iconType="svgFileName"
+          action="#{action}" styleClass="miniButton"
+          hideIfReadOnly="true" tooltip="#{tooltip}"/>
+  </ExpressionRangeValue>
+
+</WidgetTemplate>

@@ -1,0 +1,3 @@
+<div id="gw-fixedTopQuickButtons">
+    <div id="gw-quickErrorButton" data-gw-no-tab-index data-gw-click="gwMessages.quickErrorButton"><div class="gw-icon"></div><div class="gw-label"></div></div>
+</div>

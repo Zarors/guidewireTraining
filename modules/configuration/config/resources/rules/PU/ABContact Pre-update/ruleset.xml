@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization
+   xmlns="http://guidewire.com/xml"
+   xmlns:tns="http://guidewire.com/xml"
+   xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+   xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <RuleSetTreeExport>
+    <rule
+       active="true"
+       entity-name="ABContact"
+       id="6476347777102987205"
+       name="ABContact Pre-update"
+       public-id="6476347777102987205"
+       rule-set-desc="This is the ABContact update post-validation/pre-update rule set       to permit modification of the abcontact and related entities.       Exceptions will cause the bounding database transaction to       roll back, effectively vetoing the update."
+       rule-set-type="PU"
+       xsi:type="RuleNode">
+      <export>true</export>
+      <res-ctx length="0"/>
+    </rule>
+    <ordered-children length="0"/>
+  </RuleSetTreeExport>
+</serialization>

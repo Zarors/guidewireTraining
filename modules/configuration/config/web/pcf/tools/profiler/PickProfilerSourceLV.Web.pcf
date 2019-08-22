@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="Web">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="webProfiler"
+      value="getSavedWebProfilers()"
+      valueType="com.guidewire.pl.web.internaltools.profiler.WebProfiler[]">
+      <ToolbarFlag
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="false"
+        name="CannotDelete"/>
+      <Row>
+        <TextCell
+          id="WebProfilerName"
+          label="DisplayKey.get(&quot;Web.Profiler.Name&quot;)"
+          sortDirection="descending"
+          sortOrder="1"
+          value="webProfiler.Name"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[function getSavedWebProfilers() : com.guidewire.pl.web.internaltools.profiler.WebProfiler[] {
+  var savedWebProfilers = gw.api.profiler.WebSessionProfilerPageHelper.getCurrentSession().getSavedWebProfilers()
+  return savedWebProfilers.toTypedArray()
+}]]></Code>
+  </ListViewPanel>
+</PCF>

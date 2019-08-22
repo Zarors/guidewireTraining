@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Profiler configuration for a gosu servlet"
+  entity="GosuServletProfilerConfig"
+  platform="true"
+  supertype="ProfilerConfig"/>

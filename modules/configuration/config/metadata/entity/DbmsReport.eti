@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores DBMS reports as zipped objects"
+  entity="DbmsReport"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="dbmsreport"
+  type="keyable">
+  <column
+    desc="The datetime this was captured."
+    name="CaptureDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    name="ZippedReport"
+    nullok="true"
+    type="blob"/>
+</entity>

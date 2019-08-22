@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title><%= title %></title>
+    <script>
+        function openPCF(id, mode) {
+            var frameId = 'pcffile'
+            window.open(window.location.pathname + '?inFrame=' + frameId + '&r=' + Math.floor(Math.random() * 10000) + '&id=' + id + (mode ? '&mode=' + mode : ''),
+                    frameId,
+                    'scrollbars=yes,width=600,height=500,dependent=yes,resizable=yes');
+        }
+    </script>
+</head>
+<body>
+<p><font face="Arial" size="3"><b><%= title %></b></font></p>
+<pre><%= content %></pre>
+<p></p>
+</body>
+</html>

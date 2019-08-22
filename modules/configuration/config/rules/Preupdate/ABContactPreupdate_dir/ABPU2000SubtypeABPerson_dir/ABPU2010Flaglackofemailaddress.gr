@@ -1,0 +1,37 @@
+package rules.Preupdate.ABContactPreupdate_dir.ABPU2000SubtypeABPerson_dir
+uses gw.api.util.DateUtil
+
+@gw.rules.RuleName("ABPU2010 - Flag lack of email address")
+internal class ABPU2010Flaglackofemailaddress {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact.EmailAddress1==null
+and
+aBContact.EmailAddress2==null
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// This rule creates a flag entry if the ABContact is a person with
+// no email address. (If there is already an unresolved flag entry for this
+// reason, then no additional flag entry is created.)
+
+if (not aBContact.FlagEntries.hasMatch(\ f -> (f.Reason == FlagEntryReason.TC_NO_EMAIL) and (f.UnflagDate == null))) {
+
+   var newEntry = new FlagEntry()
+
+   newEntry.FlagDate = DateUtil .currentDate()
+   newEntry.Reason = FlagEntryReason.TC_NO_EMAIL
+
+   aBContact.addToFlagEntries(newEntry)
+}
+
+
+/*end00rule*/
+
+  }
+}

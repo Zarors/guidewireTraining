@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <RowSet
+    id="ArgumentRowSet"
+    mode="Date">
+    <Require
+      name="arg"
+      type="gw.command.Argument"/>
+    <Row>
+      <TextCell
+        id="ArgName"
+        value="arg.Name"/>
+      <DateCell
+        editable="true"
+        id="ArgValue"
+        value="arg.DateValue"/>
+    </Row>
+  </RowSet>
+</PCF>

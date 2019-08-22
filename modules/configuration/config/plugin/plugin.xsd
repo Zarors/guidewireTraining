@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="plugin">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element ref="plugin-java"/>
+        <xsd:element ref="plugin-gosu"/>
+        <xsd:element ref="plugin-osgi"/>
+      </xsd:choice>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="interface" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- NOTE pdalbora 9-Nov-2007: Copied from config.xsd: probably need a common XSD for shared defs like this. -->
+  <xsd:element name="param">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:string" use="required"/>
+      <xsd:attribute name="server" type="xsd:string"/>
+      <xsd:attribute name="env" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="plugin-java">
+    <xsd:complexType>
+      <!-- Attributes on all plugins -->
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+
+      <xsd:attribute name="disabled" type="xsd:boolean"
+                     default="false"/>
+      <xsd:attribute name="env" type="xsd:string"/>
+      <xsd:attribute name="server" type="xsd:string"/>
+
+      <!-- Java -->
+      <xsd:attribute name="javaclass" type="xsd:string" use="required"/>
+      <xsd:attribute name="plugindir" type="xsd:string"/>
+      <xsd:attribute name="additionalInterfaces" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="plugin-gosu">
+    <xsd:complexType>
+      <!-- Attributes on all plugins -->
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+
+      <xsd:attribute name="disabled" type="xsd:boolean"
+                     default="false"/>
+      <xsd:attribute name="env" type="xsd:string"/>
+      <xsd:attribute name="server" type="xsd:string"/>
+
+      <!-- Gosu -->
+      <xsd:attribute name="gosuclass" type="xsd:string" use="required"/>
+      <xsd:attribute name="additionalInterfaces" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="plugin-osgi">
+    <xsd:complexType>
+      <!-- Attributes on all plugins -->
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+
+      <xsd:attribute name="disabled" type="xsd:boolean"
+                   default="false"/>
+      <xsd:attribute name="env" type="xsd:string"/>
+      <xsd:attribute name="server" type="xsd:string"/>
+
+      <xsd:attribute name="servicepid" type="xsd:string" use="required"/>
+      <xsd:attribute name="additionalInterfaces" type="xsd:string"/>
+  </xsd:complexType>
+</xsd:element>
+</xsd:schema>

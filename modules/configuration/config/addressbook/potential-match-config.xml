@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @deprecated (Since 8.0.0)  Potential match functionality based on potential-match-config.xml will be removed.  Please use the IFindDuplicates plugin instead.
+-->
+<PotentialMatchConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="match-config.xsd">
+
+  <PotentialMatchSet subtype="ABContact" >
+    <PartialMatchField path="name"/>
+  </PotentialMatchSet>
+
+  <PotentialMatchSet subtype="ABPerson" >
+    <PartialMatchField path="firstname"/>
+    <PartialMatchField path="lastname"/>
+  </PotentialMatchSet>
+
+</PotentialMatchConfig>

@@ -1,0 +1,16 @@
+// Position to other widgets
+$gw-app--LabelWidget--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--LabelWidget--spacing-widget-left-rem: null !default;
+$gw-app--LabelWidget--spacing-widget-right-rem: null !default;
+$gw-app--LabelWidget--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--LabelWidget--spacing-inner-top-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem !default;
+$gw-app--LabelWidget--spacing-inner-left-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-left-rem !default;
+$gw-app--LabelWidget--spacing-inner-right-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-right-rem !default;
+$gw-app--LabelWidget--spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+
+// Other
+$gw-app--LabelWidget--bg: transparent !default;
+$gw-app--LabelWidget--color: $gw-app--palette--left-nav--bg !default;

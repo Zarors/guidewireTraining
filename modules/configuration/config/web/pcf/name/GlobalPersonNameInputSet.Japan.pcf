@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="GlobalPersonNameInputSet"
+    mode="Japan">
+    <Require
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Variable
+      initialValue="nameOwner.InEditMode = CurrentLocation.InEditMode; return 0 as boolean"
+      name="saveEditMode"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <TextInput
+      id="NameSummary"
+      label="DisplayKey.get(&quot;Web.ContactDetail.Name.PersonName&quot;)"
+      value="new gw.api.name.NameFormatter().format(nameOwner.PersonName, &quot; &quot;)"
+      visible="nameOwner.ShowNameSummary"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.LASTNAME)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.LASTNAME)"
+      id="LastName"
+      label="nameOwner.LastNamePhoneticLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.LASTNAME)"
+      value="nameOwner.PersonName.LastName"
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.LASTNAME)"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.FIRSTNAME)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.FIRSTNAME)"
+      id="FirstName"
+      label="nameOwner.FirstNamePhoneticLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.FIRSTNAME)"
+      value="nameOwner.PersonName.FirstName"
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.FIRSTNAME)"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.LASTNAMEKANJI)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.LASTNAMEKANJI)"
+      id="LastNameKanji"
+      label="nameOwner.LastNameLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.LASTNAMEKANJI)"
+      value="nameOwner.PersonName.LastNameKanji"
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.LASTNAMEKANJI)"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.FIRSTNAMEKANJI)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.FIRSTNAMEKANJI)"
+      id="FirstNameKanji"
+      label="nameOwner.FirstNameLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.FIRSTNAMEKANJI)"
+      value="nameOwner.PersonName.FirstNameKanji"
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.FIRSTNAMEKANJI)"/>
+  </InputSet>
+</PCF>

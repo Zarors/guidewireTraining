@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a change that is an update to an existing contact."
+  entity="PendingContactUpdate"
+  final="false"
+  priority="1"
+  supertype="PendingContactChange">
+  <fulldescription><![CDATA[
+        Entity to hold the information about an update request to an existing ABContact in ContactManager
+        that requires approval.
+    ]]></fulldescription>
+  <column
+    desc="XML representation of the contact change."
+    name="ChangeXML"
+    nullok="true"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="1000000000"/>
+    <columnParam
+      name="trimwhitespace"
+      value="false"/>
+  </column>
+</subtype>

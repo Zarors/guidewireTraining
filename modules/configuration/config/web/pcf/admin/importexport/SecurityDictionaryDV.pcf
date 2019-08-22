@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    columnDivider="false"
+    id="SecurityDictionaryDV">
+    <Variable
+      initialValue="gw.api.tools.SecurityDictionaryOutputFormat.HTML"
+      name="outputFormat"
+      type="gw.api.tools.SecurityDictionaryOutputFormat"/>
+    <InputColumn>
+      <RangeRadioInput
+        editable="true"
+        id="OutputFormat"
+        label="DisplayKey.get(&quot;Web.Admin.SecurityDictionaryDV.OutputFormat&quot;)"
+        optionLabel="VALUE.LocalizedName"
+        required="true"
+        value="outputFormat"
+        valueRange="gw.api.tools.SecurityDictionaryOutputFormat.values()"
+        valueType="gw.api.tools.SecurityDictionaryOutputFormat"/>
+    </InputColumn>
+    <InputColumn>
+      <ButtonInput
+        action="gw.api.tools.SecurityDictionaryHelper.download(outputFormat)"
+        align="left"
+        download="true"
+        id="DownloadButton"
+        value="DisplayKey.get(&quot;Web.Admin.SecurityDictionaryDV.ExportButton&quot;)"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

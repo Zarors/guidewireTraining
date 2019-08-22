@@ -1,0 +1,13 @@
+package rules.EventMessage
+
+@gw.rules.RuleName("Event Fired")
+@gw.rules.RuleSetDescription("This is the Event Fired rule set. These rules execute when ContactManager fires an integration event. The rules can receive the event and generate the event message that ContactManager sends to its destination.")
+class EventFired extends gw.rules.RuleSetBase {
+  static function invoke(bean : entity.MessageContext) : gw.rules.ExecutionSession {
+    return invoke( new gw.rules.ExecutionSession(), bean )
+  }
+
+  static function invoke(exeSession : gw.rules.ExecutionSession, bean : entity.MessageContext) : gw.rules.ExecutionSession {
+    return _invoke( exeSession, bean, "Event Fired", EventFired )
+  }
+}

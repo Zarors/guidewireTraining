@@ -1,0 +1,11 @@
+Roles,
+type,data-set,entityid,description,name,carrierinternalrole
+Role,0,rule_admin,${AdminData.Role.Description.Rule_Admin},${AdminData.Role.Name.Rule_Admin},true
+Role,0,superuser,${AdminData.Role.Description.All_Permissions},${AdminData.Role.Name.All_Permissions},true
+Role,0,user_admin,${AdminData.Role.Description.User_Admin},${AdminData.Role.Name.User_Admin},true
+Role,0,contact_viewer,${AdminData.Role.Description.Contact_Viewer},${AdminData.Role.Name.Contact_Viewer},true
+Role,0,contact_manager,${AdminData.Role.Description.Contact_Manager},${AdminData.Role.Name.Contact_Manager},true
+Role,0,client_app,${AdminData.Role.Description.Client_App},${AdminData.Role.Name.Client_App},true
+Role,0,toolview,${AdminData.Role.Description.Toolview},${AdminData.Role.Name.Toolview},true
+Role,0,contact_subtype,${AdminData.Role.Description.Contact_Subtype},${AdminData.Role.Name.Contact_Subtype},true
+Role,0,data_protection_officer,${AdminData.Role.Description.Data_Protection_Officer},${AdminData.Role.Name.Data_Protection_Officer},true

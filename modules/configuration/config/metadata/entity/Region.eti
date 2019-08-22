@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- Region table -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Geographic regions."
+  entity="Region"
+  extendable="true"
+  platform="true"
+  table="region"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.RegionPublicMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.RegionImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.RegionInternalMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.RegionImpl"/>
+  <implementsEntity
+    name="Validatable"/>
+  <implementsEntity
+    name="DecentralizedEntity"/>
+  <fulldescription><![CDATA[
+        Represents a geographic region, an area of responsibility for a User or Group. A region contains
+        a set of region zones.  Regions are therefore heterogenous with respect to a zone type.
+      
+    ]]></fulldescription>
+  <column
+    desc="name given to the region (this must be unique)."
+    name="Name"
+    nullok="false"
+    type="shorttext">
+    <localization
+      nullok="false"
+      tableName="region_name_l10n"
+      unique="true"/>
+  </column>
+  <!-- TODO also make add setterScriptability -->
+  <array
+    arrayentity="RegionZone"
+    arrayfield="Region"
+    desc="The zones that define this region."
+    name="RegionZones"
+    owner="true"/>
+  <index
+    desc="Enforce uniqueness of region name"
+    name="regionu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+</entity>

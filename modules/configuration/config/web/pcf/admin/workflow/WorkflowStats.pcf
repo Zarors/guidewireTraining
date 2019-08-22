@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canVisit="perm.System.workflowview"
+    countsAsWork="false"
+    id="WorkflowStats"
+    parent="Admin()"
+    title="DisplayKey.get(&quot;Web.Admin.WorkflowStats.Title&quot;)">
+    <Screen
+      id="WorkflowStatsScreen">
+      <SearchPanel
+        criteriaName="SearchCriteria"
+        resultsName="WorkflowStats"
+        search="SearchCriteria.performSearch() as gw.api.database.IQueryBeanResult&lt;WorkflowStepStats&gt;"
+        searchCriteria="new WFStatsSearchCriteria()"
+        searchCriteriaType="entity.WFStatsSearchCriteria"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;WorkflowStepStats&gt;">
+        <PanelRef
+          def="WorkflowStatsDV(SearchCriteria)"/>
+        <PanelRef
+          def="WorkflowStatsLV(WorkflowStats)">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.Admin.WorkflowStats.Results&quot;)"/>
+          <Toolbar/>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Name suffixes"
+  final="false"
+  name="NameSuffix"
+  platform="true"/>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <SystemAlertBar
+    icon="&quot;alert&quot;"
+    iconType="svgFileName"
+    id="SystemAlertBar"
+    label="new gw.api.tools.ClusterMembersData().PlannedShutdownTitleForCurrentServer"
+    visible="new gw.api.tools.ClusterMembersData().PlannedShutdownScheduled">
+    <SystemAlertBarElement
+      id="Message"
+      label="new gw.api.tools.ClusterMembersData().PlannedShutdownMessageForCurrentServer"/>
+    <SystemAlertBarElement
+      action="logout:*"
+      id="LogoutLink"
+      label="DisplayKey.get(&quot;Web.TabBar.SystemAlertBar.PlannedShutdown.Logout&quot;)"
+      styleClass="bigButton"/>
+  </SystemAlertBar>
+</PCF>

@@ -1,0 +1,25 @@
+package rules.EventMessage.EventFired_dir.SafeOrderingDemo_dir
+
+@gw.rules.RuleName("SafeOrderingDemo - ABContact")
+internal class SafeOrderingDemoABContact {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+
+return messageContext.Root typeis ABPerson
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+var anABPerson = messageContext.Root as ABPerson
+var msg = messageContext.createMessage(anABPerson.Name + " (" +
+                                       anABPerson.Occupation + ")")
+msg.SenderRefID = "SOD:" + gw.api.system.database.SequenceUtil.next(1, "SOD")
+
+/*end00rule*/
+
+  }
+}

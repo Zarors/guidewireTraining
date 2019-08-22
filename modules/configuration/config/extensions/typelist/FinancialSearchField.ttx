@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Legal values for this type list are included but commented out.
+Adding values to this list that arent in the legal list will cause them to show up in the UI, but when
+the search button is hit the app will blow up -->
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="The search field for financial searches"
+  name="FinancialSearchField">
+  <typecode
+    code="Amount"
+    desc="Amount"
+    name="Amount"/>
+</typelistextension>

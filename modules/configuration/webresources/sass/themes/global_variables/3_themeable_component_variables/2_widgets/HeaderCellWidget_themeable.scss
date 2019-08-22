@@ -1,0 +1,18 @@
+// Internal padding
+$gw-app--HeaderCell--spacing-inner-top-rem: $gw-app--tables--cell--pad-v-rem !default;
+$gw-app--HeaderCell--spacing-inner-left-rem: $gw-app--tables--cell--pad-h-rem !default;
+$gw-app--HeaderCell--spacing-inner-right-rem: $gw-app--tables--cell--pad-h-rem !default;
+$gw-app--HeaderCell--spacing-inner-bottom-rem: $gw-app--tables--cell--pad-v-rem !default;
+
+$gw-app--HeaderCell--bg: $gw-app--panels--bg !default;
+$gw-app--HeaderCell--col: $gw-app--panels--col !default;
+$gw-app--HeaderCell--weight: $gw-app--bold-label-weight !default;
+
+// Other
+$gw-app--HeaderCell--drag--bg: $gw-app--HeaderCell--bg !default;
+$gw-app--HeaderCell--drag--col: $gw-app--HeaderCell--col !default;
+$gw-app--HeaderCell--drag--border-col: $gw-app--tables--style-list--border-col !default;
+
+$gw-app--HeaderCell--sort--not-sorted--col: $gw-app--palette--inactive;
+$gw-app--HeaderCell--sort--generic--col: $gw-app--palette--info;
+

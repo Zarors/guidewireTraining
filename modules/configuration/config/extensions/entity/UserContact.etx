@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="UserContact">
+  <implementsInterface
+    iface="gw.api.obfuscation.Obfuscator"
+    impl="gw.personaldata.obfuscation.UserContactDefaultObfuscator"/>
+  <column-override
+    name="EmployeeNumber">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column-override>
+</extension>

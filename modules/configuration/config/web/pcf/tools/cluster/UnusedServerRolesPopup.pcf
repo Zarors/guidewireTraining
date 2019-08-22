@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    id="UnusedServerRolesPopup"
+    title="DisplayKey.get(&quot;Web.InternalTools.UnusedServerRoles&quot;)">
+    <LocationEntryPoint
+      signature="UnusedServerRolesPopup()"/>
+    <Variable
+      initialValue="new gw.api.tools.ClusterMembersData()"
+      name="ClusterMembersData"
+      type="gw.api.tools.ClusterMembersData"/>
+    <Screen>
+      <PanelSet>
+        <Verbatim
+          label="DisplayKey.get(&quot;Web.InternalTools.UnusedServerRoles.Description&quot;)"
+          labelStyleClass="warning"/>
+        <ListViewPanel
+          id="UnusedServerRolesLV">
+          <RowIterator
+            editable="false"
+            elementName="ServerRole"
+            pageSize="0"
+            value="ClusterMembersData.UnusedServerRoles.toTypedArray()"
+            valueType="java.lang.String[]">
+            <Row>
+              <TextCell
+                id="ServerRole"
+                label="DisplayKey.get(&quot;Web.InternalTools.UnusedServerRoles.ServerRole&quot;)"
+                sortOrder="1"
+                value="ServerRole"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </PanelSet>
+    </Screen>
+  </Popup>
+</PCF>

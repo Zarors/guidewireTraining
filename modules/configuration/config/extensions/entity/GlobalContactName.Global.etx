@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="GlobalContactName">
+  <column
+    desc="This contact's name in kanji (used only for Japanese names and will be null otherwise)"
+    name="NameKanji"
+    nullok="true"
+    type="companyname">
+    <tag
+      name="PersonalData"
+      value="ObfuscateUnique"/>
+  </column>
+</extension>

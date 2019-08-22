@@ -1,0 +1,32 @@
+.gw-PagingWidget {
+  display: flex;
+  align-items: center;
+
+  // Position to other widgets
+  margin-top: $gw-app--PagingWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--PagingWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--PagingWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--PagingWidget--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--PagingWidget--spacing-inner-top-rem;
+  padding-left: $gw-app--PagingWidget--spacing-inner-left-rem;
+  padding-right: $gw-app--PagingWidget--spacing-inner-right-rem;
+  padding-bottom: $gw-app--PagingWidget--spacing-inner-bottom-rem;
+
+  .gw-Paging--prev {
+    @include gw-button--panelIcon($glyph: $gw-app--Paging--glyph-left, $font-size: $gw-app--Paging--icon--size-em, $pad-v: $gw-app--Paging--spacing-rem, $pad-h: $gw-app--Paging--spacing-rem, $col: $gw-app--Paging--icon--col, $bg: transparent, $hov-col: $gw-app--buttons--hover--bg, $hov-bg: transparent, $disabled-col: $gw-app--buttons--disabled-bg, $disabled-bg: transparent);
+  }
+
+  .gw-Paging--next {
+    @include gw-button--panelIcon($glyph: $gw-app--Paging--glyph-right, $font-size: $gw-app--Paging--icon--size-em, $pad-v: $gw-app--Paging--spacing-rem, $pad-h: $gw-app--Paging--spacing-rem,  $col: $gw-app--Paging--icon--col, $bg: transparent, $hov-col: $gw-app--buttons--hover--bg, $hov-bg: transparent, $disabled-col: $gw-app--buttons--disabled-bg, $disabled-bg: transparent);
+  }
+
+  .gw-Paging--parent {
+    @include gw-button--panelIcon($glyph: $gw-app--Paging--glyph-up, $font-size: $gw-app--Paging--icon--size-em, $pad-v: $gw-app--Paging--spacing-rem, $pad-h: $gw-app--Paging--spacing-rem,  $col: $gw-app--Paging--icon--col, $bg: transparent, $hov-col: $gw-app--buttons--hover--bg, $hov-bg: transparent, $disabled-col: $gw-app--buttons--disabled-bg, $disabled-bg: transparent);
+  }
+
+  .gw-Paging--child {
+    @include gw-button--panelIcon($glyph: $gw-app--Paging--glyph-down, $font-size: $gw-app--Paging--icon--size-em, $pad-v: $gw-app--Paging--spacing-rem, $pad-h: $gw-app--Paging--spacing-rem,  $col: $gw-app--Paging--icon--col, $bg: transparent, $hov-col: $gw-app--buttons--hover--bg, $hov-bg: transparent, $disabled-col: $gw-app--buttons--disabled-bg, $disabled-bg: transparent);
+  }
+}

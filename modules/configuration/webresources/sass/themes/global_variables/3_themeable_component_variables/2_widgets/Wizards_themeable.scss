@@ -1,0 +1,61 @@
+//TODO: before merge, remove all these hard coded colors
+$gw-app--wizards--step-button--use-shadow-for-depth: true !default;
+$gw-app--wizards--step-button--focus-offset-px: gw-pxFixed(-3) !default;
+
+$gw-app--wizards--step-button--bg: $gw-app--palette--left-nav--bg-lighter-highlight !default;
+$gw-app--wizards--step-button--col: $gw-app--palette--gray-E !default;
+$gw-app--wizards--step-button--active--bg: $gw-app--wizards--step-button--bg !default;
+$gw-app--wizards--step-button--active--col: $gw-app--palette--active !default;
+$gw-app--wizards--step-button--hover--bg: $gw-app--palette--left-nav--bg-lighter !default;
+$gw-app--wizards--step-button--hover--col: $gw-app--wizards--step-button--active--col !default;
+$gw-app--wizards--step-button--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--wizards--step-button--pad-v-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--wizards--step-button--bottom-border: $gw-app--border-width-px solid $gw-app--palette--left-nav--bg-highlight !default;
+
+$gw-app--wizards--step-button--expand-glyph-open: "chevron-down" !default;
+$gw-app--wizards--step-button--expand-glyph-close: "chevron-up" !default;
+$gw-app--wizards--step-button--disabled-col: $gw-app--palette--gray-7 !default;
+$gw-app--wizards--step-button--group-open-bg: $gw-app--wizards--step-button--bg !default;
+
+$gw-app--wizards--submenu--step-button--bg: $gw-app--palette--left-nav--bg-lighter !default;
+$gw-app--wizards--submenu--step-button--col: $gw-app--palette--gray-E !default;
+$gw-app--wizards--submenu--step-button--active--bg: $gw-app--wizards--submenu--step-button--bg !default;
+$gw-app--wizards--submenu--step-button--active--col: $gw-app--wizards--step-button--active--col !default;
+$gw-app--wizards--submenu--step-button--hover--bg: $gw-app--palette--left-nav--bg !default;
+$gw-app--wizards--submenu--step-button--hover--col: $gw-app--wizards--step-button--hover--col !default;
+$gw-app--wizards--submenu--step-button--pad-h-rem: $gw-app--wizards--step-button--pad-h-rem * 2 !default;
+$gw-app--wizards--submenu--step-button--pad-v-rem: $gw-app--wizards--step-button--pad-v-rem * .8 !default;
+$gw-app--wizards--submenu--step-button--bottom-border: $gw-app--border-width-px solid $gw-app--palette--left-nav--bg-highlight !default;
+
+$gw-app--wizards--submenu--step-button--font-size-em: null !default;
+$gw-app--wizards--submenu--step-button--group-open-bg: $gw-app--wizards--step-button--group-open-bg !default;
+
+$gw-app--wizards--step-button-graphics--pad-left-px: gw-pxFixed(8) !default;
+$gw-app--wizards--step-button-graphics--channel-w-px: gw-pxFixed(4) !default;
+$gw-app--wizards--step-button-graphics--inner-circle-border-w-px: gw-pxFixed(2) !default;
+$gw-app--wizards--step-button-graphics--inner-circle-diameter-px: gw-pxFixed(10 + ($gw-app--wizards--step-button-graphics--inner-circle-border-w-px * 2)) !default;
+$gw-app--wizards--step-button-graphics--outer-circle-visual-border-w-px: gw-pxFixed(2) !default;
+$gw-app--wizards--step-button-graphics--outer-circle-diameter-px: $gw-app--wizards--step-button-graphics--inner-circle-diameter-px + ($gw-app--wizards--step-button-graphics--outer-circle-visual-border-w-px * 2) !default;
+$gw-app--wizards--step-button-graphics-w-em: gw-emFixed(gw-stripUnit($gw-app--wizards--step-button-graphics--pad-left-px + ($gw-app--wizards--step-button-graphics--outer-circle-diameter-px)) / 14) !default;
+
+$gw-app--wizards--step-button-graphics--channel-bg: $gw-app--palette--left-nav--bg-highlight !default;
+$gw-app--wizards--step-button-graphics--visited-col: $gw-app--palette--left-nav--bg-lighter-highlight !default;
+$gw-app--wizards--step-button-graphics--error-col: $gw-app--palette--error !default;
+$gw-app--wizards--step-button-graphics--warning-col: $gw-app--palette--warning !default;
+$gw-app--wizards--step-button-graphics--active-col: $gw-app--palette--blue !default;
+
+$gw-app--wizards--title-area--pad-h-rem: $gw-app--WestPanel--titles-pad-h-rem !default;
+$gw-app--wizards--title-area--pad-v-rem: $gw-app--WestPanel--titles-pad-v-rem !default;
+
+$gw-app--wizards--title--col: $gw-app--palette--white !default;
+$gw-app--wizards--title--font-size-em: gw-emFixed(1.2) !default;
+$gw-app--wizards--title--font-weight: gw-weight(normal) !default;
+$gw-app--wizards--subtitle--col: $gw-app--wizards--title--col !default;
+$gw-app--wizards--subtitle--font-size-em: $gw-app--font-size--smaller-px !default;
+$gw-app--wizards--subtitle--font-weight: gw-weight(light) !default;
+
+$gw-app--wizards--container-top-border: $gw-app--border-width-thick-px solid $gw-app--palette--left-nav--border-col !default; //TODO: theme
+$gw-app--wizards--container-bottom-border: $gw-app--border-width-thick-px solid $gw-app--palette--left-nav--border-col !default;
+
+$gw-app--wizards--hide-minimized-labels-and-icons-in-minimized-view: false !default;
+$gw-app--wizards--hide-wizard-graphics-in-minimized-view: false !default;

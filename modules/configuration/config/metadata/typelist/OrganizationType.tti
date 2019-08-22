@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of organization for attorneys, doctors, and government authorities"
+  final="false"
+  name="OrganizationType"
+  platform="true"/>

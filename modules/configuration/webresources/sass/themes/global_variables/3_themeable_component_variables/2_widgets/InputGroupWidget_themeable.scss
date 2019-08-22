@@ -1,0 +1,48 @@
+// Position to other widgets
+$gw-app--InputGroup--spacing-widget-top-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem !default;
+$gw-app--InputGroup--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputGroup--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputGroup--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--InputGroup--spacing-inner-top-rem: null !default;
+$gw-app--InputGroup--spacing-inner-left-rem: null !default;
+$gw-app--InputGroup--spacing-inner-right-rem: null !default;
+$gw-app--InputGroup--spacing-inner-bottom-rem: null !default;
+
+// Inputs in InputGroups =====
+$gw-app--InputWidget-in-InputGroup--spacing-widget-top-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem !default;
+$gw-app--InputWidget-in-InputGroup--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputWidget-in-InputGroup--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputWidget-in-InputGroup--spacing-widget-bottom-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-bottom-rem !default;
+
+// Internal padding
+$gw-app--InputWidget-in-InputGroup--spacing-inner-top-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-top-rem !default;
+$gw-app--InputWidget-in-InputGroup--spacing-inner-left-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-left-rem !default;
+$gw-app--InputWidget-in-InputGroup--spacing-inner-right-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-right-rem !default;
+$gw-app--InputWidget-in-InputGroup--spacing-inner-bottom-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-bottom-rem !default;
+
+$gw-app--InputWidget-in-InputGroup--row-label-pad-right-rem: $gw-app--InputWidget-in-InputColumn--row-label-pad-right-rem !default;
+$gw-app--InputWidget-in-InputGroup--label-col: $gw-app--InputWidget-in-InputColumn--label-col !default;
+
+
+// Input Group Title Bar ======
+// Internal padding
+$gw-app--InputGroup-title-bar--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputGroup-title-bar--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputGroup-title-bar--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputGroup-title-bar--spacing-inner-bottom-rem: $gw-app--SPACING-rem-M !default;
+
+$gw-app--InputGroup-title-bar--internal-spacing-rem: $gw-app--SPACING-rem-XS !default;
+
+// Other
+$gw-app--InputGroup--bg: $gw-app--panels--bg !default;
+$gw-app--InputGroup--header-footer-bg: $gw-app--InputGroup--bg !default;
+
+$gw-app--InputGroup--border-radius-px: $gw-app--border-radius-px !default;
+$gw-app--InputGroup--use-footer: true !default;
+$gw-app--InputGroup--min-height-em: gw-emFixed(3) !default;
+$gw-app--InputGroup--header-border-top: null !default;
+$gw-app--InputGroup--header-border-bottom: $gw-app--border-width-px solid $gw-app--menus--divider-col !default;
+$gw-app--InputGroup--header-font-weight: gw-weight(bold) !default;
+$gw-app--InputGroup--header-font-col: $gw-app--palette--offblack !default;

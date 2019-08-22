@@ -1,0 +1,24 @@
+// Position to other widgets
+$gw-app--Logo--spacing-widget-top-rem: null !default;
+$gw-app--Logo--spacing-widget-left-rem: null !default;
+$gw-app--Logo--spacing-widget-right-rem: null !default;
+$gw-app--Logo--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--Logo--spacing-inner-top-rem: null !default;
+$gw-app--Logo--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--Logo--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--Logo--spacing-inner-bottom-rem: null !default;
+
+
+//Other
+$gw-app--Logo--width-em: gw-emFixed(10) !default;
+$gw-app--Logo--height-em: gw-emFixed(1.6) !default;
+$gw-app--Logo--holder-width-em: gw-emFixed(10) !default;
+
+$gw-logo--path: "../../logos/" !default;
+
+$gw-app--Logo--company--uri: url($gw-logo--path + "GuidewireLogo.svg") !default;
+$gw-app--Logo--login--app--uri: url($gw-logo--path + "LoginAppLogo.svg") !default;
+$gw-app--Logo--app--uri: url($gw-logo--path + "AppLogo.svg") !default;
+$gw-app--Logo--stripes--uri: url($gw-logo--path + "GuidewireStripes.svg") !default;

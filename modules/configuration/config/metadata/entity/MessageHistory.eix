@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><internalExtension xmlns="http://guidewire.com/datamodel" entityName="MessageHistory">
+  <description>Completed messages.</description>
+  <foreignkey columnName="ABContactID" desc="Associated ABContact, if applicable." fkentity="ABContact" name="ABContact" nullok="true" setterScriptability="hidden"/>
+</internalExtension>

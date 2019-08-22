@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<internaltypelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="BatchProcessType"
+  desc="Types of batch processes">
+  <!-- ab batch processes -->
+  <typecode
+    name="AB Contact Score Aggregator"
+    desc="Calculates aggregate review scores for ABContacts from submitted ReviewSummaries."
+    code="ABContactScoring"/>
+  <!-- ab work queues -->
+  <typecode
+    name="AB Geocode Writer"
+    desc="Geocoding ABAddresses queue writer."
+    code="ABGeocode"/>
+  <typecode
+    name="Duplicate Contacts Finder"
+    desc="Finds new duplicate contacts and creates a browsable list of said contacts."
+    code="DuplicateContacts"/>
+  <typecode
+    code="VerifyMinimumCriteria"
+    desc="Verifies the minimum creation criteria for all staging table loaded contacts."
+    name="Verify Minimum Criteria">
+  </typecode>
+  <typecode
+    name="Update MatchSetKey"
+    desc="Updates the MatchSetKey for all contacts"
+    retired="true"
+    code="UpdateMatchSetKey"/>
+</internaltypelistextension>

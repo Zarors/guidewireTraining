@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of process running update statistics"
+  final="true"
+  name="DBUpdateStatsRunnerType"
+  platform="true">
+  <typecode
+    code="Batch"
+    desc="Batch Process running update statistics"
+    name="Batch"/>
+  <typecode
+    code="Datagen"
+    desc="Datagen running update statistics"
+    name="Datagen"/>
+  <typecode
+    code="Loader"
+    desc="Loader running update statistics"
+    name="Loader"/>
+  <typecode
+    code="TableImport"
+    desc="TableImport running update statistics"
+    name="TableImport"/>
+  <typecode
+    code="Upgrade"
+    desc="Upgrade running update statistics"
+    name="Upgrade"/>
+</typelist>

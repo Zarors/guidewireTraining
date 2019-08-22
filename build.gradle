@@ -1,0 +1,21 @@
+buildscript {
+  repositories {
+    maven { url project.file('repository') }
+  }
+
+  dependencies {
+
+    classpath 'com.guidewire.btr.build:gradle-plugins:4.2.35'
+    classpath 'com.guidewire.btr.build:ci-gradle-plugins:1.0.48'
+    classpath 'com.guidewire.studio:ij-studio-gradle-plugins:2.0.6'
+    classpath 'com.guidewire.web:plweb-gradle-plugin:0.2.13'
+    classpath 'com.guidewire.btr.build:solr-gradle-plugins:10.0.7'
+  }
+}
+
+apply from: 'modules/script/gw-build.gradle'
+
+// Remove this plugin application to disable deprecated tasks
+apply plugin: 'com.guidewire.cust-dist-deprecated-tasks'
+
+// Additional tasks can be added here if required

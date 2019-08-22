@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="BusinessWeekPage.go()"
+    afterCommit="BusinessWeekPage.go()"
+    beforeCommit="businessWeek.removeNullZones()"
+    canEdit="true"
+    canVisit="perm.BusinessWeek.create"
+    id="NewBusinessWeek"
+    parent="BusinessWeekPage()"
+    showUpLink="true"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.NewBusinessWeek&quot;)">
+    <LocationEntryPoint
+      signature="NewBusinessWeek()"/>
+    <Variable
+      initialValue="createNewBusinesWeek()"
+      name="businessWeek"
+      type="BusinessWeek"/>
+    <ScreenRef
+      def="BusinessWeekDetailScreen(businessWeek)"/>
+    <Code><![CDATA[
+function createNewBusinesWeek() : BusinessWeek {
+  var bw = new BusinessWeek()
+  var config = com.guidewire.pl.system.dependency.ServerDependencies.getSystemConfiguration()
+
+  // set default parameters from config.xml
+  bw.BusinessDayDemarcation = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayDemarcation)
+  bw.SundayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsSundayBusinessDay)
+  bw.MondayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsMondayBusinessDay)
+  bw.TuesdayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsTuesdayBusinessDay)
+  bw.WednesdayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsWednesdayBusinessDay)
+  bw.ThursdayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsThursdayBusinessDay)
+  bw.FridayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsFridayBusinessDay)
+  bw.SaturdayBusinessDay = config.getParameterValue(gw.api.system.PLConfigParameters.IsSaturdayBusinessDay)
+
+  bw.BusinessWeekEnd = typekey.Weekdays.get(config.getParameterValue(gw.api.system.PLConfigParameters.BusinessWeekEnd))
+
+  bw.MondayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.MondayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  bw.TuesdayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.TuesdayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  bw.WednesdayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.WednesdayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  bw.ThursdayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.ThursdayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  bw.FridayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.FridayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  bw.SaturdayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.SaturdayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  bw.SundayBusinessStart = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayStart)
+  bw.SundayBusinessEnd = config.getParameterValue(gw.api.system.PLConfigParameters.BusinessDayEnd)
+  return bw
+}
+    ]]></Code>
+  </Page>
+</PCF>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <LoginPage
+    afterEnter="loginForm.checkDirectHTTPLogin()"
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="Login"
+    startInEditMode="true"
+    title="&quot;&quot;">
+    <LocationEntryPoint
+      signature="Login(target : pcf.api.Destination, entryException : java.lang.Exception)"/>
+    <Variable
+      name="target"
+      type="pcf.api.Destination"/>
+    <Variable
+      name="entryException"
+      type="java.lang.Exception"/>
+    <Variable
+      initialValue="new gw.api.util.LoginForm(target, entryException)"
+      name="loginForm"
+      type="gw.api.util.LoginForm"/>
+    <!--
+      This supports MultiFactorAuthentication, you can add additional factors, for example:
+      new gw.api.util.LoginForm(target, entryException).withFactor("Web.Login.RSADongleNumber", "DongleNumber").withFactor("Web.Login.RSADongleId","RSADongleID")
+    -->
+    <Screen
+      id="LoginScreen">
+      <PanelColumn>
+        <Spacer
+          classList="app--login-page--stripes"/>
+        <Spacer
+          classList="app--login-page--logo"/>
+        <Spacer
+          classList="app--login-page--name"/>
+        <PanelRef
+          def="LoginDV(loginForm)">
+          <Verbatim
+            label="loginForm.Message"/>
+        </PanelRef>
+      </PanelColumn>
+    </Screen>
+  </LoginPage>
+</PCF>

@@ -1,0 +1,582 @@
+$gw-subMenu--arrow--height: gw-emFixed(14/20);
+$gw-empty-subMenu--width: gw-emFixed(10); //TODO: move these somewhere
+
+/**
+ Used to make non standard MenuItems, line up correctly in a subMenu.
+*/
+@mixin gw-menuContainer($pad-v: $gw-app--menus--pad-v-rem, $pad-left: $gw-app--menus--pad-h-rem, $pad-right: null) {
+  min-height: 1 + (2 * $pad-v);
+  padding-left: $pad-left;
+  @if ($pad-right == null) {
+    padding-right: ($gw-app--menus--expand--pad-h-rem * 2) + 1;
+  } @else {
+    padding-right: $pad-right;
+  }
+  background-color: $gw-app--menus--bg;
+  color: $gw-app--menus--col;
+}
+
+/**
+ Used to make a button that is not a standard subMenu dropdown button, look and feel like one.
+*/
+@mixin gw-button--inMenuItem() {
+  @include gw-button--normal(
+          $bg: $gw-app--menus--bg,
+          $col: $gw-app--menus--col,
+          $hover-bg: $gw-app--menus--hover--bg,
+          $hover-col: $gw-app--menus--hover--col,
+          $active-bg: $gw-app--menus--active--bg,
+          $active-col: $gw-app--menus--active--col,
+          $pad-v: $gw-app--menus--pad-v-rem,
+          $pad-h: $gw-app--menus--expand--pad-h-rem
+  );
+  border-radius: 0;
+}
+
+@mixin gw-multiColumn(
+  $bg: $gw-app--menus--bg,
+  $divider-col: $gw-app--menus--divider-col
+) {
+  display: flex;
+  background-color: $bg;
+
+  .gw-menu-col + .gw-menu-col {
+    border: gw-border($divider-col);
+  }
+}
+
+@function _gw-matchButtonBgForBorderIfNull($isButton, $border-color, $bg) {
+  @if ($isButton == false) {
+    @return $border-color;
+  }
+
+  @if ($gw-app--buttons--have-borders) {
+    @return $border-color;
+  }
+
+  @if ($border-color == null) {
+    @return $bg;
+  }
+
+  @return $border-color;
+}
+
+// Call in gw-action--outer
+// Required structure: .gw-action--outer > .gw-action--inner (Opt. .gw-action--expand-button)
+// Also relies on gw-hasChildren, gw-active
+@mixin gw-menuItem(
+  $bg: $gw-app--menus--bg,
+  $col: $gw-app--menus--col,
+  $hover-bg: $gw-app--menus--hover--bg,
+  $hover-col: $gw-app--menus--hover--col,
+  $active-bg: $gw-app--menus--active--bg,
+  $active-col: $gw-app--menus--active--col,
+  $pad-v: $gw-app--menus--pad-v-rem,
+  $inner-action--pad-h: $gw-app--menus--pad-h-rem,
+  $expand--pad-h: $gw-app--menus--expand--pad-h-rem,
+  $is-button: false,
+  $glyph: $gw-app--menus--expand-glyph,
+  $force-no-expand: false,
+  $force-expand-only: false,
+  $focus-offset: $gw-app--focus--outline-offset-px,
+  $border-width: $gw-app--border-width-px,
+  $border-color: null,
+  $never-use-expand-divider: false,
+  $add-gradient: false,
+  $graphics-width: null,
+  $inactive-when-open: false,
+  $add-disabled-state: true,
+  $force-border-on: false
+) {
+
+  position: relative;
+  background-color: $bg;
+
+  .gw-minimized-view {
+    display: none; //This will be overriden on a per widget basis, based on how the widget determines its container to be in a minimized state.
+  }
+
+  // Border processing for the style option of $gw-app--buttons--have-borders
+  $border-color: _gw-matchButtonBgForBorderIfNull($is-button, $border-color, $bg);
+  $border-color-hover: _gw-matchButtonBgForBorderIfNull($is-button, null, $hover-bg);
+  $border-color-active: _gw-matchButtonBgForBorderIfNull($is-button, null, $active-bg);
+  $border-color-disabled: _gw-matchButtonBgForBorderIfNull($is-button, null, $gw-app--buttons--disabled-bg);
+
+  $forced-expand-divider-col: $gw-app--menus--expand-divider-col;
+  $has-expander-pad: true;
+  @if ($is-button) {
+    $forced-expand-divider-col: $gw-app--buttons--expand-divider-col;
+    @if ($gw-app--buttons--expand-divider-pad-v-mod == null) {
+      $has-expander-pad: false
+    }
+  } @else {
+    @if ($gw-app--menus--expand-divider-pad-v-mod == null) {
+      $has-expander-pad: false;
+    }
+  }
+
+  @if ($never-use-expand-divider) {
+    $has-expander-pad: false;
+    $forced-expand-divider-col: null;
+  }
+
+  & > .gw-action--inner {
+    @include gw-button--base($bg: $bg, $col: $col, $pad-v: $pad-v, $pad-h: $inner-action--pad-h, $focus-offset: $focus-offset, $border-width: $border-width, $border-color: $border-color, $allow-expand-divider: $has-expander-pad, $forced-expand-divider-col: $forced-expand-divider-col, $add-gradient: $add-gradient, $add-disabled-state: $add-disabled-state, $force-border-on: $force-border-on);
+    height: 100%;
+    display: block;
+    text-align: left;
+    @if($graphics-width != null) {
+      padding-left: calc(#{$inner-action--pad-h} + #{$graphics-width}); //TODO: I don't love this, but it lets us mix all types of graphics widths in, would still rather change later
+    }
+
+    @include gw-wrapNever();
+
+    .gw-icon {
+      background-color: transparent;
+    }
+
+    .gw-label:not(.gw-emptyLabel):not(:empty).gw-hasIcon {
+      padding-left: $gw-app--menus--space-between-icon-and-label;
+    }
+
+    .gw-label {
+      background-color: transparent;
+      &.gw-flattened-menu-label {
+        font-weight: bold; //TODO: globalize
+      }
+    }
+
+    .gw-subLabel {
+      display: block;
+      font-size: gw-emFixed(.9);
+      padding: $pad-v $inner-action--pad-h;
+    }
+  }
+
+  @if ($gw-app--buttons--have-borders == true) {
+    $forced-expand-divider-col: null; //NOTE: if buttons have borders, then we null out the forced col, and allow button-color mixin to handle the non base colors
+  }
+
+  @if ($force-no-expand) {
+    & > .gw-action--expand-button {
+      display: none;
+    }
+
+  } @else {
+    &:not(.gw-hasChildren) {
+      & > .gw-action--expand-button {
+        display: none;
+      }
+    }
+    &.gw-hasChildren {
+      $expand-top: 0; //Was $gw-app--border-width-px, which was pushing down
+      @if ($is-button) {
+        $expand-top: 0;
+      }
+      @if ($force-expand-only) {
+        $expand-top: 0;
+        & > .gw-action--inner {
+          width: ($expand--pad-h * 2 + $gw-app--line-height-unitless);
+          //height: ($expand--pad-h * 2 + $gw-app--line-height-unitless);
+        }
+
+        & > .gw-action--expand-button {
+          width: 100%;
+        }
+      } @else {
+        & > .gw-action--inner {
+          padding-right: ($expand--pad-h * 2) + $gw-app--line-height-unitless;
+          @if ($has-expander-pad) {
+            &.gw-hasDivider {
+              padding-right: ($expand--pad-h * 2) + $gw-app--line-height-unitless + $expand--pad-h + (2 / gw-applicationBaseFontSizeStripped());
+            }
+          }
+        }
+      }
+
+      @if ($has-expander-pad) {
+        & > .gw-action--divider {
+          display: inline-block;
+          width: $gw-app--border-width-px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: $gw-app--line-height-unitless + $expand--pad-h * 2;
+
+          @if ($is-button) {
+            padding: $pad-v * $gw-app--buttons--expand-divider-pad-v-mod 0;
+          } @else {
+            padding: $pad-v * $gw-app--menus--expand-divider-pad-v-mod 0;
+          }
+
+          .gw-action--divider-inner {
+            display: inline-block;
+            vertical-align: middle;
+            width: $gw-app--border-width-px;
+            height: 100%;
+            // Background color, which ends up looking like the border color of the divider, is set in the button color mixin
+          }
+
+          @if ($force-expand-only) {
+            display: none;
+          }
+        }
+      } @else {
+        & > .gw-action--divider {
+          display: none;
+        }
+      }
+
+      & > .gw-action--expand-button {
+        @include gw-button--base($bg: transparent, $col: $col, $pad-v: 0, $pad-h: $expand--pad-h, $focus-offset: $gw-app--buttons--focus-offset-px - 1, $add-disabled-state: $add-disabled-state);
+        position: absolute;
+        right: 0;
+        top: $expand-top;
+
+
+        border-color: transparent;
+        .gw-icon--expand {
+          @include gw-iconVerticalCenter($glyph);
+        }
+      }
+
+      .gw-action--expand-button {
+        overflow: hidden;
+      }
+
+      &.gw-staticMenus {
+        & > .gw-action--expand-button {
+          height: calc(#{$gw-app--line-height-unitless}em + #{($pad-v * 2)} + #{2 * $gw-app--border-width-px});
+        }
+      }
+
+      &:not(.gw-staticMenus) {
+        & > .gw-action--expand-button {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+
+  &:not(.gw-disabled) {
+
+    @mixin gw-actionInnerHover() {
+      @include gw-button--colors($hover-bg, $hover-col, $border-color: $border-color-hover, $forced-expand-divider-col: $forced-expand-divider-col, $add-gradient: $add-gradient);
+      @if ($bg == $hover-bg) { //TODO: revisit this
+        border-color: $hover-bg;
+      }
+    }
+
+    @mixin gw-expandButtonHover() {
+      @include gw-button--colors(transparent, $hover-col);
+    }
+
+    &:not(.gw-staticMenus):not(.gw-hasOpenSubMenu):hover {
+      > .gw-action--inner {
+        @include gw-actionInnerHover();
+      }
+      > .gw-action--expand-button {
+        @include gw-expandButtonHover();
+      }
+    }
+
+    &.gw-staticMenus {
+      > .gw-action--inner:hover {
+        @include gw-actionInnerHover();
+      }
+      > .gw-action--expand-button:hover {
+        @include gw-expandButtonHover();
+      }
+    }
+
+    @mixin gw-beActive() {
+      > .gw-action--inner {
+        @include gw-button--colors($active-bg, $active-col, $border-color: $border-color-active, $forced-expand-divider-col: $forced-expand-divider-col, $add-gradient: $add-gradient);
+        @if ($bg == $active-bg) {
+          border-color: $active-bg;
+        }
+      }
+
+      > .gw-action--expand-button {
+        @include gw-button--colors(transparent, $active-col);
+      }
+    }
+
+    @if ($inactive-when-open == false) {
+      &.gw-active, &.gw-event-temp-active, &.gw-hasOpenSubMenu {
+        @include gw-beActive();
+      }
+    } @else {
+      &.gw-active, &.gw-event-temp-active {
+        @include gw-beActive();
+      }
+    }
+  }
+
+  @if($add-disabled-state) {
+    &.gw-disabled {
+      cursor: $gw-app--buttons--disabled-cursor;
+      background-color: $gw-app--buttons--disabled-bg;
+      color: $gw-app--buttons--disabled-col;
+
+      @if ($is-button) {
+        background-color: $gw-app--buttons--disabled-bg;
+        color: $gw-app--buttons--disabled-col;
+        > .gw-action--inner {
+          @include gw-button--colors($gw-app--buttons--disabled-bg, $gw-app--buttons--disabled-col, $border-color: $border-color-disabled, $forced-expand-divider-col: $gw-app--buttons--disabled-col, $add-gradient: $add-gradient);
+        }
+        > .gw-action--expand-button {
+          @include gw-button--colors(transparent, $gw-app--buttons--disabled-col);
+        }
+      } @else {
+        > .gw-action--inner {
+          @include gw-button--colors($bg, $col, $add-gradient: $add-gradient);
+        }
+        > .gw-action--expand-button {
+          @include gw-button--colors(transparent, $col);
+        }
+      }
+
+    }
+  }
+
+  @if ($is-button) {
+    border-radius: $gw-app--buttons--border-radius-px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+
+    & > .gw-action--inner {
+      display: block;
+      border-radius: $gw-app--buttons--border-radius-px;
+      & > .gw-label {
+        line-height: 1.2;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      & > .gw-icon {
+        display: inline;
+        vertical-align: top;
+      }
+    }
+    & > .gw-action--expand-button {
+      border-radius: $gw-app--buttons--border-radius-px;
+    }
+  } @else {
+    display: block;
+    border-radius: 0;
+    & > .gw-action--inner {
+      border-color: $bg;
+      border-radius: 0;
+    }
+  }
+
+  &.gw-staticMenus {
+    .gw-subMenu {
+      position: static;
+      display: none;
+      &.gw-open {
+        visibility: visible;
+        display: block;
+        &.gw-multi-col {
+          @include gw-multiColumn;
+        }
+      }
+    }
+
+    &.gw-active.gw-hasChildren {
+      & > .gw-action--expand-button {
+        display: none; //TODO: need to theme this option, to gray out button, or hide it
+      }
+
+      & > .gw-subMenu {
+        visibility: visible;
+        display: block;
+        &.gw-multi-col {
+          @include gw-multiColumn;
+        }
+      }
+    }
+  }
+
+  &:not(.gw-staticMenus) {
+    .gw-subMenu {
+      box-shadow: $gw-app--menus--shadow;
+      position: fixed;
+      display: none;
+      // sub menus inside of sub menus need to default to the right of parent
+      &.gw-open {
+        @include gw-z-index(subMenus);
+        display: inline-block;
+        &.gw-multi-col {
+          @include gw-multiColumn;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Call in gw-action--outer to style sub menu items under the div with class .gw-subMenu
+ * Required structure: .gw-action--outer > .gw-subMenu > .gw-action--outer > @include gw-menuItem
+ *
+ * If you have a particular menu item that needs non standard styling then add class gw-custom-menuItem
+ * to its gw-action-outer div, which will prevent the gw-menuItem mixin from applying to just that item.
+ * If you don't do this you'll have difficulty applying your styles to the custom menu item because the
+ * styles set up by gw-menuItem are very specific and will usually override anything else.
+ */
+@mixin gw-subMenu(
+  $bg: $gw-app--menus--bg,
+  $col: $gw-app--menus--col,
+  $hover-bg: $gw-app--menus--hover--bg,
+  $hover-col: $gw-app--menus--hover--col,
+  $active-bg: $gw-app--menus--active--bg,
+  $active-col: $gw-app--menus--active--col,
+  $pad-v: $gw-app--menus--pad-v-rem,
+  $inner-action--pad-h: $gw-app--menus--pad-h-rem,
+  $expand--pad-h: $gw-app--menus--expand--pad-h-rem,
+  $glyph: $gw-app--menus--submenu-expand-glyph,
+  $focus-offset: $gw-app--focus--outline-offset-px,
+  $divider-col: $gw-app--menus--divider-col,
+  $divider-h: $gw-app--menus--divider-h-em,
+  $divider-pad-h: $gw-app--menus--divider-pad-h-rem,
+  $sub-menu-pad-v: $gw-app--menus--submenu-pad-v-rem,
+  $sub-menu-pad-h: $gw-app--menus--submenu-pad-h-rem,
+  $graphics-width: null,
+  $border-width: $gw-app--border-width-px,
+  $inactive-when-open: false,
+  $add-disabled-state: true
+) {
+
+  &:not(.gw-staticMenus) {
+    .gw-subMenu {
+      @if ($gw-app--menus--border-color != null) {
+        border: gw-border($gw-app--menus--border-color);
+      }
+    }
+  }
+
+  .gw-subMenu {
+    background-color: $bg;
+    @if ($gw-app--menus--have-border-radius) {
+      @include gw-borderRadius();
+      div:first-child.gw-MenuItemWidget {
+        @include gw-borderCap($top: true);
+        .gw-action--inner {
+          @include gw-borderCap($top: true);
+        }
+      }
+      div:last-child.gw-MenuItemWidget {
+        @include gw-borderCap($bottom: true);
+        .gw-action--inner {
+          @include gw-borderCap($bottom: true);
+        }
+      }
+    }
+
+    @if ($sub-menu-pad-v != null) {
+      padding-top: $sub-menu-pad-v;
+      padding-bottom: $sub-menu-pad-v;
+    }
+
+    @if ($sub-menu-pad-h != null) {
+      padding-left: $sub-menu-pad-h;
+      padding-right: $sub-menu-pad-h;
+    }
+
+    // Apply standard menu item styling to sub menu items unless gw-custom-menuItem has been used to disable it
+    .gw-action--outer:not(.gw-custom-menuItem) {
+      @include gw-menuItem(
+              $bg: $bg,
+              $col: $col,
+              $hover-bg: $hover-bg,
+              $hover-col: $hover-col,
+              $active-bg: $active-bg,
+              $active-col: $active-col,
+              $pad-v: $pad-v,
+              $inner-action--pad-h: $inner-action--pad-h,
+              $expand--pad-h: $expand--pad-h,
+              $is-button: false,
+              $glyph: $glyph,
+              $force-no-expand: false,
+              $force-expand-only: false,
+              $focus-offset: $focus-offset,
+              $never-use-expand-divider: true,
+              $graphics-width: $graphics-width,
+              $border-width: $border-width,
+              $inactive-when-open: $inactive-when-open,
+              $add-disabled-state: $add-disabled-state
+      );
+    }
+    .gw-MenuItemDividerWidget {
+      display: block;
+      height: $divider-h;
+      background-color: $divider-col;
+      border-color: $bg;
+      border-style: solid;
+      border-width: 0 $divider-pad-h;
+    }
+
+    .gw-deferred {
+      min-width: gw-emFixed(10);
+    }
+
+    .gw-deferred-menuItem {
+      @include gw-menuItem();
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: gw-lineHeightStripped() + (2 * $gw-app--menus--pad-v-rem) + (4 / gw-applicationBaseFontSizeStripped()); //TODO: revisit
+      .gw-loader {
+        @include gw-icon($gw-app--loading-glyph);
+        color: $col;
+        @include gw-animation(gw-spin 2s infinite linear);
+      }
+      &.gw-deferred--empty {
+        min-width: $gw-empty-subMenu--width;
+      }
+    }
+
+    .gw-scrolling-menu-arrow {
+      @include gw-menuItem();
+      position: fixed;
+      height: $gw-subMenu--arrow--height;
+      border: gw-border($divider-col);
+
+      &.gw-disabled {
+        background-color: $gw-app--buttons--disabled-bg; //TODO: revisit global styling
+        color: $gw-app--palette--gray-C; //TODO: theme
+      }
+
+      &.gw-menu--up-arrow {
+        border-style: none solid solid solid;
+        .gw-icon {
+          @include gw-iconVerticalCenter("caret-up-solid");
+          display: flex;
+        }
+      }
+
+      &.gw-menu--down-arrow {
+        border-style: solid solid none solid;
+        .gw-icon {
+          @include gw-iconVerticalCenter("caret-down-solid");
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .gw-subMenu--scrolling {
+    overflow-y: hidden;
+    padding-top: $gw-subMenu--arrow--height;
+    padding-bottom: $gw-subMenu--arrow--height;
+    @include gw-ie11Only {
+      // Border radius causes rendering issue with submenus of scrolling menus in IE11.
+      // It's still unclear why -> add this work-around for now.
+      border-radius: gw-pxFixed(0);
+    }
+  }
+}
+

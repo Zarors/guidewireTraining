@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="ContactNoteType"
+  name="ContactNoteType">
+  <typecode
+    code="general"
+    desc="General"
+    name="General"
+    priority="10"/>
+  <typecode
+    code="data_update"
+    desc="Update Contact Data"
+    name="Update Contact Data"
+    priority="20"/>
+  <typecode
+    code="license"
+    desc="License / Certification"
+    name="License / Certification"
+    priority="30"/>
+  <typecode
+    code="problem"
+    desc="Problem"
+    name="Problem"
+    priority="40"/>
+</typelist>

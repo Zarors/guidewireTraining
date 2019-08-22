@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- The typecode descriptions in this typelist do not take into account daylight savings time, should not be used,
+and are subject to change in a future release. -->
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Users' timezones"
+  name="TimeZoneType">
+  <typecode
+    code="US.Eastern"
+    desc="GMT -05:00"
+    name="Eastern Time (Eastern)"/>
+  <typecode
+    code="US.East-Indiana"
+    desc="GMT -05:00"
+    name="Eastern Time (East-Indiana)"/>
+  <typecode
+    code="US.Central"
+    desc="GMT -06:00"
+    name="Central Time (Central)"/>
+  <typecode
+    code="US.Mountain"
+    desc="GMT -07:00"
+    name="Mountain Time (Mountain)"/>
+  <typecode
+    code="US.Arizona"
+    desc="GMT -07:00"
+    name="Mountain Time (Arizona)"/>
+  <typecode
+    code="US.Pacific"
+    desc="GMT -08:00"
+    name="Pacific Time (Pacific)"/>
+  <typecode
+    code="US.Alaska"
+    desc="GMT -09:00"
+    name="Alaska Time (Alaska)"/>
+  <typecode
+    code="US.Hawaii"
+    desc="GMT -10:00"
+    name="Hawaii Time (Hawaii)"/>
+  <typecode
+    code="US.Aleutian"
+    desc="GMT -10:00"
+    name="Hawaii-Aleutian Time (Aleutian)"/>
+</typelistextension>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/collations" xmlns="http://guidewire.com/collations">
+  
+  <xsd:simpleType name="DBType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="H2"/>
+      <xsd:enumeration value="ORACLE"/>
+      <xsd:enumeration value="POSTGRESQL"/>
+      <xsd:enumeration value="SQL_SERVER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="Collation">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <!-- The locale code -->
+      <xsd:attribute name="locale" type="xsd:NMTOKEN" use="required"/>
+      <!-- The name of the collation for "primary" comparisons. -->
+      <xsd:attribute name="primary" type="xsd:NMTOKEN" use="required"/>
+      <!-- The name of the collation for "secondary" comparisons. -->
+      <xsd:attribute name="secondary" type="xsd:NMTOKEN" use="required"/>
+      <!-- The name of the collation for "tertiary" comparisons. -->
+      <xsd:attribute name="tertiary" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="Collations">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Database" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="DBJavaClass">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string"/>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="Database">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Collation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="DBJavaClass" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+      <!-- Indicates the database type. -->
+      <xsd:attribute name="type" type="DBType" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

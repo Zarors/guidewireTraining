@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    desc="List of Related Contacts"
+    id="RelatedContactsLV">
+    <ExposeIterator
+      flags="relationship"
+      valueType="entity.ABContactContact"
+      widget="RelatedContactsLV"/>
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <RowIterator
+      editable="true"
+      elementName="contactContact"
+      hideCheckBoxesIfReadOnly="true"
+      pageSize="10"
+      toAdd="contact.addContactContact(contactContact)"
+      toRemove="contact.removeContactContact(contactContact)"
+      value="contact.AllContactContacts"
+      valueType="entity.ABContactContact[]">
+      <ToolbarFlag
+        name="relationship"/>
+      <Row>
+        <ABContactCell
+          editable="true"
+          forceContactSubtype="new gw.web.ABContactContactLVWrapper(contactContact, contact).OtherContactType"
+          id="Contact"
+          label="DisplayKey.get(&quot;Web.RelatedContactsLV.Contact&quot;)"
+          parentContact="contact"
+          required="true"
+          setNoneSelected="contactContact.setOtherContact(contact, null)"
+          sortBy="contactContact.getOtherContact(contact).PrimarySortValue,contactContact.getOtherContact(contact).SecondarySortValue,contactContact.getOtherContact(contact).TertiarySortValue,contactContact.getOtherContact(contact).QuaternarySortValue"
+          sortOrder="2"
+          value="new gw.web.ABContactContactLVWrapper(contactContact, contact).OtherContact">
+          <PostOnChange
+            target="DATA_ONLY"/>
+        </ABContactCell>
+        <RangeCell
+          editable="true"
+          id="Rel"
+          label="DisplayKey.get(&quot;Web.RelatedContactsLV.Rel&quot;)"
+          required="true"
+          sortOrder="1"
+          value="new gw.web.ABContactContactLVWrapper(contactContact, contact).BidiRel"
+          valueRange="contact.getPossibleBidiRelsToContact(contactContact.getOtherContact(contact))"
+          valueType="typekey.ContactBidiRel">
+          <PostOnChange
+            target="DATA_ONLY"/>
+        </RangeCell>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="RegionZonesLV">
+    <ExposeIterator
+      valueType="entity.RegionZone"
+      widget="RegionZonesLV"/>
+    <Require
+      name="r"
+      type="Region"/>
+    <Require
+      name="zt"
+      type="ZoneType"/>
+    <Require
+      name="c"
+      type="Country"/>
+    <RowIterator
+      canPick="false"
+      editable="true"
+      elementName="rz"
+      hasCheckBoxes="true"
+      hideCheckBoxesIfReadOnly="true"
+      toCreateAndAdd="createNewRegionZone()"
+      toRemove="r.removeFromRegionZones(rz)"
+      value="r.getRegionZones(zt)"
+      valueType="entity.RegionZone[]">
+      <IteratorSort
+        sortBy="rz.Code"
+        sortOrder="1"/>
+      <Row>
+        <TextCell
+          autoComplete="new gw.api.admin.ZoneAutocompleteHandler(c, zt)"
+          editable="true"
+          id="ZoneCode"
+          label="DisplayKey.get(&quot;Web.Admin.RegionZonesLV.Code&quot;)"
+          required="true"
+          unique="true"
+          value="rz.Code"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+function createNewRegionZone() : RegionZone {
+        var newRegionZone = new RegionZone()
+        newRegionZone.ZoneType=zt
+        newRegionZone.Country=c
+        r.addToRegionZones(newRegionZone)
+        return newRegionZone
+      }
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

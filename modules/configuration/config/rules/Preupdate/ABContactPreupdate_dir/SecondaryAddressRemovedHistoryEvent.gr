@@ -1,0 +1,41 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Secondary Address Removed History Event")
+internal class SecondaryAddressRemovedHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.New
+and aBContact.ChangedFields.contains("ContactAddresses")
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var newContactAddresses = aBContact.ContactAddresses
+var origContactAddresses = aBContact.getOriginalValue("ContactAddresses") as ABContactAddress[]
+for (var contactAddress in origContactAddresses) {
+  if (!newContactAddresses.contains(contactAddress) 
+        // this second condition is to avoid creating "Address removed" 
+        // Histories when a previously Secondary Address has become primary
+        and !contactAddress.Address.equals(aBContact.PrimaryAddress)) {
+    
+    var history = aBContact.addHistory(CustomHistoryType.TC_ADDRESSREMOVED, DisplayKey.get("Rules.Preupdate.Address.AddressRemoved.Secondary"))
+    // This code pretends that ContactAddress.Address has been set
+    // to null for the purposes of creating a TrackedChange for the UI.
+    var trackedChange = new TrackedChange()
+    trackedChange.Field = "Address"
+    trackedChange.DisplayKey = "Web.Addresses.Address"
+    trackedChange.OldValue = contactAddress.Address.DisplayName
+    trackedChange.NewValue = ""
+    history.addToTrackedChanges(trackedChange)
+  }
+}
+
+/*end00rule*/
+  }
+}

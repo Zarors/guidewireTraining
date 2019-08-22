@@ -1,0 +1,52 @@
+
+.gw-DetailViewWidget:not(.gw-isLayoutTable) {
+  // Position to other widgets
+  margin-top: $gw-app--DetailView--standard--spacing-widget-top-rem;
+  margin-left: $gw-app--DetailView--standard--spacing-widget-left-rem;
+  margin-right: $gw-app--DetailView--standard--spacing-widget-right-rem;
+  margin-bottom: $gw-app--DetailView--standard--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--DetailView--standard--spacing-inner-top-rem;
+  padding-left: $gw-app--DetailView--standard--spacing-inner-left-rem;
+  padding-right: $gw-app--DetailView--standard--spacing-inner-right-rem;
+  padding-bottom: $gw-app--DetailView--standard--spacing-inner-bottom-rem;
+  
+  &.gw-isInline {
+    display: inline-block;
+  }
+
+  &:not(.gw-isInline) {
+    display: block; //TODO: cooper, these should really be flexes, to support the flex grid in pcf, but the way input sections are set up, it won't work, unless they wrap, and apps don't want them to wrap.
+  }
+
+  .gw-DetailViewWidget--body {
+    display: block;
+    @include gw-wrapNever();
+  }
+
+  background-color: $gw-app--DetailView--standard--bg;
+  @include gw-wrapNever();
+
+  &.gw-hasBorder {
+    @include gw-borderRadius();
+    border: gw-border($gw-app--DetailView--table--border-color);
+    //TODO: might need to enforce a min padding here
+  }
+
+  &.gw-isHighlighted {
+    background-color: $gw-app--DetailView--is-highlighted-bg;
+  }
+
+  &.gw-childrenHaveBorders {
+    .gw-InputColumnWidget.gw-StyleContainer--DetailViewWidget {
+      @include gw-borderRadius();
+      border: $gw-app--DetailView--child-border;
+      //TODO: might need to enforce a min padding here
+    }
+  }
+
+  .gw-columnDivider {
+    display: none;
+  }
+}

@@ -1,0 +1,64 @@
+.gw-BadgeWidget {
+  text-align: left;
+  color: $gw-app--BadgeWidget--default-col;
+  background-color: $gw-app--BadgeWidget--default-bg;
+  margin-right: $gw-app--SPACING-rem-XS;
+
+  &:empty {
+    min-height: gw-emFixed(1);
+    min-width: gw-emFixed(1);
+    @include gw-borderRadius(50%);
+  }
+
+  &.gw-StyleContainer--TitleBarWidget, &.gw-StyleContainer--VerbatimWidget {
+    margin-left: $gw-app--SPACING-rem-S;
+  }
+
+  &.gw-badge-min-w {
+    min-width: $gw-app--BadgeWidget--standard-min-width;
+    @if($gw-app--BadgeWidget--standard-min-width-should-also-center-align) {
+      text-align: center;
+    }
+  }
+
+  &.gw-StyleContainer--InputWidget {
+    float: left;
+
+    &.gw-badge-small {
+      margin-top: $gw-app--InputColumn--label-margin-top-rem;
+    }
+
+    &:not(.gw-badge-small) {
+      margin-top: $gw-app--inputs--pad-v-rem;
+    }
+  }
+
+  &.gw-badge-small {
+    font-size: $gw-app--BadgeWidget--small-font-size-px;
+    font-weight: $gw-app--BadgeWidget--small-font-weight;
+    border-radius: $gw-app--BadgeWidget--small-border-radius;
+    padding: $gw-app--BadgeWidget--small-pad-v $gw-app--BadgeWidget--small-pad-h;
+  }
+  
+  &:not(.gw-badge-small) {
+    font-size: $gw-app--BadgeWidget--large-font-size-px;
+    font-weight: $gw-app--BadgeWidget--large-font-weight;
+    border-radius: $gw-app--BadgeWidget--large-border-radius;
+    padding: $gw-app--BadgeWidget--large-pad-v $gw-app--BadgeWidget--large-pad-h;
+  }
+
+  .gw-icon + .gw-label:not(:empty) {
+    margin-left: $gw-app--SPACING-rem-S;
+  }
+
+  .gw-icon {
+    min-width: 1em;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .gw-label {
+    //PH
+  }
+
+}

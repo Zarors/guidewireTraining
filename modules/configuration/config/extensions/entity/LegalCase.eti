@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <entity entity="LegalCase" table="legalcase" type="retireable" desc="Legal case" exportable="true" xmlns="
+  http://guidewire.com/datamodel">
+  <implementsEntity
+    name="Extractable"/>
+  <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+    <column name="FileDate" type="datetime" desc="Date the case was filed with the courts" nullok="true" />
+	<column name="FiledByContact" type="bit" desc="Did the contact file this case?" default="false" nullok="true" />
+	<column name="Plaintiff" type="varchar" desc="Plaintiff of the lawsuit (if contact is defendant)" nullok="true" >
+			<columnParam name="size" value="30"/>
+	</column>
+	<column name="Defendant" type="varchar" desc="Defendant of the lawsuit (if contact is the plaintiff)" nullok="true" >
+			<columnParam name="size" value="30"/>
+	</column>
+	<typekey name="CaseType" typelist="LegalCaseType" desc="Type of case" nullok="true" />
+	<typekey name="Status" typelist="LegalCaseStatus" desc="Status of case" default="in_progress" nullok="true" />
+	<foreignkey name="ABContact" columnName="ABContactID" fkentity="ABContact" desc="Associated contact" nullok="true"/>
+  </entity>

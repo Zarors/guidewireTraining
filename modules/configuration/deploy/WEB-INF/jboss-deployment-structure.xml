@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- Courtesy http://stackoverflow.com/questions/12492717/jboss-7-1-1-add-rt-jar-of-jre-to-classpath -->
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
+  <deployment>
+    <exclusions>
+      <module name="org.slf4j" />
+      <module name="org.slf4j.ext" />
+      <module name="org.slf4j.impl" />
+      <module name="org.slf4j.jcl-over-slf4j" />
+      <module name="org.apache.log4j" />
+      <module name="org.apache.commons.logging" />
+      <module name="org.apache.logging.log4j" />
+      <module name="com.fasterxml.jackson.core.jackson-annotations" />
+      <module name="com.fasterxml.jackson.core.jackson-core" />
+      <module name="com.fasterxml.jackson.core.jackson-databind" />
+      <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
+      <module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+    </exclusions>
+    <dependencies>
+      <!-- required to be able to load OracleConnection for spatial search.
+      Module name must match the JDBC driver JAR name: deployment.<jar file name> -->
+      <module name="deployment.ojdbc8-12.2.0.1.jar" optional="true" />
+      <system export="true">
+        <paths>
+          <path name="sun/net/spi"/>
+          <path name="sun/net/spi/nameservice"/>
+          <path name="sun/awt/util"/>
+        </paths>
+      </system>
+    </dependencies>
+  </deployment>
+</jboss-deployment-structure>

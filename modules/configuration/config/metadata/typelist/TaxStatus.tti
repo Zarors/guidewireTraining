@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The status of a vendor's tax ID"
+  final="true"
+  name="TaxStatus"
+  platform="true">
+  <typecode
+    code="unknown"
+    desc="Unknown"
+    name="Unknown"/>
+  <typecode
+    code="unconfirmed"
+    desc="Known, but not yet verified"
+    name="Unconfirmed"/>
+  <typecode
+    code="confirmed"
+    desc="Known and verified"
+    name="Confirmed"/>
+</typelist>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="false"
+    id="StartupPageError"
+    title="DisplayKey.get(&quot;Web.StartupPageError.Title&quot;)">
+    <Screen
+      id="StartupPageErrorScreen">
+      <DetailViewPanel
+        id="StartupPageErrorScreenDV">
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Web.StartupPageError.NoPermissions&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

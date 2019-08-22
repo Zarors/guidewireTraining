@@ -1,0 +1,3 @@
+<tr class="gw-tableLayout--table--row gw-table-row" data-gw-row-number="${rowNumber}">
+  ${:children}
+</tr>

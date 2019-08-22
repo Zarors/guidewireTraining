@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<entity
+  loadable="false"
+  platform="true"
+  xmlns="http://guidewire.com/datamodel"
+  entity="UserUIPreferences"
+  table="useruipreferences"
+  type="retireable"
+  extendable="false">
+  <column
+    desc="A JSON field storing this User's UI Preferences"
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    loadable="false"
+    name="UIPreferences"
+    nullok="true"
+    setterScriptability="hidden"
+    type="blob"/>
+  <foreignkey
+    columnName="UserID"
+    fkentity="User"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    loadable="false"
+    name="User"
+    nullok="false"
+    setterScriptability="hidden"/>
+</entity>

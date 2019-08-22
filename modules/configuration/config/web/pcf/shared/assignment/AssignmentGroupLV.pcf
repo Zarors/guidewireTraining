@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- ListView that displays the results of a Group search when selecting a group
+    to assign an Assignable entity to (such as an Activity). -->
+  <ListViewPanel
+    id="AssignmentGroupLV">
+    <Require
+      name="Groups"
+      type="gw.api.database.IQueryBeanResult&lt;Group&gt;"/>
+    <RowIterator
+      editable="false"
+      elementName="group"
+      pickValue="group"
+      selectLabel="DisplayKey.get(&quot;Button.Assign&quot;)"
+      value="Groups"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.Group&gt;">
+      <Row>
+        <GroupCell
+          id="Group"
+          label="DisplayKey.get(&quot;Web.Assignment.Search.Group&quot;)"
+          sortOrder="1"
+          value="group"/>
+        <GroupCell
+          enableSort="false"
+          id="ParentGroup"
+          label="DisplayKey.get(&quot;Web.Assignment.Search.ParentGroup&quot;)"
+          value="group.Parent"/>
+        <TextCell
+          enableSort="false"
+          id="Organization"
+          label="DisplayKey.get(&quot;Web.Assignment.Search.Organization&quot;)"
+          value="group.Organization"
+          valueType="entity.Organization"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

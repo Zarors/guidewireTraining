@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="A context for packaging rule sets, libraries, script parameters, and other configurable resources"
+  final="false"
+  name="ResourceContext"
+  platform="true"/>

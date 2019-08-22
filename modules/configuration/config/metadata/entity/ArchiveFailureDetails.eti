@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ArchiveFailureDetails"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="archivefailuredetails"
+  type="keyable">
+  <column
+    desc="Full details of archive failure"
+    name="ArchiveFailureDetails"
+    nullok="false"
+    type="text"/>
+</entity>

@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.TypelistToolsAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/TypelistToolsAPI" name="TypelistToolsAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/webservice/typelisttools" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/TypelistToolsAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/TypelistToolsAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/typelisttools"/>
+      <!-- getTypelistValues(String) : TypeKeyData[] -->
+      <xs:element name="getTypelistValues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="typelist" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTypelistValuesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo:TypeKeyData" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- getTypeKeysByAlias(String, String, String) : TypeKeyData[] -->
+      <xs:element name="getTypeKeysByAlias">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="typelist" type="xs:string" minOccurs="0"/>
+            <xs:element name="namespace" type="xs:string" minOccurs="0"/>
+            <xs:element name="alias" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTypeKeysByAliasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo:TypeKeyData" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getTypeKeyByAlias(String, String, String) : TypeKeyData -->
+      <xs:element name="getTypeKeyByAlias">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="typelist" type="xs:string" minOccurs="0"/>
+            <xs:element name="namespace" type="xs:string" minOccurs="0"/>
+            <xs:element name="alias" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTypeKeyByAliasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:TypeKeyData" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getAliasesByInternalCode(String, String, String) : String[] -->
+      <xs:element name="getAliasesByInternalCode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="typelist" type="xs:string" minOccurs="0"/>
+            <xs:element name="namespace" type="xs:string" minOccurs="0"/>
+            <xs:element name="code" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAliasesByInternalCodeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getAliasByInternalCode(String, String, String) : String -->
+      <xs:element name="getAliasByInternalCode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="typelist" type="xs:string" minOccurs="0"/>
+            <xs:element name="namespace" type="xs:string" minOccurs="0"/>
+            <xs:element name="code" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAliasByInternalCodeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/typelisttools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="TypeKeyData">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:string" minOccurs="0"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+          <xs:element name="Retired" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="TypelistToolsAPIPortType">
+    <wsdl:operation name="getTypelistValues">
+      <wsdl:input name="getTypelistValues" message="tns:getTypelistValues"/>
+      <wsdl:output name="getTypelistValuesResponse" message="tns:getTypelistValuesResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if no typelist exists with the given name -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTypeKeysByAlias">
+      <wsdl:input name="getTypeKeysByAlias" message="tns:getTypeKeysByAlias"/>
+      <wsdl:output name="getTypeKeysByAliasResponse" message="tns:getTypeKeysByAliasResponse"/>
+      <!-- On parameter errors -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTypeKeyByAlias">
+      <wsdl:input name="getTypeKeyByAlias" message="tns:getTypeKeyByAlias"/>
+      <wsdl:output name="getTypeKeyByAliasResponse" message="tns:getTypeKeyByAliasResponse"/>
+      <!-- On parameter errors -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAliasesByInternalCode">
+      <wsdl:input name="getAliasesByInternalCode" message="tns:getAliasesByInternalCode"/>
+      <wsdl:output name="getAliasesByInternalCodeResponse" message="tns:getAliasesByInternalCodeResponse"/>
+      <!-- On parameter errors -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAliasByInternalCode">
+      <wsdl:input name="getAliasByInternalCode" message="tns:getAliasByInternalCode"/>
+      <wsdl:output name="getAliasByInternalCodeResponse" message="tns:getAliasByInternalCodeResponse"/>
+      <!-- On parameter errors -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TypelistToolsAPISoap12Binding" type="tns:TypelistToolsAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getTypelistValues">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getTypelistValues">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTypelistValuesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTypeKeysByAlias">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getTypeKeysByAlias">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTypeKeysByAliasResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTypeKeyByAlias">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getTypeKeyByAlias">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTypeKeyByAliasResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAliasesByInternalCode">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAliasesByInternalCode">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAliasesByInternalCodeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAliasByInternalCode">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAliasByInternalCode">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAliasByInternalCodeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TypelistToolsAPISoap11Binding" type="tns:TypelistToolsAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getTypelistValues">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getTypelistValues">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTypelistValuesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTypeKeysByAlias">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getTypeKeysByAlias">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTypeKeysByAliasResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTypeKeyByAlias">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getTypeKeyByAlias">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTypeKeyByAliasResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAliasesByInternalCode">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAliasesByInternalCode">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAliasesByInternalCodeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAliasByInternalCode">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAliasByInternalCode">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAliasByInternalCodeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TypelistToolsAPI">
+    <wsdl:port name="TypelistToolsAPISoap12Port" binding="tns:TypelistToolsAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/TypelistToolsAPI"/>
+    </wsdl:port>
+    <wsdl:port name="TypelistToolsAPISoap11Port" binding="tns:TypelistToolsAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/TypelistToolsAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="getTypelistValues">
+    <wsdl:part name="parameters" element="tns:getTypelistValues"/>
+  </wsdl:message>
+  <wsdl:message name="getTypelistValuesResponse">
+    <wsdl:part name="parameters" element="tns:getTypelistValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="getTypeKeysByAlias">
+    <wsdl:part name="parameters" element="tns:getTypeKeysByAlias"/>
+  </wsdl:message>
+  <wsdl:message name="getTypeKeysByAliasResponse">
+    <wsdl:part name="parameters" element="tns:getTypeKeysByAliasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getTypeKeyByAlias">
+    <wsdl:part name="parameters" element="tns:getTypeKeyByAlias"/>
+  </wsdl:message>
+  <wsdl:message name="getTypeKeyByAliasResponse">
+    <wsdl:part name="parameters" element="tns:getTypeKeyByAliasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAliasesByInternalCode">
+    <wsdl:part name="parameters" element="tns:getAliasesByInternalCode"/>
+  </wsdl:message>
+  <wsdl:message name="getAliasesByInternalCodeResponse">
+    <wsdl:part name="parameters" element="tns:getAliasesByInternalCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAliasByInternalCode">
+    <wsdl:part name="parameters" element="tns:getAliasByInternalCode"/>
+  </wsdl:message>
+  <wsdl:message name="getAliasByInternalCodeResponse">
+    <wsdl:part name="parameters" element="tns:getAliasByInternalCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

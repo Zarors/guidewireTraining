@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canVisit="gw.api.tools.OracleOutlineHelper.dbSupportsOutlines()"
+    id="OracleOutlineDetailsPopup"
+    parent="OracleOutlineInfo()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineDetails&quot;)">
+    <LocationEntryPoint
+      signature="OracleOutlineDetailsPopup(outline : gw.api.database.DatabaseOutlineInfo)"/>
+    <Variable
+      name="outline"
+      type="gw.api.database.DatabaseOutlineInfo"/>
+    <Screen
+      id="OracleOutlineDetailsScreen">
+      <TemplatePanel>
+        <TemplatePanelContents><![CDATA[
+            <div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <% printContent(outline.PrettySQLAsHTML, false) %>
+            </div>
+          
+      ]]></TemplatePanelContents>
+      </TemplatePanel>
+      <PanelRef>
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineHint.Hints&quot;)"/>
+        <Toolbar/>
+        <ListViewPanel
+          id="HintsLV">
+          <RowIterator
+            editable="false"
+            elementName="hint"
+            value="outline.Hints"
+            valueType="gw.api.database.DatabaseOutlineHintInfo[]">
+            <Row>
+              <TextCell
+                id="Node"
+                label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineHint.Node&quot;)"
+                value="hint.Node"
+                valueType="java.lang.Integer"/>
+              <TextCell
+                id="Stage"
+                label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineHint.Stage&quot;)"
+                value="hint.Stage"
+                valueType="java.lang.Integer"/>
+              <TextCell
+                id="JoinPos"
+                label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineHint.JoinPos&quot;)"
+                value="hint.JoinPos"
+                valueType="java.lang.Integer"/>
+              <TextCell
+                id="Hint"
+                label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineHint.Hint&quot;)"
+                value="hint.Hint"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </PanelRef>
+    </Screen>
+  </Popup>
+</PCF>

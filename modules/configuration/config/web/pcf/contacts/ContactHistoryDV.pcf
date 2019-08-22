@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ContactHistoryDV">
+    <Require
+      name="history"
+      type="ContactHistory"/>
+    <InputColumn>
+      <DateInput
+        dateFormat="short"
+        id="Date"
+        label="DisplayKey.get(&quot;Web.ContactHistoryDV.Date&quot;)"
+        timeFormat="short"
+        value="history.EventTimestamp"/>
+      <TextInput
+        id="User"
+        label="DisplayKey.get(&quot;Web.ContactHistoryDV.User&quot;)"
+        value="getUserName()"/>
+      <UserInput
+        id="Reviewer"
+        label="DisplayKey.get(&quot;Web.ContactHistoryDV.Reviewer&quot;)"
+        value="history.User"
+        valueType="entity.User"
+        visible="history.ExternalUpdateUser != null"/>
+      <TypeKeyInput
+        id="Type"
+        label="DisplayKey.get(&quot;Web.ContactHistoryDV.Type&quot;)"
+        value="history.CustomType"
+        valueType="typekey.CustomHistoryType"/>
+      <TextInput
+        id="Description"
+        label="DisplayKey.get(&quot;Web.ContactHistoryDV.Description&quot;)"
+        value="history.Description"/>
+    </InputColumn>
+    <Code><![CDATA[function getUserName() : String {
+  if (history.ExternalUpdateApp != null and history.ExternalUpdateUser != null) {
+    return history.ExternalUpdateUser + " (" + history.ExternalUpdateApp.toUpperCase() + ")"
+    
+  } else if (history.ExternalUpdateUser != null) {
+    return history.ExternalUpdateUser
+      
+  } else {
+    return history.User.DisplayName
+  }
+}]]></Code>
+  </DetailViewPanel>
+</PCF>

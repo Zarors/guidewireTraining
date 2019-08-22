@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="ManagerRelationshipType"
+  name="ManagerRelationshipType">
+  <typecode
+    code="self"
+    desc="Self"
+    name="Self"
+    priority="10"/>
+  <typecode
+    code="admin_assist"
+    desc="Administrative Assistant"
+    name="Administrative Assistant"
+    priority="20"/>
+  <typecode
+    code="claims_manager"
+    desc="Claims Manager"
+    name="Claims Manager"
+    priority="30"/>
+  <typecode
+    code="other"
+    desc="Other"
+    name="Other"
+    priority="40"/>
+  <typecode
+    code="unknown"
+    desc="Unknown"
+    name="Unknown"
+    priority="50"/>
+</typelist>

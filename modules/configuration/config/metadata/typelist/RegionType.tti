@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of region definitions"
+  final="true"
+  name="RegionType"
+  platform="true">
+  <typecode
+    code="state"
+    desc="State"
+    name="State"/>
+  <typecode
+    code="county"
+    desc="County"
+    name="County"/>
+  <typecode
+    code="zip"
+    desc="Zip code"
+    name="Zip code"/>
+</typelist>

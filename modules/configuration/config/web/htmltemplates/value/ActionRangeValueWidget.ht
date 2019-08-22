@@ -1,0 +1,6 @@
+<div class="${reflectionApplies ? 'gw-value-reflector'}" ${systemAttributes}>
+  <div :for="option" :in="selectedOptions" class="gw-actionRangeValue gw-RangeValue ${option.retired ? 'gw-retired'}" data-gw-value="${option.value}">
+    <img :if="option.icon" src="${option.icon}" alt="${option.label || ''}"/>
+    <div :if="option.label" data-gw-click="fireEvent id:${renderId}">${option.label}</div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+$gw-app--tooltips--fade-time-seconds: .36s !default;
+$gw-app--tooltips--max-width-em: gw-emFixed(35) !default;
+$gw-app--tooltips--max-height-em: 80vh !default;
+
+$gw-app--tooltips--shadow: $gw-app--menus--shadow !default;
+$gw-app--tooltips--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--tooltips--pad-v-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--tooltips--bg: $gw-app--panels--info--bg !default;
+$gw-app--tooltips--border-col: $gw-app--panels--info--border-col !default;
+$gw-app--tooltips--col: $gw-app--palette--info !default;
+
+$gw-app--helptext--shadow: $gw-app--tooltips--shadow !default;
+$gw-app--helptext--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--helptext--pad-v-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--helptext--bg: $gw-app--tooltips--bg !default;
+$gw-app--helptext--border-col: $gw-app--tooltips--border-col !default;
+$gw-app--helptext--col: $gw-app--tooltips--col !default;
+$gw-app--helptext--max-w: $gw-app--tooltips--max-width-em !default;
+

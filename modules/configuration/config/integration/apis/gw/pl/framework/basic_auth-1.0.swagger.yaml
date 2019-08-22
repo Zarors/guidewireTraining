@@ -1,0 +1,6 @@
+swagger: '2.0'
+securityDefinitions:
+  basicAuth:
+    type: basic
+security:
+- basicAuth: []

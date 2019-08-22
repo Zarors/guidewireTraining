@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    id="UserAndAssignedContactsLV">
+    <RowIterator
+      editable="false"
+      elementName="aUser"
+      value="trainingapp.base.AssignedUserUtil.findAllContactManagers()"
+      valueType="gw.api.database.IQueryBeanResult&lt;User&gt;">
+      <Row>
+        <TextCell
+          id="UserName"
+          label="DisplayKey.get(&quot;Training.User&quot;)"
+          value="aUser.DisplayName"/>
+        <TextCell
+          id="Department"
+          label="DisplayKey.get(&quot;Training.Department&quot;)"
+          value="aUser.Department"/>
+        <TextCell
+          id="NumberOfContacts"
+          label="DisplayKey.get(&quot;Training.AssignedABContacts&quot;)"
+          value="trainingapp.base.AssignedUserUtil.countAssignedContacts(aUser)"
+          valueType="java.lang.Integer"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

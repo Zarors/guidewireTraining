@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Groups of users."
+  entity="Group"
+  exportable="true"
+  extendable="true"
+  loadable="false"
+  platform="true"
+  table="group"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.RemoveCallback"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <implementsInterface
+    iface="gw.api.assignment.Assignee"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.GroupPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.GroupInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <implementsEntity
+    name="Validatable"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.validation.impl.ValidatableInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupImpl"/>
+  <fulldescription><![CDATA[
+        Organizes system users. In addition to being a primary administrative object, group objects also provide a means
+        for defining company hierarchy when viewed through the user interface.
+      
+    ]]></fulldescription>
+  <typekey
+    desc="Type of group (describes its function)."
+    name="GroupType"
+    nullok="false"
+    typelist="GroupType"/>
+  <typekey
+    desc="Validation level that this object passed (if any) before it was stored."
+    exportable="false"
+    name="ValidationLevel"
+    nullok="true"
+    typelist="ValidationLevel"/>
+  <column
+    desc="The group name; this must be unique."
+    name="Name"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="100"/>
+    <localization
+      nullok="false"
+      tableName="group_name_l10n"/>
+  </column>
+  <edgeForeignKey
+    desc="The group's parent group."
+    edgeTableName="parentgroup"
+    exportasid="true"
+    fkentity="Group"
+    name="Parent"
+    nullok="true"/>
+  <foreignkey
+    columnName="OrganizationID"
+    desc="The Organization that this group belongs to."
+    fkentity="Organization"
+    name="Organization"
+    nullok="true"/>
+  <foreignkey
+    columnName="SupervisorID"
+    desc="Supervisor of the group."
+    exportasid="true"
+    fkentity="User"
+    name="Supervisor"
+    nullok="true"/>
+  <foreignkey
+    columnName="SecurityZoneID"
+    desc="Security zone to which the group belongs."
+    exportasid="true"
+    fkentity="SecurityZone"
+    name="SecurityZone"
+    nullok="false"/>
+  <edgeForeignKey
+    desc="Group that defines the visibility zone for this group. A visibility zone is defined by a direct child of the root group. The visibility zone of the root group will always be null."
+    edgeTableName="visibilityzone"
+    exportasid="true"
+    fkentity="Group"
+    loadable="false"
+    name="VisibilityZone"
+    nullok="true"/>
+  <column
+    default="true"
+    desc="If true, this group is visible to all users, regardless of what groups they belong to."
+    name="WorldVisible"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="100"
+    desc="Percentage value of normal workload to be given to this group. This is used for round-robin assignment."
+    name="LoadFactor"
+    nullok="true"
+    type="integer"/>
+  <array
+    arrayentity="GroupUser"
+    desc="Users belonging to this group."
+    exportable="false"
+    name="Users"
+    owner="true"/>
+  <array
+    arrayentity="GroupRegion"
+    desc="Regions associated with this group."
+    exportable="false"
+    name="Regions"
+    owner="true"/>
+  <array
+    arrayentity="AssignableQueue"
+    desc="Assignment queues associated with this group."
+    exportable="false"
+    name="AssignableQueues"/>
+  <index
+    desc="Used for security processing during relationship set resolving"
+    name="group5">
+    <indexcol
+      keyposition="1"
+      name="SecurityZoneID"/>
+  </index>
+  <customconsistencycheck
+    className="com.guidewire.pl.domain.community.dbchecks.GroupTreeDBCheck"
+    desc="Check that the group tree is not circular and contains no retired groups."
+    staticMethodName="checkGroupTree"/>
+</entity>

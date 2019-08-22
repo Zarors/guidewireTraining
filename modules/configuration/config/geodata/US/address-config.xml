@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<AddressConfig xmlns="http://guidewire.com/address-config">
+  <AddressDef name="US">
+    <Match>
+      <Field name="Country" value="US"/>
+    </Match>
+    <Fields>
+      <Field name="City" zonecode="city">
+        <AutoFillFromZone code="zip"/>
+        <AutoFillFromZone code="state"/>
+      </Field>
+      <Field name="County" zonecode="county">
+        <AutoFillFromZone code="zip"/>
+        <AutoFillFromZone code="city"/>
+        <AutoFillFromZone code="state"/>
+      </Field>
+      <Field name="State" zonecode="state">
+        <AutoFillFromZone code="zip"/>
+        <AutoFillFromZone code="city"/>
+      </Field>
+      <Field name="PostalCode" zonecode="zip">
+        <AutoFillFromZone code="city"/>
+        <AutoFillFromZone code="state"/>
+        <ValidatorDef value="[0-9]{5}(-[0-9]{4})?" description="Validator.PostalCode.US" input-mask="#####-####"/>
+      </Field>
+    </Fields>
+  </AddressDef>
+
+
+</AddressConfig>

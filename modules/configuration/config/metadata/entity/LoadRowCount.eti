@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Row counts for load history."
+  entity="LoadRowCount"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadrowcount"
+  type="keyable">
+  <column
+    desc="Name of source table."
+    name="SourceTableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="Number of rows in source table."
+    name="SourceRowCount"
+    nullok="true"
+    type="longint"/>
+  <column
+    desc="Number of blocks in source table."
+    name="SourceBlockCount"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Name of staging table."
+    name="StagingTableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="Number of rows in staging table."
+    name="StagingRowCount"
+    nullok="true"
+    type="longint"/>
+  <column
+    desc="Number of blocks in staging table."
+    name="StagingBlockCount"
+    nullok="true"
+    type="integer"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Parent."
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <!-- Unique index on LoadCommandID, SourceTableName -->
+  <index
+    desc="(LoadCommandID, SourceTableName) is unique across load row counts"
+    name="loadrowcountu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="SourceTableName"/>
+  </index>
+</entity>

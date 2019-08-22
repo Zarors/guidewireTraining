@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    countsAsWork="false"
+    id="WorkQueueInfoDownloadConfigurePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.WorkQueueInfo.DownloadQueueInfoConfigure&quot;)">
+    <Variable
+      initialValue="new gw.api.web.tools.WorkQueueInfoPage()"
+      name="Page"
+      type="gw.api.web.tools.WorkQueueInfoPage"/>
+    <Variable
+      initialValue="Page.MaxSizeOfExecutorsArray"
+      name="MaxExecutors"
+      type="int"/>
+    <Variable
+      initialValue="Page.MaxSizeOfWorkerRunsArray"
+      name="MaxBatches"
+      type="int"/>
+    <Variable
+      initialValue="Page.MaxSizeOfWriterRunsArray"
+      name="MaxWriters"
+      type="int"/>
+    <Variable
+      initialValue="true"
+      name="ExcludeEmptyBatches"
+      type="boolean"/>
+    <Variable
+      initialValue="24"
+      name="MaxHoursInItemDist"
+      type="int"/>
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <TextInput
+            editable="true"
+            id="maxWriters"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueInfo.DownloadQueueInfo.MaxNumberOfWriterRuns&quot;)"
+            requestValidationExpression="VALUE &gt; 0 ? null : DisplayKey.get(&quot;Validator.PositiveInteger&quot;, VALUE)"
+            required="true"
+            value="MaxWriters"
+            valueType="java.lang.Integer">
+            <PostOnChange/>
+          </TextInput>
+          <TextInput
+            editable="true"
+            id="maxExecutors"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueInfo.DownloadQueueInfo.MaxNumberOfExecutors&quot;)"
+            requestValidationExpression="VALUE &gt; 0 ? null : DisplayKey.get(&quot;Validator.PositiveInteger&quot;, VALUE)"
+            required="true"
+            value="MaxExecutors"
+            valueType="java.lang.Integer">
+            <PostOnChange/>
+          </TextInput>
+          <TextInput
+            editable="true"
+            id="maxBatches"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueInfo.DownloadQueueInfo.MaxNumberOfBatches&quot;)"
+            requestValidationExpression="VALUE &gt; 0 ? null : DisplayKey.get(&quot;Validator.PositiveInteger&quot;, VALUE)"
+            required="true"
+            value="MaxBatches"
+            valueType="java.lang.Integer">
+            <PostOnChange/>
+          </TextInput>
+          <TextInput
+            editable="true"
+            id="maxHours"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueInfo.DownloadQueueInfo.MaxHoursInItemDist&quot;)"
+            requestValidationExpression="VALUE &gt; 0 ? null : DisplayKey.get(&quot;Validator.PositiveInteger&quot;, VALUE)"
+            required="true"
+            value="MaxHoursInItemDist"
+            valueType="java.lang.Integer">
+            <PostOnChange/>
+          </TextInput>
+          <ButtonInput
+            action="Page.download(MaxWriters, MaxExecutors, MaxBatches, MaxHoursInItemDist)"
+            align="center"
+            download="true"
+            id="download"
+            value="DisplayKey.get(&quot;Button.Complete.Download&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

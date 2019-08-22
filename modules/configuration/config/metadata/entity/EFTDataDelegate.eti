@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  extendable="true"
+  name="EFTDataDelegate">
+  <fulldescription><![CDATA[Delegate used by ABContact to store Electronic funds transfer data
+    ]]></fulldescription>
+</delegate>

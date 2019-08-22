@@ -1,0 +1,16 @@
+$gw-BooleanCheckboxValueWidget--label-margin: $gw-app--SPACING-rem-M;
+
+.gw-BooleanCheckboxValueWidget {
+  .gw-label--inner {
+    display: inline;
+    vertical-align: middle;
+    @include gw-disabled();
+    margin: 0 $gw-BooleanCheckboxValueWidget--label-margin;
+  }
+}
+
+td .gw-BooleanCheckboxValueWidget {
+  & > .gw-vw--value {
+    justify-content: center;
+  }
+}

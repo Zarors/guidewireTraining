@@ -1,0 +1,34 @@
+{
+  "schemaName" : "trn.ta.contact-1.0",
+  "import" : {
+    "address" : "trn.ta.address-1.0",
+    "contactnote" : "trn.ta.contactnote-1.0"
+  },
+  "mappers" : {
+    "ContactDetails" : {
+      "schemaDefinition" : "ContactDetails",
+      "root" : "entity.ABContact",
+      "properties" : {
+        "Name" : {
+          "path" : "ABContact.DisplayName"
+        },
+        "DateOfBirth" : {
+          "path" : "(ABContact as ABPerson).DateOfBirth",
+          "predicate" : "ABContact typeis ABPerson"
+        },
+        "Gender" : {
+          "path" : "(ABContact as ABPerson).Gender",
+          "predicate" : "ABContact typeis ABPerson"
+        },
+        "PrimaryAddress": {
+          "path" : "ABContact.PrimaryAddress",
+          "mapper" : "address#/mappers/AddressDetails"
+        },
+        "ContactNotes" : {
+          "path" : "ABContact.ContactNotes",
+          "mapper" : "contactnote#/mappers/ContactNoteDetails"
+        }
+      }
+    }
+  }
+}

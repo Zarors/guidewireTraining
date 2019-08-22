@@ -1,0 +1,20 @@
+$gw-app--inputs--select-bg: $gw-app--inputs--bg !default;
+$gw-app--inputs--select-col: $gw-app--inputs--col !default;
+$gw-app--inputs--select-hover-bg: $gw-app--inputs--bg !default;
+$gw-app--inputs--select-hover-col: $gw-app--inputs--col !default;
+$gw-app--inputs--select-active-bg: $gw-app--inputs--select-hover-bg !default;
+$gw-app--inputs--select-active-col: $gw-app--inputs--select-hover-col !default;
+
+@if ($gw-app--inputs--select--behave-like-secondary) {
+  $gw-app--inputs--select-hover-bg: $gw-app--buttons--secondary--hover--bg;
+  $gw-app--inputs--select-hover-col: $gw-app--buttons--secondary--hover--col;
+  $gw-app--inputs--select-active-bg: $gw-app--buttons--secondary--active--bg;
+  $gw-app--inputs--select-active-col: $gw-app--buttons--secondary--active--col;
+}
+
+$gw-app--ValueWidget-value-min-width-em: null !default;
+$gw-app--ValueWidget-value-max-width-em: $gw-app--inputs--general-editable-max-width-em !default;
+
+$gw-app--TextAreaValueWidget--readonly-border: dashed #{$gw-app--border-width-px transparentize($gw-app--inputs--border--col, .5)} !default;
+$gw-app--TextAreaValueWidget--default-numRows: 4 !default;
+

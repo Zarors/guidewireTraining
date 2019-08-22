@@ -1,0 +1,22 @@
+package rules.EventMessage.EventFired_dir.ABEF1000VendorRecommendation_dir
+
+@gw.rules.RuleName("ABEF1100 - ABContact")
+internal class ABEF1100ABContact {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.Root typeis ABContact
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("    Event Fired rules: " + actions.Rule.DisplayName )
+print("    EventAware entity is ABContact")
+// execute child rules
+/*end00rule*/
+
+  }
+}

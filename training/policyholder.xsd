@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://acmePolicyPerson/xsd"
+      xmlns="http://acmePolicyPerson/ab/gx/sandbox.PolicyHolderModel"
+      targetNamespace="http://acmePolicyPerson/ab/gx/sandbox.PolicyHolderModel"
+      elementFormDefault="qualified">
+  <xsd:element name="PolicyHolder" type="PolicyHolder" nillable="true"/>
+  <xsd:complexType name="PolicyHolder">
+   <xsd:sequence>
+	  <xsd:element name="AllAddresses" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+		     <xsd:element name="Entry" minOccurs="0" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="AddressLine1" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                  <xsd:element name="AddressLine2" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                  <xsd:element name="AddressType" minOccurs="0" nillable="true" type="xsd:string"/>
+                  <xsd:element name="City" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                  <xsd:element name="PostalCode" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                  <xsd:element name="Primary" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="State" minOccurs="0" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+                <xsd:attribute name="action" type="xsd:string" gw:type="gw.xml.xsd.ArrayAction"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CollateralRequired" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+      <xsd:element name="EmailAddress1" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="FinancialSummary" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NumberOfClaims" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+            <xsd:element name="TotalClaimPaymentsMade" minOccurs="0" nillable="true" type="xsd:string" gw:type="gw.api.financials.CurrencyAmount"/>
+            <xsd:element name="TotalPolicyPremiumBilled" minOccurs="0" nillable="true" type="xsd:string" gw:type="gw.api.financials.CurrencyAmount"/>
+            <xsd:element name="TotalPolicyPremiumPaid" minOccurs="0" nillable="true" type="xsd:string" gw:type="gw.api.financials.CurrencyAmount"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FullName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="PrefersContactByEmail" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+      <xsd:element name="TaxID" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+	  <xsd:element name="RiskAssessment" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+	  <xsd:element name="Children" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+	</xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

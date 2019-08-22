@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores instrumented queries from data distribution."
+  entity="DataDistQueryExec"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="datadistqueryexec"
+  type="keyable">
+  <column
+    desc="# of rows returned by query"
+    name="NumRows"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Query."
+    name="QueryText"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="Elapsed time in seconds"
+    name="Duration"
+    nullok="false"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="3"/>
+    <columnParam
+      name="precision"
+      value="10"/>
+  </column>
+  <column
+    desc="Start time of query execution."
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="End time of query execution."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Thread name."
+    name="ThreadName"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Fingerprint of query, if query-based"
+    name="Fingerprint"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Table name for query, if query-based"
+    name="TableName"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    columnName="DatabaseDataDistID"
+    desc="DatabaseDataDist for this object."
+    exportable="false"
+    fkentity="DatabaseDataDist"
+    ignoreforevents="true"
+    name="DatabaseDataDist"
+    nullok="false"/>
+</entity>

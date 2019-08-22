@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  extendable="true"
+  name="UserRoleAssignmentDelegate"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.UserRoleAssignmentDelegateInternalMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.UserRoleAssignmentDelegateImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.UserRoleAssignmentDelegatePublicMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.UserRoleAssignmentDelegateImpl"/>
+  <fulldescription><![CDATA[Represents the assignment of a role to a user on an assignable object.]]></fulldescription>
+  <implementsEntity
+    name="Assignable"/>
+  <typekey
+    desc="The role to which the user is assigned."
+    name="Role"
+    nullok="false"
+    typelist="UserRole"/>
+  <column
+    default="true"
+    desc="Indicates whether the user is active in this role assignment."
+    name="Active"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Comments about this role assignment."
+    name="Comments"
+    nullok="true"
+    type="shorttext"/>
+</delegate>

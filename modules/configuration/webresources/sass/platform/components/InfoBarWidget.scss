@@ -1,0 +1,92 @@
+.gw-InfoBarWidget {
+  // Position to other widgets
+  margin-top: $gw-app--InfoBar--spacing-widget-top-rem;
+  margin-left: $gw-app--InfoBar--spacing-widget-left-rem;
+  margin-right: $gw-app--InfoBar--spacing-widget-right-rem;
+  margin-bottom: $gw-app--InfoBar--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--InfoBar--spacing-inner-top-rem;
+  padding-left: $gw-app--InfoBar--spacing-inner-left-rem;
+  padding-right: $gw-app--InfoBar--spacing-inner-right-rem;
+  padding-bottom: $gw-app--InfoBar--spacing-inner-bottom-rem;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $gw-app--InfoBar--info-bar-bg;
+  color: $gw-app--InfoBar--info-bar-col;
+  width: 100%;
+  max-height: $gw-app--InfoBar--info-bar-max-height-em;
+  overflow: auto;
+
+  @if($gw-app--InfoBar--info-bar-border-bottom != null) {
+    border-bottom: $gw-app--InfoBar--info-bar-border-bottom;
+  }
+
+  @if($gw-app--InfoBar--info-bar-shadow-bottom != null) {
+    box-shadow: $gw-app--InfoBar--info-bar-shadow-bottom;
+  }
+}
+
+.gw-InfoBarElementWidget:not(.gw-placeholder):not(.gw-hidden) {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  vertical-align: top;
+  // Position to other widgets
+  margin-top: $gw-app--InfoBarElement--spacing-widget-top-rem;
+  margin-left: $gw-app--InfoBarElement--spacing-widget-left-rem;
+  margin-right: $gw-app--InfoBarElement--spacing-widget-right-rem;
+  margin-bottom: $gw-app--InfoBarElement--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--InfoBarElement--spacing-inner-top-rem;
+  padding-left: $gw-app--InfoBarElement--spacing-inner-left-rem;
+  padding-right: $gw-app--InfoBarElement--spacing-inner-right-rem;
+  padding-bottom: $gw-app--InfoBarElement--spacing-inner-bottom-rem;
+
+  flex-shrink: 0;
+
+  &.gw-focus {
+    @include gw-addFocusOutline($offset: $gw-app--InfoBarElement--actionable-focus-offset);
+  }
+
+  .gw-png-icon {
+    width: $gw-app--InfoBarElement--icon-font-size;
+    height: $gw-app--InfoBarElement--icon-font-size;
+  }
+
+  .gw-icon {
+    font-size: $gw-app--InfoBarElement--icon-font-size;
+  }
+
+  & ~ .gw-InfoBarElementWidget:not(.gw-placeholder):not(.gw-hidden):before {
+    // Use of :before/content means margin-right is margin in addition to the existing margins on non-placeholder
+    // infobar elements.
+    content: "";
+    margin-right: $gw-app--InfoBarElement--spacing-widget-left-rem;
+  }
+
+  div + div, span + div, div + span, span + span { //TODO: not a big fan, but better than the voodoo with * + *
+    display: block;
+    margin-left: $gw-app--InfoBarElement--icon-margin-right-rem;
+  }
+
+  img {
+    vertical-align: top;
+    height: gw-lineHeightInFixedEms();
+    width: gw-lineHeightInFixedEms();
+  }
+
+  .gw-infoValue {
+    font-weight: $gw-app--InfoBarElement--value-font-weight;
+  }
+
+  &.gw-actionable {
+    .gw-infoValue {
+      @include gw-link();
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Joins a GroupAssignmentState entity to one or more Users."
+  entity="GroupUserAssignmentState"
+  extendable="true"
+  platform="true"
+  table="groupuser_assign"
+  type="joinarray">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.GroupUserAssignmentStateInternalMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.GroupUserAssignmentStateImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.GroupUserAssignmentStatePublicMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.GroupUserAssignmentStateImpl"/>
+  <fulldescription><![CDATA[
+        Joins a GroupAssignmentState entity to one or more Users. Also stores per user load information
+        for round-robin assignment. This is an internal class which should only be used by the internals
+        of the assignment engine.
+      
+    ]]></fulldescription>
+  <column
+    desc="The current load of the user for activities."
+    name="ActivityLoad"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="The current load of the user for assignment review activities."
+    name="ReviewLoad"
+    nullok="true"
+    type="integer"/>
+  <foreignkey
+    columnName="GroupID"
+    deprecated="true"
+    desc="The associated group.   This property is deprecated for its misleading name, please use GroupAssignmentState property"
+    exportable="false"
+    fkentity="GroupAssignmentState"
+    name="Group"
+    nullok="false"/>
+  <foreignkey
+    columnName="UserID"
+    desc="The associated user."
+    fkentity="User"
+    name="User"
+    nullok="false"/>
+  <!-- All array tables must have a unique index.  groupuser accessed through
+      group, so we have key be (groupid, userid) and
+      eliminate backing index on groupid since unique index is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, must be only one entry joining a particular group and user"
+    name="groupuserassignu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GroupID"/>
+    <indexcol
+      keyposition="2"
+      name="UserID"/>
+  </index>
+</entity>

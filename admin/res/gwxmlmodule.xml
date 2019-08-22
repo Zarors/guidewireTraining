@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<module name="ab-cmdline" fingerprint="36e/gxYao5AL/T0hvX4ik1Jo8d0=" xmlns="http://guidewire.com/xml/module">
+  <dependencies>
+    <dependency name="pl"/>
+  </dependencies>
+  <excludes>
+    <pattern>gw/xsd/guidewire/soapheaders.xsd</pattern>
+  </excludes>
+  <settings>
+    <setting name="gx.product" value="ab"/>
+  </settings>
+</module>

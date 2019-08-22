@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Which action was chosen to act on a workflow."
+  final="true"
+  name="ManageWorkflowActionType"
+  platform="true">
+  <typecode
+    code="InvokeTrigger"
+    desc="Invoke a trigger on the workflow"
+    name="Invoke Trigger"/>
+  <typecode
+    code="Suspend"
+    desc="Suspend the workflow's activity"
+    name="Suspend"/>
+  <typecode
+    code="Resume"
+    desc="Resume a suspended workflow"
+    name="Resume"/>
+  <typecode
+    code="SetTimeout"
+    desc="Manually force the timeout for a waiting workflow"
+    name="Set Timeout"/>
+  <typecode
+    code="RetryMessage"
+    desc="Retry the last message sent to the workflow"
+    name="Retry Message"/>
+  <typecode
+    code="Wait"
+    desc="Wait until workflow is no longer active"
+    name="Wait"/>
+</typelist>

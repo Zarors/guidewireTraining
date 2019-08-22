@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<typelist
+  tableName="contactdestructStatusCat"
+  xmlns="http://guidewire.com/typelists" name="ContactDestructionStatusCategory" desc="The categories if the Contact DestructionStatus is in a final state to nofity external systems">
+  <typecode
+    code="DestructionStatusFinished"
+    desc="The contact destruction request has been finished"
+    name="Destruction Status Finished"/>
+  <typecode
+    code="DestructionStatusNotProcessed"
+    desc="The contact destruction request has not been processed"
+    name="Destruction Status Not Processed"/>
+  <typecode
+    code="ReadyToBeNotified"
+    desc="The Contact Destruction Request is ready to be notified"
+    name="Ready To Be Notified"/>
+  <typecode
+    code="ReadyToAttemptDestruction"
+    desc="This contact purge request is ready to be sent to the destroyer"
+    name="Ready To Attempt Destruction"/>
+</typelist>

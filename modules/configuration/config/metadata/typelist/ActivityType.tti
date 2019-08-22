@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    ACTIVITY TYPELISTS
+  ********************************************************************************************************************
+  
+    ActivityType is an internal typelist that lists the different types of
+    activities in the system.  This list should NOT be used for categorizing
+    activities; instead, types should have semantic meaning within the
+    application. -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of activity"
+  final="true"
+  name="ActivityType"
+  platform="true">
+  <typecode
+    code="general"
+    desc="General"
+    name="General"/>
+  <typecode
+    code="approval"
+    desc="Approval"
+    name="Approval"/>
+  <typecode
+    code="assignmentreview"
+    desc="Assignment Review"
+    name="Assignment Review"/>
+  <typecode
+    code="approvaldenied"
+    desc="Approval Denied"
+    name="Approval Denied"/>
+</typelist>

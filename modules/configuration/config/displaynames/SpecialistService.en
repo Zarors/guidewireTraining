@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Entity
+  name="SpecialistService">
+  <Columns>
+    <Column
+      beanPath="SpecialistService.Name"
+      name="Name"/>
+  </Columns>
+  <DisplayName><![CDATA[Name]]></DisplayName>
+</Entity>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    id="IntegrationMessageAcknowledgementPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Training.MessageAcknowledgement&quot;)">
+    <Variable
+      name="Destination"
+      type="String"/>
+    <Variable
+      name="SenderRefID"
+      type="String"/>
+    <Variable
+      initialValue="null"
+      name="ExternalSystemResponseType"
+      type="String"/>
+    <Variable
+      initialValue="null"
+      name="VendorProfileCode"
+      type="String"/>
+    <Variable
+      initialValue="null"
+      name="ResultString"
+      type="String"/>
+    <Variable
+      name="ErrorCategory"
+      type="ErrorCategory"/>
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <ContentInput>
+            <Link
+              action="MessageAcknowledgementExitPoint.push()"
+              id="DisplayInstructions"
+              label="DisplayKey.get(&quot;Training.DisplayInstructions&quot;)"/>
+          </ContentInput>
+          <RangeInput
+            editable="true"
+            id="Destination"
+            label="DisplayKey.get(&quot;Training.Destination&quot;)"
+            required="true"
+            value="Destination"
+            valueRange="getArrayofMessageDestinations()"
+            valueType="String">
+            <PostOnChange/>
+          </RangeInput>
+          <TextInput
+            editable="true"
+            formatType="general"
+            helpText="Destination != &quot;Bank Account Verification&quot; ? &quot;ab:123&quot; : &quot;123&quot;"
+            id="SenderRefID"
+            label="Destination != &quot;Bank Account Verification&quot; ? DisplayKey.get(&quot;Training.SenderRefID&quot;) : DisplayKey.get(&quot;Training.MessageID&quot;)"
+            required="true"
+            value="SenderRefID"/>
+          <RangeInput
+            editable="true"
+            id="ExternalSystemResponseType"
+            label="DisplayKey.get(&quot;Training.ExternalSystemResponseType&quot;)"
+            required="true"
+            value="ExternalSystemResponseType"
+            valueRange="getArrayofExternalSystemResponseTypes()"
+            valueType="String">
+            <PostOnChange/>
+          </RangeInput>
+          <TypeKeyInput
+            available="ExternalSystemResponseType == &quot;2: Negative Acknowledgement (error)&quot;"
+            editable="true"
+            id="ErrorCategory"
+            label="DisplayKey.get(&quot;Training.ErrorCategory&quot;)"
+            required="ExternalSystemResponseType == &quot;2: Negative Acknowledgement (error)&quot;"
+            value="ErrorCategory"
+             valueType="ErrorCategory">
+            <PostOnChange/>
+          </TypeKeyInput>
+          <TextInput
+            available="Destination == &quot;Vendor Recommendation&quot; and ExternalSystemResponseType == &quot;1: Positive Acknowledgement&quot;"
+            editable="true"
+            id="VendorProfileCode"
+            label="DisplayKey.get(&quot;Training.VendorProfileCode&quot;)"
+            required="Destination == &quot;Vendor Recommendation&quot; and ExternalSystemResponseType == &quot;1: Positive Acknowledgement&quot;"
+            value="VendorProfileCode"/>
+          <ButtonInput
+            action="ResultString = trainingapp.demo.messageack.MessageAckPage.processAcknowledgement(Destination, SenderRefID, ExternalSystemResponseType, ErrorCategory.Description, VendorProfileCode)"
+            id="SendReply"
+            value="DisplayKey.get(&quot;Training.SendResponse&quot;)"/>
+          <TextInput
+            id="Results"
+            label="DisplayKey.get(&quot;Training.Results&quot;)"
+            value="ResultString"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[/* This function is used to populate the Destination dynamic dropdown.
+*/
+function getArrayofMessageDestinations() : String[] {
+   // list is of messaging destinations
+  return new String[] {"Bank Account Verification", "Vendor Recommendation", "Legal Case Report", "Message Generator", "Safe Ordering Demo", "Student-Defined"}
+  
+}
+
+/* This function is used to populate the ReplyType dynamic dropdown.
+*/
+function getArrayofExternalSystemResponseTypes() : String[] {
+
+  return new String[] {"1: Positive Acknowledgement", "2: Negative Acknowledgement (error)", "3: Duplicate", "4: No Response"}
+
+}
+    ]]></Code>
+  </Page>
+</PCF>

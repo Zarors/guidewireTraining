@@ -1,0 +1,5 @@
+<div class="gw-ListView--inner ${isEmpty ? 'gw-ListView--empty' : ''}">
+  ${:children}
+  <div :if="isEmpty" class="gw-ListView--empty-info-row"><div class="gw-ListView--empty-info-cell">${emptyTableLabel}</div></div>
+  <div class="gw-ListView--bottom-bumper"></div>
+</div>

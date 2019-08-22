@@ -1,0 +1,32 @@
+.gw-LinkWidget {
+  flex-shrink: 0;
+  &:not(.gw-disabled):not([disabled])  {
+    &.gw-StyleContainer--LinkCellWidget {
+      &.gw-actionable {
+        @include gw-link();
+      }
+    }
+
+    &:not(.gw-StyleContainer--LinkCellWidget) {
+      &.gw-actionable {
+        @include gw-link();
+      }
+    }
+    
+    .gw-shortcutKey {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+
+
+  @include gw-disabled();
+
+  display: inline-block;
+}
+
+.gw-vw--children {
+  .gw-mini-button:first-child {
+    margin-left: $gw-app--SPACING-rem-S;
+  }
+}

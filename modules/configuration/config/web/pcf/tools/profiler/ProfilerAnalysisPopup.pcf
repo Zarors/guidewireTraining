@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    autosaveable="false"
+    canEdit="true"
+    canVisit="gw.api.tools.InternalTools.isEnabled()"
+    countsAsWork="false"
+    id="ProfilerAnalysisPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.WebProfiler&quot;)">
+    <Variable
+      initialValue="&quot;Web&quot;"
+      name="entryPointType"
+      type="String"/>
+    <ScreenRef
+      def="ProfilerAnalysisScreen(entryPointType)"/>
+  </Popup>
+</PCF>

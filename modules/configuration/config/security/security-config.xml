@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SecurityConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../security-config.xsd">
+  <StaticHandler entity="User" permKey="ViewInfo">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsInfoview"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewMBeans">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsJMXBeansview"/>
+  </StaticHandler>
+
+  <WrapHandler entity="User" permKey="EditMBeans" wrapPermKey="ViewMBeans">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsJMXBeansEdit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="EditJProfiler">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsJProfileredit"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewBatchProcess">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsBatchProcessview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditBatchProcess" wrapPermKey="ViewBatchProcess">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsBatchProcessedit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewWorkQueue">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsWorkQueueview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditWorkQueue" wrapPermKey="ViewWorkQueue">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsWorkQueueedit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewProfiler">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsProfilerview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditProfiler" wrapPermKey="ViewProfiler">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsProfileredit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewCacheInfo">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsCacheinfoview"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewPlugin">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsPluginview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditPlugin" wrapPermKey="ViewPlugin">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsPluginedit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewLog">
+     <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsLogview"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="EditLog">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsLogedit"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewCluster">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsClusterview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditCluster" wrapPermKey="ViewCluster">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsClusteredit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewDataChange">
+    <SystemPermType code="admindatachangeview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="ExecuteDataChange" wrapPermKey="ViewDataChange">
+    <SystemPermType code="admindatachangeexec"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ServerTools" noPermissionDisplayKey="Web.ServerTools.NoPermission">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsInfoview"/>
+    <SystemPermType code="toolsJMXBeansview"/>
+    <SystemPermType code="toolsJProfileredit"/>
+    <SystemPermType code="toolsBatchProcessview"/>
+    <SystemPermType code="toolsWorkQueueview"/>
+    <SystemPermType code="toolsProfilerview"/>
+    <SystemPermType code="toolsPluginview"/>
+    <SystemPermType code="toolsLogview"/>
+    <SystemPermType code="toolsLogedit"/>
+    <SystemPermType code="toolsClusterview"/>
+  </StaticHandler>
+
+
+  <!--
+    <ContactPermissions>
+
+        Use this file to map SystemPermissionType typecodes to a Contact subtype or tag so that a user must be
+        granted the specified permissions in order to perform certain actions on Contacts of that subtype or tag.
+        In the examples below, all values for the permission attributes are assumed to be defined in
+        SystemPermissionType.tix.
+
+        The following element specifies that a user with the "personcreate" permission is able to
+        create a contact of any Person subtype (including Doctor).
+
+      <ContactSubtypeAccessProfile entity="ABPerson">
+        <ContactCreatePermission permission="personcreate"/>
+        <ContactDeletePermission permission="persondelete"/>
+        <ContactEditPermission permission="personedit"/>
+        <ContactViewPermission permission="personview"/>
+      </ContactSubtypeAccessProfile>
+
+        A user with the "doctorcreate" permission is able to
+        create a Doctor contact but not any other person subtype without the "personcreate"
+        permission.
+
+      <ContactSubtypeAccessProfile entity="ABDoctor">
+        <ContactCreatePermission permission="doctorcreate"/>
+        <ContactDeletePermission permission="doctordelete"/>
+        <ContactEditPermission permission="doctoredit"/>
+        <ContactViewPermission permission="doctorview"/>
+      </ContactSubtypeAccessProfile>
+
+        The ContactTagAccessProfile element is similar to ContactSubtypeAccessProfile except it applies to a
+        contact's tags instead of its subtype.  To perform an action of on a contact the user must have
+        permission for both the subtype and the tag.  Given the xml below, a user is required to have the
+        "claimpartytagedit" permission to edit a contact with the ClaimParty tag.  If a contact has multiple tags,
+        the user must have permission for all of them.
+
+      <ContactTagAccessProfile tag="ClaimParty">
+        <ContactCreatePermission permission="claimpartytagcreate"/>
+        <ContactDeletePermission permission="claimpartytagdelete"/>
+        <ContactEditPermission permission="claimpartytagedit"/>
+        <ContactViewPermission permission="claimpartytagview"/>
+      </ContactTagAccessProfile>
+    </ContactPermissions>
+  -->
+
+</SecurityConfig>

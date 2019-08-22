@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The states a workflow object can be in"
+  final="true"
+  name="WorkflowState"
+  platform="true">
+  <typecode
+    code="active"
+    desc="Active -- the workflow is running."
+    name="Active"/>
+  <typecode
+    code="error"
+    desc="The workflow encountered an exception while running, so the it has been paused until the error is fixed."
+    name="Error"/>
+  <typecode
+    code="suspended"
+    desc="Suspended -- execution of the workflow was manually suspended.  It can be resumed later."
+    name="Suspended"/>
+  <typecode
+    code="completed"
+    desc="Completed -- the workflow reached one of its Outcomes."
+    name="Completed"/>
+</typelist>

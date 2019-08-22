@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Events in the claim or exposure audit trail."
+  entity="History"
+  final="false"
+  platform="true"
+  table="history"
+  type="versionable">
+  <column
+    desc="Description of the history event."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Timestamp when the event occurred."
+    name="EventTimestamp"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The unique id of the rule that caused this history event to be created. Optional."
+    name="RuleUID"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    columnName="UserID"
+    desc="User who created this history event. Optional."
+    fkentity="User"
+    name="User"
+    nullok="true"/>
+  <typekey
+    desc="Type of claim or exposure event."
+    name="Type"
+    nullok="true"
+    typelist="historytype"/>
+  <typekey
+    desc="Customer-defined history event type. This is used to support rules that execute only once per claim."
+    name="CustomType"
+    nullok="true"
+    typelist="customhistorytype"/>
+  <index
+    desc="Speed up search by rule UID"
+    name="history1">
+    <indexcol
+      keyposition="1"
+      name="RuleUID"/>
+  </index>
+</entity>

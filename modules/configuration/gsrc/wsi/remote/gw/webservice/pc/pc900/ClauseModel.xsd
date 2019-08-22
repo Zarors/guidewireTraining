@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.clausemodel">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.covtermmodel" schemaLocation="CovTermModel.xsd"/>
+  <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.clausemodel" name="Clause" nillable="true" type="Clause"/>
+  <xs:complexType name="Clause">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CovTerms" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.covtermmodel" maxOccurs="unbounded" minOccurs="0" name="Entry" nillable="true" type="CovTerm"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Pattern" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

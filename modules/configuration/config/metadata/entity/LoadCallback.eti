@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  LoadCallbacks
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Timed loader callbacks."
+  entity="LoadCallback"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadcallback"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.staging.LoadCallbackPublicMethods"
+    impl="com.guidewire.pl.domain.staging.impl.LoadCallbackImpl"/>
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <implementsEntity
+    name="OrdereddLoaderObject"/>
+  <column
+    desc="Name of loader callback."
+    name="Name"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Description of loader callback."
+    name="Description"
+    nullok="false"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="65000"/>
+  </column>
+  <foreignkey
+    columnName="LoadOperationID"
+    desc="Parent."
+    fkentity="LoadOperation"
+    name="LoadOperation"
+    nullok="false"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Parent."
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <typekey
+    desc="Execution time of LoaderCallback."
+    name="ExecutionTime"
+    nullok="false"
+    typelist="loadercallbacktimetype"/>
+  <array
+    arrayentity="LoadCallbackResult"
+    desc="Timed loader callback results."
+    name="CallbackResults"
+    owner="true"/>
+  <!-- Unique index on LoadCommandID, ExecutionOrder, ExecutionTime -->
+  <index
+    desc="(LoadCommandID, ExecutionOrder, ExecutionTime) is unique across load callbacks"
+    name="loadcallbacku1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="ExecutionOrder"/>
+    <indexcol
+      keyposition="3"
+      name="ExecutionTime"/>
+  </index>
+  <!-- Unique index on LoadCommandID, Name, ExecutionTime -->
+  <index
+    desc="(LoadCommandID, Name, ExecutionOrder) is unique across load callbacks"
+    name="loadcallbacku2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="Name"/>
+    <indexcol
+      keyposition="3"
+      name="ExecutionTime"/>
+  </index>
+</entity>

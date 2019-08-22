@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization xmlns="http://guidewire.com/xml" xmlns:tns="http://guidewire.com/xml" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+
+  <!-- register common services  -->
+  <common-service-init class="com.guidewire.ab.services.ABCommonsServiceKernelInit"/>
+
+  <!-- Indicates if tools should allow deprecated properties/methods? -->
+  <allow-deprecated-references>false</allow-deprecated-references>
+
+  <!-- Indicates if Gosu query expressions can reference entities. -->
+  <allow-entity-queries>true</allow-entity-queries>
+
+</serialization>

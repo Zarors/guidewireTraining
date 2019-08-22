@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="EffDatedBase"
+  platform="true"
+  requiresType="keyable">
+  <implementsEntity
+    name="Editable"/>
+  <implementsEntity
+    name="Extractable"/>
+  <implementsEntity
+    name="FrozenSetMember"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.EffDatedBasePublicMethods"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.impl.EffDatedBaseInternalMethods"/>
+</delegate>

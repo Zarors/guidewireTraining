@@ -1,0 +1,14 @@
+<div class="gw-RangeRadioValueWidget--input-group ${reflectionApplies ? 'gw-range-radio-reflector'}" ${systemAttributes}>
+  <label :for="option" :in="range" class="gw-RangeRadioValueWidget--label ${option.retired ? 'gw-retired'}">
+    <:control :if="option.value">
+      <span class="gw-radio-wrapper">
+        <input id="${renderId}_${option.idx}" type="radio" name="${renderId}" value="${option.value}"
+               class="gw-RangeRadioValueWidget--input ${noTrack ? 'gw-noTrack'}" disabled="${disabled}"
+               checked="${option.selected}"
+        />
+      </span>
+      ${option.icon}
+      <span class="gw-label--inner ${disabled ? 'gw-disabled' : ''}">${option.label}</span>
+    </:control>
+  </label>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="PendingContactUpdateDetailedLV">
+    <ExposeIterator
+      flags="PendingContactUpdate"
+      valueType="entity.PendingContactUpdateView"
+      widget="PendingContactUpdateDetailedLV"/>
+    <RowIterator
+      editable="false"
+      elementName="pendingContactUpdateView"
+      pageSize="10"
+      value="gw.web.PendingChangesWebUtil.getPendingUpdates()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.PendingContactUpdateView&gt;">
+      <ToolbarFlag
+        name="PendingContactUpdate"/>
+      <Row>
+        <TextCell
+          action="gw.api.web.contact.ABContactUtil.viewContact(true, pendingContactUpdateView.PendingContactUpdate.ABContact, CurrentLocation)"
+          id="Contact"
+          label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.LVColumns.Contact&quot;)"
+          printWidth="0.1"
+          sortOrder="1"
+          value="pendingContactUpdateView.ABContactName"/>
+        <TextCell
+          id="RequestingUser"
+          label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.LVColumns.RequestingUser&quot;)"
+          printWidth="0.1"
+          sortOrder="2"
+          value="pendingContactUpdateView.RequestingUser"/>
+        <TextCell
+          id="RelatedTo"
+          label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.LVColumns.RelatedTo&quot;)"
+          printWidth="0.1"
+          value="pendingContactUpdateView.RelatedTo"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

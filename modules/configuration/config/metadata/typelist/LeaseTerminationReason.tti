@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Lease Termination Reason"
+  final="true"
+  name="LeaseTerminationReason"
+  platform="true">
+  <typecode
+    code="GracefulTermination"
+    desc="The lease gracefully terminated"
+    name="Graceful Termination"/>
+  <typecode
+    code="Failure"
+    desc="The lease terminated after an error"
+    name="Failure"/>
+  <typecode
+    code="Transfer"
+    desc="The lease transferred"
+    name="Transfer"/>
+  <typecode
+    code="ServerRestart"
+    desc="The orphaned lease terminated by the server restart"
+    name="Server Restart"/>
+  <typecode
+    code="AutomaticFailover"
+    desc="The lease terminated by automatic failover"
+    name="Automatic Failover"/>
+  <typecode
+    code="ManualFailover"
+    desc="The lease terminated by nodeFailed request"
+    name="Manual Failover"/>
+  <typecode
+    code="FailedFailoverCompletion"
+    desc="The lease terminated by manual intervention after failover failed"
+    name="Failed failover completion"/>
+</typelist>

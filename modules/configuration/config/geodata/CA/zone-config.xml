@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+
+  <Zones countryCode="CA">
+    <Zone code="postalcode"  fileColumn="1" unique="true">
+      <AddressZoneValue>
+        Address.PostalCode
+      </AddressZoneValue>
+    </Zone>
+
+    <Zone code="fsa" granularity="1" regionMatchOrder="1">
+      <ZoneCode>
+        postalcode.substring(0,3)
+      </ZoneCode>
+      <AddressZoneValue>
+        Address.PostalCode.substring(0,3)
+      </AddressZoneValue>
+    </Zone>
+
+    <Zone code="province" fileColumn="2" granularity="3" regionMatchOrder="3">
+      <AddressZoneValue>
+        Address.State.Abbreviation.DisplayName
+      </AddressZoneValue>
+      <Links>
+        <Link toZone="fsa" lookupOrder="1"/>
+        <Link toZone="postalcode"/>
+        <Link toZone="city"/>
+      </Links>
+    </Zone>
+
+    <Zone code="city" fileColumn="3" granularity="2" regionMatchOrder="2">
+      <ZoneCode>
+        province + ":" + city
+      </ZoneCode>
+      <AddressZoneValue>
+        Address.State.Abbreviation.DisplayName + ":" + Address.City
+      </AddressZoneValue>
+      <Links>
+        <Link toZone="postalcode" lookupOrder="1"/>
+      </Links>
+    </Zone>
+
+  </Zones>
+
+</ZoneConfig>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Message Exception Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading1">Message Exception Demo</p>
+
+<p class="body">This page is designed to let students rapidly create an instance of an event-aware entity, thereby triggering the creation of a message. However, in this case, the message will throw an exception in either the Request Plugin, Transport Plugin, or during reply processing.</p>
+
+<p class="heading2">How Does It Work?</p>
+
+<p class="body">Whenever this page is rendered, TrainingApp auto-generates a name for a new instance of the MessageGenerator entity. This appears in the Name field. You can modify the name if you wish, but you do not need to.</p>
+
+<p class="body">The MessageGenerator entity also has three boolean fields that are, by default, set to false:</p>
+<ul class="body">
+	<li><p class="body">ThrowExceptionInRequest</li>
+	<li><p class="body">ThrowExceptionInTransport</li>
+	<li><p class="body">ThrowExceptionInReply</li>
+</ul>
+
+<p class="body">When you click one of the buttons, an instance of the MessageGenerator is created. The appropriate flag is set to true. Then, the instance is committed. The Message Generator destination (ID 21) listens for events in which a MessageGenerator instance is created.</p>
+
+<p class="heading2">Throwing an Exception During Request</p>
+
+<p class="body">The request plugin for Message Generator instances is trainingapp.demo.messagegenerator.MessageGeneratorRequest. This code checks to see if the instance's ThrowExceptionInRequest flag has been set to true. If it is, then a retryable exception is thrown.</p>
+
+<p class="body">Guidewire automatically tries to resend a message when an exception is thrown in the Request plugin. However, because the flag remains true, the exception will be continually rethrown.</p>
+
+<p class="body">The Message Generator destination's Max Tries property is set to 3. After 3 attempts to resend the message, Guidewire automatically suspends the destination. If you view the console after clicking the "Throw Exception In Request" button, you will see the exceptions being thrown and Guidewire ultimately suspending the destination.</p>
+
+<p class="body">If you wish to resume the destination, you must first skip the message throwing the exception. Otherwise, when you resume the destination, the problematic message will be resent, rethrow exceptions, and re-suspend the destination.</p>
+
+<p class="body">To skip the message and resume the destination:</p>
+<ol class="body">
+	<li><p class="body">Go to the Message Administration screen (or the Event Messages screen, which is identical)</li>
+	<li><p class="body">Click the Message Generator destination.</li>
+	<li><p class="body">Click the "Non-safe-ordered messages" link.</li>
+	<li><p class="body">Select the problematic message. (It will have no Send Time or SenderRefID, and the status will be "Pending Send".)</li>
+	<li><p class="body">Click "Skip" and confirm the skip.</li>
+	<li><p class="body">Click the "Up to Destination..." link.</li>
+	<li><p class="body">Click the "Up to Event Messages" link.</li>
+	<li><p class="body">Select the Message Generator destination.</li>
+	<li><p class="body">Click "Resume"</li>
+</ol>
+
+<p class="heading2">Throwing an Exception During Transport</p>
+
+<p class="body">The transport plugin for Message Generator instances is trainingapp.demo.messagegenerator.MessageGeneratorTransport. This code checks to see if the instance's ThrowExceptionInTransport flag has been set to true. If it is, then a retryable exception is thrown.</p>
+
+<p class="body">Guidewire automatically tries to resend a message when an exception is thrown in the Transport plugin. However, because the flag remains true, the exception will be continually rethrown.</p>
+
+<p class="body">The Message Generator destination's Max Tries property is set to 3. After 3 attempts to resend the message, Guidewire automatically suspends the destination. If you view the console after clicking the "Throw Exception In Transport" button, you will see the exceptions being thrown and Guidewire ultimately suspending the destination.</p>
+
+<p class="body">If you wish to resume the destination, you must first skip the message throwing the exception. Otherwise, when you resume the destination, the problematic message will be resent, rethrow exceptions, and re-suspend the destination.</p>
+
+<p class="body">To skip the message and resume the destination:</p>
+<ol class="body">
+	<li><p class="body">Go to the Message Administration screen (or the Event Messages screen, which is identical)</li>
+	<li><p class="body">Click the Message Generator destination.</li>
+	<li><p class="body">Click the "Non-safe-ordered messages" link.</li>
+	<li><p class="body">Select the problematic message. (It will have a SenderRefID, but no Send Time. The status will be "Pending Send".)</li>
+	<li><p class="body">Click "Skip" and confirm the skip.</li>
+	<li><p class="body">Click the "Up to Destination..." link.</li>
+	<li><p class="body">Click the "Up to Event Messages" link.</li>
+	<li><p class="body">Select the Message Generator destination.</li>
+	<li><p class="body">Click "Resume"</li>
+</ol>
+
+<p class="heading2">Throwing an Exception During Reply</p>
+
+<p class="body">This functionality has not yet been implemented.</p>
+
+<p class="heading2">Where Can I Find The Code That Is Used By This Page?</p>
+<ul>
+     <li><p class="body">IntegrationMessageExceptionPage's Code tab</p>
+          <ul>
+               <li><p class="body">throwExceptionInRequest()</p>
+               <li><p class="body">throwExceptionInTransport()</p>
+          </ul>
+     </li>
+     <li><p class="body">Message Generator destination (ID 21)</p></li>
+     <li><p class="body">Event Fired rules</p>
+          <ul>
+               <li><p class="body">MGEF1000 - MessageGenerator</p>
+          </ul>
+     </li>
+     <li><p class="body">Messaging plugins</p>
+          <ul>
+               <li><p class="body">trainingapp.demo.messagegenerator.MessageGeneratorRequest</p>
+               <li><p class="body">trainingapp.demo.messagegenerator.MessageGeneratorTransport</p>
+          </ul>
+     </li>
+</ul>
+
+</body>
+</html>

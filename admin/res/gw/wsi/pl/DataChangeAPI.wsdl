@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.DataChangeAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/DataChangeAPI" name="DataChangeAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/DataChangeAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/DataChangeAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <!-- updateDataChangeGosu(String, String, String) : String -->
+      <xs:element name="updateDataChangeGosu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ref" type="xs:string" minOccurs="0"/>
+            <xs:element name="desc" type="xs:string" minOccurs="0"/>
+            <xs:element name="gosu" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateDataChangeGosuResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- discardDataChange(String) : String -->
+      <xs:element name="discardDataChange">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ref" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="discardDataChangeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getDataChangeStatus(String) : DataChangeStatus -->
+      <xs:element name="getDataChangeStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ref" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDataChangeStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getDataChangeResult(String) : String -->
+      <xs:element name="getDataChangeResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ref" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDataChangeResultResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="DataChangeAPIPortType">
+    <wsdl:operation name="updateDataChangeGosu">
+      <wsdl:input name="updateDataChangeGosu" message="tns:updateDataChangeGosu"/>
+      <wsdl:output name="updateDataChangeGosuResponse" message="tns:updateDataChangeGosuResponse"/>
+      <!-- if doing an update an the data change has already been executed or discarded -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="discardDataChange">
+      <wsdl:input name="discardDataChange" message="tns:discardDataChange"/>
+      <wsdl:output name="discardDataChangeResponse" message="tns:discardDataChangeResponse"/>
+      <!-- if can not find the data change.  Or the data change is no longer open -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDataChangeStatus">
+      <wsdl:input name="getDataChangeStatus" message="tns:getDataChangeStatus"/>
+      <wsdl:output name="getDataChangeStatusResponse" message="tns:getDataChangeStatusResponse"/>
+      <!-- if can not find the data change -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDataChangeResult">
+      <wsdl:input name="getDataChangeResult" message="tns:getDataChangeResult"/>
+      <wsdl:output name="getDataChangeResultResponse" message="tns:getDataChangeResultResponse"/>
+      <!-- if can not find the data change -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataChangeAPISoap12Binding" type="tns:DataChangeAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="updateDataChangeGosu">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="updateDataChangeGosu">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateDataChangeGosuResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="discardDataChange">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="discardDataChange">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="discardDataChangeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDataChangeStatus">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getDataChangeStatus">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDataChangeStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDataChangeResult">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getDataChangeResult">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDataChangeResultResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataChangeAPISoap11Binding" type="tns:DataChangeAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="updateDataChangeGosu">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateDataChangeGosu">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateDataChangeGosuResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="discardDataChange">
+      <soap11:operation style="document"/>
+      <wsdl:input name="discardDataChange">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="discardDataChangeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDataChangeStatus">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getDataChangeStatus">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDataChangeStatusResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDataChangeResult">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getDataChangeResult">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDataChangeResultResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataChangeAPI">
+    <wsdl:port name="DataChangeAPISoap12Port" binding="tns:DataChangeAPISoap12Binding">
+      <soap12:address location="http://dontuse.defaultvalue.com/gw/wsi/pl/DataChangeAPI"/>
+      <gwwsdl:address location="${ab}/ws/gw/wsi/pl/DataChangeAPI"/>
+    </wsdl:port>
+    <wsdl:port name="DataChangeAPISoap11Port" binding="tns:DataChangeAPISoap11Binding">
+      <soap11:address location="http://dontuse.defaultvalue.com/gw/wsi/pl/DataChangeAPI/soap11"/>
+      <gwwsdl:address location="${ab}/ws/gw/wsi/pl/DataChangeAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="updateDataChangeGosu">
+    <wsdl:part name="parameters" element="tns:updateDataChangeGosu"/>
+  </wsdl:message>
+  <wsdl:message name="updateDataChangeGosuResponse">
+    <wsdl:part name="parameters" element="tns:updateDataChangeGosuResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="discardDataChange">
+    <wsdl:part name="parameters" element="tns:discardDataChange"/>
+  </wsdl:message>
+  <wsdl:message name="discardDataChangeResponse">
+    <wsdl:part name="parameters" element="tns:discardDataChangeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDataChangeStatus">
+    <wsdl:part name="parameters" element="tns:getDataChangeStatus"/>
+  </wsdl:message>
+  <wsdl:message name="getDataChangeStatusResponse">
+    <wsdl:part name="parameters" element="tns:getDataChangeStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDataChangeResult">
+    <wsdl:part name="parameters" element="tns:getDataChangeResult"/>
+  </wsdl:message>
+  <wsdl:message name="getDataChangeResultResponse">
+    <wsdl:part name="parameters" element="tns:getDataChangeResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

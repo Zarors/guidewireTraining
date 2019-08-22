@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <InputSet
+    id="ABContactTypeMapInputSet">
+    <Require
+      name="ABContact"
+      type="ABContact"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABContact&quot;)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABCompany&quot;)"
+      visible="(ABContact typeis ABCompany)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABPerson&quot;)"
+      visible="(ABContact typeis ABPerson)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABPlace&quot;)"
+      visible="(ABContact typeis ABPlace)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABAdjudicator&quot;)"
+      visible="(ABContact typeis ABAdjudicator)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABLegalVenue&quot;)"
+      visible="(ABContact typeis ABLegalVenue)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABCompanyVendor&quot;)"
+      visible="(ABContact typeis ABCompanyVendor)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABPersonVendor&quot;)"
+      visible="(ABContact typeis ABPersonVendor)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABPolicyCompany&quot;)"
+      visible="(ABContact typeis ABPolicyCompany)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABPolicyPerson&quot;)"
+      visible="(ABContact typeis ABPolicyPerson)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABUserContact&quot;)"
+      visible="(ABContact typeis ABUserContact)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABAutoRepairShop&quot;)"
+      visible="(ABContact typeis ABAutoRepairShop)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABAutoTowingAgcy&quot;)"
+      visible="(ABContact typeis ABAutoTowingAgcy)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABLawFirm&quot;)"
+      visible="(ABContact typeis ABLawFirm)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABMedicalCareOrg&quot;)"
+      visible="(ABContact typeis ABMedicalCareOrg)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABAttorney&quot;)"
+      visible="(ABContact typeis ABAttorney)"/>
+    <Label
+      label="DisplayKey.get(&quot;Training.Map.ABDoctor&quot;)"
+      visible="(ABContact typeis ABDoctor)"/>
+  </InputSet>
+</PCF>

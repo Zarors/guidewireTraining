@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Possible search types for assignment"
+  final="true"
+  name="AssignmentSearchType"
+  platform="true">
+  <typecode
+    code="User"
+    desc="User"
+    name="User"
+    priority="1"/>
+  <typecode
+    code="Group"
+    desc="Group"
+    name="Group"
+    priority="2"/>
+  <typecode
+    code="Queue"
+    desc="Queue"
+    name="Queue"
+    priority="3"/>
+</typelist>

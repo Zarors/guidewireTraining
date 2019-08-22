@@ -1,0 +1,123 @@
+#gw-PrefPanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: gw-emFixed(1.6);
+  background-color: transparentize($gw-app--palette--black, .3);
+  display: inline-block;
+  pointer-events: all;
+  @include gw-z-index(prefPanel);
+
+  #gw-PrefPanel--inner {
+    background-color: $gw-app--bg;
+    @include gw-borderRadius();
+    height: 100%;
+    width: 100%;
+    padding: $gw-app--SPACING-rem-XL;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    #gw-PrefPanel--top {
+      padding-bottom: $gw-app--SPACING-rem-L;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      justify-content: space-between;
+      border-bottom: gw-border();
+
+      #gw-PrefPanel--title {
+        flex-grow: 1;
+        .gw-label {
+          font-size: $gw-app--TitleBar--panel--font-size-em;
+          @include gw-icon($gw-app--NorthPanel--options-glyph, $gw-app--TitleBar--panel--font-size-em, $v-align: baseline, $position: relative, $left: -$gw-app--SPACING-rem-S);
+        }
+      }
+
+      #gw-PrefPanel--toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        #gw-PrefPanel--wipe, #gw-PrefPanel--reset {
+          @include gw-button--secondary();
+          margin-left: $gw-app--SPACING-rem-M;
+        }
+
+        #gw-PrefPanel--cancel, #gw-PrefPanel--save {
+          @include gw-button--normal();
+          margin-left: $gw-app--SPACING-rem-M;
+        }
+
+      }
+    }
+
+    #gw-PrefPanel--bottom {
+      display: flex;
+      overflow-y: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding-top: $gw-app--SPACING-rem-M;
+      margin-left: -$gw-app--SPACING-rem-M;;
+
+      .gw-Pref--category {
+        display: flex;
+        flex-direction: column;
+        margin: $gw-app--SPACING-rem-M;
+        padding: $gw-app--SPACING-rem-L;
+        background-color: $gw-app--panels--bg;
+        color: $gw-app--panels--col;
+        width: gw-pxFixed(350);
+        max-height: gw-pxFixed(500);
+        @include gw-borderRadius();
+        border: gw-border($gw-app--panels--border-col);
+
+        .gw-Pref--category-label {
+          font-size: gw-emFixed(1.1);
+          font-weight: bold;
+        }
+
+        .gw-Pref {
+          .gw-Pref--inner {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            overflow: hidden;
+
+            margin-top: $gw-app--SPACING-rem-L;
+
+            .gw-label {
+              flex-shrink: 1;
+              padding-right: $gw-app--SPACING-rem-XL;
+              text-align: left;
+              max-width: gw-emFixed(20);
+              min-width: gw-emFixed(8);
+            }
+            .gw-value {
+              flex-shrink: 0;
+              max-width: gw-emFixed(15);
+
+              .gw-select-wrapper {
+                @include gw-convertSelectWrapperWithGlyph();
+                display: block;
+              }
+
+              input {
+                @include gw-convertCheckbox();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

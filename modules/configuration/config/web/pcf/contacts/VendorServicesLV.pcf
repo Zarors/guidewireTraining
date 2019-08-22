@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    desc="List of Services"
+    id="VendorServicesLV">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <Require
+      name="contactDetailsVendorHelper"
+      type="gw.web.ContactDetailsVendorHelper"/>
+    <Require
+      name="showInactiveService"
+      type="boolean"/>
+    <RowIterator
+      editable="true"
+      elementName="serviceRow"
+      hideCheckBoxesIfReadOnly="true"
+      pageSize="0"
+      value="contactDetailsVendorHelper.Rows"
+      valueType="java.util.List&lt;gw.web.ContactDetailsVendorHelper.ServiceRow&gt;">
+      <ToolbarFlag
+        name="relationship"/>
+      <Row
+        useArchivedStyle="!serviceRow.Service.Active"
+        visible="showInactiveService ? true : serviceRow.Service.Active">
+        <CheckBoxCell
+          editable="true"
+          hideIfReadOnly="true"
+          id="contactHasServiceCheckbox"
+          label="&quot; &quot;"
+          value="serviceRow.ContactHasService"/>
+        <TextCell
+          id="ServiceNameCell0"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Services.Category&quot;)"
+          value="serviceRow.getServiceNamePart(0)"/>
+        <TextCell
+          id="ServiceNameCell1"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Services.SubCategory&quot;)"
+          value="serviceRow.getServiceNamePart(1)"/>
+        <TextCell
+          id="ServiceNameCell2"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Services.ServiceType&quot;)"
+          value="serviceRow.getServiceNamePart(2)"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

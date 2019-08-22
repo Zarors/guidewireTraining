@@ -1,0 +1,23 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+@gw.rules.RuleName("Set Vendor's Primary Address BatchGeocode")
+internal class SetVendorsPrimaryAddressBatchGeocode {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact.TagTypes.contains(ContactTagType.TC_VENDOR)
+and aBContact.PrimaryAddress != null
+and ((!aBContact.PrimaryAddress.ChangedFields.Empty
+     and !aBContact.PrimaryAddress.ChangedFields.contains("BatchGeocode"))
+or aBContact.ChangedFields.contains("Tags"))
+/*end00rule*/
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+aBContact.PrimaryAddress.BatchGeocode = true
+/*end00rule*/
+
+  }
+}

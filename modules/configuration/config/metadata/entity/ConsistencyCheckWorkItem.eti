@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Queue of Consistency Checks to run. This is a system-internal entity."
+  entity="ConsistencyCheckWorkItem"
+  extendable="true"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="checkerworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItemSetItem"/>
+  <column
+    desc="The reference on DBConsistCheckRun"
+    name="DBConsistCheckRunID"
+    nullok="false"
+    type="softentityreference"/>
+  <column
+    desc="The table on which to run consistency checks"
+    name="TableName"
+    nullok="false"
+    type="shorttext"/>
+  <typekey
+    name="CheckType"
+    nullok="false"
+    typelist="ConsistencyCheckType"/>
+  <column
+    desc="Fingerprint of SQL, if not null"
+    name="Fingerprint"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="16"/>
+  </column>
+</entity>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Info for ${location}</title>
+  <style>
+    th {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<h3>Location Info for ${location}</h3>
+<table>
+  <tr>
+    <th>Smoke Test Step:</th>
+    <td>${location}</td>
+  </tr>
+  <tr>
+    <th>Current User:</th>
+    <td>${currentUser}</td>
+  </tr>
+  <tr>
+    <th>Application:</th>
+    <td>${location}</td>
+  </tr>
+  <tr>
+    <th>Schema Version:</th>
+    <td>${schemaVersion}</td>
+  </tr>
+  <tr>
+    <th style="text-align: center" colspan="2">---- File Structure ----</th>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <div :for="tree" :in="widgetTrees">
+        <div :for="widget" :in="tree">
+          <:control :for="i" :in="widget.depth">&nbsp;</:control> ${widget.type} "${widget.id}"
+          (<a :wrapIf="widget.root" href="?handlerName=pcffile&id=${widget.id}&mode=${widget.mode}">${widget.file}</a><:control :if="widget.root">:${widget.lineNum}</:control>)
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

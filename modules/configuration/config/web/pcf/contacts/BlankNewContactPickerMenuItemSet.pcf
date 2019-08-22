@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <!-- This pcf if for usage in <ContactInput>s to disallow creation of new contacts. -->
+  <MenuItemSet
+    id="BlankNewContactPickerMenuItemSet"/>
+</PCF>

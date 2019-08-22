@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ExitPoint
+    id="LogViewer"
+    popup="true"
+    target="help"
+    url="{baseURL}/service/logviewer?frame=true&amp;log={log}">
+    <LocationEntryPoint
+      signature="LogViewer(log : String)"/>
+    <ExitPointParameter
+      defaultValue="com.guidewire.pl.system.dependency.PLDependencies.WebController.BaseURL"
+      locationParam="baseURL"
+      type="String"
+      urlParam="baseURL"/>
+    <ExitPointParameter
+      locationParam="log"
+      type="String"
+      urlParam="log"/>
+  </ExitPoint>
+</PCF>

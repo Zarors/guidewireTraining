@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Entity
+  name="ABCompany">
+  <Columns>
+    <Column
+      beanPath="ABCompany.Name"
+      name="Name"
+      sortBeanPath="ABCompany.NameDenorm"
+      sortOrder="1"/>
+    <Column
+      beanPath="ABCompany.NameKanji"
+      name="NameKanji"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.name.ABContactNameFieldImpl
+uses gw.api.name.NameFormatter
+
+   var contact = new ABContactNameFieldImpl(){
+    :Name = Name,
+    :NameKanji = NameKanji
+  }
+
+  return new NameFormatter().format(contact, " ")]]></DisplayName>
+</Entity>

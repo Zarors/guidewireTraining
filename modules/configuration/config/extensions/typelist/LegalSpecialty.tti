@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="specialty types for attornies"
+  final="false"
+  name="LegalSpecialty">
+  <typecode
+    code="personalinjury"
+    desc="Personal Injury"
+    name="Personal Injury"/>
+  <typecode
+    code="motorvehliability"
+    desc="Motor Vehicle Liability"
+    name="Motor Vehicle Liability"/>
+  <typecode
+    code="generalliability"
+    desc="General Liability"
+    name="General Liability"/>
+  <typecode
+    code="workerscomp"
+    desc="Workers' Compensation"
+    name="Workers' Compensation"/>
+</typelist>

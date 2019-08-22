@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Helper entity that wraps a single string. Deprecated."
+  entity="SingleString"
+  extendable="false"
+  platform="true">
+  <column
+    name="Value"
+    nullok="true"
+    type="longtext"/>
+</nonPersistentEntity>

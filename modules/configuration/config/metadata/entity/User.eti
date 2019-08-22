@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Internal system users."
+  entity="User"
+  exportable="true"
+  extendable="true"
+  platform="true"
+  table="user"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.pl.domain.community.impl.UserImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.RemoveCallback"
+    impl="com.guidewire.pl.domain.community.impl.UserImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.UserPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.UserImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.UserInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.UserImpl"/>
+  <implementsEntity
+    name="Validatable"/>
+  <typekey
+    desc="User's preferred language."
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+  <typekey
+    desc="User's preferred locale."
+    name="Locale"
+    nullok="true"
+    typelist="LocaleType"/>
+  <typekey
+    desc="User's default country"
+    name="DefaultCountry"
+    nullok="true"
+    typelist="Country"/>
+  <typekey
+    desc="User's default phone country"
+    name="DefaultPhoneCountry"
+    nullok="true"
+    typelist="PhoneCountryCode"/>
+  <typekey
+    desc="User's time zone."
+    name="TimeZone"
+    nullok="true"
+    typelist="TimeZoneType"/>
+  <typekey
+    desc="Experience level of the user."
+    name="ExperienceLevel"
+    nullok="true"
+    typelist="UserExperienceType"/>
+  <typekey
+    createhistogram="true"
+    desc="Indicates the type of special system users (for example, default claim owner). This is null for regular users."
+    exportable="false"
+    name="SystemUserType"
+    nullok="true"
+    typelist="SystemUserType"/>
+  <typekey
+    default="atwork"
+    desc="The vacation status of this user."
+    exportable="false"
+    name="VacationStatus"
+    nullok="false"
+    typelist="VacationStatusType"/>
+  <typekey
+    desc="Validation level that this object passed (if any) before it was stored."
+    exportable="false"
+    name="ValidationLevel"
+    nullok="true"
+    typelist="ValidationLevel"/>
+  <foreignkey
+    archivingOwner="source"
+    columnName="ContactID"
+    desc="Contact entry related to the user."
+    fkentity="UserContact"
+    name="Contact"
+    nullok="false"
+    triggersValidation="true"/>
+  <foreignkey
+    archivingOwner="source"
+    columnName="CredentialID"
+    desc="Security credential for the user."
+    fkentity="Credential"
+    name="Credential"
+    nullok="false"
+    soapnullok="true"
+    triggersValidation="true"/>
+  <foreignkey
+    archivingOwner="source"
+    columnName="UserSettingsID"
+    desc="Settings for this user (formerly known as preferences)."
+    exportable="false"
+    fkentity="UserSettings"
+    name="UserSettings"
+    nullok="true"
+    triggersValidation="true"/>
+  <foreignkey
+    columnName="OrganizationID"
+    desc="Each user should belong to exactly one organization"
+    exportable="false"
+    fkentity="Organization"
+    name="Organization"
+    nullok="true"/>
+  <column
+    default="false"
+    desc="If true, the user is an external user, and claims assigned to the user should be treated as externally owned."
+    exportable="false"
+    name="ExternalUser"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="User's job title."
+    name="JobTitle"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="User's department within the company."
+    name="Department"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="User's session timeout value in seconds"
+    exportable="false"
+    name="SessionTimeoutSecs"
+    nullok="true"
+    type="integer"/>
+  <array
+    arrayentity="AttributeUser"
+    desc="Attributes for the user."
+    exportable="true"
+    name="Attributes"
+    owner="true"
+    triggersValidation="true"/>
+  <array
+    arrayentity="UserRole"
+    desc="Security roles granted to the user."
+    exportable="true"
+    name="Roles"
+    owner="true"/>
+  <array
+    arrayentity="UserBackup"
+    arrayfield="User"
+    desc="Backup users for this user. Though this is an array, users can only have one backup user."
+    exportable="false"
+    name="BackupUsers"
+    owner="true"/>
+  <array
+    arrayentity="UserRegion"
+    desc="Regions associated with this user."
+    exportable="false"
+    name="Regions"
+    owner="true"/>
+  <array
+    arrayentity="GroupUser"
+    desc="Groups associated with this user."
+    exportable="false"
+    name="GroupUsers"/>
+  <index
+    desc="Ensures that each user has a unique contact"
+    name="useru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ContactID"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+  <index
+    desc="Ensure that each user has a unique credential"
+    name="useru2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="CredentialID"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+  <index
+    desc="Covering index for access to contact info for a user"
+    name="useru3"
+    trackUsage="true"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ID"/>
+    <indexcol
+      keyposition="2"
+      name="ContactID"/>
+    <indexcol
+      keyposition="3"
+      name="Retired"/>
+  </index>
+  <!-- UserBase-related consistency checks and loader validations. -->
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.community.dbchecks.UserBaseDBCheckBuilder"/>
+  <onetoone
+    fkentity="UserUIPreferences"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    linkField="User"
+    name="UserUIPreferences"
+    nullok="true"
+    setterScriptability="hidden"/>
+</entity>

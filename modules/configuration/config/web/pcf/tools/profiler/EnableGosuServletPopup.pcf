@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=false;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_GOSUSERVLETPROFILERCONFIG, servletType )"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableGosuServletPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForGosuServlet&quot;)">
+    <LocationEntryPoint
+      signature="EnableGosuServletPopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="servletType"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="ServletType"
+            label="DisplayKey.get(&quot;Web.Profiler.GosuServlets&quot;)"
+            required="true"
+            value="servletType"
+            valueRange="gw.api.profiler.GosuServletProfilerPageHelper.getAllServletTypeNames().toTypedArray()"
+            valueType="java.lang.String">
+            <PostOnChange/>
+          </RangeInput>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

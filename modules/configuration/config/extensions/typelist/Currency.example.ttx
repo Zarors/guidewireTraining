@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="Currency">
+  <typecode
+    code="usd"
+    desc="US Dollar"
+    name="USD"
+    priority="1"/>
+  <typecode
+    code="eur"
+    desc="Euro"
+    name="EUR"
+    priority="2"/>
+  <typecode
+    code="gbp"
+    desc="United Kingdom Pound"
+    name="GBP"
+    priority="3"/>
+  <typecode
+    code="cad"
+    desc="Canadian Dollar"
+    name="CAD"
+    priority="4"/>
+  <typecode
+    code="aud"
+    desc="Australian Dollar"
+    name="AUD"
+    priority="5"/>
+  <typecode
+    code="rub"
+    desc="Russian Ruble"
+    name="RUB"
+    priority="6"/>
+  <typecode
+    code="jpy"
+    desc="Japanese Yen"
+    name="JPY"
+    priority="7"/>
+</typelistextension>

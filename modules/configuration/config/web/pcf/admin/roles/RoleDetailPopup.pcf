@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    afterCancel="Roles.go()"
+    canEdit="perm.Role.edit"
+    canVisit="perm.Role.view"
+    id="RoleDetailPopup"
+    title="DisplayKey.get(&quot;Web.Admin.RoleDetail&quot;, Role.DisplayName)">
+    <LocationEntryPoint
+      signature="RoleDetailPopup(Role : Role)"/>
+    <Variable
+      name="Role"
+      type="Role"/>
+    <ScreenRef
+      def="RoleDetailScreen(Role)"/>
+  </Popup>
+</PCF>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="WorkItemSetItem"
+  platform="true">
+  <implementsEntity
+    name="WorkItem"/>
+  <column
+    desc="The work item set that owns this workitem."
+    getterScriptability="doesNotExist"
+    name="WorkItemSetID"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    type="softentityreference"/>
+  <column
+    desc="The work item is done flag."
+    name="WorkDone"
+    nullok="false"
+    type="bit"/>
+</delegate>

@@ -1,0 +1,35 @@
+// Files in this folder will be added at the end of the SASS compilation, but before files in the customer folder
+
+.gw-big-button {
+  @include gw-button--normal();
+}
+
+.gw-mini-button {
+  @include gw-button--normal($is-small: true);
+}
+
+.inputLabel_em {
+  font-style: italic;
+}
+
+#entity-graph-wrapper {
+  display: flex;
+  flex-direction: column;
+  .entity-graph-svg {
+    width: gw-pxFixed(550);
+    height: gw-pxFixed(350);
+  }
+  h2 {
+    font-size: gw-emFixed(1.1);
+    &.entity-graph-action {
+      @include gw-link();
+    }
+  }
+  .entity-graph-fields {
+    display: flex;
+    flex-direction: column;
+    .gw-label {
+      width: gw-emFixed(12);
+    }
+  }
+}

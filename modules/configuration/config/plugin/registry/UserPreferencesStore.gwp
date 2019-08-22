@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="UserPreferencesStore"
+  name="UserPreferencesStore">
+  <plugin-java
+    javaclass="gw.api.web.prefs.UserPreferencesStoreImpl"/>
+</plugin>

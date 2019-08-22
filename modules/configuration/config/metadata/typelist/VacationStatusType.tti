@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Possible vacation statuses for a user"
+  final="true"
+  name="VacationStatusType"
+  platform="true">
+  <typecode
+    code="atwork"
+    desc="The user is at work"
+    name="At work"/>
+  <typecode
+    code="onvacation"
+    desc="The user is on vacation"
+    name="On vacation"/>
+  <typecode
+    code="inactive"
+    desc="The user is not available"
+    name="On vacation (Inactive)"/>
+</typelist>

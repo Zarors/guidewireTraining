@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The holiday tag code"
+  final="false"
+  name="HolidayTagCode"
+  platform="true">
+  <typecode
+    code="general"
+    desc="General"
+    name="General"/>
+</typelist>

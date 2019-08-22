@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    editable="true"
+    id="LoadIntegrityChecksByStagingTableLV">
+    <Require
+      name="LoadIntegrityChecks"
+      type="gw.api.tools.LoadIntegrityChecksHelper"/>
+    <Require
+      name="PickedStagingTable"
+      type="gw.api.database.WebStagingTable"/>
+    <Require
+      name="AllowNonAdminRef"
+      type="Boolean"/>
+    <RowIterator
+      editable="false"
+      elementName="Check"
+      value="LoadIntegrityChecks.getIntegrityChecksByStagingTable(AllowNonAdminRef, PickedStagingTable)"
+      valueType="java.util.List&lt;com.guidewire.pl.system.database.datamodel.LoaderSQLIntegrityCheck&gt;">
+      <Row>
+        <TypeKeyCell
+          id="errortype"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadIntegrityChecks.LoadErrorType&quot;)"
+          sortOrder="1"
+          value="Check.LoadErrorType"
+          valueType="typekey.LoadErrorType"
+          wrap="true"/>
+        <TextCell
+          enableSort="false"
+          id="description"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadIntegrityChecks.Description&quot;)"
+          value="Check.Description"
+          width="300"
+          wrap="true"/>
+        <TextCell
+          action="LoadIntegrityChecksCompoundLVPopup.push(LoadIntegrityChecks, AllowNonAdminRef, Check)"
+          align="left"
+          enableSort="false"
+          id="multi"
+          label="DisplayKey.get(&quot;Web.LoadIntegrityChecksByStagingTableLV.Multi&quot;)"
+          tooltip="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadIntegrityChecks.CompoundQueryTooltip&quot;)"
+          value="&quot;*&quot;"
+          valueVisible="LoadIntegrityChecks.multiQuery(Check)"
+          width="25"/>
+        <TextCell
+          enableSort="false"
+          id="query"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadIntegrityChecks.Query&quot;)"
+          value="Check.CompoundIntegrityCheck.SelectBody"
+          width="450"
+          wrap="true"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

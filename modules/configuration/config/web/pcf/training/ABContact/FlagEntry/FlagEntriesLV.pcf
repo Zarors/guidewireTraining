@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <ListViewPanel
+    id="FlagEntriesLV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <RowIterator
+      editable="false"
+      elementName="currentFlagEntry"
+      pageSize="7"
+      value="anABContact.FlagEntries"
+      valueType="FlagEntry[]">
+      <IteratorSort
+        sortBy="currentFlagEntry.FlagDate"
+        sortDirection="descending"
+        sortOrder="1"/>
+      <Row>
+        <BooleanRadioCell
+          icon="&quot;flag_blue.png&quot;"
+          id="OpenEntry"
+          showHeaderIcon="false"
+          value="currentFlagEntry.IsOpen"/>
+        <ButtonCell
+          action="FlagEntryPopup.push(currentFlagEntry)"
+          align="center"
+          hideIfDisabled="false"
+          id="ViewButton"
+          label="DisplayKey.get(&quot;Training.View&quot;)"
+          value="popupButtonText(currentFlagEntry)"/>
+        <DateCell
+          id="FlagDate"
+          label="DisplayKey.get(&quot;Training.DateFlagged&quot;)"
+          value="currentFlagEntry.FlagDate"/>
+        <TypeKeyCell
+          id="Reason"
+          label="DisplayKey.get(&quot;Training.Reason&quot;)"
+          value="currentFlagEntry.Reason"
+          wrap="true"
+          valueType="typekey.FlagEntryReason"/>
+        <DateCell
+          id="UnflagDate"
+          label="DisplayKey.get(&quot;Training.DateUnflagged&quot;)"
+          value="currentFlagEntry.UnflagDate"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+/* This function returns the label to display on button for FlagEntriesLV.
+*/
+function popupButtonText(aFlagEntry : FlagEntry) : String {
+  var buttonText = DisplayKey.get("Training.View")
+  if (aFlagEntry.IsEditable) {
+    buttonText = DisplayKey.get("Training.ViewEdit")
+  }
+  return buttonText
+}
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,26 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Primary Phone Type Changed History Event")
+internal class PrimaryPhoneTypeChangedHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.New
+and aBContact.ChangedFields.contains("PrimaryPhone")
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var history = aBContact.addHistory(CustomHistoryType.TC_PRIMARYPHONECHANGED, DisplayKey.get("Rules.Preupdate.ABContact.PrimaryPhoneUpdated"))
+var fieldsToTrack = new java.util.HashMap<String, String>()
+              {"PrimaryPhone" -> "Web.ContactDetail.Phone.PrimaryPhone"}
+history.createTrackedChanges(aBContact, fieldsToTrack)
+/*end00rule*/
+
+  }
+}

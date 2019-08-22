@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  UserRoleAssignment  ==================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="User role assignment."
+  entity="UserRoleAssignment"
+  extendable="true"
+  loadable="true"
+  platform="false"
+  table="userroleassign"
+  type="retireable">
+  <implementsEntity
+    name="UserRoleAssignmentDelegate"/>
+  <events/>
+</entity>

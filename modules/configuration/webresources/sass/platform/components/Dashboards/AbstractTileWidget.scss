@@ -1,0 +1,78 @@
+.gw-TileWidget {
+  background: $gw-app--TileWidget--bg;
+  padding: $gw-app--TileWidget--padding;
+  border: gw-border($gw-app--TileWidget--border-color);
+  border-radius: $gw-app--TileWidget--border-radius;
+  margin: $gw-app--TileWidget--margin;
+  overflow: hidden;
+
+  .gw-TileHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: $gw-app--TileWidget--header--padding;
+  }
+
+  .gw-TitleSection {
+    flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: normal;
+    min-width: 0;
+
+    .gw-Title {
+      font-weight: gw-weight("light");
+      font-size: gw-emFixed(20/14);
+      flex-shrink: 1;
+      min-width: 0;
+      word-wrap: break-word;
+
+      .gw-TitleText {
+        margin-right: $gw-app--TileWidget--title-text--margin-right;
+      }
+    }
+
+    .gw-Badge {
+      display: inline-flex;
+      vertical-align: middle;
+    }
+  }
+
+  .gw-Action {
+    max-width: 50%;
+    padding-left: $gw-app--DetailViewTileWidget--action--padding;
+    min-width: 0;
+
+    div {
+      max-width: 100%;
+    }
+
+    .gw-label > div {
+      overflow: hidden;
+      vertical-align: top;
+    }
+  }
+
+  .gw-TileFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding: $gw-app--TileWidget--footer--padding;
+    align-items: baseline;
+
+    .gw-ViewMoreLinkWidget {
+      padding: 0;
+    }
+  }
+
+  .gw-TileFooter:empty {
+    display: none;
+  }
+}
+
+.gw-TileActionsWidget, .gw-TileActionWidget {
+  @include gw-button--asMenuItem();
+}
+
+.gw-ViewMoreLinkWidget {
+  @include gw-link();
+}

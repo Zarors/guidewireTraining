@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<QuickJumpConfigFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quickjump-config.xsd">
+  <QuickJumpCommandRef commandClass="gw.command.RunCommand" commandName="Web.QuickJump.Run"/>
+  <QuickJumpCommandRef commandClass="com.guidewire.pl.web.navigator.commands.RunBatchProcessCommand" commandName="Web.QuickJump.RunBatchProcess"/>
+</QuickJumpConfigFile>

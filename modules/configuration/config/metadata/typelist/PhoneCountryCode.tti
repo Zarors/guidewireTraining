@@ -1,0 +1,990 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="List of regions and their regional phone codes"
+  final="false"
+  name="PhoneCountryCode"
+  platform="true">
+  <typecode
+    code="AC"
+    desc="247"
+    name="Ascension Island (247)"/>
+  <typecode
+    code="AD"
+    desc="376"
+    name="Andorra (376)"/>
+  <typecode
+    code="AE"
+    desc="971"
+    name="United Arab Emirates (971)"/>
+  <typecode
+    code="AF"
+    desc="93"
+    name="Afghanistan (93)"/>
+  <typecode
+    code="AG"
+    desc="1"
+    name="Antigua and Barbuda (1)"/>
+  <typecode
+    code="AI"
+    desc="1"
+    name="Anguilla (1)"/>
+  <typecode
+    code="AL"
+    desc="355"
+    name="Albania (355)"/>
+  <typecode
+    code="AM"
+    desc="374"
+    name="Armenia (374)"/>
+  <typecode
+    code="AN"
+    desc="599"
+    name="Netherlands Antilles (599)"/>
+  <typecode
+    code="AO"
+    desc="244"
+    name="Angola (244)"/>
+  <typecode
+    code="AR"
+    desc="54"
+    name="Argentina (54)"/>
+  <typecode
+    code="AS"
+    desc="1"
+    name="American Samoa (1)"/>
+  <typecode
+    code="AT"
+    desc="43"
+    name="Austria (43)"/>
+  <typecode
+    code="AU"
+    desc="61"
+    name="Australia (61)"/>
+  <typecode
+    code="AW"
+    desc="297"
+    name="Aruba (297)"/>
+  <typecode
+    code="AX"
+    desc="358"
+    name="Åland Islands (358)"/>
+  <typecode
+    code="AZ"
+    desc="994"
+    name="Azerbaijan (994)"/>
+  <typecode
+    code="BA"
+    desc="387"
+    name="Bosnia and Herzegovina (387)"/>
+  <typecode
+    code="BB"
+    desc="1"
+    name="Barbados (1)"/>
+  <typecode
+    code="BD"
+    desc="880"
+    name="Bangladesh (880)"/>
+  <typecode
+    code="BE"
+    desc="32"
+    name="Belgium (32)"/>
+  <typecode
+    code="BF"
+    desc="226"
+    name="Burkina Faso (226)"/>
+  <typecode
+    code="BG"
+    desc="359"
+    name="Bulgaria (359)"/>
+  <typecode
+    code="BH"
+    desc="973"
+    name="Bahrain (973)"/>
+  <typecode
+    code="BI"
+    desc="257"
+    name="Burundi (257)"/>
+  <typecode
+    code="BJ"
+    desc="229"
+    name="Benin (229)"/>
+  <typecode
+    code="BL"
+    desc="590"
+    name="Saint Barth&#233;lemy (590)"/>
+  <typecode
+    code="BM"
+    desc="1"
+    name="Bermuda (1)"/>
+  <typecode
+    code="BN"
+    desc="673"
+    name="Brunei (673)"/>
+  <typecode
+    code="BO"
+    desc="591"
+    name="Bolivia (591)"/>
+  <typecode
+    code="BQ"
+    desc="599"
+    name="BQ (599)"/>
+  <typecode
+    code="BR"
+    desc="55"
+    name="Brazil (55)"/>
+  <typecode
+    code="BS"
+    desc="1"
+    name="Bahamas (1)"/>
+  <typecode
+    code="BT"
+    desc="975"
+    name="Bhutan (975)"/>
+  <typecode
+    code="BW"
+    desc="267"
+    name="Botswana (267)"/>
+  <typecode
+    code="BY"
+    desc="375"
+    name="Belarus (375)"/>
+  <typecode
+    code="BZ"
+    desc="501"
+    name="Belize (501)"/>
+  <typecode
+    code="CA"
+    desc="1"
+    name="Canada (1)"/>
+  <typecode
+    code="CC"
+    desc="61"
+    name="Cocos [Keeling] Islands (61)"/>
+  <typecode
+    code="CD"
+    desc="243"
+    name="Congo - Kinshasa (243)"/>
+  <typecode
+    code="CF"
+    desc="236"
+    name="Central African Republic (236)"/>
+  <typecode
+    code="CG"
+    desc="242"
+    name="Congo - Brazzaville (242)"/>
+  <typecode
+    code="CH"
+    desc="41"
+    name="Switzerland (41)"/>
+  <typecode
+    code="CI"
+    desc="225"
+    name="Ivory Coast (225)"/>
+  <typecode
+    code="CK"
+    desc="682"
+    name="Cook Islands (682)"/>
+  <typecode
+    code="CL"
+    desc="56"
+    name="Chile (56)"/>
+  <typecode
+    code="CM"
+    desc="237"
+    name="Cameroon (237)"/>
+  <typecode
+    code="CN"
+    desc="86"
+    name="China (86)"/>
+  <typecode
+    code="CO"
+    desc="57"
+    name="Colombia (57)"/>
+  <typecode
+    code="CR"
+    desc="506"
+    name="Costa Rica (506)"/>
+  <typecode
+    code="CU"
+    desc="53"
+    name="Cuba (53)"/>
+  <typecode
+    code="CV"
+    desc="238"
+    name="Cape Verde (238)"/>
+  <typecode
+    code="CW"
+    desc="599"
+    name="Cura&#231;ao (599)"/>
+  <typecode
+    code="CX"
+    desc="61"
+    name="Christmas Island (61)"/>
+  <typecode
+    code="CY"
+    desc="357"
+    name="Cyprus (357)"/>
+  <typecode
+    code="CZ"
+    desc="420"
+    name="Czech Republic (420)"/>
+  <typecode
+    code="DE"
+    desc="49"
+    name="Germany (49)"/>
+  <typecode
+    code="DJ"
+    desc="253"
+    name="Djibouti (253)"/>
+  <typecode
+    code="DK"
+    desc="45"
+    name="Denmark (45)"/>
+  <typecode
+    code="DM"
+    desc="1"
+    name="Dominica (1)"/>
+  <typecode
+    code="DO"
+    desc="1"
+    name="Dominican Republic (1)"/>
+  <typecode
+    code="DZ"
+    desc="213"
+    name="Algeria (213)"/>
+  <typecode
+    code="EC"
+    desc="593"
+    name="Ecuador (593)"/>
+  <typecode
+    code="EE"
+    desc="372"
+    name="Estonia (372)"/>
+  <typecode
+    code="EG"
+    desc="20"
+    name="Egypt (20)"/>
+  <typecode
+    code="ER"
+    desc="291"
+    name="Eritrea (291)"/>
+  <typecode
+    code="ES"
+    desc="34"
+    name="Spain (34)"/>
+  <typecode
+    code="ET"
+    desc="251"
+    name="Ethiopia (251)"/>
+  <typecode
+    code="FI"
+    desc="358"
+    name="Finland (358)"/>
+  <typecode
+    code="FJ"
+    desc="679"
+    name="Fiji (679)"/>
+  <typecode
+    code="FK"
+    desc="500"
+    name="Falkland Islands (500)"/>
+  <typecode
+    code="FM"
+    desc="691"
+    name="Micronesia (691)"/>
+  <typecode
+    code="FO"
+    desc="298"
+    name="Faroe Islands (298)"/>
+  <typecode
+    code="FR"
+    desc="33"
+    name="France (33)"/>
+  <typecode
+    code="GA"
+    desc="241"
+    name="Gabon (241)"/>
+  <typecode
+    code="GB"
+    desc="44"
+    name="United Kingdom (44)"/>
+  <typecode
+    code="GD"
+    desc="1"
+    name="Grenada (1)"/>
+  <typecode
+    code="GE"
+    desc="995"
+    name="Georgia (995)"/>
+  <typecode
+    code="GF"
+    desc="594"
+    name="French Guiana (594)"/>
+  <typecode
+    code="GG"
+    desc="44"
+    name="Guernsey (44)"/>
+  <typecode
+    code="GH"
+    desc="233"
+    name="Ghana (233)"/>
+  <typecode
+    code="GI"
+    desc="350"
+    name="Gibraltar (350)"/>
+  <typecode
+    code="GL"
+    desc="299"
+    name="Greenland (299)"/>
+  <typecode
+    code="GM"
+    desc="220"
+    name="Gambia (220)"/>
+  <typecode
+    code="GN"
+    desc="224"
+    name="Guinea (224)"/>
+  <typecode
+    code="GP"
+    desc="590"
+    name="Guadeloupe (590)"/>
+  <typecode
+    code="GQ"
+    desc="240"
+    name="Equatorial Guinea (240)"/>
+  <typecode
+    code="GR"
+    desc="30"
+    name="Greece (30)"/>
+  <typecode
+    code="GT"
+    desc="502"
+    name="Guatemala (502)"/>
+  <typecode
+    code="GU"
+    desc="1"
+    name="Guam (1)"/>
+  <typecode
+    code="GW"
+    desc="245"
+    name="Guinea-Bissau (245)"/>
+  <typecode
+    code="GY"
+    desc="592"
+    name="Guyana (592)"/>
+  <typecode
+    code="HK"
+    desc="852"
+    name="Hong Kong SAR China (852)"/>
+  <typecode
+    code="HN"
+    desc="504"
+    name="Honduras (504)"/>
+  <typecode
+    code="HR"
+    desc="385"
+    name="Croatia (385)"/>
+  <typecode
+    code="HT"
+    desc="509"
+    name="Haiti (509)"/>
+  <typecode
+    code="HU"
+    desc="36"
+    name="Hungary (36)"/>
+  <typecode
+    code="ID"
+    desc="62"
+    name="Indonesia (62)"/>
+  <typecode
+    code="IE"
+    desc="353"
+    name="Ireland (353)"/>
+  <typecode
+    code="IL"
+    desc="972"
+    name="Israel (972)"/>
+  <typecode
+    code="IM"
+    desc="44"
+    name="Isle of Man (44)"/>
+  <typecode
+    code="IN"
+    desc="91"
+    name="India (91)"/>
+  <typecode
+    code="IO"
+    desc="246"
+    name="British Indian Ocean Territory (246)"/>
+  <typecode
+    code="IQ"
+    desc="964"
+    name="Iraq (964)"/>
+  <typecode
+    code="IR"
+    desc="98"
+    name="Iran (98)"/>
+  <typecode
+    code="IS"
+    desc="354"
+    name="Iceland (354)"/>
+  <typecode
+    code="IT"
+    desc="39"
+    name="Italy (39)"/>
+  <typecode
+    code="JE"
+    desc="44"
+    name="Jersey (44)"/>
+  <typecode
+    code="JM"
+    desc="1"
+    name="Jamaica (1)"/>
+  <typecode
+    code="JO"
+    desc="962"
+    name="Jordan (962)"/>
+  <typecode
+    code="JP"
+    desc="81"
+    name="Japan (81)"/>
+  <typecode
+    code="KE"
+    desc="254"
+    name="Kenya (254)"/>
+  <typecode
+    code="KG"
+    desc="996"
+    name="Kyrgyzstan (996)"/>
+  <typecode
+    code="KH"
+    desc="855"
+    name="Cambodia (855)"/>
+  <typecode
+    code="KI"
+    desc="686"
+    name="Kiribati (686)"/>
+  <typecode
+    code="KM"
+    desc="269"
+    name="Comoros (269)"/>
+  <typecode
+    code="KN"
+    desc="1"
+    name="Saint Kitts and Nevis (1)"/>
+  <typecode
+    code="KP"
+    desc="850"
+    name="North Korea (850)"/>
+  <typecode
+    code="KR"
+    desc="82"
+    name="South Korea (82)"/>
+  <typecode
+    code="KW"
+    desc="965"
+    name="Kuwait (965)"/>
+  <typecode
+    code="KY"
+    desc="1"
+    name="Cayman Islands (1)"/>
+  <typecode
+    code="KZ"
+    desc="7"
+    name="Kazakhstan (7)"/>
+  <typecode
+    code="LA"
+    desc="856"
+    name="Laos (856)"/>
+  <typecode
+    code="LB"
+    desc="961"
+    name="Lebanon (961)"/>
+  <typecode
+    code="LC"
+    desc="1"
+    name="Saint Lucia (1)"/>
+  <typecode
+    code="LI"
+    desc="423"
+    name="Liechtenstein (423)"/>
+  <typecode
+    code="LK"
+    desc="94"
+    name="Sri Lanka (94)"/>
+  <typecode
+    code="LR"
+    desc="231"
+    name="Liberia (231)"/>
+  <typecode
+    code="LS"
+    desc="266"
+    name="Lesotho (266)"/>
+  <typecode
+    code="LT"
+    desc="370"
+    name="Lithuania (370)"/>
+  <typecode
+    code="LU"
+    desc="352"
+    name="Luxembourg (352)"/>
+  <typecode
+    code="LV"
+    desc="371"
+    name="Latvia (371)"/>
+  <typecode
+    code="LY"
+    desc="218"
+    name="Libya (218)"/>
+  <typecode
+    code="MA"
+    desc="212"
+    name="Morocco (212)"/>
+  <typecode
+    code="MC"
+    desc="377"
+    name="Monaco (377)"/>
+  <typecode
+    code="MD"
+    desc="373"
+    name="Moldova (373)"/>
+  <typecode
+    code="ME"
+    desc="382"
+    name="Montenegro (382)"/>
+  <typecode
+    code="MF"
+    desc="590"
+    name="Saint Martin (590)"/>
+  <typecode
+    code="MG"
+    desc="261"
+    name="Madagascar (261)"/>
+  <typecode
+    code="MH"
+    desc="692"
+    name="Marshall Islands (692)"/>
+  <typecode
+    code="MK"
+    desc="389"
+    name="Macedonia (389)"/>
+  <typecode
+    code="ML"
+    desc="223"
+    name="Mali (223)"/>
+  <typecode
+    code="MM"
+    desc="95"
+    name="Myanmar [Burma] (95)"/>
+  <typecode
+    code="MN"
+    desc="976"
+    name="Mongolia (976)"/>
+  <typecode
+    code="MO"
+    desc="853"
+    name="Macau SAR China (853)"/>
+  <typecode
+    code="MP"
+    desc="1"
+    name="Northern Mariana Islands (1)"/>
+  <typecode
+    code="MQ"
+    desc="596"
+    name="Martinique (596)"/>
+  <typecode
+    code="MR"
+    desc="222"
+    name="Mauritania (222)"/>
+  <typecode
+    code="MS"
+    desc="1"
+    name="Montserrat (1)"/>
+  <typecode
+    code="MT"
+    desc="356"
+    name="Malta (356)"/>
+  <typecode
+    code="MU"
+    desc="230"
+    name="Mauritius (230)"/>
+  <typecode
+    code="MV"
+    desc="960"
+    name="Maldives (960)"/>
+  <typecode
+    code="MW"
+    desc="265"
+    name="Malawi (265)"/>
+  <typecode
+    code="MX"
+    desc="52"
+    name="Mexico (52)"/>
+  <typecode
+    code="MY"
+    desc="60"
+    name="Malaysia (60)"/>
+  <typecode
+    code="MZ"
+    desc="258"
+    name="Mozambique (258)"/>
+  <typecode
+    code="NA"
+    desc="264"
+    name="Namibia (264)"/>
+  <typecode
+    code="NC"
+    desc="687"
+    name="New Caledonia (687)"/>
+  <typecode
+    code="NE"
+    desc="227"
+    name="Niger (227)"/>
+  <typecode
+    code="NF"
+    desc="672"
+    name="Norfolk Island (672)"/>
+  <typecode
+    code="NG"
+    desc="234"
+    name="Nigeria (234)"/>
+  <typecode
+    code="NI"
+    desc="505"
+    name="Nicaragua (505)"/>
+  <typecode
+    code="NL"
+    desc="31"
+    name="Netherlands (31)"/>
+  <typecode
+    code="NO"
+    desc="47"
+    name="Norway (47)"/>
+  <typecode
+    code="NP"
+    desc="977"
+    name="Nepal (977)"/>
+  <typecode
+    code="NR"
+    desc="674"
+    name="Nauru (674)"/>
+  <typecode
+    code="NU"
+    desc="683"
+    name="Niue (683)"/>
+  <typecode
+    code="NZ"
+    desc="64"
+    name="New Zealand (64)"/>
+  <typecode
+    code="OM"
+    desc="968"
+    name="Oman (968)"/>
+  <typecode
+    code="PA"
+    desc="507"
+    name="Panama (507)"/>
+  <typecode
+    code="PE"
+    desc="51"
+    name="Peru (51)"/>
+  <typecode
+    code="PF"
+    desc="689"
+    name="French Polynesia (689)"/>
+  <typecode
+    code="PG"
+    desc="675"
+    name="Papua New Guinea (675)"/>
+  <typecode
+    code="PH"
+    desc="63"
+    name="Philippines (63)"/>
+  <typecode
+    code="PK"
+    desc="92"
+    name="Pakistan (92)"/>
+  <typecode
+    code="PL"
+    desc="48"
+    name="Poland (48)"/>
+  <typecode
+    code="PM"
+    desc="508"
+    name="Saint Pierre and Miquelon (508)"/>
+  <typecode
+    code="PR"
+    desc="1"
+    name="Puerto Rico (1)"/>
+  <typecode
+    code="PS"
+    desc="970"
+    name="Palestinian Territories (970)"/>
+  <typecode
+    code="PT"
+    desc="351"
+    name="Portugal (351)"/>
+  <typecode
+    code="PW"
+    desc="680"
+    name="Palau (680)"/>
+  <typecode
+    code="PY"
+    desc="595"
+    name="Paraguay (595)"/>
+  <typecode
+    code="QA"
+    desc="974"
+    name="Qatar (974)"/>
+  <typecode
+    code="RE"
+    desc="262"
+    name="R&#233;union (262)"/>
+  <typecode
+    code="RO"
+    desc="40"
+    name="Romania (40)"/>
+  <typecode
+    code="RS"
+    desc="381"
+    name="Serbia (381)"/>
+  <typecode
+    code="RU"
+    desc="7"
+    name="Russia (7)"/>
+  <typecode
+    code="RW"
+    desc="250"
+    name="Rwanda (250)"/>
+  <typecode
+    code="SA"
+    desc="966"
+    name="Saudi Arabia (966)"/>
+  <typecode
+    code="SB"
+    desc="677"
+    name="Solomon Islands (677)"/>
+  <typecode
+    code="SC"
+    desc="248"
+    name="Seychelles (248)"/>
+  <typecode
+    code="SD"
+    desc="249"
+    name="Sudan (249)"/>
+  <typecode
+    code="SE"
+    desc="46"
+    name="Sweden (46)"/>
+  <typecode
+    code="SG"
+    desc="65"
+    name="Singapore (65)"/>
+  <typecode
+    code="SH"
+    desc="290"
+    name="Saint Helena (290)"/>
+  <typecode
+    code="SI"
+    desc="386"
+    name="Slovenia (386)"/>
+  <typecode
+    code="SJ"
+    desc="47"
+    name="Svalbard and Jan Mayen (47)"/>
+  <typecode
+    code="SK"
+    desc="421"
+    name="Slovakia (421)"/>
+  <typecode
+    code="SL"
+    desc="232"
+    name="Sierra Leone (232)"/>
+  <typecode
+    code="SM"
+    desc="378"
+    name="San Marino (378)"/>
+  <typecode
+    code="SN"
+    desc="221"
+    name="Senegal (221)"/>
+  <typecode
+    code="SO"
+    desc="252"
+    name="Somalia (252)"/>
+  <typecode
+    code="SR"
+    desc="597"
+    name="Suriname (597)"/>
+  <typecode
+    code="SS"
+    desc="211"
+    name="SS (211)"/>
+  <typecode
+    code="ST"
+    desc="239"
+    name="S&#227;o Tom&#233; and Pr&#237;ncipe (239)"/>
+  <typecode
+    code="SV"
+    desc="503"
+    name="El Salvador (503)"/>
+  <typecode
+    code="SX"
+    desc="1"
+    name="Sint Maarten (1)"/>
+  <typecode
+    code="SY"
+    desc="963"
+    name="Syria (963)"/>
+  <typecode
+    code="SZ"
+    desc="268"
+    name="Swaziland (268)"/>
+  <typecode
+    code="TC"
+    desc="1"
+    name="Turks and Caicos Islands (1)"/>
+  <typecode
+    code="TD"
+    desc="235"
+    name="Chad (235)"/>
+  <typecode
+    code="TG"
+    desc="228"
+    name="Togo (228)"/>
+  <typecode
+    code="TH"
+    desc="66"
+    name="Thailand (66)"/>
+  <typecode
+    code="TJ"
+    desc="992"
+    name="Tajikistan (992)"/>
+  <typecode
+    code="TK"
+    desc="690"
+    name="Tokelau (690)"/>
+  <typecode
+    code="TL"
+    desc="670"
+    name="Timor-Leste (670)"/>
+  <typecode
+    code="TM"
+    desc="993"
+    name="Turkmenistan (993)"/>
+  <typecode
+    code="TN"
+    desc="216"
+    name="Tunisia (216)"/>
+  <typecode
+    code="TO"
+    desc="676"
+    name="Tonga (676)"/>
+  <typecode
+    code="TR"
+    desc="90"
+    name="Turkey (90)"/>
+  <typecode
+    code="TT"
+    desc="1"
+    name="Trinidad and Tobago (1)"/>
+  <typecode
+    code="TV"
+    desc="688"
+    name="Tuvalu (688)"/>
+  <typecode
+    code="TW"
+    desc="886"
+    name="Taiwan (886)"/>
+  <typecode
+    code="TZ"
+    desc="255"
+    name="Tanzania (255)"/>
+  <typecode
+    code="UA"
+    desc="380"
+    name="Ukraine (380)"/>
+  <typecode
+    code="UG"
+    desc="256"
+    name="Uganda (256)"/>
+  <typecode
+    code="US"
+    desc="1"
+    name="United States (1)"/>
+  <typecode
+    code="UY"
+    desc="598"
+    name="Uruguay (598)"/>
+  <typecode
+    code="UZ"
+    desc="998"
+    name="Uzbekistan (998)"/>
+  <typecode
+    code="VA"
+    desc="379"
+    name="Vatican City (379)"/>
+  <typecode
+    code="VC"
+    desc="1"
+    name="Saint Vincent and the Grenadines (1)"/>
+  <typecode
+    code="VE"
+    desc="58"
+    name="Venezuela (58)"/>
+  <typecode
+    code="VG"
+    desc="1"
+    name="British Virgin Islands (1)"/>
+  <typecode
+    code="VI"
+    desc="1"
+    name="U.S. Virgin Islands (1)"/>
+  <typecode
+    code="VN"
+    desc="84"
+    name="Vietnam (84)"/>
+  <typecode
+    code="VU"
+    desc="678"
+    name="Vanuatu (678)"/>
+  <typecode
+    code="WF"
+    desc="681"
+    name="Wallis and Futuna (681)"/>
+  <typecode
+    code="WS"
+    desc="685"
+    name="Samoa (685)"/>
+  <typecode
+    code="YE"
+    desc="967"
+    name="Yemen (967)"/>
+  <typecode
+    code="YT"
+    desc="262"
+    name="Mayotte (262)"/>
+  <typecode
+    code="ZA"
+    desc="27"
+    name="South Africa (27)"/>
+  <typecode
+    code="ZM"
+    desc="260"
+    name="Zambia (260)"/>
+  <typecode
+    code="ZW"
+    desc="263"
+    name="Zimbabwe (263)"/>
+  <typecode
+    code="ZZ"
+    desc="0"
+    name="Unknown"
+    priority="99999"/>
+  <typecode
+    code="UNPARSEABLE"
+    desc="Unparseable Phone Numbers"
+    name="Unparseable"
+    priority="999999"/>
+</typelist>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="What action is the Workflow currently trying to take?"
+  final="true"
+  name="WorkflowActionType"
+  platform="true">
+  <typecode
+    code="assert"
+    desc="Executing Assertions"
+    name="Assert"/>
+  <typecode
+    code="activity"
+    desc="Creating Activities"
+    name="Activity"/>
+  <typecode
+    code="start"
+    desc="Executing a Start block"
+    name="Start"/>
+  <typecode
+    code="finish"
+    desc="Executing a Finish block"
+    name="Finish"/>
+  <typecode
+    code="enter"
+    desc="Executing an Enter block"
+    name="Enter"/>
+  <typecode
+    code="exit"
+    desc="Executing an Exit block"
+    name="Exit"/>
+  <typecode
+    code="branch"
+    desc="Executing a Branch (or Timeout, Trigger, etc.)"
+    name="Branch"/>
+  <typecode
+    code="selectBranch"
+    desc="Looking for one of the branches to be ready to execute"
+    name="SelectBranch"/>
+</typelist>

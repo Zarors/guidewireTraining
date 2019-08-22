@@ -1,0 +1,161 @@
+$gw-LoginPage--MIN-width: gw-pxFixed(640);
+$gw-LoginPage--center-section-top-margin: gw-pxFixed(250);
+
+$gw-LoginPage--inputs--width: gw-pxFixed(195);
+$gw-LoginPage--labels--width: gw-pxFixed(100);
+$gw-LoginPage--labels--pad-right: gw-pxFixed(12);
+
+$gw-LoginPage--stripes-w: gw-pxFixed(314);
+$gw-LoginPage--stripes-h: gw-pxFixed(285);
+
+$gw-LoginPage--company-logo-w: gw-pxFixed(187);
+$gw-LoginPage--company-logo-h: gw-pxFixed(30);
+$gw-LoginPage--company-name-top: gw-pxFixed(70);
+$gw-LoginPage--company-name-left: gw-pxFixed(70);
+
+$gw-LoginPage--input--margin-top: gw-pxFixed(12);
+$gw-LoginPage--button--margin-top: gw-pxFixed(18);
+
+$gw-LoginPage--app-name-w: gw-pxFixed(300);
+$gw-LoginPage--app-name-h: gw-pxFixed(52);
+$gw-LoginPage--app-name-R-glyph-w: gw-pxFixed(34);
+
+#Login-LoginScreen {
+  @include gw-z-index(loginScreen);
+  display: inline-block;
+  background-color: white; //TODO, cooper, globalize
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden !important;
+  position: fixed; // We're using this to fill the screen with the Login Screen , since we don't use west or north on login page
+  top: 0;
+  left: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: gw-pxFixed(14);
+  text-align: center;
+  min-width: $gw-LoginPage--MIN-width;
+
+  .gw-MessagesWidget, .gw-ToolbarWidget {
+    display: none;
+  }
+
+  .app--login-page--logo {
+    @include gw-backgroundUri($gw-app--Logo--company--uri, left, top);
+    position: absolute;
+    top: $gw-LoginPage--company-name-top;
+    left: $gw-LoginPage--company-name-left;
+    display: inline-block;
+    width: $gw-LoginPage--company-logo-w;
+    height: $gw-LoginPage--company-logo-h;
+  }
+
+  .app--login-page--stripes {
+    @include gw-backgroundUri($gw-app--Logo--stripes--uri, right, top);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: $gw-LoginPage--stripes-w;
+    height: $gw-LoginPage--stripes-h;
+  }
+
+  .gw-PanelColumnWidget {
+    position: static;
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: top;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: $gw-LoginPage--center-section-top-margin;
+
+    .app--login-page--name {
+      order: 1;
+      display: inline-block;
+      width: $gw-LoginPage--app-name-w;
+      height: $gw-LoginPage--app-name-h;
+      margin-right: -$gw-LoginPage--app-name-R-glyph-w;
+    }
+
+    .gw-DetailViewWidget {
+      order: 2;
+
+      .gw-InputColumnWidget {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+
+        .gw-InputWidget.gw-StyleContainer--InputColumnWidget {
+          padding: 0 !important;
+          margin: 0;
+          > .gw-label {
+            width: auto;
+            text-align: right;
+            padding-right: $gw-LoginPage--labels--pad-right;
+          }
+          > .gw-value {
+            width: $gw-LoginPage--inputs--width;
+          }
+
+          & + .gw-InputWidget {
+            margin-top: $gw-LoginPage--input--margin-top;
+          }
+        }
+
+        .gw-ButtonInputWidget.gw-StyleContainer--InputColumnWidget {
+          padding: 0 !important;
+          margin: 0 !important;
+
+          > .gw-label {
+            display: none;
+          }
+          > .gw-value {
+            text-align: left;
+            width: $gw-LoginPage--inputs--width;
+
+            .gw-ButtonValueWidget {
+              margin-top: $gw-LoginPage--button--margin-top;
+              width: 100%;
+              .gw-action--inner {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .gw-VerbatimWidget.gw-StyleContainer--PanelColumnWidget {
+      order: 10;
+      max-width: gw-pxFixed(600);
+      @include gw-wrapOnWhiteSpace();
+
+      border: 0 solid transparent;
+      margin: 0;
+      background-color: transparent;
+      color: $gw-app--palette--red;
+      font-weight: bold;
+
+      .gw-VerbatimWidget--inner {
+        border: 0 solid transparent;
+        width: auto;
+        margin: 0;
+        margin-top: $gw-LoginPage--input--margin-top;
+        background-color: transparent;
+        color: $gw-app--palette--red;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+body {
+  .app--login-page--name {
+    @include gw-backgroundUri($gw-app--Logo--login--app--uri, right, top, auto);
+  }
+}
+

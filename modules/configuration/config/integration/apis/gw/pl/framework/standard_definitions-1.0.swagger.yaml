@@ -1,0 +1,101 @@
+swagger: '2.0'
+x-gw-schema-import:
+  errors: gw.pl.framework.errors-1.0
+parameters:
+  gwTransactionID:
+    name: GW-DBTransaction-ID
+    in: header
+    type: string
+    required: true
+    description: "If specified and this operation results in a database commit, this header's value must\
+      \ not have been submitted before.  This value must be globally unique across all clients, apis and webservices.\
+      \ It is used for those transaction that are not idempotent.\
+      \ Unless this is explicitly referenced for an operation it is not required."
+  gwLanguageHeader:
+    name: GW-Language
+    in: header
+    type: string
+    description: "If specified, this header will set the language used when processing\
+      \ the request"
+  gwLocaleHeader:
+    name: GW-Locale
+    in: header
+    type: string
+    description: "If specified, this header will set the locale used when processing\
+      \ the request"
+  gwUnknownPropertyHeader:
+    name: GW-UnknownPropertyHandling
+    in: header
+    type: string
+    enum:
+      - log
+      - reject
+      - ignore
+    description: "If specified, this header will drive the behavior for unknown property handling"
+  gwSchemaProperty:
+    name: GW-IncludeSchemaProperty
+    in: header
+    type: boolean
+    description: "If specified and the operation returns json with a defined schema, this will add a property, '$GW-Schema', \
+     \ with the fully qualified name of the object's schema."
+  gwValidateResponseHandling:
+    name: GW-ValidateResponseHandling
+    in: header
+    type: boolean
+    description: "If specified, this header permits the client to override the behavior around validating response"
+  gwTraceability:
+   name: X-Correlation-ID
+   in: header
+   type: string
+   description: "This header permits a customer to trace a request from its initial reception through all of\
+     \ the subsequent applications that were invoked to handle that request. The actual traceability id\
+     \ present in the MDC and logs (and returned in the response), is dependent on the implementation of TraceabilityIDPlugin.\
+     \ The default implementation uses this value, if specified, or a generated UID. \
+     \ However, another implementation may always generate a unique id and just log \
+     \ the relationship between these incoming values and the generated UID.\
+     \ Note: that this header can be repeated, but the resulting string will just be the comma separated values."
+responses:
+  OperationNotSupported:
+    description: "405 error that is returned if the specified HTTP verb is not allowed\
+      \ on a given resource"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  NotAuthorized:
+    description: "403 error that is returned if the authenticated user is not authorized\
+      \ to access a given resource"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  UnsupportedContentType:
+    description: "415 error that is returned if the Content-Type of the request is\
+      \ not consumable by this endpoint"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  NotAcceptable:
+    description: "406 error that is returned if the Accept header provided by the\
+      \ client does not match any types produced by this endpoint"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  BadInput:
+    description: "400 error that is returned if the input to this endpoint is not\
+      \ valid; this can happen because of missing required parameters, malformed json,\
+      \ json that does not validate against the declared schema, etc."
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  NotFound:
+    description: "404 error that is returned if the specified resource does not exist"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  ServiceUnavailable:
+    description: "503 error that is returned if the server's runlevel is not adequate\
+      \ to service this request"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  InternalServerError:
+    description: "500 error that is returned if a server-side error prevented this\
+      \ request from being processed"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"
+  AuthenticationError:
+    description: "401 error that is returned if the request's user cannot be authenticated"
+    schema:
+      $ref: "errors#/definitions/ErrorInfo"

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="HolidayDetailDV"
+    mode="default">
+    <Require
+      name="Holiday"
+      type="Holiday"/>
+    <Variable
+      initialValue="gw.api.admin.BaseAdminUtil.getDefaultCountry()"
+      name="country"
+      type="Country"/>
+    <Variable
+      initialValue="Holiday.HolidayZones.IsEmpty ? (country == typekey.Country.TC_US ? typekey.ZoneType.TC_STATE : typekey.ZoneType.TC_COUNTRY) : Holiday.HolidayZones.first().ZoneType"
+      name="zoneType"
+      type="ZoneType"/>
+    <InputColumn>
+      <TextAreaInput
+        editable="true"
+        hideIfEditable="true"
+        id="Zones"
+        label="DisplayKey.get(&quot;Web.Admin.HolidayDetailDV.Zones&quot;)"
+        numRows="5"
+        value="Holiday.Zones"
+        visible="!Holiday.AppliesToAllZones"/>
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="ZoneType"
+        label="DisplayKey.get(&quot;Web.Admin.HolidayDetailDV.ZoneType&quot;)"
+        required="false"
+        value="zoneType"
+        valueRange="getRelevantZoneTypes(country)"
+        valueType="typekey.ZoneType"
+        visible="!Holiday.AppliesToAllZones">
+        <PostOnChange/>
+      </RangeInput>
+      <ListViewInput
+        def="HolidayZonesLV(Holiday, zoneType, country)"
+        editable="true"
+        hideIfReadOnly="true"
+        label="DisplayKey.get(&quot;Web.Admin.BusinessWeeksLV.Zones&quot;)"
+        visible="zoneType != null">
+        <Toolbar
+          visible="true">
+          <IteratorButtons
+            iterator="HolidayZonesLV.HolidayZonesLV"/>
+        </Toolbar>
+      </ListViewInput>
+    </InputColumn>
+    <Code><![CDATA[function getPossibleCountries() : java.util.List<Country> {
+  var org = User.util.CurrentUser.Organization
+  if (org == null) {
+    org = User.util.UnrestrictedUser.Organization
+  }
+  return org.Countries
+}
+
+function getRelevantZoneTypes(countryVar : Country) : java.util.List<ZoneType> {
+  var allTypeKeys = typekey.ZoneType.getTypeKeys( false )
+  return allTypeKeys.where( \ z -> ( z.Categories.hasMatch( \ c -> c.Code == countryVar.Code ) ) )
+}
+
+function getZoneInputValueRange(first : String[], second : String[]) : String[] {
+  var both = new java.util.ArrayList<String>()
+  java.util.Collections.addAll(both, first)
+  java.util.Collections.addAll(both, second)
+
+  var h = new java.util.HashSet<String>(both)
+  both.clear()
+  both.addAll(h)
+
+  return both.toArray(new String[] {})
+}]]></Code>
+  </DetailViewPanel>
+</PCF>

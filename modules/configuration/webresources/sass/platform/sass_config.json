@@ -1,0 +1,12 @@
+{
+	"environment_folder": "platform/environment/not_themed",
+	"modifier_functions_folder": "platform/modifier_functions",
+	"themes_folder": "themes",
+	"theme_partials_folder": "themes/partials",
+	"theme_required_default_folder": "themes/global_variables",
+	"mixins_and_functions_folder": "platform/mixins_and_functions",
+	"theme_dependent_environment_folder": "platform/environment/themed",
+	"all_inner_content_for_theme_folders": ["platform/components", "platform/pages"],
+	"apps_folder": "apps",
+	"customer_folder": "customer"
+}

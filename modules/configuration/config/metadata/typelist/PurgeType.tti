@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  name="PurgeType"
+>
+  <typecode
+    code="Unknown"
+    desc="Unknown"
+    name="Unknown"/>
+</typelist>

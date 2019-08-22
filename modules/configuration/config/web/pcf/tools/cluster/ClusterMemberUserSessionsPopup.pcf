@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canVisit="perm.User.ViewCluster or perm.User.DevAllAccess"
+    countsAsWork="false"
+    id="ClusterMemberUserSessionsPopup"
+    title="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.Title&quot;, serverId)">
+    <LocationEntryPoint
+      signature="ClusterMemberUserSessionsPopup(serverId: String)"/>
+    <Variable
+      name="serverId"
+      type="String"/>
+    <Variable
+      initialValue="new gw.api.tools.ClusterMembersData()"
+      name="data"
+      type="gw.api.tools.ClusterMembersData"/>
+    <Screen>
+      <Toolbar>
+        <CheckedValuesToolbarButton
+          allCheckedRowsAction="data.markUserSessionsAsInactive(serverId, CheckedValues.toList())"
+          available="perm.User.EditCluster or perm.User.DevAllAccess"
+          confirmMessage="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.MarkAsInactive.Confirm&quot;)"
+          id="MarkAsInactive"
+          iterator="Sessions"
+          label="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.MarkAsInactive&quot;)"/>
+      </Toolbar>
+      <ListViewPanel>
+        <RowIterator
+          editable="false"
+          elementName="userSession"
+          hasCheckBoxes="true"
+          id="Sessions"
+          value="data.getActiveUserSessions(serverId)"
+          valueType="java.util.List&lt;gw.api.system.cluster.UserSessionInfo&gt;">
+          <Row>
+            <TextCell
+              id="DisplayName"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.LV.DisplayName&quot;)"
+              sortOrder="1"
+              value="userSession.User.DisplayName"/>
+            <TextCell
+              id="Username"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.LV.Username&quot;)"
+              value="userSession.User.Credential.UserName"/>
+            <TextCell
+              id="Sessions"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.LV.Sessions&quot;)"
+              value="userSession.SessionCount"
+              valueType="java.lang.Integer"/>
+            <DateCell
+              dateFormat="short"
+              id="LastActivity"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.LV.LastActivity&quot;)"
+              timeFormat="medium"
+              value="userSession.LastActivity"/>
+            <TextCell
+              id="InactiveFor"
+              label="DisplayKey.get(&quot;Web.InternalTools.ClusterMemberUserSessionsPopup.LV.InactiveFor&quot;)"
+              value="gw.api.web.tools.Duration.getDisplayString(java.lang.Math.max(java.util.Date.Now.Time - userSession.LastActivity.Time, 0)/1000)"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

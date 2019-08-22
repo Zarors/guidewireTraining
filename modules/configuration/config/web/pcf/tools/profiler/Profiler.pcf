@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PCF>
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <LocationGroup
+    canVisit="perm.User.ViewProfiler or perm.User.DevAllAccess"
+    id="Profiler"
+    tabBar="InternalToolsTabBar()"
+    title="DisplayKey.get(&quot;Web.Profiler&quot;)">
+    <LocationRef
+      location="ProfilerConfigurationPage()"/>
+    <LocationRef
+      location="ProfilerAnalysisLG()"/>
+  </LocationGroup>
+</PCF>

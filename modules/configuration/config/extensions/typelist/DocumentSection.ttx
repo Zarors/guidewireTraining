@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="DocumentSection">
+  <typecode
+    code="bills"
+    desc="Bills"
+    name="Bills"/>
+  <typecode
+    code="medical"
+    desc="Medical"
+    name="Medical"/>
+  <typecode
+    code="indemnity"
+    desc="Indemnity"
+    name="Indemnity"/>
+  <typecode
+    code="rehab"
+    desc="Rehab"
+    name="Rehab"/>
+  <typecode
+    code="legal"
+    desc="Legal"
+    name="Legal"/>
+  <typecode
+    code="correspondence"
+    desc="Correspondence"
+    name="Correspondence"/>
+  <typecode
+    code="misc"
+    desc="Misc"
+    name="Misc"/>
+</typelistextension>

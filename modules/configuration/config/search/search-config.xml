@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="search-config.xsd"
+  version="2">
+
+  <!--                                                                       -->
+  <!--                            WARNING                                    -->
+  <!--                                                                       -->
+  <!--
+    The search screens are some of the most performance sensitive in ContactManager.
+    Any changes to the search-config.xml file should be followed by thorough
+    performance testing. Remember that a change that works perfectly well at
+    small scale may fail catastrophically under heavy load on a large database.
+    Here are some guidelines for making changes:
+
+    * The main search screens are divided into required and optional sections.
+      The properties in the required section have been carefully chosen so don't
+      muck with them. You can't add new required properties anyway, but don't
+      even change the match type of the existing ones.
+    * You may need to add an index to improve performance. Unfortunately the
+      exact index to add will depend on the database being used and the details
+      of the situation. Consult a database expert.
+    * Avoid the "contains" match type if possible, it is the most expensive type
+      of match (followed by startsWith).
+    * If you add an ArrayCriterion the array table must have two unique indexes.
+      The first must be on the foreign key back to the main table and your
+      chosen arrayMemberProperty. The second must be on the same two properties
+      but in the reverse order (arrayMemberProperty first).
+  -->
+
+  <!-- Mapping from Address to address table -->
+  <!-- Used by ContactSearchCriteriaBase -->
+  <CriteriaDef entity="Address" targetEntity="Address">
+      <!-- CM801 - changed this behavior a bit
+     Removing the individual address fields from this entity, which used to be translated into denorm fields
+     behind the scenes. Explicitly adding the denorm fields to the ABContactSearchCriteria entity instead.
+     Leaving this entity in place because this is where you will add any address entity extensions that you
+     want included in search criteria.
+    <Criterion property="City" matchType="startsWith"/>-->
+    <!--<Criterion property="State" matchType="eq"/>-->
+    <!--<Criterion property="PostalCode" matchType="startsWith"/>-->
+    <!--<Criterion property="Country" matchType="eq"/>-->
+
+    <!-- To add another property to the search based on a non-Denorm field, you should put in another Criterion
+        here. Below is an example of how to add county to the search parameters. -->
+    <!--<Criterion property="County" matchType="eq"/>-->
+  </CriteriaDef>
+
+  <!-- Search by ABContact Fields -->
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABContact">
+    <Criterion property="TaxID" matchType="eq"/>
+    <Criterion property="VendorType" matchType="eq"/>
+    <Criterion property="VendorAvailability" matchType="eq"/>
+    <Criterion property="Keyword" matchType="startsWith"/>
+    <Criterion property="KeywordKanji" matchType="startsWithCaseSensitive"/>
+    <Criterion property="Score" matchType="ge"/>
+    <!-- Some additional search criterions are defined in code -->
+      <!-- CM801
+        Explicitly added denorm fields to this search criteria.
+        You should always use these denorms rather than the base fields because of performance impact.
+        -->
+    <Criterion property="CityDenorm" matchType="startsWith"/>
+    <Criterion property="StateDenorm" matchType="eq"/>
+    <Criterion property="PostalCodeDenorm" matchType="startsWith"/>
+    <Criterion property="CountryDenorm" matchType="eq"/>
+
+    <!-- To add another property to the search based on a Denorm field, put in another Criterion here. Below is
+        an example of how to add CityKanjiDenorm to the parameters. In addition to adding the Criterion, also add
+        a SearchColumn to ABContact, a column to ABContactSearchCriteria, and ensure that the column on Address
+        supports linguistic search.-->
+    <!--<Criterion property="CityKanjiDenorm" matchType="startsWithCaseSensitive"/>-->
+  </CriteriaDef>
+
+  <!-- Specific fields in ABContact subtypes -->
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABPerson">
+    <Criterion property="FirstName" matchType="startsWith"/>
+    <Criterion property="FirstNameKanji" matchType="startsWithCaseSensitive"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABUserContact">
+    <Criterion property="EmployeeNumber" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABAdjudicator">
+    <Criterion property="AdjudicativeDomain" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABAttorney">
+    <Criterion property="AttorneySpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABDoctor">
+    <Criterion property="DoctorSpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABMedicalCareOrg">
+    <Criterion property="MedicalOrgSpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="ABContactSearchCriteria" targetEntity="ABLawFirm">
+    <Criterion property="LawFirmSpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+
+
+    
+
+  <!-- Search related contacts by ABContact Fields. NOTE, if RelatedContactID is specified, then these configs will be ignored. -->
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABContact">
+    <Criterion property="TaxID" matchType="eq"/>
+    <Criterion property="VendorType" matchType="eq"/>
+    <Criterion property="Keyword" matchType="startsWith"/>
+    <Criterion property="Score" matchType="ge"/>
+  </CriteriaDef>
+
+  <!-- Specific related contacts fields in ABContact subtypes -->
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABPerson">
+    <Criterion property="FirstName" matchType="startsWith"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABUserContact">
+    <Criterion property="EmployeeNumber" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABAdjudicator">
+    <Criterion property="AdjudicativeDomain" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABAttorney">
+    <Criterion property="AttorneySpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABDoctor">
+    <Criterion property="DoctorSpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABMedicalCareOrg">
+    <Criterion property="MedicalOrgSpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+  <CriteriaDef entity="RelatedABContactSearchCriteria" targetEntity="ABLawFirm">
+    <Criterion property="LawFirmSpecialty" matchType="eq"/>
+  </CriteriaDef>
+
+</SearchConfig>

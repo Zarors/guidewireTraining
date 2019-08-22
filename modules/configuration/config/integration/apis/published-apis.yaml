@@ -1,0 +1,8 @@
+apis:
+- name: gw.pl.framework.api_list-1.0
+- name: trn.ta.contact-1.0
+defaultTemplate:
+- name: gw.pl.framework.dev_template-1.0
+
+
+

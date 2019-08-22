@@ -1,0 +1,461 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    beforeCommit="gw.web.merge.MergeContactsWebUtil.Instance.merge(mergedContact, duplicateContacts.RetiredContact, addressDataHolder, relatedContactsHolder, eftDataHolder, documentDataHolder)"
+    canEdit="true"
+    canVisit="wrappedDuplicateContactPair.Pair != null and wrappedDuplicateContactPair.Pair.KeptContact.Subtype == wrappedDuplicateContactPair.Pair.RetiredContact.Subtype"
+    id="ReviewDuplicateContactsPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Title&quot;)">
+    <LocationEntryPoint
+      signature="ReviewDuplicateContactsPopup(wrappedDuplicateContactPair : gw.web.merge.DuplicatePairWrapper)"/>
+    <Variable
+      name="wrappedDuplicateContactPair"
+      type="gw.web.merge.DuplicatePairWrapper"/>
+    <Variable
+      initialValue="wrappedDuplicateContactPair.Pair"
+      name="duplicateContacts"
+      type="entity.DuplicateContactPair"/>
+    <Variable
+      initialValue="gw.web.merge.MergeContactsWebUtil.Instance"
+      name="mergeContactsWebUtil"
+      type="gw.web.merge.MergeContactsWebUtil"/>
+    <Variable
+      initialValue="mergeContactsWebUtil.createCopy(duplicateContacts.KeptContact)"
+      name="keptContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="mergeContactsWebUtil.createCopy(duplicateContacts.RetiredContact)"
+      name="retiredContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="mergeContactsWebUtil.createMergedContact(duplicateContacts)"
+      name="mergedContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.MatchType&quot;, duplicateContacts.Exact ? DisplayKey.get(&quot;Web.Contacts.MergeContacts.Exact&quot;) : DisplayKey.get(&quot;Web.Contacts.MergeContacts.Potential&quot;))"
+      name="matchTypeDisplayKey"
+      type="java.lang.String"/>
+    <Variable
+      initialValue="new gw.web.merge.MergeContactsAddressHolder(mergedContact, duplicateContacts.RetiredContact)"
+      name="addressDataHolder"
+      type="gw.web.merge.MergeContactsAddressHolder"/>
+    <Variable
+      initialValue="new gw.web.merge.MergeContactsLinkedContactsHolder(mergedContact, duplicateContacts.RetiredContact)"
+      name="relatedContactsHolder"
+      type="gw.web.merge.MergeContactsLinkedContactsHolder"/>
+    <Variable
+      initialValue="new gw.web.merge.MergeContactsEFTDataHolder(mergedContact, duplicateContacts.RetiredContact)"
+      name="eftDataHolder"
+      type="gw.web.merge.MergeContactsEFTDataHolder"/>
+    <Variable
+      initialValue="new gw.web.merge.VendorDataCardHelper(keptContact, retiredContact, mergedContact)"
+      name="vendorDataCardHelper"
+      type="gw.web.merge.VendorDataCardHelper"/>
+    <Variable
+      initialValue="new gw.web.merge.MergeContactsPhoneHolder(keptContact, retiredContact, mergedContact)"
+      name="phoneHolder"
+      type="gw.web.merge.MergeContactsPhoneHolder"/>
+    <Variable
+      initialValue="new gw.web.merge.MergeContactsDocumentsHolder(wrappedDuplicateContactPair, mergedContact)"
+      name="documentDataHolder"
+      type="gw.web.merge.MergeContactsDocumentsHolder"/>
+    <Variable
+      initialValue="new gw.web.ContactDocumentsActionsHelper(mergedContact)"
+      name="contactDocumentHelper"
+      type="gw.web.ContactDocumentsActionsHelper"/>
+    <Variable
+      initialValue="contactDocumentHelper.isDocumentContentActionsAvailable()"
+      name="contentActionsAvailable"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          cancelVisible="false"
+          editVisible="false"
+          id="Merge"
+          updateLabel="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Merge&quot;)"
+          updateVisible="wrappedDuplicateContactPair.Pair != null"/>
+        <ToolbarButton
+          action="mergeAndEdit()"
+          confirmMessage="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.MergeThenEdit.Warning&quot;)"
+          id="MergeAndEditButton"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.MergeThenEdit&quot;)"/>
+        <ToolbarButton
+          action="retire(); CurrentLocation.cancel()"
+          confirmMessage="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Ignore.Warning&quot;)"
+          id="Ignore"
+          label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Ignore&quot;)"
+          visible="wrappedDuplicateContactPair.Pair != null"/>
+        <EditButtons
+          editVisible="false"
+          updateVisible="false"/>
+      </Toolbar>
+      <Verbatim
+        label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.AlreadyProcessedError&quot;)"
+        visible="wrappedDuplicateContactPair.Pair == null"
+        warning="true"/>
+      <DetailViewPanel>
+        <InputColumn>
+          <TextInput
+            boldLabel="true"
+            id="matchType"
+            label="matchTypeDisplayKey"
+            value="&quot;&quot;"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <CardViewPanel>
+        <Card
+          id="ContactDetail"
+          title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.ContactDetail&quot;)">
+          <ListViewPanel>
+            <Row
+              renderAsSmartHeader="true">
+              <TextCell
+                id="fieldName"
+                value="&quot;&quot;"/>
+              <TextCell
+                align="left"
+                id="contact1"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContact&quot;, mergedContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"/>
+              <TextCell
+                align="left"
+                id="contact2"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContact&quot;, duplicateContacts.RetiredContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"/>
+              <TextCell
+                id="updatedContact"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.UpdatedContact&quot;)"/>
+            </Row>
+            <RowSetRef
+              def="ContactDetailsRowSet(keptContact, retiredContact, mergedContact, addressDataHolder, phoneHolder)"
+              mode="mergedContact.Subtype"/>
+          </ListViewPanel>
+        </Card>
+        <Card
+          id="Addresses"
+          title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Addresses&quot;)">
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContactUpdate&quot;, mergedContact.UpdateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"/>
+            <ListViewPanel>
+              <RowSetRef
+                def="AddressDataRowSet(addressDataHolder.KeptAddressData,addressDataHolder.KeptDuplicateAddressEntries)"
+                id="KeptContactAddresses"/>
+            </ListViewPanel>
+          </PanelRef>
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContactUpdate&quot;, gw.web.merge.MergeContactsWebUtil.Instance.getRetiredUpdateTime(duplicateContacts))"/>
+            <ListViewPanel>
+              <RowSetRef
+                def="AddressDataRowSet(addressDataHolder.RetiredAddressData, addressDataHolder.RetiredDuplicateAddressEntries)"
+                id="RetiredContactAddresses"/>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+        <Card
+          id="Documents"
+          title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Documents&quot;)"
+          visible="documentDataHolder.DocumentsRowList.Count &gt; 0">
+          <ListViewPanel>
+            <Variable
+              initialValue="documentDataHolder.DocumentsRowList"
+              name="DocumentRows"
+              type="List&lt;gw.web.merge.MergeContactsDocumentsHolder.DocumentCardRowValue&gt;"/>
+            <Variable
+              initialValue="new gw.web.ContactDocumentsActionsHelper(wrappedDuplicateContactPair.Pair.KeptContact)"
+              name="contactDocumentsHelper"
+              type="gw.web.ContactDocumentsActionsHelper"/>
+            <Variable
+              initialValue="contactDocumentsHelper.isDocumentMetadataActionsAvailable()"
+              name="metadataActionsEnabled"
+              recalculateOnRefresh="true"
+              type="boolean"/>
+            <RowIterator
+              canPick="false"
+              editable="true"
+              id="DocumentRowIterator"
+              pageSize="0"
+              elementName="documentRow"
+              value="documentDataHolder.DocumentsRowList"
+              valueType="java.util.List&lt; gw.web.merge.MergeContactsDocumentsHolder.DocumentCardRowValue&gt;">
+              <Row>
+                <BooleanRadioCell
+                  icon="documentRow.Document.Icon"
+                  iconType="svgFileName"
+                  id="Icon"
+                  showHeaderIcon="false"
+                  value="true"
+                  valueType="boolean"/>
+                <LinkCell
+                  id="Name"
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Name&quot;)">
+                  <Link
+                    action="documentRow.Document.downloadContent()"
+                    download="inline"
+                    available="contactDocumentHelper.isViewDocumentContentAvailable(documentRow.Document, contentActionsAvailable)"
+                    id="NameLink"
+                    label="documentRow.Document.Name"
+                    tooltip="contactDocumentHelper.ViewDocumentContentTooltip(documentRow.Document)"/>
+                </LinkCell>
+                <LinkCell
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Actions&quot;)">
+                  <Link
+                    action="DocumentPropertiesPopup.push(documentRow.Document, documentRow.OnKept ? wrappedDuplicateContactPair.Pair.KeptContact : wrappedDuplicateContactPair.Pair.RetiredContact, false)"
+                    available="metadataActionsEnabled"
+                    icon="&quot;info&quot;"
+                    iconType="svgFileName"
+                    id="ViewPropertiesLink"
+                    tooltip="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Actions.View.Tooltip&quot;)"/>
+                  <Link
+                    action="documentRow.Document.downloadContent()"
+                    available="contactDocumentsHelper.isDownloadDocumentContentAvailable(documentRow.Document, true)"
+                    download="attachment"
+                    icon="&quot;document_download&quot;"
+                    iconType="svgFileName"
+                    id="DownloadLink"
+                    tooltip="contactDocumentsHelper.DownloadDocumentContentTooltip(documentRow.Document)"
+                    visible="contactDocumentsHelper.isDownloadDocumentContentVisible(documentRow.Document)"/>
+                </LinkCell>
+                <TypeKeyCell
+                  id="Type"
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Type&quot;)"
+                  value="documentRow.Document.Type"
+                  valueType="typekey.DocumentType"/>
+                <TypeKeyCell
+                  id="Status"
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Status&quot;)"
+                  value="documentRow.Document.Status"
+                  valueType="typekey.DocumentStatusType"/>
+                <TextCell
+                  id="Author"
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Author&quot;)"
+                  value="documentRow.Document.Author"/>
+                <DateCell
+                  dateFormat="short"
+                  id="DateModified"
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.DateUploaded&quot;)"
+                  timeFormat="short"
+                  value="documentRow.Document.DateModified"/>
+                <LinkCell
+                  id="HiddenDocument"
+                  label="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Hidden&quot;)"
+                  sortBy="documentRow.Document.Obsolete"
+                  visible="DocumentRows.hasMatch(\ docRow -&gt; docRow.Document.Obsolete == true)">
+                  <Link
+                    icon="&quot;completed&quot;"
+                    iconType="svgFileName"
+                    id="HiddenLink"
+                    visible="documentRow.Document.Obsolete"/>
+                </LinkCell>
+                <CheckBoxCell
+                  id="DocumentOnKeptContact"
+                  label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContact&quot;, mergedContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"
+                  value="documentRow.OnKept"/>
+                <CheckBoxCell
+                  id="DocumentOnRetiredContact"
+                  label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContact&quot;, duplicateContacts.RetiredContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"
+                  value="documentRow.OnRetired"/>
+                <CheckBoxCell
+                  editable="documentRow.Document.Status != DocumentStatusType.TC_FINAL"
+                  id="DocumentOnUpdatedContact"
+                  label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.DocumentsCard.Include&quot;)"
+                  value="documentRow.Included"/>
+              </Row>
+            </RowIterator>
+          </ListViewPanel>
+        </Card>
+        <Card
+          id="RelatedContacts"
+          title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RelatedContacts&quot;)">
+          <DetailViewPanel>
+            <InputColumn>
+              <ListViewInput
+                def="DuplicateRelatedContactsLV(new gw.web.merge.ABContactWrapper(mergedContact), relatedContactsHolder.KeptContactRelatedContacts)"
+                id="KeptRelatedContacts"
+                label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContact&quot;, mergedContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"
+                labelAbove="true">
+                <Toolbar/>
+              </ListViewInput>
+            </InputColumn>
+            <InputColumn>
+              <ListViewInput
+                def="DuplicateRelatedContactsLV(new gw.web.merge.ABContactWrapper(wrappedDuplicateContactPair.Pair.RetiredContact), relatedContactsHolder.RetiredContactRelatedContacts)"
+                id="RetiredRelatedContacts"
+                label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContact&quot;, gw.web.merge.MergeContactsWebUtil.Instance.getRetiredCreateTime(duplicateContacts))"
+                labelAbove="true">
+                <Toolbar/>
+              </ListViewInput>
+            </InputColumn>
+          </DetailViewPanel>
+        </Card>
+        <Card
+          id="EFTInformation"
+          title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.EFTInformation&quot;)">
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContactUpdate&quot;, mergedContact.UpdateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"/>
+            <ListViewPanel>
+              <RowSetRef
+                def="EFTDataRowSet(eftDataHolder.KeptContactData, wrappedDuplicateContactPair)"
+                id="KeptContactEFTData"/>
+            </ListViewPanel>
+          </PanelRef>
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContactUpdate&quot;, gw.web.merge.MergeContactsWebUtil.Instance.getRetiredUpdateTime(duplicateContacts))"/>
+            <ListViewPanel>
+              <RowSetRef
+                def="EFTDataRowSet(eftDataHolder.RetiredContactData, wrappedDuplicateContactPair)"
+                id="RetiredContactEFTData"/>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+        <Card
+          id="VendorData"
+          title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.VendorData&quot;)"
+          visible="vendorDataCardHelper.ShowVendorDataCard">
+          <ListViewPanel>
+            <Row
+              renderAsSmartHeader="true">
+              <TextCell
+                id="vendorTagFieldName"
+                value="&quot;&quot;"/>
+              <TextCell
+                align="left"
+                id="vendorTagContact1"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContact&quot;, mergedContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"/>
+              <TextCell
+                align="left"
+                id="vendorTagContact2"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContact&quot;, duplicateContacts.RetiredContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"/>
+              <TextCell
+                id="vendorTagUpdatedContact"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.UpdatedContact&quot;)"/>
+            </Row>
+            <Row>
+              <TextCell
+                id="vendorTagLabel"
+                value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.HasVendorTag&quot;)"/>
+              <BooleanRadioCell
+                id="KeptContactHasVendorTag"
+                value="vendorDataCardHelper.KeptContactHasVendorTag"/>
+              <BooleanRadioCell
+                id="RetiredContactHasVendorTag"
+                value="vendorDataCardHelper.RetiredContactHasVendorTag"/>
+              <CheckBoxCell
+                editable="vendorDataCardHelper.MergedContactHasVendorTagEditable"
+                id="MergedContactHasVendorTag"
+                value="vendorDataCardHelper.MergedContactHasVendorTag">
+                <PostOnChange/>
+              </CheckBoxCell>
+            </Row>
+            <Row
+              id="VendorAvailabilityRow"
+              visible="vendorDataCardHelper.MergedContactHasVendorTag">
+              <TextCell
+                id="vendorAvailabilityLabel"
+                value="DisplayKey.get(&quot;Web.ContactDetail.VendorAvailability&quot;)"/>
+              <TypeKeyCell
+                align="center"
+                id="KeptContactVendorAvailability"
+                value="keptContact.VendorAvailability"
+                valueType="typekey.VendorAvailabilityType"/>
+              <TypeKeyCell
+                align="center"
+                id="RetiredContactVendorAvailability"
+                value="retiredContact.VendorAvailability"
+                valueType="typekey.VendorAvailabilityType"/>
+              <TypeKeyCell
+                align="center"
+                editable="true"
+                id="MergedContactVendorAvailability"
+                required="vendorDataCardHelper.MergedContactHasVendorTag"
+                value="mergedContact.VendorAvailability"
+                valueType="typekey.VendorAvailabilityType">
+                <PostOnChange/>
+              </TypeKeyCell>
+            </Row>
+            <Row
+              id="VendorUnavailableMessage"
+              visible="vendorDataCardHelper.ShowVendorUnavailableMessage">
+              <TextCell
+                id="vendorUnavailableMessageLabel"
+                value="DisplayKey.get(&quot;Web.ContactDetail.VendorUnavailableMessage&quot;)"/>
+              <TextCell
+                align="center"
+                id="KeptContactVendorUnavailableMessage"
+                value="keptContact.VendorUnavailableMessage"/>
+              <TextCell
+                align="center"
+                id="RetiredContactVendorUnavailableMessage"
+                value="retiredContact.VendorUnavailableMessage"/>
+              <TextCell
+                editable="true"
+                id="MergedContactVendorUnavailableMessage"
+                value="mergedContact.VendorUnavailableMessage"/>
+            </Row>
+          </ListViewPanel>
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.SpecialistServices&quot;)"/>
+            <ListViewPanel
+              visible="vendorDataCardHelper.ServiceRows.Count &gt; 0 and vendorDataCardHelper.MergedContactHasVendorTag">
+              <RowIterator
+                canPick="false"
+                editable="true"
+                elementName="serviceRow"
+                id="ServicesRowIterator"
+                pageSize="0"
+                value="vendorDataCardHelper.ServiceRows"
+                valueType="java.util.List&lt;gw.web.merge.VendorDataCardHelper.ServiceRow&gt;"
+                visible="vendorDataCardHelper.MergedContactHasVendorTag">
+                <Row>
+                  <TextCell
+                    id="ServiceNameCell0"
+                    label="DisplayKey.get(&quot;Web.ContactDetail.Services.Category&quot;)"
+                    value="serviceRow.getServiceNamePart(0)"/>
+                  <TextCell
+                    id="ServiceNameCell1"
+                    label="DisplayKey.get(&quot;Web.ContactDetail.Services.SubCategory&quot;)"
+                    value="serviceRow.getServiceNamePart(1)"/>
+                  <TextCell
+                    id="ServiceNameCell2"
+                    label="DisplayKey.get(&quot;Web.ContactDetail.Services.ServiceType&quot;)"
+                    value="serviceRow.getServiceNamePart(2)"/>
+                  <CheckBoxCell
+                    id="KeptContactHasService"
+                    label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.KeptContact&quot;, mergedContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"
+                    value="serviceRow.KeptContactHasService"/>
+                  <CheckBoxCell
+                    id="RetiredContactHasService"
+                    label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.RetiredContact&quot;, duplicateContacts.RetiredContact.CreateTime.formatDate(gw.i18n.DateTimeFormat.SHORT))"
+                    value="serviceRow.RetiredContactHasService"/>
+                  <CheckBoxCell
+                    editable="true"
+                    id="MergedContactHasService"
+                    label="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.UpdatedContact&quot;)"
+                    value="serviceRow.MergedContactHasService"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+      </CardViewPanel>
+    </Screen>
+    <Code><![CDATA[function retire() {
+  gw.transaction.Transaction.runWithNewBundle(\ bundle -> {
+    var pair = bundle.add(duplicateContacts)
+    pair.retire()
+  })
+}
+
+function mergeAndEdit() {
+  CurrentLocation.commit();
+  ContactDetail.push(mergedContact).startEditing();
+}]]></Code>
+  </Popup>
+</PCF>

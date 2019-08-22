@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddressConfig xmlns="http://guidewire.com/address-config">
+    <AddressDef name="AU">
+        <Match>
+            <Field name="Country" value="AU"/>
+        </Match>
+        <Fields>
+            <Field name="City" zonecode="city">
+                <AutoFillFromZone code="postalcode"/>
+                <AutoFillFromZone code="state"/>
+            </Field>
+            <Field name="State" zonecode="state">
+                <AutoFillFromZone code="postalcode"/>
+                <AutoFillFromZone code="city"/>
+            </Field>
+            <Field name="PostalCode" zonecode="postalcode">
+                <AutoFillFromZone code="city"/>
+              <ValidatorDef value="[0-9]{4}" description="Validator.PostalCode.FourDigit" input-mask="####"/>
+            </Field>
+        </Fields>
+    </AddressDef>
+</AddressConfig>

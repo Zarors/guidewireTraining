@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <MenuActions
+    id="AdminMenuActions">
+    <MenuItem
+      action="NewUser.go()"
+      id="AdminMenuActions_NewUserMenuItem"
+      label="DisplayKey.get(&quot;Web.Admin.Menu.NewUser&quot;)"
+      shortcut="S"/>
+    <MenuItem
+      action="NewGroup.go()"
+      id="AdminMenuActions_NewGroup"
+      label="DisplayKey.get(&quot;Web.Admin.NewGroup&quot;)"
+      shortcut="G"/>
+  </MenuActions>
+</PCF>

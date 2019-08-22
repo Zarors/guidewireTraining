@@ -1,0 +1,70 @@
+package rules.Preupdate.ABContactPreupdate_dir
+uses java.lang.String
+@gw.rules.RuleName("ABPU4000 - Subtype ABLawFirm")
+internal class ABPU4000SubtypeABLawFirm {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact typeis ABLawFirm
+and
+aBContact.ChangedFields.contains("LawFirmSpecialty")
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+
+
+ var hourlyRate = 284
+ var noteBody : String
+ var newNote = new ContactNote()
+ newNote.Subject ="Hourly rate calculation"
+ newNote.ContactNoteType = ContactNoteType.TC_GENERAL
+
+ if (aBContact typeis ABLawFirm) {
+    if(aBContact.LawFirmSpecialty == LegalSpecialty.TC_MOTORVEHLIABILITY) {
+		switch(aBContact.LawFirmSpecialty) {
+		  case LegalSpecialty.TC_GENERALLIABILITY:
+			 	hourlyRate = 262
+				break
+		  case LegalSpecialty.TC_WORKERSCOMP:
+			 	hourlyRate = 319
+				break
+		  case LegalSpecialty.TC_MOTORVEHLIABILITY:
+				hourlyRate = 295
+				break
+		  case LegalSpecialty.TC_PERSONALINJURY:
+				hourlyRate = 333
+				break
+		  default:
+				hourlyRate = 284
+		}
+	}
+	 }
+
+ noteBody =  String.format("The suggested hourly rate for %s is %s.", {aBContact.DisplayName, hourlyRate})
+ newNote.Body = noteBody
+
+/*end00rule*/
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CurrDev replacement for AcmeLavFirmUtil.java code

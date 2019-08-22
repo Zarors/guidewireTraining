@@ -1,0 +1,28 @@
+package rules.Preupdate.AddressPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Contact Secondary Address Added History Event")
+internal class ContactSecondaryAddressAddedHistoryEvent {
+  static function doCondition(address : entity.Address) : boolean {
+    
+/*start00rule*/
+return address.New
+and !address.Primary 
+and address.ABContactAddress != null 
+and address.ABContactAddress.Contact != null 
+
+/*end00rule*/
+
+  }
+
+  static function doAction(address : entity.Address, actions : gw.rules.Action) {
+
+/*start00rule*/
+var history = address.addHistory(CustomHistoryType.TC_ADDRESSADDED, DisplayKey.get("Rules.Preupdate.Address.AddressAdded.Secondary"))
+var fieldsToTrack = gw.api.address.AddressHistoryFieldUtil.getAddressFieldsToTrack(address)
+history.createTrackedChangesNoRestrict(address, fieldsToTrack)
+/*end00rule*/
+
+  }
+}

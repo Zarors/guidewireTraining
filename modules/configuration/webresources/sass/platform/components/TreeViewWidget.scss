@@ -1,0 +1,127 @@
+.gw-TreeViewWidget {
+  min-width: 100%;
+
+  td {
+    @include gw-wrapNever();
+  }
+
+  .gw-TreeView--leaf-icon {
+    @include gw-icon($gw-app--TreeView--leaf-icon, $gw-app--TreeView--leaf-icon-size);
+  }
+
+  .gw-TreeView--node--text, .gw-TreeView--expansion, .gw-TreeView--expansion > div {
+    display: inline-block;
+  }
+
+  .gw-TreeView--node--text {
+    padding-left: $gw-app--SPACING-rem-S;
+  }
+
+  .gw-TreeView--expand-cmd-icon {
+    @include gw-icon($gw-app--TreeView--expand-cmd-icon);
+  }
+
+  .gw-TreeView--collapse-cmd-icon {
+    @include gw-icon($gw-app--TreeView--collapse-cmd-icon);
+  }
+
+  .gw-TreeView--expanded-icon {
+    @include gw-icon($gw-app--TreeView--expanded-icon);
+  }
+
+  .gw-TreeView--collapsed-icon {
+    @include gw-icon($gw-app--TreeView--collapsed-icon);
+  }
+
+  .gw-TreeView--depth-marker {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: gw-lineHeightInFixedEms();
+  }
+
+  .gw-TreeView--cycled-icon {
+    @include gw-icon($gw-app--TreeView--cycled-icon);
+  }
+}
+
+@mixin gw-treeViewWidgetStyle($row-hover-bg, $row-hover-col, $expand-collapse-hover-bg, $expand-collapse-hover-col, $row-pad-top, $row-pad-left, $row-pad-right, $row-pad-bottom, $use-even-odd-rows, $row-odd-bg: null, $row-even-bg: null) {
+  table.gw-TreeViewWidget {
+    > tbody {
+      > tr {
+        &:hover:not(.gw-disabled) {
+          cursor: pointer;
+          background-color: $row-hover-bg;
+          .gw-TreeView--node--text {
+            color: $row-hover-col;
+          }
+        }
+
+        > td {
+          // Internal padding
+          padding-top: $row-pad-top;
+          padding-left: $row-pad-left;
+          padding-right: $row-pad-right;
+          padding-bottom: $row-pad-bottom;
+        }
+      }
+    }
+
+    .gw-TreeView--expand-cmd-icon, .gw-TreeView--collapse-cmd-icon {
+      padding-right: $gw-app--SPACING-rem-XS;
+      padding-left: $gw-app--SPACING-rem-S;
+      margin-right: $gw-app--SPACING-rem-XS;
+
+      &:hover:not(.gw-disabled) {
+        @include gw-borderRadius();
+        background-color: $expand-collapse-hover-bg;
+        color: $expand-collapse-hover-col;
+        cursor: pointer;
+      }
+    }
+
+    @if ($use-even-odd-rows) {
+      > tbody {
+        > tr:nth-child(odd) {
+          background-color: $row-odd-bg;
+        }
+
+        > tr:nth-child(even) {
+          background-color: $row-even-bg;
+        }
+      }
+    }
+  }
+}
+
+.gw-MenuTreeWidget {
+  @include gw-treeViewWidgetStyle(
+                  $gw-app--MenuTree--row-hover-bg,
+                  $gw-app--MenuTree--row-hover-col,
+                  $gw-app--MenuTree--expand-collapse-hover-bg,
+                  $gw-app--MenuTree--expand-collapse-hover-col,
+                  $gw-app--MenuTree--row-spacing-inner-top-rem,
+                  $gw-app--MenuTree--row-spacing-inner-left-rem,
+                  $gw-app--MenuTree--row-spacing-inner-right-rem,
+                  $gw-app--MenuTree--row-spacing-inner-bottom-rem,
+                  $gw-app--MenuTree--even-odd-row-highlighting,
+                  $gw-app--MenuTree--odd-row-bg,
+                  $gw-app--MenuTree--even-row-bg
+  )
+}
+
+.gw-TreeViewPanelWidget {
+  @include gw-treeViewWidgetStyle(
+                  $gw-app--TreeViewPanelWidget--row-hover-bg,
+                  $gw-app--TreeViewPanelWidget--row-hover-col,
+                  $gw-app--TreeViewPanelWidget--expand-collapse-hover-bg,
+                  $gw-app--TreeViewPanelWidget--expand-collapse-hover-col,
+                  $gw-app--TreeViewPanelWidget--row-spacing-inner-top-rem,
+                  $gw-app--TreeViewPanelWidget--row-spacing-inner-left-rem,
+                  $gw-app--TreeViewPanelWidget--row-spacing-inner-right-rem,
+                  $gw-app--TreeViewPanelWidget--row-spacing-inner-bottom-rem,
+                  $gw-app--TreeViewPanelWidget--even-odd-row-highlighting,
+                  $gw-app--TreeViewPanelWidget--odd-row-bg,
+                  $gw-app--TreeViewPanelWidget--even-row-bg
+  )
+}

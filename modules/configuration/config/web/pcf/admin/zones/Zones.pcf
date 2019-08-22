@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <LocationGroup
+    canVisit="true"
+    id="Zones"
+    menuLinks="BlankMenuLinks()"
+    title="&quot;Zones&quot;">
+    <LocationRef
+      location="ZonesPage()"/>
+  </LocationGroup>
+</PCF>

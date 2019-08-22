@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Data-gen action status."
+  name="DataGenStatusType"
+  platform="true">
+  <typecode
+    code="succeed"
+    desc="Action succeeded."
+    name="Succeed"/>
+  <typecode
+    code="failed"
+    desc="Action failed."
+    name="Failed"/>
+  <typecode
+    code="inProgress"
+    desc="Action in progress."
+    name="InProgress"/>
+</typelist>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- ### =================================================================================
+  ### Custom data distribution column names (owned by Custom data distribution request)
+  ### ================================================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores ordered column names for custom data distribution request."
+  entity="CustomDDColumn"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="customddcolumns"
+  type="keyable">
+  <column
+    desc="Column name."
+    name="ColumnName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Return type class name."
+    name="ReturnTypeClassName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="1-based ordering of columnname with CDDR."
+    name="ColumnOrder"
+    nullok="false"
+    type="integer"/>
+  <foreignkey
+    columnName="CustomDataDistRequestID"
+    desc="CustomDataDistRequest for this object."
+    exportable="false"
+    fkentity="CustomDataDistRequest"
+    ignoreforevents="true"
+    name="CustomDataDistRequest"
+    nullok="false"/>
+  <index
+    desc="Ensure ColumnOrder uniqueness per CustomDataDistRequest."
+    name="cddcolumnsu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="CustomDataDistRequestID"/>
+    <indexcol
+      keyposition="2"
+      name="ColumnOrder"/>
+  </index>
+</entity>

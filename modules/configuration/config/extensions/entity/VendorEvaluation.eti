@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <entity entity="VendorEvaluation" table="vendorevaluation" type="retireable" desc="Vendor evaluation" exportable="true" xmlns="http://guidewire.com/datamodel">
+  <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+    <implementsEntity name="Verifiable_Ext"/>
+	<implementsEntity
+		name="Extractable"/>
+	<column name="Evaluator" type="varchar" desc="Evaluator" nullok="true">
+			<columnParam name="size" value="30"/>
+	</column>
+  	<column name="EvaluationDate" type="datetime" desc="Date evaluation occurred" nullok="true" />	
+    <column name="Score_Timeliness" type="integer" desc="Score for timeliness" default="0" nullok="true" />
+    <column name="Score_Communication" type="integer" desc="Score for communication" default="0" nullok="true" />
+	<column name="Score_QualityOfWork" type="integer" desc="Score for quality of work" default="0" nullok="true" />
+    <column name="Score_Pricing" type="integer" desc="Score for pricing" default="0" nullok="true" />
+	<column name="Total_Score" type="integer" desc="Total_Score" default="0" nullok="true" />
+    <column name="EvaluatorComment" type="varchar" desc="Communicator" nullok="true" >
+			<columnParam name="size" value="100"/>
+	</column>
+    <typekey name="Status" typelist="VendorEvaluationStatus" desc="Status of vendor evaluation" default="unverified" nullok="true" />	
+	<foreignkey name="ABContact" columnName="ABContactID" fkentity="ABContact" desc="Contact under evaluation" nullok="true" />	
+  </entity>

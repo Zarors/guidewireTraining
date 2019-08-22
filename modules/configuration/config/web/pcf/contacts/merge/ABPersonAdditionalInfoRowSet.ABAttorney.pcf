@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ABPersonAdditionalInfoRowSet"
+    mode="ABAttorney">
+    <Require
+      name="contact"
+      type="ABPerson"/>
+    <Require
+      name="duplicate"
+      type="ABPerson"/>
+    <Require
+      name="merged"
+      type="ABPerson"/>
+    <Variable
+      initialValue="{contact, duplicate, merged}"
+      name="contacts"
+      type="ABPerson[]"/>
+    <Row>
+      <TextCell
+        bold="true"
+        colspan="4"
+        id="additionalInfo"
+        value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.AdditionalInfo&quot;)"/>
+    </Row>
+    <Row>
+      <TextCell
+        id="attorneyLicenseLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.Attorney.AttorneyLicense&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="attorneyLicense"
+        value="contacts"
+        valueType="entity.ABPerson[]">
+        <TextCell
+          editable="aContact == merged"
+          id="attorneyLicense"
+          value="(aContact as ABAttorney).AttorneyLicense"/>
+      </CellIterator>
+    </Row>
+    <Row>
+      <TextCell
+        id="attorneySpecialtyLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.Attorney.AttorneySpecialty&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="attorneySpecialty"
+        value="contacts"
+        valueType="entity.ABPerson[]">
+        <TypeKeyCell
+          editable="aContact == merged"
+          id="attorneySpecialty"
+          value="(aContact as ABAttorney).AttorneySpecialty"
+          valueType="typekey.LegalSpecialty"/>
+      </CellIterator>
+    </Row>
+  </RowSet>
+</PCF>

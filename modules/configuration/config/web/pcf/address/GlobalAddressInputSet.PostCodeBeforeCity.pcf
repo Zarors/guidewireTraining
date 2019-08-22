@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="GlobalAddressInputSet"
+    mode="PostCodeBeforeCity">
+    <Require
+      name="addressOwner"
+      type="gw.api.address.AddressOwner"/>
+    <Variable
+      initialValue="gw.api.contact.AddressAutocompleteHandler.createHandler(&quot;City&quot;,&quot;City,PostalCode,Country&quot;,true)"
+      name="cityhandler"
+      type="gw.api.contact.AutocompleteHandler"/>
+    <Variable
+      initialValue="gw.api.contact.AddressAutocompleteHandler.createHandler(&quot;PostalCode&quot;,&quot;City,PostalCode,Country&quot;,true)"
+      name="pchandler"
+      type="gw.api.contact.AutocompleteHandler"/>
+    <ReferencedWidget
+      widget="globalAddressContainer"/>
+    <Variable
+      initialValue="if (addressOwner != null) addressOwner.InEditMode = CurrentLocation.InEditMode; return 0"
+      name="saveEditMode"
+      recalculateOnRefresh="true"
+      type="java.lang.Integer"/>
+    <TextInput
+      hideIfEditable="true"
+      id="AddressSummary"
+      label="addressOwner.AddressNameLabel"
+      value="new gw.api.address.AddressFormatter().format(addressOwner.AddressDelegate, &quot;\n&quot;)"
+      visible="addressOwner.ShowAddressSummary"/>
+    <TypeKeyInput
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.COUNTRY)"
+      confirmMessage="DisplayKey.get(&quot;RangeInputAddress.CountryChangeWarning&quot;)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.COUNTRY)"
+      id="Country"
+      label="DisplayKey.get(&quot;Web.AddressBook.AddressInputSet.Country&quot;)"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.COUNTRY)"
+      showConfirmMessage="false"
+      value="addressOwner.SelectedCountry"
+      valueType="typekey.Country"
+      
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.COUNTRY)">
+      <PostOnChange
+        target="globalAddressContainer"/>
+    </TypeKeyInput>
+    <TextInput
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.ADDRESSLINE1)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.ADDRESSLINE1)"
+      id="AddressLine1"
+      label="addressOwner.AddressLine1Label"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.ADDRESSLINE1)"
+      value="addressOwner.AddressDelegate.AddressLine1"
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.ADDRESSLINE1)"/>
+    <TextInput
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.ADDRESSLINE2)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.ADDRESSLINE2)"
+      id="AddressLine2"
+      label="DisplayKey.get(&quot;Web.AddressBook.AddressInputSet.Address2&quot;)"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.ADDRESSLINE2)"
+      value="addressOwner.AddressDelegate.AddressLine2"
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.ADDRESSLINE2)"/>
+    <TextInput
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.ADDRESSLINE3)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.ADDRESSLINE3)"
+      id="AddressLine3"
+      label="DisplayKey.get(&quot;Web.AddressBook.AddressInputSet.Address3&quot;)"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.ADDRESSLINE3)"
+      value="addressOwner.AddressDelegate.AddressLine3"
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.ADDRESSLINE3)"/>
+    <AddressAutoFillInput
+      action="gw.api.contact.AddressAutocompleteUtil.autofillAddress(addressOwner.AddressDelegate, &quot;PostalCode&quot;)"
+      actionAvailable="addressOwner.AutofillIconEnabled"
+      autoComplete="pchandler"
+      autoCompleteArgIds="City,PostalCode,Country"
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.POSTALCODE)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.POSTALCODE)"
+      id="PostalCode"
+      inputConversion="gw.api.address.PostalCodeInputFormatter.convertPostalCode(VALUE, addressOwner.SelectedCountry)"
+      inputMask="gw.api.contact.AddressAutocompleteUtil.getInputMask(addressOwner.AddressDelegate, &quot;PostalCode&quot;)"
+      label="gw.api.address.AddressCountrySettings.getSettings(addressOwner.SelectedCountry).PostalCodeLabel"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.POSTALCODE)"
+      tooltip="addressOwner.AutofillIconEnabled ? DisplayKey.get(&quot;AutoFill.Override&quot;) : &quot;&quot;"
+      validationExpression="gw.api.contact.AddressAutocompleteUtil.validate(addressOwner.AddressDelegate, &quot;PostalCode&quot;, gw.api.address.AddressCountrySettings.getSettings(addressOwner.SelectedCountry).PostalCodeLabel)"
+      value="addressOwner.AddressDelegate.PostalCode"
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.POSTALCODE)">
+      <PostOnChange
+        onChange="if (addressOwner.AutofillEnabled) gw.api.contact.AddressAutocompleteUtil.autofillAddress(addressOwner.AddressDelegate, &quot;PostalCode&quot;, false)"
+        target="globalAddressContainer"/>
+    </AddressAutoFillInput>
+    <AddressAutoFillInput
+      action="gw.api.contact.AddressAutocompleteUtil.autofillAddress(addressOwner.AddressDelegate, &quot;City&quot;)"
+      actionAvailable="addressOwner.AutofillIconEnabled"
+      autoComplete="cityhandler"
+      autoCompleteArgIds="City,PostalCode,Country"
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.CITY)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.CITY)"
+      id="City"
+      label="gw.api.address.AddressCountrySettings.getSettings(addressOwner.SelectedCountry).CityLabel"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.CITY)"
+      tooltip="addressOwner.AutofillIconEnabled ? DisplayKey.get(&quot;AutoFill.Override&quot;) : &quot;&quot;"
+      validationExpression="gw.api.contact.AddressAutocompleteUtil.validate(addressOwner.AddressDelegate, &quot;City&quot;)"
+      value="addressOwner.AddressDelegate.City"
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.CITY)">
+      <PostOnChange
+        onChange="if (addressOwner.AutofillEnabled) gw.api.contact.AddressAutocompleteUtil.autofillAddress(addressOwner.AddressDelegate, &quot;City&quot;, false)"
+        target="globalAddressContainer"/>
+    </AddressAutoFillInput>
+    <CheckBoxInput
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.CEDEX)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.CEDEX)"
+      id="CEDEX"
+      label="DisplayKey.get(&quot;Web.AddressBook.AddressInputSet.CEDEX&quot;)"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.CEDEX)"
+      value="addressOwner.AddressDelegate.CEDEX"
+      visible="addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.CEDEX)">
+      <PostOnChange
+        onChange="if (not addressOwner.AddressDelegate.CEDEX) addressOwner.AddressDelegate.CEDEXBureau = null"
+        target="CEDEXBureau"/>
+    </CheckBoxInput>
+    <TextInput
+      available="addressOwner.isAvailable(gw.api.address.AddressOwnerFieldId.CEDEXBUREAU)"
+      editable="addressOwner.isEditable(gw.api.address.AddressOwnerFieldId.CEDEXBUREAU)"
+      id="CEDEXBureau"
+      label="DisplayKey.get(&quot;Web.AddressBook.AddressInputSet.CEDEXBureau&quot;)"
+      required="addressOwner.isRequired(gw.api.address.AddressOwnerFieldId.CEDEXBUREAU)"
+      value="addressOwner.AddressDelegate.CEDEXBureau"
+      visible="addressOwner.AddressDelegate.CEDEX and addressOwner.isVisible(gw.api.address.AddressOwnerFieldId.CEDEXBUREAU)"/>
+  </InputSet>
+</PCF>

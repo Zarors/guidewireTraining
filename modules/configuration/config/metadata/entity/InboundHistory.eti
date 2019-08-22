@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="true"
+  admin="true"
+  desc="History of inbound calls: soap and startable plugins"
+  entity="InboundHistory"
+  exportable="false"
+  extendable="true"
+  final="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="inboundhistory"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.profiler.impl.InboundHistoryImpl"/>
+  <column
+    desc="The date this call started."
+    name="StartDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="The date this call completed."
+    name="CompleteDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="Raw Profiler data"
+    name="ProfilerData"
+    nullok="true"
+    type="blob"/>
+  <events/>
+</entity>

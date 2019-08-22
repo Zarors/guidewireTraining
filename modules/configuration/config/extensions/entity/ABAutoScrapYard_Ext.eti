@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><subtype xmlns="http://guidewire.com/datamodel" entity="ABAutoScrapYard_Ext" supertype="ABCompanyVendor" displayName="Auto Scrap Yard">
+	<!-- This file contains an example of a new subtype and uses the naming conventions recommended  -->
+	<!-- for customer implementations. All other new subtypes are needed specifically for the        -->
+	<!-- TrainingApp "base application" and therefore do not follow the customer implementation      -->
+	<!-- naming conventions.                                                                         -->
+	<!-- For new subtypes, the subtype itself has the "_Ext" suffix, but the fields do not. --> 
+	<!-- Exception: if the new subtype is a subtype of a base application entity then the fields also have the "_Ext" suffix. -->
+	<!-- The subtype name cannot exceed 22 characters!                                     -->
+	<column name="CanPickUpVehicles_Ext" type="bit" desc="Can this yard tow non-operational vehicles to its yard?" nullok="true" />
+</subtype>

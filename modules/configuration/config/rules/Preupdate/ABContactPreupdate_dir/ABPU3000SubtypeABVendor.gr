@@ -1,0 +1,29 @@
+package rules.Preupdate.ABContactPreupdate_dir
+uses trainingapp.base.AssignedUserUtil
+
+@gw.rules.RuleName("ABPU3000 - Subtype AB--Vendor")
+internal class ABPU3000SubtypeABVendor {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+    //Check if contact is a vendor with no assigned user
+return (aBContact typeis ABCompanyVendor
+or
+aBContact typeis ABPersonVendor)
+and
+aBContact.AssignedUser == null
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// Execute the selectLeastBusyUser function. (This function takes an ABContact,
+// finds the user with the fewest contacts, and then sets the AssignedUser
+// field to that user. The function does not commit the data.
+ AssignedUserUtil.selectLeastBusyUser(aBContact)
+/*end00rule*/
+
+  }
+}

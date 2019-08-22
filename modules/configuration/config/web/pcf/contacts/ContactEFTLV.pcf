@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    id="ContactEFTLV">
+    <ExposeIterator
+      valueType="entity.EFTData"
+      widget="ContactEFTLV"/>
+    <Require
+      name="Contact"
+      type="ABContact"/>
+    <RowIterator
+      editable="true"
+      elementName="EFTRecord"
+      hideCheckBoxesIfReadOnly="true"
+      toAdd="Contact.addToEFTRecords( EFTRecord )"
+      toRemove="Contact.removeFromEFTRecords( EFTRecord )"
+      value="Contact.EFTRecords"
+      valueType="entity.EFTData[]">
+      <Row>
+        <TextCell
+          editable="true"
+          id="AccountName"
+          label="DisplayKey.get(&quot;Web.Contact.EFT.AccountName&quot;)"
+          value="EFTRecord.AccountName"/>
+        <TextCell
+          editable="true"
+          id="BankName"
+          label="DisplayKey.get(&quot;Web.Contact.EFT.BankName&quot;)"
+          required="true"
+          value="EFTRecord.BankName"/>
+        <TypeKeyCell
+          editable="true"
+          id="BankAccountType"
+          label="DisplayKey.get(&quot;Web.Contact.EFT.AccountType&quot;)"
+          required="true"
+          value="EFTRecord.BankAccountType"
+          valueType="typekey.BankAccountType"/>
+        <PrivacyCell
+          editable="true"
+          encryptionExpression="EFTRecord.maskBankAccountNumber(VALUE)"
+          id="BankAccountNumber"
+          label="DisplayKey.get(&quot;Web.Contact.EFT.AccountNumber&quot;)"
+          required="true"
+          value="EFTRecord.BankAccountNumber"/>
+        <TextCell
+          align="left"
+          editable="true"
+          id="BankRoutingNumber"
+          label="DisplayKey.get(&quot;Web.Contact.EFT.RoutingNumber&quot;)"
+          required="true"
+          value="EFTRecord.BankRoutingNumber"/>
+        <BooleanRadioCell
+          editable="true"
+          id="IsPrimary"
+          label="DisplayKey.get(&quot;Web.Contact.EFT.Primary&quot;)"
+          validationExpression="Contact.EFTRecords.countWhere( \ e -&gt; e.IsPrimary == true ) &gt; 1 ? DisplayKey.get(&quot;Web.Contact.EFT.Primary.Validation&quot;) : null"
+          value="EFTRecord.IsPrimary"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

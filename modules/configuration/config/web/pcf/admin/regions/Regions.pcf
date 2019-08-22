@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <LocationGroup
+    canVisit="perm.Region.view"
+    id="Regions"
+    menuLinks="BlankMenuLinks()"
+    title="DisplayKey.get(&quot;Web.Admin.Regions&quot;)">
+    <LocationRef
+      location="RegionsForward()"/>
+  </LocationGroup>
+</PCF>

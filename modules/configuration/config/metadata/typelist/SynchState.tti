@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    GENERAL-PURPOSE TYPELISTS
+  ******************************************************************************************************************** -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Sync states for claims and exposures"
+  final="true"
+  name="SynchState"
+  platform="true">
+  <typecode
+    code="unsynched"
+    desc="Object is unsynced"
+    name="unsynched"/>
+  <typecode
+    code="synch_sent"
+    desc="Object is sync_sent (first message has been generated)"
+    name="synch_sent"/>
+</typelist>

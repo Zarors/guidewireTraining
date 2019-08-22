@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<FieldValidators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/metadata/fieldvalidation.xsd">
+  <ValidatorDef name="PostalCode" description="Validator.PostalCode.GB" value=".+"/>
+</FieldValidators>

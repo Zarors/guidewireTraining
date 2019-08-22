@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageRequest"
+  name="LegalReportRequest">
+  <plugin-gosu
+    gosuclass="trainingapp.messaging.legalreport.LegalReportRequest"/>
+</plugin>

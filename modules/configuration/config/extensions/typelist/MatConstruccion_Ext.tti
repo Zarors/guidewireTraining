@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="MatConstruccion_Ext" desc="">
+  <typecode
+    code="Madera"
+    name="Madera"
+    priority="10"/>
+  <typecode
+    code="Ladrillo"
+    name="Ladrillo"
+    priority="20"/>
+  <typecode
+    code="Hormigon"
+    name="Hormigon"
+    priority="30"/>
+</typelist>

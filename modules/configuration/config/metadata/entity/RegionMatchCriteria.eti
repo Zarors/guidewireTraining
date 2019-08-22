@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="RegionMatchCriteria"
+  platform="true">
+  <typekey
+    name="Country"
+    nullok="true"
+    typelist="Country"/>
+  <typekey
+    name="ZoneType"
+    nullok="true"
+    typelist="ZoneType"/>
+  <column
+    name="Zone"
+    nullok="true"
+    type="shorttext"/>
+</nonPersistentEntity>

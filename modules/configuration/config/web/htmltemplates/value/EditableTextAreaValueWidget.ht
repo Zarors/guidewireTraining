@@ -1,0 +1,3 @@
+<textarea style="${heightOrMaxHeight}" disabled="${disabled}" name="${renderId}" maxlength="${maxlength}"
+          placeholder="${placeholder}"
+          class="${reflectionApplies ? 'gw-value-input-reflector'} ${noTrack ? 'gw-noTrack'}" ${systemAttributes}>${currentValue}</textarea>

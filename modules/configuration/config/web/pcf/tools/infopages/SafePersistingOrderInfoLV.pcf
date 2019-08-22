@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="SafePersistingOrderInfoLV">
+    <Require
+      name="safePersistingOrderTables"
+      type="List&lt;gw.api.tools.SafePersistingOrderInfoHelper.SafePersistingOrderData&gt;"/>
+    <RowIterator
+      canPick="false"
+      editable="false"
+      elementName="pair"
+      value="safePersistingOrderTables"
+      valueType="java.util.List&lt;gw.api.tools.SafePersistingOrderInfoHelper.SafePersistingOrderData&gt;">
+      <ToolbarFilter
+        name="Filter">
+        <ToolbarFilterOption
+          filter="new gw.api.tools.SafePersistingOrderInfoHelper.AllEntities()"
+          selectOnEnter="true"/>
+        <ToolbarFilterOption
+          filter="new gw.api.tools.SafePersistingOrderInfoHelper.WithRulesOnly()"/>
+      </ToolbarFilter>
+      <Row>
+        <TextCell
+          id="order"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SafePersistingOrder.Order&quot;)"
+          value="pair.Order"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          id="Name"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SafePersistingOrder.Name&quot;)"
+          value="pair.EntityName"/>
+        <TextCell
+          id="Table"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SafePersistingOrder.Table&quot;)"
+          value="pair.TableName"/>
+        <BooleanRadioCell
+          id="PreUpdateRules"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SafePersistingOrder.PreUpdateRules&quot;)"
+          value="pair.HasRules"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

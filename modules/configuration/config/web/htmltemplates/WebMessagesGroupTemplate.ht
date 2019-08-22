@@ -1,0 +1,29 @@
+<div id="${id}" class="gw-MessagesWidget--destination-group gw-MessagesWidget--group-${sourceString} gw-MessagesWidget--group-${highestSeverity} ${isSingleMessageGroup ? 'gw-MessagesWidget--single-message-group'}" data-gw-nav="${navId}" data-gw-desc="${destinationLabel}">
+    <div :for="subGroup" :in="subGroups" class="gw-MessagesWidget--severity-sub-group">
+        <div data-gw-click="${clickString}" data-gw-no-tabindex class="gw-MessagesWidget--subGroup-header gw-severity-${subGroup.severity}">
+            <div class="gw-icon"></div>
+            <div :if="subGroup.label" class="gw-subGroupLabel gw-text">${subGroup.label}</div>
+            <div :if="subGroup.subLabel" class="gw-subGroupSubLabel gw-text-small">${subGroup.subLabel}</div>
+            <div class="gw-toggle-button" id="${id}-${subGroup.severity}" data-gw-click="gwMessages.toggleSubGroup"></div>
+        </div>
+        <div :for="webMessage" :in="subGroup.webMessages" class="gw-WebMessage">
+            <div :if="webMessage.firstDisplayableMessage" id="${id}-${webMessage.id}" data-gw-click="${webMessage.messageAction}" class="gw-message--displayable gw-message--action ${webMessage.severityClass}">
+                <div class="gw-icon"></div>
+                <div class="gw-message-and-suffix">
+                    <div class="gw-message">
+                        ${webMessage.firstDisplayableMessage}
+                    </div>
+                    <div :if="webMessage.actionTextAsSuffix" class="gw-message--action-suffix" data-gw-click="${webMessage.suffixAction}">
+                        ${webMessage.actionTextAsSuffix}
+                    </div>
+                </div>
+            </div>
+            <div :for="message" :in="webMessage.restDisplayableMessages" class="gw-message--displayable ${webMessage.severityClass}">
+                <div class="gw-icon"></div><div class="gw-message">${message}</div>
+            </div>
+            <div :for="message" :in="webMessage.nonDisplayableMessages" class="gw-message--non-displayable">
+                <div class="gw-icon"></div><div class="gw-message">${message}<br/>${stacktraceMessage}</div>
+            </div>
+        </div>
+    </div>
+</div>

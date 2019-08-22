@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="GlobalContactNameInputSet"
+    mode="Japan">
+    <Require
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Variable
+      initialValue="nameOwner.InEditMode = CurrentLocation.InEditMode; return 0 as boolean"
+      name="saveEditMode"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <TextInput
+      id="NameSummary"
+      label="nameOwner.ContactNameLabel"
+      value="nameOwner.ContactName.NameKanji.HasContent ? nameOwner.ContactName.NameKanji : nameOwner.ContactName.Name"
+      visible="nameOwner.ShowNameSummary"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+      id="Name"
+      label="nameOwner.ContactNamePhoneticLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.NP_NAME)"
+      value="nameOwner.ContactName.Name"
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.NP_NAME)"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+      id="NameKanji"
+      label="nameOwner.ContactNameLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+      value="nameOwner.ContactName.NameKanji"
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.NAMEKANJI)"/>
+  </InputSet>
+</PCF>

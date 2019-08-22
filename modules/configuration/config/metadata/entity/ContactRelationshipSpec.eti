@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a specification of relationships to retrieve from the Address Book."
+  entity="ContactRelationshipSpec"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.ContactRelationshipSpecInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ContactRelationshipSpecImpl"/>
+  <fulldescription><![CDATA[
+      Represents a specification of relationships to retrieve/sync from the Address Book. The set of relationships to
+      retrieve from the Address Book is specified in contact-sync-config.xml. Each of the contactBidiRel that is specified
+      in &lt;IncludeRelationship&gt; in the contact-sync-config.xml is called "Syncable Relationship". A ContactRelationshipSpec
+      contains two sets of syncable relationships, "SourceRelationships" and "TargetRelationships" which is grouped according to
+      the contactBidiRel. This entity has been deprecated as of ClaimCenter 8.0 along with the IAddressBookAdapter plugin.
+    ]]></fulldescription>
+  <array
+    arrayentity="ContactRelationshipSpecRel"
+    arrayfield="Source"
+    desc="Relationships that the contact is on the source side."
+    exportable="true"
+    name="SourceRelationships"/>
+  <array
+    arrayentity="ContactRelationshipSpecRel"
+    arrayfield="Target"
+    desc="Relationships that the contact is on the target side."
+    exportable="true"
+    name="TargetRelationships"/>
+</nonPersistentEntity>

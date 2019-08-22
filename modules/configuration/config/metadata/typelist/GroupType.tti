@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Another case of a list that should be in the insurance vertical -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of groups"
+  final="false"
+  name="GroupType"
+  platform="true">
+  <typecode
+    code="root"
+    desc="This is the root group of an organization"
+    name="Root Group"/>
+</typelist>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+
+  <Zones countryCode="US">
+      <Zone code="zip" fileColumn="1" granularity="1" regionMatchOrder="1" unique="true">
+        <AddressZoneValue>
+          Address.PostalCode.substring(0,5)
+        </AddressZoneValue>
+        <Links>
+          <Link toZone="city"/>
+        </Links>
+      </Zone>
+
+      <Zone code="state" fileColumn="2" granularity="4" regionMatchOrder="3" >
+        <AddressZoneValue>
+          Address.State.Abbreviation.DisplayName
+        </AddressZoneValue>
+        <Links>
+          <Link toZone="zip" lookupOrder="1"/>
+          <Link toZone="county"/>
+          <Link toZone="city"/>
+        </Links>
+      </Zone>
+
+      <Zone code="city" fileColumn="3" granularity="2">
+        <ZoneCode>
+          state + ":" + city
+        </ZoneCode>
+        <AddressZoneValue>
+          Address.State.Abbreviation.DisplayName + ":" + Address.City
+        </AddressZoneValue>
+        <Links>
+          <Link toZone="zip"/>
+        </Links>
+      </Zone>
+
+      <Zone code="county" fileColumn="4" granularity="3" regionMatchOrder="2">
+        <ZoneCode>
+          state + ":" + county
+        </ZoneCode>
+        <AddressZoneValue>
+          Address.State.Abbreviation.DisplayName + ":" + Address.County
+        </AddressZoneValue>
+        <Links>
+            <Link toZone="zip" lookupOrder="1"/>
+            <Link toZone="city" lookupOrder="2"/>
+        </Links>
+      </Zone>
+    </Zones>
+
+</ZoneConfig>

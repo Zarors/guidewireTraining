@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    id="WorkQueueWorkItemsLV"
+    mode="Archive">
+    <ExposeIterator
+      flags="CanCheckin"
+      name="WorkQueueWorkItemsLV"
+      valueType="entity.WorkItem"
+      widget="WorkQueueWorkItemsLV"/>
+    <Require
+      name="Helper"
+      type="gw.api.web.tools.WorkQueueInfoPage"/>
+    <Require
+      name="Queue"
+      type="gw.api.web.tools.WorkQueueDisplayInfo"/>
+    <RowIterator
+      checkBoxVisible="item.Status != TC_AVAILABLE"
+      editable="false"
+      elementName="item"
+      hasCheckBoxes="true"
+      id="WorkItems"
+      value="Helper.getWorkItems( Queue ) as gw.api.database.IQueryBeanResult&lt;ArchiveWorkItem&gt;"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.ArchiveWorkItem&gt;">
+      <ToolbarFilter
+        name="Filter">
+        <ToolbarFilterOption
+          filter="new gw.api.web.tools.WorkQueueInfoPage.AllProblems()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.tools.WorkQueueInfoPage.AllFailures()"
+          selectOnEnter="true"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.tools.WorkQueueInfoPage.AllErrors()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.tools.WorkQueueInfoPage.AllActive()"/>
+      </ToolbarFilter>
+      <ToolbarFlag
+        condition="item.Status == TC_CHECKEDOUT || item.Status == TC_FAILED"
+        name="CanCheckin"/>
+      <Row
+        id="WorkItem">
+        <TextCell
+          id="ItemId"
+          label="DisplayKey.get(&quot;Web.WorkItem.Id&quot;)"
+          value="item.ID"
+          valueType="gw.pl.persistence.core.Key"
+          visible="true"/>
+        <DateCell
+          dateFormat="short"
+          id="createdTime"
+          label="DisplayKey.get(&quot;Web.WorkItem.CreateTime&quot;)"
+          timeFormat="medium"
+          value="item.CreationTime"/>
+        <DateCell
+          dateFormat="short"
+          id="updateTime"
+          label="DisplayKey.get(&quot;Web.WorkItem.UpdateTime&quot;)"
+          timeFormat="medium"
+          value="item.LastUpdateTime"/>
+        <DateCell
+          dateFormat="short"
+          enableSort="false"
+          id="availableAt"
+          label="DisplayKey.get(&quot;Web.WorkItem.AvailableAt&quot;)"
+          timeFormat="medium"
+          value="item.AvailableSinceAsDate"/>
+        <TextCell
+          id="checkedOutBy"
+          label="DisplayKey.get(&quot;Web.WorkItem.CheckedOutBy&quot;)"
+          value="item.CheckedOutBy"/>
+        <TextCell
+          id="writerId"
+          label="DisplayKey.get(&quot;Web.WorkItem.InstanceId&quot;)"
+          value="item.ProcessHistoryID"
+          valueType="java.lang.Long"/>
+        <TextCell
+          id="retries"
+          label="DisplayKey.get(&quot;Web.WorkItem.Attempts&quot;)"
+          value="item.Attempts"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          enableSort="false"
+          id="itemInfo"
+          label="DisplayKey.get(&quot;Java.Archive.ArchiveWorkQueue.ItemInfo&quot;)"
+          value="com.guidewire.pl.system.dependency.PLDependencies.getDomainGraphSupport().getInformationalString(item)"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

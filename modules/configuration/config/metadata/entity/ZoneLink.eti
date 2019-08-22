@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Links 2 zones."
+  entity="ZoneLink"
+  extendable="false"
+  platform="true"
+  table="zone_link"
+  type="joinarray">
+  <foreignkey
+    columnName="Zone1Id"
+    desc="Zone 1."
+    fkentity="Zone"
+    name="Zone1"
+    nullok="false"/>
+  <foreignkey
+    columnName="Zone2Id"
+    desc="Zone 2."
+    fkentity="Zone"
+    name="Zone2"
+    nullok="false"/>
+  <index
+    desc="Enforces uniqueness, should be only one entry for a particular pair of zones. Also used in autofill/autocomplete."
+    name="zonelinku1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Zone1Id"/>
+    <indexcol
+      keyposition="2"
+      name="Zone2Id"/>
+  </index>
+</entity>

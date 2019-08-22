@@ -1,0 +1,31 @@
+<div id="${renderId}" class="${outerClasses} ${disabled ? 'gw-disabled'} gw-action--outer" data-gw-menu-hover="${hover}" ${outerAttributes} ${outerStyles}>
+    <div class="gw-action--inner ${disabled ? 'gw-disabled'} ${innerClasses}" data-gw-confirm="${confirm}" data-gw-prompt="${promptQuestion}" data-gw-prompt-default="${promptDefault}" ${innerAttrs}>
+        <div :if="hasGraphics" class="gw-graphics"><div class="gw-graphics-inner"></div></div>
+        <div :if="minimizedView" class="gw-minimized-view">${minimizedView}</div>
+        <:control :unless="trailingIcon">
+            ${iconHTML}
+        </:control>
+        <div :if="allowsLabel" class="gw-label ${iconHTML ? 'gw-hasIcon'} ${useFlattenedMenuLabel ? 'gw-flattened-menu-label'}"><:control :if="htmlLabel">${htmlLabel}</:control><:control :unless="htmlLabel">${label}</:control>
+        </div>
+        <:control :if="trailingIcon">
+            ${iconHTML}
+        </:control>
+        <div :if="subLabel" class="gw-subLabel">${subLabel}</div>
+    </div>
+    <:control :if="hasChildren">
+        <div :if="showDivider" class="gw-action--divider">
+            <div class="gw-action--divider-inner"></div>
+        </div>
+        <div :if="!hiddenExpander"
+             class="gw-action--expand-button ${disabledExpander} ${disabled ? 'gw-disabled'} ${!standardClickAction ? 'gw-no-pointer'}"
+             data-gw-click="?{standardClickAction} toggleSubMenu">
+            <div class="gw-icon gw-icon--expand"></div>
+        </div>
+        <div class="gw-subMenu ${onDemand ? 'gw-deferred'} ${expanded ? 'gw-open'} ${multiCol ? 'gw-multi-col'}">
+            <div :if="onDemand" class="gw-deferred-menuItem">
+                <div class="gw-loader"></div>
+            </div>
+            ${:children}
+        </div>
+    </:control>
+</div>

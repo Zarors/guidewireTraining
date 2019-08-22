@@ -1,0 +1,52 @@
+package rules.EventMessage.EventFired_dir.BAEF1000BankAccountVerification_dir.BAEF1100BankAccount_dir.BAEF1110AddedChanged_dir
+uses gw.api.gx.GXOptions
+uses gw.xml.XmlSerializationOptions
+uses trainingapp.gosutemplates.BankAccountDataTemplate
+
+@gw.rules.RuleName("BAEF1111 - Field Changed")
+internal class BAEF1111FieldChanged {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return (messageContext.Root as BankAccount).isFieldChanged("BankName") or
+(messageContext.Root as BankAccount).isFieldChanged("RoutingNumber") or
+(messageContext.Root as BankAccount).isFieldChanged("AccountNumber") or
+(messageContext.Root as BankAccount).isFieldChanged("AccountType")
+
+
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+//messageContext root must be cast to appropriate type
+var aBankAccount = messageContext.Root as BankAccount
+var msg : Message
+// For savings account, use Gosu template
+if (aBankAccount.AccountType == BankAccountType.TC_SAVINGS) {
+  var payload = BankAccountDataTemplate.renderToString(aBankAccount.ABContact.PublicID, aBankAccount)
+  msg = messageContext.createMessage(payload)
+  } else {
+    // For checking or other accounts use XML modeler
+    var AllLabel = trainingapp.xmlmodels.bankaccountmodellabels.BankAccount.Label.default_label
+    var gxOpt = new GXOptions() {:Incremental = false, :Verbose = false}
+    var xml = new trainingapp.xmlmodels.bankaccountmodellabels.BankAccount(aBankAccount, gxOpt, {AllLabel})
+    // Create payload with serialization options
+    var opts = new XmlSerializationOptions()
+    opts.XmlDeclaration = false
+    opts.Sort = false
+    opts.Validate = false
+    var payload = xml.asUTFString(opts)
+    msg = messageContext.createMessage(payload)
+    }
+// Print statement is for training purposes only
+print("\n*** Stage 2 -- Creating the message ***" +
+      "\n    Event Fired rules: " + actions.Rule.DisplayName +
+      "\n    Sending payload to console:" +
+      "\n" + msg.Payload)
+/*end00rule*/
+
+  }
+}

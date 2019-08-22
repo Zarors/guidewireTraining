@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- Abstract Data Type Definitions:
+(do not edit these unless you know what you are doing!) -->
+<DataTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../platform/pl/xsd/datatypes.xsd">
+  <ClaimNumberDataType length="40" validator="ClaimNumber"/>
+  <PostalCodeDataType length="60"/>
+  <SpeedDataType validator="Speed"/>
+  <PhoneDataType length="30" validator="Phone"/>
+  <YearDataType validator="Year"/>
+  <PolicyNumberDataType length="40" validator="PolicyNumber"/>
+  <VINDataType length="40" validator="VIN"/>
+  <FirstNameDataType length="30" validator="FirstName"/>
+  <LastNameDataType length="30" validator="LastName"/>
+  <CompanyNameDataType length="60" validator="CoName"/>
+  <SSNDataType length="30" validator="SSN"/>
+  <DriverLicenseDataType length="20"/>
+  <ContactIdentifierDataType length="60"/>
+  <!-- NOTE: Validators do not yet work with Money due to problems with Double.toString() and
+         exponential notation -->
+  <MoneyDataType precision="18" scale="2"/>
+  <RiskDataType precision="6" scale="2" validator="Risk"/>
+  <ExmodDataType precision="5" scale="4" validator="Exmod"/>
+  <EmploymentClassificationDataType length="6" validator="EmploymentClassification"/>
+  <PercentageDecDataType precision="4" scale="1"/>
+  <DaysWorkedWeekDataType precision="2" scale="1"/>
+  <HoursWorkedDayDataType precision="3" scale="1"/>
+  <AccountDataType length="40" validator="PolicyNumber"/>
+  <AddressLineDataType length="60" validator="AddressLine"/>
+  <RateDataType precision="10" scale="4"/>
+  <RatingLineBasisAmountDataType precision="22" scale="2"/>
+  <ProrationFactorDataType precision="5" scale="4"/>
+  <CreditCardNumberDataType length="30" validator="CreditCardNumber"/>
+  <DunAndBradstreetNumberDataType length="11" validator="DunAndBradstreetNumber"/>
+  <ExchangeRateDataType precision="7" scale="6" validator="ExchangeRate"/>
+  <!-- NOTE: 1333 is the safe maximum for Oracle UTF-8 database with "CHAR" length semantics. -->
+  <MediumTextDataType length="1333"/>
+</DataTypes>

@@ -1,0 +1,229 @@
+.gw-south-panel {
+  background-color: $gw-app--bg;
+  @include gw-z-index(southPanel);
+
+  box-shadow: $gw-app--SouthPanel--top-shadow;
+  position: relative;
+  min-height: $gw-app--SouthPanel--min-height-em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  border-top: $gw-app--SouthPanel--top-border-w-px solid $gw-app--SouthPanel--top-border-col;
+
+  .gw-SouthPanelWidget--top-section {
+    background-color: $gw-app--SouthPanel--top-section-bg;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: gw-border($gw-app--CardTabs--border-col);
+
+    @mixin gw-SouthPanelFloatToggleIcon($glyph) {
+      position: absolute;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      @include gw-icon($glyph);
+    }
+
+    @if($gw-app--SouthPanel--use-float-toggle) {
+
+      #gw-south-panel-toggleMinMax_float {
+        font-weight: bold;
+        font-size: gw-pxFixed(14);
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        width: gw-pxFixed(64);
+        max-width: 100%;
+        transform-origin: center top;
+        height: gw-pxFixed(14);
+        background-color: $gw-app--WestPanel--floatToggle--bg;
+        color: $gw-app--WestPanel--floatToggle--col;
+        @include gw-z-index(floatingButtons);
+        border-top-right-radius: gw-pxFixed(10);
+        border-top-left-radius: gw-pxFixed(10);
+        @include gw-clickable($gw-app--palette--gray-5, gw-pxFixed(2));
+
+        &:not(.gw-minimized) {
+          .gw-icon {
+            @include gw-SouthPanelFloatToggleIcon($gw-app--SouthPanel--floatToggle--close-glyph)
+          }
+        }
+
+        &.gw-minimized {
+          .gw-icon {
+            @include gw-SouthPanelFloatToggleIcon($gw-app--SouthPanel--floatToggle--open-glyph)
+          }
+        }
+
+      }
+      .gw-SouthPanelWidget--layout-bar {
+        display: none;
+      }
+    } @else {
+      #gw-south-panel-toggleMinMax_float {
+        display: none;
+      }
+    }
+
+
+    //See CardView.scss for WorksheetTabBar
+    @if($gw-app--SouthPanel--use-compressed-tabs) {
+      .gw-WorksheetTabBarWidget {
+        .gw-WorksheetTabWidget {
+          & > .gw-action--inner {
+            padding-top: gw-remScaled(.3);
+            padding-bottom: gw-remScaled(.3);
+          }
+        }
+      }
+    }
+
+    .gw-SouthPanelWidget--layout-bar {
+      align-self: stretch;
+
+      #gw-SouthPanel--toggle {
+        height: 100%;
+        @include gw-button--base($bg: transparent, $col: $gw-app--col, $pad-v: 0, $pad-h: 0);
+        position: relative;
+        padding: gw-remScaled(.2) gw-remScaled(.1) gw-remScaled(.1) gw-remScaled(.2); //TODO: theme
+
+        //TODO: could theme this toggle
+        &:hover {
+          @include gw-button--colors($bg: $gw-app--menus--hover--bg, $col: $gw-app--menus--hover--col);
+        }
+
+        &:not(.gw-minimized) {
+          @include gw-icon($gw-app--SouthPanel--minmax-close-glyph);
+        }
+
+        &.gw-minimized {
+          @include gw-icon($gw-app--SouthPanel--minmax-open-glyph);
+        }
+      }
+    }
+  }
+
+  &.gw-navHasErrors {
+    .gw-SouthPanelWidget--top-section {
+      background-color: $gw-app--palette--error;
+    }
+  }
+
+  &.gw-makeSouthPanel--min {
+    .gw-SouthPanelWidget--top-section {
+      border-bottom: 0 solid transparent;
+    }
+    .gw-SouthPanelWidget--bottom-section {
+      display: none;
+    }
+    @if($gw-app--SouthPanel--use-compressed-tabs) {
+      .gw-WorksheetTabBarWidget {
+        padding-top: $gw-app--SPACING-rem-XS;
+        .gw-WorksheetTabWidget {
+          & > .gw-action--inner {
+            padding-top: gw-remScaled(.1);
+            padding-bottom: gw-remScaled(.1);
+          }
+        }
+      }
+    }
+  }
+
+  .gw-SouthPanelWidget--drag {
+    position: absolute;
+    @include gw-z-index(panelDrag);
+    transition: opacity 1s;
+    height: $gw-app--SouthPanel--drag-bar--height-px;
+    width: 100%;
+    top: -2 * $gw-app--border-width-px;
+    right: 0;
+    cursor: row-resize;
+    opacity: 0;
+    background-color: $gw-app--SouthPanel--drag-bar--bg;
+    box-sizing: content-box;
+
+    .gw-SouthPanelWidget--drag-inner {
+      display: block;
+      width: 100%;
+      height: 0;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      opacity: 0;
+      background-color: $gw-app--bg;
+      transition: opacity 1s;
+
+      & + .gw-SouthPanelWidget--drag-inner {
+        bottom: auto;
+        top: 100%;
+        background-color: $gw-app--WestPanel--bg; //TODO: theme
+      }
+    }
+  }
+
+  &.gw-beingResized {
+    .gw-SouthPanelWidget--drag {
+      opacity: .9;
+      .gw-SouthPanelWidget--drag-inner {
+        opacity: .85;
+        height: $gw-app--spacing-off-screen;
+      }
+    }
+  }
+
+  &:not(.gw-beingResized){
+    .gw-SouthPanelWidget--drag {
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  &.gw-makeSouthPanel--min {
+    height: $gw-app--SouthPanel--min-height-em;
+  }
+}
+
+// ========== Bottom Section ==============
+.gw-SouthPanelWidget--bottom-section {
+  display: flex;
+  flex-shrink: 1;
+  flex-grow: 1;
+
+  .gw-ScreenWidget {
+    overflow: auto;
+
+    @if($gw-app--SouthPanel--force-titles-to-standard-text) {
+      .gw-TitleBarWidget {
+        font-size: gw-remScaled(1);
+        padding-top: $gw-app--SPACING-rem-M;
+        padding-bottom: $gw-app--SPACING-rem-M;
+        .gw-TitleBar--titles--container {
+          .gw-TitleBar--title {
+            font-weight:gw-weight(normal);
+            font-size: gw-remScaled(1);
+          }
+        }
+      }
+    } @else {
+      padding-top: $gw-app--SPACING-rem-M;
+      .gw-TitleBarWidget {
+        font-size: gw-remScaled(1);
+        padding-bottom: $gw-app--SPACING-rem-XS;
+        .gw-TitleBar--titles--container {
+          .gw-TitleBar--title {
+            font-weight:gw-weight(bold);
+            font-size: $gw-app--SPACING-rem-XL;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,10 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <service name="ITestHarnessAPI" provider="java:RPC">
+    <parameter name="allowedMethods" value="getRunlevel,setRunlevel,snapshotDatabase,resetDatabase,runGosuProgram,doPerfDataGen,testGroupAssignmentPerformance,testAddressBookPerformance,testAxisPerformance,doProductSpecificDataSetup,flushQPlexor,enableRules,disableRules,verifyWorkflowStarted,verifyWorkflowOnStep,invokeWorkflowTrigger,verifyWorkflowTriggerAvailable,verifyWorkflowTriggerUnavailable,workflowPassTime,workflowSetTime,advanceSpecifiedDates"/>
+
+    <parameter name="className" value="com.guidewire.testharness.TestHarnessImpl"/>
+    <parameter name="wsdlTargetNamespace" value="http://www.guidewire.com/soap/"/>
+    <parameter name="wsdlServicePort" value="ITestHarnessAPI"/>
+    <parameter name="wsdlServiceElement" value="ITestHarnessAPIService"/>
+  </service>
+</deployment>

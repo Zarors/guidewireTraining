@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="DecentralizedEntity"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.admin.DecentralizedEntityPublicMethods"
+    impl="com.guidewire.pl.domain.admin.impl.DecentralizedEntityImpl"/>
+  <fulldescription><![CDATA[
+    A delegate containing the foreign key for decentralized admin entities.
+  ]]></fulldescription>
+</delegate>

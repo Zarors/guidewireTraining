@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents the results of an Address Book search."
+  entity="ContactSearchResult"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.ContactSearchResultPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ContactSearchResultImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.ContactSearchResultInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ContactSearchResultImpl"/>
+  <fulldescription><![CDATA[
+      ContactSearchResult has been deprecated since ClaimCenter 8.0 along with IAddressBookAdapter.
+      <p>Represents the set of results and additional information returned by an Address Book search.
+      See the <code>IAddressBookAdapter</code> for information on searching for contacts.
+      </p>
+    ]]></fulldescription>
+  <column
+    default="0"
+    desc="Gets the total number of results. This will only be populated if the corresponding ContactSearchResultSpec has includeTotal = true."
+    name="TotalResults"
+    nullok="true"
+    type="integer"/>
+  <foreignkey
+    desc="Gets the Contact that was matched, or null if none."
+    fkentity="Contact"
+    name="Contact"
+    nullok="true"/>
+  <typekey
+    desc="Indicates wheather the search succeeded of failed, and if failed, why."
+    name="SearchResultType"
+    nullok="true"
+    typelist="ContactSearchResultType"/>
+  <!-- TODO: (ResultType) Should be renamed to MatchResultType -->
+  <typekey
+    desc="Provides more detail about the result of the match."
+    name="ResultType"
+    nullok="true"
+    typelist="ContactMatchResultType"/>
+</nonPersistentEntity>

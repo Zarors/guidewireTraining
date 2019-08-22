@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="UserRoleOwner"
+  platform="true"
+  requiresType="editable">
+  <implementsInterface
+    iface="gw.api.assignment.UserRoleOwner"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.UserRoleOwnerInternalMethods"/>
+  <fulldescription><![CDATA[
+    Interface for entities which have a UserRole array for "secondary" assignments.
+  ]]></fulldescription>
+</delegate>

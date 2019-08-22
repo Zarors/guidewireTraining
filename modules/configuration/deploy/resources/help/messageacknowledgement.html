@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Message Acknowledgement</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<p class="heading1">Message Acknowledgement</p>
+
+<p class="body">This page is designed to let students respond to messages from five specific destinations in TrainingApp (Bank Account Verification, Vendor Recommendation, Legal Case Report, the demo Message Generator, and the demo Safe Ordering destination). Within reason, it can also be used to acknowledge messages from student-created destinations.</p>
+
+<p class="heading2">How Does It Work?</p>
+
+<p class="body">The Message Acknowledgement screen contains five fields. You always need to set the first three fields. The other two fields are required only under certain circumstances.</p>
+
+<p class="body">For every message reply, you must set:</p>
+<ul class="body">
+     <li><p class="body"><strong>Destination:</strong> The destination from which the message was sent.</li>
+     <li><p class="body"><strong>SenderRefID:</strong> The SenderRefID of the message. (Bank Account Verification messages are typically acknowledged synchronously and do not get SenderRefIDs. If you need to response to a non-acknowledged Bank Account Verification message, use the Message ID as the SenderRefID.)</li>
+     <li><p class="body"><strong>External System Response:</strong> There are four choices.</p>
+	<ul class="body">
+	     <li><em>1: Positive Acknowledgement</em> - The message is positively acknowledged.</li>
+	     <li><em>2: Negative Acknowledgement (error)</em> - The message is reported as an error. You need to specify the error category. The message will automatically be retried. The first retry will be one minute later. The second will be two minutes later, and so on. If the message has reached the maximum number of retries, then it will not be retried. The maximum number of retries is determined by the MaxRetriesForRetryableMessage script parameter (which is initially set to 2).</li>
+	     <li><em>3: Duplicate</em> - The message is a duplicate.</li>
+	     <li><em>4: No Response</em> - There is no response for the message.  This actually does not do anything in terms of the external system not responding.</li>
+	</ul></li>
+</ul>
+
+<p class="body">There are two additional fields that may be needed based on the choices in the first three fields:</p>
+<ul class="body">
+     <li><p class="body"><strong>Error Category:</strong> If a message is reported as a error, then you must specify an error category. This gets used if the message has reached its maximum number of retries. (This field is available only when reporting a error.)</li>
+     <li><p class="body"><strong>Vendor Profile Code:</strong> If a message is a positive acknowledgement for a Vendor Recommendation message, then you must provide a Vendor Profile Code (a string of up to 10 characters). This code is displayed on the Vendor Info card for vendors who have been recommended. (This field is available only for positive acknowledgements of vendor recommendations.)</li>
+</ul>
+
+<p class="body">Once the required fields have been set, click "Send response". The Results field displays the action taken. For errors, it will identify if the maximum number of retries have been reached.</p>
+
+<p class="heading2">Does This Demo Perform Error Checking?</p>
+
+<p class="body">Yes and no.</p>
+
+<p class="body">The demo does checking that pertains specifically to this page. In other words, it verifies that the inputs are logical:</p>
+	<ul class="body">
+	     <li><p class="body">You must specify a destination.</li>
+	     <li><p class="body">You must specify a SenderRefID. (For the Bank Account Verification destination, specify a MessageID.)</li>
+	     <li><p class="body">You must specify an external system response type. If the external system response type is a error, then you must also specify an error category.</li>
+	     <li><p class="body">For positive acknowledgements of Vendor Recommendation messages, you must specify a vendor profile code.</li>
+	     <li><p class="body">If there is no message with the given SenderRefID (or Message ID), then the page will report that no message with that ID could be found.</li>
+	</ul>
+
+<p class="body">The demo does not check for any general errors that could occur while acknowledging messages. This has been done intentionally to help demonstrate how the system behaves when certain erroneous conditions occur. For example:</p>
+	<ul class="body">
+	     <li><p class="body">If a message in the Message table has a status of "Retryable Error" and you attempt to acknowledge the message, the application throws an IllegalStateException.</p>
+	</ul>
+
+<p class="heading2">Can I Use This Screen For Message Integration Points Created In Class?</p>
+
+<p class="body">In most cases, yes.</p>
+
+<p class="body">The code used by this screen searches for the message using the SenderRefID and Destination ID. However, the query is constrainted by Destination ID only if the destination is one of the four in the base TrainingApp application. For student-defined destinations, the query simply looks for a message from any destination with the given SenderRefID. So, if you create a message integration point that assigns unique SenderRefIDs to messages, then the Acknowledgement Screen will work for those messages.</p>
+
+<p class="body">Keep in mind that, in a production system, each destination typically has its own value for maximum number of retries. The Message Acknowledgement screen uses a single global script parameter. By default, it is set to 2. You can modify this by going into TrainingApp, navigating to the Administration tab's Script Parameters screen, and resetting the MaxRetriesForRetryableMessage parameter.</p>
+
+<p class="heading2">Where Can I Find The Code That Is Used By This Page?</p>
+<ul class="body">
+
+     <li><p class="body">IntegrationMessageAcknowledgementPage</p>
+          <ul class="body">
+               <li><p class="body">"Send Response" button's action property</p>
+          </ul>
+     </li>
+     <li><p class="body">Classes</p>
+          <ul class="body">
+               <li><p class="body">trainingapp.demo.messageack.MessageAckPage</p>
+               <li><p class="body">trainingapp.demo.messageack.MessageAckUtil</p>
+          </ul>
+     </li>
+</ul>
+
+</body>
+</html>

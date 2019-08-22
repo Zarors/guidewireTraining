@@ -1,0 +1,11 @@
+<div :if="horizontalChart" class="gw-chart-legend gw-chart-legend-horizontal ${hasDualLegend ? 'gw-chart-legend-dual'}">
+  <div :if="hasDualLegend" class="gw-chart-legend gw-chart-legend-left"></div>
+  <div :if="hasDualLegend" class="gw-chart-legend gw-chart-legend-right"></div>
+</div>
+
+<div class="gw-tcp-ChartContainer">
+  <svg class="gw-tcp-chart-svg"></svg>
+</div>
+<div class="gw-tcp-Spacer"></div>
+<div :if="pieChart" class="gw-chart-legend gw-chart-legend-vertical"></div>
+<input type="hidden" data-gw-chart-id="${renderId}" data-gw-chart-spec="${chartJson}" data-gw-chart-should-render>

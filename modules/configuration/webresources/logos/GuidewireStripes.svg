@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="314px" height="285px" viewBox="0 0 314 285" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>GW_Colored_Stripes</title>
+    <g id="GW_Colored_Stripes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-905.000000, -43.000000)">
+        <g id="Page-1" transform="translate(905.000000, 43.000000)">
+            <polygon id="Fill-1" fill="#03749F" points="209.448562 0 0 219.12405 23.7738935 244 257 0"></polygon>
+            <polygon id="Fill-2" fill="#68CCE7" points="289.373045 0 104 193.211411 127.785223 218 314 25.2431927 314 0.290911505"></polygon>
+            <polygon id="Fill-3" fill="#00ACBA" points="185 193.152792 208.891154 218 314 108.693144 314 59"></polygon>
+            <polygon id="Fill-4" fill="#CECCCB" points="202 260.275481 225.816351 285 314 193.450303 314 144"></polygon>
+            <polygon id="Fill-5" fill="#696564" points="128.565734 0 8 125.342881 31.7183469 150 176 0"></polygon>
+        </g>
+    </g>
+</svg>

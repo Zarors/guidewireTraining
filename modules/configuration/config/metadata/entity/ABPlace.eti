@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Generic place."
+  displayName="Place"
+  entity="ABPlace"
+  final="false"
+  supertype="ABContact">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABPlace"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABPlaceImpl"/>
+</subtype>

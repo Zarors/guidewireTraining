@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Keyboard Shortcuts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading2">The Philosophy of TrainingApp</p>
+<p class="body">The purpose of this document is to identify the philosophy behind TrainingApp. This document is being written for all
+individuals who might make modifications to future builds of TrainingApp.</>
+
+<p class="body">TrainingApp was created to solve two problems: (1) How can we create one set of materials that teaches all students
+about the platform-level fundamentals of configuration, regardless of the product they are going to work with? (2) How can we provide
+students with a learning environment which contains clean, clear examples of what they need to learn and avoids heavy usage of (fairly
+non-intuitive) insurance business functionality?</>
+
+<p class="body">The design of TrainingApp was directed by a specific set of philosophies. Future changes to TrainingApp should keep these
+philosophies in mind. The philosophies are elaborated upon below in no particular order.</p>
+
+<p class="heading2">TrainingApp Should Have Intuitive Business Functionality</p>
+
+<p class="body">The purpose of TrainingApp is to teach people the fundemantals of configuration. It is not intended to teach them about
+any real business functionality. Therefore, the business functionality of TrainingApp should be as intuitive as possible. Things should
+work the way people would expect them to work. As much as possible, TrainingApp should avoid having business functionality that requires
+a more-than-casual understanding of the insurance industry.</p>
+
+<p class="heading2">TrainingApp Should Not Make Later Learning More Difficult</p>
+
+<p class="body">TrainingApp contains functionality similar to what can be found in "real" Guidewire applications. When working with
+TrainingApp, people will unintentionally be learning about real Guidewire functionality. Therefore, there shouldn't be anything in
+TrainingApp which makes later learning more difficult. (For example, TrainingApp has notes functionality. Notes are created and viewed via
+worksheets. This is because notes in real Guidewire apps are always done in worksheets. If TrainingApp notes were rendered in popups, it
+would make later learning about "real" notes a bit harder.</p>
+
+<p class="heading2">TrainingApp Should Not Look Like a Real Guidewire Application</p>
+
+<p class="body">Guidewire Marketing wants to ensure that customers do not think that TrainingApp is a real Guidewire product which can
+be purchased. Therefore, specific steps have been taken to prevent it from looking like a real Guidewire product. This includes: (1) Using
+a product name which doesn't end in "Center". (This is why it isn't called TrainingCenter.) (2) Including UI elements which are obviously
+incomplete and which have been labelled as such (such as the Interactions screen). (3) Removing as many references to ContactCenter as
+possible.</p>
+
+<p class="heading2">TrainingApp Needs One Clean Example Of All Fundamental Platform Functionality</p>
+
+<p class="body">The primary purpose of TrainingApp is to provide one clean example of the platform functionality we teach. It is also
+possible that we might change what we teach in the future, and it is possible that an instructor may want to point to an example of something
+that isn't taught but which a student asks about or wants to be aware of. Therefore, there should be an example of all fundamental platform
+functionality in TrainingApp. Furthermore, each example should be listed in the ExampleList box so that it is easy for people to identify
+where the example is.</p>
+
+<p class="body">The following detailed philosophies were used with each screen:
+<ul>
+<li>Except for the Details screen, all screens should display fields declared at the ABContact level. (This restricts the work with subtypes
+and casting to a single screen and leaves the majority of the application free of that complexity.</li>
+<li>All of the Person-level fields should be displayed on the Detail screen's Person Info card. All of the Company-level fields should be
+displayed on the Detail screen's Company Info card. All of the Place-level fields should be displayed on the Detail screen's Place Info card.
+This is to make it easier to determine where in the UI/PCF files to look for a given field declared below the ABContact level.</li>
+</p>
+
+<p class="heading2">TrainingApp Should Fully Adhere To Best Practices and Recommended Naming Conventions</p>
+
+<p class="body">This includes: "customer" database extensions to the data model, PCF file names, PCF variable names, inlining/reuse of
+PCF files, GScript coding standards, and business rule names.</p>
+
+<p class="heading2">TrainingApp Should Avoid Having Complex Functionality If It Isn't Needed</p>
+
+<p class="body">The purpose of TrainingApp is to be a simple example of platform functionality. Therefore, functionality which is unnecessarily
+complex or difficult to understand should be avoided. For example, the Related Contacts functionality of ContactCenter was not copied over into
+TrainingApp because it involves extensive work with bi-directional relationships, and it involves references to internal code.</p>
+
+</body>
+</html>
+

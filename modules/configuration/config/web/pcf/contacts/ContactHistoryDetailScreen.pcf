@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Screen
+    id="ContactHistoryDetailScreen">
+    <Require
+      name="history"
+      type="ContactHistory"/>
+    <Toolbar/>
+    <PanelRef
+      def="ContactHistoryDV(history)"/>
+    <PanelRef
+      def="HistoryTrackedChangesLV(history)"
+      visible="history.TrackedChanges.Count &gt; 0">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.ContactHistoryDetail.TrackedChanges&quot;)"/>
+      <Toolbar/>
+    </PanelRef>
+  </Screen>
+</PCF>

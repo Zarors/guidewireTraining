@@ -1,0 +1,27 @@
+package rules.EventMessage.EventFired_dir.PolicyCenter_dir.Contact_dir
+uses gw.plugin.Plugins
+uses gw.plugin.ClientSystemPlugin
+uses gw.plugin.AsyncMessageType
+
+@gw.rules.RuleName("Remove")
+internal class Remove {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.EventName == "ABContactRemoved"
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+  var contact = messageContext.Root as ABContact
+  var plugin = Plugins.get("PolicySystemPlugin") as ClientSystemPlugin
+  if (plugin != null) {
+    plugin.createAsyncMessage(messageContext, contact, AsyncMessageType.Remove)
+  }
+/*end00rule*/
+
+  }
+}

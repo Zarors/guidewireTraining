@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/currency" xmlns="http://guidewire.com/currency">
+  
+  <xsd:element name="Currency">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="1">
+        <xsd:element ref="CurrencyType" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="CurrencyFormat">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:attribute name="negativePattern" type="xsd:string"/>
+      <xsd:attribute name="positivePattern" type="xsd:string"/>
+      <xsd:attribute name="zeroValue" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="CurrencyType">
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="1">
+        <xsd:element ref="CurrencyFormat" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+      <xsd:attribute name="code" type="xsd:NMTOKEN" use="required"/>
+      <xsd:attribute name="desc" type="xsd:string" use="required"/>
+      <!-- Number of decimal places to store in the database. See BigDecimal. Must be <= scale
+           of MoneyDataType in fieldvalidators[_ext].xml -->
+      <xsd:attribute name="storageScale" type="xsd:integer"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

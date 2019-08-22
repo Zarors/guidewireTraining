@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "ApiInfo" : {
+      "type" : "object",
+      "properties" : {
+        "basePath" : {
+          "type" : "string",
+          "description" : "The base path of the API, relative to the REST servlet's root path"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of the API"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "Title of the API"
+        },
+        "docs" : {
+          "type" : "string",
+          "description" : "URL where the Swagger documentation for the API can be found"
+        }
+      }
+    },
+    "ApiList" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "$ref" : "#/definitions/ApiInfo"
+      }
+    }
+  }
+}

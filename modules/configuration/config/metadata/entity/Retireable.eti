@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Retireable"
+  platform="true">
+  <implementsEntity
+    name="Editable"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.RetireablePublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.AbstractEditableRetireableBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.impl.RetireableInternalMethods"
+    impl="com.guidewire.pl.system.entity.proxy.AbstractEditableRetireableBeanProxy"/>
+  <column
+    columnName="Retired"
+    createhistogram="true"
+    default="0"
+    desc="Whether the entity is still in use. A value of 0 means that the entity is not retired. If the entity is retired from active use, this field has a non-zero value equal to the entity's ID. Once an entity is retired, it should not be unretired."
+    exportable="false"
+    getterScriptability="hidden"
+    name="RetiredValue"
+    nullok="false"
+    setterScriptability="hidden"
+    type="softentityreference"/>
+</delegate>

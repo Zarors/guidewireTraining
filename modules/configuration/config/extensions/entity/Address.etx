@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<extension xmlns="http://guidewire.com/datamodel" entityName="Address">
+
+  <!-- KanjiIndexDefinition: Uncomment if you use kanji name fields for Japanese.
+
+  <index desc="Index covering address for search by CityKanji and State" name="address2K" trackUsage="true" unique="true">
+    <indexcol keyposition="1" name="CityKanji"/>
+    <indexcol keyposition="2" name="State"/>
+    <indexcol keyposition="3" name="retired"/>
+    <indexcol keyposition="4" name="ID"/>
+  </index>
+
+  <index desc="For find duplicates" expectedtobecovering="true" name="address6K" unique="true">
+    <indexcol keyposition="1" name="AddressLine1Kanji"/>
+    <indexcol keyposition="2" name="CityKanji"/>
+    <indexcol keyposition="3" name="State"/>
+    <indexcol keyposition="4" name="PostalCode"/>
+    <indexcol keyposition="5" name="retired"/>
+    <indexcol keyposition="6" name="ID"/>
+  </index>
+
+  -->
+
+</extension>

@@ -1,0 +1,597 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.webservice.pl.pl900.personaldata.PersonalDataDestructionAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/webservice/pl/pl900/personaldata/PersonalDataDestructionAPI" name="PersonalDataDestructionAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/px/typekey" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/webservice/pl/pl900/personaldata/PersonalDataDestructionAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/webservice/pl/pl900/personaldata/PersonalDataDestructionAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/px/typekey"/>
+      <!-- requestContactRemovalWithABUID(String, String) : String -->
+      <xs:element name="requestContactRemovalWithABUID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+            <xs:element name="requesterID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestContactRemovalWithABUIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="BadIdentifierException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RuntimeException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- requestContactRemovalWithPublicID(String, String) : String -->
+      <xs:element name="requestContactRemovalWithPublicID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="contactPublicID" type="xs:string" minOccurs="0"/>
+            <xs:element name="requesterID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestContactRemovalWithPublicIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- destroyUser(String) : boolean -->
+      <xs:element name="destroyUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="username" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="destroyUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- doesABUIDExist(String) : boolean -->
+      <xs:element name="doesABUIDExist">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="doesABUIDExistResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- doesContactWithPublicIDExist(String) : boolean -->
+      <xs:element name="doesContactWithPublicIDExist">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="publicID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="doesContactWithPublicIDExistResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- currentDestructionRequestStatusByRequestID(String) : DestructionRequestStatus -->
+      <xs:element name="currentDestructionRequestStatusByRequestID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="uniqueRequestID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="currentDestructionRequestStatusByRequestIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:DestructionRequestStatus" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/px/typekey" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="DestructionRequestStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DoesNotExist"/>
+          <xs:enumeration value="Finished"/>
+          <xs:enumeration value="InProgress"/>
+          <xs:enumeration value="Unprocessed"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="PersonalDataDestructionAPIPortType">
+    <wsdl:operation name="requestContactRemovalWithABUID">
+      <wsdl:documentation>@deprecated: (since 10.0.0) - Use the pl1000 version of this API.</wsdl:documentation>
+      <wsdl:input name="requestContactRemovalWithABUID" message="tns:requestContactRemovalWithABUID"/>
+      <wsdl:output name="requestContactRemovalWithABUIDResponse" message="tns:requestContactRemovalWithABUIDResponse"/>
+      <!-- If communication errors occur -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- If required field is missing -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <!-- If AddressBookUID is not found -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- RuntimeException occured please look at exception message -->
+      <wsdl:fault name="RuntimeException" message="tns:RuntimeException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="requestContactRemovalWithPublicID">
+      <wsdl:documentation>@deprecated: (since 10.0.0) - Use the pl1000 version of this API.</wsdl:documentation>
+      <wsdl:input name="requestContactRemovalWithPublicID" message="tns:requestContactRemovalWithPublicID"/>
+      <wsdl:output name="requestContactRemovalWithPublicIDResponse" message="tns:requestContactRemovalWithPublicIDResponse"/>
+      <!-- If communication errors occur -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- If required field is missing -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <!-- If PublicID is not found -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- RuntimeException occured please look at exception message -->
+      <wsdl:fault name="RuntimeException" message="tns:RuntimeException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="destroyUser">
+      <wsdl:documentation>@deprecated: (since 10.0.0) - Use the pl1000 version of this API.</wsdl:documentation>
+      <wsdl:input name="destroyUser" message="tns:destroyUser"/>
+      <wsdl:output name="destroyUserResponse" message="tns:destroyUserResponse"/>
+      <!-- If communication errors occur -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- If required field is missing -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <!-- If username is not found -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- RuntimeException occured please look at exception message -->
+      <wsdl:fault name="RuntimeException" message="tns:RuntimeException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="doesABUIDExist">
+      <wsdl:documentation>@deprecated: (since 10.0.0) - Use the pl1000 version of this API.</wsdl:documentation>
+      <wsdl:input name="doesABUIDExist" message="tns:doesABUIDExist"/>
+      <wsdl:output name="doesABUIDExistResponse" message="tns:doesABUIDExistResponse"/>
+      <!-- If communication errors occur -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- If required field is missing -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <!-- If cannot find entity with given identifier -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="doesContactWithPublicIDExist">
+      <wsdl:documentation>@deprecated: (since 10.0.0) - Use the pl1000 version of this API.</wsdl:documentation>
+      <wsdl:input name="doesContactWithPublicIDExist" message="tns:doesContactWithPublicIDExist"/>
+      <wsdl:output name="doesContactWithPublicIDExistResponse" message="tns:doesContactWithPublicIDExistResponse"/>
+      <!-- If communication errors occur -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- If required field is missing -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <!-- If cannot find entity with given identifier -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="currentDestructionRequestStatusByRequestID">
+      <wsdl:documentation>@deprecated: (since 10.0.0) - Use the pl1000 version of this API.</wsdl:documentation>
+      <wsdl:input name="currentDestructionRequestStatusByRequestID" message="tns:currentDestructionRequestStatusByRequestID"/>
+      <wsdl:output name="currentDestructionRequestStatusByRequestIDResponse" message="tns:currentDestructionRequestStatusByRequestIDResponse"/>
+      <!-- If communication errors occur -->
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <!-- If required field is missing -->
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonalDataDestructionAPISoap12Binding" type="tns:PersonalDataDestructionAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="requestContactRemovalWithABUID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="requestContactRemovalWithABUID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestContactRemovalWithABUIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap12:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestContactRemovalWithPublicID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="requestContactRemovalWithPublicID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestContactRemovalWithPublicIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap12:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="destroyUser">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="destroyUser">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="destroyUserResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap12:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doesABUIDExist">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="doesABUIDExist">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doesABUIDExistResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doesContactWithPublicIDExist">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="doesContactWithPublicIDExist">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doesContactWithPublicIDExistResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="currentDestructionRequestStatusByRequestID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="currentDestructionRequestStatusByRequestID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="currentDestructionRequestStatusByRequestIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PersonalDataDestructionAPISoap11Binding" type="tns:PersonalDataDestructionAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="requestContactRemovalWithABUID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="requestContactRemovalWithABUID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestContactRemovalWithABUIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap11:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestContactRemovalWithPublicID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="requestContactRemovalWithPublicID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestContactRemovalWithPublicIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap11:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="destroyUser">
+      <soap11:operation style="document"/>
+      <wsdl:input name="destroyUser">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="destroyUserResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap11:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doesABUIDExist">
+      <soap11:operation style="document"/>
+      <wsdl:input name="doesABUIDExist">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doesABUIDExistResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doesContactWithPublicIDExist">
+      <soap11:operation style="document"/>
+      <wsdl:input name="doesContactWithPublicIDExist">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doesContactWithPublicIDExistResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="currentDestructionRequestStatusByRequestID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="currentDestructionRequestStatusByRequestID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="currentDestructionRequestStatusByRequestIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonalDataDestructionAPI">
+    <wsdl:port name="PersonalDataDestructionAPISoap12Port" binding="tns:PersonalDataDestructionAPISoap12Binding">
+      <soap12:address location="local:///gw/webservice/pl/pl900/personaldata/PersonalDataDestructionAPI"/>
+    </wsdl:port>
+    <wsdl:port name="PersonalDataDestructionAPISoap11Port" binding="tns:PersonalDataDestructionAPISoap11Binding">
+      <soap11:address location="local:///gw/webservice/pl/pl900/personaldata/PersonalDataDestructionAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="requestContactRemovalWithABUID">
+    <wsdl:part name="parameters" element="tns:requestContactRemovalWithABUID"/>
+  </wsdl:message>
+  <wsdl:message name="requestContactRemovalWithABUIDResponse">
+    <wsdl:part name="parameters" element="tns:requestContactRemovalWithABUIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="tns:SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="tns:RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="BadIdentifierException">
+    <wsdl:part name="BadIdentifierException" element="tns:BadIdentifierException"/>
+  </wsdl:message>
+  <wsdl:message name="RuntimeException">
+    <wsdl:part name="RuntimeException" element="tns:RuntimeException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="requestContactRemovalWithPublicID">
+    <wsdl:part name="parameters" element="tns:requestContactRemovalWithPublicID"/>
+  </wsdl:message>
+  <wsdl:message name="requestContactRemovalWithPublicIDResponse">
+    <wsdl:part name="parameters" element="tns:requestContactRemovalWithPublicIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="destroyUser">
+    <wsdl:part name="parameters" element="tns:destroyUser"/>
+  </wsdl:message>
+  <wsdl:message name="destroyUserResponse">
+    <wsdl:part name="parameters" element="tns:destroyUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="doesABUIDExist">
+    <wsdl:part name="parameters" element="tns:doesABUIDExist"/>
+  </wsdl:message>
+  <wsdl:message name="doesABUIDExistResponse">
+    <wsdl:part name="parameters" element="tns:doesABUIDExistResponse"/>
+  </wsdl:message>
+  <wsdl:message name="doesContactWithPublicIDExist">
+    <wsdl:part name="parameters" element="tns:doesContactWithPublicIDExist"/>
+  </wsdl:message>
+  <wsdl:message name="doesContactWithPublicIDExistResponse">
+    <wsdl:part name="parameters" element="tns:doesContactWithPublicIDExistResponse"/>
+  </wsdl:message>
+  <wsdl:message name="currentDestructionRequestStatusByRequestID">
+    <wsdl:part name="parameters" element="tns:currentDestructionRequestStatusByRequestID"/>
+  </wsdl:message>
+  <wsdl:message name="currentDestructionRequestStatusByRequestIDResponse">
+    <wsdl:part name="parameters" element="tns:currentDestructionRequestStatusByRequestIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

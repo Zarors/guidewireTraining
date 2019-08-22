@@ -1,0 +1,33 @@
+package rules.EventMessage.EventFired_dir.ABEF1000VendorRecommendation_dir.ABEF1100ABContact_dir
+
+uses trainingapp.messaging.vendorrecommendation.VendorRecommendationTemplate
+@gw.rules.RuleName("ABEF1110 - Recommended")
+internal class ABEF1110Recommended {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+
+return messageContext.EventName == "ABContactRecommended"
+
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("\n*** Stage 2 -- Generating the message payload ***")
+print("    Event Fired rules: " + actions.Rule.DisplayName )
+//messageContext root must be cast to appropriate type
+var anABContact = messageContext.Root as ABContact
+var payload = VendorRecommendationTemplate.renderToString(anABContact.PublicID, anABContact.VendorEvaluations)
+print("    Using Gosu Template for payload")
+var msg = messageContext.createMessage(payload)
+print("    createMessage() called")
+
+/*end00rule*/
+
+  }
+}
+
+

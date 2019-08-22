@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Category for Service Provider Management Review questions and categories; generally, this will be extended by customers"
+  name="ReviewCategory">
+  <typecode
+    code="timeliness"
+    desc="Timeliness"
+    name="Timeliness"/>
+  <typecode
+    code="communication"
+    desc="Communication"
+    name="Communication"/>
+  <typecode
+    code="officestaff"
+    desc="Office Personnel."
+    name="Office Personnel"/>
+  <typecode
+    code="technicians"
+    desc="Technicians"
+    name="Technicians"/>
+  <typecode
+    code="quality"
+    desc="Quality of Work"
+    name="Quality of Work"/>
+  <typecode
+    code="accuracy"
+    desc="Accuracy of Quote"
+    name="Accuracy of Quote"/>
+  <typecode
+    code="adjuster"
+    desc="Section for adjusters to add comments"
+    name="Adjuster"/>
+</typelistextension>

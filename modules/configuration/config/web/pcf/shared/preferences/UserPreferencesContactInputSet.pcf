@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="UserPreferencesContactInputSet">
+    <Require
+      name="user"
+      type="User"/>
+    <Require
+      name="addressOwner"
+      type="gw.api.address.AddressOwner"/>
+    <TextInput
+      editable="true"
+      id="JobTitle"
+      label="DisplayKey.get(&quot;NVV.Admin.UserProfile.AdminUserDetails.Title&quot;)"
+      value="user.JobTitle"/>
+    <TextInput
+      editable="true"
+      id="Department"
+      label="DisplayKey.get(&quot;NVV.Admin.UserProfile.AdminUserDetails.Department&quot;)"
+      value="user.Department"/>
+    <InputDivider/>
+    <InputSetRef
+      def="GlobalAddressInputSet(addressOwner)"
+      id="UserAddress"
+      mode="addressOwner.SelectedMode"
+      widgets="UserAddress"/>
+    <InputDivider/>
+    <TypeKeyInput
+      editable="true"
+      id="PrimaryPhone"
+      label="DisplayKey.get(&quot;Web.User.Preferences.PrimaryPhoneType&quot;)"
+      value="user.Contact.PrimaryPhone"
+      valueType="typekey.PrimaryPhoneType">
+      <PostOnChange
+        target="UserPreferencesContactInputSet"/>
+    </TypeKeyInput>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(user.Contact,Contact#HomePhone), user.Contact.PrimaryPhone == typekey.PrimaryPhoneType.TC_HOME))"
+      id="UserHomePhone"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(user.Contact, Contact#FaxPhone), false))"
+      id="UserFaxPhone"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(user.Contact, Person#CellPhone), user.Contact.PrimaryPhone == typekey.PrimaryPhoneType.TC_MOBILE))"
+      id="UserCellPhone"/>
+    <InputSetRef
+      def="GlobalPhoneInputSet(new gw.api.phone.StandardPhoneOwner(new gw.api.phone.ContactPhoneDelegate(user.Contact, Contact#WorkPhone), user.Contact.PrimaryPhone == typekey.PrimaryPhoneType.TC_WORK))"
+      id="UserWorkPhone"/>
+    <InputDivider/>
+    <TextInput
+      editable="true"
+      id="Email"
+      label="DisplayKey.get(&quot;NVV.Admin.UserProfile.AdminUserProfile.Email1&quot;)"
+      value="user.Contact.EmailAddress1"/>
+  </InputSet>
+</PCF>

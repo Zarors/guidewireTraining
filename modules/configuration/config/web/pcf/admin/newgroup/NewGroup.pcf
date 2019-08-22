@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="AdminForward.go()"
+    afterCommit="GroupDetailPage.go(Group)"
+    canEdit="true"
+    canVisit="perm.Group.create"
+    id="NewGroup"
+    parent="Admin()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.NewGroup&quot;)">
+    <LocationEntryPoint
+      signature="NewGroup()"/>
+    <LocationEntryPoint
+      signature="NewGroup(Parent : Group)"/>
+    <Variable
+      name="Parent"
+      type="Group"/>
+    <Variable
+      initialValue="gw.api.admin.GroupUtil.createGroup(null, Parent)"
+      name="Group"
+      type="Group"/>
+    <Screen
+      id="NewGroupDetailScreen">
+      <Toolbar>
+        <EditButtons/>
+      </Toolbar>
+      <PanelRef
+        def="NewGroupDetailDV(Group)"/>
+    </Screen>
+  </Page>
+</PCF>

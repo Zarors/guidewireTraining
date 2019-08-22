@@ -1,0 +1,759 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>TrainingApp Build Notes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading1">Build Notes</p>
+
+<p class="heading2">TrainingApp9-General-1-9.0.0 (ContactManager 9.0.0 Ferrite (GA) Patch 1)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+	<ul>
+		<li><p class="body">Display key references have been replaced with the new syntax</p></li>
+		<li><p class="body">Converted comments to documentation comments in TrainingApp related Gosu classes</p></li>
+		<li><p class="body">jetty.properties has been removed. To modify the port, either edit the runConfiguration in Studio or use the 
+		following Gradle task from command prompt: gwb runServer -Dgw.port=8880</p></li>
+		<li><p class="body">acme.ta.scriptparameter.ScriptParametersEnhancement.gsx has been added as the recommended work around because there are no code generators for 
+		ScriptParameters in the current platform release.</p></li>
+	</ul>
+	<li><p class="body"><b>Data Model</b></li>
+	<ul>
+		<li><p class="body">The DoctorSpecialtyType typelist has been removed to avoid confusion. Instead, the SpecialtyType base application typelist has been extended
+		to store doctor specialties. See: SpecialtyType.ttx</p></li>
+		<li><p class="body">Fields have been renamed to DoctorCategory and DoctorSpecialty in ABDoctor.eti</p></li>
+		<li><p class="body">_Ext suffix has been added to the CanPickUpVehicles field of the ABAutoScrapyard_Ext.eti to follow best practices</p></li>
+	</ul>
+	
+	<li><p class="body"><b>User Interface</b></li>
+	<ul>
+		<li><p class="body">ABPersonSubtypeInfoInputSet.ABDoctor.pcf has been modified to use the renamed fields of ABDoctor</p></li>
+		<li><p class="body">All PCF files have been refactored to use specific widgets. (Generic widget has been removed from the platform.)</p></li>
+		<li><p class="body">Replaced the ABContactDetailsPage with 3 new details pages to avoid confusion because of modes. New pages: ABPersonDetailsPage.pcf, 
+		ABCompanyDetailsPage.pcf and ABPlaceDetailsPage.pcf. Modified ABContactLG.pcf to reference the 3 new pages. As a result, ABContactDetailsCV.&lt;mode&gt;.pcf files have been removed</p></li>
+	</ul>
+</ul>
+<!-------------------------------------------------------------------------------------------------------->
+<hr>
+
+<p class="heading2">TrainingApp8-General-7-8.0.2 (ContactManager 8.0.2 Emerald 22(GA) Patch 2)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+	<li><p class="body"><b>Data Model</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+	
+	<li><p class="body"><b>Business Logic (Rules, Gosu classes, etc)</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+	<li><p class="body"><b>User Interface</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+</ul>
+<!-------------------------------------------------------------------------------------------------------->
+<hr>
+<p class="heading2">TrainingApp8-General-1-8.0.0 (ContactManager 8.0.0 Emerald 19(GA))</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+	<li><p class="body"><b>Data Model</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+	
+	<li><p class="body"><b>Business Logic (Rules, Gosu classes, etc)</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+	<li><p class="body"><b>User Interface</b></li>
+	<ul>
+		<li><p class="body">N/A</p></li>
+	</ul>
+</ul>
+<!-------------------------------------------------------------------------------------------------------->
+<hr>
+
+<p class="heading2">Version 7.0.2-5 (based on ContactManager 7.0.2 with Diamond-17)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">The Contact tab now has a dropdown menu that lists the last X contacts the user has visited (from most recent to least recent). X is the value of the MaximumViewedContacts parameter, which initially is set to 10. This makes it easier for students to jump between contacts they have recently viewed without having to re-search for the contacts.</li>		
+			<li><p class="body">An "AllowActiveX" parameter has been added to config.xml to suppress an error message some students get that states "Failed to load TemplateRunner ActiveX 32 bit control. Document editing will fail.".</li>
+			<li><p class="body">The DuplicateContacts batch process is scheduled to run twice a day by default. This results in an error during startup about "no or unmodifiable schedule found" for this process. To prevent the error, the batch process has been unscheduled.</li>
+			<li><p class="body">Typos were fixed in comments for:</li>
+				<ul>
+					<li><p class="body">ta.QueryUtil findContactByID() method</li>
+					<li><p class="body">trainingapp.base findContactByID() method</li>
+				</ul>
+
+			<li><p class="body">Entries added to ExampleList:</li>
+				<ul>
+					<li><p class="body">UI Containers -> Comment (in PCF element)</li>
+					<li><p class="body">Cross-Section Functionality -> Entity name, datetime used in</li>
+				</ul>				
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">In the DoctorSpecialtyType typelist, for the Unspecified typecode, the various Categories entries have been replaced by a single Category List entry.</li>
+		</ul>
+	<li><p class="body"><b>User Interface</b></li>
+		<ul>
+			<li><p class="body">In ContactBasicDetailsDV.ABPerson, the First Name field is marked as required. In TrainingApp, this container is used only when creating new person contacts. This change was made to avoid the minimum contact creation criteria error message that talks about contact tags.</li>
+			<li><p class="body">The "Delete" button that lets you delete contacts from search results on the Search tab is now working. (The ExposeIterator tag in ContactSearchResultsLV has been restored.)</li>
+			<li><p class="body">A comment was added to VendorEvaluationDV's TotalScore widget identifying that the logic used on the reflection tab is duplicated in the VendorEvaluationEnhancement TotalScore property.</li>
+		</ul>		
+	<li><p class="body"><b>Gosu</b></li>
+		<ul>
+			<li><p class="body">The code that creates "User viewed this contact" history events has been corrected so that the history events get committed to the database correctly.</li>
+			<li><p class="body">The logic in the following business rules has been changed to use hasMatch (the "preferred does-this-exist condition checker") instead of exists:</li>
+				<ul>
+					<li><p class="body">ABPU1030 - Flag invalid address</li>
+					<li><p class="body">ABPU2010 - Flag lack of email address</li>
+				</ul>
+			<li><p class="body">In VendorEvaluationEnhancement's TotalScore property, the comment was modified to identify that the logic for TotalScore is also coded on the VendorEvaluationDV's TotalScore field's reflection tab, and any change made to the virtual property should also be made to that widget's reflection logic.</li>
+			<li><p class="body">Some of the comments in the business rules were cleaned up.</li>				
+		</ul>
+	<li><p class="body"><b>Cross-Section Functionality</b></li>
+		<ul>
+			<li><p class="body">On ABContactDetailsCompanyDV, if a company's primary contact has no email, the "Prefers Contact By Email" is never available. (Previously, it was available if you clicked Update for a company whose Preferred Contact had no email address.)</li>
+			<li><p class="body">On ABContactDetailsCompanyDV, the "Relation to Finance Manager" reflection has been modified to be bi-directional. (Reflection works if either field is changed.)</li>
+			<li><p class="body">The entity name for ContactNote now checks to see if Body is null, and if it is it uses the string "(no body text)".</li>
+		</ul>		
+</ul>
+
+<!-------------------------------------------------------------------------------------------------------->
+
+<hr>
+
+<p class="heading2">Version 7.0.0.501-4 (based on ContactManager 7.0.0 build 501 with Diamond-9)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">There are now two shortcuts for starting TrainingApp (with and without the debugger).</li>
+
+		</ul>
+	</li>
+</ul>
+
+<!-------------------------------------------------------------------------------------------------------->
+
+<hr>
+
+<p class="heading2">Version 7.0.0.501-3 (based on ContactManager 7.0.0 build 501 with Diamond-9)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">On the ABContactSummaryDV, the "ID" field (which mapped to ABContact.ID) has been replaced with a "Public ID" field (which maps to ABContact.PublicID).</li>
+			<li><p class="body">Several additional findContact() methods have been added to ta.QueryUtil to enable searches for all base application ABContact subtypes without needing to subtype the results. For example, a few of the new methods are: findPerson(), findDoctor(), findAttorney(), and findCompany(). Each of these methods takes a public ID and returns the ABContact with that ID.</li>
+			<li><p class="body">The Admin tab has a new menu item: "Load TrainingApp Sample Data". This menu item loads the ContactManager sample data and then deletes the orphan messages. Previously, this functionality was split across two menu items, "Load Sample Data" and "Delete Orphan Messages". These old menu items have been removed.</li>
+			<li><p class="body">The Contact Assignment -> Assignment Transfer screen has been enhanced. Now, when you choose the current and target contact, you get a list of contacts assigned to that user.</li>
+			<li><p class="body">The ABPerson enhncement's Age getter was improved. Previously, it determined age by dividing number of days since birth by 365. This produced inccurate results because of leap year days. The rule now correctly calculates the difference between the birth year and the current year, and subtracts 1 if the person's birthday has not yet occurred this year.</li>
+			<li><p class="body">ABContactPreupdate rule ABPU2020 (Depart from company as primary contact) has been removed. Previously, this was an example of a "disabled rule". But the rule did not work once enabled, and instructor feedback suggested that the example wasn't really needed, as one can easily demo activating and dectiving rules. So the rule was simply removed.</li>
+		</ul>
+	</li>
+	<li><p class="body"><b>Integration</b></li>
+		<ul>
+			<li><p class="body">Virtually all code that manipulated bundles via getCurrent()/commit() has been modified to instead make use of runWithNewBundle(). One example of getCurrent()/commit() was left (the one for assigned user reassignment). The modified functionality includes:</li>
+						<ol>
+						<li><p class="body">Recording each contact visited</li>
+						<li><p class="body">Toggling a vendor status from recommended to not recommended</li>
+						<li><p class="body">Message acknowledgement page</li>
+						<li><p class="body">Code to report duplicate messages</li>
+						<li><p class="body">Message Exception page</li>
+						<li><p class="body">Message Generator page</li>
+						<li><p class="body">Legal Case Report messaging (ABContactDetailsPersonDV)</li>
+						</ol>
+			<li><p class="body">The logic for toggling a vendor status was moved from the ABContactEnhancement to a PCF function on the ABContctDetailsCV file. This is because the logic must commit changes to the ABContact, and it's generally not good practice to have an enhancement function commit changes to the target instance, as one can't be sure about the context from which an enhancement method is called. In this case, it's better practice to put this logic with the thing that calls it.</li>
+			<li><p class="body">The examples in the trainingapp.demo.gosu.BundleExamples have been modified to set the ABCompany inspection date (as opposed to incrementing the ABCompany EmployeeSatisfactionScore). This was done because (1) the InspectionDate field is exposed in the UI, whereas the EmployeeSatisfactionScore field is not, (2) the code needed to set inspection date is shorter and more readable, and (3) the use case for inspection date is slightly more intuitive.</li>
+			<li><p class="body">The "Training: Gosu" location group and all of its child elements have been removed. This location group was intended to showcase Gosu functionality in the UI, but in practice it makes more sense to run the Gosu examples from the Gosu Tester. Furthermore, the Gosu Bundles lab was modified to not make use of the Bundles Lab page. To ensure future builds are easier to upgrade, this vestigal functionality was removed.</li>
+			<li><p class="body">There has always been a Java version of AcmeIExchangeRateSetPlugin in the TrainingApp base application. But, in previous builds, the logic in the Java class did not match the logic in the Gosu class. (The Java logic reflected an earlier draft of the plugin logic.) This has been corrected, and the Java class is now identical in logic to the Gosu class.</li>
+			<li><p class="body">The following modifications were made to the VendorRecommendation messaging integration point:</li>
+						<ul>
+						<li><p class="body">The Gosu template now has a "SenderRefID: <@@senderRefID@@>" line.</li>
+						<li><p class="body">The request plugin now sets the value of SenderRefID in the template.</li>
+						<li><p class="body">The transport plugin now sends the transformed payload. (In earlier builds, it erroneously sent Message.Payload, which would ignore any changes made to the payload in the request plugin.)</li>
+						</ul>
+			<li><p class="body">The following modifications were made to the Legal Report messaging integration point:</li>
+						<ul>
+						<li><p class="body">The request plugin now adds the SenderRefID to the payload.</li>
+						<li><p class="body">The ExternalApp web service has been changed to take only one parameter (the transformed payload) as opposed to two (the SenderRefID and the transformed payload). Conseqeuntly, the call to the web service passes only the payload.</li>
+						<li><p class="body">The transport plugin now sends the transformed payload. (In earlier builds, it erroneously sent Message.Payload, which would ignore any changes made to the payload in the request plugin.)</li>
+						</ul>
+			<li><p class="body">All the examples in the "Overview of Advanced Gosu" lesson are now also in TrainingApp. This includes:</li>
+			<ul>
+				<li><p class="body">trainingapp.demo.gosu.Author (custom annotation)</li>
+				<li><p class="body">trainingapp.demo.gosu.ColorType (enum)</li>
+				<li><p class="body">trainingapp.demo.gosu.GenericsExample (class using generics)</li>
+				<li><p class="body">trainingapp.demo.gosu.MiscellaneousExamples (intervals, null-safe operators, using custom annotations, lists, hashmaps, using generics, using typecode mapper)</li>
+				<li><p class="body">Tests -> SampleTest -> BirthdayTest (GUnit test)</li>
+				<li><p class="body">modules/configuration/config/examples/xml (XmlElement)</li>
+				<li><p class="body">modules/configuration/config/typelists (Typecode Mapper)</li>
+			</ul>
+		</ul>
+	</li>
+</ul>
+
+<!-------------------------------------------------------------------------------------------------------->
+
+<hr>
+
+<p class="heading2">Version 7.0.0.484-2 (based on ContactManager 7.0.0 build 484 with Diamond-8)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">TrainingApp was moved to Diamond 8, which fixes the bug wherein running regen-wsi-local modifies a file outside of modules/configuration and causes checksum errors.</li>
+			<li><p class="body">Also, TrainingApp on Diamond 8 now has the 7th resurces node labeled "RPC-Encoded Web Services". This has always been correct in the slides, but was "wrong" in Diamond 3 (and therefore the first build of TrainingApp).</li>
+			<li><p class="body">TrainingApp now uses the Diamond login page.</li>
+			<li><p class="body">There is a new package, ta.QueryUtil, and a new method, findContact(), that returns a contact with a given ID or publicID. At or around build 3, references to the trainingapp.base.QueryUtil.findContactByID() method will be moved to this shorter-and-more-PPT-friendly ta.QueryUtil.findContact() method.</li>
+		</ul>
+	</li>
+	<li><p class="body"><b>Integration</b></li>
+		<ul>
+			<li><p class="body">For the MessageGenerator messaging integration point, the code that creates the SenderRefID has been modified to append the RetryCount if the RetryCount is greater than 0. (This ensures the functionality now matches the examples shown in the "Acknolwedging Messages" lesson.</li>
+		</ul>
+	</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Version 7.0.0.300-1 (based on ContactManager 7.0.0 build 300 with Diamond-3)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">TrainingApp now sports the Diamond "look-and-feel". (ContactManager hasn't moved its login page to Diamond, so the TrainingApp login page is still Carbon-esque. This should get fixed in TrainingApp build 2.)</li>
+			<li><p class="body">In the ContactManager base application, the ABContact entity has a Tags array that must contain at least one ABContactTag. In other words, every ABContact must have at least one tag associated to it. (A tag identifies the relationship between the contact and the customer and allows for contacts to have multiple relationships, such as being a lawyer vendor and a policy holder.) This functionality potentially compromises the intuitiveness of TrainingApp, so it has been hidden in the following ways:</li>
+			<ul>
+				<li><p class="body">The NewContact page references a set of modal detail views (such as ContactBasicsDV.ABCompany). All Tag fields in these modal views have been disabled.</li>
+				<li><p class="body">The ABContact enhancement has a new method unique to TrainingApp: addDefaultTagToNewContact(). This adds a default tag (the "claim party" tag) to the newly created contact. It is called by the New Contact page's afterEnter() property, though it could be used any other time you want to create a contact through code.</li>
+				<li><p class="body">The Tag fields on the various Search screens have been removed. (This search criteria is optional.)</li>
+			</ul>
+			<li><p class="body">TrainingApp now includes Windows shortcuts in c:/Guidewire/TrainingApp to start TrainingApp, stop TrainingApp, and start Studio.</li>
+			<li><p class="body">TrainingApp now includes a dbbackup directory that contains a copy of the databases in their just-installed state. If you need to reset the database, you can drop the database and then copy over these files (which may be faster than dropping the database and then reloading the sample data).</li>
+			<li><p class="body">TrainingApp now has a younger brother - ExternalApp. ExternalApp is a modified version of ContactManager that simulates multiple external systems. It is used primarily for the integration courses. TrainingApp now includes some integration points to ExternalApp. For more information on ExternalApp, refer to the ExternalApp build notes and example list.</li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">The following changes were made to the data model to support new integration functionality:</li>
+				<ul>
+				<li><p class="body"><strong>NEW ENTITIES</strong></li>
+				<li><p class="body">LegalCase</li>
+				<li><p class="body"><strong>NEW STUFF ON EXISTING ENTITIES</strong></li>
+				<li><p class="body">ABContact.IsVendorRecommended</li>
+				<li><p class="body">ABContact.LastLegalCaseReportDate</li>
+				<li><p class="body">ABContact.LegalCaseReportStatus</li>
+				<li><p class="body">ABContact.VendorProfileCode</li>
+				<li><p class="body">ABContact.LegalCases array</li>
+				<li><p class="body">ABCompany.EmployeeScore (how satisfied the company's employees are with the company)</li>
+				<li><p class="body">BankAccount is now an event-aware entity</li>
+				<li><p class="body">BankAccount.IsVerified is now a typekey to VerificationStatus</li>
+				<li><p class="body"><strong>NEW TYPELISTS</strong></li>
+				<li><p class="body">LegalCaseType (malpractice, fraud, wrongful_death, negligence)</li>
+				<li><p class="body">LegalCaseStatus (in_progress, case_dismissed, case_dropped, settled, guilty, not_guilty, mistrial)</li>
+				<li><p class="body">VerificationStatus (pending, verified, invalid)</li>
+				<li><p class="body"><strong>NEW TYPECODES ON EXISTING TYPELISTS</strong></li>
+				<li><p class="body">FlagEntryReason: fraudulent_activity, doctor_specialty_unspecified, overdue_legal_report</li>
+				<li><p class="body">ErrorCategory: database_contention, no_connection, user_authentication.</li>
+				</ul>
+			<li><p class="body">As of ContactManager 7.0, the base app version of the ABContact entity contains an array named History, which conflicts with the custom History array that has been part of TrainingApp. The property in the custom TrainingApp extension has been renamed HistoryEntries to avoid collision.</li>
+			<li><p class="body">The ABContact.BankAccounts array now has triggersValidation set to true (which causes changes to any array member to trigger Preupdate rules for the parent). In other words, a change to any bank account causes Preupdate rules to be run for the ABContact. You can see this in action in ABContact Preupdate rule ABPU1040. When a bank account is changed, its IsVerified flag should be set to false. But, there are no preupdate rules for bank accounts. So the unverify logic is put in the ABContact preupdate rules, and the triggerValidation tag is used to ensure that changes to bank accounts trigger the ABContact preupdate rules.</li>
+			<li><p class="body">The Currency typelist was reduced to four values to make it easier to view the results of the ExchangeRate plugin. (Australian dollars and Russian rubles were removed.)</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+
+			<li><p class="body">The value of the row iterator in ABContactHistoryLV has been changed from anABContact.History to anABContact.HistoryEntries to reflect the renaming of the of the property to HistoryEntries.</li>
+			<li><p class="body">On the ABContactNotesPage, the sortOrder property of the CreateDate widget has been set to "1" and the sortDirection property has been set to "descending".</li>
+			<li><p class="body">BankAccountsLV now has a "Verified?" column.</li>
+			<li><p class="body">The Vendor Info card (on ABContactDetailsCV) now has:</li>
+				<ul>
+					<li><p class="body">A Recommend/Unrecommend button.</li>
+					<li><p class="body">A label to specify if the vendor is recommended (which is visible only when the vendor is recommended).</li>
+					<li><p class="body">A field for a recommended vendor's profile code (which is visible only when the vendor is recommended).</li>
+				</ul>
+			<li><p class="body">VendorEvaluationsLV no longer has a "Verified" column.</li>
+			<li><p class="body">The ABContactDetailsPersonDV now has a new input set that displays lawsuit information. It is visible only for ABDoctors.</li>
+		</ul>
+
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body">In the ContactManager 7.0 base application, the Search tab has a new "Merge Contacts" screen. This screen has been removed.</li>
+			<li><p class="body">Several location groups, pages, and exit points were added to the Admin tab. These are used to demo integration functionality or execute integration labs (see below).</li>
+
+			<li><p class="body">The Administration Action menu has a new "Load Sample Data" menu item. It uses the same code as the "Load Sample Data" button accessed through Internal Tools. If for some reason you need to reload the sample data, you can now do it without jumping over to Internal Tools.</li>
+			<li><p class="body">The Administration Action menu has a new "Delete Orphan Messages" menu item. This is used to delete some malformed messages in the ContactManager sample data that don't have parent entities and throw exceptions when displayed in the Message or MessageHistory tables. This menu item is needed only in Integration courses, and only if for some reason one needs to drop the database and reload the sample data.</li>
+		</ul>
+	<li><p class="body"><b>Gosu</b></li>
+		<ul>
+			<li><p class="body">The Event Fired rule set category has now been customized to match the messaging integration points in TrainingApp.</li>
+			<li><p class="body">The ContactManager base application has two new Preupdate rule sets: ABContactContactPreupdate and AddressPreupdate. These also appear in TrainingApp, but do not get used.</li>
+			<li><p class="body">There is a new ABContact preupdate rule (ABPU1040 - Unverify changed bank accounts) used to unverify a bank account when it changes.</li>
+			<li><p class="body">There is a new ABContact preupdate rule (ABPU4000 - Subtype ABLawFirm) that creates a contact note with a suggested hourly rate any time a law firm's specialty changes. This rule makes use of logic stored in a Java class (as opposed to logic written in Gosu).</li>
+			<li><p class="body">There is a new package, acme.ta, which contains several examples of customized integration points.</li>
+			<li><p class="body">There is a new package, trainingapp, which contains Gosu classes needed for TrainingApp base functionality and/or for integration-related demonstration functionality.</li>
+			<li><p class="body">The gw.training package has been deleted. The classes in this package (AssignedUserUtil and RecentlyViewdContactUtil) have been moved to the trainingapp.base package. All references to methods in these classes have been updated as appropriate.</li>
+			<li><p class="body">The ABContact.addToHistory() method is now addToHistoryEntries() because of the necessary renaming of the property to HistoryEntries. The method call has been updated in the following resources:</li>
+			<ul>
+				<li><p class="body">"ABPU1010 - Contact created" rule</li>
+				<li><p class="body">"ABPU1020 - Assigned user changed" rule</li>
+				<li><p class="body">"AssignedUserUtil.gs"</li>
+				<li><p class="body">"ABContactEnhancement.gsx" enhancement</li>
+			</ul>
+			<li><p class="body">The IsFlagged getter property of ABContactEnhancement previously used a method named "exists()", which is not supported in Diamond. The logic of the function has been changed to the following:</li>
+			<p><code>return this.FlagEntries.hasMatch(\ e -> e.IsOpen)</code></p>
+			<li><p class="body">The ABContact enhancement has a new toggleVendorRecommendedFlag() method, which is used for the vendor recommendation messaging integration point.</li>
+			<li><p class="body">The ABContact enhancement has a new addDefaultTagToNewContact() method, which is used to create a default tag for new contacts.</li>
+			<li><p class="body">The ContactNote entity name has been modified to use the create time concatenated with some portion of the note body, truncated by the elide() method.</li>
+			<li><p class="body">There is a new MaxRetriesForRetryableMessage script parameter used to determine if a message returned with a retryable error can be retried or not.</li>
+		</ul>
+	<li><p class="body"><b>Integration</b></li>
+		<ul>
+			<li><p class="body">TrainingApp now has a younger brother - ExternalApp. ExternalApp is a modified version of ContactManager that simulates multiple external systems. It is used primarily for the integration courses. TrainingApp now includes some integration points to ExternalApp. For more information on ExternalApp, refer to the ExternalApp build notes and example list.</li>
+			<li><p class="body">TrainingApp now has examples of the major integration technologies. This includes:</li>
+				<ul>
+					<li><p class="body">Examples of Gosu subclassing, interfaces, annotation usage, and SequenceUtility usage</li>
+					<li><p class="body">Examples of queries and bundle manipulation</li>
+					<li><p class="body">Examples of Gosu/Java interoperability</li>
+					<li><p class="body">A sample predefined plugin (without plugin parameters)</li>
+					<li><p class="body">A sample predefined plugin (with plugin parameters)</li>
+					<li><p class="body">The Bank Account Verification messaging example (which uses transport to the console, a Gosu template, an XML file, late binding, and synchronous replies)</li>
+					<li><p class="body">The Vendor Recommendation messaging example (which uses a custom event, transport to a file, a Gosu template, and manual asynchronous replies)</li>
+					<li><p class="body">The Legal Case Report messaging example (which uses a custom event, transport via a web service, and automatic asynchronous replies)</li>
+					<li><p class="body">Web service collections to external RPC web services (ChemicalSymbol and Weather)</li>
+					<li><p class="body">Web service collections to WS-I external web service (ExchangeRateWSC and stockquotesWSC)</li>
+					<li><p class="body">A WS-I custom web service published by Guidewire (ContactAPI)</li>
+					<li><p class="body">A sample custom batch process (Flag Overdue Legal Reports)</li>
+					<li><p class="body">Numerous screens on the Admin tab used for integration training (all prefixed with "Training:")</li>
+				</ul>
+			<li><p class="body">Example List now has a table identifying the integration examples.</li>
+		</ul>
+</ul>
+
+<p class="heading2">7.0.0 Builds</p>
+
+<p class="body">All information above this section pertains to the 7.0.0 builds of TrainingApp.</p>
+
+<hr>
+<hr>
+
+
+<p class="heading2">Version 6.0.3.4-5 (based on ContactCenter 6.0.3 build 4 with Carbon-13)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">Shortcuts have been added to start and stop TrainingApp, and to start Studio.</li>
+		</ul>
+	</li>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">All fields of type money in the FinancialSummary and Organization entities have been modified to be of type currencyamount; currencyamount is the recommended datatype for monetary fields for the following reasons:</li>
+				<ul>	
+					<li><p class="body">The money datatype does not honor currency formatting rules; for example, if a field of type money displays 100 Japanese Yen, it will display 100.00 rather than the correct 100 with no decimal places.</li>
+					<li><p class="body">The money datatype is not compatible with multicurrency environments; if an environment ever changed from a single-currency model to a multi-currency model all fields of type money would have to be modified.</li>
+				</ul>
+		</ul>
+	</li>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+			<li><p class="body">ABContactSummaryDV has been modified to use the label property for the list view input that references FlagEntriesLV instead of using a label input.</li>
+		</ul>
+	</li>
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body">The PCFs involving vendor evaluation have been modified:</li>
+				<ul>	
+					<li><p class="body">The editMode variable is now named shouldStartInEditMode</li>
+					<li><p class="body">The abContact object--which is not used in VendorEvaluationPopup--is no longer passed to it.</li>
+					<li><p class="body">The entry points for VendorEvaluationPopup have been modified accordingly.</li>
+					<li><p class="body">The push() methods in VendorEvaluationsLV that call VendorEvaluationPopup have been modified accordingly.</li>
+				</ul>
+			</li>
+			<li><p class="body">The code involving the ContactTabForward has been modified:</li>
+				<ul>	
+					<li><p class="body">The logic of the RecentlyViewedContactUtil class has been simplified.</li>
+					<li><p class="body">The forward conditions of ContactTabForward have been modified accordingly.</li>
+				</ul>
+			<li><p class="body">The Contact and Search menus have been modified so that it is possible to perform many of the same contact-creation actions from both; each menu retains its context-specific items from previous releases.</li>
+		</ul>
+	</li>
+</ul>
+
+<p class="heading3">Known Issues (v6.0.2.2-4)</p>
+<ul>
+	<li><p class="body">(Known issue from v6.0.0.38-2) For business rules, the variable name is "aBContact" (note the weird capping). It should be "abContact", but a platform bug creates the capping incorrectly. There is a Jira out on this issue, but the Jira has been deferred to Diamond (ContactCenter 7.0).</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Version 6.0.2.2-4 (based on ContactCenter 6.0.2 build 2 with Carbon-12)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">The base install of TrainingApp is now configured for Notepad++ (not Liquid XML).</li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">TrainingApp is now based on Carbon-12, which has some improvements in how the Data Dictionary is generated.</li>
+				<ul>
+					<li><p class="body">Boolean columns are listed in the Data Dictionary as "bit" (which is how they're declared in etx/eti files).</li>
+					<li><p class="body">If a foreign key column makes use of the columnName attribute, the column name is now listed (in tiny green).</li>
+					<li><p class="body">If a foreign key ends in "ID", the "ID" is no longer stripped off.</li>
+					<li><p class="body">Virtual properties are no longer listed in the Arrays section.</li>
+					<li><p class="body">Virtual arrays are no longer listed in the Fields section.</li>
+					<li><p class="body">The "Unique Keys" links for subtypes now include each subtype's name, and the links point to the correct subtype (not just the first subtype).
+				</ul>
+			<li><p class="body">If you create an extension file by right-clicking the eti file, the auto-generated file now has a pair of open/close extension tags (instead of a single bachelor tag that you always had to split into open/close tags).
+		</ul>
+	<li><p class="body"><b>Gosu</b></li>
+		<ul>
+			<li><p class="body">The isLeapYear enhancement on the Java calendar class is now in TrainingApp. (Previously, it appeared only in slides.)</li>
+			<li><p class="body">All traces of CurrentLocation.commit have been removed.</li>
+			<li><p class="body">An additional (and more realistic) example of a setter has been added. It's HeightInInches, which comes with both a getter and a setter. You can see it in action on the "Person Info" Details card of any ABPolicyPerson. (Height is tracked only for persons that are policy holders.) To toggle from meters to inches, use the new user preference option. (Log on as su, as other users don't have sufficient permission to change their preferences in the sample data.)</li>
+			<li><p class="body">Per the recommended coding practice, all rules and enhancements with <b>if</b> and <b>for</b> statements are now followed by braces, even if there's only one line of code in the following block.</li>
+		</ul>
+	<li><p class="body"><b>Cross-Section Functionality</b></li>
+		<ul>
+			<li><p class="body">All entity names that made use of string buffers have been modified to use strings instead.</li>
+			<li><p class="body">ContactNote now has an entity name. It is used in the ContactNote list view.</li>
+		</ul>
+	<li><p class="body"><b>Bug Fixes</b></li>
+		<ul>
+			<li><p class="body">ABPersonEnhancement's function "AssignDefaultOccupation" has been changed to "assignDefaultOccupation" (to start with lower-case a).</li>
+		</ul>
+</ul>
+
+<p class="heading3">Known Issues (v6.0.2.2-4)</p>
+<ul>
+	<li><p class="body">(Known issue from v6.0.0.38-2) For business rules, the variable name is "aBContact" (note the weird capping). It should be "abContact", but a platform bug creates the capping incorrectly. There is a Jira out on this issue, but the Jira has been deferred to Diamond (ContactCenter 7.0).</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Version 6.0.0.38-3 (based on ContactCenter 6.0.0 build 38 with Carbon-9)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">Two fields on ABContactDetailsCompanyDV.pcf had widgets that referenced the misspelled FinanceManager field. This has been fixed.</li>
+		</ul>
+</ul>
+
+<p class="heading3">Known Issues (v6.0.0.38-3)</p>
+<ul>
+	<li><p class="body">(Known issue from v6.0.0.38-2) For business rules, the variable name is "aBContact" (note the weird capping). It should be "abContact", but a platform bug creates the capping incorrectly. There is a Jira out on this issue.</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Version 6.0.0.38-2 (based on ContactCenter 6.0.0 build 38 with Carbon-9)</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">The application version number will not be AB-X, where AB is the version of ContactCenter and X is a sequential number. This build is 6.0.0.38-2, which means it is based on ContactCenter 6.0.0.38 and is the 2nd version of TrainingApp on Carbon.</li>
+			<li><p class="body">When creating a contact, you must now specify a City. (This avoids problems that creep up when a contact gets created with no address.)</li>
+			<li><p class="body">There is a new script parameter, "ShowUSSpecificFields". By default, it is set to true. When set to false, it hides non-required fields that are specific to the US. (Currently, this is only the various address State fields for any input set that is used globally.)</li>
+			<li><p class="body">Because this build was based on a GA version of ContactCenter, the sample data was loaded via the normal Admin tab functionality. This means there is no longer a need to use a config-override.xml file. (This addresses the one "Known Issue" with build 6.0.0.1.)</li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">All eti/etx files now have the appropriate xmlns attribute.</li>
+			<li><p class="body">All foreign keys now have a name that does not end in "ID" and a columnName attribute that does end in "ID".</li>
+			<li><p class="body">There is now an example of "A to A" edge foreign keys. (The ABCompanyVendor finance manager and payment contact fields are implemented using EFKs. Previously, they had been implemented using the somewhat cumbersome ContactRel and ContactBidiRel xml files.)</li>
+			<li><p class="body">There is now an example of a one-to-one. (ABContact has a one-to-one with FinancialSummary. You can see the data on the Financial Summary card of the Details CV for a PolicyPerson or PolicyCompany.)</li>
+			<li><p class="body">There is now an example of a custom delegate (Verifiable) and an implementation of a custom delegate (in VendorEvaluation).</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+			<li><p class="body">There previously was a single "Interactions" display key used for both the side bar and the screen title. This caused problems in the Server-Side Widget Behavior lab. There are now two separate display keys so that students can modify the side bar label without impacting the screen label.</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body">The menu iterator on the Contact tab (for the not-yet-implemented Recently Viewed Contacts functionality) was removed.</li>
+		</ul>
+	<li><p class="body"><b>Gosu</b></li>
+		<ul>
+			<li><p class="body">Rule ABPU3000 previously set scores for vendors with null score values. However, the rule was untriggerable and conflicted conceptually with the score created for the Analysis card. So, the rule was changed to something completely different. (It now selects an assigned user for any vendor contact without an assigned user.)</li>
+		</ul>
+	<li><p class="body"><b>Cross-Section Functionality</b></li>
+		<ul>
+			<li><p class="body">There is now an example of an Entity Name that uses a typekey. (It's the User entity name. If a user is not "At work", then the user's Vacation Status appears after the user's name in parenthesis.) To support this, a Vacation Status field has been added to UserDetailDV.</li>
+			<li><p class="body">The reflection on Finance Manager/Payment Contact has been fixed so that two null values do not result in "Self".</li>
+			<li><p class="body">For companies, the "Prefers Contact By Email" widget is now editable only if there is a selected primary contact.</li>
+		</ul>
+</ul>
+
+<p class="heading3">Known Issues (v6.0.0.38-2)</p>
+<ul>
+	<li><p class="body">For business rules, the variable name is "aBContact" (note the weird capping). It should be "abContact", but a platform bug creates the capping incorrectly. There is a Jira out on this issue.</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Version 6.0.0.1 (based on ContactCenter 6.0.0 Build 24 (with Carbon-8))</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">The Build Notes (this document) now have a reference to the TrainingApp backlog.</li>
+			<li><p class="body">TrainingApp is now configured to be installed in C:\Guidewire (and not C:\GWTraining).</li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">All base app extensions and custom entities have been converted to .eti and .etx files.</li>
+			<li><p class="body">There is now an example of extending a base app subtype (ABCompanyVendor.etx).</li>
+			<li><p class="body">There is now an example of a custom typelist (BuildingType_Ext) and a custom typecode (retirement_Ext in BankAccountType).</li>
+			<li><p class="body">The "bronze" typecode has been removed from the ContactTier typelist. Students add this typecode to the typelist in the Typelists lab. (This was done to provide an example of adding a typecode to an existing typelist and using the code_Ext naming convention.</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+			<li><p class="body">ABContactNotesLV no longer has a checkbox column. (The checkboxes never appeared or were needed, so it ended up appearing as a useless first column.)</li>
+			<li><p class="body">On VendorEvaluationDV, mySum PCF function removed. (It wasn't needed or used.)</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body">There is now an example of a location group with a child location group. It's AdminAssignedUserLG, and it is accessible from the Administration tab's Contact Assignment location.</li>
+			<li><p class="body">On the stub pages for the labs (ABContactAnalysisPage and ABContactInteractionsPage), the canEdit property is set to true. (This lets students put their detail/list views into edit mode.)</li>
+		</ul>
+	<li><p class="body"><b>Gosu</b></li>
+		<ul>
+			<li><p class="body">All "example" queries which had been coded with finders have been rewritten using query builders. (There AssignedUserUtil.transferAssignedUser class needs to be rewritten with query builders. However, nothing in the course or the application calls attention to this function.)</li>
+			<li><p class="body">An entity enhancement setter has been added to ABPerson. It takes a phone number and sets the person's primary phone (work, home, or cell) to that value. To trigger the setter, navigate to an ABPerson. (It is helpful to see what the code is doing by going to the Phone and Addresses card of that ABPerson, but this is not required.) Then, select Actions -> Reset Primary Phone. This opens a worksheet where you can enter a phone number. Once you click Update, the person's primary phone will be set to that number.</li>
+			<li><p class="body">AssignedUserUtil, an example of a "configuration" Gosu class (a class with only static functions), has been added. It contains a sample selectLeastBusyUser function (triggered by a button on the Summary screen).</li>
+			<li><p class="body">The AssignedUserUtil class also has an example of a function which excecutes bundle commits. This is not covered in the course but is made available for instructors to show to advanced students. It is used by the Administration tab's Contact Assignment location group's Assignment Transfer page.</li>
+		</ul>
+	<li><p class="body"><b>Cross-Section Functionality</b></li>
+		<ul>
+			<li><p class="body">Two field validators have been added: RoutingNumber (for BankAccount.RoutingNumber) and Email (for ABContact.EmailAddress1)</li>
+			<li><p class="body">Several validation expressions have been added.</li>
+				<ul>
+					<li><p class="body">The main "example" is on the Date Of Birth widget on the Detail screen's Person Info card. It prevents people from entering an ABPerson.DateOfBirth value that is in the future.</li>
+					<li><p class="body">Each of the four Score fields on VendorEvaluationDV have expressions limiting the values to 0 to 25. (This enforces what the label on the DV says is true.)</li>
+				</ul>
+		</ul>
+</ul>
+
+<p class="heading3">Known Issues (v6.0.0.1)</p>
+<ul>
+	<li><p class="body">The database tag in config.xml is not getting used. This is because TrainingApp is built off of a pre-GA build of ContactCenter. The only way one can get the sample data into the application in this build is to use a ContactCenter-test.zip file, which comes with its own config-override.xml file which overrides the database settings in config.xml. This file exists outside the configuration directory, therefore one cannot edit it without getting a checksum error. To get around this issue, there is a second config-override file to get the TrainingApp H2 files in the desired directory. So, everything works. The only issue here is that if you modify the database tag in config.xml, it will have no affect.</li>
+</ul>
+
+<p class="heading2">6.0.0 Builds</p>
+
+<p class="body">All information above this section pertains to the 6.0.0 builds of TrainingApp.</p>
+
+<hr>
+<hr>
+
+<p class="heading2">Version 5.0.4.2</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">ABCompany icon (displayed in info bar) changed to company icon used in other application (building).</li>
+			<li><p class="body">ABPlace icon (displayed in info bar) changed to icon of planet.</li>
+			<li><p class="body">Placeholder about-splash.png, logo.gif, and favicon.ico replaced with final versions from Maureen.</li>
+			<li><p class="body">Shortcuts window (Alt+Shift+H) edited and Alt+Shift+E added to it.</li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">Three unused typelists were removed. (PolicyHolderType, PolicyType, DoctorSpecialityType)</li>
+			<li><p class="body">For the VendorEvaluation score fields, a default of 0 was added. This prevents the Total Score enhancement (and the multiple trigger reflection example) from trying to add null values.</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+			<li><p class="body">Removed FlagEntryLV's unused and disabled DisplayName column.</li>
+			<li><p class="body">Unused display keys were removed. (This will make translation less expensive.)</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body">(no changes)</li>
+		</ul>
+	<li><p class="body"><b>GScript</b></li>
+		<ul>
+			<li><p class="body">popupButtonText function changed from being entity enhancement function to PCF function.</li>
+			<li><p class="body">DeleteSecondaryAddresses button now unavailable if ABContactAddressesLDV is in edit mode.</li>
+			<li><p class="body">deleteSecondaryAddresses logic now commits data via CurrentLocation.Commit() (as opposed to bundle commit).</li>
+			<li><p class="body">closeFlagEntry logic now commits data via CurrentLocation.Commit() (as opposed to bundle commit).</li>
+			<li><p class="body">Rule ABPU1030 now uses IsOpen enhancement property as opposed to repeating "is open" logic in rule.</li>
+			<li><p class="body">Enhancement elements now follow recommended capitalization convention.</li>
+			<li><p class="body">Comments in enhancement elements moved above elements (so that comments display in Studio popup help).</li>
+			<li><p class="body">Code indentation made consistent across business rules, enhancements, and PCF functions.</li>
+		</ul>
+	<li><p class="body"><b>Cross-Section Functionality</b></li>
+		<ul>
+			<li><p class="body">Total Score field in VendorEvaluationDV now uses mutli-trigger reflection to reflect score (and correctly referenced the getTotalScore() enhancement</li>
+			<li><p class="body">Example of reflectional editability via available property added. (PrefersContactByEmail widget on Company Details card.)</li>
+			<li><p class="body">Removed unused entity name for FlagEntry.</li>
+		</ul>
+	<li><p class="body"><b>Bug Fixes</b></li>
+		<ul>
+			<li><p class="body">All visibility conditions which referenced "ABContact" now reference "anABContact".</li>
+			<li><p class="body">The data model now supports the Finance Manager and Payment Contact relationships (again).</li>
+			<li><p class="body">As a result of the above, the shared logic input set example and conditional reflection example are working again.</li>
+			<li><p class="body">Changes to verified vendor evaluation now sets evaluation back to unverified.</li>
+			<li><p class="body">VendorEvaluationDV's TotalScore widget's value property fixed. (Was aVendorEvaluation.getTotalScore(), but should be aVendorEvaluation.TotalScore.)</li>
+		</ul>
+	</li>
+</ul>
+
+<p class="heading3">Known Issues (v5.0.4.2)</p>
+<ul>
+	<li><p class="body">This isn't exactly an "issue", but more of expected functionality. As of Carbon, sample data is loaded by logging into the application as "su", entering "run ImportSampleData" in the QuickJump box, and then pressing return.</li>
+	<li><p class="body">If for some reason you regenerate the toolkit and then wish to import sample data, you must manually reset the port number in
+          server.properties. (See note below.)</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Version 5.0.4.1</p>
+
+<p class="heading3">Enhancements and Fixes</p>
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body">Build Notes exit point added to application. (Another wonderful example of recursion.)</li>
+			<li><p class="body">The favicon.ico file has been replaced with the ExampleCenter icon (the light purple G).</li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body">Example of customer new entity and new subtype added to extensions.xml (and referenced in slides).</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+			<li><p class="body">Example of inline detail view added (and slides modified to reflect this example).</li>
+			<li><p class="body">Example of inline list view added (and slides modified to reflect this example).</li>
+		</ul>
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body">Example of navigation to external app via exit point added. (It's in the Search tab's Actions menu.)
+			    This approach uses the so-called "mini browser".</li>
+			<li><p class="body">Example of navigation to external app via Javascript added. (It's in the Search tab's Actions menu.)
+                      This approach uses a full browser.</li>
+		</ul>
+	<li><p class="body"><b>GScript</b></li>
+		<ul>
+			<li><p class="body">Enhancement property and function comments changed to /* */ style, so that they are available to Studio API reference.</li>
+		</ul>
+	<li><p class="body"><b>Bug Fixes</b></li>
+		<ul>
+			<li><p class="body">ABContactNotesPage no longer has StartInEditMode set to true. (This caused work to be listed in Unsaved Work unnessarily.)</li>
+			<li><p class="body">Visibility condition of Home Phone widget fixed.</li>
+			<li><p class="body">Employees fields cleaned up.</li>
+				<ul>
+					<li><p class="body">"Can Employees Be Added?" field relabelled to "Can Have Employees?"</li>
+					<li><p class="body">"Number of Employees" field visible only if "Can Have Employees?" is set to true</li>
+				</ul>
+			<li><p class="body">Address screen's Delete Secondary Address button available only if secondary addresses exist.</li>
+		</ul>
+</ul>
+</p>
+
+<p class="heading3">Known Issues (v.5.0.4.1)</p>
+<ul>
+	<li><p class="body">The conditional reflection example noted in the slides is not currently part of the application. The data model extension needs to be rebuilt around contact relationships. [Fixed in 5.0.4.2]</li>
+	<li><p class="body">If for some reason you regenerate the toolkit and then wish to import sample data, you must manually reset the port number in server.properties. (See note below.)</li>
+</ul>
+
+<hr>
+
+<p class="heading2">Regenerating the Toolkit and Sample Data (v5.0 builds)</p>
+
+<p class="body">The dev-import command uses information in toolkit\bin\server.properties. In particular, it uses the port number specified in this file.
+Initially, the port number is set to 8280. Because TrainingApp runs on 8880, this port number must be manually reset. In an initial installation,
+one does not need to worry about this file. But, if for some reason one regenerates the toolkit and then attempts to import the sample data, the
+import will fail because it will be using the wrong port number.</p>
+
+<p class="body">Therefore, if for some reason you regenerate the toolkit, you must also reset the port number in server.properties to 8880.</p>
+
+<hr>
+
+<p class="heading2">5.0.4 Builds</p>
+
+<p class="body">All information above this section pertains to the 5.0.4 builds of TrainingApp. All of them are based on ContactCenter 5.0.4.13.</p>
+
+<!--
+
+<ul>
+	<li><p class="body"><b>General</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+	<li><p class="body"><b>Data Model</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+	<li><p class="body"><b>User Interface - Containers</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+	<li><p class="body"><b>User Interface - Locations</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+	<li><p class="body"><b>Gosu</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+	<li><p class="body"><b>Cross-Section Functionality</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+	<li><p class="body"><b>Bug Fixes</b></li>
+		<ul>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+			<li><p class="body"></li>
+		</ul>
+</ul>
+-->
+
+</body>
+</html>
+

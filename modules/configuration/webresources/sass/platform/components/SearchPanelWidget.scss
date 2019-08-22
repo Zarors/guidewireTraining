@@ -1,0 +1,19 @@
+.gw-SearchPanelWidget {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  // Position to other widgets
+  margin-top: $gw-app--SearchPanel--spacing-widget-top-rem;
+  margin-left: $gw-app--SearchPanel--spacing-widget-left-rem;
+  margin-right: $gw-app--SearchPanel--spacing-widget-right-rem;
+  margin-bottom: $gw-app--SearchPanel--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--SearchPanel--spacing-inner-top-rem;
+  padding-left: $gw-app--SearchPanel--spacing-inner-left-rem;
+  padding-right: $gw-app--SearchPanel--spacing-inner-right-rem;
+  padding-bottom: $gw-app--SearchPanel--spacing-inner-bottom-rem;
+}

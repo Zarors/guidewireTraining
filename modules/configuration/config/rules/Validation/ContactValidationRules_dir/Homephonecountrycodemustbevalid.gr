@@ -1,0 +1,26 @@
+package rules.Validation.ContactValidationRules_dir
+
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleDisabled
+@gw.rules.RuleName("Home phone country code must be valid")
+internal class Homephonecountrycodemustbevalid {
+  static function doCondition(contact  :  entity.Contact) : boolean {
+/*start00rule*/
+return contact.HomePhone != null
+/*end00rule*/
+}
+
+  static function doAction(contact  :  entity.Contact, actions : gw.rules.Action) {
+/*start00rule*/
+if (contact.HomePhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+  contact.rejectField("HomePhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Home.CountryCode.Unparseable"), null, null)
+}
+
+if (contact.HomePhoneCountry == null){
+  contact.rejectField("HomePhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Home.CountryCode.Null"), null, null)
+} 
+/*end00rule*/
+  }
+}

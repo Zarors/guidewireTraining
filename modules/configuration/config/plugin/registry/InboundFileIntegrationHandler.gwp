@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<plugin
+    interface="InboundIntegrationHandlerPlugin"
+    name="InboundFileIntegrationHandler">
+  <plugin-java
+      disabled="false"
+      env="fileintegration"
+      javaclass="gw.plugin.integration.inbound.logging.file.line.FileIntegrationLogger">
+  </plugin-java>
+</plugin>

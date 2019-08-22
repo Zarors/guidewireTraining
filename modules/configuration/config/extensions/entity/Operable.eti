@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Operable"
+  extendable="true">
+  <column
+    desc='GDPR requirement to restrict "processing"'
+    name="DoNotProcess"
+    nullok="false"
+    type="bit"/>
+</delegate>

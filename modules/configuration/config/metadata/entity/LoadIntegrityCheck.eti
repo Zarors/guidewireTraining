@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Timed loader integrity checks."
+  entity="LoadIntegrityCheck"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadintegritycheck"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.staging.LoadIntegrityCheckPublicMethods"
+    impl="com.guidewire.pl.domain.staging.impl.LoadIntegrityCheckImpl"/>
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <implementsEntity
+    name="OrdereddLoaderObject"/>
+  <column
+    desc="Query from integrity check."
+    name="Query"
+    nullok="true"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="65000"/>
+  </column>
+  <column
+    desc="Description of integrity check."
+    name="Description"
+    nullok="false"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="65000"/>
+  </column>
+  <column
+    desc="Thread name."
+    name="ThreadName"
+    nullok="true"
+    type="mediumtext"/>
+  <typekey
+    desc="Type of loader integrity check."
+    name="LoadIntegrityCheckType"
+    nullok="false"
+    typelist="loaderrortype"/>
+  <foreignkey
+    columnName="LoadOperationID"
+    desc="Parent."
+    fkentity="LoadOperation"
+    name="LoadOperation"
+    nullok="false"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Denorm FK for unique index."
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <!-- Unique index on LoadCommandID, ExecutionOrder -->
+  <index
+    desc="(LoadCommandID, ExecutionOrder) is unique across load integrity checks"
+    name="loadintchecku1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="ExecutionOrder"/>
+  </index>
+</entity>

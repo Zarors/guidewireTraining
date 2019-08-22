@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Standard WorkItem implementation. This should work for most work queues."
+  entity="StandardWorkItem"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="standardworkqueue"
+  type="keyable">
+  <implementsEntity
+    name="WorkItem"/>
+  <typekey
+    desc="The queue."
+    name="QueueType"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <column
+    desc="A handle, generally the ID, to the target."
+    name="Target"
+    nullok="false"
+    type="softentityreference"/>
+  <index
+    desc="index to speed up selection of work items by workers"
+    expectedtobecovering="true"
+    name="StdWorkItemIndex"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="QueueType"/>
+    <indexcol
+      keyposition="2"
+      name="AvailableSince"/>
+    <indexcol
+      keyposition="3"
+      name="ID"/>
+  </index>
+  <index
+    desc="index to speed up prevention of duplication work items"
+    expectedtobecovering="true"
+    name="StdWorkItemIndex2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Target"/>
+    <indexcol
+      keyposition="2"
+      name="QueueType"/>
+    <indexcol
+      keyposition="3"
+      name="ID"/>
+  </index>
+  <index
+    desc="index for counting totals (available, failed, checked out work items)"
+    name="StdWorkItemIndex3"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="Status"/>
+    <indexcol
+      keyposition="2"
+      name="QueueType"/>
+  </index>
+</entity>

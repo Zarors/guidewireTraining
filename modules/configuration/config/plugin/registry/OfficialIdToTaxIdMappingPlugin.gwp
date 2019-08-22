@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="OfficialIdToTaxIdMappingPlugin">
+  <plugin-osgi
+    servicepid="com.guidewire.pl.plugin.contact.internal.AlwaysFalseOfficialIdToTaxIdMappingPlugin"/>
+</plugin>

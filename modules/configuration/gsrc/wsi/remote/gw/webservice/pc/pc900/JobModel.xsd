@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.jobmodel">
+  <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.jobmodel" name="Job" nillable="true" type="Job"/>
+  <xs:complexType name="Job">
+    <xs:sequence>
+      <xs:element gw:type="java.util.Date" minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="JobNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LatestPeriod" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+            <xs:element gw:type="java.lang.Integer" minOccurs="0" name="TermNumber" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Policy" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Account" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element gw:type="java.lang.String" minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+                  <xs:element gw:type="java.lang.String" minOccurs="0" name="PublicID" nillable="true" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="ProductCode" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Subtype" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Underwriter" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="PublicID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

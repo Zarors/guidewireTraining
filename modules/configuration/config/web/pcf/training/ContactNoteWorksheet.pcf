@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Worksheet
+    canEdit="true"
+    canVisit="true"
+    id="ContactNoteWorksheet"
+    startInEditMode="true"
+    tabLabel="isNewNote ? DisplayKey.get(&quot;Training.NewNote&quot;) : DisplayKey.get(&quot;Training.EditNote&quot;)"
+    title="isNewNote ? DisplayKey.get(&quot;Training.NewNote&quot;) : DisplayKey.get(&quot;Training.EditNote&quot;)">
+    <LocationEntryPoint
+      signature="ContactNoteWorksheet(anABContact:ABContact, isNewNote:boolean)"/>
+    <LocationEntryPoint
+      signature="ContactNoteWorksheet(anABContact:ABContact, aContactNote:ContactNote, isNewNote: boolean)"/>
+    <Scope
+      location="ABContactLG(anABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="anABContact.addContactNote()"
+      name="aContactNote"
+      type="ContactNote"/>
+    <Variable
+      name="isNewNote"
+      type="boolean"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons/>
+      </Toolbar>
+      <DetailViewPanel
+        editable="true"
+        id="ContactNoteDV">
+        <InputColumn>
+          <TypeKeyInput
+            editable="true"
+            id="ContactNoteType"
+            label="DisplayKey.get(&quot;Training.NoteType&quot;)"
+            value="aContactNote.ContactNoteType"
+            valueType="typekey.ContactNoteType"/>
+          <BooleanRadioInput
+            editable="true"
+            id="Confidential"
+            label="DisplayKey.get(&quot;Training.Confidential&quot;)"
+            value="aContactNote.IsConfidential"/>
+          <TextInput
+            editable="true"
+            id="Subject"
+            label="DisplayKey.get(&quot;Training.Subject&quot;)"
+            value="aContactNote.Subject"/>
+          <TextAreaInput
+            editable="true"
+            id="Body"
+            label="DisplayKey.get(&quot;Training.Body&quot;)"
+            numRows="3"
+            value="aContactNote.Body"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Worksheet>
+</PCF>

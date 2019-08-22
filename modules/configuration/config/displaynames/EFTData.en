@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Entity
+  name="EFTData">
+  <Columns>
+    <Column
+      beanPath="EFTData.BankName"
+      name="BankName"/>
+    <Column
+      beanPath="EFTData.BankAccountNumber"
+      name="BankAccountNumber"/>
+    <Column
+      beanPath="EFTData.IsPrimary"
+      name="IsPrimary"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.privacy.EncryptionMaskExpressions
+
+var sb = new java.lang.StringBuffer()
+      
+if (IsPrimary) {
+  sb.append("* ")
+}
+
+if (BankName != null and BankName.length() > 0) {
+  sb.append(BankName)
+}
+
+if (BankAccountNumber != null and BankAccountNumber.length() > 0) {
+  if (sb.length() > 0) {
+    sb.append(", ")
+  }
+  sb.append(EncryptionMaskExpressions.maskBankAccountNumber(BankAccountNumber))
+}
+
+return sb.toString()]]></DisplayName>
+</Entity>

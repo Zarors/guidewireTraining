@@ -1,0 +1,45 @@
+// Position to other widgets
+$gw-app--InputColumnSubGroup--spacing-widget-top-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem !default;
+$gw-app--InputColumnSubGroup--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputColumnSubGroup--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputColumnSubGroup--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--InputColumnSubGroup--spacing-inner-top-rem: null !default;
+$gw-app--InputColumnSubGroup--spacing-inner-left-rem: null !default;
+$gw-app--InputColumnSubGroup--spacing-inner-right-rem: null !default;
+$gw-app--InputColumnSubGroup--spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+// Inputs in InputColumnSubGroups =====
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-bottom-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-bottom-rem !default;
+
+// Internal padding
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-top-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-top-rem !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-left-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-left-rem !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-right-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-right-rem !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-bottom-rem: $gw-app--InputWidget-in-InputColumn--spacing-inner-bottom-rem !default;
+
+$gw-app--InputWidget-in-InputColumnSubGroup--row-label-pad-right-rem: $gw-app--InputWidget-in-InputColumn--row-label-pad-right-rem !default;
+$gw-app--InputWidget-in-InputColumnSubGroup--label-col: $gw-app--InputWidget-in-InputColumn--label-col !default;
+
+// Input Group Title Bar
+// Internal padding
+$gw-app--InputColumnSubGroup-title-bar--spacing-inner-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputColumnSubGroup-title-bar--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputColumnSubGroup-title-bar--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InputColumnSubGroup-title-bar--spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+$gw-app--InputColumnSubGroup-title-bar--internal-spacing-rem: $gw-app--SPACING-rem-XS !default;
+
+// Other
+$gw-app--InputColumnSubGroup--bg: $gw-app--palette--callout !default;
+
+$gw-app--InputColumnSubGroup--border-radius-px: $gw-app--border-radius-px !default;
+$gw-app--InputColumnSubGroup--header-border-top: null !default;
+$gw-app--InputColumnSubGroup--header-border-bottom: null !default;
+$gw-app--InputColumnSubGroup--header-font-col: null !default;
+$gw-app--InputColumnSubGroup--header-font-weight: null !default;
+

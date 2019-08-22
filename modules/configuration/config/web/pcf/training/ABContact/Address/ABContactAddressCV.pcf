@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <CardViewPanel
+    id="ABContactAddressCV">
+    <Require
+      name="anAddress"
+      type="Address"/>
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <Card
+      id="AddressDetail"
+      title="DisplayKey.get(&quot;Training.AddressDetail&quot;)">
+      <DetailViewPanel>
+        <InputColumn>
+          <TypeKeyInput
+            editable="true"
+            id="AddressType"
+            label="DisplayKey.get(&quot;Training.AddressType&quot;)"
+            value="anAddress.AddressType"
+            valueType="typekey.AddressType"/>
+          <TypeKeyInput
+            id="addressDescriptionID"
+            label="DisplayKey.get(&quot;Training.Description&quot;)"
+            value="anAddress.AddressType"
+            valueType="typekey.AddressType"/>
+          <InputSetRef
+            def="GlobalAddressInputSet(new gw.api.address.SecondaryAddressOwner(anAddress))"
+            id="globalAddressContainer"
+            mode="gw.api.address.AddressCountrySettings.getSettings(new gw.api.address.SecondaryAddressOwner(anAddress).SelectedCountry).PCFMode"
+            widgets="globalAddressContainer"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Card>
+  </CardViewPanel>
+</PCF>

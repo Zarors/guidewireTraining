@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ABPropInspector_Ext"
+  table="abpropinspector_ext"
+  type="retireable">
+  <column
+    name="InspectorLicense"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+  <column
+    name="IsHomeInspector"
+    nullok="true"
+    type="bit"/>
+  <column
+    name="IsCommercialInspector"
+    nullok="true"
+    type="bit"/>
+</entity>

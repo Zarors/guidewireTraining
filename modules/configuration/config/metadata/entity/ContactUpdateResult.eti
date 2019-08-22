@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- ContactUpdateResult is deprecated -->
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents the result of creating or updating a Contact."
+  entity="ContactUpdateResult"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <fulldescription><![CDATA[
+      ContactUpdateResult has been deprecated as of ClaimCenter 8.0 along with IAddressBookAdapter..
+      ContactUpdateResult represents the result of creating or updating a Contact. This operation can
+      either succeed or fail. If it failed, then errors will be accessible via getValidationResult. If it succeeded,
+      then there should be no errors in the ValidationResult, and the created or updated Contact will be accessible
+      via getContact.
+    ]]></fulldescription>
+  <foreignkey
+    desc="Used to report any errors that occurred during creation or update. May be null to report no errors."
+    fkentity="ValidationResult"
+    name="ContactValidationResult"
+    nullok="true"/>
+  <foreignkey
+    desc="Gets the Contact that was created or updated. Ignored if errors occurred."
+    fkentity="Contact"
+    name="Contact"
+    nullok="true"/>
+  <array
+    arrayentity="TempToPermEntry"
+    desc="The address book's mapping of the given temp ids to permanent ids"
+    name="TempToPermEntrys"/>
+</nonPersistentEntity>

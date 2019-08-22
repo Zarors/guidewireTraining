@@ -1,0 +1,105 @@
+.gw-BarValueWidget, .gw-ProgressValueWidget {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @include gw-borderRadius();
+
+  .gw-progress--holder {
+    box-shadow: $gw-app--progress-bar--holder-inset-shadow, $gw-app--progress-bar--holder-outset-shadow;
+    width: $gw-app--progress-bar--bar-min-width-em;
+    background-color: $gw-app--progress-bar--empty-bar-bg;
+
+    @if($gw-app--progress-bar--holder-has-input-border) {
+      border: gw-border($gw-app--inputs--border--col);
+    } @else {
+      overflow: hidden;
+    }
+
+    @include gw-borderRadius();
+
+    .gw-progress--bar {
+      box-shadow: $gw-app--progress-bar--bar-inset-shadow;
+      height: $gw-app--line-height-unitless + $gw-app--progress-bar--pad-top-rem + $gw-app--progress-bar--pad-bottom-rem;
+      background-color: $gw-app--progress-bar--bar-color-default;
+      position: relative;
+      @include gw-borderCap($left: true);
+
+      // If the progress percent is known, then we have a standard bar, with a label, and various colors
+      &:not(.gw-progress--unknown) {
+        &.gw-progress--level-high {
+          background-color: $gw-app--progress-bar--bar-color-high;
+        }
+
+        &.gw-progress--level-medium {
+          background-color: $gw-app--progress-bar--bar-color-medium;
+        }
+
+        &.gw-progress--level-low {
+          background-color: $gw-app--progress-bar--bar-color-low;
+        }
+
+        &:not(.gw-progress--bar-empty):not(.gw-progress--bar-full) {
+          box-shadow: $gw-app--progress-bar--bar-inset-shadow, $gw-app--progress-bar--bar-outset-shadow;
+
+          @if($gw-app--progress-bar--inner-bar-has-right-border) {
+            border-right: gw-border(darken($gw-app--progress-bar--bar-color-default, 8%));
+
+            &.gw-progress--level-high {
+              border-right: gw-border(darken($gw-app--progress-bar--bar-color-high, 8%));
+            }
+
+            &.gw-progress--level-medium {
+              border-right: gw-border(darken($gw-app--progress-bar--bar-color-medium, 8%));
+            }
+
+            &.gw-progress--level-low {
+              border-right: gw-border(darken($gw-app--progress-bar--bar-color-low, 8%));
+            }
+          }
+        }
+
+        .gw-progress--bar-label {
+          display: inline;
+          vertical-align: top;
+          position: absolute;
+          margin: 0 $gw-app--inputs--pad-h-rem;
+          right: 0;
+          top: $gw-app--progress-bar--pad-top-rem; //TODO this is going to result in imperfect alignment, but simpler for now during the changes
+          color: $gw-app--progress-bar--in-bar-label-col;
+          font-weight: $gw-app--progress-bar--label-font-weight;
+          font-size: $gw-app--progress-bar--label-font-size-em;
+
+          &.gw-progress--shifted-label {
+            left: 100%;
+            right: auto;
+            color: $gw-app--progress-bar--outside-bar-label-col;
+          }
+        }
+      }
+
+      &.gw-progress--unknown {
+        $gw-blur-offset: gw-pxFixed(1);
+        background: repeating-linear-gradient(
+                        #{$gw-app--progress-bar--loading-stripe-angle-deg},
+                        #{$gw-app--progress-bar--empty-bar-bg} 0, #{$gw-app--progress-bar--bar-color-default $gw-blur-offset},
+                        #{$gw-app--progress-bar--bar-color-default $gw-blur-offset}, #{$gw-app--progress-bar--bar-color-default} #{$gw-app--progress-bar--loading-stripe-w-px},
+                        #{$gw-app--progress-bar--bar-color-default} #{$gw-app--progress-bar--loading-stripe-w-px}, #{$gw-app--progress-bar--empty-bar-bg} #{$gw-app--progress-bar--loading-stripe-w-px + $gw-blur-offset},
+                        #{$gw-app--progress-bar--empty-bar-bg} #{$gw-app--progress-bar--loading-stripe-w-px + $gw-blur-offset}, #{$gw-app--progress-bar--empty-bar-bg} #{2 * $gw-app--progress-bar--loading-stripe-w-px + $gw-blur-offset}
+        );
+        background-size: 400% 100%;
+        @include gw-animation(gw-slide-background #{$gw-app--progress-bar--loading-stripe-speed-s} infinite linear forwards);
+
+        .gw-progress--bar-label {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .gw-progress--status-label {
+    flex-grow: 1;
+    margin-left: $gw-app--SPACING-rem-M;
+    padding: $gw-app--progress-bar--pad-top-rem $gw-app--progress-bar--pad-bottom-rem;
+    @include gw-borderCap($right: true);
+  }
+}

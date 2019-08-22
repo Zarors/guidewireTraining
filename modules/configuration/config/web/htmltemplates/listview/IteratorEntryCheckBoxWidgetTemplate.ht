@@ -1,0 +1,3 @@
+<input id="${renderId}" ${outerClasses} ${outerStyles} ${outerAttributes} type="checkbox" value="true" name="${renderId}"
+       data-gw-flags-scope="${scope}" data-gw-flags-for-entry="${flags}" data-gw-flags-target="${target}"
+       data-gw-change="gwFlags.checkBoxChanged" data-gw-click="noOp" checked="${checked}"/>

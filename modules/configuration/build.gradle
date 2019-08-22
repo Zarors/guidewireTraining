@@ -1,0 +1,92 @@
+import com.guidewire.gradle.helpers.ClasspathHelper
+import com.guidewire.gradle.ci.CiUtil
+
+tasks.runSuite.configure {
+  appCode = project.parent.app.appCode
+  generateClasspathFiles = { return ClasspathHelper.generateStartJarAndTxtFileIfRequired(project, it) }
+}
+
+/////////////////////////////////////
+// schema module for: genSchemaJar //
+/////////////////////////////////////
+//dependencies {
+//  task (':modules:schemas:genSchemaJar')
+//  compile files('../schemas/gw-xml-schemas.jar')
+//  schemajars files('../schemas/gw-xml-schemas.jar')
+//}
+///////////////////
+
+
+// All memory settings are controlled from gradle.properties file
+// Add custom project specific configuration here if needed
+
+// By default run compile before running almost every tool (except few)
+def tasksNotDependentOnCompile = ['flattenConfiguration', 'genExternalEntitySources', 'jsonSchemaCodegen']
+tasks.withType(com.guidewire.gradle.tasks.InternalToolExec) {
+  if (!tasksNotDependentOnCompile.contains(it.name)) {
+    dependsOn ':compile'
+    doLast {
+      if (gradle.taskGraph.hasTask(':compile')) {
+        println """
+*******************************************
+A full compile was done before running the $it.name tool. To skip compile use \"-x compile\" option when running gwb
+*******************************************
+"""
+      }
+    }
+  }
+}
+
+// The build can be configured to extend certain workflows. Here are some examples that we have provided
+// for reference. There might be changes required based on your specific needs and requires additional testing.
+
+// Example 1: change memory settings of dropDb tool
+/*
+dropDb.maxHeapSize = '4096m'
+*/
+
+// Example 2: add Git branch name and SHA to WAR name; change destination directory
+/*
+def branchName = 'git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+def sha = 'git rev-parse --short HEAD'.execute().text.trim()
+
+// sometimes reconfiguration has to be inside afterEvaluate to override default settings
+afterEvaluate {
+  warJbossDbcp.destinationDir = rootProject.file('dist')
+  warJbossDbcp.archiveName = "${rootProject.app.appCode}_${branchName}_${sha}_dbcp.war"
+
+  warJbossJndi.destinationDir = rootProject.file('dist')
+  warJbossJndi.archiveName = "${rootProject.app.appCode}_${branchName}_${sha}_jndi.war"
+}
+*/
+
+// Example 3: add additional resources to META-INF directory in WebSphere EAR
+/*
+earWebsphereDbcp {
+  from file('additional-descriptors-for-ear'), {
+    into 'META-INF'
+    include '*.*'
+  }
+}
+*/
+
+// Example 4: add additional JAR to Java classpath and WEB-INF/lib in WARs
+/*
+dependencies {
+  compile files(rootProject.file('my-libs/library.jar'))
+}
+*/
+
+// WEB-INF/classes is a special directory in WAR that contains classes and resources which override
+// same files in JARs in WEB-INF/lib
+
+// Example 5: copy contents of modules/configuration/webInfClasses to WEB-INF/classes in WAR
+/*
+tasks.withType(Jar) {
+  if (it.name.startsWith('war')) {
+    it.into ('WEB-INF/classes') {
+      from project.file('webInfClasses')
+    }
+  }
+}
+*/

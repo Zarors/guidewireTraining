@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.Holiday.view"
+    id="HolidaysPage"
+    title="DisplayKey.get(&quot;Web.Admin.Holidays&quot;)">
+    <Variable
+      initialValue="gw.api.database.Query.make(Holiday).select()"
+      name="Holidays"
+      type="gw.api.database.IQueryBeanResult&lt;Holiday&gt;"/>
+    <Screen
+      id="HolidaysScreen">
+      <PanelRef
+        def="HolidaysLV(Holidays)">
+        <Toolbar>
+          <ToolbarButton
+            action="NewHoliday.go()"
+            available="perm.Holiday.create"
+            id="Holidays_AddHolidayButton"
+            label="DisplayKey.get(&quot;Web.Admin.AddHoliday&quot;)"
+            shortcut="H"/>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="gw.api.admin.BaseAdminUtil.deleteHolidays(CheckedValues)"
+            available="perm.Holiday.delete"
+            flags="any Holiday"
+            id="Holidays_DeleteButton"
+            iterator="HolidaysLV.HolidaysLV"
+            label="DisplayKey.get(&quot;Button.Delete&quot;)"
+            shortcut="L"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

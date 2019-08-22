@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="What infrastructure handles this Workflow?"
+  final="true"
+  name="WorkflowHandler"
+  platform="true">
+  <typecode
+    code="internal"
+    desc="Handled by Guidewire's internal Workflow engine"
+    name="Internal"/>
+  <typecode
+    code="test"
+    desc="Handled by testing infrastructure (not for production!)"
+    name="Test"/>
+</typelist>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="ContactComparisonLV">
+    <Require
+      name="pendingContactUpdate"
+      type="PendingContactUpdate"/>
+    <Require
+      name="updateDiffDisplay"
+      type="gw.api.bean.compare.ui.DiffDisplay"/>
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="getRowTreeRoot()"
+      name="root"
+      recalculateOnRefresh="true"
+      type="gw.api.tree.RowTreeRootNode"/>
+    <RowTree
+      contentType="gw.api.bean.compare.ui.DiffDisplay"
+      elementName="diff"
+      id="lv2"
+      pageSize="0"
+      value="root">
+      <Row
+        editable="false">
+        <TextCell
+          id="LabelField"
+          label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.PendingUpdatesCard.DiffColumnLabel&quot;)"
+          sortBy="getSortBy(diff)"
+          sortOrder="1"
+          value="label(diff).elide(80)"/>
+        <TextCell
+          enableSort="false"
+          id="OldContactField"
+          label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.PendingUpdatesCard.BeforeChangesColumnLabel&quot;)"
+          value="oldValue(diff)"/>
+        <TextCell
+          enableSort="false"
+          id="NewContactField"
+          label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.PendingUpdatesCard.AfterChangesColumnLabel&quot;)"
+          value="newValue(diff)"/>
+      </Row>
+    </RowTree>
+    <Code><![CDATA[uses gw.api.util.CountryConfig
+uses gw.api.util.PropertyDisplay
+uses gw.api.bean.compare.ui.PropertyDiffDisplay
+uses gw.api.bean.compare.ui.DiffDisplay
+uses gw.api.bean.compare.ui.EntityDiffDisplay
+uses gw.api.contact.pendingchanges.DiffDisplays
+uses gw.plugin.contact.pendingchange.ABContactContactDiffDisplay
+uses gw.plugin.contact.pendingchange.ABContactAddressDiffDisplay
+
+function getRowTreeRoot() : gw.api.tree.RowTreeRootNode {
+  if (pendingContactUpdate == null) {
+    return null
+  }
+  return new gw.api.tree.RowTreeRootNode({updateDiffDisplay},
+    \r ->(r typeis DiffDisplay) ? DiffDisplays.getVisibleChildren(r) : {}, DiffDisplays.getVisibleChildren(updateDiffDisplay).HasElements ? 1 : 0)
+}
+
+function getSortBy (diff : DiffDisplay) : String {
+  return ((diff typeis EntityDiffDisplay) ? "B:" : "A:") + diff.Label
+}
+
+function oldValue(diff : DiffDisplay) : String {
+  if (diff typeis ABContactContactDiffDisplay || diff typeis ABContactAddressDiffDisplay) { // go fetch the NewValue regardless of type
+    return diff.OldValue.elide(60)
+  } else if (not DiffDisplays.getAllChildren(diff).Empty and (diff.Type==CHANGED or (diff.Type==UNCHANGED and DiffDisplays.hasDeepChanges(diff))))
+    return DisplayKey.get("Web.Contacts.PendingChanges.PendingUpdatesCard.Changed")  // default display key is empty string
+  else if ((diff.Type == REMOVED or diff.Type == MOVED_FROM))
+    return DisplayKey.get("Web.Contacts.PendingChanges.PendingUpdatesCard.Check")
+  else
+    return diff.OldValue.elide(60)
+}
+
+function newValue(diff : DiffDisplay) : String {
+  if (diff typeis ABContactContactDiffDisplay || diff typeis ABContactAddressDiffDisplay) { // go fetch the NewValue regardless of type
+    return diff.NewValue.elide(60)
+  } else if ((diff.Type == ADDED or diff.Type == MOVED_TO))
+    return DisplayKey.get("Web.Contacts.PendingChanges.PendingUpdatesCard.Check")
+  else if (diff.Type == REMOVED or diff.Type == MOVED_FROM)
+    return DisplayKey.get("Web.Contacts.PendingChanges.PendingUpdatesCard.Removed")
+  else
+    return diff.NewValue.elide(60)
+}
+
+function label(diff : DiffDisplay) : String {
+  if (diff typeis PropertyDiffDisplay) {
+    if (diff.Diff.PropertyInfo.OwnersType == entity.Address) {
+      var propertyName = diff.Diff.PropertyInfo.getName()
+      var cc = CountryConfig.getCountryConfig(contact.PrimaryAddress.Country);
+      if (cc == null)
+        return diff.Label
+      if (propertyName == "State") {
+        return cc.getStateLabel() ?: diff.Label;
+      }
+      if (propertyName == "PostalCode") {
+        return cc.getPostalCodeLabel() ?: diff.Label;
+      }
+      if (propertyName == "City") {
+        return cc.getCityLabel() ?: diff.Label;
+      }
+    }
+  }
+  return diff.Label
+}]]></Code>
+  </ListViewPanel>
+</PCF>

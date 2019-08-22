@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="The different fields on an activity or claim that could be used as the starting point for another date field"
+  name="StartPointType">
+  <typecode
+    code="activitycreation"
+    desc="Creation date of the activity"
+    name="Activity creation date">
+    <category
+      code="task"
+      typelist="ActivityClass"/>
+  </typecode>
+  <typecode
+    code="startdate"
+    desc="Start date on activity"
+    name="Activity start date">
+    <category
+      code="event"
+      typelist="ActivityClass"/>
+  </typecode>
+</typelistextension>

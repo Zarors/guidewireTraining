@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="Roles.go()"
+    afterCommit="Roles.go()"
+    canEdit="true"
+    canVisit="perm.Role.create"
+    id="NewRole"
+    parent="Roles()"
+    showUpLink="true"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.NewRole&quot;)">
+    <LocationEntryPoint
+      signature="NewRole()"/>
+    <Variable
+      initialValue="new Role()"
+      name="Role"
+      type="Role"/>
+    <ScreenRef
+      def="RoleDetailScreen(Role)"/>
+  </Page>
+</PCF>

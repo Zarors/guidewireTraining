@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageRequest"
+  name="MessageGeneratorRequest">
+  <plugin-gosu
+    gosuclass="trainingapp.demo.messagegenerator.MessageGeneratorRequest"/>
+</plugin>

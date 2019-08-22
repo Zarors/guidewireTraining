@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="GlobalContactNameInputSet"
+    mode="default">
+    <Require
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Variable
+      initialValue="nameOwner.InEditMode = CurrentLocation.InEditMode; return 0 as boolean"
+      name="saveEditMode"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <TextInput
+      available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+      editable="nameOwner.isEditable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+      id="Name"
+      label="nameOwner.ContactNameLabel"
+      required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.NP_NAME)"
+      value="nameOwner.ContactName.Name "/>
+  </InputSet>
+</PCF>

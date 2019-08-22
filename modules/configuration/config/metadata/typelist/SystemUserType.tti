@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    USER/GROUP TYPELISTS
+  ******************************************************************************************************************** -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of special system users"
+  final="true"
+  name="SystemUserType"
+  platform="true">
+  <typecode
+    code="sysadmin"
+    desc="The system administrator"
+    name="system administrator"/>
+  <typecode
+    code="defaultowner"
+    desc="A special user that accepts failed or unresolved assignments"
+    name="default owner"/>
+  <typecode
+    code="sysservices"
+    desc="A daemon user that executes system services like escalation"
+    name="system services"/>
+</typelist>

@@ -1,0 +1,184 @@
+
+@mixin gw-narrowColumn {
+  flex-wrap: wrap;
+
+  .gw-tcp-ChartContainer {
+    //margin-top: $gw-tcp-content-padding;
+  }
+
+  .gw-tcp-Spacer {
+    display: none;
+  }
+
+  .gw-chart-legend {
+    //padding-top: $gw-tcp-content-padding;
+    padding-right: $gw-tcp-content-padding;
+    padding-left: $gw-tcp-content-padding;
+    max-width: none;
+  }
+}
+
+@mixin gw-chartRow {
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+
+  .gw-tcp-Spacer {
+    display: flex;
+  }
+
+  .gw-chart-legend-vertical {
+    max-width: $gw-tcp-wide-tile-legend-width;
+  }
+}
+
+@mixin gw-wideChartWithInputs {
+  .gw-TileChartBody {
+    display: flex;
+    flex-flow: wrap;
+
+    .gw-TileChartPanelWidget {
+      flex-grow: 1;
+    }
+
+    .gw-TileInputColumnWidget {
+      align-self: center;
+    }
+  }
+}
+
+.gw-TileWidget .gw-TileChartBody {
+  .gw-chart-legend {
+    flex-shrink: 0;
+  }
+
+  .gw-TileInputColumnWidget.gw-StyleContainer--TileWidget {
+    //flex-basis: $gw-tcp-min-input-column-width;
+    //flex-grow: 1;
+    //padding: $gw-tcp-content-padding 0 0;
+    //margin: 0;
+    //display: flex;
+    //justify-content: center;
+
+    //.gw-InputColumnWidget {
+    //  width: auto;
+    //  max-width: 100%;
+    //}
+  }
+}
+
+.gw-TileChartPanelWidget {
+  padding: $gw-app--TileChartPanelWidget--padding;
+  justify-content: center;
+  width: 100%;
+
+  &.gw-chart-pie,&.gw-chart-donut {
+    display: flex;
+    flex-basis: $gw-tcp-min-chart-panel-width;
+    flex-grow: 1;
+
+    .gw-tcp-ChartContainer {
+      width: $gw-tcp-pie-chart-size;
+      height: $gw-tcp-pie-chart-size;
+      align-self: center;
+    }
+  }
+
+  &:not(.gw-chart-pie):not(.gw-chart-donut) {
+    > .gw-tcp-ChartContainer {
+      max-width: $gw-tcp-max-chart-size-px;
+      min-width: $gw-tcp-min-chart-size-px;
+      min-height: $gw-tcp-min-chart-height-px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    // Together with the absolute positioning of the chart ensures height relative to width
+    > .gw-tcp-ChartContainer:before {
+      display: block;
+      content: "";
+      padding-top: 40%;
+    }
+  }
+
+  .gw-tcp-ChartContainer {
+    position: relative;
+
+    .gw-tcp-chart-svg {
+      width: 100%;
+      height: 100%;
+      position:  absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .gw-chart-legend-horizontal {
+    margin: 0 auto;
+    max-width: $gw-tcp-max-chart-size-px;
+    padding-bottom: $gw-tcp-legend-horizontal-padding-bottom;
+  }
+
+  .gw-tcp-Spacer {
+    max-width: $gw-tcp-spacer-max-width;
+    min-width: $gw-tcp-spacer-min-width;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+  }
+
+  @include gw-chartLegend();
+
+  .gw-chart-legend {
+    .gw-chart-legend-entry {
+      white-space: nowrap;
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  .gw-chart-legend.gw-chart-legend-vertical {
+    min-width: $gw-tcp-min-legend-width;
+    flex-shrink: 1;
+    justify-content: center;
+    flex-direction: column;
+
+    .gw-chart-legend-entry:first-child {
+      padding-top: $gw-tcp-legend-entry-padding-top;
+    }
+  }
+
+  @media (max-width: $gw-media--phone--width-px) {
+    @include gw-narrowColumn;
+  }
+
+  @media (min-width: $gw-media--phone--width-px + 1) and (max-width: $gw-media--tablet--width-px) {
+    @include gw-chartRow;
+  }
+}
+
+@media (min-width: $gw-media--phone--width-px + 1) and (max-width: $gw-media--tablet--width-px) {
+  .gw-ChartTileWidget.gw-InputsContainer {
+    @include gw-wideChartWithInputs
+  }
+}
+
+@media (min-width: $gw-media--tablet--width-px + 1) {
+  .gw-DashboardColumnWidget:nth-of-type(1) {
+    .gw-ChartTileWidget.gw-InputsContainer {
+      @include gw-wideChartWithInputs
+    }
+    .gw-TileChartPanelWidget.gw-StyleContainer--TileWidget {
+      @include gw-chartRow;
+    }
+  }
+
+  .gw-DashboardColumnWidget:nth-of-type(2) {
+    .gw-TileChartPanelWidget.gw-StyleContainer--TileWidget {
+      &.gw-chart-pie,&.gw-chart-donut {
+        @include gw-narrowColumn;
+      }
+    }
+  }
+}

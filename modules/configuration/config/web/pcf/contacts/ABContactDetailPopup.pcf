@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    afterCancel="root = new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+    afterCommit="root = new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+    beforeCancel="gw.api.web.contact.PendingContactChangeUtil.closeWorksheet()"
+    beforeCommit="gw.api.web.contact.PendingContactChangeUtil.closeWorksheet()"
+    canEdit="perm.ABContact.edit(viewContact)"
+    canVisit="perm.ABContact.view(viewContact)"
+    id="ABContactDetailPopup"
+    infoBar="ContactInfoBar(viewContact)"
+    returnType="ABContact"
+    title="DisplayKey.get(&quot;Web.ContactDetail.Title&quot;, viewContact)">
+    <LocationEntryPoint
+      signature="ABContactDetailPopup(viewContact : ABContact)"/>
+    <LocationEntryPoint
+      signature="ABContactDetailPopup(viewContact : ABContact, selectDocumentsCard: boolean)"/>
+    <Variable
+      name="viewContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="false"
+      name="selectDocumentsCard"
+      type="boolean"/>
+    <Variable
+      initialValue="new gw.web.ContactDetailsVendorHelper(viewContact)"
+      name="contactDetailsVendorHelper"
+      type="gw.web.ContactDetailsVendorHelper"/>
+    <Variable
+      initialValue="new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+      name="root"
+      type="gw.api.tree.RowTreeRootNode"/>
+    <ScreenRef
+      def="ABContactDetailScreen(viewContact, true)"/>
+  </Popup>
+</PCF>

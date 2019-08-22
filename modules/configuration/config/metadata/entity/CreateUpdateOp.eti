@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Defines a single entity to be created in the address book.  The fields values of that new entity would be set in the BatchUpdate.FieldChangeUpdateOps array."
+  entity="CreateUpdateOp"
+  platform="true"
+  supertype="UpdateOp">
+  <fulldescription><![CDATA[This non-persistent entity has been deprecated since ClaimCenter 8.0 along with the IAddressBookAdapter.]]></fulldescription>
+  <column
+    desc="Identifies the entity type.  e.g. Person, Company, or Adjudicator.  (Entity type on the application side not a ContactManager entity type)"
+    name="EntityTypeName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Temporary ID for the newly created object.  Needs to be unique within this UpdateBatch.  Can be referenced from the FieldUpdateOps."
+    name="ObjectUId"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    columnName="UpdateBatchID"
+    desc="Associated UpdateBatch."
+    fkentity="UpdateBatch"
+    getterScriptability="hidden"
+    name="UpdateBatch"
+    nullok="false"
+    setterScriptability="hidden"/>
+</subtype>

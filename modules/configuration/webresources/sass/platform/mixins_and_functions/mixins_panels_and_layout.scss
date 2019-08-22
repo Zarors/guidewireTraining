@@ -1,0 +1,45 @@
+@mixin gw-textEllipse() { //TODO: cooper, figure out all the situations this needs to account for
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-shrink: 1;
+}
+
+@mixin gw-wrapOnWhiteSpace() {
+  flex-shrink: 1;
+  white-space: normal;
+  overflow-wrap: break-word; //This ensures that if a label overflows its container, we attempt to shift the word to a new line (not the same as word-break: break-word
+}
+
+@mixin gw-wrapNever() {
+  white-space: nowrap;
+}
+
+@mixin gw-simpleContainerBase($bg:$gw-app--panels--bg, $col:$gw-app--panels--col, $hasBorder: false, $hasBorderRadius: false, $border-col:$gw-app--panels--border-col) {
+  background-color: $bg;
+  color: $col;
+  @if ($hasBorder) {
+    border: gw-border($border-col);
+  } @else {
+    border: gw-border($bg);
+  }
+  @if ($hasBorderRadius) {
+    @include gw-borderRadius();
+  }
+}
+
+@mixin gw-simpleContainer($bg:$gw-app--panels--bg, $col:$gw-app--panels--col) {
+  @include gw-simpleContainerBase($bg, $col, $gw-app--panels--have-borders, true);
+}
+
+@mixin gw-info() {
+  @include gw-simpleContainerBase($gw-app--panels--info--bg, $gw-app--palette--info, $gw-app--panels--have-borders, true, $gw-app--panels--info--border-col);
+}
+
+@mixin gw-warning($col:$gw-app--palette--warning ) {
+  @include gw-simpleContainerBase($gw-app--panels--warning--bg, $col , $gw-app--panels--have-borders, true, $gw-app--panels--warning--border-col);
+}
+
+@mixin gw-error() {
+  @include gw-simpleContainerBase($gw-app--panels--error--bg, $gw-app--palette--error, $gw-app--panels--have-borders, true, $gw-app--panels--error--border-col);
+}

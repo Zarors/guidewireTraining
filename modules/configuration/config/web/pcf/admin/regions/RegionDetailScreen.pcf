@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="RegionDetailScreen">
+    <Require
+      name="Region"
+      type="Region"/>
+    <Variable
+      initialValue="gw.api.admin.BaseAdminUtil.getDefaultCountry()"
+      name="country"
+      type="Country"/>
+    <Toolbar>
+      <EditButtons
+        editVisible="gw.api.admin.BaseAdminUtil.getRegionZoneTypesForDefaultCountry().length != 0"/>
+    </Toolbar>
+    <Verbatim
+      label="DisplayKey.get(&quot;Web.Regions.CannotEditRegions&quot;)"
+      labelStyleClass="warning"
+      visible="gw.api.admin.BaseAdminUtil.getRegionZoneTypesForDefaultCountry().length == 0"/>
+    <PanelRef>
+      <DetailViewPanel
+        visible="true">
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Web.Admin.RegionDetailDV.Region&quot;)"/>
+          <InputDivider
+            hideIfReadOnly="true"/>
+          <TextInput
+            editable="true"
+            id="Name"
+            label="DisplayKey.get(&quot;Web.Admin.RegionDetailDV.Name&quot;)"
+            required="true"
+            value="Region.Name"/>
+          <TextAreaInput
+            id="Zones"
+            label="DisplayKey.get(&quot;Web.Admin.RegionDetailDV.Zones&quot;)"
+            numRows="5"
+            value="Region.Zones"/>
+          <RangeInput
+            editable="true"
+            hideIfReadOnly="true"
+            id="Country"
+            label="DisplayKey.get(&quot;Web.Admin.BusinessWeekDetailDV.Country&quot;)"
+            required="true"
+            value="country"
+            valueRange="getPossibleCountries()"
+            valueType="typekey.Country">
+            <PostOnChange/>
+          </RangeInput>
+        </InputColumn>
+      </DetailViewPanel>
+    </PanelRef>
+    <PanelRef
+      def="RegionDetailDV(Region)"
+      editable="perm.Region.edit(Region)"
+      mode="country"/>
+    <PanelRef
+      def="LocalizedValuesDV(Region, { &quot;Name&quot;}, { DisplayKey.get(&quot;Web.Admin.RegionDetailDV.Name&quot;) })"/>
+    <Code><![CDATA[function getPossibleCountries() : java.util.List<Country> {
+  var org = User.util.CurrentUser.Organization
+  if (org == null) {
+    org = User.util.UnrestrictedUser.Organization
+  }
+  return org.Countries
+}]]></Code>
+  </Screen>
+</PCF>

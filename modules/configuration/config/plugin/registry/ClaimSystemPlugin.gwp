@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<plugin
+  name="ClaimSystemPlugin"
+  interface="ClientSystemPlugin">
+  <plugin-gosu
+    gosuclass="gw.plugin.integration.StandAloneClientSystemPlugin"/>
+
+  <!-- Plugin to use when connecting ContactManager to ClaimCenter:
+    <plugin-gosu
+      gosuclass="gw.plugin.claim.cc1000.CCClaimSystemPlugin"/>
+  -->
+</plugin>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Wrapper for Organization for use with the group picker."
+  entity="OrganizationSelection"
+  extendable="true">
+  <fulldescription><![CDATA[
+    Wraps an Organization for use with the group picker. This is an internal, transitional entity and the system does
+      not store it in the database.
+  ]]></fulldescription>
+  <foreignkey
+    desc="Organization wrapped for use with the group picker."
+    fkentity="Organization"
+    name="Organization"
+    nullok="true"/>
+</nonPersistentEntity>

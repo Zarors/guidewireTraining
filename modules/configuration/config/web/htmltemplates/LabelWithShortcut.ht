@@ -1,0 +1,1 @@
+<:control :if="left">${left}</:control><:control :if="addLeftSpace">&nbsp;</:control><div class="gw-shortcutKey">${shortcutKey}</div><:control :if="addRightSpace">&nbsp;</:control><:control :if="right">${right}</:control>

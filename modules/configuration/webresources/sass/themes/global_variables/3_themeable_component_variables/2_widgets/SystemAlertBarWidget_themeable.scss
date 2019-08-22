@@ -1,0 +1,17 @@
+// Position to other widgets
+$gw-app--SystemAlertBar--spacing-widget-top-rem: null !default;
+$gw-app--SystemAlertBar--spacing-widget-left-rem: null !default;
+$gw-app--SystemAlertBar--spacing-widget-right-rem: null !default;
+$gw-app--SystemAlertBar--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--SystemAlertBar--spacing-inner-top-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--SystemAlertBar--spacing-inner-left-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--SystemAlertBar--spacing-inner-right-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--SystemAlertBar--spacing-inner-bottom-rem: $gw-app--SPACING-rem-L !default;
+
+// Other
+$gw-app--SystemAlertBar--bg: $gw-app--panels--warning--bg !default;
+$gw-app--SystemAlertBar--col: null !default;
+$gw-app--SystemAlertBar--title-font-size-em: gw-emFixed(16/14);
+$gw-app--SystemAlertBar--title-font-weight: gw-weight(bold);

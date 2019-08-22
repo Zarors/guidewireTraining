@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><extension entityName="ABCompany" xmlns="http://guidewire.com/datamodel">
+	<!-- START: Fields needed for TrainingApp "base application" -->
+	<column name="CanAddEmployees" type="bit" desc="Can employees be added to this company?" default="true" nullok="true" />
+	<column name="InspectionRequired" type="bit" desc="Is a business inspection required for this company?" default="false" nullok="true" />
+	<column name="InspectionDate" type="datetime" desc="Date of business inspection" nullok="true" />
+	<column name="EmployeeScore" type="integer" desc="This score measures how satisfied the company's employees are with the company" nullok="true"/>
+	<!-- END: Fields needed for TrainingApp "base application" -->	
+</extension>

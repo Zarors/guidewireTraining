@@ -1,0 +1,43 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Home Phone Changed History Event")
+internal class HomePhoneChangedHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.New
+and (aBContact.ChangedFields.contains("HomePhone")
+or aBContact.ChangedFields.contains("HomePhoneExtension")
+or aBContact.ChangedFields.contains("HomePhoneCountry"))
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var fieldsToTrack = new java.util.HashMap<String, String>()
+              {"HomePhone" -> "Web.ContactDetail.Phone.Home",
+              "HomePhoneExtension" -> "Web.ContactDetail.Phone.Extension",
+              "HomePhoneCountry" -> "Web.ContactDetail.Phone.RegionCode"}
+var originalValue = aBContact.getOriginalValue("HomePhone")
+var history : History
+
+if (aBContact.HomePhone == null or aBContact.HomePhone == "") {
+  history = aBContact.addHistory(CustomHistoryType.TC_PHONEREMOVED, DisplayKey.get("Rules.Preupdate.ABContact.HomePhoneRemoved"))
+  history.createTrackedChanges(aBContact, fieldsToTrack)
+
+} else if (originalValue == null or originalValue.equals("")) {
+  history = aBContact.addHistory(CustomHistoryType.TC_PHONEADDED, DisplayKey.get("Rules.Preupdate.ABContact.HomePhoneAdded"))
+  history.createTrackedChanges(aBContact, fieldsToTrack)
+
+} else {
+  history = aBContact.addHistory(CustomHistoryType.TC_PHONEUPDATED, DisplayKey.get("Rules.Preupdate.ABContact.HomePhoneUpdated"))
+  history.createTrackedChanges(aBContact, fieldsToTrack)
+}
+/*end00rule*/
+
+  }
+}

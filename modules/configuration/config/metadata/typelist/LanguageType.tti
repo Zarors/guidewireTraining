@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Users' preferred languages"
+  final="false"
+  name="LanguageType"
+  platform="true"/>

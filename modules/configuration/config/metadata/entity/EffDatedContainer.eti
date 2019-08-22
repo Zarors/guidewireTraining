@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="EffDatedContainer"
+  platform="true">
+  <implementsEntity
+    name="Retireable"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.EffDatedContainerPublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedContainerProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.impl.EffDatedContainerInternalMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedContainerProxy"/>
+</delegate>

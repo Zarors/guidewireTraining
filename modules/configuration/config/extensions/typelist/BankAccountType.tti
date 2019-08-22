@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of bank accout e.g. checking, savings etc"
+  name="BankAccountType">
+  <typecode
+    code="checking"
+    desc="Checking"
+    name="Checking"
+    priority="1"/>
+  <typecode
+    code="savings"
+    desc="Savings"
+    name="Savings"
+    priority="2"/>
+  <typecode
+    code="other"
+    desc="Other"
+    name="Other"
+    priority="3"/>
+</typelist>

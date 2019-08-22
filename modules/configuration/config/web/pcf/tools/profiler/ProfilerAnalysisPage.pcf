@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Page
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="ProfilerAnalysisPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.Analysis&quot;)">
+    <LocationEntryPoint
+      signature="ProfilerAnalysisPage(entryPointType : String)"/>
+    <Variable
+      name="entryPointType"
+      type="java.lang.String"/>
+    <ScreenRef
+      def="ProfilerAnalysisScreen(entryPointType)"/>
+  </Page>
+</PCF>

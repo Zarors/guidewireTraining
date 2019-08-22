@@ -1,0 +1,20 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+@gw.rules.RuleName("ABPU1000 - Subtype ABContact")
+internal class ABPU1000SubtypeABContact {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return true
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// This rule is used simply to gather all ABContact rules together.
+/*end00rule*/
+
+  }
+}

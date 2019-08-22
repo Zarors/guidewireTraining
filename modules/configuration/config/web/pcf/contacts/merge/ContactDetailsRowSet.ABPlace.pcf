@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ContactDetailsRowSet"
+    mode="ABPlace|ABLegalVenue">
+    <Require
+      name="keptContact"
+      type="entity.ABContact"/>
+    <Require
+      name="retiredContact"
+      type="entity.ABContact"/>
+    <Require
+      name="mergedContact"
+      type="entity.ABContact"/>
+    <Require
+      name="addressDataHolder"
+      type="gw.web.merge.MergeContactsAddressHolder"/>
+    <Require
+      name="phoneHolder"
+      type="gw.web.merge.MergeContactsPhoneHolder"/>
+    <Variable
+      initialValue="keptContact as ABPlace"
+      name="keptPlace"
+      recalculateOnRefresh="true"
+      type="ABPlace"/>
+    <Variable
+      initialValue="retiredContact as ABPlace"
+      name="retiredPlace"
+      type="ABPlace"/>
+    <Variable
+      initialValue="mergedContact as ABPlace"
+      name="mergedPlace"
+      recalculateOnRefresh="true"
+      type="ABPlace"/>
+    <Variable
+      initialValue="{keptPlace, retiredPlace, mergedPlace}"
+      name="places"
+      type="ABPlace[]"/>
+    <Variable
+      initialValue="new gw.api.name.ContactNameOwner(new gw.api.name.ABContactNameDelegate(mergedPlace as ABPlace))"
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Row>
+      <TextCell
+        bold="true"
+        colspan="4"
+        id="keptPlace"
+        value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Place&quot;)"/>
+    </Row>
+    <RowSetRef
+      def="ABPlaceMergeDetailsRowSet(places, mergedPlace, nameOwner)"
+      mode="gw.api.name.NameLocaleSettings.PCFMode"/>
+    <RowSetRef
+      def="ContactTagRowSet(keptContact, retiredContact, mergedContact)"
+      id="tag"/>
+    <RowSetRef
+      def="NotesRowSet(keptContact, retiredContact, mergedContact)"/>
+    <RowSetRef
+      def="ContactInfoRowSet(keptContact, retiredContact, mergedContact, phoneHolder)"/>
+  </RowSet>
+</PCF>

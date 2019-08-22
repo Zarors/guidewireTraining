@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores the distribution of value-group sizes for generic column data."
+  entity="GenericGroupDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="genericgroupdatadist"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.GenericGroupDataDistInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.GenericGroupDataDistImpl"/>
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Optional predicate."
+    name="OptionalPredicate"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="Extended description."
+    name="ExtendedDescription"
+    nullok="true"
+    type="mediumtext"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <array
+    arrayentity="GenericGroupCountDataDist"
+    desc="Collection of GenericGroupCountDataDists linked to this ArrayDataDist."
+    exportable="true"
+    name="GenericGroupCountDataDists"
+    owner="true"/>
+  <array
+    arrayentity="GenericGroupColumnNameDataDist"
+    desc="Collection of GenericGroupColumnNameDataDists linked to this ArrayDataDist."
+    exportable="true"
+    name="GenericGroupColumnNameDataDists"
+    owner="true"/>
+</entity>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<plugin
+  interface="InboundIntegrationMessageReply"
+  name="InboundFileIntegrationMessageReply">
+  <plugin-java
+    disabled="false"
+    env="fileintegration"
+    javaclass="com.guidewire.pl.integration.inbound.file.DefaultFileInboundIntegrationMessageReply">
+    <param
+      name="integrationservice"
+      value="exampleFileIntegrationMessageReply"/>
+  </plugin-java>
+</plugin>

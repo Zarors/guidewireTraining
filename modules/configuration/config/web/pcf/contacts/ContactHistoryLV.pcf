@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    desc="History of this Contact"
+    id="ContactHistoryLV">
+    <ExposeIterator
+      valueType="entity.ContactHistory"
+      widget="ContactHistoryLV"/>
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <RowIterator
+      editable="false"
+      elementName="contactHistory"
+      value="gw.api.database.Query.make(entity.ContactHistory).compare(&quot;ABContact&quot;, Equals, contact).select()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.ContactHistory&gt;">
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.ContactHistoryLV.FilterByEventDate&quot;)"
+        name="DateFilter">
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.Last30Days()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.Last60Days()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.Last90Days()"
+          selectOnEnter="true"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.Last120Days()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.Last180Days()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.LastYear()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.Last3Years()"/>
+        <ToolbarFilterOption
+          filter="new gw.api.web.history.HistoryFilters.All()"/>
+      </ToolbarFilter>
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.ContactHistoryLV.FilterByEventType&quot;)"
+        name="HistoryEventTypeFilter">
+        <ToolbarFilterOptionGroup
+          filters="new gw.api.filters.TypeKeyFilterSet( History.Type.TypeInfo.getProperty( &quot;CustomType&quot; ) ).getFilterOptions()"/>
+      </ToolbarFilter>
+      <Row>
+        <TypeKeyCell
+          id="Type"
+          label="DisplayKey.get(&quot;Web.ContactHistoryLV.Type&quot;)"
+          value="contactHistory.CustomType"
+          valueType="typekey.CustomHistoryType"/>
+        <TextCell
+          id="User"
+          label="DisplayKey.get(&quot;Web.ContactHistoryLV.User&quot;)"
+          value="contactHistory.UpdateUserName"/>
+        <TextCell
+          id="Reviewer"
+          label="DisplayKey.get(&quot;Web.ContactHistoryDV.Reviewer&quot;)"
+          value="contactHistory.ReviewerName"/>
+        <DateCell
+          dateFormat="short"
+          id="Date"
+          label="DisplayKey.get(&quot;Web.ContactHistoryLV.Date&quot;)"
+          sortOrder="1"
+          timeFormat="short"
+          value="contactHistory.EventTimestamp"/>
+        <TextCell
+          id="Description"
+          label="DisplayKey.get(&quot;Web.ContactHistoryLV.Description&quot;)"
+          value="contactHistory.Description"/>
+        <TextCell
+          action="ContactHistoryDetailPopup.push(contactHistory)"
+          actionAvailable="contactHistory.TrackedChanges.length &gt; 0"
+          enableSort="false"
+          id="ChangesLink"
+          label="DisplayKey.get(&quot;Web.ContactHistoryLV.ChangeDetails&quot;)"
+          value="contactHistory.TrackedChanges.length &gt; 0 ? DisplayKey.get(&quot;Web.ContactHistoryLV.Changes&quot;) : null"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

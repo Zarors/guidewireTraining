@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores a database storage set snapshot."
+  entity="UpgradeDBStorageSet"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="upgradedbstorageset"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.upgrader.UpgradeDBStorageSetPublicMethods"
+    impl="com.guidewire.pl.domain.upgrader.impl.UpgradeDBStorageSetImpl"/>
+  <typekey
+    desc="Database storage set type"
+    name="UpgradeDBStorageSetType"
+    nullok="false"
+    typelist="UpgradeDBStorageSetType"/>
+  <foreignkey
+    columnName="UpgradeInstanceID"
+    desc="Upgrade instance for this object"
+    exportable="false"
+    fkentity="UpgradeInstance"
+    ignoreforevents="true"
+    name="UpgradeInstance"
+    nullok="false"/>
+  <column
+    desc="Name of storage set."
+    name="Name"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Time storage set taken."
+    name="TimeTaken"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="True is set created after the process, false if before"
+    name="AfterUpgrade"
+    nullok="true"
+    type="bit"/>
+  <array
+    arrayentity="UpgradeDBStorageSetColumn"
+    name="UpgradeDBStorageSetColumns"
+    owner="true"/>
+  <array
+    arrayentity="UpgradeDBStorageSetResult"
+    name="UpgradeDBStorageSetResults"
+    owner="true"/>
+  <index
+    desc="Unique index for upgrade db storage sets"
+    name="udbsset1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UpgradeInstanceID"/>
+    <indexcol
+      keyposition="2"
+      name="Name"/>
+    <indexcol
+      keyposition="3"
+      name="AfterUpgrade"/>
+  </index>
+</entity>

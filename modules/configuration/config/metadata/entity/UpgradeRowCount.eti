@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Before and after row counts within an upgrade."
+  entity="UpgradeRowCount"
+  exportable="false"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="upgraderowcount"
+  type="keyable">
+  <foreignkey
+    columnName="UpgradeInstanceID"
+    desc="Parent"
+    fkentity="UpgradeInstance"
+    name="UpgradeInstance"
+    nullok="false"/>
+  <column
+    desc="Table name"
+    name="TableName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Row count before upgrade"
+    name="RowCountBeforeUpgrade"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Row count after upgrade"
+    name="RowCountAfterUpgrade"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Row count change after upgrade"
+    name="RowCountChange"
+    nullok="true"
+    type="integer"/>
+  <!-- Unique index on UpgradeInstanceID, TableName -->
+  <index
+    desc="Used to ensure uniqueness of the (UpgradeInstanceID, TableName) pair"
+    name="urowcounu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UpgradeInstanceID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+  </index>
+</entity>

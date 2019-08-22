@@ -1,0 +1,6 @@
+<:control :unless="hideAnimation">
+  <div class="gw-progress--holder ${status ? 'gw-progress--has-status'}" data-gw-tooltip="?{percentComplete}${percentComplete}%">
+    <div class="gw-progress--bar ${barClasses}" style="width:${barWidth}%"><div class="gw-progress--bar-label ${isShiftedLabel ? 'gw-progress--shifted-label'}">${percentComplete}%</div></div>
+  </div>
+</:control>
+<div :if="status" class="gw-progress--status-label">${status}</div>

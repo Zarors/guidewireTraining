@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="RegionDetailDV"
+    mode="US">
+    <Require
+      name="Region"
+      type="Region"/>
+    <Variable
+      name="zoneType"
+      type="ZoneType"/>
+    <Variable
+      name="linkedZone"
+      type="Zone"/>
+    <Variable
+      initialValue="typekey.Country.TC_US"
+      name="country"
+      type="Country"/>
+    <InputColumn>
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="zoneType"
+        label="DisplayKey.get(&quot;Web.Admin.RegionDetailDV.RegionType&quot;)"
+        value="zoneType"
+        valueRange="gw.api.admin.BaseAdminUtil.getRegionZoneTypes(country)"
+        valueType="typekey.ZoneType">
+        <PostOnChange
+          onChange="linkedZone=null;                           Region.FilterCriteria.LinkedZone=null;                           Region.FilterCriteria.ZoneType=zoneType"/>
+      </RangeInput>
+      <ListViewInput
+        def="RegionZonesLV(Region, zoneType, country)"
+        editable="true"
+        hideIfReadOnly="true"
+        label="DisplayKey.get(&quot;Web.Admin.RegionsLV.Zones&quot;)"
+        visible="Region.FilterCriteria.ZoneType==TC_ZIP">
+        <Toolbar
+          visible="true">
+          <IteratorButtons
+            iterator="RegionZonesLV.RegionZonesLV"/>
+        </Toolbar>
+      </ListViewInput>
+      <!-- filter for counties, filter on state before showing
+           shuttlelist -->
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="state"
+        label="DisplayKey.get(&quot;Java.Admin.Regions.SelectState&quot;)"
+        value="linkedZone"
+        valueRange="Zone.finder.findZones(country,typekey.ZoneType.TC_STATE)"
+        valueType="entity.Zone"
+        visible="Region.FilterCriteria.ZoneType == TC_COUNTY">
+        <PostOnChange
+          onChange="Region.FilterCriteria.LinkedZone=linkedZone"/>
+      </RangeInput>
+      <!-- used here for counties,states
+           not visible if applicable filter has not been selected -->
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="ZoneInput"
+        label="DisplayKey.get(&quot;Web.Admin.RegionDetailDV.Zones&quot;)"
+        multiSelect="true"
+        numRows="10"
+        shuttleList="true"
+        value="Region.ZoneCodes"
+        valueRange="Zone.finder.findZoneCodes(country,Region.FilterCriteria.ZoneType,Region.FilterCriteria.LinkedZone)"
+        valueType="java.lang.String[]"
+        visible="!(Region.FilterCriteria.ZoneType==null || Region.FilterCriteria.ZoneType==TC_ZIP                   || (Region.FilterCriteria.ZoneType == TC_COUNTY and Region.FilterCriteria.LinkedZone==null))"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

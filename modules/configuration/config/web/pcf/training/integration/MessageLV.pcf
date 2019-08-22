@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="MessageLV">
+    <ExposeIterator
+      valueType="entity.Message"
+      widget="MessageIterator"/>
+    <RowIterator
+      checkBoxVisible="true"
+      editable="true"
+      elementName="currentMessage"
+      hasCheckBoxes="true"
+      id="MessageIterator"
+      value="allMessages()"
+      valueType="gw.api.database.IQueryBeanResult&lt;Message&gt;">
+      <IteratorSort
+        sortBy="currentMessage.CreationTime"
+        sortDirection="descending"
+        sortOrder="2"/>
+      <IteratorSort
+        sortBy="currentMessage.Status"
+        sortOrder="1"/>
+      <Row>
+        <TextCell
+          id="ID"
+          label="DisplayKey.get(&quot;Training.MsgID&quot;)"
+          value="currentMessage.ID.toString()"/>
+        <DateCell
+          dateFormat="short"
+          id="CreationTime"
+          label="DisplayKey.get(&quot;Training.CreationTime&quot;)"
+          timeFormat="short"
+          value="currentMessage.CreationTime"/>
+        <TextCell
+          enableSort="false"
+          id="TriggeringEntity"
+          label="DisplayKey.get(&quot;Training.TriggeringEntity&quot;)"
+          value="getObjectNameFromMessage(currentMessage)"/>
+        <TextCell
+          id="EventName"
+          label="DisplayKey.get(&quot;Training.EventName&quot;)"
+          value="currentMessage.EventName"/>
+        <TextCell
+          id="Destination"
+          label="DisplayKey.get(&quot;Training.Destination&quot;)"
+          value="currentMessage.DestinationID"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          id="SenderRefID"
+          label="DisplayKey.get(&quot;Training.SenderRefID&quot;)"
+          value="currentMessage.SenderRefID"/>
+        <TextCell
+          enableSort="false"
+          id="Status"
+          label="DisplayKey.get(&quot;Training.Status&quot;)"
+          value="getStatusStringFromStatusInt(currentMessage.Status)"/>
+        <TypeKeyCell
+          id="ErrorDescription"
+          label="DisplayKey.get(&quot;Training.ErrorCategory&quot;)"
+          value="currentMessage.ErrorCategory"
+          valueType="typekey.ErrorCategory"/>
+        <TextCell
+          align="center"
+          id="RetryCount"
+          label="DisplayKey.get(&quot;Training.Retries&quot;)"
+          value="currentMessage.RetryCount"
+          valueType="java.lang.Integer"/>
+        <DateCell
+          dateFormat="short"
+          id="RetryTime"
+          label="&quot;Retry Time&quot;"
+          timeFormat="short"
+          value="currentMessage.RetryTime"
+          visible="displayRetryTimeColumn()"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[uses trainingapp.base.SampleDataUtil
+uses trainingapp.demo.gosu.MiscellaneousExamples
+
+
+function allMessages() : gw.api.database.IQueryBeanResult<entity.Message> {
+  SampleDataUtil.deleteOrphanMessages()
+  MiscellaneousExamples.waitForXSeconds(1, false)
+  var queryObj = gw.api.database.Query.make(Message)
+  return queryObj.select()
+}
+
+function getObjectNameFromMessage (aMessage : Message) : String {
+    var typeString = aMessage.MessageRoot.IntrinsicType.toString()
+    // In this case, intrinsic type starts with "entity.". The next line strips this off.
+    typeString = (gw.api.util.StringUtil.substring(typeString,7,typeString.length))  
+    var returnString = typeString + "(" + aMessage.MessageRoot.ID + ")"
+    return returnString
+}
+
+function getDestinationNameFromID(ID : int) : String {
+  switch (ID) {
+    case 80:
+      return "ABContact AutoSync Broadcast (80)"
+    case 65:
+      return "email (65)"
+    case 13:
+      return "Bank Account Verification (13)"
+    case 14:
+      return "Vendor Recommendation (14)"
+    case 15:
+      return "Legal Case Report Request (15)"
+    case 20:
+      return "Safe Ordering Demo (20)"
+    case 21:
+      return "Message Generator (21)"
+    default:
+      var returnString = "Student-Defined Destination (" + (ID as java.lang.String) + ")"
+      return returnString
+  }
+}
+  
+function getStatusStringFromStatusInt(Status : int) : String {
+  // The strings used for the statuses below come from the Data Dictionary entry for the
+  // Message entity - specifically the description of the Status field
+  switch (Status) {
+    case 1:
+      return "Pending send (1)"
+    case 2:
+      return "Pending acknowledged (2)"
+    case 4:
+      return "Retryable error (4)"
+    default:
+      return "Unknown"
+  }
+}
+
+function displayRetryTimeColumn() : boolean {
+  var queryObj = gw.api.database.Query.make(Message)
+  var resultSet = queryObj.select()
+  for (currentMessage in resultSet) {
+    if (currentMessage.RetryTime != null) {
+      // found at least one message with a retry time, so
+      // immediately return true
+      return true
+    }
+  }
+  // no messages with a retry time were found, return false
+  return false
+}
+
+// TODO: CurrDev TrainingApp 8.0.2. Ver 7]]></Code>
+  </ListViewPanel>
+</PCF>

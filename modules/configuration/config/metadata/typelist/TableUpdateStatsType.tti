@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of process running update statistics"
+  final="true"
+  name="TableUpdateStatsType"
+  platform="true">
+  <typecode
+    code="Table"
+    desc="Table Update Statistics Statements"
+    name="Table"/>
+  <typecode
+    code="Index"
+    desc="Index Update Statistics Statements"
+    name="Index"/>
+  <typecode
+    code="Histogram"
+    desc="Histogram Update Statistics Statements"
+    name="Histogram"/>
+</typelist>

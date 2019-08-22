@@ -1,0 +1,26 @@
+package rules.Validation.ABContactValidationRules_dir.DefaultValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleDisabled
+@gw.rules.RuleName("Require Phone Number")
+internal class RequirePhoneNumber {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact.WorkPhone == null &&
+aBContact.HomePhone == null &&
+aBContact.FaxPhone == null &&
+(!(aBContact typeis ABPerson) || ((aBContact as ABPerson).CellPhone == null))
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+aBContact.reject( TC_LOADSAVE, DisplayKey.get("Rules.Validation.ABContact.PhoneNumberRequired"), null, null )
+/*end00rule*/
+
+  }
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <CardViewPanel
+    hideTabIfSingle="true"
+    id="ProfilerResultsCV"
+    mode="GroupFrames">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Card
+      id="Empty"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)"
+      visible="profilerDataSource.ProfilerFrameGroupSource == null">
+      <PanelRef
+        def="ProfilerResultsEmptyDV()"/>
+    </Card>
+    <Card
+      id="Card"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)"
+      visible="profilerDataSource.ProfilerFrameGroupSource != null">
+      <ListDetailPanel
+        selectionName="stack"
+        selectionType="gw.api.profiler.ProfilerStack">
+        <ListViewPanel
+          id="StacksLV">
+          <RowIterator
+            editable="false"
+            elementName="lvStack"
+            value="profilerDataSource.ProfilerStacks"
+            valueType="gw.api.profiler.ProfilerStack[]">
+            <Row>
+              <TextCell
+                id="stackName"
+                label="DisplayKey.get(&quot;Web.Profiler.StackName&quot;)"
+                sortOrder="1"
+                value="lvStack.StackName"/>
+              <TextCell
+                id="frameCount"
+                label="DisplayKey.get(&quot;Web.Profiler.Frames&quot;)"
+                value="lvStack.FrameCount"
+                valueType="java.lang.Integer"/>
+              <TextCell
+                id="elapsedTime"
+                label="DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                value="lvStack.TotalElapsedTime"
+                valueType="java.lang.Integer"/>
+              <LinkCell
+                label="DisplayKey.get(&quot;Web.Profiler.DbmsInstrumentationReports&quot;)">
+                <Link
+                  action="gw.api.profiler.ProfilerPageHelper.downloadReport(lvStack.getDbmsReport(profilerDataSource))"
+                  available="lvStack.getDbmsReport(profilerDataSource) != null"
+                  download="true"
+                  id="reportLink"
+                  label="lvStack.getDbmsReport(profilerDataSource).Name"
+                  styleClass="miniButton"
+                  visible="lvStack.getDbmsReport(profilerDataSource) != null"/>
+              </LinkCell>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+        <CardViewPanel
+          hideTabIfSingle="true">
+          <Card
+            id="stackCard"
+            title="&quot;&quot;">
+            <DetailViewPanel
+              visible="stack != null">
+              <Variable
+                initialValue="stack == null?null:profilerDataSource.getProfilerFrameGroupSource( stack )"
+                name="profilerFrameGroupSource"
+                recalculateOnRefresh="true"
+                type="gw.api.profiler.ProfilerFrameGroupSource"/>
+              <InputColumn>
+                <TextInput
+                  id="frames"
+                  label="DisplayKey.get(&quot;Web.Profiler.Frames&quot;)"
+                  value="profilerFrameGroupSource.FrameCount"
+                  valueType="java.lang.Integer"/>
+                <TextInput
+                  id="time"
+                  label="DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                  value="profilerFrameGroupSource.TotalElapsedTime"
+                  valueType="java.lang.Integer"/>
+              </InputColumn>
+            </DetailViewPanel>
+            <PanelRef
+              def="ProfilerFrameGroupLV(profilerDataSource, profilerDataSource.getProfilerFrameGroupSource( stack ))"
+              visible="profilerDataSource.ProfilerFrameGroupSource.StackCount &gt; 1">
+              <Toolbar/>
+            </PanelRef>
+          </Card>
+        </CardViewPanel>
+      </ListDetailPanel>
+      <DetailViewPanel
+        editable="false"
+        visible="profilerDataSource.ProfilerFrameGroupSource.StackCount == 1">
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Web.Profiler.OnlyOneStackAnalysisNotMeaningful&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Card>
+  </CardViewPanel>
+</PCF>

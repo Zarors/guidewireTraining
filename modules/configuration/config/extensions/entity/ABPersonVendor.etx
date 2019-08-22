@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><extension entityName="ABPersonVendor" xmlns="http://guidewire.com/datamodel">
+  <!-- This file contains an example of an extension to an existing base application subtype and   -->
+  <!-- uses the naming conventions recommended for customer implementations. All other extensions  -->
+  <!-- to subtypes are specifically for the TrainingApp "base application" and therefore do not    -->
+  <!-- follow the customer implementation naming conventions.                                      -->
+  <!-- For extensions to existing subtypes, every extension field has "_Ext" suffix      -->
+  <!-- The subtype name cannot exceed 22 characters!                                     -->
+    <column name="SelfEmployeed_Ext" type="bit" desc="Is the vendor self-employed?" nullok="true" />
+	<column name="FraudConvictions_Ext" type="integer" desc="Number of convictions for fraud" nullok="true" />
+    <column name="FraudConvictionsDate_Ext" type="datetime" desc="Date of check for convictions" nullok="true" />
+  </extension>

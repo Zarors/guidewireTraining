@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+    DataTypes element contains elements for customizable abstract datatypes.
+    For example, money has precision and scale, both of which are customizable.
+    -->
+  <xsd:element name="DataTypes">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="ClaimNumberDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="PostalCodeDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="MoneyDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="RiskDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="ExmodDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="SpeedDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="PhoneDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="YearDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="PolicyNumberDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="VINDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="FirstNameDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="LastNameDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="CompanyNameDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="SSNDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="DriverLicenseDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="ContactIdentifierDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="EmploymentClassificationDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="PercentageDecDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="DaysWorkedWeekDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="HoursWorkedDayDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="AccountDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="AddressLineDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="RateDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="RatingLineBasisAmountDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="ProrationFactorDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="CreditCardNumberDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="DunAndBradstreetNumberDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="ExchangeRateDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="MediumTextDataType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="CustomizedDataType" minOccurs="1" maxOccurs="1"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+
+
+
+  <!-- ClaimNumberDataType is used to customize the length of a claim number in the system. -->
+  <xsd:element name="ClaimNumberDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- PostalCodeDataType is used to customize the length of a postal code in the system. -->
+  <xsd:element name="PostalCodeDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Speed is built on top of integer and is used to customize the validation of speed in the system. -->
+  <xsd:element name="SpeedDataType">
+    <xsd:complexType>
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- PhoneDataType is used to customize the length and validation of a phone number in the system. -->
+  <xsd:element name="PhoneDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Year is built on top of integer and is used to customize the validation of year in the system. -->
+  <xsd:element name="YearDataType">
+    <xsd:complexType>
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- PolicyNumberDataType is used to customize the length and validation of a policy number in the system. -->
+  <xsd:element name="PolicyNumberDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- VINDataType is used to customize the length and validation of a VIN in the system. -->
+  <xsd:element name="VINDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- FirstNameDataType is used to customize the length and validation of a first name in the system. -->
+  <xsd:element name="FirstNameDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- LastNameDataType is used to customize the length and validation of a last name in the system. -->
+  <xsd:element name="LastNameDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- CompanyNameDataType is used to customize the length and validation of a company name in the system. -->
+  <xsd:element name="CompanyNameDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- SSNDataType is used to customize the length and validation of a SSN in the system. -->
+  <xsd:element name="SSNDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- DriverLicenseDataType is used to customize the length and validation of a driver's license number in the system. -->
+  <xsd:element name="DriverLicenseDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- ContactIdentifierDataType is used to customize the length and validation of a contactidentifier in the system. -->
+  <xsd:element name="ContactIdentifierDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    MoneyDataType is used to customize the precision and scale of money in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=5 and scale=2, then the maximum value for money would be
+    999.99 and the minimum value would be -999.99.
+    The factors in choosing the scale include localization issues and the needs of the
+    application/industry.  (Wall St. may want to track money down to the 1/100th of a cent.)
+
+    The appscale is an optional attribute which specifies the scale to use for the application.
+    If specified, it must be less than or equal to scale. The purpose of this is to allow
+    a single-currency customer to specify a scale appropriate to their currency, that is less
+    than the scale used in the database, in order to facilitate an eventual upgrade to a multi-
+    currency configuration. Example: a Japanese Yen (0-scale) installation may
+    want to go to multi-currency in the future, supporting currencies with a larger scale,
+    such as US Dollar (2-scale). In order to support this, they would want the database column
+    to be set up to handle 2-scale values.
+    -->
+  <xsd:element name="MoneyDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision"   type="xsd:integer" />
+      <xsd:attribute name="scale"       type="xsd:integer" />
+      <xsd:attribute name="appscale"    type="xsd:integer" use="optional"/>
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    RiskDataType is used to customize the precision and scale of risk in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=5 and scale=2, then the maximum value for risk would be
+    999.99 and the minimum value would be -999.99.
+    The factors in choosing the scale include the needs of the customer and the
+    application/industry.
+    -->
+  <xsd:element name="RiskDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision"   type="xsd:integer" />
+      <xsd:attribute name="scale"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- EmploymentClassificationDataType is used to customize the format of employment classification in the system. -->
+  <xsd:element name="EmploymentClassificationDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"    type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- CreditCardNumberDataType is used to customize the format of credit card numbers. -->
+  <xsd:element name="CreditCardNumberDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"    type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- CreditCardNumberDataType is used to customize the format of credit card numbers. -->
+  <xsd:element name="DunAndBradstreetNumberDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"    type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    PercentageDecDataType is used to customize the precision and scale of percentages in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=5 and scale=2, then the maximum value for risk would be
+    999.99 and the minimum value would be -999.99.
+    The factors in choosing the scale include the needs of the customer and the
+    application/industry.
+    -->
+  <xsd:element name="PercentageDecDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision"   type="xsd:integer" />
+      <xsd:attribute name="scale"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    DaysWorkedWeekDataType is used to customize the precision and scale of days worked in a week in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=3 and scale=2, then the maximum value for days worked would be
+    9.99 and the minimum value would be 0.
+    The factors in choosing the scale include the needs of the customer and the
+    application/industry.
+    NOTE: Restricting the max value (say, to 5.00), must be done through the validator
+    -->
+  <xsd:element name="DaysWorkedWeekDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision"   type="xsd:integer" />
+      <xsd:attribute name="scale"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    HoursWorkedDayDataType is used to customize the precision and scale of hours worked in a day in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=3 and scale=2, then the maximum value for hours worked would be
+    9.99 and the minimum value would be 0.
+    The factors in choosing the scale include the needs of the customer and the
+    application/industry.
+    NOTE: Restricting the max value (say, to 8.00), must be done through the validator
+    -->
+  <xsd:element name="HoursWorkedDayDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision"   type="xsd:integer" />
+      <xsd:attribute name="scale"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- AccountDataType is used to customize the length and validation of an account in the system. -->
+  <xsd:element name="AccountDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- AddressLineDataType is used to customize the length of an address line in the system. -->
+  <xsd:element name="AddressLineDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length"       type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    RateDataType is used to customize the precision and scale of rates in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=5 and scale=2, then the maximum value for rate would be
+    999.99 and the minimum value would be -999.99.
+    The factors in choosing the scale include localization issues and the needs of the
+    application/industry.
+    -->
+  <xsd:element name="RateDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision" type="xsd:integer" />
+      <xsd:attribute name="scale" type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    RatingLineBasisAmountDataType is used to customize the precision and scale of basis amounts on rating lines in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=5 and scale=2, then the maximum value for rate would be
+    999.99 and the minimum value would be -999.99.
+    The factors in choosing the scale include localization issues and the needs of the
+    application/industry.
+    -->
+  <xsd:element name="RatingLineBasisAmountDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision" type="xsd:integer" />
+      <xsd:attribute name="scale" type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    ProrationFactorDataType is used to customize the precision and scale of proration factors in the system.
+    Precision is the total # of digits and scale is the number of digits to the right of the
+    decimal point.  If precision=5 and scale=2, then the maximum value for rate would be
+    999.99 and the minimum value would be -999.99.
+    The factors in choosing the scale include localization issues and the needs of the
+    application/industry.
+    -->
+  <xsd:element name="ProrationFactorDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision" type="xsd:integer" />
+      <xsd:attribute name="scale" type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Represents "medium"-sized text: longer than "short" text, but shorter than "long" text.
+    -->
+  <xsd:element name="MediumTextDataType">
+    <xsd:complexType>
+      <xsd:attribute name="length" type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ExmodDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision" type="xsd:integer" />
+      <xsd:attribute name="scale" type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ExchangeRateDataType">
+    <xsd:complexType>
+      <xsd:attribute name="precision" type="xsd:integer" />
+      <xsd:attribute name="scale" type="xsd:integer" />
+      <xsd:attribute name="validator" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="CustomizedDataType">
+    <xsd:complexType>
+      <xsd:attribute name="name"        type="xsd:string" use="required"/>
+      <xsd:attribute name="length"      type="xsd:integer"/>
+      <xsd:attribute name="precision"   type="xsd:integer"/>
+      <xsd:attribute name="scale"       type="xsd:integer"/>
+      <xsd:attribute name="appscale"    type="xsd:integer"/>
+      <xsd:attribute name="validator"   type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

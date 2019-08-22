@@ -1,0 +1,51 @@
+.gw-TextAreaValueWidget {
+  @function getTextAreaDefaultHeight() {
+    @return #{1.21 * ($gw-app--TextAreaValueWidget--default-numRows + 1)}em;
+  }
+
+  &.gw-readonly {
+    background-color: transparent;
+
+    .gw-value-readonly-wrapper {
+      flex-grow: 1;
+    }
+  }
+
+  &.gw-readonly:not(.gw-StyleContainer--CellWidget) {
+    &.gw-has-border-when-readonly {
+      padding-left: 0;
+      .gw-value-readonly-wrapper {
+        @include gw-borderRadius();
+        border: $gw-app--TextAreaValueWidget--readonly-border;
+        padding: $gw-app--inputs--pad-v-rem $gw-app--inputs--pad-h-rem 0 $gw-app--inputs--pad-h-rem;
+      }
+    }
+  }
+
+  textarea {
+    overflow-y: auto;
+  }
+
+  &.gw-StyleContainer--CellWidget {
+    &.gw-editable {
+      textarea, .gw-value-readonly-wrapper {
+        height: getTextAreaDefaultHeight();
+      }
+    }
+  }
+
+  &:not(.gw-StyleContainer--CellWidget) {
+    &.gw-editable {
+      textarea {
+        height: getTextAreaDefaultHeight();
+      }
+    }
+
+    &.gw-readonly {
+      .gw-value-readonly-wrapper {
+        height: getTextAreaDefaultHeight();
+        overflow-y: auto;
+      }
+    }
+  }
+}

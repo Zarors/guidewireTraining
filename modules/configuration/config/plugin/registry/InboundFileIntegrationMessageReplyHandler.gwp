@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<plugin
+    interface="InboundIntegrationMessageReplyHandler"
+    name="InboundFileIntegrationMessageReplyHandler">
+  <plugin-java
+    disabled="false"
+    env="fileintegration"
+    javaclass="gw.plugin.integration.inbound.logging.reply.FileIntegrationMessageReplyHandler">
+  </plugin-java>
+</plugin>

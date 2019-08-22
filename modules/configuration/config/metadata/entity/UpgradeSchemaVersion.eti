@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!-- ************************************* IMPORTANT ********************************************************************
+     If this schema is changed in a way such that the changes cannot be implemented by simply creating the new ojbects,
+    you must increment the final static int UpgraderInstrumentation.EXPECTEDUPGRADESCHEMAVERSION, which will force
+    all these tables to be dropped and recreated.
+  ************************************* IMPORTANT ********************************************************************
+
+   ### ============================================================================
+   ###  Upgrade instrumentation tables schema version
+   ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores version number of upgrade instrumentation schema to control upgrading these tables."
+  entity="UpgradeSchemaVersion"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="upgradeschemaversion"
+  type="nonkeyable">
+  <column
+    desc="Column for unique index"
+    name="Name"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+  <column
+    desc="Upgrade instrumentation schema version."
+    name="UpgradeSchemaVersion"
+    nullok="false"
+    type="integer"/>
+  <index
+    desc="Unique index for upgrade instrumentation"
+    name="schmemaversionu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+  </index>
+</entity>

@@ -1,0 +1,9 @@
+<div class="gw-Pref">
+    <div class="gw-Pref--inner">
+        <div class="gw-label">${label}</div>
+        <div class="gw-value">
+            <input data-gw-change="gwPrefPanel.change" class="gw-noTrack gw-Pref--val gw-Pref--boolean" name="${name}"
+                   type="checkbox" checked="${checked}">
+        </div>
+    </div>
+</div>

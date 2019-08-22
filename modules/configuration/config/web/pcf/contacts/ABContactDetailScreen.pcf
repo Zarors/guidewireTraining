@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Screen
+    id="ABContactDetailScreen">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <Require
+      name="canPick"
+      type="Boolean"/>
+    <PanelRef
+      def="ContactBasicsDV(contact)"
+      mode="contact.Subtype">
+      <Toolbar
+        visible="!contact.isRetired()">
+        <EditButtons
+          pickValue="canPick ? contact : null"/>
+        <ToolbarDivider
+          hideIfEditable="true"/>
+        <ToolbarButton
+          action="gw.api.web.contact.ABContactUtil.deleteContact(contact, CurrentLocation)"
+          confirmMessage="DisplayKey.get(&quot;Web.ContactDetail.Delete.Warning&quot;)"
+          hideIfEditable="true"
+          id="ABContactDetailScreen_DeleteButton"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Delete&quot;)"
+          shortcut="L"
+          visible="perm.ABContact.delete(contact)"/>
+      </Toolbar>
+    </PanelRef>
+  </Screen>
+</PCF>

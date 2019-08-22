@@ -1,0 +1,3 @@
+<div class="gw-PerformanceIndicatorWidget--Value ${cssValueColor}" style="?{styleValueColor}color:${styleValueColor}">${value}</div>
+<div class="gw-PerformanceIndicatorWidget--Label" ${labelAction} style="?{maxLabelWidth}max-width:${maxLabelWidth}">${label}</div>
+${badge}

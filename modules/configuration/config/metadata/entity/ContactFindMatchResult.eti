@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents the result of definitive match search."
+  entity="ContactFindMatchResult"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <fulldescription><![CDATA[
+      Deprecated since ClaimCenter 8.0 along with the IAddressBookAdapter.
+      This is a non-persistent entity that represents the results of definitive match search.
+      Besides the matched <code>Contact</code> objects, it also contains a result type. See the <code>ContactMatchResultType</code>
+      typelist for  more detail about the result of the match.
+    ]]></fulldescription>
+  <foreignkey
+    desc="Gets the Contact that was matched, or null if none."
+    fkentity="Contact"
+    name="Contact"
+    nullok="true"/>
+  <typekey
+    desc="Provides more detail about the result of the match."
+    name="ResultType"
+    nullok="true"
+    typelist="ContactMatchResultType"/>
+</nonPersistentEntity>

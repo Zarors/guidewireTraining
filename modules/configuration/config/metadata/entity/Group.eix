@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="Group">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.community.impl.GroupCoreExtMethods"
+    impl="com.guidewire.ab.domain.community.impl.GroupCoreExtMethodsImpl"/>
+  <description>Groups of users.</description>
+  <events/>
+</internalExtension>

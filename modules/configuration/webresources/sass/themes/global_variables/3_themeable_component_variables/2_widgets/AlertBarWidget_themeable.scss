@@ -1,0 +1,17 @@
+$gw-app--AlertBar--col: $gw-app--col !default;
+$gw-app--AlertBar--bg: $gw-app--panels--warning--bg !default;
+$gw-app--AlertBar--close-button-glyph: "times-circle-solid" !default;
+$gw-app--AlertBar--icon-size-em: gw-emFixed(16/14) !default;
+$gw-app--AlertBar--border-col: $gw-app--panels--warning--border-col !default;
+
+// Position to other widgets
+$gw-app--AlertBar--spacing-widget-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--AlertBar--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--AlertBar--spacing-widget-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--AlertBar--spacing-widget-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+// Internal padding
+$gw-app--AlertBar--spacing-inner-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--AlertBar--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--AlertBar--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--AlertBar--spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;

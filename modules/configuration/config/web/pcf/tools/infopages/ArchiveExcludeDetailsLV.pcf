@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="ArchiveExcludeDetailsLV">
+    <Require
+      name="archiveDetails"
+      type="gw.api.archiving.ArchiveDetails"/>
+    <RowIterator
+      editable="false"
+      elementName="details"
+      pageSize="10"
+      value="archiveDetails.DetailsData"
+      valueType="java.util.List&lt;gw.api.archiving.ArchiveDetailsData&gt;">
+      <Row>
+        <TextCell
+          action="ArchiveItemListPopup.push(details)"
+          id="Description"
+          label="archiveDetails.Label"
+          sortDirection="descending"
+          sortOrder="1"
+          value="details.Description"
+          wrapLabel="true"/>
+        <TextCell
+          id="Count"
+          label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Count&quot;)"
+          sortDirection="descending"
+          sortOrder="1"
+          value="details.Count"
+          valueType="java.lang.Integer"/>
+        <ButtonCell
+          action="details.resetExcludedFlag()"
+          available="details.Count &gt; 0"
+          hideIfDisabled="false"
+          id="ResetItem"
+          value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ResetItems&quot;)"
+          visible="!(archiveDetails typeis gw.api.archiving.ArchiveSkippedDetails)"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

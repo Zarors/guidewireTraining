@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="List of businessweeks."
+  entity="BusinessWeek"
+  extendable="false"
+  platform="true"
+  table="businessweek"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.impl.BusinessWeekInternalMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.BusinessWeekImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.BusinessWeekPublicMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.BusinessWeekImpl"/>
+  <column
+    desc="The name of a businessweek in the business calendar."
+    name="Name"
+    nullok="false"
+    type="shorttext">
+    <localization
+      nullok="false"
+      tableName="bizweek_nam_l10n"
+      unique="true"/>
+  </column>
+  <column
+    default="1"
+    desc="True if this businessweek applies to all zones (in which case BusinessWeekZones should be empty). If false and BusinessWeekZones has elements, this businessweek applies to those zones.  If false and BusinessWeekZones is empty, this businessweek doesn't apply anywhere."
+    name="AppliesToAllZones"
+    nullok="false"
+    type="bit"/>
+  <array
+    arrayentity="BusinessWeekZone"
+    arrayfield="BusinessWeek"
+    desc="The zones that observe this businessweek."
+    name="BusinessWeekZones"/>
+  <column
+    default="0"
+    desc="Is Sunday a business day."
+    name="SundayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Sunday."
+    name="SundayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Sunday."
+    name="SundayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="Is Monday a business day."
+    name="MondayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Monday."
+    name="MondayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Monday."
+    name="MondayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="Is Tuesday a business day."
+    name="TuesdayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Tuesday."
+    name="TuesdayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Tuesday."
+    name="TuesdayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="Is Wednesday a business day."
+    name="WednesdayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Wednesday."
+    name="WednesdayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Wednesday."
+    name="WednesdayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="Is Thursday a business day."
+    name="ThursdayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Thursday."
+    name="ThursdayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Thursday."
+    name="ThursdayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="Is Friday a business day."
+    name="FridayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Friday."
+    name="FridayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Friday."
+    name="FridayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <column
+    default="0"
+    desc="Is Saturday a business day."
+    name="SaturdayBusinessDay"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Start of business day on Saturday."
+    name="SaturdayBusinessStart"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End of business day on Saturday."
+    name="SaturdayBusinessEnd"
+    nullok="true"
+    type="datetime"/>
+  <typekey
+    desc="What day the business week ends."
+    name="BusinessWeekEnd"
+    nullok="false"
+    typelist="Weekdays"/>
+  <column
+    desc="Demarcation of the business day"
+    name="BusinessDayDemarcation"
+    nullok="false"
+    type="datetime"/>
+  <index
+    desc="Used to ensure the uniqueness of the Name column"
+    name="name"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+  </index>
+  <datetimeordering
+    firstcolumnname="SundayBusinessStart"
+    operator="LE"
+    secondcolumnname="SundayBusinessEnd"/>
+  <datetimeordering
+    firstcolumnname="MondayBusinessStart"
+    operator="LE"
+    secondcolumnname="MondayBusinessEnd"/>
+  <datetimeordering
+    firstcolumnname="TuesdayBusinessStart"
+    operator="LE"
+    secondcolumnname="TuesdayBusinessEnd"/>
+  <datetimeordering
+    firstcolumnname="WednesdayBusinessStart"
+    operator="LE"
+    secondcolumnname="WednesdayBusinessEnd"/>
+  <datetimeordering
+    firstcolumnname="ThursdayBusinessStart"
+    operator="LE"
+    secondcolumnname="ThursdayBusinessEnd"/>
+  <datetimeordering
+    firstcolumnname="FridayBusinessStart"
+    operator="LE"
+    secondcolumnname="FridayBusinessEnd"/>
+  <datetimeordering
+    firstcolumnname="SaturdayBusinessStart"
+    operator="LE"
+    secondcolumnname="SaturdayBusinessEnd"/>
+</entity>

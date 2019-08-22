@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  extendable="true"
+  name="GlobalAddress"
+  platform="true">
+  <fulldescription><![CDATA[
+    This is a shared delegate/interface that allows multiple entities to share definitions of removable globalization fields associated with Addresses.
+  ]]></fulldescription>
+</delegate>

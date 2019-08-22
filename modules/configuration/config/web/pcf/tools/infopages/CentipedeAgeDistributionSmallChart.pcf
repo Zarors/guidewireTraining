@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ChartPanel
+    height="375"
+    id="CentipedeAgeDistributionSmallChart"
+    label="pageHelper.getAgeDistributionLabel(snapshot)"
+    type="Bar"
+    width="500">
+    <Require
+      name="pageHelper"
+      type="gw.api.cache2.CacheInfoPageHelper"/>
+    <Require
+      name="snapshot"
+      type="com.guidewire.pl.system.cache2.CacheStatisticsSnapshot"/>
+    <Variable
+      initialValue="pageHelper.getDataSeriesForSizeDistribution(snapshot)"
+      name="dataSeries"
+      recalculateOnRefresh="true"
+      type="java.util.ArrayList&lt;gw.util.Pair&lt;java.lang.String, java.lang.Integer&gt;&gt;"/>
+    <DomainAxis
+      labelOrientation="Up45"
+      label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.Age&quot;)"
+      useWholeNumbers="true"/>
+    <RangeAxis
+      label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.Count&quot;)"
+      useWholeNumbers="true"/>
+    <DataSeries
+      categoryLabel="value.First"
+      dataValueType="gw.util.Pair&lt;java.lang.String, java.lang.Integer&gt;"
+      dataValues="dataSeries"
+      label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.Count&quot;)"
+      value="value.Second"/>
+  </ChartPanel>
+</PCF>

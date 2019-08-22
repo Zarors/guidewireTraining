@@ -1,0 +1,8 @@
+.gw-RadioButtonValueWidget {
+  display: flex;
+  justify-content: center;
+
+  .gw-radio-wrapper {
+    @include gw-convertRadioWrapper;
+  }
+}

@@ -1,0 +1,193 @@
+// Converts a string name to the matched font glyph, adding the correct content and font-family.
+// This prefers internal fonts, then falls back to others.
+@mixin iconGlyph($name) {
+  @if (map-has-key($gw-svg-font-map, $name)) {
+    @if (gw-should-convert-gw-font-glyph-to-another-library($name)) {
+      @include gw-populate-non-gw-icon-glyph(gw-get-value-from-font-conversion-map($name));
+    } @else {
+      content: map-get($gw-svg-font-map, $name);
+      font-family: gw-font;
+    }
+  } @else if (gw-fa5-maps-have-glyph($name)) {
+    @include gw-populate-fa5-glyph($name);
+  } @else if (map-has-key($gw-font-customer-map, $name)) {
+    content: map-get($gw-font-customer-map, $name);
+    font-family: customer-font;
+  } @else {
+    content: $gw-missing-icon-glyph;
+  }
+}
+
+@mixin _gw-abstract-icon-before-after(
+  $isAfter,
+  $glyph,
+  $size: null,
+  $color: null,
+  $position: null,
+  $top: null, $right: null,$bottom: null, $left: null,
+  $pad-left: null, $pad-right: null,
+  $v-align: middle,
+  $display: null,
+  $line-height: null,
+  $height: null,
+  $width: null,
+  $h-align: left,
+  $rotate: null) {
+
+  $before-or-after: "before";
+  @if ($isAfter) {
+    $before-or-after: "after";
+  }
+
+  @if ($v-align == center) {
+    $v-align: middle;
+  }
+
+  @if ($h-align == middle) {
+    $h-align: center;
+  }
+
+  &:#{$before-or-after} {
+    @include gw-font-before-props();
+    @include iconGlyph($glyph);
+    display: $display;
+    font-size: $size;
+    color: $color;
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    line-height: $line-height;
+    padding-left: $pad-left;
+    padding-right: $pad-right;
+    vertical-align: $v-align;
+    height: $height;
+    width: $width;
+    text-align: $h-align;
+
+    @if($rotate != null) {
+      @include gw-transform(rotate($rotate));
+    }
+  }
+}
+
+@mixin gw-iconAfter($glyph, $size: null, $color: null, $position: null, $top: null, $right: null, $bottom: null, $left: null, $pad-left: null, $pad-right: null, $v-align: middle, $display: null, $line-height: null, $height: null, $width: gw-emFixed(1), $h-align: center, $rotate: null) {
+  @include _gw-abstract-icon-before-after(true, $glyph, $size, $color, $position, $top, $right, $bottom, $left, $pad-left, $pad-right, $v-align, $display, $line-height, $height, $width, $h-align, $rotate);
+}
+
+@mixin gw-icon($glyph, $size: null, $color: null, $position: null, $top: null, $right: null, $bottom: null, $left: null, $pad-left: null, $pad-right: null, $v-align: middle, $display: null, $line-height: null, $height: null, $width: gw-emFixed(1), $h-align: center, $rotate: null) {
+  @include _gw-abstract-icon-before-after(false, $glyph, $size, $color, $position, $top, $right, $bottom, $left, $pad-left, $pad-right, $v-align, $display, $line-height, $height, $width, $h-align, $rotate);
+}
+
+@mixin gw-iconVerticalCenter($name, $size: gw-emFixed(1), $top-offset: 0) {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: $top-offset;
+  height: 100%;
+  @include gw-icon($name, $size, $height: auto, $h-align: center);
+}
+
+@mixin _gw-convertCheckboxOrRadioInput($is-checkbox){
+
+  $size: gw-roundRemToNearestPixel($gw-app--inputs--radio-size-em);
+  $outline-offset: gw-pxFixed(1);
+  $border-radius: 100%;
+  $glyph: $gw-app--inputs--radio-checked-glyph;
+  $glyph-size: gw-roundRemToNearestPixel($gw-app--inputs--radio-glyph-size-em);
+  $checked-background-color: $gw-app--inputs--radio-checked-bg;
+  $checked-col: $gw-app--inputs--radio-checked-col;
+
+  @if($is-checkbox) {
+    $size: gw-roundRemToNearestPixel($gw-app--inputs--checkbox-size-em);
+    $outline-offset: null;
+    $border-radius: $gw-app--border-radius-px;
+    $glyph: $gw-app--inputs--checkbox-checked-glyph;
+    $glyph-size: gw-roundRemToNearestPixel($gw-app--inputs--checkbox-glyph-size-em);
+
+    $checked-background-color: $gw-app--inputs--checkbox-checked-bg;
+    $checked-col: $gw-app--inputs--checkbox-checked-col;
+  }
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-self: center;
+  padding: 0;
+  @include gw-appearanceClear();
+  position: relative;
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-radius: $border-radius;
+  outline-offset: $outline-offset;
+  border: gw-border($gw-app--inputs--border--col);
+  @if ($is-checkbox) {
+    vertical-align: top; //TODO: this is another fickle alignment that is working well in some places and poorly in others
+  } @else {
+    vertical-align: middle;
+  }
+  text-align: center;
+
+  &:not(.gw-disabled):not([disabled]) {
+    box-shadow: $gw-app--inputs--editable-inner-shadow;
+  }
+
+  $inner-size: $size - (2 * $gw-app--border-width-px);
+
+  &:checked, &.gw-checked {
+    @if($is-checkbox) {
+      background-color: $checked-background-color;
+      @include gw-iconAfter($glyph, $glyph-size, $checked-col, $line-height: $inner-size, $display: inline-block, $width: $inner-size, $height: $inner-size, $v-align: middle, $position: absolute, $left: 0, $top: 0, $h-align: center); //
+      cursor: pointer;
+    } @else {
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: #{($inner-size - $glyph-size) / 2} solid $checked-background-color;
+        border-radius: 100%;
+        background-color: $checked-col;
+        width: $inner-size;
+        height: $inner-size;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &:not(:checked):not(.gw-checked) {
+    cursor: pointer;
+  }
+
+  @include gw-disabled();
+}
+
+@mixin gw-convertCheckbox() {
+  @include _gw-convertCheckboxOrRadioInput(true);
+}
+
+@mixin gw-convertRadio() {
+  @include _gw-convertCheckboxOrRadioInput(false);
+}
+
+@mixin gw-convertRadioWrapper() {
+  $size: gw-roundRemToNearestPixel($gw-app--inputs--radio-size-em);
+
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background-color: transparent;
+  position: relative;
+  vertical-align: middle;
+
+  input, .gw-radio-button {
+    @include gw-convertRadio();
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+

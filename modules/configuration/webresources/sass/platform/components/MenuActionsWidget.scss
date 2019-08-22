@@ -1,0 +1,107 @@
+.gw-MenuActionsWidget.gw-action--outer {
+
+  // Position to other widgets
+  margin-top: $gw-app--MenuActionsWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--MenuActionsWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--MenuActionsWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--MenuActionsWidget--spacing-widget-bottom-rem;
+
+  @include gw-menuItem(
+          $bg: $gw-app--MenuActionsWidget--bg,
+          $col: $gw-app--MenuActionsWidget--col,
+          $hover-bg: $gw-app--MenuActionsWidget--hover-bg,
+          $hover-col: $gw-app--MenuActionsWidget--hover-col,
+          $active-bg: $gw-app--MenuActionsWidget--active-bg,
+          $active-col: $gw-app--MenuActionsWidget--active-col,
+          $pad-v: $gw-app--MenuActionsWidget--spacing-inner-top-rem,
+          $inner-action--pad-h: $gw-app--MenuActionsWidget--spacing-inner-left-rem,
+          $expand--pad-h: $gw-app--MenuActionsWidget--spacing-inner-right-rem, //$gw-app--MenuActionsWidget--spacing-inner-right-rem
+          $is-button: true,
+          $glyph: $gw-app--MenuActionsWidget--expand--glyph,
+          $force-no-expand: false,
+          $force-expand-only: false,
+          $focus-offset: $gw-app--WestPanel--focus-offset-px
+  );
+
+  display: block;
+
+  & > .gw-action--inner {
+    position: relative;
+    font-size: $gw-app--MenuActionsWidget--font-size;
+    padding-bottom: $gw-app--MenuActionsWidget--spacing-inner-bottom-rem;
+
+    & > .gw-label {
+      @if ($gw-app--MenuActionsWidget--show-button-icon) {
+        //margin-left: $gw-app--MenuActionsWidget--icon-label-gap;
+      }
+      @if ($gw-app--MenuActionsWidget--all-caps) {
+        font-variant: small-caps;
+      }
+    }
+  }
+
+  @if ($gw-app--MenuActionsWidget--has-button-appearance != true) {
+    border-radius: 0;
+
+    & > .gw-action--inner {
+      border-radius: 0;
+    }
+  }
+
+  @if ($gw-app--MenuActionsWidget--show-button-icon) {
+    & > .gw-action--inner {
+      & > .gw-icon {
+        @include gw-icon($gw-app--MenuActionsWidget--button-icon-glyph);
+        position: static;
+      }
+    }
+  } @else {
+    & > .gw-action--inner {
+      & > .gw-icon {
+        display: none;
+      }
+    }
+  }
+
+  & > .gw-action--expand-button {
+    font-size: $gw-app--MenuActionsWidget--font-size;
+  }
+
+  @include gw-disabled($opacity: .5);
+
+  &.gw-disabled {
+    pointer-events: none; //TODO: we should prevent any of our events from firing on an element with disabled or gw-disabled...probably
+  }
+
+  &.gw-makeWestPanel--min {
+    width: auto;
+    border-width: 0;
+
+    margin-left: $gw-app--MenuActionsWidget--minimized-margin-h-rem;
+    margin-right: $gw-app--MenuActionsWidget--minimized-margin-h-rem;
+
+    & > .gw-action--inner {
+      text-align: center;
+      padding-left: $gw-app--MenuActionsWidget--minimized-pad-h-rem;
+      padding-right: $gw-app--MenuActionsWidget--minimized-pad-h-rem;
+
+      & > .gw-icon {
+        @if ($gw-app--MenuActionsWidget--show-button-icon != true) {
+          @include gw-icon($gw-app--MenuActionsWidget--expand--glyph);
+          display: block;
+          position: static;
+        }
+      }
+
+      .gw-label {
+        display: none; // Just hide the label inside of the action button itself
+      }
+    }
+
+    & > .gw-action--expand-button {
+      display: none;
+    }
+  }
+
+  @include gw-subMenu();
+}

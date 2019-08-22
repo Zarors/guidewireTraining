@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="FXRateMarket">
+  <typecode
+    code="static_table"
+    desc="A static table of one-way rates."
+    name="StaticTable"/>
+</typelistextension>

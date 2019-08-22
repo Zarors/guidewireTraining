@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  entity="ClusterMemberData"
+  exportable="false"
+  extendable="false"
+  final="true"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="clustermemberdata"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.clusterinfo.ClusterMemberDataPublicMethods"
+    impl="com.guidewire.pl.domain.clusterinfo.impl.ClusterMemberDataImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.clusterinfo.impl.ClusterMemberDataInternalMethods"
+    impl="com.guidewire.pl.domain.clusterinfo.impl.ClusterMemberDataImpl"/>
+  <column
+    desc="Node logical name"
+    name="LogicalName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Server ID"
+    name="ServerId"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Env value"
+    name="Env"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="UUID"
+    name="Uuid"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="36"/>
+  </column>
+  <column
+    desc="Data"
+    getterScriptability="doesNotExist"
+    name="Data"
+    nullok="true"
+    setterScriptability="doesNotExist"
+    type="blob"/>
+  <column
+    desc="Time server started"
+    name="ServerStarted"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="Time connection started"
+    name="ConnectionStarted"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="Time connection stopped"
+    name="ConnectionStopped"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Time planned shutdown initiated"
+    name="PlannedShutdownInitiated"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Time shutdown planned"
+    name="PlannedShutdownTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Time background tasks stopped"
+    name="BgTasksStopped"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Number of user sessions"
+    name="UserSessions"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Run level"
+    name="RunLevel"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Last update"
+    name="LastUpdate"
+    nullok="false"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="0"/>
+    <columnParam
+      name="precision"
+      value="19"/>
+  </column>
+  <column
+    desc="Server roles"
+    getterScriptability="doesNotExist"
+    name="Roles"
+    nullok="true"
+    setterScriptability="doesNotExist"
+    type="mediumtext"/>
+  <column
+    desc="Build and schema version string"
+    name="Build"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Fingerprint of configuration"
+    name="ConfigFP"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Compatibility of configuration with current configuration, or during a rolling upgrade, with the source configuration"
+    name="CompatibilityWithSource"
+    nullok="true"
+    type="shorttext"/>
+  <index
+    desc="Index to speed up the selection of records of the running server (because records are not deleted after server goes down)"
+    name="clustermember1">
+    <indexcol
+      keyposition="1"
+      name="LastUpdate"/>
+  </index>
+  <index
+    desc="Ensure uniqueness of UUID."
+    name="clustermember2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UUID"/>
+  </index>
+  <index
+    desc="Index to select history for given server id"
+    name="clustermember3">
+    <indexcol
+      keyposition="1"
+      name="ServerId"/>
+    <indexcol
+      keyposition="2"
+      name="ServerStarted"
+      sortascending="false"/>
+  </index>
+</entity>

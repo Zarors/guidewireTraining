@@ -1,0 +1,38 @@
+//TODO: could allow more of this to be themed
+.gw-page-load-bar {
+  width: 100%;
+  display: inline-flex;
+  height: gw-pxFixed(3);
+  position: absolute;
+  @include gw-z-index(pageLoadBar);
+  bottom: gw-pxFixed(-1);
+  left: 0;
+  background-color: transparent;
+  pointer-events: none;
+
+  .gw-page-load-bar--inner {
+    width: 0;
+    height: gw-pxFixed(3);
+    transition: opacity 1s;
+    opacity: 0;
+    background-color: $gw-app--NorthPanel--progress--bg;
+    @include gw-z-index(pageLoadBar);
+
+    &.gw-page-load-bar--filling {
+      position: relative;
+      @include gw-z-index(pageLoadBar);
+      &:after {
+        background-color: inherit;
+        display: inline-block;
+        content: " ";
+        position: absolute;
+        right: gw-pxFixed(-7); //TODO, cooper, revisit these
+        top: gw-pxFixed(-1);
+        height: gw-pxFixed(5);
+        width: gw-pxFixed(5);
+        border-radius: 100%;
+        @include gw-z-index(pageLoadBar);
+      }
+    }
+  }
+}

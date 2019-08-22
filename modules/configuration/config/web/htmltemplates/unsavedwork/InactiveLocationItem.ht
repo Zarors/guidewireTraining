@@ -1,0 +1,5 @@
+<div id="${id}" class="gw-TabBarUnsavedWorkWidget-inactive gw-action--outer">
+  <div class="gw-action--inner gw-disabled">
+    <div class="gw-label">${title}</div>
+  </div>
+</div>

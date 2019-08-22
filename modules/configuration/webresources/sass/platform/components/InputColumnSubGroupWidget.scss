@@ -1,0 +1,80 @@
+.gw-InputColumnWidget { //Specificity
+  .gw-InputColumnSubGroupWidget {
+    vertical-align: top;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    @include gw-wrapNever();
+
+    @include gw-borderRadius();
+
+    display: block;
+    background-color: $gw-app--InputColumnSubGroup--bg;
+
+    // Position to other widgets
+    margin-top: $gw-app--InputColumnSubGroup--spacing-widget-top-rem;
+    margin-left: $gw-app--InputColumnSubGroup--spacing-widget-left-rem;
+    margin-right: $gw-app--InputColumnSubGroup--spacing-widget-right-rem;
+    margin-bottom: $gw-app--InputColumnSubGroup--spacing-widget-bottom-rem;
+
+    // Internal padding
+    padding-top: $gw-app--InputColumnSubGroup--spacing-inner-top-rem;
+    padding-left: $gw-app--InputColumnSubGroup--spacing-inner-left-rem;
+    padding-right: $gw-app--InputColumnSubGroup--spacing-inner-right-rem;
+    padding-bottom: $gw-app--InputColumnSubGroup--spacing-inner-bottom-rem;
+
+    .gw-InputColumnSubGroup--header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      border-top: $gw-app--InputColumnSubGroup--header-border-top;
+      border-bottom: $gw-app--InputColumnSubGroup--header-border-bottom;
+      border-top-left-radius: $gw-app--InputColumnSubGroup--border-radius-px;
+      border-top-right-radius: $gw-app--InputColumnSubGroup--border-radius-px;
+
+      // Internal padding
+      padding-top: $gw-app--InputColumnSubGroup-title-bar--spacing-inner-top-rem;
+      padding-left: $gw-app--InputColumnSubGroup-title-bar--spacing-inner-left-rem;
+      padding-right: $gw-app--InputColumnSubGroup-title-bar--spacing-inner-right-rem;
+      padding-bottom: $gw-app--InputColumnSubGroup-title-bar--spacing-inner-bottom-rem;
+
+      @include gw-ie11Only {
+        padding-top: gw-emFixed(1);
+        padding-bottom: gw-emFixed(1);
+      }
+
+      .gw-InputColumnSubGroup--header--label {
+        max-width: $gw-app--InputColumn--max-label-above-width-em;
+        @include gw-wrapOnWhiteSpace();
+      }
+
+      .gw-icon {
+        margin-right: $gw-app--InputColumnSubGroup-title-bar--internal-spacing-rem;
+      }
+    }
+
+    &.gw-use-standard-label-style {
+      .gw-InputColumnSubGroup--header {
+        color: $gw-app--InputColumnSubGroup--header-font-col;
+        font-weight: $gw-app--InputColumnSubGroup--header-font-weight;
+      }
+    }
+
+    &:not(.gw-use-standard-label-style) {
+      .gw-InputColumnSubGroup--header {
+        color: $gw-app--LabelWidget--color;
+        font-weight: $gw-app--bold-label-weight;
+      }
+    }
+
+    .gw-InputColumnSubGroup--body {
+      display: block;
+      // Internal padding
+      padding-top: $gw-app--InputColumnSubGroup--spacing-inner-top-rem;
+      padding-left: $gw-app--InputColumnSubGroup--spacing-inner-left-rem;
+      padding-right: $gw-app--InputColumnSubGroup--spacing-inner-right-rem;
+      padding-bottom: $gw-app--InputColumnSubGroup--spacing-inner-bottom-rem;
+    }
+  }
+}

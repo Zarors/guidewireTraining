@@ -1,0 +1,24 @@
+.gw-ContentInputWidget {
+  & > .gw-value {
+    // ContentInputWidget overrides standard .gw-value:display to be a flex in InputColumnWidget.scss
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &:not(.gw-labelAbove) {
+    & > .gw-value {
+      @include gw-pad-for-input-readonly-mode();
+    }
+  }
+
+  .gw-vw--value {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    & > div:not(:empty):not(.gw-hidden):not(.gw-placeholder) + div {
+      margin-left: $gw-app--SPACING-rem-S;
+    }
+  }
+}

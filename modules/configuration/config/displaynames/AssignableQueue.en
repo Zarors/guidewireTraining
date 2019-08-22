@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Entity
+  name="AssignableQueue">
+  <Columns>
+    <Column
+      beanPath="AssignableQueue.Name"
+      name="name"
+      sortOrder="0"/>
+    <Column
+      beanPath="AssignableQueue.Group.Name"
+      name="groupName"
+      sortOrder="none"/>
+  </Columns>
+  <DisplayName><![CDATA[name + " - " + groupName]]></DisplayName>
+</Entity>

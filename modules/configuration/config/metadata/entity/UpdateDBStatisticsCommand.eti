@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  History db stats table for loader, 0-n rows per (table, history row)
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="DB statistics commands to run after a staging table load."
+  entity="UpdateDBStatisticsCommand"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loaddbstatisticscommand"
+  type="keyable">
+  <column
+    desc="Affected table."
+    name="TableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="Update database statistics command to run."
+    name="StatsCommand"
+    nullok="false"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="65000"/>
+  </column>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Parent."
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+</entity>

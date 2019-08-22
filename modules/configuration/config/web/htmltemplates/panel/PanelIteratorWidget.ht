@@ -1,0 +1,2 @@
+<div class="gw-PanelIterator--toolbar">${pagingWidget}</div>
+${:children}

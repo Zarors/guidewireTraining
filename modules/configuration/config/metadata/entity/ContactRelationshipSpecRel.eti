@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Maps contact relationships to a ContactRelationshipSpec."
+  entity="ContactRelationshipSpecRel"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <fulldescription><![CDATA[
+      Wraps around contact relationships. See the <code>ContactRel</code> entity for a list of contact relationships.
+      The <code.ContactRelationshipSpecRel</code> entity exists so that <code>ContactRelationshipSpec</code> can use its
+      objects as entries in its arrays.
+    ]]></fulldescription>
+  <foreignkey
+    columnName="TargetID"
+    desc="Target relationship."
+    fkentity="ContactRelationshipSpec"
+    name="Target"
+    nullok="false"/>
+  <foreignkey
+    columnName="SourceID"
+    desc="Source relationship."
+    fkentity="ContactRelationshipSpec"
+    name="Source"
+    nullok="false"/>
+  <typekey
+    desc="Type of relationship."
+    name="Relationship"
+    nullok="false"
+    typelist="ContactRel"/>
+</nonPersistentEntity>

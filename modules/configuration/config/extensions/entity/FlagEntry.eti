@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is an entity needed specifically for the TrainingApp "base application" -->
+
+  <entity entity="FlagEntry" table="flagentry" type="retireable" desc="Information about the flagging of a contact" exportable="true" xmlns="http://guidewire.com/datamodel">
+  <implementsEntity
+    name="Extractable"/>
+  	<column name="FlagDate" type="datetime" desc="Date contact was flagged" nullok="true"/>
+  	<column name="UnflagDate" type="datetime" desc="Date contact was unflagged" nullok="true" />	
+	<column name="Resolution" type="varchar" desc="Note regarding resolution" nullok="true" >
+			<columnParam name="size" value="80"/>
+	</column>
+	<column name="IsOpen" type="bit" desc="Is the entry open?" default="true" nullok="true" />
+	<typekey name="Reason" typelist="FlagEntryReason" desc="Reason contact was flagged" nullok="true" />
+	<foreignkey name="ABContact" columnName="ABContactID" fkentity="ABContact" desc="Contact that was flagged" nullok="true" />	
+	<foreignkey name="UnflagUser" columnName="UnflagUserID" fkentity="User" desc="User who unflags contact" nullok="true" />
+  </entity>

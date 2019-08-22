@@ -1,0 +1,2 @@
+<div class="gw-location-name" id="${id}" data-gw-dest-hash="${destHash}" data-gw-location-name="${locationName}">
+</div>

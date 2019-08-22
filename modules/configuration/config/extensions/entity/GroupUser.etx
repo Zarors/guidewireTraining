@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<extension xmlns="http://guidewire.com/datamodel" entityName="GroupUser">
+  <column-override name="LoadFactor">
+    <columnParam name="validator" value="LoadFactor"/>
+  </column-override>
+</extension>

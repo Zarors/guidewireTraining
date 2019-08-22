@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- UserRegion table -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Joins a user to one or more regions."
+  entity="UserRegion"
+  extendable="true"
+  platform="true"
+  table="userregion"
+  type="joinarray">
+  <foreignkey
+    columnName="UserID"
+    desc="Associated user."
+    exportable="false"
+    fkentity="User"
+    name="User"
+    nullok="false"/>
+  <foreignkey
+    columnName="RegionID"
+    desc="Associated region."
+    fkentity="Region"
+    name="Region"
+    nullok="false"/>
+  <!-- All array tables must have a unique index.  userregion accessed through
+    user, so we have key be (userid, regionid) and
+    eliminate backing index on userid since unique index is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, must be only one entry joining a particular user and region"
+    name="userregionu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UserID"/>
+    <indexcol
+      keyposition="2"
+      name="RegionID"/>
+  </index>
+</entity>

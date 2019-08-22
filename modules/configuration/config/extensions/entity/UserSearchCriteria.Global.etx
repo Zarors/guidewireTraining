@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="UserSearchCriteria">
+  <column
+    desc="Name of group the user belongs to in Kanji. Used only for Japanese."
+    name="GroupNameKanji"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="100"/>
+  </column>
+</extension>

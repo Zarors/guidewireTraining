@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        name="GeocodePlugin">
+  <plugin-gosu
+          disabled="true"
+          gosuclass="gw.plugin.geocode.impl.BingMapsPluginRest">
+    <!-- required parameters -->
+
+    <!-- credentials -->
+    <param
+            name="applicationKey"
+            value=""
+            />
+
+    <!-- optional parameters -->
+
+    <!-- localization -->
+    <!-- See http://msdn.microsoft.com/en-us/library/cc981048.aspx for supported geocode and directions cultures -->
+    <param
+            name="geocodeDirectionsCulture"
+            value=""
+            />
+    <!-- See http://msdn.microsoft.com/en-us/library/hh441729.aspx for supported imagery culture codes -->
+    <param
+            name="imageryCulture"
+            value=""
+            />
+
+    <!-- map url -->
+    <!-- width and height are expressed in pixels -->
+    <param
+            name="mapUrlWidth"
+            value=""
+            />
+    <param
+            name="mapUrlHeight"
+            value=""
+            />
+    <param
+      name="hostName"
+      value=""/>
+    <param
+      name="version"
+      value=""/>
+  </plugin-gosu>
+</plugin>

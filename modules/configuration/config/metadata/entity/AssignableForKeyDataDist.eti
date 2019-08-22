@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!-- ### ===========================================================================
+  ### Assignable foreign key data distribution (owned by Table data distribution)
+  ### =========================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores assignable foreign key data distribution."
+  entity="AssignableForKeyDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="assignableforkeydatadist"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.AssignableForKeyDataDistInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.AssignableForKeyDataDistImpl"/>
+  <column
+    desc="Name of assignable foreign key."
+    name="AssignableForKeyName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Count of # of non null values."
+    name="NumNonNull"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Mean size of assignable foreign keys."
+    name="MeanSize"
+    nullok="false"
+    type="dbstat"/>
+  <column
+    desc="Median size of assignable foreign keys."
+    name="MedianSize"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <array
+    arrayentity="AssignableForKeySizeCntDD"
+    desc="Collection of AssignableForKeySizeCntDDs linked to this AssignableForKeyDataDist."
+    exportable="true"
+    name="AssignableForKeySizeCntDDs"
+    owner="true"/>
+</entity>

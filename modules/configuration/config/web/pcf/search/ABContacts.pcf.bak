@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <LocationGroup
+    canVisit="perm.ABContact.viewsearch"
+    id="ABContacts"
+    menuActions="ContactsMenuActions()"
+    title="DisplayKey.get(&quot;Web.TabBar.Contacts&quot;)">
+    <LocationEntryPoint
+      signature="ABContacts()"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Contacts.Search&quot;)"
+      location="ABContactSearch()"
+      shortcut="H"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Contacts.MergeContacts&quot;)"
+      location="MergeContacts()"
+      shortcut="M"/>
+    <LocationRef
+      label="DisplayKey.get(&quot;Web.Contacts.PendingChanges&quot;, gw.api.desktop.DesktopCounts.getDesktopCounts().PendingContactChanges)"
+      location="PendingChanges()"
+      shortcut="P"/>
+  </LocationGroup>
+</PCF>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="LoadCallbacksLV">
+    <Require
+      name="PageHelper"
+      type="gw.api.tools.LoadHistoryHelper"/>
+    <Require
+      name="History"
+      type="LoadCommand"/>
+    <Require
+      name="LoadCallbacks"
+      type="LoadCallback[]"/>
+    <Require
+      name="ShowLinksAndCounts"
+      type="boolean"/>
+    <RowIterator
+      editable="false"
+      elementName="LoadCallback"
+      pageSize="30"
+      value="LoadCallbacks"
+      valueType="entity.LoadCallback[]">
+      <Variable
+        initialValue="LoadCallback.CallbackResults.length"
+        name="ResultsCount"
+        type="java.lang.Double"/>
+      <Row>
+        <TextCell
+          action="LoadCallbackResultsDetail.drilldown(PageHelper, History, LoadCallback)"
+          available="ResultsCount &gt; 0 and ShowLinksAndCounts"
+          id="callbackname"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.CallbackName&quot;)"
+          value="LoadCallback.Name"/>
+        <TypeKeyCell
+          id="callbacktimetype"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.TimeType&quot;)"
+          value="LoadCallback.ExecutionTime"
+          valueType="typekey.LoaderCallbackTimeType"
+          wrapLabel="true"/>
+        <TextCell
+          align="center"
+          id="callbackexecuteorder"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ExecutionOrder&quot;)"
+          value="LoadCallback.ExecutionOrder"
+          valueType="java.lang.Integer"
+          wrapLabel="true"/>
+        <TextCell
+          id="callbackstarttime"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StartTime&quot;)"
+          sortBy="LoadCallback.StartTime"
+          value="gw.api.util.StringUtil.formatDate(LoadCallback.StartTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+        <TextCell
+          id="callbackendtime"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.EndTime&quot;)"
+          sortBy="LoadCallback.EndTime"
+          value="gw.api.util.StringUtil.formatDate(LoadCallback.EndTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+        <TextCell
+          align="right"
+          id="callbackduration"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Duration&quot;)"
+          value="PageHelper.getDurationString(LoadCallback.StartTime, LoadCallback.EndTime)"
+          wrapLabel="true"/>
+        <TextCell
+          id="callbackdescription"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Description&quot;)"
+          value="LoadCallback.Description"/>
+        <TextCell
+          align="center"
+          enableSort="false"
+          id="loadresultscount"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.NumResults&quot;)"
+          value="gw.api.util.StringUtil.formatNumber(ResultsCount, &quot;####0&quot;)"
+          visible="ShowLinksAndCounts"
+          wrapLabel="true"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  Load histogram in load encryption tool
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Timings for each chuck of encyrption updates"
+  entity="LoadEncryptChunk"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadencryptchunk"
+  type="keyable">
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <foreignkey
+    columnName="LoadEncryptTableID"
+    desc="Parent load encyrption step"
+    fkentity="LoadEncryptTable"
+    name="LoadEncryptTable"
+    nullok="false"/>
+  <column
+    desc="Number of statements executed in this chunk"
+    name="ChunkSize"
+    nullok="false"
+    type="integer"/>
+</entity>

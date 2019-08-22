@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="UserProfileDV">
+    <Require
+      name="user"
+      type="User"/>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Web.Admin.UserProfile.AdminUserDetails.ExtendedProfile&quot;)"/>
+      <TextInput
+        editable="true"
+        id="EmployeeID"
+        label="DisplayKey.get(&quot;Web.Admin.UserProfile.EmployeeID&quot;)"
+        value="user.Contact.EmployeeNumber"/>
+      <InputSetRef
+        def="UserPreferencesContactInputSet(user, user.Contact.AddressOwner)"/>
+      <InputDivider/>
+      <TypeKeyInput
+        editable="true"
+        id="Experience"
+        label="DisplayKey.get(&quot;Web.Admin.UserProfile.AdminUserDetails.Experience&quot;)"
+        value="user.ExperienceLevel"
+        valueType="typekey.UserExperienceType"/>
+      <InputSetRef
+        def="UserPreferencesInputSet(user)"/>
+      <BooleanRadioInput
+        editable="true"
+        id="ExternalUser"
+        label="DisplayKey.get(&quot;Web.Admin.UserProfile.AdminUserDetails.ExternalUser&quot;)"
+        value="user.ExternalUser"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

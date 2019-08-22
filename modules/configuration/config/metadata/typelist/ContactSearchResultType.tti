@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Represents the result of definitive match search."
+  final="true"
+  name="ContactSearchResultType"
+  platform="true">
+  <typecode
+    code="SUCCESS"
+    desc="Address book search succeeded"
+    name="Success"/>
+  <typecode
+    code="TOO_LOOSE_SEARCH"
+    desc="Search criteria is too loose and executing may require too much of the DB resources. Search not executed."
+    name="Too Loose Search Criteria"/>
+</typelist>

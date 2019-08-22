@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!-- ************************************* IMPORTANT ********************************************************************
+    If this schema is changed in a way such that the changes cannot be implemented by simply creating the new objects,
+    you must increment the final static int UpgraderInstrumentation.EXPECTEDUPGRADESCHEMAVERSION, which will force
+    all these tables to be dropped and recreated.
+************************************* IMPORTANT ********************************************************************
+
+  ### ============================================================================
+  ###  Main instrumentation table for upgrader
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Upgrade history."
+  entity="UpgradeInstance"
+  exportable="false"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  lockable="true"
+  platform="true"
+  table="upgradeinstance"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.upgrader.impl.UpgradeInstanceImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.upgrader.UpgradeInstancePublicMethods"
+    impl="com.guidewire.pl.domain.upgrader.impl.UpgradeInstanceImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.database.upgrade.info.IUpgradeInstanceInfo"
+    impl="com.guidewire.pl.domain.upgrader.impl.UpgradeInstanceImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.database.upgrade.info.IStartAndEndTimeProvider"
+    impl="com.guidewire.pl.domain.upgrader.impl.UpgradeInstanceImpl"/>
+  <implementsEntity
+    name="TimedUpgraderObject"/>
+  <column
+    desc="Application major version of source"
+    name="SourceAppMajorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Application minor version of source"
+    name="SourceAppMinorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Platform major version of source"
+    name="SourcePlMajorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Platform minor version of source"
+    name="SourcePlMinorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Extension version of source"
+    name="SourceExtensionsVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Build version string from source configuration which includes app version and customer version"
+    name="SourceBuildVersion"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Application major version of target"
+    name="TargetAppMajorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Application minor version of target"
+    name="TargetAppMinorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Platform major version of target"
+    name="TargetPlMajorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Platform minor version of target"
+    name="TargetPlMinorVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Extension version of target"
+    name="TargetExtensionsVersion"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Build version string from target configuration which includes app version and customer version"
+    name="TargetBuildVersion"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Checksum of target configuration (only valid if Rolling == true)"
+    name="TargetChecksum"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    default="false"
+    desc="Whether this upgrade was resumed"
+    name="Resumed"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Whether this upgrade failed"
+    name="Failed"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Whether we updated statistics as part of this upgrade"
+    name="UpdateStatistics"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Whether we completed the deferred upgrade tasks"
+    name="DefdTasksCompleted"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="0"
+    desc="Number of completed deferred upgrade tasks"
+    name="NumDefdTasksCompleted"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Total number of deferred upgrade tasks"
+    name="TotalNumDefdTasks"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Raw Profiler data"
+    name="ProfilerData"
+    nullok="true"
+    type="blob"/>
+  <column
+    desc="Whether this is a rolling upgrade"
+    name="Rolling"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Only applicable for a rolling upgrade. True if the rolling upgrade has been backed out"
+    name="BackedOut"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Only applicable for a rolling upgrade. True if this schema migration backs out the previous upgrade"
+    name="ReverseMigration"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Timestamp when the database portion of the upgrade started"
+    name="DatabaseStartTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the database portion of the upgrade ended"
+    name="DatabaseEndTime"
+    nullok="true"
+    type="datetime"/>
+  <array
+    arrayentity="UpgradeRowCount"
+    name="UpgradeRowCounts"
+    owner="true"/>
+  <array
+    arrayentity="UpgradeTableRegistry"
+    name="UpgradeTableRegistries"
+    owner="true"/>
+  <array
+    arrayentity="UpgradeDBStorageSet"
+    name="UpgradeDBStorageSets"
+    owner="true"/>
+  <array
+    arrayentity="UpgradeVTDBMSDump"
+    name="DBMSDumps"
+    owner="true"/>
+</entity>

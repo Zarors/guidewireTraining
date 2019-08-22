@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="Marca_Ext" desc="">
+  <typecode
+    code="Toyota"
+    name="Toyota"
+    priority="30"/>
+  <typecode
+    code="Susuki"
+    name="Susuki"
+    priority="20"/>
+  <typecode
+    code="Chevrolet"
+    name="Chevrolet"
+    priority="10"/>
+</typelist>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of load commands"
+  final="true"
+  name="LoadCommandType"
+  platform="true">
+  <typecode
+    code="errorcleared"
+    desc="Error table cleared"
+    name="Error table cleared"/>
+  <typecode
+    code="exclusioncleared"
+    desc="Exclusion table cleared"
+    name="Exclusion table cleared"/>
+  <typecode
+    code="stagingcleared"
+    desc="Staging tables cleared"
+    name="Staging tables cleared"/>
+  <typecode
+    code="excludeddeleted"
+    desc="Excluded rows deleted from staging tables"
+    name="Excluded rows deleted"/>
+  <typecode
+    code="exclusionpop"
+    desc="Exclusion table populated with failed rows from error table"
+    name="Exclusion table populated"/>
+  <typecode
+    code="integritychecked"
+    desc="Integrity of staging tables checked"
+    name="Integrity of staging tables checked"/>
+  <typecode
+    code="sourceloaded"
+    desc="Source tables loaded from staging tables"
+    name="Source tables loaded"/>
+  <typecode
+    code="zonesourceloaded"
+    desc="Zone Source tables loaded from staging tables"
+    name="Zone Source tables loaded"/>
+  <typecode
+    code="nonexcludeddeleted"
+    desc="Non-excluded rows deleted from staging tables"
+    name="Non-excluded rows deleted"
+    retired="true"/>
+  <typecode
+    code="dbstatsupdated"
+    desc="Database statistics updated on staging tables"
+    name="Database statistics updated on staging tables"/>
+  <typecode
+    code="tablesencrypted"
+    desc="Encrypt data in staging tables"
+    name="Encrypt data in staging tables"/>
+</typelist>

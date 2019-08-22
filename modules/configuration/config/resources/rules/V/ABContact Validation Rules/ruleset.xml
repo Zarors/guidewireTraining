@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization
+   xmlns="http://guidewire.com/xml"
+   xmlns:tns="http://guidewire.com/xml"
+   xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+   xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <RuleSetTreeExport>
+    <rule
+       active="true"
+       entity-name="ABContact"
+       id="-793015173479586817"
+       name="ABContact Validation Rules"
+       public-id="-793015173479586817"
+       rule-set-type="V"
+       xsi:type="RuleNode">
+      <export>true</export>
+      <res-ctx length="0"/>
+    </rule>
+    <ordered-children length="1">
+      <item-0>1</item-0>
+    </ordered-children>
+  </RuleSetTreeExport>
+</serialization>

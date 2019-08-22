@@ -1,0 +1,13 @@
+.gw-RowWidget {
+
+  &.gw-isSpacerRow {
+    .gw-CellWidget {
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+  }
+
+  &.gw-Row--hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Users' preferred languages"
+  final="false"
+  name="LocaleType"
+  platform="true">
+  <typecode
+    code="en_US"
+    desc="United States (English)"
+    name="United States (English)"/>
+  <typecode
+    code="en_GB"
+    desc="Great Britain (English)"
+    name="Great Britain (English)"/>
+  <typecode
+    code="en_CA"
+    desc="Canada (English)"
+    name="Canada (English)"/>
+  <typecode
+    code="en_AU"
+    desc="Australia (English)"
+    name="Australia (English)"/>
+  <typecode
+    code="fr_CA"
+    desc="Canada (French)"
+    name="Canada (French)"/>
+  <typecode
+    code="fr_FR"
+    desc="France (French)"
+    name="France (French)"/>
+  <typecode
+    code="de_DE"
+    desc="Germany (German)"
+    name="Germany (German)"/>
+  <typecode
+    code="ja_JP"
+    desc="Japan (Japanese)"
+    name="Japan (Japanese)"/>
+</typelist>

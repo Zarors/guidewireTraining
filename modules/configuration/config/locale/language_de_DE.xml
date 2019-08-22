@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language xmlns="http://guidewire.com/language">
+  <GWLanguage
+    code="de_DE"
+	name="German (Germany)"
+	typecode="de_DE">
+    <InMemoryCollatorVariant
+	  variant="phonebook"/>
+    </GWLanguage>
+</Language>

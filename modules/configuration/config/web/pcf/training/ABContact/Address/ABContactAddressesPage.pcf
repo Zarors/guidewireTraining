@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Page
+    canEdit="true"
+    canVisit="true"
+    id="ABContactAddressesPage"
+    title="User.util.getCurrentUser().UseHelperLabels ? DisplayKey.get(&quot;Training.AddressesLDVHelper&quot;) : DisplayKey.get(&quot;Training.AddressesLDV&quot;)">
+    <LocationEntryPoint
+      signature="ABContactAddressesPage(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons/>
+      </Toolbar>
+      <PanelRef
+        def="ABContactAddressesLDV(anABContact)"/>
+    </Screen>
+  </Page>
+</PCF>

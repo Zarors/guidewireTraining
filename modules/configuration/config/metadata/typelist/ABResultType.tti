@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="@deprecated (since 8.0.0) Not used by ContactManager.  Describes different types of results that can occur as part of an Address Book link or save."
+  final="true"
+  name="ABResultType">
+  <typecode
+    code="success"
+    desc="Indicates a successful link with the Address Book."
+    name="Success"/>
+  <typecode
+    code="failed_pme"
+    desc="The link failed because no definitive match was found, but potential matches exist."
+    name="Failure Potential Matches Exist"/>
+  <typecode
+    code="failed_nme"
+    desc="The link failed because no definitive match was found. No potential matches were found either."
+    name="Failure No Matches Exist"/>
+  <typecode
+    code="failed_se"
+    desc="An exception was thrown by the Address Book"
+    name="Failure Address Book Exception"/>
+  <typecode
+    code="success_dmd"
+    desc="Indicates a successful link with the Address Book. However, the definitive match was different."
+    name="Success Definitive Match Different"
+    retired="true"/>
+  <typecode
+    code="failed_mddm"
+    desc="The link failed because there were multiple definitive matches that were all different."
+    name="Failure Multiple Different Definitive Matches"
+    retired="true"/>
+  <typecode
+    code="failed_ve"
+    desc="The save failed becuase there were validation errors."
+    name="Failure Validation Errors"
+    retired="true"/>
+  <typecode
+    code="failed_urc"
+    desc="The save failed because the contact has unlinked related contacts."
+    name="Failure Unlinked Related Contacts"
+    retired="true"/>
+  <typecode
+    code="failed_pinf"
+    desc="The save failed because no Address Book entry with the given public ID was found."
+    name="Failure Public ID Not Found"
+    retired="true"/>
+  <typecode
+    code="failed_nis"
+    desc="The save failed because the contact is not in sync with the Address Book."
+    name="Failure Not In Sync"
+    retired="true"/>
+</typelist>

@@ -1,0 +1,63 @@
+package rules.Preupdate.ABContactPreupdate_dir.ABPU1000SubtypeABContact_dir
+
+uses gw.api.database.Query
+uses gw.api.database.Relop
+
+@gw.rules.RuleName("ABPU1020 - Assigned user changed")
+internal class ABPU1020Assigneduserchanged {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+// use local variables where possible for ScriptParameters
+var recordInHistoryChangesToAssignedUser  : java.lang.Boolean  = true
+if (ScriptParameters.RecordInHistory_ChangesToAssignedUser !=null) {
+    recordInHistoryChangesToAssignedUser = ScriptParameters.RecordInHistory_ChangesToAssignedUser
+}
+return aBContact.ChangedFields.contains("AssignedUser")
+and recordInHistoryChangesToAssignedUser
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// This rule creates a history event to note a change in assigned user.
+// The event records both the previous assigned user and the new assigned
+// user.
+var newEntry = new HistoryEntry()
+newEntry.EventType = HistoryEventType.TC_ASSIGNED
+
+// AssignedUser is a foreign key field. Therefore, foreign key
+// must be retrieved, and then object to which that key points to
+// must be retrieved.
+
+// Retrieve foreign key value (which is a user ID value)
+var originalUserKey = aBContact.getOriginalValue("AssignedUser")
+
+// Do not attempt to retrieve original user if original user key is null
+if (originalUserKey != null) {
+       // Write history entry using original user value.
+    var originalAssignedUser = Query.make(User).compare(ABContact#ID, Relop.Equals, originalUserKey  as gw.pl.persistence.core.Key).select().AtMostOneRow
+    newEntry.Description = "Assigned user changed from "
+        +  originalAssignedUser.DisplayName + " to " +
+        aBContact.AssignedUser.DisplayName
+    }
+    else {
+    // Write history event using "null" for original user value.
+    newEntry.Description = "Assigned user changed from null to " +
+       aBContact.AssignedUser.DisplayName
+    }
+   
+aBContact.addToHistoryEntries(newEntry)
+
+
+
+
+
+
+// Update for TrainingApp 8.0.2 for Property Reference Syntax, getOriginalValue and compare()
+/*end00rule*/
+
+  }
+}

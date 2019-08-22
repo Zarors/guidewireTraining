@@ -1,0 +1,10 @@
+<div id="${renderId}" ${outerClasses} ${outerStyles} ${outerAttributes}>
+  <div class="gw-vw--value ${alignValue}">
+    <div :if="prefix" class="gw-ValueWidget--prefix" id="${renderId}_prefix">${prefix}</div>
+    ${value}
+    <div :if="suffix" class="gw-ValueWidget--suffix" id="${renderId}_suffix">${suffix}</div>
+  </div>
+  <div :if="hasChildren" class="gw-vw--children ${hideChildren ? 'gw-hidden'}">
+    ${:children}
+  </div>
+</div>

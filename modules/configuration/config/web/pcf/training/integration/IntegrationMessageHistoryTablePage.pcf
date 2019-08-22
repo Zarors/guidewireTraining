@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="IntegrationMessageHistoryTablePage"
+    title="DisplayKey.get(&quot;Training.MessageHistoryTable&quot;)">
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Training.WarningMessageHistoryTable&quot;)"/>
+          <Label
+            label="DisplayKey.get(&quot;Training.MessageCount&quot;, allMessageCount())"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        def="MessageHistoryLV()">
+        <Toolbar>
+          <CheckedValuesToolbarButton
+            checkedRowAction="deleteSelectedMessageHistory(CheckedValue)"
+            confirmMessage="DisplayKey.get(&quot;Training.AreYouSureMessageHistory&quot;)"
+            id="DeleteSelectedMessageHistoryButton"
+            iterator="MessageHistoryLV.MessageHistoryLV"
+            label="DisplayKey.get(&quot;Training.DeleteSelectedMessageHistories&quot;)"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+    <Code><![CDATA[function allMessageCount() : int {
+  var queryObj = gw.api.database.Query.make(MessageHistory)
+  return queryObj.select().Count
+}
+
+function deleteSelectedMessageHistory(aMessageHistory : MessageHistory) : void {
+  gw.transaction.Transaction.runWithNewBundle( \ newBundle -> {aMessageHistory.remove()} )
+} // end deleteSelectedMessageHistory]]></Code>
+  </Page>
+</PCF>

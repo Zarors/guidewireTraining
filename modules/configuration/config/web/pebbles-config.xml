@@ -1,0 +1,11 @@
+<PebblesConfig>
+  <!--
+  The WizardConfig element has three optional attributes:
+     wizardNextShortcut - The shortcut for the Next button in the WizardButtons.
+     wizardPrevShortcut - The shortcut for the Previous button in the WizardButtons.
+     wizardPrevNextButtonsVisible - Setting to make Wizard Prev/Next buttons always visible regardless of availability.
+       If false, the buttons are visible only when they are available, if true they are always visible.
+  -->
+  <WizardConfig
+    wizardPrevNextButtonsVisible="false"/>
+</PebblesConfig>

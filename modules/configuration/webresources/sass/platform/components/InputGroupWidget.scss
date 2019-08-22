@@ -1,0 +1,99 @@
+.gw-InputGroupWidget {
+  vertical-align: top;
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  @include gw-wrapNever();
+
+  @include gw-borderRadius();
+  display: block;
+
+  // Position to other widgets
+  margin-top: $gw-app--InputGroup--spacing-widget-top-rem;
+  margin-left: $gw-app--InputGroup--spacing-widget-left-rem;
+  margin-right: $gw-app--InputGroup--spacing-widget-right-rem;
+  margin-bottom: $gw-app--InputGroup--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--InputGroup--spacing-inner-top-rem;
+  padding-left: $gw-app--InputGroup--spacing-inner-left-rem;
+  padding-right: $gw-app--InputGroup--spacing-inner-right-rem;
+  padding-bottom: $gw-app--InputGroup--spacing-inner-bottom-rem;
+
+  .gw-InputGroup--header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    font-weight: $gw-app--InputGroup--header-font-weight;
+    background-color: $gw-app--InputGroup--header-footer-bg;
+    min-height: $gw-app--InputGroup--min-height-em;
+    border-top: $gw-app--InputGroup--header-border-top;
+    border-bottom: $gw-app--InputGroup--header-border-bottom;
+    border-top-left-radius: $gw-app--InputGroup--border-radius-px;
+    border-top-right-radius: $gw-app--InputGroup--border-radius-px;
+
+    // Internal padding
+    padding-top: $gw-app--InputGroup-title-bar--spacing-inner-top-rem;
+    padding-left: $gw-app--InputGroup-title-bar--spacing-inner-left-rem;
+    padding-right: $gw-app--InputGroup-title-bar--spacing-inner-right-rem;
+    padding-bottom: $gw-app--InputGroup-title-bar--spacing-inner-bottom-rem;
+
+    @include gw-ie11Only {
+      padding-top: gw-emFixed(1);
+      padding-bottom: gw-emFixed(1);
+    }
+
+    .gw-InputGroupCheckboxValueWidget:not(.gw-placeholder) {
+      margin-right: $gw-app--InputGroup-title-bar--internal-spacing-rem;
+    }
+
+    .gw-icon {
+      margin-right: $gw-app--InputGroup-title-bar--internal-spacing-rem;
+    }
+  }
+
+  .gw-InputGroup--body {
+    &:empty {
+      display: none;
+    }
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    background-color: $gw-app--InputGroup--bg;
+    // Internal padding
+    padding-top: $gw-app--InputGroup--spacing-inner-top-rem;
+    padding-left: $gw-app--InputGroup--spacing-inner-left-rem;
+    padding-right: $gw-app--InputGroup--spacing-inner-right-rem;
+    padding-bottom: $gw-app--InputGroup--spacing-inner-bottom-rem;
+  }
+
+  .gw-InputGroup--footer {
+    @if($gw-app--InputGroup--use-footer) {
+      display: block;
+    } @else {
+      display: none;
+    }
+
+    // Internal padding
+    padding-top: $gw-app--InputGroup--spacing-inner-top-rem;
+    padding-left: $gw-app--InputGroup--spacing-inner-left-rem;
+    padding-right: $gw-app--InputGroup--spacing-inner-right-rem;
+    padding-bottom: $gw-app--InputGroup--spacing-inner-bottom-rem;
+
+    background-color: $gw-app--InputGroup--header-footer-bg;
+    margin-top: 0;
+    height: gw-emFixed(1);
+    min-height: gw-emFixed(1);
+    max-height: gw-emFixed(1);
+    border-bottom-left-radius: $gw-app--InputGroup--border-radius-px;
+    border-bottom-right-radius: $gw-app--InputGroup--border-radius-px;
+    // Value and Label modified in InputColumn.scss
+  }
+
+  &.gw-InputGroup--collapsed {
+    .gw-InputGroup--body {
+      display: none !important;
+    }
+  }
+}

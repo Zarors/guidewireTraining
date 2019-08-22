@@ -1,0 +1,23 @@
+package rules.EventMessage.EventFired_dir
+
+@gw.rules.RuleName("LREF1000 - Legal Case Report")
+internal class LREF1000LegalCaseReport {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.DestID == 15 // Legal Case Report
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("\n*** Stage 1 -- Triggering the message ***")
+print("    Event Fired rule set: " + actions.Rule.DisplayName )
+print("    Messaging Destination ID is " + messageContext.DestID)
+// execute child rules
+/*end00rule*/
+
+  }
+}

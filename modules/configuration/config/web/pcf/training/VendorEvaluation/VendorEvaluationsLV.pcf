@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="VendorEvaluationsLV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <ExposeIterator
+      valueType="entity.VendorEvaluation"
+      widget="VendorEvaluationsLV"/>
+    <RowIterator
+      editable="true"
+      elementName="currentVendorEvaluation"
+      pickLocation="VendorEvaluationPopup.push(true)"
+      toAdd="anABContact.addToVendorEvaluations( currentVendorEvaluation )"
+      toRemove="anABContact.removeFromVendorEvaluations( currentVendorEvaluation )"
+      value="anABContact.VendorEvaluations"
+      valueType="VendorEvaluation[]">
+      <Row>
+        <DateCell
+          action="VendorEvaluationPopup.push(currentVendorEvaluation, CurrentLocation.InEditMode)"
+          id="EvaluationDate"
+          label="DisplayKey.get(&quot;Training.EvaluationDate&quot;)"
+          value="currentVendorEvaluation.EvaluationDate"/>
+        <TextCell
+          action="VendorEvaluationPopup.push(currentVendorEvaluation, CurrentLocation.InEditMode)"
+          id="Evaluator"
+          label="DisplayKey.get(&quot;Training.Evaluator&quot;)"
+          value="currentVendorEvaluation.Evaluator"/>
+        <TextCell
+          action="VendorEvaluationPopup.push(currentVendorEvaluation, CurrentLocation.InEditMode)"
+          align="right"
+          id="Score"
+          label="DisplayKey.get(&quot;Training.TotalScore&quot;)"
+          value="currentVendorEvaluation.TotalScore"
+          valueType="int"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

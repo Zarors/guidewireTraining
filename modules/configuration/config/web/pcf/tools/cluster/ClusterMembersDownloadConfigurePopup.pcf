@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="ClusterMembersDownloadConfigurePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.ClusterMembersDownloadConfigure&quot;)">
+    <Variable
+      initialValue="new gw.api.tools.ClusterMembersData()"
+      name="ClusterMembersData"
+      type="gw.api.tools.ClusterMembersData"/>
+    <Screen>
+      <DetailViewPanel>
+        <Variable
+          initialValue="true"
+          name="IncludeHistory"
+          type="boolean"/>
+        <Variable
+          initialValue="100"
+          name="MaxHistoryRecords"
+          type="int"/>
+        <InputColumn>
+          <CheckBoxInput
+            editable="true"
+            id="IncludeHistory"
+            label="DisplayKey.get(&quot;Web.InternalTools.ClusterMembersDownloadConfigure.IncludeHistory&quot;)"
+            value="IncludeHistory">
+            <PostOnChange/>
+          </CheckBoxInput>
+          <TextInput
+            available="IncludeHistory"
+            editable="true"
+            id="MaxHistoryRecords"
+            label="DisplayKey.get(&quot;Web.InternalTools.ClusterMembersDownloadConfigure.MaxHistoryRecords&quot;)"
+            value="MaxHistoryRecords"
+            valueType="java.lang.Integer"/>
+          <ButtonInput
+            action="ClusterMembersData.downloadSummaryReport(IncludeHistory ? MaxHistoryRecords : 0)"
+            download="true"
+            id="CompleteDownload"
+            value="DisplayKey.get(&quot;Button.Complete.Download&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

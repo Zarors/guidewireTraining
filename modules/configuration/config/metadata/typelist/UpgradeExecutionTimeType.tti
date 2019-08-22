@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of upgrade execution times"
+  final="true"
+  name="UpgradeExecutionTimeType"
+  platform="true">
+  <typecode
+    code="bootstrap"
+    desc="Bootstrap"
+    name="Bootstrap"
+    priority="1"/>
+  <typecode
+    code="syncindexes"
+    desc="Sync indexes"
+    name="Sync indexes"
+    priority="2"
+    retired="true"/>
+  <typecode
+    code="checkdbstate"
+    desc="Check database state for disabled constraints, etc."
+    name="Check database state"
+    priority="3"/>
+  <typecode
+    code="prerowcounts"
+    desc="Capture row counts before upgrade"
+    name="Capture row counts before upgrade"
+    priority="4"/>
+  <typecode
+    code="dbparameters"
+    desc="Persist database parameters"
+    name="Persist database parameters"
+    priority="5"/>
+  <typecode
+    code="dbspacebefore"
+    desc="Capture database space info before upgrade"
+    name="Capture database space before"
+    priority="6"/>
+  <typecode
+    code="customversionchecks"
+    desc="Execute customer checks to determine whether to proceed with upgrade"
+    name="Customer Version Checks"
+    priority="7"/>
+  <typecode
+    code="custompreupgrade"
+    desc="Execute customer pre-upgrade steps defined in IDatamodelUpgrade plugin"
+    name="Customer Pre-Upgrade version triggers"
+    priority="8"/>
+  <typecode
+    code="versionchecks"
+    desc="Execute checks to determine whether to proceed with upgrade"
+    name="Version Checks"
+    priority="9"/>
+  <typecode
+    code="vtbeforeschemadiff"
+    desc="Execute VersionTriggers before schema diff"
+    name="Execute VersionTriggers before schema diff"
+    priority="10"/>
+  <typecode
+    code="orphanedtypecodes"
+    desc="Verify no references to orphaned type codes"
+    name="Verify no references to orphaned type codes"
+    priority="11"/>
+  <typecode
+    code="encryptdecrypt"
+    desc="Encrypt or decrypt existing data"
+    name="Encrypt or decrypt existing data"
+    priority="12"/>
+  <typecode
+    code="gensteps"
+    desc="Generate steps"
+    name="Generate steps"
+    priority="13"/>
+  <typecode
+    code="executesteps"
+    desc="Execute steps"
+    name="Execute steps"
+    priority="14"/>
+  <typecode
+    code="vtafterschemadiff"
+    desc="VersionTriggers after schema diff"
+    name="VersionTriggers after schema diff"
+    priority="15"/>
+  <typecode
+    code="custompostupgrade"
+    desc="Execute customer post-upgrade steps defined in IDatamodelUpgrade plugin"
+    name="Customer Post-Upgrade version triggers"
+    priority="16"/>
+  <typecode
+    code="snapshotdatamodel"
+    desc="Capture snapshot of datamodel for archiving"
+    name="Capture snapshot of datamodel for archiving"
+    priority="17"/>
+  <typecode
+    code="cleanup"
+    desc="Clean up"
+    name="Clean up"
+    priority="18"/>
+  <typecode
+    code="copytoshadowtables"
+    desc="Copy contents of source tables to shadow tables"
+    name="Copy contents to shadow tables"
+    priority="19"
+    retired="true"/>
+  <typecode
+    code="postrowcounts"
+    desc="Capture row counts after upgrade"
+    name="Capture row counts after upgrade"
+    priority="20"/>
+  <typecode
+    code="dbspaceafter"
+    desc="Capture database space info after upgrade"
+    name="Capture database space after"
+    priority="21"/>
+  <typecode
+    code="verifyschema"
+    desc="Verify schema"
+    name="Verify schema"
+    priority="22"/>
+</typelist>

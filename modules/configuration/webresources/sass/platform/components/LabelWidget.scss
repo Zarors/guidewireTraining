@@ -1,0 +1,53 @@
+.gw-LabelWidget {
+  @include gw-wrapOnWhiteSpace();
+
+  // Position to other widgets
+  margin-top: $gw-app--LabelWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--LabelWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--LabelWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--LabelWidget--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--LabelWidget--spacing-inner-top-rem;
+  padding-left: $gw-app--LabelWidget--spacing-inner-left-rem;
+  padding-right: $gw-app--LabelWidget--spacing-inner-right-rem;
+  padding-bottom: $gw-app--LabelWidget--spacing-inner-bottom-rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: $gw-app--LabelWidget--bg;
+  color: $gw-app--LabelWidget--color;
+
+  > .gw-label {
+    .gw-icon {
+      margin-right: $gw-app--SPACING-rem-S;
+    }
+  }
+
+  > .gw-value {
+    display: none !important;
+  }
+
+  &.gw-StyleContainer--InputColumnSubGroupWidget {
+    margin-top: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-top-rem;
+    margin-right: 0;
+    margin-left: 0;
+    
+    padding-top: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-top-rem;
+    padding-left: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-left-rem;
+    padding-right: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-widget-right-rem;
+    padding-bottom: $gw-app--InputWidget-in-InputColumnSubGroup--spacing-inner-bottom-rem;
+  }
+  
+  &.gw-StyleContainer--InputGroupWidget {
+    margin-top: $gw-app--InputWidget-in-InputGroup--spacing-widget-top-rem;
+    margin-right: 0;
+    margin-left: 0;
+
+    padding-top: $gw-app--InputWidget-in-InputGroup--spacing-inner-top-rem;
+    padding-left: $gw-app--InputWidget-in-InputGroup--spacing-widget-left-rem;
+    padding-right: $gw-app--InputWidget-in-InputGroup--spacing-widget-right-rem;
+    padding-bottom: $gw-app--InputWidget-in-InputGroup--spacing-inner-bottom-rem;
+  }
+}

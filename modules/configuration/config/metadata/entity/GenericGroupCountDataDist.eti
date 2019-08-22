@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- ### ==========================================================================
+  ### Generic value-group size and count data distribution (owned by GenericGroup data distribution)
+  ### ========================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores value=group size and the number of groups of that size for the generic group data distribution."
+  entity="GenericGroupCountDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="genericgroupcountdatadist"
+  type="keyable">
+  <column
+    desc="Size of the group of duplicate values on this this column group and table."
+    name="GroupSize"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Number of groups for this size for this table."
+    name="GroupSizeCount"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="GenericGroupDataDistID"
+    desc="GenericGroupDataDist for this object."
+    exportable="false"
+    fkentity="GenericGroupDataDist"
+    ignoreforevents="true"
+    name="GenericGroupDataDist"
+    nullok="false"/>
+  <index
+    desc="Ensure uniqueness for combination of GenericGroupDataDist and GroupSize"
+    name="ggcddu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GenericGroupDataDistID"/>
+    <indexcol
+      keyposition="2"
+      name="GroupSize"/>
+  </index>
+</entity>

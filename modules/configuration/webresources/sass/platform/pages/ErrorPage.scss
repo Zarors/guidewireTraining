@@ -1,0 +1,68 @@
+$gw-ErrorPage--bg: lightgrey;
+$gw-ErrorPage--top--bg: white;
+$gw-ErrorPage--bottom--bg: white;
+$gw-ErrorPage--content--padding: gw-emFixed(10);
+$gw-ErrorPage--content--margin: gw-emFixed(5);
+
+.gw-errorpage {
+  width: 100vw;
+
+  &.gw-full-page {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: opacity 1s ease-out;
+    z-index: 90000;
+  }
+
+  .gw-errorpage--background {
+    position: fixed;
+    opacity: .75;
+    background-color: $gw-ErrorPage--bg;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .gw-errorpage--content-wrapper {
+    position: fixed;
+    padding: $gw-ErrorPage--content--padding;
+    overflow: auto;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99999;
+
+    .gw-errorpage--top {
+      @include gw-boxShadowStandard();
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: gw-emFixed(1);
+      background-color: $gw-ErrorPage--top--bg;
+
+      .gw-header {
+        font-size: gw-emFixed(1.5);
+        top: 0;
+        left: 0;
+      }
+
+      .gw-button {
+        margin-top: gw-emFixed(1);
+      }
+    }
+
+    .gw-errorpage--bottom {
+      @include gw-boxShadowStandard();
+      margin-top: gw-pxFixed(1);
+      flex-grow: 1;
+      flex-shrink: 1;
+      overflow: auto;
+      background-color: $gw-ErrorPage--bottom--bg;
+      pre {
+        margin: gw-emFixed(1);
+      }
+    }
+
+    .gw-alert-error {
+      @include gw-error();
+    }
+  }
+}

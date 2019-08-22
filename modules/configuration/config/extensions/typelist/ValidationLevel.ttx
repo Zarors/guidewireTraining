@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="ValidationLevel">
+  <typecode
+    code="external"
+    desc="Send to external system"
+    name="Send to external system"
+    priority="200"/>
+</typelistextension>

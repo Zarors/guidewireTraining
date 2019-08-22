@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="PhoneAndAddressesDV"
+    mode="ABPerson|ABAdjudicator|ABPersonVendor|ABAttorney|ABDoctor|ABPolicyPerson|ABUserContact">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        id="Phone"
+        label="DisplayKey.get(&quot;Training.PhoneNumbers&quot;)"/>
+      <TypeKeyInput
+        editable="true"
+        id="PrimaryPhone"
+        label="DisplayKey.get(&quot;Training.PrimaryPhone&quot;)"
+        value="(anABContact as ABPerson).PrimaryPhone"
+        valueType="typekey.PrimaryPhoneType"/>
+      <TextInput
+        editable="true"
+        id="FaxPhone"
+        label="DisplayKey.get(&quot;Training.FaxPhone&quot;)"
+        value="anABContact.FaxPhone"/>
+      <TextInput
+        editable="true"
+        id="HomePhone"
+        label="DisplayKey.get(&quot;Training.HomePhone&quot;)"
+        value="anABContact.HomePhone"
+        visible="anABContact typeis ABPerson"/>
+      <TextInput
+        editable="true"
+        id="BusinessPhone"
+        label="DisplayKey.get(&quot;Training.WorkPhone&quot;)"
+        value="anABContact.WorkPhone"/>
+      <Label
+        id="PrimaryAddress"
+        label="DisplayKey.get(&quot;Training.PrimaryAddress&quot;)"/>
+      <InputSetRef
+        def="AddressOwnerInputSet(anABContact.AddressOwner, true)"
+        id="BasicAddressInputSet"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

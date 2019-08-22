@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Entity
+  name="User">
+  <Columns>
+    <Column
+      beanPath="User.Contact"
+      displayName="true"
+      name="contact"
+      sortOrder="0"/>
+  </Columns>
+  <DisplayName><![CDATA[contact]]></DisplayName>
+</Entity>

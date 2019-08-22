@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  Sequence Table for unique-key (sequence) generation
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Store mapping for sequence-key to sequence-number, sequence-key are generated on demand, and number a unique sequnce acquire by application."
+  entity="Sequence"
+  extendable="false"
+  loadable="false"
+  lockable="false"
+  platform="true"
+  table="sequence"
+  type="versionable">
+  <column
+    desc="The sequence-key (name)."
+    name="SequenceKey"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="26"/>
+  </column>
+  <column
+    desc="The unique sequence-number for the key."
+    name="SequenceNumber"
+    nullok="false"
+    type="longint"/>
+  <index
+    desc="SequenceKey is unique within sequence table"
+    name="sequencekeyu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="SequenceKey"/>
+  </index>
+</entity>

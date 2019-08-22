@@ -1,0 +1,44 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Cell Phone Changed History Event")
+internal class CellPhoneChangedHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.New 
+and aBContact typeis ABPerson
+and (aBContact.ChangedFields.contains("CellPhone")
+or aBContact.ChangedFields.contains("CellPhoneExtension")
+or aBContact.ChangedFields.contains("CellPhoneCountry"))
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var fieldsToTrack = new java.util.HashMap<String, String>()
+              {"CellPhone" -> "Web.ContactDetail.Phone.Cell",
+              "CellPhoneExtension" -> "Web.ContactDetail.Phone.Extension",
+              "CellPhoneCountry" -> "Web.ContactDetail.Phone.RegionCode"}
+var abPerson = aBContact as ABPerson
+var originalValue = abPerson.getOriginalValue("CellPhone")
+var history : History
+if (abPerson.CellPhone == null or abPerson.CellPhone == "") {
+  history = aBContact.addHistory(CustomHistoryType.TC_PHONEREMOVED, DisplayKey.get("Rules.Preupdate.ABContact.CellPhoneRemoved"))
+  history.createTrackedChanges(aBContact, fieldsToTrack)
+
+} else if (originalValue == null or originalValue.equals("")) {
+  history = aBContact.addHistory(CustomHistoryType.TC_PHONEADDED, DisplayKey.get("Rules.Preupdate.ABContact.CellPhoneAdded"))
+  history.createTrackedChanges(aBContact, fieldsToTrack)
+
+} else {
+  history = aBContact.addHistory(CustomHistoryType.TC_PHONEUPDATED, DisplayKey.get("Rules.Preupdate.ABContact.CellPhoneUpdated"))
+  history.createTrackedChanges(aBContact, fieldsToTrack)
+}
+/*end00rule*/
+
+  }
+}

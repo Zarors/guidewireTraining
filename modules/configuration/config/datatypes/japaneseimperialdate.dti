@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<DataTypeDef xmlns="http://guidewire.com/datatype" type="gw.datatype.impl.JapaneseImperialDateDataTypeDef" valueType="java.util.Date"/>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<entity
+  loadable="false"
+  platform="true"
+  xmlns="http://guidewire.com/datamodel"
+  entity="PersonalDataDestructionRequest"
+  desc="Requests for Personal Data Destruction for Contacts"
+  table="pddestructionrequest"
+  type="editable">
+  <column
+    desc="Represents the ID of the associated object in Address Book.  Null if the object is not linked to Address Book."
+    name="AddressBookUID"
+    nullok="true"
+    type="externalid"/>
+  <column
+    default="false"
+    desc="all requesters have been notified"
+    name="RequestersNotified"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <array
+    arrayentity="PersonalDataDestructionRequester"
+    cascadeDelete="true"
+    desc="List of requesters for the destruction on a particular contact"
+    name="PersonalDataDestructionRequesters"/>
+  <array
+    arrayentity="PersonalDataContactDestructionRequest"
+    cascadeDelete="true"
+    desc="The related contacts to the ABUID, only used in CC"
+    name="PersonalDataContactDestructionRequests"
+    setterScriptability="hidden"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.personaldata.PersonalDataDestructionRequestPublicMethods"
+    impl="com.guidewire.pl.domain.personaldata.PersonalDataDestructionRequestImpl"/>
+</entity>

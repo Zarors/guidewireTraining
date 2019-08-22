@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Instrumentation information for a work queue executor instance."
+  entity="InstrumentedWorkExecutor"
+  exportable="false"
+  final="true"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="instrumentedworkexecutor"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.entity.DoesNotValidateOnCommit"
+    impl="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkExecutorImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkExecutorInternalMethods"
+    impl="com.guidewire.pl.domain.workqueue.impl.InstrumentedWorkExecutorImpl"/>
+  <typekey
+    desc="The related writer batch process, identifying this queue."
+    name="WorkQueueID"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <column
+    desc="The app server name."
+    name="AppServerName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Maximum number of parallel workers."
+    name="MaxNumberOfWorkers"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Timestamp when the executor was started."
+    name="StartTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the executor stop was initiated."
+    name="StopInitiated"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the executor was shutdown."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+</entity>

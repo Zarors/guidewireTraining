@@ -1,0 +1,33 @@
+package rules.Preupdate.ABContactPreupdate_dir.NameUpdatedHistoryEvent_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Non-Person")
+internal class NonPerson {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+/*start00rule*/
+return !(aBContact typeis ABPerson)
+and (aBContact.ChangedFields.contains("Name")
+or aBContact.ChangedFields.contains("NameKanji"))
+/*end00rule*/
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var history = aBContact.addHistory(CustomHistoryType.TC_NAMEUPDATED, DisplayKey.get("Rules.Preupdate.ABContact.NameUpdated"))
+var fieldsToTrack : java.util.HashMap<String, String>
+if (User.util.CurrentLocale.Code != LocaleType.TC_JA_JP.Code) {
+fieldsToTrack = new java.util.HashMap<String, String>()
+              {"Name" -> "Web.ContactDetail.Name.OrganizationName",
+               "NameKanji" -> "Web.ContactDetail.Name.OrganizationNameKanji"}
+} else {
+fieldsToTrack = new java.util.HashMap<String, String>()
+              {"Name" -> "Web.ContactDetail.Name.OrganizationNamePhonetic",
+               "NameKanji" -> "Web.ContactDetail.Name.OrganizationName"}
+}
+history.createTrackedChanges(aBContact, fieldsToTrack)
+/*end00rule*/
+
+  }
+}

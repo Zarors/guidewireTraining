@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="ClusterBroadcastTransportFactory"
+  name="ClusterBroadcastTransportFactory">
+  <plugin-osgi
+    servicepid="com.guidewire.pl.cluster.internal.broadcast.database.DefaultDatabaseBroadcastTransportFactory"/>
+</plugin>

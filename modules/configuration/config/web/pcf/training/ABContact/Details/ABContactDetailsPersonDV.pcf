@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <DetailViewPanel
+    editable="true"
+    id="ABContactDetailsPersonDV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Training.Name&quot;)"/>
+      <TextInput
+        id="FullName"
+        label="DisplayKey.get(&quot;Training.FullName&quot;)"
+        value="(anABContact as ABPerson).FullName"/>
+      <TypeKeyInput
+        editable="true"
+        id="Prefix"
+        label="DisplayKey.get(&quot;Training.Prefix&quot;)"
+        value="(anABContact as ABPerson).Prefix"
+        valueType="typekey.NamePrefix"/>
+      <TextInput
+        editable="true"
+        id="FirstName"
+        label="DisplayKey.get(&quot;Training.FirstName&quot;)"
+        value="(anABContact as ABPerson).FirstName"/>
+      <TextInput
+        editable="true"
+        id="MiddleName"
+        label="DisplayKey.get(&quot;Training.MiddleName&quot;)"
+        value="(anABContact as ABPerson).MiddleName"/>
+      <TextInput
+        editable="true"
+        id="LastName"
+        label="DisplayKey.get(&quot;Training.LastName&quot;)"
+        required="true"
+        value="(anABContact as ABPerson).LastName"/>
+      <TypeKeyInput
+        editable="true"
+        id="Suffix"
+        label="DisplayKey.get(&quot;Training.Suffix&quot;)"
+        value="(anABContact as ABPerson).Suffix"
+        valueType="typekey.NameSuffix"/>
+      <InputDivider/>
+      <Label
+        id="TaxInfo"
+        label="DisplayKey.get(&quot;Training.TaxInfo&quot;)"/>
+      <TextInput
+        editable="true"
+        id="TaxID"
+        label="DisplayKey.get(&quot;Training.TaxID&quot;)"
+        value="(anABContact as ABPerson).TaxID"/>
+      <TypeKeyInput
+        editable="true"
+        id="TaxFilingStatus"
+        label="DisplayKey.get(&quot;Training.TaxFilingStatus&quot;)"
+        value="(anABContact as ABPerson).TaxFilingStatus"
+        valueType="typekey.TaxFilingStatusType"/>
+      <DateInput
+        editable="true"
+        id="DateOfBirth"
+        label="DisplayKey.get(&quot;Training.DateOfBirth&quot;)"
+        validationExpression="(anABContact as ABPerson).DateOfBirth &gt; gw.api.util.DateUtil.currentDate() ? DisplayKey.get(&quot;Training.ValidationErrorFutureDOB&quot;) : null"
+        value="(anABContact as ABPerson).DateOfBirth"/>
+      <TypeKeyInput
+        editable="true"
+        id="Gender"
+        label="DisplayKey.get(&quot;Training.Gender&quot;)"
+        value="(anABContact as ABPerson).Gender"
+        valueType="typekey.GenderType"/>
+      <TypeKeyInput
+        editable="true"
+        id="MaritalStatus"
+        label="DisplayKey.get(&quot;Training.MaritalStatus&quot;)"
+        value="(anABContact as ABPerson).MaritalStatus"
+        valueType="typekey.MaritalStatus"/>
+    </InputColumn>
+    <InputColumn>
+      <Label
+        id="EmployeeInfo"
+        label="DisplayKey.get(&quot;Training.EmploymentInfo&quot;)"/>
+      <TextInput
+        editable="true"
+        id="Occupation"
+        label="DisplayKey.get(&quot;Training.Occupation&quot;)"
+        value="(anABContact as ABPerson).Occupation"/>
+      <RangeInput
+        editable="true"
+        id="Employer"
+        label="DisplayKey.get(&quot;Training.Employer&quot;)"
+        value="(anABContact as ABPerson).Employer"
+        valueRange="queryForCompaniesWhoCanHaveEmployees()"
+        valueType="ABCompany"/>
+      <InputDivider/>
+      <InputSetRef
+        def="ABPersonSubtypeInfoInputSet(anABContact)"
+        mode="anABContact.Subtype"/>
+      <InputSet
+        visible="anABContact typeis ABPolicyPerson">
+        <InputDivider/>
+        <Label
+          id="PersonalStatisticsLabel"
+          label="DisplayKey.get(&quot;Training.PersonalStatistics&quot;)"/>
+        <TextInput
+          editable="true"
+          id="Height"
+          label="choseHeightLabel()"
+          maxChars="7"
+          value="(anABContact as ABPolicyPerson).HeightBasedOnUserPreferences"
+          valueType="java.math.BigDecimal"/>
+        <TextInput
+          id="Age"
+          label="DisplayKey.get(&quot;Training.Age&quot;)"
+          value="(anABContact as ABPolicyPerson).Age"/>
+      </InputSet>
+      <InputSet
+        visible="anABContact typeis ABDoctor">
+        <InputDivider/>
+        <Label
+          id="LawsuitLabel"
+          label="DisplayKey.get(&quot;Training.Lawsuits&quot;)"/>
+        <TextInput
+          id="ReportStatus"
+          labelAbove="true"
+          value="determineReportStatusValue()"/>
+        <ButtonInput
+          action="submitRequestForLegalReport()"
+          available="anABContact.LegalCaseReportStatus != typekey.LegalCaseReportStatus.TC_REQUESTED_PENDING and !CurrentLocation.InEditMode"
+          hideIfDisabled="false"
+          id="RequestReportButton"
+          labelAbove="true"
+          value="DisplayKey.get(&quot;Training.RequestCaseReport&quot;)"/>
+        <ListViewInput
+          def="LegalCaseLV(anABContact)"
+          id="LegalCaseLV"
+          labelAbove="true">
+          <Toolbar/>
+        </ListViewInput>
+      </InputSet>
+      <InputDivider/>
+      <InputSetRef
+        def="ContactInsightsInputSet(anABContact)"/>
+    </InputColumn>
+    <Code><![CDATA[/* This function is used to populate the Employer dynamic dropdown.
+*/
+    function queryForCompaniesWhoCanHaveEmployees():
+    gw.api.database.IQueryBeanResult<entity.ABCompany> {
+
+      var abCompanyQuery = gw.api.database.Query.make(ABCompany)
+      abCompanyQuery.compare("CanAddEmployees", Equals, true)
+      var resultSet = abCompanyQuery.select()
+      return resultSet
+    }
+
+      /* This function is used to choose the label to be used for the Height field.
+      */
+      function choseHeightLabel(): String {
+        if (User.util.getCurrentUser().MeasurementSystemPreference == MeasurementSystem.TC_US_CUSTOMARY) {
+          return DisplayKey.get("Training.HeightInInches")
+        } else {
+          return DisplayKey.get("Training.HeightInMeters")
+        }
+      }
+
+      /* This function is used to choose the label to be used for the Legal Case Report Status field.
+      */
+      function determineReportStatusValue(): String {
+        switch (anABContact.LegalCaseReportStatus) {
+          case LegalCaseReportStatus.TC_NEVER_REQUESTED:
+            return "No case report requested"
+          case LegalCaseReportStatus.TC_REQUESTED_PENDING:
+            return "Report requested"
+          case LegalCaseReportStatus.TC_REQUESTED_RECEIVED:
+            return "Updated : " + anABContact.LastLegalCaseReportDate.formatDateTime(SHORT, SHORT)
+          default:
+            return "Report status unknown"
+        }
+      }
+
+      /* This function is used to submit legal case report requests to an external system. It must
+         change the value of the ABContact's LegalCaseReportStatus field and throw a custom
+         messaging event, so it manually creates and commits a bundle.
+      */
+      function submitRequestForLegalReport(): void {
+        gw.transaction.Transaction.runWithNewBundle(\bundle -> {
+          anABContact = bundle.add(anABContact)
+          anABContact.LegalCaseReportStatus = LegalCaseReportStatus.TC_REQUESTED_PENDING
+          anABContact.addEvent("LegalCaseReportRequested")
+          // runWithNewBundle() inherently commits the bundle
+        }, "su")
+      }]]></Code>
+  </DetailViewPanel>
+</PCF>

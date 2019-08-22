@@ -1,0 +1,47 @@
+// Position to other widgets
+$gw-app--InputColumn--spacing-widget-top-rem: null !default;
+$gw-app--InputColumn--spacing-widget-left-rem: null !default;
+$gw-app--InputColumn--spacing-widget-right-rem: null !default;
+$gw-app--InputColumn--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--InputColumn--spacing-inner-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--InputColumn--spacing-inner-left-rem: null !default;
+$gw-app--InputColumn--spacing-inner-right-rem: null !default;
+$gw-app--InputColumn--spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+
+// ----------- Input Widgets in Input Columns
+// Position to other widgets
+$gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--InputWidget-in-InputColumn--spacing-widget-left-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--InputWidget-in-InputColumn--spacing-widget-right-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--InputWidget-in-InputColumn--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--InputWidget-in-InputColumn--spacing-inner-top-rem: null !default;
+$gw-app--InputWidget-in-InputColumn--spacing-inner-left-rem: null !default;
+$gw-app--InputWidget-in-InputColumn--spacing-inner-right-rem: null !default;
+$gw-app--InputWidget-in-InputColumn--spacing-inner-bottom-rem: null !default;
+
+$gw-app--InputWidget-in-InputColumn--row-label-pad-right-rem: $gw-app--InputWidget-in-InputColumn--spacing-widget-left-rem !default;
+$gw-app--InputWidget-in-InputColumn--label-col: $gw-app--palette--gray-5 !default;
+
+
+// Other
+$gw-app--InputColumn--min-width-em: gw-pxFixed(480) !default;
+$gw-app--InputColumn--max-width-em: null !default;
+
+$gw-app--InputColumn--max-label-above-width-em: gw-emFixed(40) !default;
+$gw-app--InputColumn--label-margin-top-rem: $gw-app--inputs--pad-v-rem + (1.1/gw-applicationBaseFontSizeStripped()); //TODO: revisit
+$gw-app--InputColumn--required--glyph: "asterisk-solid" !default;
+$gw-app--InputColumn--required--col: $gw-app--palette--orange !default;
+$gw-app--InputColumn--required--size-em: gw-emFixed(.6) !default;
+$gw-app--InputColumn--required--left-em: gw-emFixed(-1.1) !default;
+$gw-app--InputColumn--required--top-em: gw-emFixed(.4) !default;
+$gw-app--InputColumn--highlight-bg: $gw-app--palette--highlight !default;
+
+//NOTE: this is only used if the sizing type is not set, and the user has not manually set a label width in the pcf
+$gw-app--InputColumn--fallback-label-size-em: $gw-app--i18n--Input--label-default-width-em !default;
+$gw-app--InputColumn--align-readonly-values-to-editable-values: true !default;
+$gw-app--InputColumn--align-checkboxes-and-radio-buttons-to-readonly-values: true !default;

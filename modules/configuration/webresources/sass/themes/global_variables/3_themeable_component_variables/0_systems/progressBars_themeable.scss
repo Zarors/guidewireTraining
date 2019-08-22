@@ -1,0 +1,27 @@
+$gw-app--progress-bar--bar-min-width-em: gw-emFixed(12) !default;
+
+$gw-app--progress-bar--bar-color-default: $gw-app--palette--left-nav--border-col !default; //$gw-app--palette--left-nav--bg-highlight
+$gw-app--progress-bar--bar-color-low: $gw-app--palette--green !default;
+$gw-app--progress-bar--bar-color-medium: $gw-app--palette--orange !default;
+$gw-app--progress-bar--bar-color-high: $gw-app--palette--red !default;
+
+$gw-app--progress-bar--in-bar-label-col: $gw-app--palette--white !default;
+$gw-app--progress-bar--outside-bar-label-col: $gw-app--progress-bar--bar-color-default !default;
+
+$gw-app--progress-bar--holder-inset-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .15) !default; //@px-allowed
+$gw-app--progress-bar--holder-outset-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15) !default; //@px-allowed
+$gw-app--progress-bar--bar-inset-shadow: null !default; //@px-allowed
+$gw-app--progress-bar--bar-outset-shadow: 1px 0px 2px 0 rgba(0, 0, 0, .15) !default; //@px-allowed
+
+$gw-app--progress-bar--empty-bar-bg: $gw-app--palette--gray-E !default;
+$gw-app--progress-bar--inner-bar-has-right-border: true !default;
+$gw-app--progress-bar--label-font-weight: gw-weight(bold) !default;
+$gw-app--progress-bar--label-font-size-em: gw-emFixed(1) !default;
+$gw-app--progress-bar--holder-has-input-border: true !default;
+
+$gw-app--progress-bar--pad-top-rem: $gw-app--inputs--pad-v-rem !default;
+$gw-app--progress-bar--pad-bottom-rem: $gw-app--inputs--pad-v-rem !default;
+
+$gw-app--progress-bar--loading-stripe-w-px: gw-pxFixed(16) !default;
+$gw-app--progress-bar--loading-stripe-angle-deg: -45deg !default;
+$gw-app--progress-bar--loading-stripe-speed-s: 16s !default;

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Transaction ids sent to create the illusion of idempotency"
+  entity="TransactionId"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="transactionid"
+  type="nonkeyable">
+  <column
+    desc="Unique transaction id"
+    name="tid"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="128"/>
+  </column>
+  <column
+    desc="Time of creating the transaction id."
+    name="CreationTime"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <index
+    desc="Enforce uniqueness of transaction id"
+    name="loadexclusionu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="tid"/>
+  </index>
+</entity>

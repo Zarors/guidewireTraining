@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Queue of Contact AdressBookUID to be auto synced. This is a system-internal entity."
+  entity="ContactAutoSyncWorkItem"
+  ignoreForEvents="true"
+  loadable="false"
+  platform="true"
+  table="autosyncworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItem"/>
+  <fulldescription><![CDATA[Queue of Contact AddressBookUID to be auto synced. This is a system-internal entity.
+     ]]></fulldescription>
+  <column
+    desc="Represents the AddressBookUID to be synced."
+    name="AddressBookUID"
+    nullok="true"
+    type="externalid">
+  </column>
+  <column
+    desc="The lower bound for the ID value in the Contact table for this work item"
+    name="MinContactRef"
+    nullok="true"
+    type="softentityreference"/>
+  <column
+    desc="The upper bound for the ID value in the Contact table for this work item"
+    name="MaxContactRef"
+    nullok="true"
+    type="softentityreference"/>
+  <column
+    desc="Represents the AddressBookUID to replace the contact AddressBookUID with"
+    name="NewAddressBookUID"
+    nullok="true"
+    type="externalid">
+  </column>
+  <column
+    default="false"
+    desc="Should work item be skipped"
+    name="Skip"
+    nullok="true"
+    type="bit"/>
+  <events>
+    <event
+      description="Fired when a contact auto sync work item is failed to process."
+      name="ContactAutoSyncFailed"/>
+  </events>
+</entity>

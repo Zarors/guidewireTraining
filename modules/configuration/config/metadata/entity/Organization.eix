@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- Organization -->
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="Organization">
+  <description>Defines an organization that has a hierarchy of groups</description>
+  <events/>
+</internalExtension>

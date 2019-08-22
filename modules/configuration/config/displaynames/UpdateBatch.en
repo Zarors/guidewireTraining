@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Entity
+  name="UpdateBatch">
+  <Columns>
+    <Column
+      beanPath="UpdateBatch.CreateUpdateOps"
+      name="createUpdateOps"
+      sortOrder="0"/>
+    <Column
+      beanPath="UpdateBatch.DeleteUpdateOps"
+      name="deleteUpdateOps"
+      sortOrder="1"/>
+    <Column
+      beanPath="UpdateBatch.FieldChangeUpdateOps"
+      name="fieldChangeUpdateOps"
+      sortOrder="2"/>
+  </Columns>
+  <DisplayName><![CDATA["\nCreateUpdateOps:\n" + createUpdateOps +
+      "\nDeleteUpdateOps:\n" + deleteUpdateOps +
+      "\nFieldChangeUpdateOps:\n" + fieldChangeUpdateOps]]></DisplayName>
+</Entity>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    canVisit="true"
+    id="ABContactNotesPage"
+    title="User.util.getCurrentUser().UseHelperLabels ? DisplayKey.get(&quot;Training.NotesLVHelper&quot;) : DisplayKey.get(&quot;Training.NotesLV&quot;)">
+    <LocationEntryPoint
+      signature="ABContactNotesPage(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Screen
+      editable="true">
+      <Toolbar/>
+      <ListViewPanel
+        editable="true"
+        id="ABContactNotesLV">
+        <RowIterator
+          canPick="false"
+          editable="true"
+          elementName="CurrentContactNote"
+          hideCheckBoxesIfReadOnly="true"
+          value="anABContact.ContactNotes"
+          valueType="ContactNote[]">
+          <Row>
+            <TextCell
+              id="ContactNoteName"
+              label="DisplayKey.get(&quot;Training.ContactNote&quot;)"
+              numEntries="200"
+              value="CurrentContactNote.DisplayName"/>
+            <TypeKeyCell
+              action="ContactNoteWorksheet.goInWorkspace( CurrentContactNote.ABContact, CurrentContactNote, false)"
+              id="Type"
+              label="DisplayKey.get(&quot;Training.NoteType&quot;)"
+              value="CurrentContactNote.ContactNoteType"
+              valueType="typekey.ContactNoteType"/>
+            <TextCell
+              action="ContactNoteWorksheet.goInWorkspace( CurrentContactNote.ABContact, CurrentContactNote, false)"
+              id="Subject"
+              label="DisplayKey.get(&quot;Training.Subject&quot;)"
+              value="CurrentContactNote.Subject"/>
+            <DateCell
+              action="ContactNoteWorksheet.goInWorkspace( CurrentContactNote.ABContact, CurrentContactNote, false)"
+              id="CreateDate"
+              label="DisplayKey.get(&quot;Training.CreatedOn&quot;)"
+              sortDirection="descending"
+              sortOrder="1"
+              value="CurrentContactNote.CreateTime"
+              visible="false"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+  </Page>
+</PCF>

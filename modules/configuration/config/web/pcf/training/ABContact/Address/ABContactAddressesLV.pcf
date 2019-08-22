@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="ABContactAddressesLV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <ExposeIterator
+      valueType="entity.Address"
+      widget="ABContactAddressesLV"/>
+    <RowIterator
+      editable="true"
+      elementName="currentAddress"
+      hasCheckBoxes="true"
+      hideCheckBoxesIfReadOnly="true"
+      pageSize="4"
+      toAdd="anABContact.addAddress(currentAddress)"
+      toRemove="anABContact.removeAddress(currentAddress)"
+      value="anABContact.AllAddresses"
+      valueType="Address[]">
+      <Row>
+        <RadioButtonCell
+          action="anABContact.makePrimaryAddress( currentAddress )"
+          editable="true"
+          id="IsPrimaryAddress"
+          label="DisplayKey.get(&quot;Training.Primary&quot;)"
+          radioButtonGroup="PrimaryAddressGroup"
+          value="currentAddress == anABContact.PrimaryAddress"
+          width="10"/>
+        <TypeKeyCell
+          id="AddressType"
+          label="DisplayKey.get(&quot;Training.AddressType&quot;)"
+          value="currentAddress.AddressType"
+          valueType="typekey.AddressType"/>
+        <TextCell
+          id="DisplayName"
+          value="currentAddress.DisplayName"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

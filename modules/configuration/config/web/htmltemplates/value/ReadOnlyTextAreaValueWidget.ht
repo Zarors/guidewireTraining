@@ -1,0 +1,1 @@
+<div style="${heightOrMaxHeight}" class="gw-value-readonly-wrapper ${reflectionApplies ? 'gw-value-input-reflector'}" ${systemAttributes}>${currentValue}</div>

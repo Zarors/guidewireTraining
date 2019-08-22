@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Provides convenience methods for creating integration messages."
+  entity="MessageContext"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.messaging.impl.MessageContextInternalMethods"
+    impl="com.guidewire.pl.domain.messaging.impl.MessageContextImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.messaging.MessageContextPublicMethods"
+    impl="com.guidewire.pl.domain.messaging.impl.MessageContextImpl"/>
+</nonPersistentEntity>

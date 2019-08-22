@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Safe Ordering Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading1">Safe Ordering Demo</p>
+
+<p class="heading2">What Is Safe Ordering?</p>
+
+<p class="body">Safe ordering is a messaging technique that is implemented for:</p>
+<ul>
+	<li><p class="body">ClaimCenter's Claim entity</li>
+	<li><p class="body">PolicyCenter's Account entity and Contact entity</li>
+	<li><p class="body">ContactCenter's ABContact entity</li>
+</ul>
+
+<p class="body">Whenever two or more messages are to be sent from the same safe-order entity to the same destination, Guidewire sends only one message at a time. The next message is not sent until the previous message has been acknowledged. This is done to ensure that the external system receives and processes related messages in the correct order. (BillingCenter does not need and does not make use of safe ordering.</p>
+
+<p class="heading2">What Is The Safe Ordering Demo?</p>
+
+<p class="body">The Safe Ordering demo lets you send multiple messages for the same entity. You can do this for both a safe-order entity (ABContact) and a non-safe-order entity (User). You can also choose to have a given message acknowledged or not. Each time a message is sent or acknowledged from the demo, a line is written to the console. Thus, you can use the demo controls and the console to see if the lack of acknowledgement for a certain entity prevents other messages related to that entity from being sent.</p>
+
+<p class="heading2">How Do I Use The Demo?</p>
+
+<p class="body">There are three demo scenarios you can try:</p>
+<ul>
+	<li><p class="body">"Normal" processing of a safe-order entity (where every message gets acknowledged)</li>
+	<li><p class="body">Suspended processing of a safe-order entity (where a lack of acknowledgment prevents other messages from being sent)</li>
+	<li><p class="body">Processing of a non-safe-order entity (where the acknowledgement does not affect how messages are sent)</li>
+</ul>
+
+<p class="heading3">Sending messages on a safe-order entity</p>
+
+<p class="body"><b>ABContact</b> is a safe-order entity. If two or more messages are created from the same ABContact for the same destination, the second message will not be sent until the first one has been acknowledged.
+
+<p class="body"><b>To demonstrate normal processing:</b>
+<ol class="body">
+	<li><p class="body">In the Safe Ordering section, select an ABContact (such as James Andersen).</li>
+	<li><p class="body">Modify the occupation field with any text. For example, enter "1". (This changes the ABContact.)</li>
+	<li><p class="body">For "Acknowledge message?" select "Yes".</li>
+	<li><p class="body">Click the "Send" button.</li>
+	<li><p class="body">Repeat the process two more times, using different occupation values (such as "2" and "3").</li>
+	<li><p class="body">Finally, go to the console. Within a few moments, you should see every message sent and acknowledged.</li>
+</ol>
+
+<p class="body"><b>To demonstrate suspended processing:</b>
+<ol class="body">
+	<li><p class="body">In the Safe Ordering section, select a new ABContact (such as Samantha Andrews).</li>
+	<li><p class="body">Modify the occupation field with any text. For example, enter "1". (This changes the ABContact.)</li>
+	<li><p class="body">For "Acknowledge message?" select "Yes".</li>
+	<li><p class="body">Click the "Send" button.</li>
+	<li><p class="body">Modify the occupation again. For example, enter "2".</li>
+	<li><p class="body">For "Acknowledge message?" select "No".</li>
+	<li><p class="body">Click the "Send" button.</li>
+	<li><p class="body">Modify the occupation again. For example, enter "3".</li>
+	<li><p class="body">For "Acknowledge message?" select "Yes".</li>
+	<li><p class="body">Click the "Send" button.</li>
+	<li><p class="body">Finally, go to the console. Within a few moments, you should see the first message sent and acknowledged. You will also see the second message sent but not acknowledged. Because ABContact is a safe-order entity and the second message is in-flight, the third message does not get sent.</li>
+</ol>
+
+<p class="heading3">Sending messages on a non-safe-order entity</p>
+
+<p class="body"><b>User</b> is a non-safe-order entity. If two or more messages are created from the same User for the same destination, all messages are sent regardless of whether any have been acknowledged.
+
+
+<p class="body"><b>To demonstrate processing for non-safe-ordered entities:</b>
+<ol class="body">
+	<li><p class="body">In the Safe Ordering section, select a user (such as Alice Applegate).</li>
+	<li><p class="body">Modify the occupation field with any text. For example, enter "1". (This changes the user.)</li>
+	<li><p class="body">For "Acknowledge message?" select "Yes".</li>
+	<li><p class="body">Click the "Send" button.</li>
+	<li><p class="body">Repeat the process two more times, using different occupations (such as "2" and "3").</li>
+	<li><p class="body">Finally, go to the console. Within a few moments, you should see every message sent and acknowledged.</li>
+	<li><p class="body">Now, select a different user (such as Bruce Baker).</li>
+	<li><p class="body">Modify the occupation. For example, enter "1".</li>
+	<li><p class="body">For "Acknowledge message?" select "No".</li>
+	<li><p class="body">Click the "Send" button.</li>
+	<li><p class="body">Repeat the process two more times, using different occupations (such as "2" and "3").</li>
+	<li><p class="body">Finally, go to the console. Within a few moments, you should see every message sent, even though none of them have been acknowledged.</li>
+</ol>
+
+<p class="heading2">Where Can I Find The Code That Is Used By This Page?</p>
+<ul class="body">
+     <li><p class="body">IntegrationMessageSafeOrderingPage's Code tab</p>
+          <ul class="body">
+               <li><p class="body">sendABPersonMessage()</p>
+               <li><p class="body">sendUserMessage()</p>
+          </ul>
+     </li>
+     <li><p class="body">Safe Ordering Demo destination (ID 20)</p></li>
+     <li><p class="body">Event Fired rules</p>
+          <ul class="body">
+               <li><p class="body">SafeOrderingDemo -> Safe Ordering Demo - ABContact</p>
+               <li><p class="body">SafeOrderingDemo -> Safe Ordering Demo - User</p>
+          </ul>
+     </li>
+     <li><p class="body">Messaging plugins</p>
+          <ul class="body">
+               <li><p class="body">trainingapp.demo.safeordering.SafeOrderingDemoTransport</p>
+          </ul>
+     </li>
+</ul>
+
+</body>
+</html>

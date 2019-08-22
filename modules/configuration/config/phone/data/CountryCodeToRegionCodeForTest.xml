@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<CountryCodeToRegionCode xmlns="http://guidewire.com/phone">
+  <country_code id="1">
+    <region_code code="US"/>
+    <region_code code="BS"/>
+  </country_code>
+  <country_code id="39">
+    <region_code code="IT"/>
+  </country_code>
+  <country_code id="44">
+    <region_code code="GB"/>
+  </country_code>
+  <country_code id="48">
+    <region_code code="PL"/>
+  </country_code>
+  <country_code id="49">
+    <region_code code="DE"/>
+  </country_code>
+  <country_code id="52">
+    <region_code code="MX"/>
+  </country_code>
+  <country_code id="54">
+    <region_code code="AR"/>
+  </country_code>
+  <country_code id="55">
+    <region_code code="BR"/>
+  </country_code>
+  <country_code id="61">
+    <region_code code="AU"/>
+  </country_code>
+  <country_code id="64">
+    <region_code code="NZ"/>
+  </country_code>
+  <country_code id="65">
+    <region_code code="SG"/>
+  </country_code>
+  <country_code id="81">
+    <region_code code="JP"/>
+  </country_code>
+  <country_code id="82">
+    <region_code code="KR"/>
+  </country_code>
+  <country_code id="244">
+    <region_code code="AO"/>
+  </country_code>
+  <country_code id="262">
+    <region_code code="RE"/>
+    <region_code code="YT"/>
+  </country_code>
+  <country_code id="375">
+    <region_code code="BY"/>
+  </country_code>
+  <country_code id="376">
+    <region_code code="AD"/>
+  </country_code>
+  <country_code id="800">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="979">
+    <region_code code="001"/>
+  </country_code>
+</CountryCodeToRegionCode>

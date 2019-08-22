@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<PCF>
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <DetailViewPanel
+    id="ProfilerResultsEmptyDV">
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Web.Profiler.NoStacks&quot;)"/>
+      <HiddenInput
+        id="NotFound"
+        value="null"
+        valueType="java.lang.Object"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

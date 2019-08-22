@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="ArchiveWorkItem">
+  <index
+    desc="Referencing a unique reference of element to process for archiving"
+    name="ArchWorkItemIndex1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Item"/>
+  </index>
+</extension>

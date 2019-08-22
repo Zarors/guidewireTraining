@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="BusinessWeekZonesLV">
+    <ExposeIterator
+      valueType="entity.BusinessWeekZone"
+      widget="BusinessWeekZonesLV"/>
+    <Require
+      name="BusinessWeek"
+      type="BusinessWeek"/>
+    <Require
+      name="zoneType"
+      type="ZoneType"/>
+    <Require
+      name="country"
+      type="Country"/>
+    <RowIterator
+      canPick="false"
+      editable="true"
+      elementName="BusinessWeekZone"
+      hasCheckBoxes="true"
+      hideCheckBoxesIfReadOnly="true"
+      toCreateAndAdd="createNewBusinessWeekZone()"
+      toRemove="BusinessWeek.removeFromBusinessWeekZones(BusinessWeekZone)"
+      value="BusinessWeek.getBusinessWeekZones(zoneType)"
+      valueType="entity.BusinessWeekZone[]">
+      <IteratorSort
+        sortBy="BusinessWeekZone.Code"
+        sortOrder="1"/>
+      <Row>
+        <TextCell
+          autoComplete="new gw.api.admin.ZoneAutocompleteHandler(country, zoneType)"
+          editable="true"
+          id="ZoneCode"
+          label="DisplayKey.get(&quot;Web.Admin.AdminBusinessWeekDV.ZoneCode&quot;)"
+          required="true"
+          unique="true"
+          value="BusinessWeekZone.Code"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+function createNewBusinessWeekZone() : BusinessWeekZone {
+  var newBusinessWeekZone = new BusinessWeekZone()
+  newBusinessWeekZone.ZoneType = zoneType
+  newBusinessWeekZone.Country = country
+  BusinessWeek.addToBusinessWeekZones(newBusinessWeekZone)
+  return newBusinessWeekZone
+}
+
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

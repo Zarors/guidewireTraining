@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.ScriptParameter.view"
+    id="ScriptParametersPage"
+    parent="Admin()"
+    title="DisplayKey.get(&quot;Web.Admin.ScriptParameters&quot;)">
+    <Variable
+      initialValue="ScriptParameters.getParameterPacks()"
+      name="ScriptParameterQuery"
+      type="com.guidewire.pl.system.gosu.entity.ScriptParameterPack[]"/>
+    <Screen
+      id="ScriptParametersScreen">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Admin.ScriptParameters&quot;)"/>
+      <Toolbar/>
+      <PanelRef
+        def="ScriptParametersLV(ScriptParameterQuery)"/>
+    </Screen>
+  </Page>
+</PCF>

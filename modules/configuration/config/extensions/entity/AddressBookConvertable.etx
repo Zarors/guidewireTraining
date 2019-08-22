@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="AddressBookConvertable">
+  <column-override
+    name="AddressBookUID">
+    <tag
+      name="PersonalData"
+      value="ObfuscateDefault"/>
+  </column-override>
+</extension>

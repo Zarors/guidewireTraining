@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="ByTime">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <Variable
+      initialValue="new gw.api.profiler.SavedFileProfilerPageHelper()"
+      name="pageHelper"
+      type="gw.api.profiler.SavedFileProfilerPageHelper"/>
+    <RowIterator
+      editable="false"
+      elementName="savedStackSource"
+      pickLocation="TimeSearchPopup.push()"
+      toAdd="pageHelper.addProfilerSource(savedStackSource)"
+      value="pageHelper.getSavedProfilerSources()"
+      valueType="gw.api.profiler.ProfilerDataSource[]">
+      <ToolbarFlag
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="false"
+        name="CannotDelete"/>
+      <Row>
+        <TextCell
+          id="Name"
+          value="savedStackSource.Name"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

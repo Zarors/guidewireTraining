@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    editable="true"
+    id="ABContactSummaryDV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Training.BasicInformation&quot;)"/>
+      <TextInput
+        id="Name"
+        label="DisplayKey.get(&quot;Training.Name&quot;)"
+        value="anABContact.DisplayName"/>
+      <TextInput
+        id="ContactID"
+        label="DisplayKey.get(&quot;Training.PublicID&quot;)"
+        value="anABContact.PublicID"/>
+      <InputDivider/>
+      <RangeInput
+        editable="true"
+        id="AssignedUser"
+        label="DisplayKey.get(&quot;Training.AssignedUser&quot;)"
+        value="anABContact.AssignedUser"
+        valueRange="queryForContactManagers()"
+        valueType="User"/>
+      <DateInput
+        id="CreateTime"
+        label="DisplayKey.get(&quot;Training.CreatedOn&quot;)"
+        value="anABContact.CreateTime"/>
+      <InputDivider/>
+      <Label
+        id="PrimaryAddressLabel"
+        label="DisplayKey.get(&quot;Training.PrimaryAddress&quot;)"/>
+      <InputSetRef
+        def="AddressOwnerInputSet(new gw.api.address.SecondaryAddressOwner(anABContact.PrimaryAddress), true)"/>
+    </InputColumn>
+    <InputColumn>
+      <ListViewInput
+        boldLabel="true"
+        def="FlagEntriesLV(anABContact)"
+        id="FlagEntriesLV"
+        label="DisplayKey.get(&quot;Training.FlagEntries&quot;)"
+        labelAbove="true">
+        <Toolbar/>
+      </ListViewInput>
+    </InputColumn>
+    <Code><![CDATA[uses gw.api.util.DisplayableException
+
+/* This function is used to populate the Employer dynamic dropdown.
+*/
+function queryForContactManagers () : gw.api.database.IQueryBeanResult<entity.User> {
+
+  // Query for all roles with the name "Contact Manager". (There is only one.)                
+  var roleQuery = gw.api.database.Query.make(Role)
+  roleQuery.compare("Name", Equals, "Contact Manager")
+  
+  // Query for all instances of UserRole that point to the "Contact Manager" role
+  // from the previous query.
+  var userRoleQuery = gw.api.database.Query.make(UserRole)
+  userRoleQuery.subselect("Role", CompareIn, roleQuery, "ID")
+  
+  // Query for all users which are referenced by the UserRole instances from
+  // the query above. (That is, the UserRole instances that also point to
+  // "Contact Manager".
+  var userQuery = gw.api.database.Query.make(User)
+  userQuery.subselect("ID", CompareIn, userRoleQuery, "User")                  
+  
+  // Execute the query and return the results.     
+  var resultSet = userQuery.select()
+  return resultSet
+  
+}
+
+
+]]></Code>
+  </DetailViewPanel>
+</PCF>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="LocalizedValuesDV">
+    <Require
+      name="entity"
+      type="Object"/>
+    <Require
+      name="fieldNames"
+      type="String[]"/>
+    <Require
+      name="columnNames"
+      type="String[]"/>
+    <InputColumn>
+      <ListViewInput
+        boldLabel="true"
+        def="LocalizedValuesLV(entity, fieldNames, columnNames)"
+        editable="true"
+        id="LocalizedValuesLV"
+        label="DisplayKey.get(&quot;Web.Admin.LocalizedValuesDV.Localization&quot;)"
+        visible="LanguageType.getTypeKeys(false).Count &gt; 1">
+        <Toolbar
+          visible="false">
+          <IteratorButtons
+            iterator="LocalizedValuesLV.LocalizedFields"/>
+        </Toolbar>
+      </ListViewInput>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

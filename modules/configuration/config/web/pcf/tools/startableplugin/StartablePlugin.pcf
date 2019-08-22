@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Page
+    canEdit="false"
+    canVisit="perm.User.ViewPlugin or perm.User.DevAllAccess"
+    id="StartablePlugin"
+    parent="ServerTools()"
+    title="DisplayKey.get(&quot;Web.Plugin.Title&quot;)">
+    <Screen>
+      <Toolbar/>
+      <AlertBar
+        id="NotAvailable"
+        label="DisplayKey.get(&quot;Web.Plugin.NotAvailableBecauseOfRunlevel&quot;)"
+        visible="!gw.api.startable.StartablePluginPageHelper.canBeEnabled()"/>
+      <ListViewPanel
+        available="gw.api.startable.StartablePluginPageHelper.canBeEnabled()"
+        visible="true">
+        <RowIterator
+          editable="false"
+          elementName="pluginDef"
+          value="gw.api.startable.StartablePluginPageHelper.getEnabledPlugins().toTypedArray()"
+          valueType="com.guidewire.pl.system.integration.plugins.PluginDef[]">
+          <Variable
+            initialValue="new gw.api.tools.StartablePlugin( pluginDef )"
+            name="pluginInfo"
+            recalculateOnRefresh="true"
+            type="gw.api.tools.StartablePlugin"/>
+          <Row>
+            <TextCell
+              id="Name"
+              label="DisplayKey.get(&quot;Web.Plugin.Name&quot;)"
+              sortOrder="1"
+              value="pluginInfo.Name"/>
+            <TextCell
+              id="Status"
+              label="DisplayKey.get(&quot;Web.Plugin.Status&quot;)"
+              value="gw.api.startable.StartablePluginPageHelper.localizePluginState( pluginInfo.State )"/>
+            <TextCell
+              id="Host"
+              label="DisplayKey.get(&quot;Web.Plugin.Host&quot;)"
+              value="pluginInfo.Host"/>
+            <LinkCell
+              id="Actions"
+              label="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Run&quot;)"
+              visible="perm.User.EditPlugin or perm.User.DevAllAccess">
+              <Link
+                action="gw.api.startable.StartablePluginPageHelper.startPlugin( pluginDef )"
+                available="pluginInfo.State == Stopped"
+                id="Start"
+                label="DisplayKey.get(&quot;Web.Plugin.Start&quot;)"
+                styleClass="miniButton"/>
+              <Link
+                action="gw.api.startable.StartablePluginPageHelper.stopPlugin( pluginDef )"
+                available="pluginInfo.State == Started"
+                id="Stop"
+                label="DisplayKey.get(&quot;Web.Plugin.Stop&quot;)"
+                styleClass="miniButton"/>
+            </LinkCell>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <TabBar
+    id="InternalToolsTabBar"
+    systemAlertBar="SystemAlertBar()">
+    <Tab
+      action="ServerTools.go()"
+      id="ServerToolsTab"
+      label="DisplayKey.get(&quot;Web.ServerTools&quot;)"/>
+    <Tab
+      action="UnsupportedTools.go()"
+      id="UnsupportedToolsTab"
+      label="DisplayKey.get(&quot;Web.UnsupportedTools&quot;)"
+      visible="gw.api.tools.InternalTools.isTabVisible()"/>
+    <TabBarLink
+      action="gw.api.util.NavUtil.goToDefaultEntryPoint()"
+      id="ReturnTabBarLink"
+      label="DisplayKey.get(&quot;Web.TabBar.ReturnToApp&quot;)"/>
+    <TabBarLogout
+      action="logout:*"
+      id="LogoutTabBarLink"
+      label="DisplayKey.get(&quot;Web.TabBar.Logout&quot;, entity.User.util.CurrentUser)"/>
+    <HiddenLink
+      action="ProfilerPopup.push()"
+      id="ProfilerHiddenLink"
+      shortcut="ShiftP"/>
+  </TabBar>
+</PCF>

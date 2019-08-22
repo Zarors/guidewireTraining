@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCommit="// label to use if UseHelperLabels is false"
+    canEdit="true"
+    id="ABContactSummaryPage"
+    title="User.util.getCurrentUser().UseHelperLabels ? DisplayKey.get(&quot;Training.SummaryDVHelper&quot;) : DisplayKey.get(&quot;Training.SummaryDV&quot;)">
+    <LocationEntryPoint
+      signature="ABContactSummaryPage(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Screen
+      id="ABContactSummaryScreen">
+      <Toolbar>
+        <EditButtons/>
+      </Toolbar>
+      <PanelRef
+        def="ABContactSummaryCV(anABContact)"/>
+    </Screen>
+  </Page>
+</PCF>

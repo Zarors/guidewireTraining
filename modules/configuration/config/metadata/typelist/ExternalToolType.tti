@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The different external tools available"
+  final="true"
+  name="ExternalToolType"
+  platform="true">
+  <typecode
+    code="word"
+    desc="Microsoft Word"
+    name="Microsoft Word"/>
+  <typecode
+    code="adobe"
+    desc="Adobe Acrobat"
+    name="Adobe Acrobat"/>
+  <typecode
+    code="ie"
+    desc="Microsoft Internet Explorer"
+    name="Microsoft Internet Explorer"/>
+</typelist>

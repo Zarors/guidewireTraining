@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Supertype for validation errors and warnings"
+  entity="ValidationIssue"
+  extendable="true"
+  final="false"
+  platform="true">
+  <fulldescription><![CDATA[<p>Supertype for validation errors and warnings.</p>
+    ]]></fulldescription>
+  <foreignkey
+    fkentity="EntityValidation"
+    name="EntityValidation"
+    nullok="false"/>
+  <typekey
+    default="error"
+    name="Type"
+    nullok="false"
+    typelist="ValidationIssueType"/>
+  <typekey
+    name="Level"
+    nullok="false"
+    typelist="ValidationLevel"/>
+  <column
+    name="Reason"
+    nullok="false"
+    type="longtext"/>
+  <column
+    name="FlowStepId"
+    nullok="true"
+    type="longtext"/>
+</nonPersistentEntity>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- ============================================================================================================  Accounts and Policies  ============================================================================================================ -->
+<Entity
+  name="BusinessWeek">
+  <Columns>
+    <Column
+      beanPath="BusinessWeek.Name"
+      name="Name"/>
+  </Columns>
+  <DisplayName><![CDATA[Name]]></DisplayName>
+</Entity>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  Delegates:
+  ###    TimedLoaderObject: StartTime/EndTime
+  ###    OrdereddLoaderObject: ExecutionOrder
+  ### ============================================================================ -->
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="TimedLoaderObject"
+  platform="true">
+  <column
+    desc="Timestamp when the timing began."
+    name="StartTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the timing completed."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+</delegate>

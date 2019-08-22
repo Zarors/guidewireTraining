@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.ZoneImportAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ZoneImportAPI" name="ZoneImportAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/ZoneImportAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ZoneImportAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <!-- importToStaging(String, String, boolean) : int -->
+      <xs:element name="importToStaging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="zoneData" type="xs:string" minOccurs="0"/>
+            <xs:element name="clearStaging" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importToStagingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- clearProductionTables(String) -->
+      <xs:element name="clearProductionTables">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="clearProductionTablesResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- clearStagingTables(String) -->
+      <xs:element name="clearStagingTables">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="clearStagingTablesResponse">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="ZoneImportAPIPortType">
+    <wsdl:operation name="importToStaging">
+      <wsdl:input name="importToStaging" message="tns:importToStaging"/>
+      <wsdl:output name="importToStagingResponse" message="tns:importToStagingResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if country code not defined -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearProductionTables">
+      <wsdl:input name="clearProductionTables" message="tns:clearProductionTables"/>
+      <wsdl:output name="clearProductionTablesResponse" message="tns:clearProductionTablesResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if country code not defined -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTables">
+      <wsdl:input name="clearStagingTables" message="tns:clearStagingTables"/>
+      <wsdl:output name="clearStagingTablesResponse" message="tns:clearStagingTablesResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if country code not defined -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZoneImportAPISoap12Binding" type="tns:ZoneImportAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="importToStaging">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importToStaging">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importToStagingResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearProductionTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearProductionTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearProductionTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTables">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="clearStagingTables">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearStagingTablesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZoneImportAPISoap11Binding" type="tns:ZoneImportAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="importToStaging">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importToStaging">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importToStagingResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearProductionTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearProductionTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearProductionTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearStagingTables">
+      <soap11:operation style="document"/>
+      <wsdl:input name="clearStagingTables">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearStagingTablesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZoneImportAPI">
+    <wsdl:port name="ZoneImportAPISoap12Port" binding="tns:ZoneImportAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/ZoneImportAPI"/>
+    </wsdl:port>
+    <wsdl:port name="ZoneImportAPISoap11Port" binding="tns:ZoneImportAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/ZoneImportAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="importToStaging">
+    <wsdl:part name="parameters" element="tns:importToStaging"/>
+  </wsdl:message>
+  <wsdl:message name="importToStagingResponse">
+    <wsdl:part name="parameters" element="tns:importToStagingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="clearProductionTables">
+    <wsdl:part name="parameters" element="tns:clearProductionTables"/>
+  </wsdl:message>
+  <wsdl:message name="clearProductionTablesResponse">
+    <wsdl:part name="parameters" element="tns:clearProductionTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="clearStagingTables">
+    <wsdl:part name="parameters" element="tns:clearStagingTables"/>
+  </wsdl:message>
+  <wsdl:message name="clearStagingTablesResponse">
+    <wsdl:part name="parameters" element="tns:clearStagingTablesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

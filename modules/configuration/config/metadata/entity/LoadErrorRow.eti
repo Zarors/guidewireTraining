@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Error rows found by the loader."
+  entity="LoadErrorRow"
+  exportable="true"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="loaderrorrow"
+  type="nonkeyable">
+  <column
+    desc="Virtual foreign key to loaderror table"
+    name="ErrorID"
+    nullok="false"
+    type="integer"/>
+  <column
+    autoincrement="loaderrorrowseq"
+    desc="Load error row ID, to ensure uniqueness."
+    name="ErrorRowID"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Row number, if applicable."
+    name="RowNumber"
+    nullok="true"
+    type="softentityreference"/>
+  <column
+    desc="Logical Unit of Work ID, if applicable."
+    name="LUWID"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="64"/>
+  </column>
+  <!-- Unique index on ErrorID -->
+  <index
+    desc="Unique index for loader errors on a per row basis"
+    name="loaderrorrowu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ErrorRowID"/>
+    <indexcol
+      keyposition="2"
+      name="ErrorID"/>
+  </index>
+</entity>

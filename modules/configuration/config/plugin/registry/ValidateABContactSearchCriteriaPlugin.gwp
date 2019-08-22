@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="ValidateABContactSearchCriteriaPlugin">
+  <plugin-gosu
+    gosuclass="gw.plugin.contact.ValidateABContactSearchCriteriaPluginImpl"/>
+</plugin>

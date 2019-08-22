@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ABContactSearchCriteriaTag"
+  extendable="true">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABContactSearchCriteriaTag"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactSearchCriteriaTagImpl"/>
+  <typekey
+    desc="Type of this ContactTag."
+    name="Type"
+    nullok="false"
+    typelist="ContactTagType"/>
+  <foreignkey
+    columnName="ABContactSearchCriteriaID"
+    desc="ABContactSearchCriteria"
+    fkentity="ABContactSearchCriteria"
+    name="ABContactSearchCriteria"
+    nullok="false"
+    setterScriptability="hidden"/>
+</nonPersistentEntity>

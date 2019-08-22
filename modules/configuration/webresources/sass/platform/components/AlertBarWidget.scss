@@ -1,0 +1,79 @@
+.gw-AlertBarWidget {
+  display: block;
+  // Position to other widgets
+  margin-top: $gw-app--AlertBar--spacing-widget-top-rem;
+  margin-left: $gw-app--AlertBar--spacing-widget-left-rem;
+  margin-right: $gw-app--AlertBar--spacing-widget-right-rem;
+  margin-bottom: $gw-app--AlertBar--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--AlertBar--spacing-inner-top-rem;
+  padding-left: $gw-app--AlertBar--spacing-inner-left-rem;
+  padding-right: $gw-app--AlertBar--spacing-inner-right-rem;
+  padding-bottom: $gw-app--AlertBar--spacing-inner-bottom-rem;
+
+  @include gw-borderRadius();
+  color: $gw-app--AlertBar--col;
+  background-color: $gw-app--AlertBar--bg;
+  border: gw-border($gw-app--AlertBar--border-col);
+
+  .gw-AlertBar--inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .gw-alert-icon {
+      display: inline;
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: gw-emFixed(1);
+      height: gw-emFixed(1);
+      position: relative;
+      @include gw-iconAfter(
+                      "warning",
+                      $gw-app--AlertBar--icon-size-em,
+                      $gw-app--palette--warning,
+                      $h-align: center, $v-align: center, $position: absolute);
+    }
+
+    .gw-AlertBar--text {
+      flex-grow: 1;
+      flex-shrink: 1;
+      display: inline;
+      vertical-align: baseline;
+      margin-top: ($gw-app--AlertBar--icon-size-em - 1) / -2;
+
+      .gw-AlertBar--label {
+        display: inline;
+        vertical-align: baseline;
+
+        &[data-gw-click] {
+          @include gw-link($pad-h: $gw-app--SPACING-rem-M);
+        }
+
+        &:not([data-gw-click]) {
+          padding: 0 $gw-app--SPACING-rem-M;
+        }
+      }
+    }
+
+    //TODO: does this have any use any longer?
+    .gw-ImageButtonWidget {
+      height: 100%;
+      flex-grow: 0;
+      outline-offset: gw-pxFixed(1);
+      color: $gw-app--palette--warning;
+      .gw-icon {
+        @include gw-iconAfter($gw-app--AlertBar--close-button-glyph, $gw-app--AlertBar--icon-size-em, inherit);
+      }
+
+      .gw-icon:hover {
+        cursor: pointer;
+      }
+
+      .gw-icon--inner-image {
+        display: none;
+      }
+    }
+  }
+}

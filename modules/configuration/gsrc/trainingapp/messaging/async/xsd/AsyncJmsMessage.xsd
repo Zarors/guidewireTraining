@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" targetNamespace="external.startable.abpersonmodel" elementFormDefault="qualified">
+  <xs:element name="ABPerson" type="ABPerson" nillable="true" xmlns="external.startable.abpersonmodel"/>
+  <xs:complexType name="ABPerson">
+    <xs:sequence>
+      <xs:element name="DisplayName" minOccurs="0" nillable="true" type="xs:string" gw:type="java.lang.String"/>
+      <xs:element name="DateOfBirth" minOccurs="0" nillable="true" type="xs:dateTime" gw:type="java.util.Date"/>
+      <xs:element name="Age" minOccurs="0" nillable="true" type="xs:int" gw:type="java.lang.Integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

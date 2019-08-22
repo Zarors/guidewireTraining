@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="true"
+    countsAsWork="false"
+    id="SerializationInfo"
+    parent="InfoPages()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SerializationInfo.Title&quot;)">
+    <Variable
+      initialValue="true"
+      name="includingWhitelistedClasses"
+      type="boolean"/>
+    <Screen>
+      <Verbatim
+        label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SerializationInfo.DeserializedClasses&quot;)"/>
+      <DetailViewPanel>
+        <InputColumn>
+          <CheckBoxInput
+            editable="true"
+            id="IncludingWhitelistedClasses"
+            labelAbove="true"
+            value="includingWhitelistedClasses"
+            valueLabel="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SerializationInfo.IncludingWhitelistedClasses&quot;)">
+            <PostOnChange/>
+          </CheckBoxInput>
+          <PreFormattedTextInput
+            id="DeserializedClasses"
+            labelAbove="true"
+            value="gw.pl.util.HTMLEscapeUtil.escape(gw.api.tools.SerializationInfoPageHelper.getDeserializedClassNames(includingWhitelistedClasses), false)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

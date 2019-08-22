@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <CardViewPanel
+    hideTabIfSingle="true"
+    id="ProfilerResultsCV"
+    mode="default">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Card
+      id="Main"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)">
+      <DetailViewPanel>
+        <InputColumn/>
+      </DetailViewPanel>
+    </Card>
+  </CardViewPanel>
+</PCF>

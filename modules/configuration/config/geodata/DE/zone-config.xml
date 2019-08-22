@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+
+    <!--  DE address example from "DE-Locations.txt" is:	01945,DE_SN,Lindenau -->
+    <Zones countryCode="DE">
+        <Zone code="postalcode" fileColumn="1" regionMatchOrder="1" granularity="2" unique="true">
+            <AddressZoneValue>Address.PostalCode</AddressZoneValue>
+            <Links>
+                <Link toZone="city" lookupOrder="1"/>
+            </Links>
+        </Zone>
+        <Zone code="state" fileColumn="2" regionMatchOrder="3" granularity="4">
+            <AddressZoneValue>Address.State.Abbreviation.DisplayName</AddressZoneValue>
+            <Links>
+                <Link toZone="postalcode" lookupOrder="1"/>
+                <Link toZone="city" lookupOrder="2"/>
+            </Links>
+        </Zone>
+        <Zone code="city" fileColumn="3" regionMatchOrder="2" granularity="1">
+            <AddressZoneValue>Address.City</AddressZoneValue>
+            <Links>
+                <Link toZone="postalcode" lookupOrder="1"/>
+            </Links>
+        </Zone>
+        <Zone code="postcodearea" regionMatchOrder="4" granularity="3">
+            <ZoneCode>postalcode.substring(0,2)</ZoneCode>
+            <AddressZoneValue>Address.PostalCode.substring(0,2)</AddressZoneValue>
+            <Links>
+                <Link toZone="city" lookupOrder="1"/>
+            </Links>
+        </Zone>
+    </Zones>
+</ZoneConfig>

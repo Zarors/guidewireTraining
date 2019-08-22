@@ -1,0 +1,760 @@
+<?xml version="1.0"?>
+
+<config xmlns="http://guidewire.com/config">
+
+  <registry roles="batch, workqueue, scheduler, messaging, startable, ui" />
+
+  <!--
+  ==============================================================================
+    ContactManager Parameters
+  ==============================================================================
+  -->
+
+  <!-- The maximum number of search results before the UI warning appears.
+       Shared with CC
+  -->
+  <param name="MaxContactSearchResults" value="300"/>
+
+  <!-- The max number of duplicate contacts to be registered as duplicates by
+    com.guidewire.ab.domain.contact.DuplicateContactsFinderWorkQueue.
+    If more than this max number of duplicates are found for a given contact,
+    DuplicateContactsFinderWorkQueue will not register any duplicates for that contact,
+    but instead will log the contact's LinkID.
+  -->
+  <param name="MaxDuplicateContactsFinderWorkQueueResults" value="1000"/>
+
+  <!--
+     Indicates whether the search for duplicate contacts should widen and not use subtype specific logic.
+     This parameter applies only to searches for duplicate contacts performed by the find duplicates batch
+     process. It does not set general searching behavior in FindDuplicatesPlugin.  Defaults to true.
+  -->
+  <param name="DuplicateContactsWideSearch" value="true"/>
+
+  <!--
+    This value controls the maximum number of specialist services that can be specified in a search for
+    contacts in CM. The value is limited by the database configuration being used, if too many are being
+    used the database can run out of resources processing the IN clauses in the query.
+  -->
+  <param name="MaxNumberServicesInSearchQuery" value="20"/>
+
+  <!--
+    The duplicate contacts batch process acts on contacts created or modified after the last
+    time it was run AND after the date specified by this parameter.  This makes it possible to avoid processing
+    every contact in the database the first time the batch process run.  For example, if contacts are imported
+    into the database on 8/21/2011 and this parameter is set to "08/22/2011 12:00 AM", those contacts will
+    not be processed by the batch process unless they're later modified.
+    Expected format: mm/dd/yyyy hh:mm am
+  -->
+  <!-- This is an optional parameter. When present, must contain valid value.
+    <param name="DuplicateContactsEarliestModificationDate" value=""/>
+  -->
+
+  <!--
+    The PendingChanges screen for updates now uses a cache to store the DiffDisplay entities related to the pending changes.
+    These DiffDisplays contain the data used to display the differences being applied to a Contact in ContactManager based
+    on a pending update from an external system. New PreUpdate rules are in place to evict DiffDisplays from the cache on
+    any update to an ABContact or PendingContactChange entity.
+  -->
+  <!--
+    The maximum number of DiffDisplay entities stored in the cache to increase performance in the Pending Changes
+    screen for updates.
+  -->
+  <param name="MaxDiffDisplaysInCache" value="60"/>
+
+  <!--
+    The amount of time, in minutes, since last access that a DiffDisplay entity should be timed out of the cache
+    for the Pending Changes screen for updates.
+  -->
+  <param name="DiffDisplaysCacheTimeoutInMinutes" value="10"/>
+
+  <!-- The name of the method in "gw.api.data.DataSets" for generating AB sample data -->
+  <param name="GosuSampleDataMethod" value="createDefaultSampleData"/>
+
+  <!-- Whether to use the old-style pre-update framework or only to use the new Gosu class framework.
+      If true, the  PreUpdate plugin class will be called and then the validation graph will be used to determine what beans should have their pre-update rules run.
+      If false, only the PreUpdate plugin class will be invoked -->
+  <param name="UseOldStylePreUpdate" value="true"/>
+
+  <!-- Whether the production server retains debugging information. This parameter facilitates debugging from Studio without a type system refresh.
+        - If set to true, ContactManager does not clear debug information after compilation.
+        - If set to false, the server does not retain sufficient debugging information to enable debugging.
+        As a production server does not recompile types, it is not possible to regenerate any debugging information. -->
+  <param name="RetainDebugInfo" value="false"/>
+
+  <!-- The default encryption id to use for all exports -->
+  <param name="DefaultXmlExportIEncryptionId" value=""/>
+
+
+  <!-- Velocity parameters; can be overridden -->
+  <!-- NOTE velocimacro.library.autoreload MUST be set false in production -->
+  <!-- NOTE file.resource.loader.modificationCheckInterval SHOULD be set to -1 in production (disables reloading the files) -->
+  <!-- NOTE resource.manager.defaultcache.size SHOULD be a prime number larger than total number of templates -->
+  <velocityParam name="file.resource.loader.cache" value="true"/>
+  <velocityParam name="file.resource.loader.modificationCheckInterval"
+                 value="-1"/>
+  <velocityParam name="velocimacro.library" value="cc_VelocityMacros.vm"/>
+  <velocityParam name="velocimacro.permissions.allow.inline" value="true"/>
+  <velocityParam name="velocimacro.library.autoreload" value="false"/>
+  <velocityParam name="velocimacro.permissions.allow.inline.to.replace.global"
+                 value="true"/>
+  <velocityParam name="resource.manager.defaultcache.size" value="127"/>
+
+  <!--
+  ==============================================================================
+    UI Parameters
+  ==============================================================================
+  -->
+
+  <!--  Shortcut for Action navigation menu -->
+  <param name="ActionsShortcut" value="A"/>
+
+  <!--  Shortcut for Uplink button -->
+  <param name="UplinkShortcut" value="Up"/>
+
+  <!-- The maximum number of autocomplete suggestions to show -->
+  <param name="AutocompleteLimit" value="10"/>
+
+  <!-- The Look & Feel theme for ClaimCenter -->
+  <param name="UISkin" value="theme-9"/>
+
+  <!-- If true, the help text for an input will be displayed when the input gets the focus. -->
+  <param name="InputHelpTextOnFocus" value="true"/>
+
+  <!-- If true, the help text for an input will be displayed when the user moves mouse over the input. -->
+  <param name="InputHelpTextOnMouseOver" value="true"/>
+
+  <!-- The time between refreshes of the script parameter info cache, in seconds -->
+  <param name="ScriptParametersRefreshIntervalSecs" value="600"/>
+
+  <!-- Time in seconds that a treeview state will be cached. -->
+  <param name="TreeViewRefresh" value="120"/>
+
+  <!-- The threshold year value for determining whether to resolve a two-digit year to the earlier or later century -->
+  <param name="TwoDigitYearThreshold" value="50"/>
+
+  <!-- The location of the web resources directory under the root of the tomcat config directory -->
+  <param name="WebResourcesDir" value="resources"/>
+
+  <!-- Whether or not the Gosu compiler generates errors if it detects unreachable code or missing return statements. -->
+  <param name="UnreachableCodeDetection" value="true"/>
+
+  <!-- Whether or not the Gosu compiler generates warnings if an implicit coercion is occurring in a program. -->
+  <param name="WarnOnImplicitCoercion" value="true"/>
+
+
+  <!--
+  ==============================================================================
+    Clustering Parameters
+  ==============================================================================
+  -->
+
+  <!-- Is clustering enabled?
+       Shared with CC
+  -->
+  <param name="ClusteringEnabled" value="false"/>
+
+  <!--
+    Cluster member database record update interval (in seconds). The same interval is used to reload list of cluster
+    members from the database.
+    Shared with CC
+  -->
+  <param name="ClusterMemberRecordUpdateIntervalSecs" value="60"/>
+
+  <!--
+    Number of minutes between each cluster statistics monitor logging (0 means disable statistics logging).
+    Shared with CC
+  -->
+  <param name="ClusterStatisticsMonitorIntervalMins" value="60"/>
+
+  <!-- The number of days to keep cluster member records before they can be deleted. -->
+  <param name="ClusterMemberPurgeDaysOld" value="30"/>
+
+  <!-- The time between refreshes of the group cache, in seconds -->
+  <param name="GroupCacheRefreshIntervalSecs" value="600"/>
+
+  <!-- If clustering is enabled, whether to check this server's configuration against the other
+          servers in the cluster. -->
+  <param name="ConfigVerificationEnabled" value="true"/>
+
+  <!-- Whether a class name must be listed in the serialization whitelist to allow deserialization
+       of its respective instances. -->
+  <param name="SerializationWhitelistEnabled" value="false"/>
+
+  <!-- The Content-Disposition setting to use when generated content (exports, printing, etc, but _not_ documents) is returned directly to the browser. Must be either 'inline' or 'attachment' (the default) -->
+  <param name="DefaultContentDispositionMode" value="attachment"/>
+
+
+  <!-- Time period (in minutes) when cached items are considered "active",
+ i.e. the cache should give higher priority to preserve these items.
+ This can be thought of as the period when items are being heavily used,
+ e.g. how long a user stays on a page. It should be less than the reaping time.-->
+  <param name="GlobalCacheActiveTimeMinutes" value="5"/>
+
+  <!-- Time (in minutes) since last use before cached items are considered eligible for reaping. This can be thought of as the period during which
+an entity is most likely to be re-used. -->
+  <param name="GlobalCacheReapingTimeMinutes" value="15"/>
+
+  <!-- The percentage of the heap to allocate to the global cache. -->
+  <param name="GlobalCacheSizePercent" value="15"/>
+
+  <!-- The amount of space to allocate to the global cache. If this integer value is specified, it will take precedence over GlobalCacheSizePercent.
+  <param name="GlobalCacheSizeMegabytes" value=""/>
+  -->
+
+  <!-- Time (in minutes) since last write before cached items are considered stale and eligible for reaping. -->
+  <param name="GlobalCacheStaleTimeMinutes" value="60"/>
+
+  <!-- This parameter denotes the period of time (in days), in addition to today, for how long statistics are preserved for historical comparison. -->
+  <param name="GlobalCacheStatsRetentionPeriodDays" value="7"/>
+
+  <!-- This parameter denotes a period of time (in minutes) and is used for two purposes: 1) how long to preserve the reason why an item was       evicted, after the event occurred. When a cache miss occurs, the reason is looked up and reported in the CacheInfo page. 2) The period for        which to display statistics on the chart on the CacheInfo page.-->
+  <param name="GlobalCacheStatsWindowMinutes" value="30"/>
+
+  <!-- This parameter determines whether or not detailed statistics should be collected. -->
+  <param name="GlobalCacheDetailedStats" value="false"/>
+
+  <!--
+  ==============================================================================
+   Environment Parameters
+  ==============================================================================
+  -->
+
+  <!-- denotes the username of the unrestricted user.  If not specified, defaults to "su"
+       Shared with CC
+  -->
+  <param name="UnrestrictedUserName" value="su"/>
+
+  <!-- Indicates if resoruces are mutable on this server. Studio uses this to
+       determine whether or not to enable modification of resources.
+       Shared with CC
+  -->
+  <param name="ResourcesMutable" value="true"/>
+
+  <!-- Indicates whether beans can be put in a FrozenSet for inter-cluster transfer. -->
+  <param name="FrozenSetsEnabled" value="false"/>
+
+  <!--
+    Cached range size key generator uses when generating individual keys. This
+    cannot be a normal parameter in the database because we need it before the
+    database has been initialized (and possibly upgraded)
+    Shared with CC
+  -->
+  <param name="KeyGeneratorRangeSize" value="100"/>
+
+
+  <!-- The default application locale if locale can't be determined from user or browser
+       Shared with CC
+  -->
+  <param name="DefaultApplicationLocale" value="en_US"/>
+
+  <!-- The default application language if language can't be determined from user or browser
+       Shared with CC
+  -->
+  <param name="DefaultApplicationLanguage" value="en_US"/>
+
+  <!-- The default country. This is also used as the default for new
+       addresses that are created. This is a Country typecode, which normally
+       correspond to the standard ISO two-letter codes.
+       Shared with CC
+  -->
+  <param name="DefaultCountryCode" value="US"/>
+
+  <!-- Determines whether or not the phone widget will always show the region code or only shows it on demand.
+       Shared with CC
+  -->
+  <param name="AlwaysShowPhoneWidgetRegionCode" value="false"/>
+
+  <!-- The default server-wide phone country setting. Can be overridden per user
+       Shared with CC
+  -->
+  <param name="DefaultPhoneCountryCode" value="US" />
+
+  <!-- The default country code inside NANPA region 1
+       Shared with CC
+  -->
+  <param name="DefaultNANPACountryCode" value="US"/>
+
+  <!-- If true, stepping off a spellcheck-enabled field after making any change will invoke the spell checker for the field
+       Shared with CC
+  -->
+  <param name="CheckSpellingOnChange" value="false"/>
+
+  <!-- If true, any screen containing editable spellcheck-enabled fields will have a spell check button in the the toolbar
+       Shared with CC
+  -->
+  <param name="CheckSpellingOnDemand" value="false"/>
+
+  <!-- The number of entries to display per page in a ListView, where not explicitly specified.
+       Shared with CC
+  -->
+  <param name="ListViewPageSizeDefault" value="15"/>
+
+  <!-- This is list of links with known issues, they are formated as "<relativeName>.<linkAttributeName>" -->
+  <param name="DomainGraphSafeLinks" value="" />
+
+  <!-- Enable to provide address verification warnings -->
+  <param name="EnableAddressVerification" value="false"/>
+
+  <!-- Flag to indicate that Address validation failure should be errors rather
+      than warnings -->
+  <param name="AddressVerificationFailureAsError" value="false"/>
+
+  <!-- The character used as a placeholder in masked input fields
+       Shared with CC
+  -->
+  <param name="InputMaskPlaceholderCharacter" value="."/>
+
+  <!-- The maximum number of browser history items to keep.  Set this to 0 to disable to back button functionality entirely.
+       Shared with CC
+  -->
+  <param name="MaxBrowserHistoryItems" value="5"/>
+
+  <!-- The prefix to use for publicids generated by the application.  Generated publicids will be of the form prefix:id where id is
+       the actual id for the entity.  This parameter should be set to different values in production and test systems
+       to allow for the clean import/export of data between systems.  This field must be 9 characters or less in length.
+       Shared with CC
+  -->
+  <param name="PublicIDPrefix" value="ab"/>
+
+  <!-- Enable internal debug tools page http://localhost:8080/app/InternalTools.do
+       Shared with CC
+  -->
+  <param name="EnableInternalDebugTools" value="true"/>
+
+  <!-- Default timeout in seconds for Web UI AJAX requests
+  -->
+  <param name="WebUIAJAXTimeout" value="600"/>
+
+  <!--
+  ==============================================================================
+    Business Calendar Parameters
+  ==============================================================================
+  -->
+
+  <!-- This marks the beginning of a business day, inclusive
+       Shared with CC
+  -->
+  <param name="BusinessDayDemarcation" value="12:00 AM"/>
+
+  <!-- What time the business day starts at.
+       Shared with CC
+  -->
+  <param name="BusinessDayStart" value="8:00 AM"/>
+
+  <!-- What time the business day ends at.
+       Shared with CC
+  -->
+  <param name="BusinessDayEnd" value="5:00 PM"/>
+
+  <!-- The day of the week considered the end of the business week.
+       Shared with CC
+  -->
+  <param name="BusinessWeekEnd" value="Friday"/>
+
+  <!-- Whether Sunday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsSundayBusinessDay" value="false"/>
+
+  <!-- Whether Monday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsMondayBusinessDay" value="true"/>
+
+  <!-- Whether Tuesday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsTuesdayBusinessDay" value="true"/>
+
+  <!-- Whether Wednesday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsWednesdayBusinessDay" value="true"/>
+
+  <!-- Whether Thursday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsThursdayBusinessDay" value="true"/>
+
+  <!-- Whether Friday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsFridayBusinessDay" value="true"/>
+
+  <!-- Whether Saturday is considered a business day.
+       Shared with CC
+  -->
+  <param name="IsSaturdayBusinessDay" value="false"/>
+
+  <!-- A comma-delimited list of dates that should be considered holidays. -->
+  <!-- This parameter is obsolete, as holidays are now queried from the database.
+       There is an Admin UI screen which can configure these holidays.
+       However, it remains present here so that the values can be imported once
+       into the database upon upgrade to the Bedrock release.
+       Shared with CC
+  -->
+  <param name="HolidayList" value="1/1/2007, 12/25/2007"/>
+
+  <!--
+  ==============================================================================
+    Integration Parameters
+  ==============================================================================
+  -->
+
+  <!--
+    Issue pl-9001 dealt with a performance penalty for locking during message send processing.   This lock also occurs
+    when the message is acted upon in the UI or in a message reply plugin.  Normally this should not be an issue and
+    the locking of claim first prevents deadlocks.  However, some sites consider this not worth the penalty
+    and have agree to insure that deadlocks don't occur (i.e., by either not locking message, or locking all message
+    on the claim before locking the claim).  If the message has no primary entity then this has no effect.
+    -->
+  <param name="LockPrimaryEntityDuringMessageHandling" value="true"/>
+
+  <!-- Issue PL-28921 was attempting to optimize oracle for message queries.  But with a full time DBA
+    there maybe other means of accomplishing this -->
+  <param name="UseOracleHintsOnMessageQueries" value="true"/>
+
+  <!-- Lock messages during distributed message request processing -->
+  <param name="LockDuringDistributedMessageRequestHandling" value="false"/>
+
+  <!--
+  ==============================================================================
+    Security
+  ==============================================================================
+  -->
+  <!-- Session expiration timeout, in seconds.
+       Shared with CC
+  -->
+  <param name="SessionTimeoutSecs" value="10800"/>
+
+  <!-- The minimum length of a user's password.
+       Shared with CC
+  -->
+  <param name="MinPasswordLength" value="2"/>
+
+  <!-- The maximum length of a user's password.
+       Shared with CC
+  -->
+  <param name="MaxPasswordLength" value="16"/>
+
+  <!-- Number of failed attempts that are allowed before a user is locked out, or -1 to disable the account lockout feature
+       For example, setting this to 3 means that the fourth unsuccessful try will lock the user's account
+       Shared with CC
+  -->
+  <param name="FailedAttemptsBeforeLockout" value="3"/>
+
+  <!-- Time in milliseconds before a user can retry after an unsuccessful login attempt
+       Shared with CC
+  -->
+  <param name="LoginRetryDelay" value="0"/>
+
+  <!-- Time in seconds that a user's account will stay locked for, or -1 if it must be manually unlocked.
+       Please note that at this point, ContactManager does not support manual unlocking from the UI.
+       Shared with CC
+  -->
+  <param name="LockoutPeriod" value="180"/>
+
+  <!-- Whether the internal scheduler is enabled.
+       Shared with CC
+  -->
+  <param name="SchedulerEnabled" value="true"/>
+
+  <!-- If UseACLPermissions is true, setting this parameter to true means that supervisors will inherit permissions on
+       a claim that have been added for a supervised user or group.
+       Shared with CC
+  -->
+  <param name="EnableDownlinePermissions" value="true"/>
+
+  <!-- Number of minutes between each memory usage monitor logging.
+       Shared with CC
+  -->
+  <param name="MemoryUsageMonitorIntervalMins" value="15"/>
+
+  <!-- Whether or not contact potential match screens should restrict match results to items that the user has
+       permission to view.
+       @deprecated (since 8.0.0) Will not be used by ContactManager in the future.
+       Shared with CC
+   -->
+  <param name="RestrictContactPotentialMatchToPermittedItems" value="true"/>
+
+  <!-- Whether or not search screens should restrict search results to items that the user has permission to view.
+       Shared with CC
+  -->
+  <param name="RestrictSearchesToPermittedItems" value="true"/>
+
+
+  <!--
+  ==============================================================================
+    Batch Process Parameters
+  ==============================================================================
+  -->
+
+  <!-- Setting to enable or disable parallelism (oracle only) in the populate search columns batch process. -->
+  <param name="BatchProcessPopulateSearchColumnsParallelDML" value="true"/>
+
+  <!-- The number of days to keep batch process history before they can be deleted -->
+  <param name="BatchProcessHistoryPurgeDaysOld" value="45"/>
+
+  <!-- The number of days to keep instrumentation information for a distributed worker instance before they can be deleted -->
+  <param name="InstrumentedWorkerInfoPurgeDaysOld" value="45"/>
+
+  <!-- The maximum number of ProcessHistory entries to consider when producing the the Work Queue History download  -->
+  <param name="WorkQueueHistoryMaxDownload" value="10000"/>
+
+  <!-- The maximum number of threads in the work queue thread pool.
+       Must be greater or equal to WorkQueueThreadPoolMinSize. All threads which are not core threads
+       are additional on-demand threads which and are terminated if idle after the timeout.  Default is 50. -->
+  <param name="WorkQueueThreadPoolMaxSize" value="50"/>
+
+  <!-- The minimum number of threads in the work queue thread pool (i.e. core threads). Default is 0. -->
+  <param name="WorkQueueThreadPoolMinSize" value="0"/>
+
+  <!-- Keep alive timeout (in seconds) for additional on-demand threads in the work queue thread pool.
+       An additional on-demand thread is terminated if it is idle for more than this time. -->
+  <param name="WorkQueueThreadsKeepAliveTime" value="60"/>
+
+  <!-- The maximum number of workitems a workqueue writer should create per transaction -->
+  <param name="WorkItemCreationBatchSize" value="100"/>
+
+  <!-- The maximum number of times a workitem will be retried before being marked as failed -->
+  <param name="WorkItemRetryLimit" value="3"/>
+
+  <!-- The number of seconds a work item gets advantage for each priority unit -->
+  <param name="WorkItemPriorityMultiplierSecs" value="600"/>
+
+  <!-- The number of days to keep workflow logs before they can be deleted -->
+  <param name="WorkflowLogPurgeDaysOld" value="30"/>
+
+  <!-- The number of days to keep workflow information before they can be deleted -->
+  <param name="WorkflowPurgeDaysOld" value="60"/>
+
+  <!-- Whether debugging messages should be turned on for workflow logging . -->
+  <param name="WorkflowLogDebug" value="true"/>
+
+  <!-- Aggregation interval in minutes for workflow timing statistics.  Mean, std dev., etc statistics for time spent executing workflow steps will be reported at this interval.  Use 0 to disable stat recording. -->
+  <param name="WorkflowStatsIntervalMins" value="60"/>
+
+  <!--
+  ==============================================================================
+    Geocoding related parameters.
+  ==============================================================================
+  -->
+  <!-- By default, applications will use miles/US distances for driving distance/directions; -->
+  <!-- if set to true, applications will use kilometers/metric distances.                    -->
+  <!-- NOTE THAT IF THIS PARAMETER DIFFERS BETWEEN ContactManager AND OTHER APPLICATIONS, SOME -->
+  <!-- DISTANCES-RELATED MESSAGES MAY BE DISPLAYED INCORRECTLY.                               -->
+  <!-- Shared with CC -->
+  <param name="UseMetricDistancesByDefault" value="false"/>
+
+  <!-- Enable Geocoding UI on Address Book Pages. -->
+  <!-- Shared with CC -->
+  <param name="UseGeocodingInAddressBook" value="false"/>
+
+    <!-- The maximum distance allowed when performing a proximity search for the nearest-n contacts/users.      -->
+    <!--     This value is treated as miles by default, but will be treated as kilometers if the system default -->
+    <!--     unit of distance (as controlled by UseMetricDistancesByDefault) is set to true.                    -->
+    <!-- NOTE THAT IF THIS PARAMETER DIFFERS BETWEEN ContactManager AND ClaimCenter, SOME  -->
+    <!--      DISTANCES-RELATED MESSAGES MAY BE DISPLAYED INCORRECTLY.                    -->
+    <!-- NOTE THAT THIS PARAMETER HAS NO EFFECT ON EITHER RADIUS ("n miles") SEARCHES OR  -->
+    <!--      "WALKING THE GROUP TREE" BASED PROXIMITY ASSIGNMENT                         -->
+    <!-- Shared with CC -->
+  <param name="ProximitySearchOrdinalMaxDistance" value="300"/>
+
+  <!-- The maximum number of results to be returned by a proximity search when           -->
+  <!--     using a fixed radius (n miles/km).  This is ignored for Ordinal (nearest-n)    -->
+  <!--     searches.                                                                     -->
+  <!-- This can be overridden in the UI or APIs by setting                                -->
+  <!--     ProximitySearchParameters.RadiusSearchMaxResults                              -->
+  <!-- Note: this will normally apply only to searches done directly through the         -->
+  <!--     ContactManager UI, as searches done via the integration will use the value set -->
+  <!--     in the incoming copy of ProximitySearchParameters.RadiusSearchMaxResults,     -->
+  <!--     which will normally contain the originating application's default.   -->
+  <!-- Shared with CC -->
+  <param name="ProximityRadiusSearchDefaultMaxResultCount" value="1000"/>
+
+  <!-- Whether to signal the database to discard existing query plans during a database stats batch process.-->
+  <!-- Shared with CC -->
+  <param name="DiscardQueryPlansDuringStatsUpdateBatch" value="false"/>
+
+  <!-- Shared with CC -->
+  <param name="StrictDataTypes" value="true"/>
+
+  <!--
+  ==============================================================================
+    Document Management Parameters
+  ==============================================================================
+  -->
+
+  <!--Whether the Documents list and Document properties page should display Upload button.
+         Set this to false if the IDocumentContentSource integration mechanism doesn't support them. -->
+  <param name="DisplayDocumentEditUploadButtons" value="true"/>
+
+  <!-- The Content-Disposition setting to use when document content is returned
+       directly to the browser. Must be either 'inline' (the default) or
+       'attachment' -->
+  <param name="DocumentContentDispositionMode" value="inline"/>
+
+  <!-- This flag indicates that if a Document has been rolledback, that on commit both the isDocument and addDocument should be called again -->
+  <param name="ReCallDocumentContentSourceAfterRollback" value="false"/>
+
+  <!-- The maximum allowable file size (in megabytes) which may be uploaded.
+        Any attempt to upload a file larger than this will fail.
+        Since the uploaded document must be handled on the server,
+        this parameter protects the server from possible memory consumption problems. -->
+  <param name="MaximumFileUploadSize" value="25"/>
+
+  <!--The maximum allowable total size (in megabytes) per session for documents which may be uploaded before committing to the DMS. Any attempt to upload one or more files consuming more space than this on a server within a session will fail. Since the uploaded document(s) must be handled on the server, this parameter protects the server from possible memory consumption problems.-->
+  <param name="MaximumTotalUploadSize" value="25"/>
+
+  <!-- The maximum number of files which may be uploaded at a time before a commit.
+       Any attempt to upload more files than this will fail. 0 implies no limit. -->
+  <param name="MaximumFileUploadCount" value="200"/>
+
+  <!-- Indicates that documents with Final status can be transferred when using -->
+  <!-- Asynchronous implementation of the IDocumentContentSource plugin -->
+  <param name="FinalDocumentsNotEditable" value="false"/>
+
+  <!--
+  ==============================================================================
+    Mime Type Information
+
+    This section tells the system how to map between mime types, file
+    extensions, and icons in the UI.
+
+    Descriptions of these mimetypes can be found in the displaykey files.
+    The descriptions have a prefix of "Mimetype." followed by the mimetype with "_" replacing all non-alphanumerics.
+
+    For example, the "application/octet-stream" mimetype uses the "Mimetype.application_octet_stream" displaykey.
+  ==============================================================================
+  -->
+  <mimetypemapping>
+    <mimetype name="application/csv" extensions=".csv" icon="xls_mime"/>
+    <mimetype name="application/msword" extensions=".doc" icon="word_mime"/>
+    <mimetype name="application/octet-stream" extensions="" icon="document"/>
+    <mimetype name="application/pdf" extensions=".pdf" icon="pdf_mime"/>
+    <mimetype name="application/postscript" extensions=".ps" icon="pdf_mime"/>
+    <mimetype name="application/rtf" extensions=".rtf" icon="text_mime"/>
+    <mimetype name="application/vnd.ms-excel" extensions=".xls" icon="xls_mime"/>
+    <mimetype name="application/vnd.ms-powerpoint" extensions=".ppt|.pps" icon="ppt_mime"/>
+    <mimetype name="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+              extensions=".pptx" icon="ppt_mime"/>
+    <mimetype name="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+              extensions=".xlsx" icon="xls_mime"/>
+    <mimetype name="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              extensions=".docx" icon="word_mime"/>
+    <mimetype name="application/x-msexcel" extensions=".xls" icon="xls_mime"/>
+    <mimetype name="audio/wav" extensions=".wav" icon="sound_mime"/>
+    <mimetype name="audio/x-ms-wma" extensions=".wma" icon="sound_mime"/>
+    <mimetype name="image/bmp" extensions=".bmp" icon="image_mime"/>
+    <mimetype name="image/gif" extensions=".gif" icon="image_mime"/>
+    <mimetype name="image/jpeg" extensions=".jpg" icon="image_mime"/>
+    <mimetype name="image/pjpeg" extensions=".jpg" icon="image_mime"/>
+    <mimetype name="image/tiff" extensions=".tiff|.tif" icon="image_mime"/>
+    <mimetype name="image/vnd.ms-modi" extensions=".mdi" icon="document"/>
+    <mimetype name="image/png" extensions=".png" icon="image_mime"/>
+    <mimetype name="image/x-png" extensions=".png" icon="image_mime"/>
+    <mimetype name="text/html" extensions=".html|.htm" icon="html_mime"/>
+    <mimetype name="text/plain" extensions=".txt" icon="text_mime"/>
+    <mimetype name="text/richtext" extensions=".rtx" icon="text_mime"/>
+    <mimetype name="text/xml" extensions=".xml" icon="html_mime"/>
+    <mimetype name="video/mpeg" extensions=".mpg|.mpeg" icon="video_mime"/>
+    <mimetype name="video/quicktime" extensions=".mov" icon="video_mime"/>
+    <mimetype name="video/x-msvideo" extensions=".avi" icon="video_mime"/>
+  </mimetypemapping>
+
+  <!-- The name of the current encryption plugin.
+       Shared with CC
+  -->
+  <param name="CurrentEncryptionPlugin" value="IEncryption"/>
+  <!-- the default pdf merging is handled by a product that has a license.  This license can be server specific so
+       this line may have to be repeated for each server.
+       Shared with CC
+  -->
+  <param name="PDFMergeHandlerLicenseKey" value="" />
+
+  <!--
+==============================================================================
+  GDPR Parameters
+==============================================================================
+-->
+  <!-- If false, the destruction of personal data will be disabled. -->
+  <param name="PersonalDataDestructionEnabled" value="false"/>
+
+  <!-- Minimum number of days that must pass after ContactPurgeRequest has been executed for the request to be eligible for purging. -->
+  <param name="ContactDestructionRequestAgeForPurgingResults" value="10" />
+
+  <!--
+  ==============================================================================
+    WS-I Webservices
+  ==============================================================================
+  -->
+
+  <!-- the path to a list of WS-I webservices that are available to the WS-I webservices servlet.  This is
+   first checked against config, then against Gosu type system, then against class loader, and finally
+   as a file path (or fully qualified).
+
+   If empty then it will search the typesystem for any @WsiWebService
+   Shared with CC
+  -->
+  <param name="WebservicesAvailableServices" value=""/>
+
+  <!-- "true" if the WS-I service listing page is to be displayed, false otherwise.
+       Shared with CC
+  -->
+  <param name="WebservicesHideListPage" value="false"/>
+
+  <!--  Whether the RequestVar objects are available from @WsiWebservice and gosu @Servlet originating threads.
+  -->
+  <param name="ScopedVariableSupportedForAllCapturedRequests" value="false"/>
+
+  <!-- Enable this to update to 64bit IDs in the database and on SQLServer it will also update to datetime2 datatypes for timestamps -->
+  <param name="MigrateToLargeIDsAndDatetime2" value="true"/>
+
+  <!-- (SQL Server) Whether to provide comments with contextual information in certain SQL Select statements sent to the relational database.
+       The comments are generated by instrumentation in higher level database objects created by using the query builder APIs.
+  -->
+  <param name="IdentifyQueryBuilderViaComments" value="true"/>
+  <!-- (SQL Server) Whether to provide comments with contextual information in certain SQL Select statements sent to the relational database.
+       The comments are generated by instrumentation in lower level objects, such as beans, typelists, and other database building blocks.
+  -->
+  <param name="IdentifyORMLayerViaComments" value="false"/>
+
+  <!-- Number of threads to use when running the consistency checker. -->
+  <param name="ConsistencyCheckerThreads" value="5"/>
+
+  <!-- The time between refreshes of the zone cache, in seconds -->
+  <param name="ZoneCacheRefreshIntervalSecs" value="86400"/>
+
+  <!-- The latest date allowed to be used. -->
+  <param name="MaxAllowedDate" value="2200-12-31"/>
+  <!-- The earliest date allowed to be used. -->
+  <param name="MinAllowedDate" value="1800-01-01"/>
+
+  <!-- OSGi plugins startup timeout -->
+  <param name="PluginStartupTimeout" value="60"/>
+
+  <!-- The keyboard shortcut to activate the QuickJump box -->
+  <param name="QuickJumpShortcut" value="/"/>
+
+  <!-- Old external TransactionIds are purged when then have been there for this number of days -->
+  <param name="TransactionIdPurgeDaysOld" value="30"/>
+
+  <!-- The number of days to keep profiler data before they can be deleted. -->
+  <param name="ProfilerDataPurgeDaysOld" value="30"/>
+
+
+  <!--
+    Enable/Disable an external Configuration Service as a source for some of application configuration.
+    If enabled the application will load and manage configuration through a Configuration Service.
+    When disabled existing local configuration is used.
+  -->
+  <param name="ConfigurationServiceEnabled" value="false"/>
+
+  <!--
+  The maximum allowable XML export size (in megabytes) which may be loaded into memory.
+  Any attempt to export via admin API larger amount of data than this will fail.
+  This parameter protects the server from possible memory consumption problems.
+  -->
+  <param name="MaximumXmlExportSize" value="300"/>
+
+</config>

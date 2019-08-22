@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <ListDetailPanel
+    id="ABContactAddressesLDV"
+    selectionName="SelectedAddress"
+    selectionType="Address">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <PanelRef
+      def="ABContactAddressesLV(anABContact)">
+      <Toolbar>
+        <IteratorButtons
+          iterator="ABContactAddressesLV.ABContactAddressesLV"/>
+        <ToolbarDivider/>
+        <ToolbarButton
+          action="deleteABContactSecondaryAddresses()"
+          available="(anABContact.SecondaryAddresses.length &gt; 0) and CurrentLocation.InEditMode"
+          id="DeleteSecondaryAddresses"
+          label="DisplayKey.get(&quot;Training.DeleteSecondaryAddresses&quot;)"/>
+      </Toolbar>
+    </PanelRef>
+    <PanelRef
+      def="ABContactAddressCV(SelectedAddress, anABContact)"/>
+    <Code><![CDATA[/* This function deletes all addresses in the root object's
+   SecondaryAddresses array.
+*/
+
+function deleteABContactSecondaryAddresses(): void {
+  for (currentAddress in anABContact.AllAddresses) {
+    anABContact.removeAddress(currentAddress)
+  }
+}]]></Code>
+  </ListDetailPanel>
+</PCF>

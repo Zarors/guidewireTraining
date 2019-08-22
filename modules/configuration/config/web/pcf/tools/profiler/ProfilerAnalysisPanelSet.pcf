@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <PanelSet
+    id="ProfilerAnalysisPanelSet">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Variable
+      initialValue="com.guidewire.pl.web.internaltools.profiler.ProfilerViewTypes.VIEW_STACK_QUERY_SUMMARY"
+      name="viewType"
+      type="com.guidewire.pl.web.internaltools.profiler.ProfilerViewTypes.ViewType"/>
+    <Require
+      name="entryPointType"
+      type="String"/>
+    <PanelRef
+      def="ProfilerResultsCV(profilerDataSource)"
+      mode="viewType">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Profiler.Result&quot;)"/>
+      <Toolbar>
+        <ToolbarRangeInput
+          editable="true"
+          id="ViewType"
+          label="DisplayKey.get(&quot;Web.Profiler.ViewType&quot;)"
+          optionLabel="VALUE.DisplayName"
+          sortValueRange="false"
+          value="viewType"
+          valueRange="com.guidewire.pl.web.internaltools.profiler.ProfilerViewTypes.getViewtypes()"
+          valueType="com.guidewire.pl.web.internaltools.profiler.ProfilerViewTypes.ViewType">
+          <PostOnChange/>
+        </ToolbarRangeInput>
+        <ToolbarDivider/>
+        <ToolbarButton
+          action="gw.api.profiler.ProfilerStacksDownloaderUploader.download(profilerDataSource)"
+          download="true"
+          id="DownloadButton"
+          label="DisplayKey.get(&quot;Button.Download&quot;)"
+          visible="entryPointType != &quot;SavedFile&quot;"/>
+      </Toolbar>
+    </PanelRef>
+  </PanelSet>
+</PCF>

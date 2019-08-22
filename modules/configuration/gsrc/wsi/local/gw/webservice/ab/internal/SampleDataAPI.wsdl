@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.webservice.ab.internal.SampleDataAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/ab/ws/gw/webservice/ab/internal/SampleDataAPI" name="SampleDataAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/ab/ws/gw/webservice/ab/internal/SampleDataAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/ab/ws/gw/webservice/ab/internal/SampleDataAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <!-- loadSampleData() : String -->
+      <xs:element name="loadSampleData">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="loadSampleDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- loadDuplicatesSampleData() : String -->
+      <xs:element name="loadDuplicatesSampleData">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="loadDuplicatesSampleDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="SampleDataAPIPortType">
+    <wsdl:operation name="loadSampleData">
+      <wsdl:input name="loadSampleData" message="tns:loadSampleData"/>
+      <wsdl:output name="loadSampleDataResponse" message="tns:loadSampleDataResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="loadDuplicatesSampleData">
+      <wsdl:input name="loadDuplicatesSampleData" message="tns:loadDuplicatesSampleData"/>
+      <wsdl:output name="loadDuplicatesSampleDataResponse" message="tns:loadDuplicatesSampleDataResponse"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SampleDataAPISoap12Binding" type="tns:SampleDataAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="loadSampleData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="loadSampleData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadSampleDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="loadDuplicatesSampleData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="loadDuplicatesSampleData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadDuplicatesSampleDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SampleDataAPISoap11Binding" type="tns:SampleDataAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="loadSampleData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="loadSampleData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadSampleDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="loadDuplicatesSampleData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="loadDuplicatesSampleData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadDuplicatesSampleDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SampleDataAPI">
+    <wsdl:port name="SampleDataAPISoap12Port" binding="tns:SampleDataAPISoap12Binding">
+      <soap12:address location="local:///gw/webservice/ab/internal/SampleDataAPI"/>
+    </wsdl:port>
+    <wsdl:port name="SampleDataAPISoap11Port" binding="tns:SampleDataAPISoap11Binding">
+      <soap11:address location="local:///gw/webservice/ab/internal/SampleDataAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="loadSampleData">
+    <wsdl:part name="parameters" element="tns:loadSampleData"/>
+  </wsdl:message>
+  <wsdl:message name="loadSampleDataResponse">
+    <wsdl:part name="parameters" element="tns:loadSampleDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="loadDuplicatesSampleData">
+    <wsdl:part name="parameters" element="tns:loadDuplicatesSampleData"/>
+  </wsdl:message>
+  <wsdl:message name="loadDuplicatesSampleDataResponse">
+    <wsdl:part name="parameters" element="tns:loadDuplicatesSampleDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

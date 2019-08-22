@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<plugin
+  interface="ClusterBroadcastTransportFactory"
+  name="ClusterFastBroadcastTransportFactory">
+  <plugin-osgi
+    disabled="true"
+    servicepid="com.guidewire.pl.cluster.internal.broadcast.udp.fast.FastUdpMulticastTransportFactory">
+    <param
+      name="ttl"
+      value="1"/>
+  </plugin-osgi>
+</plugin>

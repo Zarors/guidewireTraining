@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="A log entry for user actions."
+  entity="WorkflowUserLog"
+  final="false"
+  platform="true"
+  priority="1"
+  supertype="WorkflowLogEntry">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowLogEntryPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowUserLogImpl"/>
+  <foreignkey
+    columnName="userID"
+    desc="The user how invoked the action."
+    fkentity="User"
+    name="user"
+    nullok="false"
+    setterScriptability="hidden"/>
+</subtype>

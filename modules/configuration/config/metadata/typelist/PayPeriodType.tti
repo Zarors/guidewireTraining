@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Pay period type"
+  final="false"
+  name="PayPeriodType"
+  platform="true"/>

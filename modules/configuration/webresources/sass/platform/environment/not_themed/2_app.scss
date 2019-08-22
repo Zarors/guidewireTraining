@@ -1,0 +1,159 @@
+/*
+Changing anything in this file is likely to break the delicate balance required for the panels to function correctly in all browsers
+including ie11
+*/
+
+html {
+  cursor: wait; // If the body is hidden, then we are loading something, so make sure we show the wait cursor at least.
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  min-width: 640px; //@px-allowed
+  min-height: 480px; //@px-allowed
+  overflow: hidden;
+}
+
+body {
+  visibility: hidden;
+  transition: opacity .4s ease-in;
+  opacity: 0;
+  cursor: default;
+}
+
+#gw-body {
+  min-width: 640px; //@px-allowed
+  min-height: 480px; //@px-allowed
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  #gw-north-panel {
+    display: block;
+    width: 100%;
+  }
+
+  #gw-west-center {
+    display: block;
+    width: 100%;
+    min-width: 640px; //@px-allowed
+
+    #gw-west-panel {
+      display: flex;
+      float: left; //NOTE: required to allow center panel to fill remaining width
+      flex-direction: column;
+      vertical-align: top;
+      height: 100%;
+
+      #gw-west-panel--top-section {
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+      #gw-west-panel--children--wrapper {
+        flex-shrink: 1;
+        flex-grow: 1;
+        overflow: auto;
+      }
+
+      #gw-west-panel--bottom-bar {
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+    }
+
+    #gw-center-panel {
+      vertical-align: top;
+      height: 100%;
+      display: block;
+      width: auto; //NOTE: required to allow center panel to fill remaining width
+      overflow: hidden; //NOTE: required to allow center panel to fill remaining width
+
+      #gw-center-top-section {
+        display: block;
+      }
+
+      #gw-center-bottom-section {
+        display: block;
+        // Height: set in resizer.js 100% - center-top-section
+        height: 80vh; //Safety mechanism, to make sure even if client sizing logic fails, we always show a center panel
+        overflow: auto;
+      }
+    }
+
+    #gw-south-panel {
+      display: block;
+      // Height: set in resizer.js
+    }
+  }
+}
+
+// This is the ONLY place we are allowed to use !important
+.gw-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.gw-no-pointer {
+  pointer-events: none;
+}
+
+.gw-placeholder {
+  @extend .gw-hidden;
+}
+
+.gw-hidden-menu {
+  @extend .gw-hidden;
+}
+
+.gw-invisible {
+  visibility: hidden !important;
+}
+
+div, span, label, img, input, textarea {
+  &, &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+table, tr, td, th {
+  box-sizing: content-box;
+}
+
+img {
+  display: inline-block;
+}
+
+div, span, select, input, button, img, label {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+div#gw-clientCommands, div#gw-preferences, div#gw-preferenceState, .gw-location-name, .gw- { //gw- only is an error state, but shows up and throws stuff off
+  display: none;
+}
+
+.gw-click-overlay {
+  pointer-events: none !important;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  background-color: white;
+  transition: opacity 3s ease-out;
+  &.gw-disable-click {
+    opacity: .4;
+    pointer-events: auto !important;
+    cursor: wait;
+    z-index: 99999;
+  }
+}

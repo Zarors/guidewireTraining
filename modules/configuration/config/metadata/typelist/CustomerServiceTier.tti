@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Represents the customer service tier"
+  name="CustomerServiceTier"
+  platform="true"/>

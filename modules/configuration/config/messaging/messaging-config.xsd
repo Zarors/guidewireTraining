@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/messaging-config" xmlns="http://guidewire.com/messaging-config">
+
+  <xsd:element name="messaging-config">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="messaging" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="defaultServer" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="messaging">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="destination" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="env" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation>This applies to all child destinations.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="config">
+    <xsd:attribute name="maxretries" type="xsd:int" default="3"/>
+    <xsd:attribute name="initialretryinterval" type="xsd:decimal" default="1000"/>
+    <xsd:attribute name="retrybackoffmultiplier" type="xsd:int" default="2"/>
+    <xsd:attribute name="pollinterval" type="xsd:int" default="10000"/>
+    <xsd:attribute name="numsenderthreads" type="xsd:int" default="1"/>
+    <xsd:attribute name="chunksize" type="xsd:int" default="100000"/>
+  </xsd:complexType>
+
+  <xsd:element name="api-param" type="config"/>
+
+  <xsd:element name="destination">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="config">
+          <xsd:sequence>
+            <xsd:element ref="event" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="distributedMessageProcessing" minOccurs="0" maxOccurs="1"/>
+          </xsd:sequence>
+          <xsd:attribute name="name" type="xsd:string" use="required"/>
+          <xsd:attribute name="id" type="xsd:int" use="required"/>
+          <xsd:attribute name="server" type="xsd:string" use="optional"/>
+          <xsd:attribute name="requestplugin" type="xsd:NMTOKEN"/>
+          <xsd:attribute name="aftersendplugin" type="xsd:NMTOKEN" use="optional"/>
+          <xsd:attribute name="transportplugin" type="xsd:NMTOKEN" use="required"/>
+          <xsd:attribute name="replyplugin" type="xsd:NMTOKEN"/>
+          <xsd:attribute name="disabled" type="xsd:boolean" default="false"/>
+          <xsd:attribute name="internal" type="xsd:boolean" default="false"/>
+          <xsd:attribute name="shutdowntimeout" type="xsd:int" default="30000"/>
+          <xsd:attribute name="primaryentity" type="xsd:NMTOKEN"/>
+          <xsd:attribute name="singlethreadandblockonnonsafeorderedmessages" type="xsd:boolean" default="false"/>
+          <xsd:attribute name="multithreadnonsafeorderedmessages" type="xsd:boolean" default="false"/>
+          <xsd:attribute name="disablehistory" type="xsd:boolean" default="false">
+            <xsd:annotation>
+              <xsd:documentation>The messaging database analysis uses message history records.  So disabling history will also limit information available in those reports.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute name="env" type="xsd:string" use="optional">
+            <xsd:annotation>
+              <xsd:documentation>If parent messaging.env specified, these env tokens must be in that list as well or this destination declaration will never satisfy both that and this env restrictions.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="event">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="distributedMessageProcessing">
+    <xsd:complexType>
+      <xsd:attribute name="server" type="xsd:string" use="optional"/>
+      <xsd:attribute name="beforesendplugin" type="xsd:NMTOKEN" use="optional"/>
+      <xsd:attribute name="requestProcessingNodes" type="xsd:int" default="1"/>
+      <xsd:attribute name="requestProcessingThreads" type="xsd:int" default="1"/>
+      <xsd:attribute name="persistTransformedPayload" type="xsd:boolean" default="true"/>
+      <xsd:attribute name="chunkSize" type="xsd:int" default="200"/>
+      <xsd:attribute name="alwayscallbeforesendatdestination" type="xsd:boolean" default="false"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

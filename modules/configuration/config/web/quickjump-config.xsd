@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="QuickJumpConfigFile">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+          <xsd:element ref="QuickJumpCommandRef"/>
+          <xsd:element ref="StaticNavigationCommandRef"/>
+          <xsd:element ref="ContextualNavigationCommandRef"/>
+        </xsd:choice>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="QuickJumpCommandRef">
+    <xsd:complexType>
+      <xsd:attribute name="commandClass" type="xsd:string" use="required"/>
+      <xsd:attribute name="commandName" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="StaticNavigationCommandRef">
+    <xsd:complexType>
+      <xsd:attribute name="commandName" type="xsd:string" use="required"/>
+      <xsd:attribute name="commandTarget" type="xsd:string" use="required"/>
+      <xsd:attribute name="commandArgs" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ContextualNavigationCommandRef">
+    <xsd:complexType>
+      <xsd:attribute name="commandName" type="xsd:string" use="required"/>
+      <xsd:attribute name="commandTarget" type="xsd:string" use="required"/>
+      <xsd:attribute name="symbolName" type="xsd:string" use="required"/>
+      <xsd:attribute name="symbolType" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

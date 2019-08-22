@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Roles users can have on an assignable object"
+  name="UserRole">
+  <typecode
+    code="general"
+    desc="general"
+    name="General"/>
+</typelistextension>

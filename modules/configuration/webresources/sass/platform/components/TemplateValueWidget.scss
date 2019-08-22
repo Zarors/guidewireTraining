@@ -1,0 +1,28 @@
+//Template value widgets layout their children in a row, until they hits a TemplateLineBreakWidget
+//Where it jumps to a new line and starts laying out children again
+.gw-TemplateValueWidget {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  & > .gw-ValueWidget {
+    flex-grow: 1;
+
+    & + .gw-ValueWidget {
+      margin-left: $gw-app--SPACING-rem-M;
+    }
+
+    &.gw-readonly + &:not(.gw-readonly) {
+      margin-left: $gw-app--SPACING-rem-S;
+    }
+  }
+
+  .gw-TemplateValueLineBreakWidget {
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+    min-height: $gw-app--border-width-px;
+  }
+}

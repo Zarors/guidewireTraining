@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Non-persistent set of criteria to use to represent the results of a specific document template search."
+  entity="DocumentTemplateSearchResults"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchResultsInternalMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchResultsImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.DocumentTemplateSearchResultsPublicMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentTemplateSearchResultsImpl"/>
+  <column
+    desc="The ID of the document template."
+    name="TemplateID"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="The name of the document template."
+    name="Name"
+    nullok="true"
+    type="shorttext"/>
+  <typekey
+    desc="The type which will be assigned to documents created from this document template."
+    name="Type"
+    nullok="true"
+    typelist="DocumentType"/>
+  <column
+    desc="The last date/time the document template was modified."
+    name="DateModified"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The date/time on which the document template starts to be effective."
+    name="DateEffective"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The date/time on which the document template expires."
+    name="DateExpires"
+    nullok="true"
+    type="datetime"/>
+  <typekey
+    desc="The language of the template"
+    name="Language"
+    nullok="true"
+    setterScriptability="hidden"
+    typelist="LanguageType"/>
+</nonPersistentEntity>

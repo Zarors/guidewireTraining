@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Input/Extract pointers to work-items."
+  entity="WorkQueueWorkerControl"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="workqueueworkercontrol"
+  type="keyable">
+  <column
+    name="LockName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    name="LastExecutionTime"
+    nullok="false"
+    type="datetime"/>
+  <index
+    desc="Enforce uniqueness of lock name"
+    name="WQWorkerControlU2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LockName"/>
+  </index>
+</entity>

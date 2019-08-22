@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <delegate name="Verifiable_Ext" xmlns="http://guidewire.com/datamodel">
+  <!-- This file contains an example of a new delegate and uses the naming conventions recommended  -->
+  <!-- for customer implementations. All other new delegates are needed specifically for the        -->
+  <!-- TrainingApp "base application" and therefore do not follow the customer implementation       -->
+  <!-- naming conventions.                                                                          -->
+  <!-- For new delegates entities, the delegate itself has the "_Ext" suffix, but the fields do not -->
+   <column name="RequiresVerification" type="bit" desc="Does this object need verification?" nullok="true" />
+	<column name="VerificationDate" type="datetime" desc="Date object was verified" nullok="true" />
+	<column name="VerificationDueDate" type="datetime" desc="Date by which object should be verified" nullok="true" />
+	<typekey name="Priority" typelist="Priority" desc="Priority of the verification" nullok="true" />
+  </delegate>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="AuthenticationSourceCreatorPlugin"
+  name="RestAuthenticationSourceCreatorPlugin">
+  <plugin-osgi
+    servicepid="com.guidewire.pl.web.internal.DefaultRestAuthenticationSourceCreatorPlugin"/>
+</plugin>

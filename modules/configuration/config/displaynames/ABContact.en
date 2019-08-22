@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Entity
+  name="ABContact">
+  <Columns>
+    <Column
+      beanPath="ABPerson.LastName"
+      name="lastName"
+      sortBeanPath="ABPerson.KeywordDenorm"
+      sortOrder="1"/>
+    <Column
+      beanPath="ABPerson.FirstName"
+      name="firstName"
+      sortBeanPath="ABPerson.FirstNameDenorm"
+      sortOrder="2"/>
+    <Column
+      beanPath="ABPerson.Suffix"
+      name="suffix"
+      sortOrder="3"/>
+    <Column
+      beanPath="ABCompany.Name"
+      name="name"
+      sortBeanPath="ABCompany.NameDenorm"
+      sortOrder="4"/>
+    <Column
+      beanPath="ABContact.Subtype"
+      name="SubType"/>
+    <Column
+      beanPath="ABPerson.FirstNameKanji"
+      name="firstNameKanji"/>
+    <Column
+      beanPath="ABPerson.LastNameKanji"
+      name="lastNameKanji"/>
+    <Column
+      beanPath="ABPerson.Prefix"
+      name="prefix"/>
+    <Column
+      beanPath="ABPerson.Particle"
+      name="particle"/>
+    <Column
+      beanPath="ABContact.NameKanji"
+      name="nameKanji"/>
+    <Column
+      beanPath="ABPerson.MiddleName"
+      name="middleName"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.name.NameFormatter
+uses gw.api.name.ABContactNameFieldImpl
+uses gw.api.name.ABPersonNameFieldImpl
+uses gw.api.name.NameOwnerFieldId
+
+if (name != null && name.length > 0)
+{
+   var contact = new ABContactNameFieldImpl(){
+    :Name = name,
+    :NameKanji = nameKanji
+  }
+
+  return new NameFormatter().format(contact, " ")
+}
+else
+{
+  var person = new ABPersonNameFieldImpl(){
+    :FirstName = firstName,
+    :MiddleName = middleName,
+    :LastName = lastName,
+    :FirstNameKanji = firstNameKanji,
+    :LastNameKanji = lastNameKanji,
+    :Particle = particle,
+    :Prefix = prefix,
+    :Suffix = suffix
+  }
+
+  return new NameFormatter().format(person, " ", NameOwnerFieldId.DISPLAY_NAME_FIELDS)
+}
+]]></DisplayName>
+</Entity>

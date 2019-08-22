@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="GroupSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.community.impl.GroupSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.GroupSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.GroupSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupSearchCriteriaImpl"/>
+  <fulldescription><![CDATA[
+        Defines a group search criteria. The GroupSearchCriteria entity exists only for the purposes of a search.
+        It is not stored in the database.
+      
+    ]]></fulldescription>
+  <column
+    desc="Group name to search for."
+    name="GroupName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="100"/>
+  </column>
+  <typekey
+    desc="Group type to search for."
+    name="GroupType"
+    nullok="true"
+    typelist="GroupType"/>
+  <foreignkey
+    columnName="ParentGroupID"
+    desc="Group parent to search for."
+    fkentity="Group"
+    name="ParentGroup"
+    nullok="true"/>
+  <column
+    desc="Whether to exclude the root group."
+    name="ExcludeRootGroup"
+    nullok="true"
+    type="bit"/>
+  <foreignkey
+    columnName="OrganizationID"
+    desc="Organization that the group belongs to."
+    fkentity="Organization"
+    name="Organization"
+    nullok="true"/>
+</nonPersistentEntity>

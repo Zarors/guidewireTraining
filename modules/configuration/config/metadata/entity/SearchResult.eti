@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="SearchResult"
+  exportable="true"
+  extendable="true"
+  final="false"
+  platform="true">
+  <fulldescription><![CDATA[
+        Base class use for the results of plugin search methods. The result encapsulates a Boolean value
+        indicating if results were capped, and optionally the total number of matches that would have
+        been returned had the results not been capped. The total number of matches is relevant only when
+        the capped Boolean value is true.
+        <p>
+        This base class is of little interest on its own but provides basic functionality that may be
+        useful for application specific subclasses.
+      
+    ]]></fulldescription>
+  <column
+    default="false"
+    desc="Returns true if and only if the results of the search have been capped, that is, if fewer results are contained in this result than actually satisfied the search criteria."
+    name="ResultsCapped"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Returns the total number of matches that would have been returned had the results not been capped, or null if the value is unknown. The result of this method is relevant only if ResultsCapped returns true."
+    name="UncappedResultCount"
+    nullok="true"
+    type="integer"/>
+</nonPersistentEntity>

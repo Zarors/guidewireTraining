@@ -1,0 +1,27 @@
+.gw-PanelRowWidget {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  vertical-align: top;
+  position: relative;
+
+  &.gw-column-dividers {
+    > div + div {
+      border-left: gw-border();
+    }
+  }
+
+  // Position to other widgets
+  margin-top: $gw-app--PanelRow--spacing-widget-top-rem;
+  margin-left: $gw-app--PanelRow--spacing-widget-left-rem;
+  margin-right: $gw-app--PanelRow--spacing-widget-right-rem;
+  margin-bottom: $gw-app--PanelRow--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--PanelRow--spacing-inner-top-rem;
+  padding-left: $gw-app--PanelRow--spacing-inner-left-rem;
+  padding-right: $gw-app--PanelRow--spacing-inner-right-rem;
+  padding-bottom: $gw-app--PanelRow--spacing-inner-bottom-rem;
+}

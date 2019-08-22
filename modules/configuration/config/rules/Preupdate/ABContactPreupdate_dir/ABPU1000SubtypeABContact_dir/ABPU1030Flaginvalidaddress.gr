@@ -1,0 +1,35 @@
+package rules.Preupdate.ABContactPreupdate_dir.ABPU1000SubtypeABContact_dir
+uses gw.api.util.DateUtil
+
+@gw.rules.RuleName("ABPU1030 - Flag invalid address")
+internal class ABPU1030Flaginvalidaddress {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact.PrimaryAddress.ValidUntil != null
+and
+( DateUtil .differenceInDays(
+   DateUtil .currentDate(),
+   aBContact.PrimaryAddress.ValidUntil ) < 0)
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// This rule creates a flag entry if the ABContact has a "valid until"
+// value for primary address, and the current date is past that value.
+// (If there is already an open flag entry for this reason, then no
+// additional flag entry is created.)
+// This condition checks to see if there is any existing unresolved invalid_address entry
+if (not aBContact.FlagEntries.hasMatch(\ f -> (f.Reason == FlagEntryReason.TC_INVALID_ADDRESS) and (f.IsOpen))) {
+   var newEntry = new FlagEntry()
+   newEntry.FlagDate = DateUtil .currentDate()
+   newEntry.Reason = FlagEntryReason.TC_INVALID_ADDRESS
+   aBContact.addToFlagEntries(newEntry)
+}
+/*end00rule*/
+
+  }
+}

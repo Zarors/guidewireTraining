@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="LoadHistoryOps"
+    parent="LoadHistoryDetail(PageHelper, History)"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistoryOpInfo&quot;)">
+    <LocationEntryPoint
+      signature="LoadHistoryOps(History : LoadCommand, DispStep : gw.api.tools.LoadStepDisplayable, PageHelper : gw.api.tools.LoadHistoryHelper)"/>
+    <Variable
+      name="History"
+      type="LoadCommand"/>
+    <Variable
+      name="DispStep"
+      type="gw.api.tools.LoadStepDisplayable"/>
+    <Variable
+      name="PageHelper"
+      type="gw.api.tools.LoadHistoryHelper"/>
+    <Screen
+      id="LoadHistoryOpsScreen">
+      <TitleBar
+        id="loadhistoryopstitlebar"
+        title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StepsAndOps&quot;)"/>
+      <Toolbar>
+        <ToolbarButton
+          action="null"
+          id="refresh"
+          label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+      </Toolbar>
+      <PanelRef
+        def="LoadHistoryLV(PageHelper, (new LoadCommand[] {History})?.asQuery(), false)">
+        <Toolbar/>
+      </PanelRef>
+      <PanelRef
+        def="LoadStepsLV(PageHelper, History, new gw.api.tools.LoadStepDisplayable[]{DispStep}, false)">
+        <Toolbar/>
+      </PanelRef>
+      <ListDetailPanel
+        selectionName="SelectedOp"
+        selectionType="LoadOperation">
+        <PanelRef>
+          <Toolbar/>
+          <ListViewPanel
+            id="LoadHistoryOpsLV">
+            <RowIterator
+              editable="false"
+              elementName="Op"
+              value="DispStep.LoadStep.OrderedOps as gw.api.database.IQueryBeanResult&lt;LoadOperation&gt;"
+              valueType="gw.api.database.IQueryBeanResult&lt;entity.LoadOperation&gt;">
+              <Row>
+                <TextCell
+                  enableSort="false"
+                  id="opduration"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Duration&quot;)"
+                  value="PageHelper.getDurationString(Op.StartTime, Op.EndTime)"
+                  wrapLabel="true"/>
+                <TextCell
+                  id="opstarttime"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StartTime&quot;)"
+                  sortBy="Op.StartTime"
+                  value="gw.api.util.StringUtil.formatDate(Op.StartTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+                <TextCell
+                  id="opendtime"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.EndTime&quot;)"
+                  sortBy="Op.EndTime"
+                  value="gw.api.util.StringUtil.formatDate(Op.EndTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+                <TextCell
+                  id="opexecuteorder"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ExecutionOrder&quot;)"
+                  value="Op.ExecutionOrder"
+                  valueType="java.lang.Integer"
+                  wrapLabel="true"/>
+                <TextCell
+                  id="tablename"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseTableInfo.Rows.Table&quot;)"
+                  value="Op.TableName"
+                  wrapLabel="true"/>
+                <TextCell
+                  id="affectedrowcount"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.AffectedRowCount&quot;)"
+                  value="Op.AffectedRowCount"
+                  valueType="java.lang.Long"/>
+                <TextCell
+                  id="errorcount"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ErrorCount&quot;)"
+                  value="Op.ErrorCount"
+                  valueType="java.lang.Integer"
+                  wrapLabel="true"/>
+                <TextCell
+                  id="lowestid"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.LowestID&quot;)"
+                  value="Op.LowestID"
+                  valueType="java.lang.Long"
+                  wrapLabel="true"/>
+                <TextCell
+                  id="highestid"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.HighestID&quot;)"
+                  value="Op.HighestID"
+                  valueType="java.lang.Long"
+                  wrapLabel="true"/>
+                <TextCell
+                  enableSort="false"
+                  id="numIC"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.NumberIntegrityChecks&quot;)"
+                  value="gw.api.util.StringUtil.formatNumber(Op.IntegrityChecks.length, &quot;####0&quot;)"
+                  wrapLabel="true"/>
+                <TextCell
+                  enableSort="false"
+                  id="numIS"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.NumberInsertSelects&quot;)"
+                  value="gw.api.util.StringUtil.formatNumber(Op.InsertSelects.length, &quot;####0&quot;)"
+                  wrapLabel="true"/>
+                <TextCell
+                  enableSort="false"
+                  id="numCB"
+                  label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.NumberCallbacks&quot;)"
+                  value="gw.api.util.StringUtil.formatNumber(Op.Callbacks.length, &quot;####0&quot;)"
+                  wrapLabel="true"/>
+              </Row>
+            </RowIterator>
+          </ListViewPanel>
+        </PanelRef>
+        <CardViewPanel>
+          <Variable
+            initialValue="gw.api.database.Query.make(LoadIntegrityCheck).compare(&quot;LoadOperation&quot;, Equals, SelectedOp).select()"
+            name="IntegrityChecks"
+            recalculateOnRefresh="true"
+            type="gw.api.database.IQueryBeanResult&lt;LoadIntegrityCheck&gt;"/>
+          <Variable
+            initialValue="SelectedOp.Callbacks"
+            name="Callbacks"
+            recalculateOnRefresh="true"
+            type="LoadCallback[]"/>
+          <Variable
+            initialValue="gw.api.database.Query.make(LoadInsertSelect).compare(&quot;LoadOperation&quot;, Equals, SelectedOp).select()"
+            name="InsertSelects"
+            recalculateOnRefresh="true"
+            type="gw.api.database.IQueryBeanResult&lt;LoadInsertSelect&gt;"/>
+          <Card
+            id="IntegrityChecksCard"
+            title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.IntegrityChecksNoCount&quot;)"
+            visible="IntegrityChecks.getCount() &gt; 0">
+            <PanelRef
+              def="LoadIntegrityChecksLV(PageHelper, IntegrityChecks)">
+              <Toolbar/>
+            </PanelRef>
+          </Card>
+          <Card
+            id="CallbacksCard"
+            title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.CallbacksNoCount&quot;)"
+            visible="Callbacks.length &gt; 0">
+            <PanelRef
+              def="LoadCallbacksLV(PageHelper, History, Callbacks, false)">
+              <Toolbar/>
+            </PanelRef>
+          </Card>
+          <Card
+            id="InsertSelectsCard"
+            title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.InsertSelectsNoCount&quot;)"
+            visible="InsertSelects.getCount() &gt; 0">
+            <PanelRef
+              def="LoadInsertSelectsLV(PageHelper, InsertSelects)">
+              <Toolbar/>
+            </PanelRef>
+          </Card>
+        </CardViewPanel>
+      </ListDetailPanel>
+    </Screen>
+  </Page>
+</PCF>

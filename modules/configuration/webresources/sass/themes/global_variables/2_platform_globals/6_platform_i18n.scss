@@ -1,0 +1,24 @@
+// Defaults
+$gw-app--i18n--Input--label-default-width-em: 12em !default;
+
+$gw-app--i18n--label-width-overrides: (
+        DE: 14.5em,
+        JA: 13.5em,
+        NL: 14.5em
+) !default;
+
+$gw-app--i18n--label-width-PC-specific-overrides: (
+        DE: 17em,
+        NL: 17em
+) !default;
+
+$gw-app--i18n--label-width-BC-specific-overrides: (
+        DE: 17em,
+        NL: 17em
+) !default;
+
+$gw-app--i18n--label-width-CC-specific-overrides: (
+) !default;
+
+$gw-app--i18n--label-width-CM-specific-overrides: (
+) !default;

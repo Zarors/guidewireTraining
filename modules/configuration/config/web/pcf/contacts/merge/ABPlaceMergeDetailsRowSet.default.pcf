@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ABPlaceMergeDetailsRowSet"
+    mode="default">
+    <Require
+      name="places"
+      type="ABPlace[]"/>
+    <Require
+      name="mergedPlace"
+      type="ABPlace"/>
+    <Require
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Row
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.NP_NAME)">
+      <TextCell
+        available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+        id="nameLabel"
+        value="nameOwner.ContactNameLabel"/>
+      <CellIterator
+        elementName="aContact"
+        id="name"
+        value="places"
+        valueType="entity.ABPlace[]">
+        <TextCell
+          available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+          editable="aContact == mergedPlace &amp;&amp; nameOwner.isEditable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+          id="name"
+          required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.NP_NAME)"
+          value="aContact.Name"/>
+      </CellIterator>
+    </Row>
+  </RowSet>
+</PCF>

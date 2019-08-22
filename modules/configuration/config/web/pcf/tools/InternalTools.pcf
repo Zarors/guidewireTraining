@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Forward
+    canVisit="perm.User.ServerTools or perm.User.DevAllAccess"
+    id="InternalTools">
+    <ForwardCondition
+      action="ServerTools.go()"/>
+  </Forward>
+</PCF>

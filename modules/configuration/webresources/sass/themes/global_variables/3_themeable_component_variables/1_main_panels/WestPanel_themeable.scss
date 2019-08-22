@@ -1,0 +1,122 @@
+// Internal padding
+$gw-app--WestPanel--spacing-inner-top-rem: null !default;
+$gw-app--WestPanel--spacing-inner-left-rem: null !default;
+$gw-app--WestPanel--spacing-inner-right-rem: null !default;
+$gw-app--WestPanel--spacing-inner-bottom-rem: null !default;
+
+// General
+$gw-app--WestPanel--bg: $gw-app--palette--left-nav--bg !default;
+$gw-app--WestPanel--default-width-em: gw-emFixed(17) !default;
+$gw-app--WestPanel--minmax-open-glyph: "angle-double-right-solid" !default;
+$gw-app--WestPanel--minmax-close-glyph: "angle-double-left-solid" !default;
+$gw-app--WestPanel--font-size-em: gw-emFixed(1) !default;
+$gw-app--WestPanel--focus-offset-px: gw-pxFixed(-1) !default;
+$gw-app--WestPanel--border-right-width-px: 0 !default;
+
+// Calc Colors
+$gw-app--WestPanel--bg-darker: darken($gw-app--WestPanel--bg, 5%);
+$gw-app--WestPanel--bg-darkest: darken($gw-app--WestPanel--bg, 10%);
+$gw-app--WestPanel--bg-lighter: lighten($gw-app--WestPanel--bg, 5%);
+$gw-app--WestPanel--bg-lightest: lighten($gw-app--WestPanel--bg, 10%);
+
+// Button Colors
+$gw-app--WestPanel--border-right--col: transparent !default; //$gw-app--palette--left-nav--bg-highlight
+$gw-app--WestPanel--button--bg: $gw-app--palette--left-nav--bg !default;
+$gw-app--WestPanel--button--col: $gw-app--palette--left-nav--col !default;
+$gw-app--WestPanel--button--active--bg: $gw-app--WestPanel--button--bg !default;
+$gw-app--WestPanel--button--active--col: $gw-app--palette--active !default;
+$gw-app--WestPanel--button--hover--bg: $gw-app--palette--left-nav--bg-highlight !default;
+$gw-app--WestPanel--button--hover--col: $gw-app--palette--active !default;
+$gw-app--WestPanel--button--active--border--col: $gw-app--palette--blue !default;
+$gw-app--WestPanel--button--topborder: 0 solid $gw-app--WestPanel--bg-lighter !default;
+$gw-app--WestPanel--button--bottomborder: $gw-app--border-width-px solid $gw-app--WestPanel--bg-darker !default;
+
+$gw-app--WestPanel--submenu--button--bg: $gw-app--WestPanel--bg-darker !default;
+$gw-app--WestPanel--submenu--button--col: $gw-app--palette--left-nav--col !default;
+$gw-app--WestPanel--submenu--button--active--bg: $gw-app--WestPanel--submenu--button--bg !default;
+$gw-app--WestPanel--submenu--button--active--col: $gw-app--WestPanel--button--active--col !default;
+$gw-app--WestPanel--submenu--button--hover--bg: $gw-app--WestPanel--bg-darkest !default;
+$gw-app--WestPanel--submenu--button--hover--col: $gw-app--WestPanel--button--hover--col !default;
+$gw-app--WestPanel--submenu--button--topborder: 0 solid $gw-app--WestPanel--bg !default;
+$gw-app--WestPanel--submenu--button--bottomborder: $gw-app--border-width-px solid $gw-app--WestPanel--button--bg !default;
+$gw-app--WestPanel--submenu--button--active--border--col: $gw-app--palette--active !default;
+
+// Button Spacing
+$gw-app--WestPanel--button-active-border-width-px: gw-pxFixed(3) !default;
+$gw-app--WestPanel--button--pad-h-rem: $gw-app--SPACING-rem-XL !default;
+$gw-app--WestPanel--button--pad-v-rem: $gw-app--SPACING-rem-L !default;
+
+$gw-app--WestPanel--submenu--button--pad-h-rem: $gw-app--WestPanel--button--pad-h-rem !default;
+$gw-app--WestPanel--submenu--button--pad-v-rem: $gw-app--WestPanel--button--pad-v-rem * .8 !default;
+$gw-app--WestPanel--submenu--button--font-size-em: null !default;
+$gw-app--WestPanel--submenu--additional-inset-pad-left-rem: $gw-app--WestPanel--submenu--button--pad-h-rem !default;
+
+// UI Glyphs Options and spacing
+$gw-app--WestPanel--button--glyph-open: "caret-down-solid" !default;
+$gw-app--WestPanel--button--glyph-close: "caret-up-solid" !default;
+
+$gw-app--WestPanel--floatToggle--open-glyph: "angle-double-right" !default;
+$gw-app--WestPanel--floatToggle--close-glyph: "angle-double-left" !default;
+$gw-app--WestPanel--floatToggle--bg: $gw-app--palette--gray-D !default;
+$gw-app--WestPanel--floatToggle--col: $gw-app--palette--gray-5 !default;
+
+$gw-app--WestPanel--optionsbar--pad-v--small-rem: gw-remScaled(.5) !default;
+$gw-app--WestPanel--optionsbar--pad-h--small-rem: gw-remScaled(.7) !default;
+
+$gw-app--WestPanel--use-UI-bar: true !default;
+$gw-app--WestPanel--titles-pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--WestPanel--titles-pad-v-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--WestPanel--minimized-view-pad-h-rem: $gw-app--WestPanel--button--pad-h-rem !default;
+$gw-app--WestPanel--submenu--min-use-circular-background: false !default;
+$gw-app--WestPanel--submenu--min-circular-background-fill: transparent !default;
+$gw-app--WestPanel--submenu--min-circular-background-stroke: transparentize($gw-app--WestPanel--submenu--button--col, .6) !default;
+$gw-app--WestPanel--submenu--min-circular-background-stroke-w: 1 !default;
+$gw-app--WestPanel--submenu--min-circular-background-radius: 8 !default;
+$gw-app--WestPanel--submenu--min-circular-background-inset: 5 !default;
+$gw-app--WestPanel--min-label-font-size: $gw-app--font-size--smaller-px !default;
+
+// Menu Titles
+$gw-app--WestPanel--titlebar-border-top: null !default;
+$gw-app--WestPanel--titlebar-bg: $gw-app--WestPanel--bg-lighter !default;
+$gw-app--WestPanel--titlebar-col: $gw-app--WestPanel--button--col !default;
+$gw-app--WestPanel--titlebar-hover-bg: $gw-app--WestPanel--bg-lighter !default;
+$gw-app--WestPanel--titlebar-hover-col: $gw-app--WestPanel--button--hover--col !default;
+$gw-app--WestPanel--titlebar-font-size-em: gw-emFixed(1) !default
+
+// Drag
+$gw-app--WestPanel--drag-col: $gw-app--palette--blue-light !default;
+$gw-app--WestPanel--drag-width: gw-pxFixed(8) !default;
+
+// Menu Actions Widget
+// Position to other widgets
+$gw-app--MenuActionsWidget--spacing-widget-top-rem: 0 !default;
+$gw-app--MenuActionsWidget--spacing-widget-left-rem: 0 !default;
+$gw-app--MenuActionsWidget--spacing-widget-right-rem: 0 !default;
+$gw-app--MenuActionsWidget--spacing-widget-bottom-rem: 0 !default;
+
+// Internal padding
+$gw-app--MenuActionsWidget--spacing-inner-top-rem: $gw-app--WestPanel--button--pad-v-rem !default;
+$gw-app--MenuActionsWidget--spacing-inner-left-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--MenuActionsWidget--spacing-inner-right-rem: $gw-app--WestPanel--button--pad-h-rem - $gw-app--MenuActionsWidget--spacing-widget-right-rem !default;
+$gw-app--MenuActionsWidget--spacing-inner-bottom-rem: $gw-app--WestPanel--button--pad-v-rem !default;
+
+$gw-app--MenuActionsWidget--bg: $gw-app--buttons--bg !default;
+$gw-app--MenuActionsWidget--col: $gw-app--buttons--col !default;
+$gw-app--MenuActionsWidget--hover-bg: $gw-app--buttons--hover--bg !default;
+$gw-app--MenuActionsWidget--hover-col: $gw-app--buttons--hover--col !default;
+$gw-app--MenuActionsWidget--active-bg: $gw-app--buttons--active--bg !default;
+$gw-app--MenuActionsWidget--active-col: $gw-app--buttons--active--col !default;
+
+$gw-app--MenuActionsWidget--font-size: gw-emFixed(1) !default;
+$gw-app--MenuActionsWidget--all-caps: false !default;
+$gw-app--MenuActionsWidget--expand--glyph: "caret-right-solid" !default;
+$gw-app--MenuActionsWidget--show-button-icon: true !default;
+$gw-app--MenuActionsWidget--button-icon-glyph: "action_menu" !default;
+$gw-app--MenuActionsWidget--minimized-pad-h-rem: max(0rem, $gw-app--WestPanel--minimized-view-pad-h-rem - $gw-app--MenuActionsWidget--spacing-widget-left-rem);
+$gw-app--MenuActionsWidget--minimized-margin-h-rem: null !default;
+$gw-app--MenuActionsWidget--has-button-appearance: false !default;
+
+$gw-app--MenuActionsWidget--icon-label-gap: $gw-app--SPACING-rem-S !default;
+
+
+

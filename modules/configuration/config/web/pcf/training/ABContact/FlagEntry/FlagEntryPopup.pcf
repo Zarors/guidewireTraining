@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Popup
+    beforeCommit="aFlagEntry.closeEntry()"
+    canEdit="aFlagEntry.IsEditable"
+    id="FlagEntryPopup"
+    startInEditMode="aFlagEntry.IsEditable"
+    title="DisplayKey.get(&quot;Training.FlagEntry&quot;)">
+    <LocationEntryPoint
+      signature="FlagEntryPopup( aFlagEntry : FlagEntry )"/>
+    <Variable
+      name="aFlagEntry"
+      type="FlagEntry"/>
+    <Screen>
+      <Toolbar
+        visible="aFlagEntry.IsEditable">
+        <EditButtons/>
+      </Toolbar>
+      <PanelRef
+        def="FlagEntryDV(aFlagEntry)"/>
+    </Screen>
+  </Popup>
+</PCF>

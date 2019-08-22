@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="UserSearchDV">
+    <Require
+      name="SearchCriteria"
+      type="UserSearchCriteria"/>
+    <InputColumn>
+      <TextInput
+        editable="true"
+        id="Username"
+        label="DisplayKey.get(&quot;Web.UserSearch.Username&quot;)"
+        value="SearchCriteria.Username"/>
+      <TextInput
+        editable="true"
+        id="FirstName"
+        label="(gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP) ? DisplayKey.get(&quot;Web.UserSearch.FirstNamePhonetic&quot;) : DisplayKey.get(&quot;Web.UserSearch.FirstName&quot;)"
+        value="SearchCriteria.Contact.FirstName"/>
+      <TextInput
+        editable="true"
+        id="FirstNameKanji"
+        label="DisplayKey.get(&quot;Web.UserSearch.FirstName&quot;)"
+        value="SearchCriteria.Contact.FirstNameKanji"
+        visible="gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP"/>
+      <TextInput
+        editable="true"
+        id="LastName"
+        label="(gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP) ? DisplayKey.get(&quot;Web.UserSearch.LastNamePhonetic&quot;) : DisplayKey.get(&quot;Web.UserSearch.LastName&quot;)"
+        value="SearchCriteria.Contact.Keyword"/>
+      <TextInput
+        editable="true"
+        id="LastNameKanji"
+        label="DisplayKey.get(&quot;Web.UserSearch.LastName&quot;)"
+        value="SearchCriteria.Contact.KeywordKanji"
+        visible="gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP"/>
+      <Label
+        label="DisplayKey.get(&quot;Web.UserGroupFields.Search.AdditionalRestrictions&quot;)"/>
+      <InputDivider/>
+      <RangeInput
+        editable="true"
+        id="Role"
+        label="DisplayKey.get(&quot;Web.UserSearch.Role&quot;)"
+        value="SearchCriteria.Role"
+        valueRange="SearchCriteria.getAllRoles()"
+        valueType="entity.Role"/>
+    </InputColumn>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Web.ContactSearch.Location&quot;)"/>
+      <InputSetRef
+        def="AdminUserSearchInputSet(SearchCriteria)"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputSetRef
+        def="SearchAndResetInputSet()"/>
+    </InputFooterSection>
+  </DetailViewPanel>
+</PCF>

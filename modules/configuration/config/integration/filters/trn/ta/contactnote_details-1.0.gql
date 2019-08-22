@@ -1,0 +1,8 @@
+{
+    ContactNotes {
+        ContactNoteType,
+        Confidential,
+        Subject,
+        Body
+    }
+}

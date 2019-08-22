@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Statistics for a given user/group combination"
+  entity="UserGroupStats"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="usergroupstats"
+  type="keyable">
+  <foreignkey
+    columnName="UserID"
+    desc="The given user."
+    fkentity="User"
+    name="User"
+    nullok="true"/>
+  <foreignkey
+    columnName="GroupID"
+    desc="The given group."
+    fkentity="Group"
+    name="Group"
+    nullok="true"/>
+  <column
+    desc="Date when statistics were calculated."
+    name="CalculateDate"
+    nullok="false"
+    type="datetime"/>
+</entity>

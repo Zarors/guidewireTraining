@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language xmlns="http://guidewire.com/language">
+  <GWLanguage code="ja_JP" name="Japanese (Japan)" typecode="ja_JP">
+    <LinguisticSearchCollation strength="primary"/>
+    <SortCollation strength="primary"/>
+  </GWLanguage>
+</Language>

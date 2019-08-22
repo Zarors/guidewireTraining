@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="PendingContactChangeConfigurationPlugin">
+  <plugin-gosu
+    gosuclass="gw.plugin.contact.pendingchange.PendingContactChangeConfigurationPluginImpl"/>
+</plugin>

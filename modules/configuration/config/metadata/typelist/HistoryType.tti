@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of claim/exposure history"
+  name="HistoryType"
+  platform="true">
+  <typecode
+    code="custom"
+    desc="A custom history event happened; see CustomType for details"
+    name="Custom"/>
+  <typecode
+    code="policyedited"
+    desc="The policy was edited, and thus marked unverified"
+    name="Policy edited"/>
+  <typecode
+    code="approval"
+    desc="A referral was approved/rejected"
+    name="Approval or Rejection"/>
+</typelist>

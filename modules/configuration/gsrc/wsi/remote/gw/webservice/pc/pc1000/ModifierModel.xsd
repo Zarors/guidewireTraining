@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.modifiermodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.ratefactormodel" schemaLocation="RateFactorModel.xsd"/>
+  <xs:element name="Modifier" type="Modifier" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.modifiermodel"/>
+  <xs:complexType name="Modifier">
+    <xs:sequence>
+      <xs:element name="BooleanModifier" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="DateModifier" type="xs:dateTime" minOccurs="0" nillable="true" gw:type="java.util.Date"/>
+      <xs:element name="Eligible" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="Justification" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="PatternCode" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="RateFactors" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="RateFactor" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.ratefactormodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RateModifier" type="xs:decimal" minOccurs="0" nillable="true" gw:type="java.math.BigDecimal"/>
+      <xs:element name="State" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="TypeKeyModifier" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="ValueFinal" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Workflow elapsed and execution time statistics aggregated by workflow step.  Elapsed time is the total time spent from step entry to completion.  Execution time is time spent on processing, excluding time spent waiting on triggers, activities, or timeouts."
+  entity="WorkflowStepStats"
+  exportable="false"
+  extendable="false"
+  final="true"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="workflowstepstats"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowStepStatsPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowStepStatsImpl"/>
+  <typekey
+    desc="Type of the workflow."
+    name="WorkflowType"
+    nullok="false"
+    setterScriptability="hidden"
+    typelist="Workflow"/>
+  <column
+    desc="Version of the workflow process used, if this uses an internal workflow"
+    name="ProcessVersion"
+    nullok="false"
+    setterScriptability="hidden"
+    type="integer"/>
+  <column
+    desc="ID of the workflow step."
+    name="StepName"
+    nullok="false"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <column
+    desc="The app server ID."
+    name="ServerID"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Minimum system time spent actively processing any occurrence of this step, in millis."
+    name="ExecTimeMin"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Maximum system time spent actively processing any occurrence of this step, in millis."
+    name="execTimeMax"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Average system time spent actively processing occurrences of this step, in millis."
+    name="ExecTimeMean"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Standard deviation of system time spent actively processing occurrences of this step, in millis."
+    name="ExecTimeStdDev"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Minimum elapsed time spent processing any occurrence of this step, in millis."
+    name="ElapsedTimeMin"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Maximum elapsed time spent processing any occurrence of this step, in millis."
+    name="ElapsedTimeMax"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Average elapsed time spent processing occurrences of this step, in millis."
+    name="ElapsedTimeMean"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Standard deviation of elapsed time spent processing occurrences of this step, in millis."
+    name="ElapsedTimeStdDev"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <column
+    desc="Total number of steps that completed within the aggregation period."
+    name="Executions"
+    nullok="false"
+    setterScriptability="hidden"
+    type="integer"/>
+  <column
+    desc="Start of the statistics aggregation period.  Statistics were computed from steps completing after this time."
+    name="StartTime"
+    nullok="false"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="End of the statistics aggregation period.  Statistics were computed from steps completing on or before this time."
+    name="EndTime"
+    nullok="false"
+    setterScriptability="hidden"
+    type="datetime"/>
+</entity>

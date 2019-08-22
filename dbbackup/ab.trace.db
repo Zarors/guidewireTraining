@@ -1,0 +1,555 @@
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VALIDATIONISSUE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_validationissue [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PERSONALDATATAGVALUE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_personaldatatagvalue [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTTIER" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contacttier [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTDESTRUCTSTATUSCAT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactdestructstatuscat [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_UPGRADEEXECUTIONTIMETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_upgradeexecutiontimetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTDESTRUCTIONSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactdestructionstatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATEFIELDSTOSEARCHTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datefieldstosearchtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ERRORCATEGORY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_errorcategory [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ACTIVITYCATEGORY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_activitycategory [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LEGALCASEREPORTSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_legalcasereportstatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ARCHIVESTATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_archivestate [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATESEARCHTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datesearchtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CURRENCY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_currency [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATAGENSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datagenstatustype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKITEMSETSTATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workitemsetstate [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DOCUMENTSECURITYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_documentsecuritytype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_REVIEWSERVICETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_reviewservicetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_EMPLOYMENTSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_employmentstatustype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ASSIGNMENTSELECTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_assignmentselectiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SQLSTATEMENTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_sqlstatementtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOADERRORTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_loaderrortype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MANAGERRELATIONSHIPTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_managerrelationshiptype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contact [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_RULESETTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_rulesettype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_QUESTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_questiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_TABLEUPDATESTATSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_tableupdatestatstype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LEGALCASETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_legalcasetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PAYPERIODTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_payperiodtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_USERATTRIBUTESUBTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_userattributesubtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VENUETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_venuetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONSISTENCYCHECKTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_consistencychecktype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_BANKACCOUNTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_bankaccounttype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOWACTIVESTATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflowactivestate [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_NOTETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_notetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_REGIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_regiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ADDRESSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_addresstype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LEASETERMINATIONREASON" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_leaseterminationreason [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_USEREXPERIENCETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_userexperiencetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_GEOCODESTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_geocodestatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOWSTATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflowstate [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ILELEMENTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_ilelementtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOOKUPCOLUMNDATATYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_lookupcolumndatatype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MERGECONFLICTRESOLUTION" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_mergeconflictresolution [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_NOTETOPICTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_notetopictype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SPECIALTYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_specialtytype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_GROUPTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_grouptype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VALIDATIONISSUETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_validationissuetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_JURISDICTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_jurisdictiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTMATCHRESULTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactmatchresulttype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LEDGERSIDE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_ledgerside [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ETLSTRINGS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_etlstrings [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_FLAGENTRYREASON" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_flagentryreason [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WEEKDAYS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_weekdays [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTNOTETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactnotetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATACHANGESTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datachangestatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_BUILDINGTYPE_EXT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_buildingtype_ext [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_UNITOFDISTANCE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_unitofdistance [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_BATCHPROCESSTYPEUSAGE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_batchprocesstypeusage [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_STRINGCRITERIONMODE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_stringcriterionmode [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PHONECOUNTRYCODE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_phonecountrycode [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATAGENACTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datagenactiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_REVIEWCATEGORY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_reviewcategory [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTCLASS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactclass [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MESSAGEDESTINATIONSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_messagedestinationstatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_EFFDATEDCHANGETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_effdatedchangetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_TAXSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_taxstatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VENDORAVAILABILITYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_vendoravailabilitytype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_QUESTIONFORMAT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_questionformat [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_STATEABBREVIATION" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_stateabbreviation [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOADCOMMANDTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_loadcommandtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SAMPLETHEME" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_sampletheme [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PARAMETERTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_parametertype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LEGALSPECIALTY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_legalspecialty [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PURGETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_purgetype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATADISTRIBUTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datadistributiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_UPDATEOP" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_updateop [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DOCUMENTSECTION" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_documentsection [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PROFILERCONFIG" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_profilerconfig [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_NOTESECURITYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_notesecuritytype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOWLOGENTRY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflowlogentry [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ASSIGNMENTSEARCHTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_assignmentsearchtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOADFACTORTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_loadfactortype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOWACTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflowactiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VENDOREVALUATIONSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_vendorevaluationstatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SCRIPTPARAMETERTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_scriptparametertype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SYSTEMPERMISSIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_systempermissiontype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTREL" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactrel [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_GENDERTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_gendertype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTCHANGERES" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactchangeres [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MERGECONFLICTSTRATEGY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_mergeconflictstrategy [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATEBINDATATYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_datebindatatype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VENDORSERVICESLOADSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_vendorservicesloadstatus [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_OFFICIALIDTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_officialidtype [42102-147]
+10-10 23:20:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_JURISDICTION" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_jurisdiction [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VENDORTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_vendortype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SYNCHSTATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_synchstate [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DOCUMENTSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_documentstatustype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_STARTUPPAGE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_startuppage [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ARCHIVESOURCESTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_archivesourcestatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_STATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_state [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LANGUAGETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_languagetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_HISTORY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_history [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOCALETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_localetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MANAGEWORKFLOWACTIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_manageworkflowactiontype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_COUNTRY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_country [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PENDINGCONTACTCHANGE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_pendingcontactchange [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ABCONTACTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_abcontacttype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PROXIMITYSEARCHSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_proximitysearchstatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LEGALCASESTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_legalcasestatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_NAMESUFFIX" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_namesuffix [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_EXTERNALTOOLTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_externaltooltype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTSEARCHRESULTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactsearchresulttype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PRIMARYCOLOR" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_primarycolor [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DBUPDATESTATSRUNNERTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_dbupdatestatsrunnertype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PRIORITY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_priority [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PHONETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_phonetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_STARTPOINTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_startpointtype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VALIDATIONLEVEL" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_validationlevel [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOWHANDLER" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflowhandler [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_BATCHPROCESSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_batchprocesstype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_TIMEZONETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_timezonetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTTAGTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contacttagtype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTAPPROVALSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactapprovalstatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SYSTEMUSERTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_systemusertype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_COMPONENTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_componenttype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ABRESULTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_abresulttype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ADJUDICATIVEDOMAIN" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_adjudicativedomain [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_INCLUDEDAYSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_includedaystype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CUSTOMHISTORYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_customhistorytype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PENDINGCONTACTCHANGEVIEW" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_pendingcontactchangeview [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_HISTORYEVENTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_historyeventtype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ACTIVITYSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_activitystatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SEARCHRESULT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_searchresult [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTLINKSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactlinkstatustype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VACATIONSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_vacationstatustype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ACTIVITYCLASS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_activityclass [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ACTIVITYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_activitytype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_AUTOSYNC" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_autosync [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKCAPACITY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workcapacity [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_VERIFICATIONSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_verificationstatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_HISTORYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_historytype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DESTRUCTIONREQUESTSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_destructionrequeststatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_TAXFILINGSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_taxfilingstatustype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKITEMSTATUSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workitemstatustype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DOCUMENTTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_documenttype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DOCTORCATEGORYTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_doctorcategorytype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_UPGRADEDBSTORAGESETTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_upgradedbstoragesettype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_NAMEPREFIX" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_nameprefix [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CATASTROPHETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_catastrophetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ABCONTACT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_abcontact [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_FAILOVERSTATE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_failoverstate [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOADERCALLBACKTIMETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_loadercallbacktimetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_RESOURCECONTEXT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_resourcecontext [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_PRIMARYPHONETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_primaryphonetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ARCHIVEFINALSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_archivefinalstatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MARITALSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_maritalstatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ZONETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_zonetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_YESNO" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_yesno [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SORTBYRANGE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_sortbyrange [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_MEASUREMENTSYSTEM" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_measurementsystem [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_USERATTRIBUTETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_userattributetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_LOADSTEPTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_loadsteptype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ORGANIZATIONTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_organizationtype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTBIDIREL" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactbidirel [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_APPROVALSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_approvalstatus [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ENTITYSOURCETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_entitysourcetype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_SAMPLECOLOR" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_samplecolor [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_BUSINESSTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_businesstype [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_INBOUNDHISTORY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_inboundhistory [42102-147]
+10-10 23:20:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ASSIGNMENTSTATUS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_assignmentstatus [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTSEARCHTYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactsearchtype [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ACTIVITY" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_activity [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_FINANCIALSEARCHFIELD" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_financialsearchfield [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_CONTACTRELCONS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_contactrelcons [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_HOLIDAYTAGCODE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_holidaytagcode [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_FINANCIALCRITERION" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_financialcriterion [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_OFFICIALID" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_officialid [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_USERROLECONSTRAINT" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_userroleconstraint [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOWWORKITEM" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflowworkitem [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_FXRATEMARKET" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_fxratemarket [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ROLETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_roletype [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_WORKFLOW" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_workflow [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_USERROLE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_userrole [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_DATERANGECHOICETYPE" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_daterangechoicetype [42102-147]
+10-10 23:20:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ABTL_ADDRESS" not found; SQL statement:
+SELECT ID, TYPECODE FROM abtl_address [42102-147]

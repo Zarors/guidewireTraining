@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="Messages"
+    parent="Monitoring()"
+    title="DisplayKey.get(&quot;Web.Admin.Monitoring.Messages&quot;)">
+    <Screen/>
+  </Page>
+</PCF>

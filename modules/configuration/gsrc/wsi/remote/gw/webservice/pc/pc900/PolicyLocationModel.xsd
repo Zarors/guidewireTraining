@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policylocationmodel">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.accountlocationmodel" schemaLocation="AccountLocationModel.xsd"/>
+  <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policylocationmodel" name="PolicyLocation" nillable="true" type="PolicyLocation"/>
+  <xs:complexType name="PolicyLocation">
+    <xs:sequence>
+      <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.accountlocationmodel" minOccurs="0" name="AccountLocation" nillable="true" type="AccountLocation"/>
+      <xs:element minOccurs="0" name="FireProtectClass" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IndustryCode" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element gw:type="java.lang.Integer" minOccurs="0" name="LocationNum" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="TerritoryCodes" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Entry" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element gw:type="java.lang.String" minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+                </xs:sequence>
+                <xs:attribute gw:type="gw.xml.xsd.ArrayAction" name="action" type="xs:string"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

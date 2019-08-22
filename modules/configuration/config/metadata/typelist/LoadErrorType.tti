@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of load error events"
+  final="true"
+  name="LoadErrorType"
+  platform="true">
+  <typecode
+    code="consistchildren1"
+    desc="Consistent children failure found within staging tables"
+    name="Consistent children failure within staging tables"/>
+  <typecode
+    code="consistchildren2"
+    desc="Consistent children failure found between staging and source tables"
+    name="Consistent children failure between staging and sourcetables"/>
+  <typecode
+    code="requiredmatch"
+    desc="Rows found in staging table with required referencing rows in array table"
+    name="Required match"/>
+  <typecode
+    code="dtordering"
+    desc="Rows found in staging table that violate a date time ordering"
+    name="Date time ordering"/>
+  <typecode
+    code="abstractdatatype"
+    desc="Rows found in staging table with values that violate rules of an abstract data type"
+    name="Abstract data type"/>
+  <typecode
+    code="checkconstraint"
+    desc="Rows found in staging table that violate a check constraint"
+    name="Check constraint"/>
+  <typecode
+    code="uniqconstraint1"
+    desc="Rows found in staging table that violate a unique constraint"
+    name="Unique constraint within staging table"/>
+  <typecode
+    code="uniqconstraint2"
+    desc="Rows found in staging table that match rows in source table on all columns of a unique index"
+    name="Unique constraint between source and staging table"/>
+  <typecode
+    code="subtype"
+    desc="Rows found in table with invalid values for a subtype column"
+    name="Subtype"/>
+  <typecode
+    code="subtypespec"
+    desc="Rows found in table with non-null values for one or more subtype-specific columns for a different subtype"
+    name="Non-nulls in subtype-specific columns"/>
+  <typecode
+    code="nonull"
+    desc="Rows found in table with null values for one or more non-nullable columns in the source table"
+    name="Null in non-nullable column"/>
+  <typecode
+    code="nonullsubtype"
+    desc="Rows found in table with null values for one or more non-nullable columns for the subtype in the source table"
+    name="Null in non-nullable column for subtype"/>
+  <typecode
+    code="typekey"
+    desc="Rows found in table with invalid values for a typekey column"
+    name="Invalid typekey"/>
+  <typecode
+    code="foreignkey"
+    desc="Rows found in table with invalid values for a foreign key column"
+    name="Invalid foreign key"/>
+  <typecode
+    code="foreignkeynonadmin"
+    desc="Rows found in table with foreign key references to existing row in a non-admin table when only existing rows in admin tables can be referenced"
+    name="Invalid foreign key to non-admin row"/>
+  <typecode
+    code="foreignkeysub"
+    desc="Rows found in table with foreign key references to incorrect subtype"
+    name="Foreign references incorrect subtype"/>
+  <typecode
+    code="zerolengthstring"
+    desc="Rows found in table with 0-length strings in varchar columns"
+    name="0-length varchar"/>
+  <typecode
+    code="ppeerror"
+    desc="PostPopulateExecutors failures detected after populating source tables"
+    name="PostPopulateExecutor failure"/>
+  <typecode
+    code="reftoexistingrow"
+    desc="Rows found in table with foreign key references to an existing row in a source table when such references are not allowed"
+    name="Illegal reference to existing row"/>
+  <typecode
+    code="typekeyinset"
+    desc="Rows found in table include typekey values that are invalid when loading via the staging tables"
+    name="Verify typekey in set"/>
+  <typecode
+    code="typekeynotinset"
+    desc="Rows found in table include typekey values that are invalid when loading via the staging tables"
+    name="Verify typekey not in set"/>
+  <typecode
+    code="nomatchlvquery"
+    desc="Rows found in staging table by query that should return 0 rows"
+    name="Verify query returns 0 rows"/>
+  <typecode
+    code="badassignable"
+    desc="Rows found in staging table that violate rules for assignable objects"
+    name="Invalid assignable"/>
+  <typecode
+    code="reftoexistingreffedrow"
+    desc="Rows found in table with foreign key references to an existing row in a source table that is already referenced from other existing rows, when such references are not allowed"
+    name="Illegal reference to already referenced existing row"/>
+  <typecode
+    code="onetoone"
+    desc="Not exactly one row found in table for non-nullable one-to-one relationships"
+    name="Non-nullable one-to-one"/>
+  <typecode
+    code="nullableonetoone"
+    desc="More than one row found in table for nullable one-to-one relationships"
+    name="Nullable one-to-one"/>
+  <typecode
+    code="edgeforeignkey"
+    desc="Not exactly one row found in table for non-nullable edge foreign key relationships"
+    name="Non-nullable edge foreign key"/>
+  <typecode
+    code="monetaryamount"
+    desc="One or the other of the amount and currency column for a monetary amount contains null when the other does not."
+    name="MonetaryAmount inconsistent"/>
+</typelist>

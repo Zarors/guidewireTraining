@@ -1,0 +1,82 @@
+.gw-RangeRadioValueWidget,
+.gw-BooleanRadioValueWidget,
+.gw-TypeKeyRadioValueWidget,
+.gw-CheckboxGroupRangeValueWidget,
+.gw-CheckboxGroupTypeKeyValueWidget {
+
+  & > .gw-vw--value {
+    .gw-actionRangeValue > div {
+      @include gw-link();
+    }
+
+    .gw-retired {
+      @include gw-retired();
+    }
+
+    .gw-actionBooleanValue {
+      .gw-icon {
+        @include gw-clickable($gw-app--inputs--col);
+      }
+    }
+  }
+
+  .gw-radio-wrapper {
+    @include gw-convertRadioWrapper();
+    margin-right: $gw-app--RangeRadioValueWidget--value-inner-spacing;
+  }
+
+  .gw-RangeRadioValueWidget--input-group {
+    .gw-RangeRadioValueWidget--label {
+      display: inline-block;
+
+      .gw-label--inner {
+        display: inline;
+        vertical-align: middle;
+        @include gw-disabled();
+      }
+    }
+  }
+
+  .gw-RangeRadioValueWidget--icon, .gw-RangeValueWidget--icon {
+    @include gw-imgToLineHeight();
+    margin-right: $gw-app--RangeRadioValueWidget--value-inner-spacing;
+    position: relative;
+    text-align: center;
+  }
+
+  &:not(.gw-stacked) {
+    .gw-RangeRadioValueWidget--input-group {
+      .gw-RangeRadioValueWidget--label {
+        display: inline-block;
+      }
+    }
+
+    label + label {
+      margin-left: $gw-app--RangeRadioValueWidget--value-outer-spacing;
+    }
+
+    .gw-editableCheckbox + .gw-editableCheckbox { //TODO: this should probably be using the stacked and not stacked system
+      margin-top: $gw-app--SPACING-rem-S;
+    }
+  }
+
+  .gw-CheckboxGroup--inner {
+    padding-top: $gw-app--inputs--pad-v-rem;
+    padding-bottom: $gw-app--inputs--pad-v-rem;
+  }
+
+  &.gw-stacked {
+    .gw-RangeRadioValueWidget--input-group {
+      padding-top: $gw-app--inputs--pad-v-rem;
+      padding-bottom: $gw-app--inputs--pad-v-rem;
+      .gw-RangeRadioValueWidget--label {
+        display: block;
+        & + .gw-RangeRadioValueWidget--label {
+          margin-top: $gw-app--SPACING-rem-S;
+        }
+      }
+    }
+  }
+
+}
+

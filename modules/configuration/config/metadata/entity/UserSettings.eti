@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!-- UserSettings
+    BBE: This is the new style pref table... one column per preference. Extendable at the product level. -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="User settings"
+  entity="UserSettings"
+  platform="true"
+  table="usersettings"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.community.impl.UserSettingsImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.pl.domain.community.impl.UserSettingsImpl"/>
+  <fulldescription><![CDATA[
+      Stores individual User preferences for interface behavior.
+      
+    ]]></fulldescription>
+  <!-- Platform-level settings -->
+  <typekey
+    desc="The startup page for this user"
+    name="StartupPage"
+    nullok="true"
+    typelist="StartupPage"/>
+  <column
+    desc="Whether to show a print preview before printing."
+    name="ShowPrintPreview"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Whether to print page numbers when printing."
+    name="PrintPageNums"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Whether to rotate table data when printing."
+    name="RotateTables"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="The margin sizes for printing (in inches)"
+    name="PrintMargins"
+    nullok="true"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="1"/>
+    <columnParam
+      name="precision"
+      value="2"/>
+  </column>
+  <column
+    desc="The date/time when the canceled Activities alert bar was last dismissed"
+    name="CancelAlertDismiss"
+    nullok="true"
+    type="datetime"/>
+</entity>

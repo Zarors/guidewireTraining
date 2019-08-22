@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization
+   xmlns="http://guidewire.com/xml"
+   xmlns:tns="http://guidewire.com/xml"
+   xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+   xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <RuleSetTreeExport>
+    <rule
+       active="true"
+       entity-name="MessageContext"
+       id="-3927815109155108034"
+       name="Event Fired"
+       public-id="-3927815109155108034"
+       rule-set-type="EM"
+       xsi:type="RuleNode">
+      <export>true</export>
+      <res-ctx length="0"/>
+    </rule>
+    <ordered-children length="1">
+      <item-0>-6644484040772374617</item-0>
+    </ordered-children>
+  </RuleSetTreeExport>
+</serialization>

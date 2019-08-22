@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Worksheet
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="UserPreferencesWorksheet"
+    startInEditMode="true"
+    tabLabel="DisplayKey.get(&quot;Web.UserPreferences&quot;)"
+    title="DisplayKey.get(&quot;Web.UserPreferences&quot;)">
+    <LocationEntryPoint
+      signature="UserPreferencesWorksheet()"/>
+    <Scope
+      location="*"/>
+    <Variable
+      initialValue="User.util.CurrentUser"
+      name="User"
+      type="User"/>
+    <Variable
+      initialValue="User.getOrCreateUserSettings()"
+      name="UserSettings"
+      type="UserSettings"/>
+    <ScreenRef
+      def="UserPreferencesScreen(UserSettings, User)"/>
+  </Worksheet>
+</PCF>

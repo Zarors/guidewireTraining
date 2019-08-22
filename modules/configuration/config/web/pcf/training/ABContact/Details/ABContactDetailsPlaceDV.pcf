@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ABContactDetailsPlaceDV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        id="NameLabel"
+        label="DisplayKey.get(&quot;Training.Name&quot;)"/>
+      <TextInput
+        editable="true"
+        id="Name"
+        label="DisplayKey.get(&quot;Training.Name&quot;)"
+        required="true"
+        value="(anABContact as ABPlace).Name"/>
+      <InputSetRef
+        def="ContactInsightsInputSet(anABContact)"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

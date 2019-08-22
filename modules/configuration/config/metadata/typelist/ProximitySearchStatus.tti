@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Categorize the geocode status of an address"
+  final="true"
+  name="ProximitySearchStatus"
+  platform="true">
+  <typecode
+    code="failed"
+    desc="This category includes the following geocode status: failure"
+    name="Failed"/>
+  <typecode
+    code="notyetsearchable"
+    desc="This category includes the following geocode status: none"
+    name="Not Yet Searchable"/>
+  <typecode
+    code="searchable"
+    desc="This category includes the following geocode status: exact, street, city, postalcode"
+    name="Searchable"/>
+</typelist>

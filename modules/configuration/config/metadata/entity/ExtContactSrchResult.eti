@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  ExtContactSrchResult  ==================================================================== -->
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Results of an external contact search containing a set of contact summary objects."
+  entity="ExtContactSrchResult"
+  platform="true"
+  supertype="SearchResult">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.ExtContactSrchResultPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ExtContactSrchResultImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.ExtContactSrchResultInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ExtContactSrchResultImpl"/>
+  <fulldescription><![CDATA[<p>
+      Results of an external contact search ( <code>IContactSearchAdapter.searchContacts()</code>) containing a set of
+      contact summary objects. Not all resulting contacts may be returned.  If the matching results exceeds the maximum
+      number of result rows, then only the system returns only the first <i>n</i> contact summary objects.
+      See <code>IContactSearchAdapter</code> for details about external searches.</p>
+    ]]></fulldescription>
+</subtype>

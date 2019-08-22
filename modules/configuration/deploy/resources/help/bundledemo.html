@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Bundle Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ghelp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p class="heading1">Bundles Demo</p>
+
+<p class="heading2">What Are Bundles?</p>
+
+<p class="body">A Guidewire bundle is a set of persistable in-memory objects that are saved to the database as a unit. Typically, a Guidewire bundle corresponds to a database transaction. In some situations, Gosu code needs to manually manipulate the bundle, which could include:</p>
+
+<ul class="body">
+	<li><p class="body">Modifying objects in the bundle</li>
+	<li><p class="body">Creating new objects in the bundle</li>
+	<li><p class="body">Adding objects from the database to the bundle</li> 
+	<li><p class="body">Saving all objects in the bundle to the database</li>
+</ul>
+
+<p class="heading2">What Is the Bundle Demo?</p>
+
+<p class="body">The Bundle Demo is a set of controls for executing code that manually manipulates a bundle. (The code itself can be found in: trainingapp.demo.gosu.BundleExamples.)</p>
+
+<p class="body">There are three sets of controls. All of the controls:
+<ol class="body">
+	<li><p class="body">Add a specified company to the current bundle,</li>
+	<li><p class="body">Increment that company's EmployeeScore by 10,</li>
+	<li><p class="body">Create a new ContactNote to document the change, and</li>
+	<li><p class="body">Commit the changes</li>
+</ol>
+
+<p class="body">The three controls differ in how the company is added to the bundle.</p>
+
+<p class="heading2">How Do I Use The Demo?</p>
+
+<p class="body">There are three different scenarios you can execute.</p>
+
+<p class="heading3">Scenario 1: LoadByPublicID()</p>
+
+<p class="body">The first set of controls let you specify a company by public ID. When you click Increment Score, the company with the given publicID is added to the bundle using LoadByPublicID(). Then the score is incremented, a note is created, and the changes are saved.</p>
+
+<p class="body">To execute this scenario, you will need a valid public ID for an existing company. You can do this by searching for and selecting a company from the Search tab. Once you select the company, its ID is displayed on the Contact tab's Summary screen. The public ID is "ab:" plus the ID. (For example, Albertson's has an ID of 61 and a public ID of "ab:61".)
+
+<p class="body">This scenario executes the following method: trainingapp.demo.gosu.BundleExamples.incrementEmployeeScoreByLoadBy().</p>
+
+<p class="heading3">Scenario 2: Foreign Key</p>
+
+<p class="body">The second set of controls let you specify a company by selecting a person. When you click Increment Score, the company that is the employer for the given person is added to the bundle using the person's Employer foreign key. (If the person's Employer field is null, then no company is loaded into the bundle.) The company's score is incremented, a note is created, and the changes are saved.</p>
+
+<p class="body">Note that, in the sample data, there is no person with an employer. To execute this scenario, you must first add an employer to a given person. (You can do this by going to the person and then modifying the Employer field on the Detail screen's Person Info card.) Then, you can use that person to identify the company.</p>
+
+<p class="body">This scenario executes the following method: trainingapp.demo.gosu.BundleExamples.incrementEmployeeScoreByForeignKey().</p>
+
+<p class="heading3">Scenario 3: Query</p>
+
+<p class="body">The third set of controls let you specify a company by name. When you click Increment Score, a query locates the company with the given name. This company is added to the bundle. Then the score is incremented, a note is created, and the changes are saved.</p>
+
+<p class="body">This scenario executes the following method: trainingapp.demo.gosu.BundleExamples.incrementEmployeeScoreByQuery().</p>
+
+<p class="heading2">How Do I Know The Code Worked?</p>
+
+<p class="body">Each click of an Increment Score button makes three changes to the Bundle Demo screen:</p>
+
+<ul class="body">
+	<li><p class="body">The Results field under the button shows the name of the company, the old score, and the new score.</li>
+	<li><p class="body">The company is loaded into the "Most Recently Incremented Company" detail view on the far right side of the screen.</li>
+	<li><p class="body">The name of the company in the "Most Recently Incremented Company" detail view is a link that takes you to the Contact Notes screen for that company. From here, you can see the note created in the bundle.</li>
+</ul>
+
+<p class="heading2">How Does Each "Increment Score" Button Work?</p>
+
+<p class="body">Each Increment Score button calls a wrapper method, which has been declared as a PCF method called "incrementScoreXXX()", where XXX is either LoadBy, ForeignKey, or Query. Each of these functions:</p>
+
+<ol class="body">
+	<li><p class="body">Clears the inputs and result strings from any previously executed scenario</li>
+	<li><p class="body">Executes the appropriate method in trainingapp.demo.gosu.BundleExamples.</li>
+	<li><p class="body">Loads the incremented company into the "Most Recently Incremented Company" detail view.</li>
+</ol>
+
+<p class="body">You can view these wrapper methods by opening IntegrationExamplesBundlePage.pcf and going to the Code tab.</p>
+
+<p class="heading2">Why Do I Get An Entry In The "Unsaved Work" Menu When I Go To This Page?</p>
+
+<p class="body">This is a side effect of building a demo page whose purpose is to showcase functionality. You would not normally see this type of page or behavior in a production environment.</p>
+
+<p class="body">In order to make the various input fields editable, the page must be in editable mode. But because the data changes are committed by code, there is no need for Edit / Update buttons. Therefore, the page starts in edit mode and there is no control to move it back to read-only mode. The Unsaved Work menu simply registers any location which is in Edit mode, regardless of whether the data in that location has already been saved or not.</p>
+
+<p class="heading2">Where Can I Find The Code That Is Used By This Page?</p>
+<ul class="body">
+     <li><p class="body">IntegrationBundleDemoPage's Code tab</p>
+          <ul class="body">
+               <li><p class="body">incrementScoreLoadBy()</p>
+               <li><p class="body">incrementScoreForeignKey()</p>
+               <li><p class="body">incrementScoreQuery()</p>
+          </ul>
+     </li>
+     <li><p class="body">Gosu classes</p>
+          <ul class="body">
+               <li><p class="body">trainingapp.demo.gosu.BundleExamples</p>
+          </ul>
+     </li>
+</ul>
+
+</body>
+</html>

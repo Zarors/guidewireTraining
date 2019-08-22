@@ -1,0 +1,100 @@
+# Short list for dev and test purposes
+01000,St Denis Les Bourg
+01000,Bourg En Bresse
+01000,Brou
+01090,Montceaux
+01100,Veyziat
+01110,Thezillieu
+01120,Ste Croix
+01130,Nantua
+01140,Thoissey
+01150,St Sorlin En Bugey
+01160,St Martin Du Mont
+01170,Vesancy
+01190,Gorrevod
+01200,Villes
+01210,Versonnex
+01220,Divonne Les Bains
+01230,St Rambert En Bugey
+01240,St Paul De Varax
+01250,St Just
+01260,Sutrieu
+01270,Verjon
+01280,Moens
+01290,St Jean Sur Veyle
+01300,Virignin
+01310,St Martin Le Chatel
+01320,St Nizier Le Desert
+01330,Ste Olive
+01340,St Sulpice
+01350,Vongnes
+01360,La Valbonne
+01370,Treffort Cuisiat
+01380,Dommartin
+01390,St Jean De Thurigneux
+01400,Sulignat
+01410,Mijoux
+01420,Surjoux
+01430,St Martin Du Frene
+01440,Viriat
+01450,Merignat
+01460,Volognat
+01470,Montagnieu
+01480,Villeneuve
+01500,St Maurice De Remens
+01510,St Martin De Bavel
+01540,St Julien Sur Veyle
+01550,Farges
+01560,St Jean Sur Reyssouze
+01580,Matafelon Granges
+01590,Dortan
+01600,Ste Euphemie
+01620,St Laurent Sur Saone
+01630,St Jean De Gonville
+01640,St Jean Le Vieux
+01660,Vandeins
+01680,Marchamp
+01700,St Maurice De Beynost
+01710,Thoiry
+01800,St Jean De Niost
+01810,Martignat
+01851,Marboz
+01960,Peronnas
+01990,St Trivier Sur Moignans
+02000,Urcel
+02100,St Quentin
+02110,St Martin Riviere
+02120,Tupigny
+02130,Vezilly
+02140,St Pierre Les Franquevill
+02150,Nizy Le Comte
+02160,Vassogne
+02170,Esqueheries
+02190,Variscourt
+02200,Vaurezis
+02210,St Remy Blanzy
+02220,St Mard
+02230,Fresnoy Le Grand
+02240,Surfontaine
+02250,St Pierremont
+02260,Englancourt
+02270,Montigny Sur Crecy
+02290,Tartiers
+02300,St Paul Aux Bois
+02310,Villiers St Denis
+02320,Suzy
+02330,Monthurel
+02340,Ste Genevieve
+02350,Ste Preuve
+02360,Mont St Jean
+02370,Vailly Sur Aisne
+02380,Verneuil Sous Coucy
+02390,Thenelles
+02400,Verdilly
+02410,St Nicolas Aux Bois
+02420,Vendhuile
+02430,Gauchy
+02440,Montescourt Lizerol
+02450,Oisy
+02460,Troesnes
+02470,Monnes

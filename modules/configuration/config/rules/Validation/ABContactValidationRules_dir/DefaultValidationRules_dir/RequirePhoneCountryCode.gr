@@ -1,0 +1,40 @@
+package rules.Validation.ABContactValidationRules_dir.DefaultValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleDisabled
+@gw.rules.RuleName("Require Phone Country Code")
+internal class RequirePhoneCountryCode {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+/*start00rule*/
+return aBContact.HomePhone != null
+or aBContact.WorkPhone != null
+or aBContact.FaxPhone != null
+or (aBContact typeis ABPerson ? (aBContact as ABPerson).CellPhone != null : false)
+/*end00rule*/
+}
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+/*start00rule*/
+// Rule disabled because pre-normalized phone numbers don't have country codes. Turn rule on after country codes have been set by the normalizer.
+if (aBContact.HomePhone != null and aBContact.HomePhoneCountry == null){
+  aBContact.rejectField("HomePhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Home.CountryCode.Null"), null, null)
+}
+
+if (aBContact.WorkPhone != null and aBContact.WorkPhoneCountry == null){
+  aBContact.rejectField("WorkPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Work.CountryCode.Null"), null, null)
+}
+
+if (aBContact.FaxPhone != null and aBContact.FaxPhoneCountry == null){
+  aBContact.rejectField("FaxPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Fax.CountryCode.Null"), null, null)
+}
+
+if (aBContact typeis ABPerson) {
+  var aBPerson = aBContact as ABPerson
+  if (aBPerson.CellPhone != null and aBPerson.CellPhoneCountry == null){
+    aBPerson.rejectField("CellPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Cell.CountryCode.Null"), null, null)
+  }
+}
+/*end00rule*/
+  }
+}

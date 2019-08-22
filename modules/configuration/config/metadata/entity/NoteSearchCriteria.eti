@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Non-persistent set of criteria to use in searching for a specific note."
+  entity="NoteSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.note.impl.NoteSearchCriteriaImpl"/>
+  <column
+    desc="Text search"
+    name="Text"
+    nullok="true"
+    type="mediumtext"/>
+  <typekey
+    desc="Topic search"
+    name="Topic"
+    nullok="true"
+    typelist="NoteTopicType"/>
+  <typekey
+    default="date"
+    desc="Options to sort the list of notes"
+    name="SortBy"
+    nullok="true"
+    typelist="SortByRange"/>
+  <typekey
+    desc="Language search"
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+  <foreignkey
+    columnName="AuthorID"
+    desc="Note author"
+    fkentity="User"
+    name="Author"
+    nullok="true"/>
+  <foreignkey
+    columnName="ActivityID"
+    desc="Activity note is assigned to"
+    fkentity="Activity"
+    name="Activity"
+    nullok="true"/>
+</nonPersistentEntity>

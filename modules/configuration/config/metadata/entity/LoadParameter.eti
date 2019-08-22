@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="(parameter, value) pairs for load commands."
+  entity="LoadParameter"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadparameter"
+  type="keyable">
+  <column
+    desc="Parameter name."
+    name="ParameterName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Parameter value."
+    name="ParameterValue"
+    nullok="true"
+    type="longtext"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Parent."
+    exportable="false"
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <!-- Unique index on LoadCommandID, ParameterName -->
+  <index
+    desc="(LoadCommandID, ParameterName) is unique across load parameters"
+    name="loadparameteru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="ParameterName"/>
+  </index>
+</entity>

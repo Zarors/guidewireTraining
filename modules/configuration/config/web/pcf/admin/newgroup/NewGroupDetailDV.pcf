@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="NewGroupDetailDV">
+    <Require
+      name="Group"
+      type="Group"/>
+    <InputColumn>
+      <TextInput
+        editable="true"
+        id="Name"
+        label="(gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP) ? DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.NamePhonetic&quot;) : DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Name&quot;)"
+        required="true"
+        value="Group.Name"/>
+      <TextInput
+        editable="true"
+        id="NameKanji"
+        label="DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Name&quot;)"
+        value="Group.NameKanji"
+        visible="gw.api.util.LocaleUtil.CurrentLocaleType == LocaleType.TC_JA_JP"/>
+      <TypeKeyInput
+        editable="true"
+        id="Type"
+        label="DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Type&quot;)"
+        required="true"
+        value="Group.GroupType"
+        valueType="typekey.GroupType"/>
+      <GroupInput
+        editable="true"
+        id="Parent"
+        label="DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Parent&quot;)"
+        required="true"
+        selectLocation="OrganizationGroupTreePopup.push(Group.makeOrganizationSelection())"
+        value="Group.Parent"
+        visible="true"/>
+      <UserInput
+        editable="true"
+        id="Supervisor"
+        label="DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Supervisor&quot;)"
+        required="true"
+        value="Group.Supervisor"
+        valueType="entity.User"/>
+      <ListViewInput
+        def="GroupUsersLV(Group)"
+        editable="true"
+        label="DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Users&quot;)">
+        <Toolbar>
+          <IteratorButtons
+            iterator="GroupUsersLV.GroupUsersLV"/>
+        </Toolbar>
+      </ListViewInput>
+      <ListViewInput
+        boldLabel="true"
+        def="LocalizedValuesLV(Group, { &quot;Name&quot; }, { DisplayKey.get(&quot;Web.Admin.GroupDetail.BasicDV.Name&quot;) })"
+        editable="true"
+        label="DisplayKey.get(&quot;Web.Admin.LocalizedValuesDV.Localization&quot;)"
+        labelAbove="true"
+        visible="LanguageType.getTypeKeys(false).Count &gt; 1">
+        <Toolbar
+          visible="false">
+          <IteratorButtons
+            iterator="LocalizedValuesLV.LocalizedFields"/>
+        </Toolbar>
+      </ListViewInput>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

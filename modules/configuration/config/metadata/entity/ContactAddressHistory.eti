@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Contact-associated Address-specific history events"
+  entity="ContactAddressHistory"
+  supertype="ContactHistory">
+  <implementsInterface
+    iface="gw.ab.history.entity.ContactAddressHistory"
+    impl="com.guidewire.ab.domain.history.impl.ContactAddressHistoryImpl"/>
+  <foreignkey
+    columnName="ContactAddressID"
+    desc="The related contact-associated address."
+    fkentity="Address"
+    name="ContactAddress"
+    nullok="false"/>
+</subtype>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="the type of a given catastrophe"
+  final="false"
+  name="CatastropheType">
+  <typecode
+    code="iso"
+    desc="ISO"
+    name="ISO"
+    priority="1"/>
+  <typecode
+    code="internal"
+    desc="Internal"
+    name="Internal"
+    priority="2"/>
+</typelist>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  Maximum key values for each keyable entity type. Used by KeyGenerator
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Maximum keys for each keyable entity type, used by key generator."
+  entity="MaxKey"
+  extendable="false"
+  loadable="false"
+  lockable="true"
+  platform="true"
+  table="maxkey"
+  type="nonkeyable">
+  <column
+    desc="Name of table for keyable entity type"
+    name="EntityTableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="Current maximum key for the entity type"
+    name="MaxKey"
+    nullok="false"
+    type="softentityreference"/>
+  <index
+    desc="EntityTableName is unique within max key table"
+    name="maxkeyu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="EntityTableName"/>
+  </index>
+</entity>

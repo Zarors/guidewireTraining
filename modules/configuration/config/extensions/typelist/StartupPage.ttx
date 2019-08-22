@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Startup page"
+  name="StartupPage">
+  <typecode
+    code="Search"
+    desc="Search"
+    name="Search"/>
+  <typecode
+    code="Admin"
+    desc="Admin"
+    name="Admin"/>
+</typelistextension>

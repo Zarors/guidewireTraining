@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Capacity in which employee returned to work"
+  final="false"
+  name="WorkCapacity">
+  <typecode
+    code="fullduty"
+    desc="Full duty"
+    name="RTW - full duty"
+    priority="2"/>
+  <typecode
+    code="modifiedduty"
+    desc="Modified duty"
+    name="RTW - modified duty"
+    priority="3"/>
+  <typecode
+    code="estimatedrtw"
+    desc="Estimated RTW date"
+    name="Estimated RTW date"
+    priority="1"/>
+  <typecode
+    code="stopped_work"
+    desc="Stopped work"
+    name="Stopped work"
+    priority="4"/>
+</typelist>

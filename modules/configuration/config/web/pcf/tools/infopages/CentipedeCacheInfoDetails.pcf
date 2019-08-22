@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Page
+    canEdit="false"
+    id="CentipedeCacheInfoDetails"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.Details&quot;)">
+    <Variable
+      initialValue="gw.api.cache2.CacheInfoPageHelper.INSTANCE"
+      name="pageHelper"
+      type="gw.api.cache2.CacheInfoPageHelper"/>
+    <Screen>
+      <Toolbar>
+        <ToolbarButton
+          action="pageHelper.reload()"
+          id="RefreshButton"
+          label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+      </Toolbar>
+      <PanelRow>
+        <PanelColumn>
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.AgeDistributionTitle&quot;)"/>
+            <PanelRow
+              id="AgeDistributionTitleID"/>
+          </PanelRef>
+          <PanelIterator
+            elementName="snapshot"
+            id="AgeDistributionIterator"
+            value="pageHelper.Snapshots.reverse()"
+            valueType="com.guidewire.pl.system.cache2.CacheStatisticsSnapshot[]">
+            <PanelRef
+              def="CentipedeAgeDistributionSmallChart(pageHelper, snapshot)"/>
+          </PanelIterator>
+        </PanelColumn>
+        <PanelColumn>
+          <PanelRef>
+            <TitleBar
+              title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.WhatIsInTheCacheTitle&quot;)"/>
+            <PanelRow
+              id="CacheContentTitleID"/>
+          </PanelRef>
+          <PanelIterator
+            elementName="contentsMap"
+            id="ContentsMapIterator"
+            value="pageHelper.ContentsMapByAge"
+            valueType="java.util.ArrayList&lt;gw.util.Pair&lt;java.lang.Integer, java.util.ArrayList&lt;gw.util.Pair&lt;java.lang.String, java.lang.Integer&gt;&gt;&gt;&gt;">
+            <PanelRef
+              def="CentipedeCacheContentsChart(contentsMap)"/>
+          </PanelIterator>
+        </PanelColumn>
+      </PanelRow>
+    </Screen>
+  </Page>
+</PCF>

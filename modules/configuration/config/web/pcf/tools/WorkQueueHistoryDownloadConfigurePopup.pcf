@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    afterEnter="initDates()"
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="WorkQueueHistoryDownloadConfigurePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.DownloadHistoryConfigure&quot;, WorkQueueDisplayInfo.QueueType.Code)">
+    <LocationEntryPoint
+      signature="WorkQueueHistoryDownloadConfigurePopup(WorkQueueDisplayInfo : gw.api.web.tools.WorkQueueDisplayInfo)"/>
+    <Variable
+      initialValue="new gw.api.web.tools.WorkQueueInfoPage()"
+      name="Page"
+      type="gw.api.web.tools.WorkQueueInfoPage"/>
+    <Variable
+      name="StartDate"
+      type="java.util.Date"/>
+    <Variable
+      name="EndDate"
+      type="java.util.Date"/>
+    <Variable
+      name="WorkQueueDisplayInfo"
+      type="gw.api.web.tools.WorkQueueDisplayInfo"/>
+    <Screen>
+      <Verbatim
+        id="NoHistoryText"
+        label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.DownloadHistory.NoHistory&quot;)"
+        labelStyleClass="alertBar"
+        visible="WorkQueueDisplayInfo.WriterLastExecutionTime == null"/>
+      <DetailViewPanel>
+        <InputColumn>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            id="StartDate"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.DownloadHistory.StartDate&quot;)"
+            required="true"
+            value="StartDate"/>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            id="EndDate"
+            label="DisplayKey.get(&quot;Web.InternalTools.WorkQueueLv.DownloadHistory.EndDate&quot;)"
+            required="true"
+            value="EndDate"/>
+          <ButtonInput
+            action="completeDownload()"
+            available="WorkQueueDisplayInfo.WriterLastExecutionTime != null"
+            download="true"
+            hideIfDisabled="false"
+            id="download"
+            value="DisplayKey.get(&quot;Button.Complete.Download&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[uses gw.api.util.DateUtil
+
+function initDates() {
+  EndDate = DateUtil.currentDate()
+  StartDate = DateUtil.trimToMidnight(EndDate)
+}
+
+function completeDownload() {
+  if (StartDate.compareTo(EndDate) > 0) {
+    throw new gw.api.util.DisplayableException(DisplayKey.get("Web.InternalTools.WorkQueueLv.DownloadHistory.StartDateCannotBeGreaterThanEndDate"))
+  }
+  var startDateAdjusted = DateUtil.trimToMidnight(StartDate)
+  var endDateAdjusted = DateUtil.endOfDay(EndDate)
+  Page.downloadHistory(WorkQueueDisplayInfo, startDateAdjusted, endDateAdjusted)
+}]]></Code>
+  </Popup>
+</PCF>

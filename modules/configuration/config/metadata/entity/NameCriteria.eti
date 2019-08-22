@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="NameCriteria"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.NameCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.custom.impl.NameCriteriaImpl"/>
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.custom.impl.NameCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.impl.NameCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.custom.impl.NameCriteriaImpl"/>
+  <fulldescription><![CDATA[
+        A component used as part of a larger search criteria entity. Encapsulates the information
+        entered by the user to restrict the search to particular contact, specified by some combination
+        of name, tax ID and official ID. One NameCriteria entity will be used for each field that needs to
+        be restricted. For example if a search criteria was being constructed to specify searches for
+        an entity which had two different contact fields, then the search criteria would likely
+        contain two distinct NameCriteria components.
+      
+    ]]></fulldescription>
+  <column
+    desc="The first name, if searching for a person."
+    name="FirstName"
+    nullok="true"
+    type="firstname"/>
+  <column
+    desc="The last name, if searching for a person."
+    name="LastName"
+    nullok="true"
+    type="lastname"/>
+  <column
+    desc="The contact's tax identification number."
+    name="TaxId"
+    nullok="true"
+    type="ssn"/>
+  <column
+    desc="Field matched against the OfficialIDValue of the OfficialID objects associated with Contacts."
+    name="OfficialId"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="The company name, if searching for a company."
+    name="CompanyName"
+    nullok="true"
+    type="companyname"/>
+  <column
+    desc="The last name or the first name."
+    name="Name"
+    nullok="true"
+    type="shorttext"/>
+</nonPersistentEntity>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<plugin
+  name="IDocumentContentSource">
+  <plugin-gosu
+    gosuclass="gw.plugin.document.impl.AsyncDocumentContentSource">
+    <param
+      name="SynchedContentSource"
+      value="gw.plugin.document.impl.ServletBackedDocumentContentSource"/>
+    <param
+      name="TrySynchedAddFirst"
+      value="true"/>
+    <param
+      name="DMS"
+      value="http://localhost:8280/ab/service/dms/"/>
+    <param
+      name="gw.document.DMSServlet.root-dir"
+      value="/dms"/>
+  </plugin-gosu>
+</plugin>

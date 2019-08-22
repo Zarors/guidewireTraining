@@ -1,0 +1,5 @@
+swagger: '2.0'
+x-gw-combine:
+- gw.pl.framework.basic_auth-1.0
+- gw.pl.framework.standard_definitions-1.0
+- gw.pl.framework.api_docs-1.0

@@ -1,0 +1,17 @@
+//InputSections are basically InputColumns with display:block that sit at the top or bottom of a DV.
+//They should have matching padding, and display their Inputs the same way an IC does.
+//See InputColumnWidget.scss for the child Input styling.
+.gw-InputSectionWidget, .gw-InputHeaderSectionWidget, .gw-InputFooterSectionWidget {
+  display: block;
+  // Position to other widgets
+  margin-top: $gw-app--InputColumn--spacing-widget-top-rem;
+  margin-left: $gw-app--InputColumn--spacing-widget-left-rem;
+  margin-right: $gw-app--InputColumn--spacing-widget-right-rem;
+  margin-bottom: $gw-app--InputColumn--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--InputColumn--spacing-inner-top-rem;
+  padding-left: $gw-app--InputColumn--spacing-inner-left-rem;
+  padding-right: $gw-app--InputColumn--spacing-inner-right-rem;
+  padding-bottom: $gw-app--InputColumn--spacing-inner-bottom-rem;
+}

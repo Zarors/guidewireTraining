@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+  <Zones countryCode="JP">
+    <Zone code="postalcode" fileColumn="1" granularity="1" regionMatchOrder="1" unique="true">
+      <AddressZoneValue>
+        Address.PostalCode
+      </AddressZoneValue>
+    </Zone>
+
+    <Zone code="prefecture" fileColumn="2" granularity="3" regionMatchOrder="2">
+      <AddressZoneValue>
+        Address.State.Code
+      </AddressZoneValue>
+      <Links>
+        <Link toZone="postalcode"/>
+      </Links>
+    </Zone>
+
+    <Zone code="citykanji" fileColumn="3" granularity="2">
+      <AddressZoneValue>
+        Address.CityKanji
+      </AddressZoneValue>
+      <Links>
+        <Link toZone="postalcode"/>
+      </Links>
+    </Zone>
+
+    <Zone code="city" fileColumn="4">
+      <AddressZoneValue>
+        Address.City
+      </AddressZoneValue>
+      <Links>
+        <Link toZone="postalcode"/>
+      </Links>
+    </Zone>
+  </Zones>
+</ZoneConfig>

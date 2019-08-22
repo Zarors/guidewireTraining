@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of phone numbers"
+  final="false"
+  name="PrimaryPhoneType"
+  platform="true">
+  <typecode
+    code="home"
+    desc="Home"
+    name="Home"
+    priority="2"/>
+  <typecode
+    code="work"
+    desc="Work"
+    name="Work"
+    priority="1"/>
+  <typecode
+    code="mobile"
+    desc="Mobile"
+    name="Mobile"
+    priority="3"/>
+</typelist>

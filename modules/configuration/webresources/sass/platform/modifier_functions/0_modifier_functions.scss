@@ -1,0 +1,151 @@
+/*
+Should be used to define any rem value representing a sizing length, that is NOT explicitly defining actual size of the font for an element.
+Meaning: we want to be able to scale spacing without affecting font size.
+*/
+
+$gw-app--spacing-modifier: 1; //Not themeable per theme
+
+@function gw-remScaled($float) {
+  @if (type-of($float) != number) {
+    @error "gw-remScaled requires a numeric value: #{$float}";
+  }
+  // If the numeric value already has an rem unit, then just multiply and return
+  @if (unit($float) == "rem") {
+    @return $float * $gw-app--spacing-modifier;
+  } @else {
+    $final: ($float * $gw-app--spacing-modifier) * 1rem; //@em-allowed
+    @if (type-of($final) != number) {
+      @error "gw-remScaled final value is not a number #{$final}";
+    }
+    @return $final;
+  }
+}
+
+/*
+Should be used for any rem value that is NOT expected to be scaled by gw-mod--pad. ie font sizes, or widths containing text.
+*/
+@function gw-remFixed($float) {
+  @if (type-of($float) != number) {
+    @error "gw-remFixed requires a numeric value: #{$float}";
+  }
+  // If the numeric value already has an em unit, then return it
+  @if (unit($float) == 'rem') {
+    @return $float;
+  } @else {
+    $final: $float * 1rem; //@em-allowed
+    @if (type-of($final) != number) {
+      @error "gw-remFixed final value is not a number #{$final}";
+    }
+    @return $final;
+  }
+}
+
+/*
+Should be used for any em value that is NOT expected to be scaled by gw-mod--pad. ie font sizes, or widths containing text.
+*/
+@function gw-emFixed($float) {
+  @if (type-of($float) != number) {
+    @error "gw-emFixed requires a numeric value: #{$float}";
+  }
+  // If the numeric value already has an em unit, then return it
+  @if (unit($float) == 'em') {
+    @return $float;
+  } @else {
+    $final: $float * 1em; //@em-allowed
+    @if (type-of($final) != number) {
+      @error "gw-emFixed final value is not a number #{$final}";
+    }
+    @return $final;
+  }
+}
+
+/*
+It is very unlikely that you should be using this. The entire application is based on em sizing and scaling.
+But anywhere that requires a fixed px length value or font size needs to use this function to prevent
+gradle from throwing warnings.
+*/
+@function gw-pxFixed($float) {
+  @if (type-of($float) != number) {
+    @error "gw-pxFixed requires a numeric value: #{$float}";
+  }
+  // If the numeric value already has an em unit, then return it
+  @if (unit($float) == 'px') {
+    @return $float;
+  } @else {
+    $final: $float * 1px; //@px-allowed
+    @if (type-of($final) != number) {
+      @error "gw-pxFixed final value is not a number #{$final}";
+    }
+    @return $final;
+  }
+}
+
+$gw-font-weights: (
+        light: 300,
+        regular: 400,
+        normal: 400,
+        semibold: 600,
+        semi-bold: 600,
+        bold: 700,
+        extra-bold: 800,
+        extrabold: 800
+);
+
+$gw-app--line-height-unitless: 1.2; //Not themeable per theme
+
+@function gw-weight($name) {
+  @return map-get($gw-font-weights, to-lower-case($name));
+};
+
+@function gw-lineHeightTimes($float) {
+  @if (type-of($float) != number) {
+    @error "gw-lineHeightTimes requires a numeric value: #{$float}";
+  }
+
+  $final: $float * $gw-app--line-height-unitless;
+  @if (type-of($final) != number) {
+    @error "gw-lineHeightTimes final value is not a number #{$final}";
+  }
+  @return $final;
+}
+
+@function gw-stripUnit($length) {
+  @if type-of($length) == 'number' and not unitless($length) {
+    @return $length / ($length * 0 + 1);
+  }
+
+  @return $length;
+}
+
+@function gw-lineHeightStripped() {
+  @return gw-stripUnit($gw-app--line-height-unitless);
+}
+
+@function gw-lineHeightInFixedEms() {
+  @return gw-emFixed($gw-app--line-height-unitless);
+}
+
+@function gw-applicationBaseFontSizeStripped() {
+  @return gw-stripUnit($gw-app--base-font-size--in-px);
+}
+
+@function gw-stringReplace($str, $substr, $insert: '') {
+  $index: str-index($str, $substr);
+
+  @if $index {
+    @return str-slice($str, 1, $index - 1) + $insert + gw-stringReplace(str-slice($str, $index + str-length($substr)), $substr, $insert);
+  }
+
+  @return $str;
+}
+
+@function gw-encodeHashSymbol($thing) {
+  $str: inspect($thing);
+  @return gw-stringReplace($str, "#", "%23");
+}
+
+// This function is later overriden with theme specific defaults. But creates odd scenarios where it isn't available at global var time, so putting this here
+// To trigger more useful warnings.
+@function gw-border($border-col, $border-w) {
+  @return $border-w solid $border-col;
+}

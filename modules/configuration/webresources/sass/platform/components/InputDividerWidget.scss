@@ -1,0 +1,20 @@
+.gw-InputDividerWidget {
+    display: block;
+    vertical-align: middle;
+
+    // Position to other widgets
+    margin-top: $gw-app--InputDivider--spacing-widget-top-rem;
+    margin-left: $gw-app--InputDivider--spacing-widget-left-rem;
+    margin-right: $gw-app--InputDivider--spacing-widget-right-rem;
+    margin-bottom: $gw-app--InputDivider--spacing-widget-bottom-rem;
+
+    // Internal padding
+    padding-top: $gw-app--InputDivider--spacing-inner-top-rem;
+    padding-left: $gw-app--InputDivider--spacing-inner-left-rem;
+    padding-right: $gw-app--InputDivider--spacing-inner-right-rem;
+    padding-bottom: $gw-app--InputDivider--spacing-inner-bottom-rem;
+
+    min-height: $gw-app--InputDivider--height-px;
+
+    background-color: $gw-app--InputDivider--bg;
+}

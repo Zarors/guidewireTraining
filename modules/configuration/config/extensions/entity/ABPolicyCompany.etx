@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><extension entityName="ABPolicyCompany" xmlns="http://guidewire.com/datamodel">
+  <!-- START: Fields needed for TrainingApp "base application" -->
+    <column name="CollateralRequired" type="bit" desc="Is collateral (a deposit) required to insure this company?" default="true" nullok="true" />
+    <column name="CollateralAmount" type="integer" desc="Amount of collateral required" nullok="true" />
+    <typekey name="CompanyCollateralVerified" typelist="YesNo" typefilter="YesNoOnly" desc="YesNo only" nullok="true" />
+  <!-- END: Fields needed for TrainingApp "base application" -->
+</extension>

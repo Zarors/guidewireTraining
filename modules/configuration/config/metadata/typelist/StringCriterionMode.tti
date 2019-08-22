@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The mode of a String restriction"
+  final="false"
+  name="StringCriterionMode"
+  platform="true">
+  <typecode
+    code="Equals"
+    desc="Useful in flagging whether String restrictions should be implemented with compareEquals. This performs most quickly."
+    name="Equals"/>
+  <typecode
+    code="StartsWith"
+    desc="Useful in flagging whether String restrictions should be implemented with compareStartsWith. This performs moderately quickly."
+    name="StartsWith"/>
+  <typecode
+    code="Contains"
+    desc="Useful in flagging whether String restrictions should be implemented with compareContains. This performs most slowly."
+    name="Contains"/>
+</typelist>

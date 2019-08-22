@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Possible selection types for the assignment pop-up"
+  final="true"
+  name="AssignmentSelectionType"
+  platform="true">
+  <typecode
+    code="FromList"
+    desc="FromList"
+    name="FromList"
+    priority="1"/>
+  <typecode
+    code="FromSearch"
+    desc="FromSearch"
+    name="FromSearch"
+    priority="2"/>
+</typelist>

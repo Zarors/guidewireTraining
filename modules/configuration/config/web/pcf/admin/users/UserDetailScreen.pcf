@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="UserDetailScreen">
+    <Require
+      name="user"
+      type="User"/>
+    <Require
+      name="isNew"
+      type="boolean"/>
+    <Variable
+      initialValue="not user.Contact.Obfuscated or perm.System.editobfuscatedusercontact"
+      name="notObfuscatedOrEditObfuscatedPermission"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <Toolbar>
+      <EditButtons
+        editVisible="notObfuscatedOrEditObfuscatedPermission"
+        updateVisible="notObfuscatedOrEditObfuscatedPermission"/>
+      <ToolbarDivider
+        hideIfEditable="true"/>
+      <ToolbarButton
+        action="gw.api.web.admin.UserUtil.delete(user); AdminForward.go()"
+        available="notObfuscatedOrEditObfuscatedPermission"
+        confirmMessage="DisplayKey.get(&quot;Web.Admin.User.Delete.Warning&quot;)"
+        hideIfEditable="true"
+        id="UserDetailScreen_DeleteButtonButton"
+        label="DisplayKey.get(&quot;Web.Admin.User.DeleteButton&quot;)"
+        shortcut="L"
+        visible="user.SafeToDelete and perm.User.delete and notObfuscatedOrEditObfuscatedPermission"/>
+    </Toolbar>
+    <CardViewPanel>
+      <Card
+        id="BasicsCard"
+        title="DisplayKey.get(&quot;Web.UserDetail.Basics&quot;)"
+        visible="perm.User.view">
+        <PanelRef
+          def="UserDetailDV(user, isNew)"/>
+      </Card>
+      <Card
+        id="ProfileCard"
+        title="DisplayKey.get(&quot;Web.UserDetail.Profile&quot;)"
+        visible="perm.User.view">
+        <PanelRef
+          def="UserProfileDV(user)"/>
+      </Card>
+      <Card
+        id="RegionsCard"
+        shortcut="R"
+        title="DisplayKey.get(&quot;Web.UserDetail.Regions&quot;)"
+        visible="perm.User.view">
+        <PanelRef
+          def="UserRegionLV(user)">
+          <Toolbar>
+            <IteratorButtons
+              iterator="UserRegionLV.UserRegionLV"
+              removeShortcut="E"/>
+          </Toolbar>
+        </PanelRef>
+      </Card>
+    </CardViewPanel>
+  </Screen>
+</PCF>

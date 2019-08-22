@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- ### ==========================================================================
+  ### Type Key Type Code data distribution (owned by Type Key data distribution)
+  ### ========================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores typekey type code data distribution."
+  entity="TypeCodeCountDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="typecodecountdatadist"
+  type="keyable">
+  <column
+    desc="Name of type code."
+    name="TypeCode"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="50"/>
+  </column>
+  <column
+    desc="Count of type code for this table."
+    name="TypeCodeCount"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="TypeKeyDataDistID"
+    desc="TypeKeyDataDist for this object."
+    exportable="false"
+    fkentity="TypeKeyDataDist"
+    ignoreforevents="true"
+    name="TypeKeyDataDist"
+    nullok="false"/>
+</entity>

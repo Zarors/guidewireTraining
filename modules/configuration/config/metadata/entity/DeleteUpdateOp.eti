@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Describes a single entity update sent to the address book"
+  entity="DeleteUpdateOp"
+  platform="true"
+  supertype="UpdateOp">
+  <fulldescription><![CDATA[This non-persistent entity has been deprecated since ClaimCenter 8.0 along with the IAddressBookAdapter.]]></fulldescription>
+  <column
+    desc="Identifies the entity type.  e.g. Person, Company, or Adjudicator.  (Entity type on the application side not a ContactManager entity type)"
+    name="EntityTypeName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="An AddressBookUId of an entity in Address Book that is to be deleted."
+    name="ObjectUId"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    columnName="UpdateBatchID"
+    desc="Associated UpdateBatch."
+    fkentity="UpdateBatch"
+    getterScriptability="hidden"
+    name="UpdateBatch"
+    nullok="false"
+    setterScriptability="hidden"/>
+</subtype>

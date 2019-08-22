@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    autosaveable="false"
+    countsAsWork="false"
+    id="UserSearchPopup"
+    returnType="User"
+    title="DisplayKey.get(&quot;Web.Admin.UserSearchPopup&quot;)">
+    <LocationEntryPoint
+      signature="UserSearchPopup()"/>
+    <LocationEntryPoint
+      signature="UserSearchPopup(Organization : Organization)"/>
+    <Variable
+      initialValue="null"
+      name="Organization"
+      type="Organization"/>
+    <Variable
+      initialValue="new gw.api.contact.ProximitySearchPageHelper()"
+      name="psph"
+      type="gw.api.contact.ProximitySearchPageHelper"/>
+    <Screen
+      id="UserSearchPopupScreen">
+      <SearchPanel
+        criteriaName="SearchCriteria"
+        resultsName="searchResults"
+        search="SearchCriteria.performSearchByProximity(CurrentLocation, psph) as gw.api.database.IQueryBeanResult&lt;User&gt;"
+        searchCriteria="new UserSearchCriteria()"
+        searchCriteriaType="entity.UserSearchCriteria"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;User&gt;">
+        <PanelRef
+          def="UserSearchDV(SearchCriteria)"/>
+        <PanelRef
+          def="UserSearchResultsLV(searchResults, true, SearchCriteria, false)">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.Search.Results&quot;)"/>
+          <Toolbar/>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Popup>
+</PCF>

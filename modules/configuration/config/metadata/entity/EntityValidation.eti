@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Validation on a specific entity"
+  entity="EntityValidation"
+  platform="true">
+  <foreignkey
+    fkentity="ValidationResult"
+    name="OwningValidationResult"
+    nullok="false"/>
+  <array
+    arrayentity="GeneralValidation"
+    name="GeneralValidations"/>
+  <array
+    arrayentity="FieldValidation"
+    name="FieldValidations"/>
+  <column
+    desc="What kind of entity"
+    name="EntityType"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="ID of the entity"
+    name="EntityId"
+    nullok="false"
+    type="softentityreference"/>
+</nonPersistentEntity>

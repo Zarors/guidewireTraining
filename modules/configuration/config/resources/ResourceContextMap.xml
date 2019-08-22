@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization
+   xmlns="http://guidewire.com/xml"
+   xmlns:tns="http://guidewire.com/xml"
+   xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+   xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <ResourceContextMap>
+    <mappings length="1" xsi:type="ResourceContextMapping">
+      <item-0 res-id="gw.plugin.MappointGeocodePlugin" xsi:type="ResourceContextMapping">
+        <ctxs length="0"/>
+      </item-0>
+    </mappings>
+  </ResourceContextMap>
+</serialization>

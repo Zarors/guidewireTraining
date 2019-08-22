@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<viewEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Efficiently fetches information about the parent of any group."
+  entity="GroupParentView"
+  exportable="false"
+  platform="true"
+  primaryEntity="Group">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.GroupParentViewPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupParentViewImpl"/>
+  <viewEntityLink
+    name="Group"
+    path="ID"/>
+  <viewEntityLink
+    name="Parent"
+    path="Parent"/>
+</viewEntity>

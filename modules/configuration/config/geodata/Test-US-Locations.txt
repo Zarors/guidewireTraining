@@ -1,0 +1,185 @@
+# Short list for dev and test purposes
+99501,AK,Anchorage,Anchorage,US
+85001,AZ,Phoenix,Maricopa,US
+93203,CA,Arvin,Kern,US
+93203,CA,DiGiorgio,Kern,US
+91752,CA,Mira Loma,Riverside,US
+93551,CA,Palmdale,Los Angeles,US
+91101,CA,Pasadena,Los Angeles,US
+91701,CA,Alta Loma,San Bernardino,US
+91708,CA,Chino,San Bernardino,US
+91709,CA,Chino Hills,San Bernardino,US
+91709,CA,Chino,San Bernardino,US
+92251,CA,Imperial,Imperial,US
+92856,CA,Orange,Orange,US
+91101,CA,Pasadena,Los Angeles,US
+91701,CA,Rancho Cucamonga,San Bernardino,US
+93558,CA,Red Mountain,San Bernardino,US
+92501,CA,Riverside,Riverside,US
+92414,CA,San Bernardino,San Bernardino,US
+92415,CA,San Bernardino,San Bernardino,US
+92418,CA,San Bernardino,San Bernardino,US
+92423,CA,San Bernardino,San Bernardino,US
+92424,CA,San Bernardino,San Bernardino,US
+92427,CA,San Bernardino,San Bernardino,US
+92101,CA,San Diego,San Diego,US
+93558,CA,Johannesburg,San Bernardino,US
+93562,CA,Trona,San Bernardino,US
+93562,CA,Argus,San Bernardino,US
+93592,CA,Trona,San Bernardino,US
+91030,CA,South Pasadena,Los Angeles,US
+91031,CA,South Pasadena,Los Angeles,US
+91011,CA,La Canada Flintridge,Los Angeles,US
+91011,CA,La Canada,Los Angeles,US
+94101,CA,San Francisco,San Francisco,US
+94102,CA,San Francisco,San Francisco,US
+94103,CA,San Francisco,San Francisco,US
+94104,CA,San Francisco,San Francisco,US
+94105,CA,San Francisco,San Francisco,US
+94106,CA,San Francisco,San Francisco,US
+94107,CA,San Francisco,San Francisco,US
+94108,CA,San Francisco,San Francisco,US
+94109,CA,San Francisco,San Francisco,US
+94110,CA,San Francisco,San Francisco,US
+94111,CA,San Francisco,San Francisco,US
+94112,CA,San Francisco,San Francisco,US
+94114,CA,San Francisco,San Francisco,US
+94115,CA,San Francisco,San Francisco,US
+94116,CA,San Francisco,San Francisco,US
+94117,CA,San Francisco,San Francisco,US
+94118,CA,San Francisco,San Francisco,US
+94119,CA,San Francisco,San Francisco,US
+94120,CA,San Francisco,San Francisco,US
+94121,CA,San Francisco,San Francisco,US
+94122,CA,San Francisco,San Francisco,US
+94123,CA,San Francisco,San Francisco,US
+94124,CA,San Francisco,San Francisco,US
+94125,CA,San Francisco,San Francisco,US
+94126,CA,San Francisco,San Francisco,US
+94127,CA,San Francisco,San Francisco,US
+93401,CA,San Luis Obispo,San Luis Obispo,US
+94404,CA,San Mateo,San Mateo,US
+93101,CA,Santa Barbara,Santa Barbara,US
+94404,CA,Foster City,San Mateo,US
+93001,CA,Ventura,Ventura,US
+80001,CO,Arvada,Jefferson,US
+96701,HI,Aiea,Honolulu,US
+83201,ID,Pocatello,Bannock,US
+60185,IL,West Chicago,Du Page,US
+60185,IL,Northwoods,Du Page,US
+60186,IL,West Chicago,Du Page,US
+60187,IL,Wheaton,Du Page,US
+60188,IL,Carol Stream,Du Page,US
+60188,IL,Wheaton,Du Page,US
+60189,IL,Wheaton,Du Page,US
+60190,IL,Winfield,Du Page,US
+60191,IL,Wood Dale,Du Page,US
+60192,IL,Hoffman Estates,Cook,US
+01001,MA,Agawam,Hampden,US
+01002,MA,Amherst,Hampshire,US
+01002,MA,Pelham,Hampshire,US
+01002,MA,Cushman,Hampshire,US
+01003,MA,Amherst,Hampshire,US
+01004,MA,Amherst,Hampshire,US
+59001,MT,Absarokee,Stillwater,US
+97001,OR,Antelope,Wasco,US
+02879,RI,Wakefield,Washington,US
+02879,RI,Narragansett,Washington,US
+02879,RI,Matunuck,Washington,US
+02879,RI,Green Hill,Washington,US
+02879,RI,Jerusalem,Washington,US
+02879,RI,South Kingstown,Washington,US
+02879,RI,Peace Dale,Washington,US
+02880,RI,Wakefield,Washington,US
+02881,RI,Kingston,Washington,US
+02881,RI,Wakefield,Washington,US
+02882,RI,Narragansett,Washington,US
+02882,RI,Bonnet Shores,Washington,US
+02882,RI,Point Judith,Washington,US
+02882,RI,Galilee,Washington,US
+02882,RI,Wakefield,Washington,US
+02883,RI,Peace Dale,Washington,US
+02883,RI,South Kingstown,Washington,US
+02883,RI,Wakefield,Washington,US
+02885,RI,Warren,Bristol,US
+87001,NM,Algodones,Sandoval,US
+88901,NV,The Lakes,Clark,US
+84001,UT,Altamont,Duchesne,US
+82001,WY,Cheyenne,Laramie,US
+00000,Z0,CCCC,C_C_C,US
+00000,Z9,NNNN,N_N_N,US
+11111,Z8,AAAA,C_C_C,US
+94204,CA,Sacramento,Sacramento
+04271,ME,Paris,Oxford,US
+13456,NY,Paris,Oneida,US
+15021,PA,Paris,Washington,US
+20130,VA,Paris,Clarke,US
+38242,TN,Paris,Henry,US
+38949,MS,Paris,Lafayette,US
+40361,KY,Paris,Bourbon,US
+44669,OH,Paris,Stark,US
+49338,MI,Paris,Mecosta,US
+61944,IL,Paris,Edgar,US
+32056,FL,Lake City,Columbia,US
+32096,FL,White Springs,Hamilton,US
+32126,FL,Daytona Beach,Volusia,US
+32160,FL,Lake Geneva,Clay,US
+32205,FL,Jacksonville,Duval,US
+32233,FL,Mayport,Duval,US
+32304,FL,Tallahassee,Leon,US
+32335,FL,Sumatra,Liberty,US
+32403,FL,Tyndall AFB,Bay,US
+32431,FL,Cottondale,Jackson,US
+32461,FL,Alys Beach,Walton,US
+32537,FL,Milligan,Okaloosa,US
+32578,FL,Niceville,Okaloosa,US
+32631,FL,Earleton,Alachua,US
+32697,FL,Worthington Springs,Union,US
+32733,FL,Goldenrod,Seminole,US
+32777,FL,Tangerine,Orange,US
+32809,FL,Edgewood,Orange,US
+32830,FL,Orlando,Orange,US
+32887,FL,Orlando,Orange,US
+32924,FL,Cocoa,Brevard,US
+32959,FL,Sharpes,Brevard,US
+33011,FL,Hialeah,Miami-Dade,US
+33027,FL,Pembroke Pines,Broward,US
+33042,FL,Cudjoe Key,Monroe,US
+33063,FL,Pompano Beach,Broward,US
+33077,FL,Pompano Beach,Broward,US
+33126,FL,Doral,Miami-Dade,US
+33146,FL,Miami,Miami-Dade,US
+33159,FL,Miami,Miami-Dade,US
+33170,FL,Perrine,Miami-Dade,US
+33187,FL,Miami,Miami-Dade,US
+33256,FL,Pinecrest,Miami-Dade,US
+33309,FL,Lauderdale Lakes,Broward,US
+33322,FL,Plantation,Broward,US
+33332,FL,Southwest Ranches,Broward,US
+33404,FL,Singer Island,Palm Beach,US
+33415,FL,Haverhill,Palm Beach,US
+33438,FL,Bryant,Palm Beach,US
+33466,FL,Lake Worth,Palm Beach,US
+33497,FL,Boca Raton,Palm Beach,US
+33550,FL,Mango,Hillsborough,US
+33597,FL,Webster,Sumter,US
+33625,FL,Tampa,Hillsborough,US
+33685,FL,Tampa,Hillsborough,US
+33711,FL,Gulfport,Pinellas,US
+33760,FL,Clearwater,Pinellas,US
+33802,FL,Lakeland,Polk,US
+33845,FL,Haines City,Polk,US
+33880,FL,Wahneta,Polk,US
+33917,FL,North Fort Myers,Lee,US
+33953,FL,Port Charlotte,Charlotte,US
+34104,FL,Naples,Collier,US
+34145,FL,Marco Island,Collier,US
+34222,FL,Ellenton,Manatee,US
+34266,FL,Sidell,DeSoto,US
+34293,FL,South Venice,Sarasota,US
+34474,FL,Ocala,Marion,US
+34609,FL,Masaryktown,Hernando,US
+34674,FL,Port Richey,Pasco,US
+34740,FL,Oakland,Orange,US
+34787,FL,Winter Garden,Orange,US
+34983,FL,Saint Lucie West,Saint Lucie,US

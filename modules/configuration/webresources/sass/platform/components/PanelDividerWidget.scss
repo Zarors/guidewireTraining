@@ -1,0 +1,20 @@
+.gw-PanelDividerWidget {
+  display: block;
+  vertical-align: middle;
+
+  // Position to other widgets
+  margin-top: $gw-app--PanelDivider--spacing-widget-top-rem;
+  margin-left: $gw-app--PanelDivider--spacing-widget-left-rem;
+  margin-right: $gw-app--PanelDivider--spacing-widget-right-rem;
+  margin-bottom: $gw-app--PanelDivider--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--PanelDivider--spacing-inner-top-rem;
+  padding-left: $gw-app--PanelDivider--spacing-inner-left-rem;
+  padding-right: $gw-app--PanelDivider--spacing-inner-right-rem;
+  padding-bottom: $gw-app--PanelDivider--spacing-inner-bottom-rem;
+
+  min-height: $gw-app--PanelDivider--height-px;
+
+  background-color: $gw-app--PanelDivider--bg;
+}

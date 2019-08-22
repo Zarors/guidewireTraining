@@ -1,0 +1,9 @@
+<div ${innerCellClasses} ${innerCellStyles}>
+    <div class="gw-ImplicitHeaderCellValue">
+        <div class="gw-header-content-wrapper">
+            <div class="gw-header--inner">
+                ${:children}
+            </div>
+        </div>
+    </div>
+</div>

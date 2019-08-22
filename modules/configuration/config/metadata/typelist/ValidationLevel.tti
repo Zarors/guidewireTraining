@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- ****************************************************************************
+    VALIDATION-RELATED TYPELISTS
+
+    !!IMPORTANT!! The default values MUST remain here and maintain their
+    priority order.
+  ****************************************************************************
+  
+    !!!MORE IMPORTANT!!! ValidationLevel is considered a Reserved type list -
+    it's NOT generated from this definition. So the keys listed here are adeed
+    only at runtime. If you change the list of keys here, you must hand edit
+    ValidationLevelList to include TC_xxx keys that EXACTLY MATCH these keys.
+    And beware, the TC_xxx keys are DIFFERENT runtime instances from the ones
+    mapped in from this file! -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Levels of validation errors and warnings"
+  final="false"
+  name="ValidationLevel"
+  platform="true">
+  <typecode
+    code="loadsave"
+    desc="Load and save"
+    name="Load and save"
+    priority="400"/>
+</typelist>

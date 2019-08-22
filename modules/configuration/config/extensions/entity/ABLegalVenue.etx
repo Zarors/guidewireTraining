@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="ABLegalVenue">
+  <column
+    name="HoursOfOperation_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+  <column
+    name="OpenForNightCourt_Ext"
+    nullok="true"
+    type="bit"/>
+</extension>

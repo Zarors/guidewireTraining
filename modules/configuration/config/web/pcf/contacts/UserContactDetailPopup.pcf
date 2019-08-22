@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    canEdit="User.Contact != null and perm.Contact.editlocal(User.Contact)"
+    canVisit="User.Contact != null and perm.Contact.viewlocal"
+    desc="Placeholder for app-specific UserContactDetail popup."
+    id="UserContactDetailPopup"
+    returnType="Contact"
+    title="User.DisplayName">
+    <LocationEntryPoint
+      signature="UserContactDetailPopup(User : User)"/>
+    <Variable
+      name="User"
+      type="User"/>
+    <ScreenRef
+      def="UserContactDetailScreen(User.Contact)"/>
+  </Popup>
+</PCF>

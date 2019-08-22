@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="ExternallyReferenceable"
+  platform="true">
+  <column
+    desc="The reference code for this entity on an external system"
+    name="RefCode"
+    nullok="false"
+    type="shorttext"/>
+</delegate>

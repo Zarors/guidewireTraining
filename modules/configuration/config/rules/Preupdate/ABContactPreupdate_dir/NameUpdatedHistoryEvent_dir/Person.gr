@@ -1,0 +1,56 @@
+package rules.Preupdate.ABContactPreupdate_dir.NameUpdatedHistoryEvent_dir
+uses gw.api.locale.DisplayKey
+uses gw.entity.TypeListName
+
+@gw.rules.RuleName("Person")
+internal class Person {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact typeis ABPerson
+and (aBContact.ChangedFields.contains("Name")
+or aBContact.ChangedFields.contains("FirstName")
+or aBContact.ChangedFields.contains("MiddleName")
+or aBContact.ChangedFields.contains("LastName")
+or aBContact.ChangedFields.contains("FirstNameKanji")
+or aBContact.ChangedFields.contains("LastNameKanji")
+or aBContact.ChangedFields.contains("Particle")
+or aBContact.ChangedFields.contains("Prefix")
+or aBContact.ChangedFields.contains("Suffix"))
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var history = aBContact.addHistory(CustomHistoryType.TC_NAMEUPDATED, DisplayKey.get("Rules.Preupdate.ABContact.NameUpdated"))
+var fieldsToTrack : java.util.HashMap<String, String>
+if (User.util.CurrentLocale.Code != LocaleType.TC_JA_JP.Code) {
+fieldsToTrack = new java.util.HashMap<String, String>()
+              {"Name" -> "Web.ContactDetail.Name.OrganizationName", 
+               "FirstName" -> "Web.ContactDetail.Name.FirstName", 
+               "MiddleName" -> "Web.ContactDetail.Name.MiddleName", 
+               "LastName" -> "Web.ContactDetail.Name.LastName",
+               "FirstNameKanji" -> "Web.ContactDetail.Name.FirstNameKanji", 
+               "Particle" -> "Web.ContactDetail.Name.Particle", 
+               "LastNameKanji" -> "Web.ContactDetail.Name.LastNameKanji",
+               "Prefix" -> "Web.ContactDetail.Name.Prefix", 
+               "Suffix" -> "Web.ContactDetail.Name.Suffix"}
+} else {
+fieldsToTrack = new java.util.HashMap<String, String>()
+              {"Name" -> "Web.ContactDetail.Name.OrganizationName",
+               "FirstName" -> "Web.ContactDetail.Name.FirstNamePhonetic",
+               "MiddleName" -> "Web.ContactDetail.Name.MiddleName",
+               "LastName" -> "Web.ContactDetail.Name.LastNamePhonetic",
+               "FirstNameKanji" -> "Web.ContactDetail.Name.FirstName",
+               "Particle" -> "Web.ContactDetail.Name.Particle",
+               "LastNameKanji" -> "Web.ContactDetail.Name.LastName",
+               "Prefix" -> "Web.ContactDetail.Name.Prefix",
+               "Suffix" -> "Web.ContactDetail.Name.Suffix"}
+}
+history.createTrackedChanges(aBContact, fieldsToTrack)
+/*end00rule*/
+
+  }
+}

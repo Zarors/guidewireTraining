@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="BusinessWeekPage.go()"
+    beforeCommit="businessWeek.removeNullZones()"
+    canEdit="perm.BusinessWeek.edit"
+    canVisit="perm.BusinessWeek.view"
+    id="BusinessWeekDetail"
+    parent="BusinessWeekPage()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.BusinessWeekDetail&quot;, businessWeek.Name)">
+    <LocationEntryPoint
+      signature="BusinessWeekDetail(businessWeek : BusinessWeek)"/>
+    <Variable
+      name="businessWeek"
+      type="BusinessWeek"/>
+    <ScreenRef
+      def="BusinessWeekDetailScreen(businessWeek)"/>
+  </Page>
+</PCF>

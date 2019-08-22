@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="DocumentTemplateContextObjectInputSet"
+    mode="string">
+    <Require
+      name="documentApplicationContext"
+      type="gw.document.DocumentApplicationContext"/>
+    <Require
+      name="documentCreationInfo"
+      type="gw.document.DocumentCreationInfo"/>
+    <Require
+      name="dynamicWidgetInfo"
+      type="gw.document.DocumentCreationInfo.DynamicWidgetInfo"/>
+    <ReferencedWidget
+      widget="DocumentCreationScreen"/>
+    <TextInput
+      editable="true"
+      id="DynamicInput"
+      label="dynamicWidgetInfo.DisplayName"
+      required="!dynamicWidgetInfo.ShowNoneSelected"
+      value="ContextObjectValue"
+      valueType="java.lang.Object"
+      visible="true">
+      <PostOnChange
+        onChange="documentCreationInfo.evaluateDependentDynamicWidgets(dynamicWidgetInfo.getName()); documentApplicationContext.DocumentCreationResetState.execute()"
+        target="DocumentCreationScreen"/>
+    </TextInput>
+    <Code><![CDATA[property get ContextObjectValue(): Object {
+  return documentCreationInfo.getContextObjectValue(dynamicWidgetInfo.Name)
+}
+
+property set ContextObjectValue(value : Object){
+  documentCreationInfo.setContextObjectValue(dynamicWidgetInfo.Name, value)
+}]]></Code>
+  </InputSet>
+</PCF>

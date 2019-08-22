@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Section for the document"
+  final="false"
+  name="DocumentSection"
+  platform="true"/>

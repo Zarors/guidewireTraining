@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="ABLinkable">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABLinkable"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABLinkableImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABLinkableImpl"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.addressbook.impl.ABLinkableInternal"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABLinkableImpl"/>
+  <column
+    default="GW_RESERVED"
+    desc="Represents the ID used by client applications to link with the Address Book."
+    name="LinkID"
+    nullok="false"
+    type="externalid">
+  </column>
+</delegate>

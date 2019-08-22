@@ -1,0 +1,41 @@
+// -------------- DV Table Layout
+// Position to other widgets
+$gw-app--DetailView--table--spacing-widget-top-rem: null !default;
+$gw-app--DetailView--table--spacing-widget-left-rem: null !default;
+$gw-app--DetailView--table--spacing-widget-right-rem: null !default;
+$gw-app--DetailView--table--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--DetailView--table--spacing-inner-top-rem: null !default;
+$gw-app--DetailView--table--spacing-inner-left-rem: null !default;
+$gw-app--DetailView--table--spacing-inner-right-rem: null !default;
+$gw-app--DetailView--table--spacing-inner-bottom-rem: null !default;
+
+// Other
+$gw-app--DetailView--table--label--bg: $gw-app--menus--active--bg !default;
+$gw-app--DetailView--table--label--col: $gw-app--menus--active--col !default;
+
+$gw-app--DetailView--table--border-color: $gw-app--border--col !default;
+$gw-app--DetailView--table--LabelWidget--color: $gw-app--buttons--hover--col !default;
+
+// ---------------- DV Standard
+// Position to other widgets
+$gw-app--DetailView--standard--spacing-widget-top-rem: null !default;
+$gw-app--DetailView--standard--spacing-widget-left-rem: null !default;
+$gw-app--DetailView--standard--spacing-widget-right-rem: null !default;
+$gw-app--DetailView--standard--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--DetailView--standard--spacing-inner-top-rem: null !default;
+$gw-app--DetailView--standard--spacing-inner-left-rem: null !default;
+$gw-app--DetailView--standard--spacing-inner-right-rem: null !default;
+$gw-app--DetailView--standard--spacing-inner-bottom-rem: null !default;
+
+//Other
+$gw-app--DetailView--standard--bg: $gw-app--bg !default;
+
+
+// ---------------- Both
+$gw-app--DetailView--divider-col: $gw-app--divider--col !default;
+$gw-app--DetailView--is-highlighted-bg: $gw-app--palette--highlight !default;
+$gw-app--DetailView--child-border: $gw-app--border-width-px dotted $gw-app--divider--col !default;

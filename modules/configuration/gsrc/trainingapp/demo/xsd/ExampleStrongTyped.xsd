@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ExampleStrongTyped">
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="database" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="registry" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="security" minOccurs="0" maxOccurs="1"/>
+        <!-- deprecated in general? -->
+        <xsd:element ref="velocityParam" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="mimetypemapping" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="database">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="tablespacemapping" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="databasestatistics" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="upgrade" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="archive" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="secondaryarchive" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="sqlserverddloptions" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="oracleddloptions" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="driver" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="dbcp"/>
+                        <xsd:enumeration value="jndi"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="env" use="optional"/>
+      <xsd:attribute name="dbtype" use="required">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="db2"/>
+            <xsd:enumeration value="sqlserver"/>
+            <xsd:enumeration value="oracle"/>
+            <xsd:enumeration value="h2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="autoupgrade" type="xsd:boolean" use="optional"
+                     default="false"/>
+      <xsd:attribute name="printcommands" type="xsd:boolean" use="optional"
+                     default="true"/>
+      <xsd:attribute name="checker" type="xsd:boolean" use="optional"
+                     default="false"/>
+      <xsd:attribute name="addforeignkeys" type="xsd:boolean" use="optional"
+                     default="true"/>
+      <xsd:attribute name="verifyschema" type="xsd:boolean" use="optional"
+                     default="true"/>
+      <xsd:attribute name="automaticallycreatetablespaces" type="xsd:boolean"
+                     use="optional" default="false"/>
+      <xsd:attribute name="passwordFile" type="xsd:string" use="optional"/>
+      <!-- For an Oracle database, sets NLS_SORT to this collation -->
+      <!-- for the database user session, overriding what would be set from DefaultApplicationLocale. -->
+      <!-- Used in DBResetTool when creating a new SQL Server or H2 database. -->
+      <!-- For SQL Server, sets Windows or SQL collation name. For H2, sets Java collation. -->
+      <xsd:attribute name="collation" type="xsd:string" use="optional"/>
+      <!-- Required when the database exclusively uses Unicode-capable column character data types (nvarchar, etc.). -->
+      <!-- Ignored if not supported or not relevant.  Currently used only for SQL Server.  -->
+      <xsd:attribute name="unicodecolumns" type="xsd:boolean" use="optional"/>
+
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Defines the primary archive database -->
+  <xsd:element name="archive">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attributeGroup ref="ArchiveAttributes"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Defines a secondary archive database -->
+  <xsd:element name="secondaryarchive">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attributeGroup ref="ArchiveAttributes"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:attributeGroup name="ArchiveAttributes">
+    <!-- Given name for the archive -->
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <!-- Connection pool driver -->
+    <xsd:attribute name="driver" type="xsd:NMTOKEN" use="required"/>
+    <!-- Archive reference -->
+    <xsd:attribute name="reference" type="xsd:string" use="required"/>
+    <xsd:attribute name="passwordFile" type="xsd:string" use="optional"/>
+  </xsd:attributeGroup>
+
+  <!-- Top level element for upgrade parameters and overrides -->
+  <xsd:element name="upgrade">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="versiontriggers" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <!-- Controls whether or not unlogged operations are used (for performance) during upgrade.
+           Currently only applicable to Oracle, but may be applicable to SQL Server in the future. -->
+      <xsd:attribute name="allowUnloggedOperations" type="xsd:boolean" use="optional"
+                       default="true"/>
+      <!-- Controls whether or not instrumentation on storage usage is collected both before and after upgrade.
+           NOTE: Enabling can be expensive. -->
+      <xsd:attribute name="collectstorageinstrumentation" type="xsd:boolean" use="optional"
+                     default="false"/>
+      <!-- Controls whether or not parallelism is used when creating indexes.
+           Currently only applicable to Oracle, but may be applicable to SQL Server in the future.
+           not specified - No parallelism.
+           "DEFAULT" - Parellelism, with degree determined by the DBMS
+           <integer value> - Parallelism, with the specified value as the degree
+           -->
+      <xsd:attribute name="createIndexInParallel" type="xsd:string" use="optional"/>
+      <!-- Controls commit size (number of updates per commit) when encrypting/decrypting columns.
+           DBMS specific defaults set in code. -->
+      <xsd:attribute name="encryptioncommitsize" type="xsd:int" use="optional"/>
+      <!-- ORACLE ONLY: Controls whether or not columns dropped during upgrade are simply marked
+           as unused (for performance reasons) or physically dropped from the database.  See
+           documentation for more discussion on the tradeoffs. -->
+      <xsd:attribute name="oracleMarkColumnsUnused" type="xsd:boolean" use="optional"
+                     default="true"/>
+     <!-- SQL Server ONLY: Controls whether or not TEMPDB is used for sorting when creating indexes. -->
+      <xsd:attribute name="sqlsrvrCreateIndexSortInTempDB" type="xsd:boolean" use="optional"
+                     default="false"/>
+        <!-- Threshold, in seconds, for whether or not to persist DBMS-specific performance instrumentation -->
+        <!-- NOTE: Defaults must be kept in synch with UpgraderConfiguration -->
+        <xsd:attribute name="customStatementDbmsperfinfothreshold" type="xsd:int" use="optional" default="600"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Top level element for upgrade parameters and overrides for version triggers -->
+  <xsd:element name="versiontriggers">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="versiontrigger" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <!-- Threshold, in seconds, for whether or not to persist DBMS-specific performance instrumentation -->
+      <!-- NOTE: Defaults must be kept in synch with UpgraderConfiguration -->
+      <xsd:attribute name="dbmsperfinfothreshold" type="xsd:int" use="optional" default="600"/>
+      <!-- Global default degree of parallelism for version triggers that exploit parallelism when executing insert/selects -->
+      <!-- NOTE: Only applicable for Oracle -->
+      <xsd:attribute name="degreeofparallelismforinsertselects" type="xsd:int" use="optional" default="2"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Top level element for upgrade parameters and overrides for version trigger -->
+  <xsd:element name="versiontrigger">
+    <xsd:complexType>
+      <!-- Name of the version trigger -->
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <!-- Whether or not to record the values of DBMS-specific counters at the beginning and end of each execution -->
+      <!-- of a version trigger with the specified name. -->
+      <!-- NOTE: Values will only be persisted with the upgrade instrumentation if the execution time of the version trigger exceeds the configured threshold -->
+      <xsd:attribute name="recordcounters" type="xsd:boolean" use="optional" default="false"/>
+      <!-- Whether or not extended query tracing is enables for the SQL executed within the version trigger -->
+      <!-- NOTE: Currently only applicable to Oracle (10046) -->
+      <xsd:attribute name="extendedquerytracingenabled" type="xsd:boolean" use="optional" default="false"/>
+      <!-- Whether or not query optimizer tracing is enables for the SQL executed within the version trigger -->
+      <!-- NOTE: Currently only applicable to Oracle (10053) -->
+      <xsd:attribute name="queryoptimizertracingenabled" type="xsd:boolean" use="optional" default="false"/>
+      <!-- Optional hint for the UPDATE of a join within the version trigger. -->
+      <!-- This can be used to force a particular type of join or a join order -->
+      <!-- NOTE: Specify the body of the hint.  The body of the hint will be automatically placed in the correct comment format (surrounded by /*+ */ -->
+      <!-- NOTE: Currently only applicable to Oracle -->
+      <xsd:attribute name="updatejoinhintbody" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Top level element for database statistics parameters and overrides -->
+  <xsd:element name="databasestatistics">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tablestatistics" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="samplingpercentage" type="xsd:int" use="optional" default="100"/>
+      <xsd:attribute name="databasedegree" type="xsd:int" use="optional" default="1"/>
+      <xsd:attribute name="numappserverthreads" type="xsd:int" use="optional" default="1"/>
+      <xsd:attribute name="incrementalupdatethresholdpercent" type="xsd:int" use="optional" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Top level element for database statistics parameters and overrides for a specific table -->
+  <xsd:element name="tablestatistics">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="indexstatistics" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="histogramstatistics" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="samplingpercentage" type="xsd:int" use="optional"/>
+      <xsd:attribute name="databasedegree" type="xsd:int" use="optional"/>
+      <!--
+        Whether or not the statistics should be updated (update), deleted (delete) or remain unchanged (keep).
+        This is useful for volatile tables where we (or users) might need to delete the statistics
+        so that the optimizer chooses better plans based on heuristics.  It will also be useful in the case
+        where users want to freeze the statistics
+        NOTE: For some DBMSs we will default to not generating statistics for certain tables.  Users might
+        need to override that on a per-table basis.
+      -->
+      <xsd:attribute name="action" use="optional" default="update">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="update"/>
+            <xsd:enumeration value="delete"/>
+            <xsd:enumeration value="freeze"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Database statistics parameters and overrides for a specific index (based on key columns) -->
+  <xsd:element name="indexstatistics">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="keycolumn" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="samplingpercentage" type="xsd:int" use="optional"/>
+      <xsd:attribute name="databasedegree" type="xsd:int" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="keycolumn">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="keyposition" type="xsd:int" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Database statistics parameters and overrides for a specific histogram (based on column name) -->
+  <xsd:element name="histogramstatistics">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="samplingpercentage" type="xsd:int" use="optional"/>
+      <xsd:attribute name="databasedegree" type="xsd:int" use="optional"/>
+      <xsd:attribute name="numbuckets" type="xsd:int" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="security">
+    <xsd:complexType>
+      <xsd:attribute name="sessiontimeoutsecs" type="xsd:int" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="tablespacemapping">
+    <xsd:complexType>
+      <xsd:attribute name="logicalname" type="xsd:string" use="required"/>
+      <xsd:attribute name="physicalname" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="mimetypemapping">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="mimetype" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="mimetype">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="extensions" type="xsd:string" use="required"/>
+      <xsd:attribute name="icon" type="xsd:string" use="required"/>
+      <xsd:attribute name="description" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="param">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:string" use="required"/>
+      <xsd:attribute name="server" type="xsd:string" use="optional"/>
+            <xsd:attribute ref="env" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="velocityParam">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="registry">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="systemproperty" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="server" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="server">
+    <xsd:complexType>
+            <xsd:attribute ref="serverid" use="optional"/>
+            <xsd:attribute ref="env" use="optional"/>
+      <xsd:attribute name="isbatchserver" type="xsd:boolean" use="optional"/>
+      <xsd:attribute name="isarchiveserver" type="xsd:boolean" use="optional"/>
+      <xsd:attribute name="archivedatabase" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="systemproperty">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:string" use="required"/>
+      <xsd:attribute name="default" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+    <xsd:attribute name="serverid" type="xsd:string"/>
+    <xsd:attribute name="env" type="xsd:string"/>
+
+    <xsd:simpleType name="sqlcompressiontype">
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="NONE"/>
+        <xsd:enumeration value="ROW"/>
+        <xsd:enumeration value="PAGE"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="oratablecompressiontype">
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="NONE"/>
+        <xsd:enumeration value="OLTP"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="oraindexcompressiontype">
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="NONE"/>
+        <xsd:enumeration value="DEFAULT"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="db2tablecompressiontype">
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="NONE"/>
+        <xsd:enumeration value="VALUE"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="db2indexcompressiontype">
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="NONE"/>
+        <xsd:enumeration value="YES"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="sqlservertableddloptions">
+      <xsd:complexType>
+          <xsd:sequence>
+          <xsd:element ref="sqlserverindexddloptions" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+          <xsd:attribute name="name" type="xsd:string" use="required"/>
+          <xsd:attribute name="tablecompression" use="optional"  type="sqlcompressiontype"/>
+          <xsd:attribute name="indexcompression" use="optional"  type="sqlcompressiontype"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="oracletableddloptions">
+      <xsd:complexType>
+          <xsd:sequence>
+          <xsd:element ref="oracleindexddloptions" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+          <xsd:attribute name="name" type="xsd:string" use="required"/>
+          <xsd:attribute name="tablecompression" use="optional"  type="oratablecompressiontype" />
+          <xsd:attribute name="indexcompression" use="optional"  type="oraindexcompressiontype"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="db2tableddloptions">
+      <xsd:complexType>
+          <xsd:sequence>
+          <xsd:element ref="db2indexddloptions" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+          <xsd:attribute name="name" type="xsd:string" use="required"/>
+          <xsd:attribute name="tablecompression" use="optional"  type="db2tablecompressiontype" />
+          <xsd:attribute name="indexcompression" use="optional"  type="db2indexcompressiontype"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="sqlserverindexddloptions">
+      <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="keycolumn" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+          <xsd:attribute name="indexcompression" use="required" type="sqlcompressiontype"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="oracleindexddloptions">
+      <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="keycolumn" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+          <xsd:attribute name="indexcompression" use="required" type="oraindexcompressiontype"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="db2indexddloptions">
+      <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="keycolumn" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+          <xsd:attribute name="indexcompression" use="required" type="db2indexcompressiontype"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="sqlserverddloptions">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="sqlservertableddloptions" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="tablecompression" use="optional" default="NONE" type="sqlcompressiontype">
+            </xsd:attribute>
+            <xsd:attribute name="indexcompression" use="optional" default="NONE" type="sqlcompressiontype"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="oracleddloptions">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="oracletableddloptions" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="tablecompression" use="optional" default="NONE" type="oratablecompressiontype"/>
+            <xsd:attribute name="indexcompression" use="optional" default="NONE" type="oraindexcompressiontype"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="db2ddloptions">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="db2tableddloptions" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="tablecompression" use="optional" default="NONE" type="db2tablecompressiontype"/>
+            <xsd:attribute name="indexcompression" use="optional" default="NONE" type="db2indexcompressiontype"/>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
+<!--  TODO : CurrDev Copy to 8.0.x -->
+

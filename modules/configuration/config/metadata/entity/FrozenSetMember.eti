@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="FrozenSetMember"
+  platform="true"
+  requiresType="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.persistence.frozenset.FrozenSetMemberPublicMethods"
+    impl="com.guidewire.pl.persistence.frozenset.FrozenSetMemberPublicMethodsImpl"/>
+  <foreignkey
+    columnName="FrozenSetID"
+    createbackingindex="false"
+    fkentity="FrozenSet"
+    name="FrozenSet"
+    nullok="true"/>
+  <index
+    desc="Index for searching FrozenSetMembers by FrozenSetID. Specifically does not include Retired, as Retired is not used in FrozenSetMember searches"
+    name="frozenset">
+    <indexcol
+      keyposition="1"
+      name="FrozenSetID"/>
+  </index>
+</delegate>

@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="LoadHistoryDetail"
+    parent="LoadHistoryInfo()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistoryDetail&quot;)">
+    <LocationEntryPoint
+      signature="LoadHistoryDetail(PageHelper : gw.api.tools.LoadHistoryHelper, History : LoadCommand)"/>
+    <Variable
+      name="History"
+      type="LoadCommand"/>
+    <Variable
+      name="PageHelper"
+      type="gw.api.tools.LoadHistoryHelper"/>
+    <Variable
+      initialValue="History.ParameterNameValuePairs.length"
+      name="numParams"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.Steps.length"
+      name="numSteps"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.OrderedRowCounts.getCount()"
+      name="numRowCounts"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.OrderedIntegrityChecks.getCount()"
+      name="numIntegrityChecks"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.OrderedInserts.getCount()"
+      name="numInserts"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.OrderedCallbacks.length"
+      name="numCallbacks"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.UpdateDBStatisticsCommands.length"
+      name="numDBStatsCmds"
+      type="java.lang.Double"/>
+    <Variable
+      initialValue="History.EncryptTables.length"
+      name="numEncrptTables"
+      type="java.lang.Double"/>
+    <Screen
+      id="LoadHistoryDetailScreen">
+      <Toolbar>
+        <ToolbarButton
+          action="null"
+          id="refresh"
+          label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+      </Toolbar>
+      <PanelRef
+        def="LoadHistoryLV(PageHelper, (new LoadCommand[] {History})?.asQuery(), false)"/>
+      <CardViewPanel
+        id="loadhistoryCV">
+        <Card
+          id="ParametersCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Parameters&quot;, gw.api.util.StringUtil.formatNumber(numParams, &quot;####0&quot;))"
+          visible="numParams &gt; 0">
+          <PanelRef>
+            <Toolbar/>
+            <ListViewPanel
+              id="LoadHistoryParmPairsLV">
+              <RowIterator
+                editable="false"
+                elementName="Params"
+                value="History.ParameterNameValuePairs"
+                valueType="entity.LoadParameter[]">
+                <Row>
+                  <TextCell
+                    id="parmname"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ParameterName&quot;)"
+                    value="Params.ParameterName"/>
+                  <TextCell
+                    id="parmvalue"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ParameterValue&quot;)"
+                    value="Params.ParameterValue"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+        <Card
+          id="StepsCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Steps&quot;, gw.api.util.StringUtil.formatNumber(numSteps, &quot;####0&quot;))"
+          visible="numSteps &gt; 0">
+          <PanelRef
+            def="LoadStepsLV(PageHelper, History, PageHelper.getStepsInHierarchicalOrder(History), true)">
+            <Toolbar/>
+          </PanelRef>
+        </Card>
+        <Card
+          id="RowCountsCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.RowCounts&quot;, gw.api.util.StringUtil.formatNumber(numRowCounts, &quot;####0&quot;))"
+          visible="numRowCounts &gt; 0">
+          <PanelRef>
+            <Toolbar>
+              <IteratorButtons
+                iterator="LoadHistoryRowCountLV"/>
+            </Toolbar>
+            <ListViewPanel
+              id="LoadHistoryRowCountLV">
+              <RowIterator
+                editable="false"
+                elementName="RowCount"
+                pageSize="25"
+                value="History.OrderedRowCounts as gw.api.database.IQueryBeanResult&lt;LoadRowCount&gt;"
+                valueType="gw.api.database.IQueryBeanResult&lt;entity.LoadRowCount&gt;">
+                <Row>
+                  <TextCell
+                    id="stagingtablename"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StagingTableName&quot;)"
+                    value="RowCount.StagingTableName"/>
+                  <TextCell
+                    id="stagingtablerowcount"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StagingTableRowCount&quot;)"
+                    value="RowCount.StagingRowCount"
+                    valueType="java.lang.Long"/>
+                  <TextCell
+                    id="stagingtableblockcount"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StagingTableBlockCount&quot;)"
+                    value="RowCount.StagingBlockCount"
+                    valueType="java.lang.Integer"
+                    visible="PageHelper.supportsBlockCountReporting()"/>
+                  <TextCell
+                    id="sourcetablename"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.SourceTableName&quot;)"
+                    value="RowCount.SourceTableName"/>
+                  <TextCell
+                    id="sourcetablerowcount"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.SourceTableRowCount&quot;)"
+                    value="RowCount.SourceRowCount"
+                    valueType="java.lang.Long"/>
+                  <TextCell
+                    id="sourcetableblockcount"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.SourceTableBlockCount&quot;)"
+                    value="RowCount.SourceBlockCount"
+                    valueType="java.lang.Integer"
+                    visible="PageHelper.supportsBlockCountReporting()"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+        <Card
+          id="IntegrityChecksCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.IntegrityChecks&quot;, gw.api.util.StringUtil.formatNumber(numIntegrityChecks, &quot;####0&quot;))"
+          visible="numIntegrityChecks &gt; 0">
+          <PanelRef
+            def="LoadIntegrityChecksLV(PageHelper, History.OrderedIntegrityChecks)">
+            <Toolbar/>
+          </PanelRef>
+        </Card>
+        <Card
+          id="InsertsCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Inserts&quot;, gw.api.util.StringUtil.formatNumber(numInserts, &quot;####0&quot;))"
+          visible="numInserts &gt; 0">
+          <PanelRef
+            def="LoadInsertSelectsLV(PageHelper, History.OrderedInserts)">
+            <Toolbar/>
+          </PanelRef>
+        </Card>
+        <Card
+          id="CallbacksCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Callbacks&quot;, gw.api.util.StringUtil.formatNumber(numCallbacks, &quot;####0&quot;))"
+          visible="numCallbacks &gt; 0">
+          <PanelRef
+            def="LoadCallbacksLV(PageHelper, History, History.OrderedCallbacks, true)">
+            <Toolbar/>
+          </PanelRef>
+        </Card>
+        <Card
+          id="StatisticsCmdsCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StatisticsCmds&quot;, gw.api.util.StringUtil.formatNumber(numDBStatsCmds, &quot;####0&quot;))"
+          visible="numDBStatsCmds &gt; 0">
+          <PanelRef>
+            <Toolbar/>
+            <ListViewPanel
+              id="loadhistorydbstatisticscmdsLV">
+              <RowIterator
+                editable="false"
+                elementName="Command"
+                pageSize="10"
+                value="History.UpdateDBStatisticsCommands"
+                valueType="entity.UpdateDBStatisticsCommand[]">
+                <Row>
+                  <TextCell
+                    id="cmdtablename"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.DatabaseTableInfo.Rows.Table&quot;)"
+                    value="Command.TableName"/>
+                  <TextAreaCell
+                    id="cmdcommand"
+                    label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.SQLCommand&quot;)"
+                    numRows="3"
+                    value="Command.StatsCommand"/>
+                </Row>
+              </RowIterator>
+            </ListViewPanel>
+          </PanelRef>
+        </Card>
+        <Card
+          id="TableEncryptsCard"
+          title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.TableEncrypt&quot;, gw.api.util.StringUtil.formatNumber(numEncrptTables, &quot;####0&quot;))"
+          visible="numEncrptTables &gt; 0">
+          <PanelRef
+            def="LoadEncryptTable(PageHelper, History)"
+            id="LoadEncryptTablePanelRef"/>
+        </Card>
+      </CardViewPanel>
+    </Screen>
+  </Page>
+</PCF>

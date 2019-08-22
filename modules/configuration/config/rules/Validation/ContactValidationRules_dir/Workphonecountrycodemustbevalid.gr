@@ -1,0 +1,26 @@
+package rules.Validation.ContactValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleDisabled
+@gw.rules.RuleName("Work phone country code must be valid")
+internal class Workphonecountrycodemustbevalid {
+  static function doCondition(contact : entity.Contact) : boolean {
+/*start00rule*/
+return contact.WorkPhone != null
+/*end00rule*/
+}
+
+  static function doAction(contact : entity.Contact, actions : gw.rules.Action) {
+/*start00rule*/
+if (contact.WorkPhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+  contact.rejectField("WorkPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Work.CountryCode.Unparseable"), null, null)
+}
+
+if (contact.WorkPhoneCountry == null){
+  contact.rejectField("WorkPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Work.CountryCode.Null"), null, null)
+}
+
+/*end00rule*/
+  }
+}

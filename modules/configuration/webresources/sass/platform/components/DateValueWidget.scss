@@ -1,0 +1,550 @@
+$gw-app--DateValue--date-icon-section-width: gw-emFixed(2.4) !default;
+
+.gw-DateValueWidget {
+  @include gw-wrapNever();
+
+  .gw-DateValueWidget--dateInput {
+    flex-grow: 2;
+    flex-shrink: 1;
+    min-width: $gw-app--DateValue--date-input-min-width-em;
+    max-width: $gw-app--DateValue--date-input-max-width-em;
+  }
+
+  .gw-DateValueWidget--dateInput {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0 solid transparent !important;
+  }
+
+  &.gw-datetime {
+    flex-grow: 1;
+
+    .gw-date-icon {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 0 solid transparent !important;
+    }
+
+    .gw-DateValueWidget--timeInput {
+      flex-basis: gw-emFixed(6);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .gw-date-icon {
+    @include gw-clickable($gw-app--inputs--col);
+    @include gw-disabled($gw-app--inputs--disabled-bg, $gw-app--inputs--disabled-col);
+    flex-grow: 0;
+    @include gw-icon("calendar", $v-align: baseline, $width: $gw-app--DateValue--date-icon-section-width / 2);
+    @include gw-borderRadius();
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: $gw-app--buttons--pad-v-rem gw-emFixed($gw-app--DateValue--date-icon-section-width / 4);
+    color: $gw-app--buttons--bg;
+    border: gw-border($gw-app--inputs--border--col);
+    background-color: $gw-app--inputs--bg;
+
+    &:hover:not(.gw-disabled) {
+      color: $gw-app--buttons--col;
+      background-color: $gw-app--buttons--bg
+    }
+  }
+
+  .gw-DateValueWidget--timeInput {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: $gw-app--DateValue--time-input-min-width-em;
+    max-width: $gw-app--DateValue--time-input-max-width-em;
+
+    &.gw-is12Hour {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 0 solid transparent !important;
+    }
+  }
+
+  .gw-DateValueWidget--ampm {
+    flex-grow: 0 !important;
+    flex-shrink: 1 !important;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    @include gw-appearanceClear();
+    box-shadow: none;
+    border-radius: 0 $gw-app--border-radius-px $gw-app--border-radius-px 0 !important;
+    width: $gw-app--DateValue--ampm-width-em;
+
+    @include gw-disabled($gw-app--inputs--disabled-bg, $gw-app--inputs--disabled-col);
+
+    &:not(.gw-disabled):not([disabled]) {
+      cursor: pointer;
+      &:hover {
+        @include gw-button--colors($gw-app--inputs--bg, $gw-app--buttons--bg, $border-color: $gw-app--inputs--border--col);
+      }
+    }
+  }
+}
+
+@mixin gw-datePickerButton($glyph, $is-prev-next: false) {
+
+  @if($is-prev-next) {
+    @if($gw-app--DateValue--date-picker--month-prev-next-are-secondary) {
+      @include gw-button--secondary($is-square: true);
+    } @else {
+      @include gw-button--panelIcon($is-square: true, $bg: transparent, $col: $gw-app--DateValue--date-picker--month-prev-next-col, $hov-bg: $gw-app--DateValue--date-picker--month-prev-next-hover-bg, $hov-col: $gw-app--DateValue--date-picker--month-prev-next-col);
+      @include gw-borderRadius();
+    }
+  } @else {
+    @include gw-button--secondary($is-square: true);
+  }
+
+  position: relative;
+  @if ($glyph) {
+    .gw-icon {
+      @include gw-icon($glyph, $v-align: baseline);
+    }
+  } @else {
+    .gw-icon {
+      display: none;
+    }
+  }
+}
+
+@mixin gw-dateMonthNextPrev($glyph) {
+  @include gw-datePickerButton($glyph, true);
+}
+
+@mixin gw-datePickerHeaderSelect() {
+  @include gw-convertSelectWrapperWithGlyph($use-secondary-base: true, $custom-pad-v: $gw-app--DateValue--date-picker--select-custom-pad-v-rem);
+}
+
+@mixin gw-pickerBase() {
+  margin-top: $gw-app--DateValue--date-picker--margin-v-px;
+  margin-bottom: $gw-app--DateValue--date-picker--margin-v-px;
+  @include gw-borderRadius();
+  border: gw-border($gw-app--border--col);
+  padding: $gw-app--DateValue--date-picker--padding-px;
+  position: fixed;
+  display: inline-block;
+  background-color: $gw-app--DateValue--date-picker--bg;
+  color: $gw-app--DateValue--date-picker--col;
+  @include gw-z-index(datePicker);
+  box-shadow: $gw-app--DateValue--date-picker--shadow;
+}
+
+// ======= TIME PICKER ===========
+.gw-timePicker {
+  @include gw-pickerBase();
+  .gw-timePicker--body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    #gw-timePicker--accept {
+      @include gw-button--normal($is-square: true);
+      position: relative;
+      .gw-icon {
+        @include gw-icon($gw-app--DateValue--accept-time-glyph);
+      }
+    }
+  }
+
+  .gw-timePicker--hour {
+    @include gw-datePickerHeaderSelect();
+  }
+
+  &:not(.gw-timePicker--hasMinutes) {
+    .gw-timePicker--minute {
+      display: none;
+    }
+  }
+
+  &.gw-timePicker--hasMinutes {
+    .gw-timePicker--minute {
+      @include gw-datePickerHeaderSelect();
+    }
+    #gw-timePicker--minute--select {
+
+    }
+  }
+
+  &:not(.gw-timePicker--hasSeconds) {
+    .gw-timePicker--second {
+      display: none;
+    }
+  }
+
+  &.gw-timePicker--hasSeconds {
+    .gw-timePicker--second {
+      @include gw-datePickerHeaderSelect();
+    }
+    #gw-timePicker--second--select {
+
+    }
+  }
+
+  &:not(.gw-timePicker--is12Hour) {
+    .gw-timePicker--ampm {
+      display: none;
+    }
+  }
+
+  &.gw-timePicker--is12Hour {
+    .gw-showFor24 {
+      display: none;
+    }
+    .gw-timePicker--ampm {
+      @include gw-datePickerHeaderSelect();
+    }
+    #gw-timePicker--ampm--select {
+
+    }
+  }
+
+  .gw-timePicker--footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    #gw-timePicker--midnight {
+      flex-grow: 1;
+      @include gw-datePickerButton($gw-app--DateValue--midnight-time-glyph);
+    }
+
+    #gw-timePicker--restore {
+      flex-grow: 1;
+      @include gw-datePickerButton($gw-app--DateValue--restore-time-glyph);
+    }
+
+    #gw-timePicker--current {
+      flex-grow: 1;
+      @include gw-datePickerButton($gw-app--DateValue--current-time-glyph);
+    }
+  }
+
+  #gw-timePicker--close {
+    @include gw-button--normal($is-square: true);
+    position: relative;
+    .gw-icon {
+      @include gw-icon("times-solid", $v-align: baseline);
+    }
+  }
+}
+
+// ========== DATE PICKER ============
+
+.gw-datePicker {
+  box-shadow: $gw-app--DateValue--date-picker--shadow;
+  @include gw-pickerBase();
+
+  .gw-datePicker--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .gw-datePicker--month {
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+      @include gw-datePickerHeaderSelect();
+    }
+
+    .gw-datePicker--year {
+      @include gw-datePickerHeaderSelect();
+    }
+
+    .gw-datePicker--prev {
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+      @include gw-dateMonthNextPrev($gw-app--DateValue--date-picker--month-prev-glyph);
+
+    }
+    .gw-datePicker--next {
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+      @include gw-dateMonthNextPrev($gw-app--DateValue--date-picker--month-next-glyph);
+    }
+  }
+
+  .gw-datePicker--calendar {
+    font-size: $gw-app--DateValue--date-picker--cell-font-size-em;
+    margin-top: $gw-app--DateValue--date-picker--calendar-margin-top-px;
+
+    //NOTE: every calendar cell has an icon div, but only today and current enable them
+    .gw-datePicker--day-icon {
+      display: none;
+    }
+
+    td, th {
+      vertical-align: middle;
+      text-align: center;
+      border: gw-border($gw-app--DateValue--date-picker--cell-border-col);
+    }
+
+    // Header cells M,T,W, etc
+    th {
+      font-weight: $gw-app--DateValue--date-picker--cell-header-weight;
+      color: $gw-app--DateValue--date-picker--cell-header-color;
+      background-color: $gw-app--DateValue--date-picker--cell-header-bg;
+      height: $gw-app--DateValue--date-picker--cell-header-height-em;
+      vertical-align: middle;
+    }
+
+    td {
+      background-color: $gw-app--DateValue--date-picker--cell-standard-day-bg;
+      color: $gw-app--DateValue--date-picker--cell-standard-day-col;
+      width: $gw-app--DateValue--date-picker--cell-width-em;
+      height: $gw-app--DateValue--date-picker--cell-height-em;
+      vertical-align: $gw-app--DateValue--date-picker--cell-vertical-align;
+
+      &:hover:not(.gw-disabled):not([disabled]) {
+        background-color: $gw-app--DateValue--date-picker--cell-hover-bg;
+        color: $gw-app--DateValue--date-picker--cell-hover-col;
+        cursor: pointer;
+      }
+
+      // Standard day
+      .gw-datePicker--day-label {
+        user-select: none;
+        display: inline;
+      }
+
+      &.gw-datePicker--other-month {
+        background-color: $gw-app--DateValue--date-picker--cell-other-month--bg;
+        color: $gw-app--DateValue--date-picker--cell-other-month--col;
+      }
+
+      // Day matching what is displayed in the input
+      &.gw-datePicker--inputted-value-day {
+        background-color: $gw-app--DateValue--date-picker--cell-inputted-value-day-bg;
+        color: $gw-app--DateValue--date-picker--cell-inputted-value-day-col;
+        font-weight: $gw-app--DateValue--date-picker--cell-inputted-value-day-weight;
+
+        .gw-datePicker--day-label {
+          @if ($gw-app--DateValue--date-picker--use-icons) {
+            .gw-datePicker--day-icon {
+              display: block;
+              text-align: center;
+              @include gw-iconAfter($gw-app--DateValue--date-picker--current-glyph, $display: inline);
+            }
+          } @else {
+            .gw-datePicker--day-icon {
+              display: none;
+            }
+          }
+        }
+      }
+
+      // Today
+      &.gw-datePicker--today-cell {
+        background-color: $gw-app--DateValue--date-picker--cell-today-bg;
+        color: $gw-app--DateValue--date-picker--cell-today-col;
+
+        .gw-datePicker--day-label {
+          @if ($gw-app--DateValue--date-picker--use-icons) {
+            .gw-datePicker--day-icon {
+              display: block;
+              text-align: center;
+              @include gw-iconAfter($gw-app--DateValue--date-picker--today-glyph, $display: inline);
+            }
+          } @else {
+            .gw-datePicker--day-icon {
+              display: none;
+            }
+          }
+        }
+      }
+
+      // Cell currently highlighted by keyboard shortcuts
+      &.gw-datePicker--keyEventDay {
+        @include gw-addFocusOutline($gw-app--DateValue--date-picker--cell-keyboard-nav-border-col);
+        position: relative;
+
+        .gw-datePicker--day-label {
+
+        }
+      }
+    }
+  }
+
+  .gw-datePicker--footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: $gw-app--DateValue--date-picker--footer-top-margin-px;
+
+    .gw-datePicker--inputted-value {
+      text-align: center;
+      flex-grow: 1;
+
+      @if ($gw-app--DateValue--date-picker--use-icons) {
+        @include gw-datePickerButton($gw-app--DateValue--date-picker--current-glyph);
+      } @else {
+        @include gw-datePickerButton(null);
+      }
+
+      // This UI element is only visible if complex date picker is enabled
+      display: none;
+    }
+
+    .gw-datePicker--today {
+      flex-grow: 1;
+      @if ($gw-app--DateValue--date-picker--use-icons) {
+        @include gw-datePickerButton($gw-app--DateValue--date-picker--today-glyph);
+      } @else {
+        @include gw-datePickerButton(null);
+      }
+
+    }
+
+    .gw-datePicker--info {
+
+      // This element is completely disabled for now
+      display: none;
+    }
+  }
+
+  .gw-datePicker--close {
+    @include gw-button--normal($is-square: true);
+    position: relative;
+    .gw-icon {
+      @include gw-icon("times-solid", $v-align: baseline);
+    }
+
+    // This UI element is only visible if complex date picker is enabled
+    display: none;
+  }
+
+  .gw-datePicker--week-end {
+    //NOTE: can be used to change the cell display of sunday and saturday columns
+  }
+}
+
+.gw-DateValueWidget[data-gw-jic] {
+  .gw-vw--value {
+    max-width: $gw-app--DateValue--JIC-max-width-em;
+  }
+
+  .gw-DateValueWidget--era {
+    flex-grow: 0;
+    width: auto;
+    min-width: $gw-app--DateValue--JIC-era-input-min-width-em;
+    max-width: $gw-app--DateValue--JIC-era-input-max-width-em;
+    padding: $gw-app--inputs--pad-v-rem $gw-app--inputs--pad-h-rem;
+    @include gw-appearanceClear();
+    box-shadow: none;
+    border-radius: $gw-app--border-radius-px 0 0 $gw-app--border-radius-px !important;
+  }
+
+  .gw-DateValueWidget--dateInput {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0 solid transparent !important;
+    min-width: $gw-app--DateValue--JIC-date-input-min-width-em;
+    max-width: $gw-app--DateValue--JIC-date-input-max-width-em;
+
+  }
+
+  .gw-DateValueWidget--timeInput {
+    min-width: $gw-app--DateValue--JIC-time-input-min-width-em;
+    max-width: $gw-app--DateValue--JIC-time-input-max-width-em;
+  }
+
+  .gw-datePicker {
+    .gw-datePicker--header, .gw-datePicker--footer {
+
+      .gw-datePicker--today {
+        max-width: gw-emFixed(8em);
+      }
+    }
+
+    .gw-datePicker--prev, .gw-datePicker--next {
+      display: none;
+    }
+
+    .gw-datePicker--era {
+      @include gw-datePickerHeaderSelect();
+    }
+
+    .gw-datePicker--eraYear {
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+      @include gw-datePickerHeaderSelect();
+    }
+
+    .gw-datePicker--year {
+      display: none;
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+    }
+
+    .gw-disabled-day {
+      visibility: hidden;
+      .gw-datePicker--day-label {
+        //display: none;
+      }
+    }
+  }
+}
+
+// Turn on various aspects of the date picker ui when the useComplexDatePicker option is selected
+.gw-complex-date-picker {
+  .gw-datePicker--footer {
+    .gw-datePicker--info {
+      //display: block; //Leaving this element completely disabled for now
+    }
+
+    .gw-datePicker--inputted-value {
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+      display: block;
+    }
+
+    .gw-datePicker--close {
+      margin-left: $gw-app--DateValue--date-picker--button-margins-px;
+      display: block;
+    }
+  }
+
+  .gw-DateValueWidget[data-gw-jic] {
+
+    .gw-datePicker {
+      //TODO: cooper, design still unclear on whether JIC wants date scroll arrows
+      //.gw-datePicker--prev, .gw-datePicker--next {
+      //  display: block;
+      //}
+
+      .gw-datePicker--year {
+        display: block;
+      }
+    }
+  }
+}
+
+.gw-small-date-picker {
+  .gw-datePicker {
+    padding: $gw-app--SPACING-rem-S;
+
+    .gw-datePicker--footer {
+      margin-top: $gw-app--SPACING-rem-S;
+
+      .gw-datePicker--today {
+        padding-top: $gw-app--SPACING-rem-S;
+        padding-bottom: $gw-app--SPACING-rem-S;
+      }
+    }
+
+    .gw-datePicker--header {
+      select, .gw-datePicker--next, .gw-datePicker--prev {
+        padding-top: $gw-app--SPACING-rem-S;
+        padding-bottom: $gw-app--SPACING-rem-S;
+      }
+    }
+  }
+
+  .gw-datePicker, .gw-datePicker--calendar, .gw-timePicker {
+    font-size: $gw-app--DateValue--date-picker--small--font-size-em;
+  }
+
+  .gw-datePicker--calendar {
+    .gw-datePicker--day-label {
+      width: $gw-app--DateValue--date-picker--small-cell--width-em;
+      height: $gw-app--DateValue--date-picker--small-cell--height-em;
+    }
+  }
+}

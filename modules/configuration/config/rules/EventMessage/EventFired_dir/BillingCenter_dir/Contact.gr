@@ -1,0 +1,19 @@
+package rules.EventMessage.EventFired_dir.BillingCenter_dir
+
+@gw.rules.RuleName("Contact")
+internal class Contact {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+/*start00rule*/
+return messageContext.Root typeis ABCompany
+or (messageContext.Root typeis ABPerson
+and not (messageContext.Root typeis ABUserContact))
+/*end00rule*/
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+/*start00rule*/
+
+/*end00rule*/
+
+  }
+}

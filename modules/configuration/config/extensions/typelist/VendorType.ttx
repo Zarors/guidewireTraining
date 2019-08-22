@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="VendorType">
+  <typecode
+    code="indautoinspector"
+    desc="Independent auto inspector"
+    name="Independent auto inspector"/>
+  <typecode
+    code="indpropinspector"
+    desc="Independent property inspector"
+    name="Independent property inspector"/>
+  <typecode
+    code="autorepair"
+    desc="Auto repair shop"
+    name="Auto repair shop"/>
+  <typecode
+    code="autoglass"
+    desc="Auto glass shop"
+    name="Auto glass shop"/>
+  <typecode
+    code="towingservice"
+    desc="Towing service"
+    name="Towing service"/>
+  <typecode
+    code="autorental"
+    desc="Auto rental service"
+    name="Auto rental service"/>
+  <typecode
+    code="bldingcontractor"
+    desc="Building contractor"
+    name="Building contractor"/>
+  <typecode
+    code="fireinspector"
+    desc="Fire inspector"
+    name="Fire inspector"/>
+  <typecode
+    code="defenseatt"
+    desc="Defense attorney"
+    name="Defense attorney"/>
+  <typecode
+    code="plaintiffatt"
+    desc="Plaintiff attorney"
+    name="Plaintiff attorney"/>
+  <typecode
+    code="doctor"
+    desc="Doctor"
+    name="Doctor"/>
+  <typecode
+    code="hospital"
+    desc="Hospital"
+    name="Hospital"/>
+  <typecode
+    code="insuranceagent"
+    desc="Insurance agent"
+    name="Insurance agent"/>
+  <typecode
+    code="externaladjuster"
+    desc="External adjuster"
+    name="External adjuster"/>
+  <typecode
+    code="nurse"
+    desc="Nurse - for medical management and rehab"
+    name="Nurse"/>
+  <typecode
+    code="government"
+    desc="Government authority"
+    name="Government authority"/>
+</typelistextension>

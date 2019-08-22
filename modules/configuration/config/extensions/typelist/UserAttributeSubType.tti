@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Sub-categories of user attributes"
+  final="false"
+  name="UserAttributeSubType">
+  <typecode
+    code="Spanish"
+    desc="Spanish"
+    name="Spanish">
+    <category
+      code="Language"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="French"
+    desc="French"
+    name="French">
+    <category
+      code="Language"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="German"
+    desc="German"
+    name="German">
+    <category
+      code="Language"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="Acme"
+    desc="Acme"
+    name="Acme">
+    <category
+      code="Account"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="TipTop"
+    desc="TipTop Roofing"
+    name="TipTop Roofing">
+    <category
+      code="Account"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="Mold"
+    desc="Mold"
+    name="Mold">
+    <category
+      code="Expertise"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="env"
+    desc="Environmental Torts"
+    name="Environmental">
+    <category
+      code="Expertise"
+      typelist="userattributetype"/>
+  </typecode>
+  <typecode
+    code="ProdLiab"
+    desc="Product Liability"
+    name="Product Liability">
+    <category
+      code="Expertise"
+      typelist="userattributetype"/>
+  </typecode>
+</typelist>

@@ -1,0 +1,50 @@
+
+.gw-DateCriterionChoiceValueWidget {
+  //NOTE: see ChoiceWidget for additional styling relating to DateCriterionChoiceWidget
+  border: $gw-app--border-width-px dotted $gw-app--inputs--border--col;
+  padding: $gw-app--SPACING-rem-S;
+  @include gw-borderRadius();
+
+  > .gw-ValueWidget {
+    .gw-vw--value {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .gw-ChoiceWidget {
+    padding-left: 0;
+
+    .gw-ChoiceWidget--children {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+
+      .gw-InputWidget.gw-StyleContainer--DateCriterionChoiceWidget {
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin-top: $gw-app--SPACING-rem-XS;
+
+        & > .gw-label {
+          margin-top: $gw-app--InputColumn--label-margin-top-rem;
+          width: $gw-app--DateCriterionChoiceWidget--label-size;
+          margin-left: $gw-app--SPACING-rem-S;
+          @include gw-wrapOnWhiteSpace();
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+
+        & > .gw-value {
+          margin-left: $gw-app--SPACING-rem-M;
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

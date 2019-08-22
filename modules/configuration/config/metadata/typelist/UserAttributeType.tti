@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    USERATTRIBUTE TYPELISTS
+  ******************************************************************************************************************** -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Major categories of attributes"
+  final="false"
+  name="UserAttributeType"
+  platform="true">
+  <typecode
+    code="default"
+    desc="Default"
+    name="Default"/>
+</typelist>

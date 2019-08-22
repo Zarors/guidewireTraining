@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=false;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_RESTPROFILERCONFIG, operationDisplayName )"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableRestOperationPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForRestOperation&quot;)">
+    <LocationEntryPoint
+      signature="EnableRestOperationPopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="operationDisplayName"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="RestOperationName"
+            label="DisplayKey.get(&quot;Web.Profiler.RestOperation&quot;)"
+            required="true"
+            value="operationDisplayName"
+            valueRange="gw.api.profiler.RestProfilerPageHelper.getUnprofiledOperations().toTypedArray()"
+            valueType="java.lang.String"></RangeInput>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.ServerStateAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ServerStateAPI" name="ServerStateAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/webservice/systemTools" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/ServerStateAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ServerStateAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/systemTools"/>
+      <!-- getServerState() : ServerStateInfo -->
+      <xs:element name="getServerState">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getServerStateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ServerStateInfo" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="ServerStateException">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/systemTools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ServerStateInfo">
+        <xs:sequence>
+          <xs:element name="RunLevelCode" type="xs:int" minOccurs="0"/>
+          <xs:element name="RunLevelName" type="xs:string" minOccurs="0"/>
+          <xs:element name="RunLevelOrdinal" type="xs:int" minOccurs="0"/>
+          <xs:element name="ServerId" type="xs:string" minOccurs="0"/>
+          <xs:element name="StartupException" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="ServerStateAPIPortType">
+    <wsdl:operation name="getServerState">
+      <wsdl:input name="getServerState" message="tns:getServerState"/>
+      <wsdl:output name="getServerStateResponse" message="tns:getServerStateResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- for errors production the report -->
+      <wsdl:fault name="ServerStateException" message="tns:ServerStateException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServerStateAPISoap12Binding" type="tns:ServerStateAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getServerState">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getServerState">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerStateResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap12:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServerStateAPISoap11Binding" type="tns:ServerStateAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getServerState">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getServerState">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerStateResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ServerStateException">
+        <soap11:fault name="ServerStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServerStateAPI">
+    <wsdl:port name="ServerStateAPISoap12Port" binding="tns:ServerStateAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/ServerStateAPI"/>
+    </wsdl:port>
+    <wsdl:port name="ServerStateAPISoap11Port" binding="tns:ServerStateAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/ServerStateAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="getServerState">
+    <wsdl:part name="parameters" element="tns:getServerState"/>
+  </wsdl:message>
+  <wsdl:message name="getServerStateResponse">
+    <wsdl:part name="parameters" element="tns:getServerStateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="ServerStateException">
+    <wsdl:part name="ServerStateException" element="tns:ServerStateException"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

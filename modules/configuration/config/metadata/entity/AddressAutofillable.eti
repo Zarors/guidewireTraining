@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  extendable="true"
+  name="AddressAutofillable"
+  platform="true">
+  <implementsInterface
+    iface="gw.api.address.AddressFillable"
+    impl="com.guidewire.pl.domain.geodata.zone.impl.AddressAutofillableImpl"/>
+  <implementsEntity
+    name="GlobalAddress"/>
+  <fulldescription><![CDATA[
+      This is a shared delegate/interface which allows multiple entities that have address information
+      to be able to use the autofill functionality.
+    ]]></fulldescription>
+  <column
+    desc="First line of mailing address."
+    name="AddressLine1"
+    nullok="true"
+    type="addressline"/>
+  <column
+    desc="Second line of mailing address."
+    name="AddressLine2"
+    nullok="true"
+    type="addressline"/>
+  <column
+    desc="Third line of mailing address."
+    name="AddressLine3"
+    nullok="true"
+    type="addressline"/>
+  <column
+    desc="City."
+    name="City"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="County."
+    name="County"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Postal code; string to handle Zip+4 and international codes."
+    name="PostalCode"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="postalcode">
+    <columnParam
+      name="countryproperty"
+      value="Country"/>
+  </column>
+  <typekey
+    createhistogram="true"
+    desc="State."
+    name="State"
+    nullok="true"
+    typelist="State">
+    <keyfilters>
+      <keyfilter
+        name="Country"/>
+    </keyfilters>
+  </typekey>
+  <typekey
+    desc="Country."
+    name="Country"
+    nullok="true"
+    typelist="Country"/>
+</delegate>

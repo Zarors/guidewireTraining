@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="pay period type"
+  name="PayPeriodType">
+  <typecode
+    code="daily"
+    desc="Employee paid on a daily basis"
+    name="Daily"/>
+  <typecode
+    code="weekly"
+    desc="Employee paid on a weekly basis"
+    name="Weekly"/>
+  <typecode
+    code="everytwoweeks"
+    desc="Employee paid every two weeks"
+    name="Every Two Weeks"/>
+  <typecode
+    code="twiceamonth"
+    desc="Employee paid twice a month"
+    name="Twice a Month"/>
+  <typecode
+    code="monthly"
+    desc="Employee paid on a monthly basis"
+    name="Monthly"/>
+  <typecode
+    code="oninvoice"
+    desc="On Invoice"
+    name="Employee paid on submitted invoices"/>
+</typelistextension>

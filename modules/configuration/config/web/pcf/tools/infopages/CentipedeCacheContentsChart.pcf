@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ChartPanel
+    height="375"
+    id="CentipedeCacheContentsChart"
+    label="gw.api.cache2.CacheInfoPageHelper.getCacheContentsLabel(contentsMap)"
+    type="Pie"
+    width="700">
+    <Require
+      name="contentsMap"
+      type="gw.util.Pair&lt;java.lang.Integer,java.util.ArrayList&lt;gw.util.Pair&lt;java.lang.String,java.lang.Integer&gt;&gt;&gt;"/>
+    <DataSeries
+      dataValueType="gw.util.Pair&lt;java.lang.String, java.lang.Integer&gt;"
+      dataValues="contentsMap.Second"
+      categoryLabel="value.First"
+      value="value.Second"/>
+  </ChartPanel>
+</PCF>

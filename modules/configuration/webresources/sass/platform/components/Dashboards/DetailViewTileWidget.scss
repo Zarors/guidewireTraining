@@ -1,0 +1,101 @@
+@mixin gw-piMarginSideBySideCols {
+  .gw-PerformanceIndicatorRowWidget + .gw-DetailViewWidget.gw-StyleContainer--TileWidget .gw-DetailViewWidget--body .gw-TileInputColumnWidget:not(.gw-placeholder) {
+    //margin-top: $gw-app--TileInputColumn--topMargin;
+  }
+}
+
+@mixin gw-piMarginStackedCols {
+  .gw-PerformanceIndicatorRowWidget + .gw-DetailViewWidget.gw-StyleContainer--TileWidget .gw-DetailViewWidget--body .gw-TileInputColumnWidget:not(.gw-placeholder):first-child {
+    //margin-top: $gw-app--TileInputColumn--topMargin;
+  }
+}
+
+@mixin gw-sideBySideColumns {
+  flex-wrap: nowrap;
+
+  .gw-TileInputColumnWidget {
+    //flex-basis: $gw-app--DetailViewTileWidget--label--width + $gw-app--DetailViewTileWidget--input--min-width + gw-emFixed(8/14); //below this width wrap the label above value
+  }
+
+  .gw-TileInputColumnWidget:nth-of-type(1) {
+    //padding-right: $gw-app--TileInputColumnDetailViewWidget--padding;
+  }
+
+  .gw-TileInputColumnWidget:nth-of-type(2) {
+    //padding-left: $gw-app--TileInputColumnDetailViewWidget--padding;
+    border-left: gw-border($gw-app--TileWidget--border-color);
+  }
+}
+
+@mixin gw-stackedColumns {
+  display: block;
+
+  .gw-DetailViewWidget--body {
+    display: block;
+  }
+
+  .gw-PerformanceIndicatorRowWidget + .gw-DetailViewWidget.gw-StyleContainer--TileWidget {
+    .gw-DetailViewWidget--body.gw-TileInputColumnWidget:nth-of-type(1):not(.gw-placeholder) {
+      //margin-top: $gw-app--TileWidget--child-vertical-spacing;
+    }
+  }
+
+  .gw-TileInputColumnWidget:nth-of-type(2) {
+    //padding: $gw-app--TileInputColumnDetailViewWidget--padding 0 0 0;
+    border-top: gw-border($gw-app--TileWidget--border-color);
+  }
+}
+
+.gw-TileWidget .gw-DetailViewWidget.gw-StyleContainer--TileWidget {
+  margin: 0;
+
+  .gw-DetailViewWidget--body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: initial;
+    flex-shrink: 1;
+  }
+}
+
+//on screens smaller than 786px there should be single DashboardColumn with stacked InputColumns
+@media (max-width: $gw-media--phone--width-px) {
+  @include gw-piMarginStackedCols;
+  .gw-TileWidget .gw-DetailViewWidget.gw-StyleContainer--TileWidget {
+    @include gw-stackedColumns;
+  }
+}
+
+// on screens smaller than 1024px there should be just a single DashboardColumn with two InputColumns side by side
+@media (min-width: $gw-media--phone--width-px + 1) and (max-width: $gw-media--tablet--width-px) {
+  @include gw-piMarginSideBySideCols;
+  .gw-TileWidget .gw-DetailViewWidget.gw-StyleContainer--TileWidget {
+    @include gw-sideBySideColumns;
+  }
+}
+
+//when screen is bigger than 1024px
+@media (min-width: $gw-media--tablet--width-px + 1) {
+  //left DashboardColumn should have two InputColumns side by side
+  .gw-DashboardColumnWidget:nth-of-type(1) {
+    @include gw-piMarginSideBySideCols;
+    .gw-DetailViewWidget.gw-StyleContainer--TileWidget {
+      @include gw-sideBySideColumns;
+    }
+  }
+
+  //right column should be stacked label and text should wrap if space is too small
+  .gw-DashboardColumnWidget:nth-of-type(2) {
+    @include gw-piMarginStackedCols;
+    .gw-DetailViewWidget.gw-StyleContainer--TileWidget {
+      @include gw-stackedColumns;
+    }
+  }
+}
+
+
+
+
+
+
+

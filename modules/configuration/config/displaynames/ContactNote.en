@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Entity
+  name="ContactNote">
+  <Columns>
+    <Column
+      beanPath="ContactNote.CreateTime"
+      name="CreateTime"/>
+    <Column
+      beanPath="ContactNote.Body"
+      name="Body"/>
+  </Columns>
+  <DisplayName><![CDATA[// This includes the date in "short format".
+	if (Body == null) {
+	  return CreateTime + ": (no body text)"
+	} else {
+	  return CreateTime + ": " + Body.elide(35)
+	}
+
+
+	
+  ]]></DisplayName>
+  <DisplayName
+    type="Long"><![CDATA[	// This includes the date in "long format".
+	if (Body == null) {
+	  return CreateTime.toString() + ": (no body text)"
+	} else {
+	  return CreateTime.toString() + ": " + Body.elide(35)
+	}]]></DisplayName>
+</Entity>

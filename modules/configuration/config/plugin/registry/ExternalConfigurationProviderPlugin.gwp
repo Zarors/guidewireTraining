@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<plugin
+  interface="ExternalConfigurationProviderPlugin"
+  name="ExternalConfigurationProviderPlugin">
+  <plugin-java
+    disabled="true"
+    javaclass="gw.plugin.extconfig.impl.FileBasedConfigurationProviderWrapper"/>
+</plugin>

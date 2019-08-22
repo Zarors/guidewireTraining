@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="LoadedGosuClasses"
+    parent="InfoPages()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadedGosuClasses&quot;)">
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <TextAreaInput
+            id="LoadedClassNames"
+            labelAbove="true"
+            numRows="50"
+            value="{DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadedGosuClassesNoLongerSupported&quot;)}"
+            valueType="java.util.ArrayList&lt;java.lang.String&gt;"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

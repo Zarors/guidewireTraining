@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    canEdit="true"
+    canVisit="true"
+    desc="Only Used In Tests"
+    id="TimeSearchPopup"
+    returnType="gw.api.profiler.ProfilerDataSource"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.AnalyzeByTimeRange&quot;)">
+    <Variable
+      name="beginTime"
+      type="java.util.Date"/>
+    <Variable
+      name="endTime"
+      type="java.util.Date"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"
+          pickValue="gw.api.profiler.TimeSearchProfilerPageHelper.getProfilerDataSource(beginTime, endTime)"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            id="StartTime"
+            label="DisplayKey.get(&quot;Web.Profiler.BeginTime&quot;)"
+            required="true"
+            timeFormat="short"
+            value="beginTime"/>
+        </InputColumn>
+        <InputColumn>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            id="EndTime"
+            label="DisplayKey.get(&quot;Web.Profiler.EndTime&quot;)"
+            required="true"
+            timeFormat="short"
+            value="endTime"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

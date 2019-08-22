@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="ETLStrings"
+  name="ETLStrings"
+  platform="true">
+  <typecode
+    code="NOT_APPLICABLE"
+    desc="NOT APPLICABLE"
+    name="Not Applicable"
+    retired="true"/>
+  <typecode
+    code="UNKNOWN"
+    desc="UNKNOWN"
+    name="Unknown"
+    retired="true"/>
+  <typecode
+    code="NOT_FOUND"
+    desc="NOT FOUND"
+    name="Not Found"
+    retired="true"/>
+  <typecode
+    code="RECORD_NOT_FOUND"
+    desc="RECORD NOT FOUND"
+    name="Record Not Found"
+    retired="true"/>
+  <typecode
+    code="SUSPENSE_PAYMENT"
+    desc="SUSPENSE_PAYMENT"
+    name="Suspense Payment"
+    retired="true"/>
+  <typecode
+    code="ETL_UNKNOWN"
+    desc="UNKNOWN"
+    name="Unknown"
+    priority="-1"/>
+  <typecode
+    code="ETL_NOT_APPLICABLE"
+    desc="NOT APPLICABLE"
+    name="Not Applicable"
+    priority="-2"/>
+  <typecode
+    code="ETL_NOT_FOUND"
+    desc="NOT FOUND"
+    name="Not Found"
+    priority="-3"/>
+  <typecode
+    code="ETL_RECORD_NOT_FOUND"
+    desc="RECORD NOT FOUND"
+    name="Record Not Found"
+    priority="-4"/>
+</typelist>

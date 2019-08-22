@@ -1,0 +1,52 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "x-gw-import" : {
+    "address" : "trn.ta.address-1.0",
+    "contactnote" : "trn.ta.contactnote-1.0"
+  },
+  "definitions" : {
+    "ContactDetails" : {
+      "type" : "object",
+      "properties" : {
+        "Name" : {
+          "type" : "string"
+        },
+        "DateOfBirth" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "Gender" : {
+          "type" : "string",
+          "x-gw-type" : "typekey.GenderType"
+        },
+        "PrimaryAddress" : {
+          "$ref" : "address#/definitions/AddressDetails"
+        },
+        "ContactNotes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "contactnote#/definitions/ContactNoteDetails"
+          }
+        }
+      }
+    },
+    "ContactUpdate" : {
+      "type" : "object",
+      "properties" : {
+        "DateOfBirth" : {
+          "type" : "string",
+          "format" : "date-time",
+          "x-gw-nullable" : true
+        },
+        "DriversLicenseNumber" : {
+          "type" : "string",
+          "x-gw-nullable" : true
+        },
+        "DriversLicenseState" : {
+          "type" : "string",
+          "x-gw-type" : "typekey.Jurisdiction"
+        }
+      }
+    }
+  }
+}

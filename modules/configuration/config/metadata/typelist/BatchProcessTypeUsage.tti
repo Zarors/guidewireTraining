@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="This defines the usages of this typelist"
+  final="true"
+  name="BatchProcessTypeUsage"
+  platform="true">
+  <typecode
+    code="Schedulable"
+    desc="This indicates that this BatchProcessType is schedulable"
+    name="Schedulable"/>
+  <typecode
+    code="UIRunnable"
+    desc="This indicates that this BatchProcessType is runnable from the UI"
+    name="UI Runnable"/>
+  <typecode
+    code="APIRunnable"
+    desc="This indicates that this BatchProcessType is runnable from the API"
+    name="API Runnable"/>
+  <typecode
+    code="MaintenanceOnly"
+    desc="This indicates that this BatchProcessType is only runnable while the server is at maintenance run level"
+    name="Maintenance Only"/>
+</typelist>

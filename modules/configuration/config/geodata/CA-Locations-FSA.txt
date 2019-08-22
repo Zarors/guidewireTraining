@@ -1,0 +1,8449 @@
+A0A,NL,Aquaforte,CA
+A0A,NL,Avondale,CA
+A0A,NL,Bay Bulls,CA
+A0A,NL,Bay Roberts,CA
+A0A,NL,Bay de Verde,CA
+A0A,NL,Bell Island Front,CA
+A0A,NL,Bell Island,CA
+A0A,NL,Brigus,CA
+A0A,NL,Broad Cove BDV,CA
+A0A,NL,Burnt Point BDV,CA
+A0A,NL,Calvert,CA
+A0A,NL,Cape Broyle,CA
+A0A,NL,Caplin Cove BDV,CA
+A0A,NL,Cappahayden,CA
+A0A,NL,Chapel Cove,CA
+A0A,NL,Clarkes Beach,CA
+A0A,NL,Coleys Point South,CA
+A0A,NL,Colliers Riverhead,CA
+A0A,NL,Conception Harbour,CA
+A0A,NL,Cupids,CA
+A0A,NL,Fermeuse,CA
+A0A,NL,Ferryland,CA
+A0A,NL,Grates Cove,CA
+A0A,NL,Harbour Grace South,CA
+A0A,NL,Harbour Grace,CA
+A0A,NL,Harbour Main,CA
+A0A,NL,Holyrood,CA
+A0A,NL,Jobs Cove,CA
+A0A,NL,Lower Island Cove,CA
+A0A,NL,Makinsons,CA
+A0A,NL,Marysvale,CA
+A0A,NL,Mobile,CA
+A0A,NL,North River,CA
+A0A,NL,Northern Bay,CA
+A0A,NL,Ochre Pit Cove,CA
+A0A,NL,Old Perlican,CA
+A0A,NL,Petty Harbour,CA
+A0A,NL,Port de Grave,CA
+A0A,NL,Pouch Cove,CA
+A0A,NL,Red Head Cove,CA
+A0A,NL,Renews,CA
+A0A,NL,Riverhead Harbour Grace,CA
+A0A,NL,Salmon Cove BDV,CA
+A0A,NL,Shea Heights,CA
+A0A,NL,Shearstown,CA
+A0A,NL,South River,CA
+A0A,NL,Spaniards Bay,CA
+A0A,NL,St Shotts,CA
+A0A,NL,St. John's,CA
+A0A,NL,Tors Cove,CA
+A0A,NL,Trepassey,CA
+A0A,NL,Upper Island Cove,CA
+A0A,NL,Victoria CB,CA
+A0A,NL,Western Bay,CA
+A0A,NL,Witless Bay,CA
+A0A,NL,Woodfords,CA
+A0B,NL,Arnolds Cove,CA
+A0B,NL,Bellevue,CA
+A0B,NL,Blaketown,CA
+A0B,NL,Branch,CA
+A0B,NL,Brigus Junction,CA
+A0B,NL,Brownsdale,CA
+A0B,NL,Cavendish,CA
+A0B,NL,Chance Cove,CA
+A0B,NL,Chapel Arm,CA
+A0B,NL,Colinet,CA
+A0B,NL,Come by Chance,CA
+A0B,NL,Dildo,CA
+A0B,NL,Dunville,CA
+A0B,NL,Fair Haven,CA
+A0B,NL,Fox Harbour PB,CA
+A0B,NL,Freshwater PB,CA
+A0B,NL,Greens Harbour,CA
+A0B,NL,Hants Harbour,CA
+A0B,NL,Heart's Content,CA
+A0B,NL,Heart's Delight,CA
+A0B,NL,Heart's Desire,CA
+A0B,NL,Hopeall,CA
+A0B,NL,Islington,CA
+A0B,NL,Jerseyside,CA
+A0B,NL,Little Harbour East PB,CA
+A0B,NL,Long Harbour,CA
+A0B,NL,Mount Arlington Heights,CA
+A0B,NL,Mount Carmel,CA
+A0B,NL,New Chelsea,CA
+A0B,NL,New Harbour TB,CA
+A0B,NL,New Melbourne,CA
+A0B,NL,New Perlican,CA
+A0B,NL,Normans Cove,CA
+A0B,NL,North Harbour SMB,CA
+A0B,NL,Old Shop,CA
+A0B,NL,Placentia,CA
+A0B,NL,Ship Harbour PB,CA
+A0B,NL,South Dildo,CA
+A0B,NL,Southern Harbour PB,CA
+A0B,NL,St Brides,CA
+A0B,NL,St Josephs SAL,CA
+A0B,NL,St Marys,CA
+A0B,NL,St Vincents,CA
+A0B,NL,Sunnyside,CA
+A0B,NL,Whitbourne,CA
+A0B,NL,Whiteway,CA
+A0B,NL,Winterton,CA
+A0C,NL,Bloomfield,CA
+A0C,NL,Bonavista,CA
+A0C,NL,Bunyans Cove,CA
+A0C,NL,Burgoynes Cove,CA
+A0C,NL,Cannings Cove,CA
+A0C,NL,Catalina,CA
+A0C,NL,Charleston,CA
+A0C,NL,Charlottetown,CA
+A0C,NL,Duntara,CA
+A0C,NL,Elliston,CA
+A0C,NL,Hickmans Harbour,CA
+A0C,NL,Keels,CA
+A0C,NL,Kings Cove,CA
+A0C,NL,Knights Cove,CA
+A0C,NL,Lethbridge,CA
+A0C,NL,Little Catalina,CA
+A0C,NL,Melrose,CA
+A0C,NL,Musgravetown,CA
+A0C,NL,Newmans Cove,CA
+A0C,NL,Open Hall,CA
+A0C,NL,Plate Cove East,CA
+A0C,NL,Plate Cove West,CA
+A0C,NL,Port Blandford,CA
+A0C,NL,Port Rexton,CA
+A0C,NL,Port Union,CA
+A0C,NL,Princeton,CA
+A0C,NL,Southern Bay,CA
+A0C,NL,Summerville,CA
+A0C,NL,Sweet Bay,CA
+A0C,NL,Tickle Cove,CA
+A0C,NL,Trinity TB,CA
+A0E,NL,Baine Harbour,CA
+A0E,NL,Bay l'Argent,CA
+A0E,NL,Boat Harbour West,CA
+A0E,NL,Burin Bay Arm,CA
+A0E,NL,Burin,CA
+A0E,NL,Creston North,CA
+A0E,NL,Creston,CA
+A0E,NL,English Harbour East,CA
+A0E,NL,Epworth,CA
+A0E,NL,Fortune,CA
+A0E,NL,Frenchmans Cove FB,CA
+A0E,NL,Garden Cove PB,CA
+A0E,NL,Garnish,CA
+A0E,NL,Gooseberry Cove,CA
+A0E,NL,Grand Bank,CA
+A0E,NL,Grand Beach,CA
+A0E,NL,Grand le Pierre,CA
+A0E,NL,Harbour Mille,CA
+A0E,NL,Hillview,CA
+A0E,NL,Hodges Cove,CA
+A0E,NL,Lamaline,CA
+A0E,NL,Lawn,CA
+A0E,NL,Lewins Cove,CA
+A0E,NL,Little Bay East,CA
+A0E,NL,Little Bay PB,CA
+A0E,NL,Little Hearts Ease,CA
+A0E,NL,Little St Lawrence,CA
+A0E,NL,Marystown,CA
+A0E,NL,Monkstown,CA
+A0E,NL,North Harbour PB,CA
+A0E,NL,North West Brook,CA
+A0E,NL,Parkers Cove,CA
+A0E,NL,Petite Forte,CA
+A0E,NL,Red Harbour PB,CA
+A0E,NL,Rushoon,CA
+A0E,NL,South East Bight,CA
+A0E,NL,St Bernards-Jacques Fontaine,CA
+A0E,NL,St Lawrence,CA
+A0E,NL,Swift Current,CA
+A0E,NL,Terrenceville,CA
+A0E,NL,Winterland,CA
+A0G,NL,Aspen Cove,CA
+A0G,NL,Badgers Quay,CA
+A0G,NL,Baytona,CA
+A0G,NL,Benton,CA
+A0G,NL,Birchy Bay,CA
+A0G,NL,Boyds Cove,CA
+A0G,NL,Bridgeport,CA
+A0G,NL,Brookfield,CA
+A0G,NL,Burnside,CA
+A0G,NL,Campbellton,CA
+A0G,NL,Cape Freels North,CA
+A0G,NL,Carmanville,CA
+A0G,NL,Carters Cove,CA
+A0G,NL,Change Islands,CA
+A0G,NL,Comfort Cove-Newstead,CA
+A0G,NL,Cottlesville,CA
+A0G,NL,Deadmans Bay,CA
+A0G,NL,Deep Bay,CA
+A0G,NL,Dover,CA
+A0G,NL,Durrell,CA
+A0G,NL,Eastport,CA
+A0G,NL,Embree,CA
+A0G,NL,Fogo,CA
+A0G,NL,Frederickton,CA
+A0G,NL,Gambo South,CA
+A0G,NL,Gambo,CA
+A0G,NL,Gander Bay South,CA
+A0G,NL,Gander Bay,CA
+A0G,NL,Glenwood,CA
+A0G,NL,Glovertown South,CA
+A0G,NL,Glovertown,CA
+A0G,NL,Greenspond,CA
+A0G,NL,Hare Bay BB,CA
+A0G,NL,Herring Neck,CA
+A0G,NL,Hillgrade,CA
+A0G,NL,Horwood,CA
+A0G,NL,Indian Bay BB,CA
+A0G,NL,Island Harbour,CA
+A0G,NL,Joe Batts Arm,CA
+A0G,NL,Ladle Cove,CA
+A0G,NL,Laurenceton,CA
+A0G,NL,Lewisporte,CA
+A0G,NL,Little Burnt Bay,CA
+A0G,NL,Loon Bay,CA
+A0G,NL,Lumsden,CA
+A0G,NL,Main Point,CA
+A0G,NL,Moretons Harbour,CA
+A0G,NL,Musgrave Harbour,CA
+A0G,NL,Newtown,CA
+A0G,NL,Norris Arm Northside,CA
+A0G,NL,Norris Arm,CA
+A0G,NL,Pools Island,CA
+A0G,NL,Port Albert,CA
+A0G,NL,Pound Cove,CA
+A0G,NL,Rodgers Cove,CA
+A0G,NL,Salvage,CA
+A0G,NL,Sandringham,CA
+A0G,NL,Seldom,CA
+A0G,NL,Shalloway Cove,CA
+A0G,NL,St Brendans,CA
+A0G,NL,St Chads,CA
+A0G,NL,Stag Harbour,CA
+A0G,NL,Stoneville,CA
+A0G,NL,Summerford,CA
+A0G,NL,Templeman,CA
+A0G,NL,Tilting,CA
+A0G,NL,Tizzards Harbour,CA
+A0G,NL,Traytown,CA
+A0G,NL,Trinity BB,CA
+A0G,NL,Twillingate,CA
+A0G,NL,Valley Pond,CA
+A0G,NL,Victoria Cove,CA
+A0G,NL,Wareham-Centreville,CA
+A0G,NL,Wesleyville,CA
+A0G,NL,Wings Point,CA
+A0H,NL,Badger,CA
+A0H,NL,Belleoram,CA
+A0H,NL,Bishops Falls,CA
+A0H,NL,Botwood,CA
+A0H,NL,Buchans Junction,CA
+A0H,NL,Buchans,CA
+A0H,NL,Conne River,CA
+A0H,NL,Cottrells Cove,CA
+A0H,NL,English Harbour West,CA
+A0H,NL,Gaultois,CA
+A0H,NL,Harbour Breton,CA
+A0H,NL,Head Bay d'Espoir,CA
+A0H,NL,Hermitage,CA
+A0H,NL,Leading Tickles,CA
+A0H,NL,McCallum,CA
+A0H,NL,Millertown,CA
+A0H,NL,Milltown,CA
+A0H,NL,Peterview,CA
+A0H,NL,Point Leamington,CA
+A0H,NL,Point of Bay,CA
+A0H,NL,Pools Cove,CA
+A0H,NL,Rencontre East,CA
+A0H,NL,Seal Cove FB,CA
+A0H,NL,St Albans,CA
+A0J,NL,Beachside,CA
+A0J,NL,Beaumont,CA
+A0J,NL,Brighton,CA
+A0J,NL,Harrys Harbour,CA
+A0J,NL,Jacksons Cove,CA
+A0J,NL,Kings Point,CA
+A0J,NL,Little Bay Islands,CA
+A0J,NL,Little Bay NDB,CA
+A0J,NL,Miles Cove,CA
+A0J,NL,Pilleys Island,CA
+A0J,NL,Port Anson,CA
+A0J,NL,Rattling Brook,CA
+A0J,NL,Roberts Arm,CA
+A0J,NL,South Brook GB,CA
+A0J,NL,Springdale,CA
+A0J,NL,Triton,CA
+A0K,NL,Anchor Point,CA
+A0K,NL,Baie Verte,CA
+A0K,NL,Bartletts Harbour,CA
+A0K,NL,Bellburns,CA
+A0K,NL,Bide Arm,CA
+A0K,NL,Birchy Head,CA
+A0K,NL,Bird Cove,CA
+A0K,NL,Black Duck Cove,CA
+A0K,NL,Black Tickle,CA
+A0K,NL,Bonne Bay,CA
+A0K,NL,Brents Cove,CA
+A0K,NL,Burlington,CA
+A0K,NL,Cartwright,CA
+A0K,NL,Castors River,CA
+A0K,NL,Charlottetown LAB,CA
+A0K,NL,Coachmans Cove,CA
+A0K,NL,Conche,CA
+A0K,NL,Cooks Harbour,CA
+A0K,NL,Cow Head,CA
+A0K,NL,Croque,CA
+A0K,NL,Daniels Harbour,CA
+A0K,NL,Eddies Cove West,CA
+A0K,NL,Eddies Cove,CA
+A0K,NL,Englee,CA
+A0K,NL,Fleur de Lys,CA
+A0K,NL,Flowers Cove,CA
+A0K,NL,Forteau,CA
+A0K,NL,Green Island Brook,CA
+A0K,NL,Green Island Cove,CA
+A0K,NL,Hampden,CA
+A0K,NL,Harbour Round,CA
+A0K,NL,Hawkes Bay,CA
+A0K,NL,Howley,CA
+A0K,NL,Jacksons Arm,CA
+A0K,NL,L'Anse au Clair,CA
+A0K,NL,L'Anse au Loup,CA
+A0K,NL,La Scie,CA
+A0K,NL,Lodge Bay,CA
+A0K,NL,Main Brook,CA
+A0K,NL,Marys Harbour,CA
+A0K,NL,Middle Arm GB,CA
+A0K,NL,Mings Bight,CA
+A0K,NL,Nippers Harbour,CA
+A0K,NL,Norris Point,CA
+A0K,NL,Pacquet,CA
+A0K,NL,Paradise River,CA
+A0K,NL,Parsons Pond,CA
+A0K,NL,Plum Point,CA
+A0K,NL,Pollards Point,CA
+A0K,NL,Port Hope Simpson,CA
+A0K,NL,Port Saunders,CA
+A0K,NL,Port au Choix,CA
+A0K,NL,Portland Creek,CA
+A0K,NL,Raleigh,CA
+A0K,NL,Red Harbour PB,CA
+A0K,NL,Reefs Harbour,CA
+A0K,NL,River of Ponds,CA
+A0K,NL,Rocky Harbour,CA
+A0K,NL,Roddickton,CA
+A0K,NL,Round Harbour GB,CA
+A0K,NL,Sallys Cove,CA
+A0K,NL,Sandy Cove,CA
+A0K,NL,Seal Cove WB,CA
+A0K,NL,Shoe Cove,CA
+A0K,NL,Snooks Arm,CA
+A0K,NL,Sops Arm,CA
+A0K,NL,St Anthony East,CA
+A0K,NL,St Juliens,CA
+A0K,NL,St Lewis,CA
+A0K,NL,St Lunaire-Griquet,CA
+A0K,NL,St Pauls,CA
+A0K,NL,St. Anthony,CA
+A0K,NL,Trout River,CA
+A0K,NL,West St Modeste,CA
+A0K,NL,Westport,CA
+A0K,NL,Wild Cove WB,CA
+A0K,NL,Williams Harbour,CA
+A0K,NL,Woodstock,CA
+A0L,NL,Benoits Cove,CA
+A0L,NL,Coxs Cove,CA
+A0L,NL,Frenchmans Cove BOI,CA
+A0L,NL,Gallants,CA
+A0L,NL,Lark Harbour,CA
+A0L,NL,Mount Moriah,CA
+A0L,NL,Pasadena,CA
+A0L,NL,York Harbour,CA
+A0M,NL,Burnt Islands BLP,CA
+A0M,NL,Channel-Port-aux-Basques,CA
+A0M,NL,Isle-aux-Morts,CA
+A0M,NL,La Poile,CA
+A0M,NL,Rose Blanche,CA
+A0N,NL,Aguathuna,CA
+A0N,NL,Barachois Brook,CA
+A0N,NL,Black Duck Siding,CA
+A0N,NL,Burgeo,CA
+A0N,NL,Cape Ray,CA
+A0N,NL,Cape St George,CA
+A0N,NL,Cartyville,CA
+A0N,NL,Codroy,CA
+A0N,NL,Doyles,CA
+A0N,NL,Francois,CA
+A0N,NL,Grand Bay East,CA
+A0N,NL,Grey River,CA
+A0N,NL,Heatherton,CA
+A0N,NL,Highlands,CA
+A0N,NL,Jeffreys,CA
+A0N,NL,Lourdes,CA
+A0N,NL,Noels Pond,CA
+A0N,NL,Port au Port,CA
+A0N,NL,Ramea,CA
+A0N,NL,Robinsons,CA
+A0N,NL,South Branch,CA
+A0N,NL,St Andrews,CA
+A0N,NL,St Davids,CA
+A0N,NL,St Fintans,CA
+A0N,NL,St Georges,CA
+A0N,NL,Stephenville Crossing,CA
+A0N,NL,West Bay Centre,CA
+A0P,NL,Happy Valley-Goose Bay,CA
+A0P,NL,Hopedale,CA
+A0P,NL,Makkovik,CA
+A0P,NL,Mud Lake,CA
+A0P,NL,Nain,CA
+A0P,NL,Natuashish,CA
+A0P,NL,North West River,CA
+A0P,NL,Postville,CA
+A0P,NL,Rigolet,CA
+A0R,NL,Churchill Falls,CA
+A0R,NL,Wabush,CA
+A1A,NL,St. John's,CA
+A1B,NL,St. John's,CA
+A1C,NL,St. John's,CA
+A1E,NL,St. John's,CA
+A1G,NL,Kilbride,CA
+A1G,NL,St. John's,CA
+A1H,NL,St. John's,CA
+A1K,NL,Bauline,CA
+A1K,NL,Flatrock,CA
+A1K,NL,Logy Bay,CA
+A1K,NL,Middle Cove,CA
+A1K,NL,Outer Cove,CA
+A1K,NL,Torbay,CA
+A1L,NL,Paradise,CA
+A1M,NL,Portugal Cove-St Philips,CA
+A1N,NL,Mount Pearl,CA
+A1N,NL,St. John's,CA
+A1S,NL,Goulds,CA
+A1V,NL,Gander,CA
+A1W,NL,Conception Bay South,CA
+A1X,NL,Conception Bay South,CA
+A1Y,NL,Bristol's Hope,CA
+A1Y,NL,Carbonear,CA
+A2A,NL,Grand Falls-Windsor,CA
+A2B,NL,Grand Falls-Windsor,CA
+A2H,NL,Corner Brook,CA
+A2H,NL,Massey Drive,CA
+A2N,NL,Kippens,CA
+A2N,NL,Stephenville,CA
+A2V,NL,Labrador City,CA
+A5A,NL,Clarenville,CA
+A8A,NL,Bonne Bay Pond,CA
+A8A,NL,Cormack,CA
+A8A,NL,Deer Lake,CA
+A8A,NL,Pynn's Brook,CA
+A8A,NL,Reidville,CA
+A8A,NL,St Judes,CA
+A8A,NL,Wiltondale,CA
+B0C,NS,Cape North,CA
+B0C,NS,Capstick,CA
+B0C,NS,Dingwall,CA
+B0C,NS,Englishtown,CA
+B0C,NS,Ingonish Beach,CA
+B0C,NS,Ingonish,CA
+B0C,NS,Neils Harbour,CA
+B0C,NS,New Haven,CA
+B0C,NS,St Margaret Village,CA
+B0E,NS,Arichat,CA
+B0E,NS,Baddeck,CA
+B0E,NS,Belle Cote,CA
+B0E,NS,Cheticamp,CA
+B0E,NS,Cleveland,CA
+B0E,NS,D'Escousse,CA
+B0E,NS,Grand Etang,CA
+B0E,NS,Grand River,CA
+B0E,NS,Inverness,CA
+B0E,NS,Judique,CA
+B0E,NS,L'Ardoise,CA
+B0E,NS,Little Narrows,CA
+B0E,NS,Louisdale,CA
+B0E,NS,Lower l'Ardoise,CA
+B0E,NS,Mabou,CA
+B0E,NS,Margaree Centre,CA
+B0E,NS,Margaree Forks,CA
+B0E,NS,Margaree Harbour,CA
+B0E,NS,Margaree Valley,CA
+B0E,NS,Margaree,CA
+B0E,NS,Mulgrave,CA
+B0E,NS,North East Margaree,CA
+B0E,NS,Orangedale,CA
+B0E,NS,Petit Etang,CA
+B0E,NS,Petit de Grat,CA
+B0E,NS,Pleasant Bay,CA
+B0E,NS,Port Hood,CA
+B0E,NS,River Bourgeois,CA
+B0E,NS,River Denys,CA
+B0E,NS,Sampson Cove,CA
+B0E,NS,Scotsville,CA
+B0E,NS,South West Margaree,CA
+B0E,NS,St Peters,CA
+B0E,NS,St-Joseph-du-Moine,CA
+B0E,NS,Wagmatcook,CA
+B0E,NS,West Arichat,CA
+B0E,NS,West Bay Road,CA
+B0E,NS,West Bay,CA
+B0E,NS,Whycocomagh,CA
+B0H,NS,Afton Station,CA
+B0H,NS,Aspen,CA
+B0H,NS,Boylston,CA
+B0H,NS,Canso,CA
+B0H,NS,Cross Roads Country Harbour,CA
+B0H,NS,Frankville,CA
+B0H,NS,Goldboro,CA
+B0H,NS,Goshen,CA
+B0H,NS,Guysborough,CA
+B0H,NS,Havre Boucher,CA
+B0H,NS,Heatherton,CA
+B0H,NS,Isaacs Harbour,CA
+B0H,NS,Larrys River,CA
+B0H,NS,Little Dover,CA
+B0H,NS,Monastery,CA
+B0H,NS,St Andrews,CA
+B0J,NS,Bickerton West,CA
+B0J,NS,Black Point,CA
+B0J,NS,Blandford,CA
+B0J,NS,Blockhouse,CA
+B0J,NS,Brooklyn,CA
+B0J,NS,Chester Basin,CA
+B0J,NS,Chester,CA
+B0J,NS,East Chezzetcook,CA
+B0J,NS,Fishermans Harbour,CA
+B0J,NS,Head of Chezzetcook,CA
+B0J,NS,Head of Jeddore,CA
+B0J,NS,Hubbards,CA
+B0J,NS,Jeddore Oyster Ponds,CA
+B0J,NS,Lake Charlotte,CA
+B0J,NS,Liscomb,CA
+B0J,NS,Little Tancook,CA
+B0J,NS,Lunenburg,CA
+B0J,NS,Mahone Bay,CA
+B0J,NS,Marie Joseph,CA
+B0J,NS,Mill Village,CA
+B0J,NS,Mooseland,CA
+B0J,NS,Moser River,CA
+B0J,NS,Musquodoboit Harbour,CA
+B0J,NS,New Ross,CA
+B0J,NS,Port Dufferin,CA
+B0J,NS,Port Medway,CA
+B0J,NS,Riverport,CA
+B0J,NS,Rose Bay,CA
+B0J,NS,Shearwater,CA
+B0J,NS,Sheet Harbour,CA
+B0J,NS,Sherbrooke,CA
+B0J,NS,Tancook Island,CA
+B0J,NS,Tangier,CA
+B0J,NS,West Chezzetcook,CA
+B0J,NS,Western Shore,CA
+B0K,NS,Barneys River Station,CA
+B0K,NS,Eureka,CA
+B0K,NS,Hopewell,CA
+B0K,NS,Malagash,CA
+B0K,NS,Merigomish,CA
+B0K,NS,Pictou Island,CA
+B0K,NS,Pictou,CA
+B0K,NS,Port Howe,CA
+B0K,NS,Pugwash Junction,CA
+B0K,NS,Pugwash,CA
+B0K,NS,River John,CA
+B0K,NS,Salt Springs,CA
+B0K,NS,Scotsburn,CA
+B0K,NS,Stellarton,CA
+B0K,NS,Sunnybrae,CA
+B0K,NS,Tatamagouche,CA
+B0K,NS,Thorburn,CA
+B0K,NS,Trenton,CA
+B0K,NS,Wallace,CA
+B0K,NS,West River Station,CA
+B0K,NS,Westville,CA
+B0L,NS,Joggins,CA
+B0L,NS,Maccan,CA
+B0L,NS,Nappan,CA
+B0L,NS,Northport,CA
+B0L,NS,River Hebert East,CA
+B0L,NS,River Hebert,CA
+B0M,NS,Advocate Harbour,CA
+B0M,NS,Bass River,CA
+B0M,NS,Belmont,CA
+B0M,NS,Collingwood Corner,CA
+B0M,NS,Debert,CA
+B0M,NS,Diligent River,CA
+B0M,NS,Economy,CA
+B0M,NS,Five Islands,CA
+B0M,NS,Great Village,CA
+B0M,NS,Londonderry,CA
+B0M,NS,Lower Five Islands,CA
+B0M,NS,Oxford Junction,CA
+B0M,NS,Oxford,CA
+B0M,NS,Parrsboro,CA
+B0M,NS,Port Greville,CA
+B0M,NS,River Philip,CA
+B0M,NS,Southampton,CA
+B0M,NS,Springhill,CA
+B0M,NS,Wentworth,CA
+B0M,NS,Westchester Station,CA
+B0N,NS,Admiral Rock,CA
+B0N,NS,Alton,CA
+B0N,NS,Antrim,CA
+B0N,NS,Ardoise,CA
+B0N,NS,Barr Settlement,CA
+B0N,NS,Birch Hill,CA
+B0N,NS,Brentwood,CA
+B0N,NS,Brookfield,CA
+B0N,NS,Carrolls Corner,CA
+B0N,NS,Centre Burlington,CA
+B0N,NS,Chaswood,CA
+B0N,NS,Cheverie,CA
+B0N,NS,Cloverdale,CA
+B0N,NS,Coldstream,CA
+B0N,NS,Cooks Brook,CA
+B0N,NS,Currys Corner,CA
+B0N,NS,Densmores Mills,CA
+B0N,NS,East Stewiacke,CA
+B0N,NS,Elderbank,CA
+B0N,NS,Ellershouse,CA
+B0N,NS,Fort Ellis,CA
+B0N,NS,Gays River,CA
+B0N,NS,Green Creek,CA
+B0N,NS,Hardwood Lands,CA
+B0N,NS,Indian Brook 14,CA
+B0N,NS,Kennetcook,CA
+B0N,NS,Lake Egmont,CA
+B0N,NS,Lanesville,CA
+B0N,NS,Mackay Siding,CA
+B0N,NS,Macphees Corner,CA
+B0N,NS,Maitland,CA
+B0N,NS,Maple Grove,CA
+B0N,NS,Meaghers Grant,CA
+B0N,NS,Micmac,CA
+B0N,NS,Middle Musquodoboit,CA
+B0N,NS,Middle Stewiacke,CA
+B0N,NS,Milford Station,CA
+B0N,NS,Milford,CA
+B0N,NS,Mill Village,CA
+B0N,NS,Mount Uniacke,CA
+B0N,NS,Newport Station,CA
+B0N,NS,Newport,CA
+B0N,NS,Noel,CA
+B0N,NS,North Salem,CA
+B0N,NS,Pine Grove,CA
+B0N,NS,Rines Creek,CA
+B0N,NS,Riverside,CA
+B0N,NS,Scotch Village,CA
+B0N,NS,Shortts Lake,CA
+B0N,NS,Shubenacadie East,CA
+B0N,NS,Shubenacadie,CA
+B0N,NS,South Maitland,CA
+B0N,NS,Ste Croix,CA
+B0N,NS,Stewiacke,CA
+B0N,NS,Summerville,CA
+B0N,NS,Upper Kennetcook,CA
+B0N,NS,Upper Musquodoboit,CA
+B0N,NS,Upper Rawdon,CA
+B0N,NS,Upper Stewiacke,CA
+B0N,NS,Urbania,CA
+B0N,NS,Walton,CA
+B0N,NS,West Indian Road,CA
+B0N,NS,West St Andrews,CA
+B0N,NS,Windsor,CA
+B0N,NS,Wittenburg,CA
+B0N,NS,Wyses Corner,CA
+B0P,NS,Auburn,CA
+B0P,NS,Avonport,CA
+B0P,NS,Aylesford,CA
+B0P,NS,Berwick,CA
+B0P,NS,Black Rock,CA
+B0P,NS,Brooklyn Corner,CA
+B0P,NS,Cambridge 32,CA
+B0P,NS,Cambridge,CA
+B0P,NS,Canada Creek,CA
+B0P,NS,Canning,CA
+B0P,NS,Centreville,CA
+B0P,NS,Chipman Brook,CA
+B0P,NS,Falmouth,CA
+B0P,NS,Grafton,CA
+B0P,NS,Grand Pre,CA
+B0P,NS,Greenwood,CA
+B0P,NS,Hantsport,CA
+B0P,NS,Kingston,CA
+B0P,NS,Lakeville,CA
+B0P,NS,Port Williams,CA
+B0P,NS,Prospect,CA
+B0P,NS,Rockland,CA
+B0P,NS,Ross Corner,CA
+B0P,NS,South Waterville,CA
+B0P,NS,Tupper Lake,CA
+B0P,NS,Waterville,CA
+B0P,NS,West Black Rock,CA
+B0P,NS,Whites Corner,CA
+B0P,NS,Wilmot Station,CA
+B0P,NS,Woodville,CA
+B0R,NS,Barss Corner,CA
+B0R,NS,Lahave,CA
+B0R,NS,New Germany,CA
+B0R,NS,Pleasantville,CA
+B0R,NS,Springfield,CA
+B0S,NS,Annapolis Royal,CA
+B0S,NS,Bear River,CA
+B0S,NS,Bridgetown,CA
+B0S,NS,Clementsport,CA
+B0S,NS,Clementsvale,CA
+B0S,NS,Cornwallis,CA
+B0S,NS,Deep Brook,CA
+B0S,NS,Granville Ferry,CA
+B0S,NS,Hampton,CA
+B0S,NS,Lawrencetown,CA
+B0S,NS,Margaretsville,CA
+B0S,NS,Middleton,CA
+B0S,NS,Paradise,CA
+B0S,NS,Smiths Cove,CA
+B0T,NS,Caledonia,CA
+B0T,NS,Greenfield,CA
+B0T,NS,Hunts Point,CA
+B0T,NS,Ingomar,CA
+B0T,NS,Jordan Falls,CA
+B0T,NS,Liverpool,CA
+B0T,NS,Lockeport,CA
+B0T,NS,Lydgate,CA
+B0T,NS,Maitland Bridge,CA
+B0T,NS,Milton,CA
+B0T,NS,Osborne Harbour,CA
+B0T,NS,Port Joli,CA
+B0T,NS,Port Mouton,CA
+B0T,NS,Sable River,CA
+B0T,NS,Shelburne,CA
+B0T,NS,South Brookfield,CA
+B0V,NS,Digby,CA
+B0V,NS,Freeport,CA
+B0V,NS,Little River,CA
+B0V,NS,Sandy Cove,CA
+B0V,NS,Tiverton,CA
+B0V,NS,Westport,CA
+B0W,NS,Arcadia,CA
+B0W,NS,Baccaro,CA
+B0W,NS,Barrington Passage,CA
+B0W,NS,Barrington,CA
+B0W,NS,Barton,CA
+B0W,NS,Belliveau Cove,CA
+B0W,NS,Cape Negro,CA
+B0W,NS,Church Point,CA
+B0W,NS,Clam Point,CA
+B0W,NS,Clarks Harbour,CA
+B0W,NS,Clyde River,CA
+B0W,NS,Crowell,CA
+B0W,NS,East Baccaro,CA
+B0W,NS,East Kemptville,CA
+B0W,NS,Glenwood,CA
+B0W,NS,Kemptville,CA
+B0W,NS,Little Brook,CA
+B0W,NS,Lower East Pubnico,CA
+B0W,NS,Lower Wedgeport,CA
+B0W,NS,Lower West Pubnico,CA
+B0W,NS,Lower Woods Harbour,CA
+B0W,NS,Mavillette,CA
+B0W,NS,McGray,CA
+B0W,NS,Meteghan Centre,CA
+B0W,NS,Meteghan River,CA
+B0W,NS,Meteghan,CA
+B0W,NS,Middle West Pubnico,CA
+B0W,NS,North East Point,CA
+B0W,NS,Plympton,CA
+B0W,NS,Port Clyde,CA
+B0W,NS,Port la Tour,CA
+B0W,NS,Pubnico,CA
+B0W,NS,Salmon River,CA
+B0W,NS,Saulnierville,CA
+B0W,NS,Shag Harbour,CA
+B0W,NS,Smithsville,CA
+B0W,NS,South Ohio,CA
+B0W,NS,Ste-Anne-du-Ruisseau,CA
+B0W,NS,Stoney Island,CA
+B0W,NS,Thomasville,CA
+B0W,NS,Tusket,CA
+B0W,NS,Upper Port la Tour,CA
+B0W,NS,Wedgeport,CA
+B0W,NS,West Pubnico,CA
+B0W,NS,Weymouth,CA
+B1A,NS,Donkin,CA
+B1A,NS,Glace Bay,CA
+B1A,NS,Port Caledonia,CA
+B1B,NS,Birch Grove,CA
+B1B,NS,Black Brook,CA
+B1B,NS,Broughton,CA
+B1B,NS,Homeville,CA
+B1B,NS,Port Morien,CA
+B1B,NS,Round Island,CA
+B1B,NS,South Head,CA
+B1B,NS,Tower Road,CA
+B1C,NS,Bateston,CA
+B1C,NS,Catalone Gut,CA
+B1C,NS,Catalone,CA
+B1C,NS,Fortress of Louisbourg,CA
+B1C,NS,Little Lorraine,CA
+B1C,NS,Louisbourg,CA
+B1C,NS,Main-a-Dieu,CA
+B1E,NS,Reserve Mines,CA
+B1G,NS,Dominion,CA
+B1H,NS,Gardiner Mines,CA
+B1H,NS,Lingan,CA
+B1H,NS,New Victoria,CA
+B1H,NS,New Waterford,CA
+B1H,NS,River Ryan,CA
+B1H,NS,Scotchtown,CA
+B1J,NS,Ben Eoin,CA
+B1J,NS,Big Pond Centre,CA
+B1J,NS,Big Pond,CA
+B1J,NS,East Bay,CA
+B1J,NS,Enon,CA
+B1J,NS,Irish Cove,CA
+B1J,NS,Irishvale,CA
+B1J,NS,Islandview,CA
+B1J,NS,Middle Cape,CA
+B1J,NS,Northside East Bay,CA
+B1J,NS,St Andrews Channel,CA
+B1K,NS,Albert Bridge,CA
+B1K,NS,Big Ridge,CA
+B1K,NS,French Road,CA
+B1K,NS,Gabarus Lake,CA
+B1K,NS,Gabarus,CA
+B1K,NS,Grand Mira North,CA
+B1K,NS,Grand Mira South,CA
+B1K,NS,Huntington,CA
+B1K,NS,Juniper Mountain,CA
+B1K,NS,Marion Bridge,CA
+B1K,NS,Mira Gut,CA
+B1K,NS,Rock Elm,CA
+B1K,NS,Sandfield,CA
+B1K,NS,Upper Grand Mira,CA
+B1L,NS,Blacketts Lake,CA
+B1L,NS,Caribou Marsh,CA
+B1L,NS,Coxheath,CA
+B1L,NS,Dutch Brook,CA
+B1L,NS,Howie Center,CA
+B1L,NS,Portage,CA
+B1L,NS,Prime Brook,CA
+B1L,NS,Sydney Forks,CA
+B1L,NS,Sydney River,CA
+B1L,NS,Sydney,CA
+B1M,NS,Caribou Marsh,CA
+B1M,NS,Dutch Brook,CA
+B1M,NS,Grand Lake Road,CA
+B1M,NS,Mira Road,CA
+B1M,NS,Sydney,CA
+B1N,NS,Lingan Road,CA
+B1N,NS,South Bar,CA
+B1N,NS,Sydney,CA
+B1N,NS,Victoria Mines,CA
+B1P,NS,Mira Road,CA
+B1P,NS,Sydney,CA
+B1P,NS,Westmount,CA
+B1R,NS,Coxheath,CA
+B1R,NS,Sydney,CA
+B1R,NS,Westmount,CA
+B1S,NS,Membertou,CA
+B1S,NS,Prime Brook,CA
+B1S,NS,Sydney River,CA
+B1S,NS,Sydney,CA
+B1T,NS,Beaver Cove,CA
+B1T,NS,Benacadie,CA
+B1T,NS,Big Beach,CA
+B1T,NS,Castle Bay,CA
+B1T,NS,Christmas Island,CA
+B1T,NS,Grand Narrows,CA
+B1T,NS,Pipers Cove,CA
+B1T,NS,Shenacadie,CA
+B1V,NS,Sydney Mines,CA
+B1W,NS,Eskasoni,CA
+B1X,NS,Big Bras d'Or,CA
+B1X,NS,Black Rock,CA
+B1X,NS,Boularderie Center,CA
+B1X,NS,Boularderie East,CA
+B1X,NS,Cape Dauphin,CA
+B1X,NS,Kempt Head,CA
+B1X,NS,New Campbellton,CA
+B1X,NS,New Harris,CA
+B1X,NS,Ross Ferry,CA
+B1Y,NS,Alder Point,CA
+B1Y,NS,Barrachois,CA
+B1Y,NS,Boisdale,CA
+B1Y,NS,Bras d'Or,CA
+B1Y,NS,Dalem Lake,CA
+B1Y,NS,Florence,CA
+B1Y,NS,Georges River,CA
+B1Y,NS,Groves Point,CA
+B1Y,NS,Hillside Boularderie,CA
+B1Y,NS,Ironville,CA
+B1Y,NS,Leitches Creek,CA
+B1Y,NS,Little Bras d'Or,CA
+B1Y,NS,Little Pond,CA
+B1Y,NS,Long Island,CA
+B1Y,NS,Mill Creek,CA
+B1Y,NS,Millville,CA
+B1Y,NS,Point Aconi,CA
+B1Y,NS,Scotch Lake,CA
+B1Y,NS,Southside Boularderie,CA
+B2A,NS,Balls Creek,CA
+B2A,NS,Beechmont,CA
+B2A,NS,Edwardsville,CA
+B2A,NS,Frenchvale,CA
+B2A,NS,Gillis Lake,CA
+B2A,NS,Leitches Creek,CA
+B2A,NS,Macadams Lake,CA
+B2A,NS,North Sydney,CA
+B2A,NS,North West Arm,CA
+B2A,NS,Point Edward,CA
+B2A,NS,Upper Leitches Creek,CA
+B2A,NS,Upper North Sydney,CA
+B2C,NS,Barra Glen,CA
+B2C,NS,Gillis Point,CA
+B2C,NS,Grass Cove,CA
+B2C,NS,Highland Hill,CA
+B2C,NS,Iona,CA
+B2C,NS,Jamesville,CA
+B2C,NS,Lower Washabuck,CA
+B2C,NS,Mackinnons Harbour,CA
+B2C,NS,Ottawa Brook,CA
+B2C,NS,Red Point,CA
+B2C,NS,St Columba,CA
+B2C,NS,Upper Washabuck,CA
+B2C,NS,Washabuck Centre,CA
+B2E,NS,Irish Cove,CA
+B2E,NS,Lake Uist,CA
+B2E,NS,Loch Lomond,CA
+B2G,NS,Antigonish,CA
+B2H,NS,New Glasgow,CA
+B2J,NS,Fourchu,CA
+B2J,NS,Framboise Intervale,CA
+B2J,NS,Framboise,CA
+B2J,NS,Stirling,CA
+B2N,NS,Truro,CA
+B2R,NS,Montague Gold Mines,CA
+B2R,NS,Waverley,CA
+B2S,NS,Barr Settlement,CA
+B2S,NS,Belnan,CA
+B2S,NS,Dutch Settlement,CA
+B2S,NS,East Gore,CA
+B2S,NS,Elmsdale,CA
+B2S,NS,Lantz,CA
+B2S,NS,Nine Mile River,CA
+B2S,NS,Upper Nine Mile River,CA
+B2T,NS,Enfield,CA
+B2T,NS,Fall River,CA
+B2T,NS,Fletchers Lake,CA
+B2T,NS,Goffs,CA
+B2T,NS,Grand Lake,CA
+B2T,NS,Oakfield,CA
+B2T,NS,Oldham,CA
+B2T,NS,Wellington,CA
+B2T,NS,Windsor Junction,CA
+B2V,NS,Cole Harbour,CA
+B2V,NS,Dartmouth,CA
+B2W,NS,Cole Harbour,CA
+B2W,NS,Dartmouth,CA
+B2W,NS,Lake Loon,CA
+B2W,NS,Westphal,CA
+B2X,NS,Dartmouth,CA
+B2Y,NS,Dartmouth,CA
+B2Z,NS,Cherry Brook,CA
+B2Z,NS,Cole Harbour,CA
+B2Z,NS,Dartmouth,CA
+B2Z,NS,East Lawrencetown,CA
+B2Z,NS,East Preston,CA
+B2Z,NS,Lake Loon,CA
+B2Z,NS,Lawrencetown,CA
+B2Z,NS,Mineville,CA
+B2Z,NS,North Preston,CA
+B2Z,NS,Westphal,CA
+B3A,NS,Dartmouth,CA
+B3B,NS,Dartmouth,CA
+B3E,NS,Lake Echo,CA
+B3E,NS,Middle Porters Lake,CA
+B3E,NS,Porters Lake,CA
+B3E,NS,West Porters Lake,CA
+B3G,NS,Cow Bay,CA
+B3G,NS,Eastern Passage,CA
+B3H,NS,Halifax,CA
+B3J,NS,Halifax,CA
+B3K,NS,Halifax,CA
+B3L,NS,Halifax,CA
+B3M,NS,Halifax,CA
+B3N,NS,Halifax,CA
+B3P,NS,Halifax,CA
+B3R,NS,Halifax,CA
+B3R,NS,Herring Cove,CA
+B3S,NS,Halifax,CA
+B3T,NS,Beechville,CA
+B3T,NS,Brookside,CA
+B3T,NS,Goodwood,CA
+B3T,NS,Hatchet Lake,CA
+B3T,NS,Lakeside,CA
+B3T,NS,Lower Prospect,CA
+B3T,NS,Prospect Bay,CA
+B3T,NS,Prospect Village,CA
+B3T,NS,Prospect,CA
+B3T,NS,Shad Bay,CA
+B3T,NS,Terence Bay,CA
+B3T,NS,Timberlea,CA
+B3T,NS,Whites Lake,CA
+B3V,NS,Bald Rock,CA
+B3V,NS,Bear Cove,CA
+B3V,NS,Duncans Cove,CA
+B3V,NS,East Pennant,CA
+B3V,NS,Fergusons Cove,CA
+B3V,NS,Halibut Bay,CA
+B3V,NS,Halifax,CA
+B3V,NS,Harrietsfield,CA
+B3V,NS,Herring Cove,CA
+B3V,NS,Ketch Harbour,CA
+B3V,NS,Portuguese Cove,CA
+B3V,NS,Sambro Creek,CA
+B3V,NS,Sambro Head,CA
+B3V,NS,Sambro,CA
+B3V,NS,West Pennant,CA
+B3V,NS,Williamswood,CA
+B3Z,NS,Bayside,CA
+B3Z,NS,Big Lake,CA
+B3Z,NS,Blind Bay,CA
+B3Z,NS,Boutiliers Point,CA
+B3Z,NS,East Dover,CA
+B3Z,NS,French Village,CA
+B3Z,NS,Glen Haven,CA
+B3Z,NS,Glen Margaret,CA
+B3Z,NS,Hacketts Cove,CA
+B3Z,NS,Hammonds Plains,CA
+B3Z,NS,Head of St Margarets Bay,CA
+B3Z,NS,Hubley,CA
+B3Z,NS,Indian Harbour,CA
+B3Z,NS,Ingramport,CA
+B3Z,NS,Lewis Lake,CA
+B3Z,NS,McGraths Cove,CA
+B3Z,NS,Peggys Cove,CA
+B3Z,NS,Seabright,CA
+B3Z,NS,Stillwater Lake,CA
+B3Z,NS,Tantallon,CA
+B3Z,NS,Upper Tantallon,CA
+B3Z,NS,West Dover,CA
+B4A,NS,Bedford,CA
+B4B,NS,Bedford,CA
+B4B,NS,Hammonds Plains,CA
+B4B,NS,Lucasville,CA
+B4B,NS,Middle Sackville,CA
+B4B,NS,Upper Hammonds Plains,CA
+B4C,NS,Dartmouth,CA
+B4C,NS,Lakeview,CA
+B4C,NS,Lower Sackville,CA
+B4E,NS,Beaver Bank,CA
+B4E,NS,Lower Sackville,CA
+B4E,NS,Middle Sackville,CA
+B4E,NS,Upper Sackville,CA
+B4G,NS,Beaver Bank,CA
+B4G,NS,Kinsac,CA
+B4H,NS,Amherst,CA
+B4N,NS,Kentville,CA
+B4N,NS,New Minas,CA
+B4N,NS,North Alton,CA
+B4P,NS,Wolfville,CA
+B4R,NS,Coldbrook,CA
+B4V,NS,Auburndale,CA
+B4V,NS,Baker Settlement,CA
+B4V,NS,Branch Lahave,CA
+B4V,NS,Bridgewater,CA
+B4V,NS,Buckfield,CA
+B4V,NS,Camperdown,CA
+B4V,NS,Chelsea,CA
+B4V,NS,Conquerall Bank,CA
+B4V,NS,Conquerall Mills,CA
+B4V,NS,Cookville,CA
+B4V,NS,Crouses Settlement,CA
+B4V,NS,Crousetown,CA
+B4V,NS,Danesville,CA
+B4V,NS,Dayspring,CA
+B4V,NS,East Clifford,CA
+B4V,NS,East Lahave,CA
+B4V,NS,Green Bay,CA
+B4V,NS,Grimms Settlement,CA
+B4V,NS,Hebbs Cross,CA
+B4V,NS,Hebbville,CA
+B4V,NS,Indian Path,CA
+B4V,NS,Italy Cross,CA
+B4V,NS,Labelle,CA
+B4V,NS,Laconia,CA
+B4V,NS,Lapland,CA
+B4V,NS,Lower Branch,CA
+B4V,NS,Lower Northfield,CA
+B4V,NS,Middle Lahave,CA
+B4V,NS,Middlewood,CA
+B4V,NS,Midville Branch,CA
+B4V,NS,Molega Lake,CA
+B4V,NS,New Canada,CA
+B4V,NS,Newcombville,CA
+B4V,NS,Oakhill,CA
+B4V,NS,Petite Riviere,CA
+B4V,NS,Pine Grove,CA
+B4V,NS,Pinehurst,CA
+B4V,NS,Rhodes Corner,CA
+B4V,NS,Spectacle Lakes,CA
+B4V,NS,Upper Branch,CA
+B4V,NS,Upper Chelsea,CA
+B4V,NS,Upper Lahave,CA
+B4V,NS,Upper Northfield,CA
+B4V,NS,Waterloo,CA
+B4V,NS,Wentzells Lake,CA
+B4V,NS,West Clifford,CA
+B4V,NS,West Northfield,CA
+B4V,NS,Whynotts Settlement,CA
+B4V,NS,Wileville,CA
+B5A,NS,Alder Plains,CA
+B5A,NS,Arcadia,CA
+B5A,NS,Barrio Lake,CA
+B5A,NS,Beaver River,CA
+B5A,NS,Brazil Lake,CA
+B5A,NS,Brenton,CA
+B5A,NS,Brooklyn,CA
+B5A,NS,Canaan,CA
+B5A,NS,Cape Forchu,CA
+B5A,NS,Cape St. Marys,CA
+B5A,NS,Carleton,CA
+B5A,NS,Cedar Lake,CA
+B5A,NS,Central Chebogue,CA
+B5A,NS,Chebogue Point,CA
+B5A,NS,Darlings Lake,CA
+B5A,NS,Dayton,CA
+B5A,NS,Deerfield,CA
+B5A,NS,East Kemptville,CA
+B5A,NS,Forest Glen,CA
+B5A,NS,Gardners Mills,CA
+B5A,NS,Greenville,CA
+B5A,NS,Hebron,CA
+B5A,NS,Hectanooga,CA
+B5A,NS,Hillview,CA
+B5A,NS,Ireton,CA
+B5A,NS,Kelleys Cove,CA
+B5A,NS,Kemptville,CA
+B5A,NS,Lake Annis,CA
+B5A,NS,Lake George,CA
+B5A,NS,Mavillette,CA
+B5A,NS,Milton Highlands,CA
+B5A,NS,North Chegoggin,CA
+B5A,NS,North Kemptville,CA
+B5A,NS,Norwood,CA
+B5A,NS,Overton,CA
+B5A,NS,Pembroke,CA
+B5A,NS,Pleasant Lake,CA
+B5A,NS,Pleasant Valley,CA
+B5A,NS,Port Maitland,CA
+B5A,NS,Richfield,CA
+B5A,NS,Richmond,CA
+B5A,NS,Rockville,CA
+B5A,NS,Salmon River,CA
+B5A,NS,Sand Beach,CA
+B5A,NS,Sandford,CA
+B5A,NS,Short Beach,CA
+B5A,NS,South Chegoggin,CA
+B5A,NS,South Ohio,CA
+B5A,NS,Springdale,CA
+B5A,NS,Summerville,CA
+B5A,NS,Wellington,CA
+B5A,NS,Woodstock,CA
+B5A,NS,Woodvale,CA
+B5A,NS,Yarmouth 33,CA
+B5A,NS,Yarmouth Bar,CA
+B5A,NS,Yarmouth,CA
+B6L,NS,Beaver Brook,CA
+B6L,NS,Bible Hill,CA
+B6L,NS,Brookside,CA
+B6L,NS,Camden,CA
+B6L,NS,Central North River,CA
+B6L,NS,Central Onslow,CA
+B6L,NS,Clifton,CA
+B6L,NS,Crowes Mills,CA
+B6L,NS,East Mountain,CA
+B6L,NS,Green Oaks,CA
+B6L,NS,Greenfield,CA
+B6L,NS,Harmony,CA
+B6L,NS,Kemptown,CA
+B6L,NS,Lower Onslow,CA
+B6L,NS,Lower Truro,CA
+B6L,NS,Manganese Mines,CA
+B6L,NS,McCallum Settlement,CA
+B6L,NS,Millbrook,CA
+B6L,NS,Murray Siding,CA
+B6L,NS,North River,CA
+B6L,NS,Nuttby,CA
+B6L,NS,Old Barns,CA
+B6L,NS,Onslow Mountain,CA
+B6L,NS,Princeport,CA
+B6L,NS,Riversdale,CA
+B6L,NS,Salmon River,CA
+B6L,NS,Truro Heights,CA
+B6L,NS,Truro,CA
+B6L,NS,Upper Brookside,CA
+B6L,NS,Upper North River,CA
+B6L,NS,Upper Onslow,CA
+B6L,NS,Valley,CA
+B9A,NS,Askilton,CA
+B9A,NS,Craigmore,CA
+B9A,NS,Crandall Road,CA
+B9A,NS,Creignish,CA
+B9A,NS,Lexington,CA
+B9A,NS,Long Point,CA
+B9A,NS,Mackdale,CA
+B9A,NS,Melville,CA
+B9A,NS,Newtown,CA
+B9A,NS,Pleasant Hill,CA
+B9A,NS,Point Tupper,CA
+B9A,NS,Port Hastings,CA
+B9A,NS,Port Hawkesbury,CA
+B9A,NS,Port Malcolm,CA
+B9A,NS,Queensville,CA
+B9A,NS,Sugar Camp,CA
+B9A,NS,Troy,CA
+C0A,PE,Argyle Shore,CA
+C0A,PE,Belfast,CA
+C0A,PE,Belle River,CA
+C0A,PE,Bonshaw,CA
+C0A,PE,Breadalbane,CA
+C0A,PE,Canoe Cove,CA
+C0A,PE,Cardigan,CA
+C0A,PE,Clyde River,CA
+C0A,PE,Cornwall,CA
+C0A,PE,Crapaud,CA
+C0A,PE,Cumberland,CA
+C0A,PE,Elmira,CA
+C0A,PE,Elmwood,CA
+C0A,PE,Fairview,CA
+C0A,PE,Georgetown,CA
+C0A,PE,Green Gables,CA
+C0A,PE,Hunter River,CA
+C0A,PE,Kingston,CA
+C0A,PE,Long Creek,CA
+C0A,PE,Meadowbank,CA
+C0A,PE,Montague,CA
+C0A,PE,Morell,CA
+C0A,PE,Mount Stewart,CA
+C0A,PE,Murray Harbour,CA
+C0A,PE,Murray River,CA
+C0A,PE,New Argyle,CA
+C0A,PE,New Dominion,CA
+C0A,PE,New Glasgow,CA
+C0A,PE,New Haven,CA
+C0A,PE,Nine Mile Creek,CA
+C0A,PE,North Rustico,CA
+C0A,PE,North Wiltshire,CA
+C0A,PE,Rice Point,CA
+C0A,PE,Rocky Point,CA
+C0A,PE,Souris,CA
+C0A,PE,St Catherines,CA
+C0A,PE,St-Peters Bay,CA
+C0A,PE,Vernon Bridge,CA
+C0A,PE,Victoria,CA
+C0A,PE,Warren Grove,CA
+C0A,PE,York,CA
+C0B,PE,Albany,CA
+C0B,PE,Alberton,CA
+C0B,PE,Bedeque,CA
+C0B,PE,Bloomfield Station,CA
+C0B,PE,Borden-Carleton,CA
+C0B,PE,Central Bedeque,CA
+C0B,PE,Coleman,CA
+C0B,PE,Ellerslie,CA
+C0B,PE,Elmsdale,CA
+C0B,PE,Freetown,CA
+C0B,PE,Kensington,CA
+C0B,PE,Kinkora,CA
+C0B,PE,Lennox Island,CA
+C0B,PE,Miminegash,CA
+C0B,PE,Miscouche,CA
+C0B,PE,O'Leary,CA
+C0B,PE,Richmond,CA
+C0B,PE,Slemon Park,CA
+C0B,PE,St-Louis,CA
+C0B,PE,Tignish,CA
+C0B,PE,Tyne Valley,CA
+C0B,PE,Wellington Station,CA
+C1A,PE,Charlottetown,CA
+C1B,PE,Alexandra,CA
+C1B,PE,Auburn,CA
+C1B,PE,Bethel,CA
+C1B,PE,Bunbury,CA
+C1B,PE,Charlottetown,CA
+C1B,PE,Donagh,CA
+C1B,PE,Fort Augustus,CA
+C1B,PE,Glenfinnan,CA
+C1B,PE,Hazelbrook,CA
+C1B,PE,Hermitage,CA
+C1B,PE,Johnstons River,CA
+C1B,PE,Lake Verde,CA
+C1B,PE,Mermaid,CA
+C1B,PE,Mount Albion,CA
+C1B,PE,Mount Herbert,CA
+C1B,PE,Mount Mellick,CA
+C1B,PE,Pisquid West,CA
+C1B,PE,Pownal,CA
+C1B,PE,Stratford,CA
+C1B,PE,Tarantum,CA
+C1B,PE,Village Green,CA
+C1B,PE,Waterside,CA
+C1B,PE,Websters Corner,CA
+C1C,PE,Charlottetown,CA
+C1C,PE,Dunstaffnage,CA
+C1C,PE,Frenchfort,CA
+C1C,PE,Marshfield,CA
+C1C,PE,Suffolk,CA
+C1E,PE,Brackley Beach,CA
+C1E,PE,Brackley,CA
+C1E,PE,Charlottetown,CA
+C1E,PE,Ebenezer,CA
+C1E,PE,Harrington,CA
+C1E,PE,Milton Station,CA
+C1E,PE,North Milton,CA
+C1E,PE,North Winsloe,CA
+C1E,PE,Oyster Bed Bridge,CA
+C1E,PE,South Winsloe,CA
+C1E,PE,Springvale,CA
+C1E,PE,Union Road,CA
+C1E,PE,Warren Grove,CA
+C1E,PE,Wheatley River,CA
+C1E,PE,Winsloe,CA
+C1N,PE,Central Bedeque,CA
+C1N,PE,Summerside,CA
+E1A,NB,Dieppe,CA
+E1A,NB,Moncton,CA
+E1B,NB,Riverview,CA
+E1C,NB,Moncton,CA
+E1E,NB,Moncton,CA
+E1G,NB,Allison,CA
+E1G,NB,Ammon,CA
+E1G,NB,Berry Mills,CA
+E1G,NB,Boundary Creek,CA
+E1G,NB,Dundas,CA
+E1G,NB,Gallagher Ridge,CA
+E1G,NB,Gladeside,CA
+E1G,NB,Indian Mountain,CA
+E1G,NB,Lutes Mountain,CA
+E1G,NB,McQuade,CA
+E1G,NB,Moncton,CA
+E1G,NB,New Scotland,CA
+E1G,NB,Steeves Mountain,CA
+E1G,NB,Stilesville,CA
+E1H,NB,Calhoun,CA
+E1H,NB,Greater Lakeburn,CA
+E1H,NB,Irishtown,CA
+E1H,NB,Lakeville-Westmorland,CA
+E1H,NB,Macdougall Settlement,CA
+E1H,NB,Meadow Brook,CA
+E1H,NB,Moncton,CA
+E1H,NB,Saint-Philippe,CA
+E1H,NB,Scotch Settlement,CA
+E1J,NB,Berryton,CA
+E1J,NB,Lower Coverdale,CA
+E1J,NB,Pine Glen,CA
+E1J,NB,Stoney Creek,CA
+E1J,NB,Turtle Creek,CA
+E1J,NB,Upper Coverdale,CA
+E1N,NB,Barnaby,CA
+E1N,NB,Bay du Vin,CA
+E1N,NB,Black River Bridge,CA
+E1N,NB,Gardiner Point,CA
+E1N,NB,Glenwood,CA
+E1N,NB,Laketon,CA
+E1N,NB,Miramichi Bay,CA
+E1N,NB,Miramichi,CA
+E1N,NB,Napan,CA
+E1N,NB,Redmondville,CA
+E1N,NB,South Nelson,CA
+E1N,NB,St Margarets,CA
+E1V,NB,Bartibog Bridge,CA
+E1V,NB,Bartibog,CA
+E1V,NB,Beaverbrook,CA
+E1V,NB,Bellefond,CA
+E1V,NB,Bryenton,CA
+E1V,NB,Chaplin Island Road,CA
+E1V,NB,Derby Junction,CA
+E1V,NB,Derby,CA
+E1V,NB,Eel Ground,CA
+E1V,NB,Little Bartibog,CA
+E1V,NB,Lower Derby,CA
+E1V,NB,Lower Newcastle,CA
+E1V,NB,Maple Glen,CA
+E1V,NB,Millerton,CA
+E1V,NB,Miramichi,CA
+E1V,NB,Oak Point,CA
+E1V,NB,Parker Road,CA
+E1V,NB,Russellville,CA
+E1V,NB,South Esk,CA
+E1V,NB,Strathadam,CA
+E1V,NB,Whitney,CA
+E1V,NB,Williamstown,CA
+E1W,NB,Bas-Caraquet,CA
+E1W,NB,Bertrand,CA
+E1W,NB,Caraquet,CA
+E1W,NB,Pokesudie,CA
+E1X,NB,Alderwood,CA
+E1X,NB,Benoit,CA
+E1X,NB,Canton des Basques,CA
+E1X,NB,Four Roads,CA
+E1X,NB,Gauvreau,CA
+E1X,NB,Haut-Sheila,CA
+E1X,NB,Leech,CA
+E1X,NB,Losier Settlement,CA
+E1X,NB,Petit-Tracadie,CA
+E1X,NB,Pointe a Bouleau,CA
+E1X,NB,Pointe-a-Tom,CA
+E1X,NB,Pointe-des-Robichaud,CA
+E1X,NB,Pont-Lafrance,CA
+E1X,NB,Pont-Landry,CA
+E1X,NB,Riviere-a-la-Truite,CA
+E1X,NB,Saint-Irenee,CA
+E1X,NB,Saint-Pons,CA
+E1X,NB,Sainte-Rose,CA
+E1X,NB,Saumarez,CA
+E1X,NB,Six Roads,CA
+E1X,NB,Tracadie Beach,CA
+E1X,NB,Tracadie-Sheila,CA
+E1X,NB,Val-Comeau,CA
+E2A,NB,Bathurst,CA
+E2A,NB,Big River,CA
+E2A,NB,Black Rock,CA
+E2A,NB,Brunswick Mines,CA
+E2A,NB,Canobie,CA
+E2A,NB,Chamberlain Settlement,CA
+E2A,NB,Clifton,CA
+E2A,NB,Gloucester Junction,CA
+E2A,NB,Janeville,CA
+E2A,NB,Little River Gloucester Co,CA
+E2A,NB,Middle River,CA
+E2A,NB,Nepisiguit Falls,CA
+E2A,NB,New Bandon Gloucester Co,CA
+E2A,NB,North Tetagouche,CA
+E2A,NB,Pabineau Falls,CA
+E2A,NB,Pabineau First Nation,CA
+E2A,NB,Pokeshaw,CA
+E2A,NB,Rio Grande,CA
+E2A,NB,Rocheville,CA
+E2A,NB,Rosehill,CA
+E2A,NB,Rough Waters,CA
+E2A,NB,Sainte-Anne Gloucester Co,CA
+E2A,NB,Salmon Beach,CA
+E2A,NB,South Tetagouche,CA
+E2A,NB,Stonehaven,CA
+E2A,NB,Tetagouche Falls,CA
+E2E,NB,Quispamsis,CA
+E2E,NB,Rothesay,CA
+E2E,NB,Saint John,CA
+E2G,NB,Quispamsis,CA
+E2H,NB,Rothesay,CA
+E2H,NB,Saint John,CA
+E2J,NB,Mispec,CA
+E2J,NB,Saint John,CA
+E2K,NB,Saint John,CA
+E2L,NB,Saint John,CA
+E2M,NB,Saint John,CA
+E2N,NB,Saint John,CA
+E2P,NB,Saint John,CA
+E2R,NB,Saint John,CA
+E2S,NB,Baxters Corner,CA
+E2S,NB,Black River,CA
+E2S,NB,Clover Valley,CA
+E2S,NB,Gardner Creek,CA
+E2S,NB,Garnett Settlement,CA
+E2S,NB,Quispamsis,CA
+E2S,NB,Rothesay,CA
+E2S,NB,Rowley,CA
+E2S,NB,Saint John,CA
+E2S,NB,Upper Golden Grove,CA
+E2S,NB,Upper Loch Lomond,CA
+E2S,NB,Willow Grove,CA
+E2V,NB,Burton,CA
+E2V,NB,French Lake,CA
+E2V,NB,Geary,CA
+E2V,NB,Haneytown,CA
+E2V,NB,Oromocto,CA
+E2V,NB,Swan Creek,CA
+E2V,NB,Waterville-Sunbury,CA
+E3A,NB,Burpee,CA
+E3A,NB,Douglas,CA
+E3A,NB,Fredericton,CA
+E3A,NB,Killarney Road,CA
+E3A,NB,Lower St Marys,CA
+E3A,NB,Maugerville,CA
+E3A,NB,Mount Hope,CA
+E3A,NB,Noonan,CA
+E3A,NB,Penniac,CA
+E3A,NB,Richibucto Road,CA
+E3A,NB,Sheffield,CA
+E3B,NB,Beaver Dam,CA
+E3B,NB,Fredericton,CA
+E3B,NB,Lincoln,CA
+E3B,NB,Nasonworth,CA
+E3B,NB,Rusagonis,CA
+E3B,NB,Waasis,CA
+E3C,NB,Charters Settlement,CA
+E3C,NB,Fredericton,CA
+E3C,NB,Hanwell,CA
+E3C,NB,Nasonworth,CA
+E3C,NB,New Maryland,CA
+E3E,NB,Fredericton,CA
+E3E,NB,French Village-York,CA
+E3E,NB,Hanwell,CA
+E3E,NB,Island View,CA
+E3E,NB,Kingsclear First Nation,CA
+E3E,NB,Lower Kingsclear,CA
+E3E,NB,Mazerolle Settlement,CA
+E3E,NB,Upper Kingsclear,CA
+E3G,NB,Birdton,CA
+E3G,NB,Douglas,CA
+E3G,NB,Estey's Bridge,CA
+E3G,NB,Fredericton,CA
+E3G,NB,Hamtown Corner,CA
+E3G,NB,Killarney Road,CA
+E3G,NB,Kingsley,CA
+E3G,NB,McLeod Hill,CA
+E3G,NB,Royal Road,CA
+E3L,NB,Barter Settlement,CA
+E3L,NB,Basswood Ridge,CA
+E3L,NB,Burnt Hill,CA
+E3L,NB,Crocker Hill,CA
+E3L,NB,Dufferin Charlotte Co,CA
+E3L,NB,Hayman Hill,CA
+E3L,NB,Heathland,CA
+E3L,NB,Little Ridge,CA
+E3L,NB,Mayfield,CA
+E3L,NB,Mohannes,CA
+E3L,NB,Oak Bay,CA
+E3L,NB,Oak Haven,CA
+E3L,NB,Old Ridge,CA
+E3L,NB,Pomeroy Ridge,CA
+E3L,NB,Scotch Ridge,CA
+E3L,NB,St David Ridge,CA
+E3L,NB,St Stephen,CA
+E3L,NB,Upper Mills,CA
+E3L,NB,Valley Road,CA
+E3L,NB,Waweig,CA
+E3N,NB,Atholville,CA
+E3N,NB,Campbellton,CA
+E3N,NB,Dalhousie Junction,CA
+E3N,NB,Dawsonville,CA
+E3N,NB,Flatlands,CA
+E3N,NB,Glencoe,CA
+E3N,NB,Glenlevit,CA
+E3N,NB,Mann's Mountain,CA
+E3N,NB,McLeods,CA
+E3N,NB,Point la Nim,CA
+E3N,NB,Robinsonville,CA
+E3N,NB,Saint-Arthur,CA
+E3N,NB,Squaw Cap,CA
+E3N,NB,Tide Head,CA
+E3N,NB,Upsalquitch,CA
+E3N,NB,Val-d'Amour,CA
+E3N,NB,Wyers Brook,CA
+E3V,NB,Edmundston,CA
+E3V,NB,St-Hilaire,CA
+E3V,NB,Verret,CA
+E3Y,NB,Drummond,CA
+E3Y,NB,Grand-Sault/Grand Falls,CA
+E3Y,NB,Saint-Andre,CA
+E3Z,NB,California Settlement,CA
+E3Z,NB,Four Falls,CA
+E3Z,NB,Grand Falls,CA
+E3Z,NB,Grand-Sault/Grand Falls,CA
+E3Z,NB,Grand-Sault/falls,CA
+E3Z,NB,Morrell Siding,CA
+E4A,NB,Briggs Corner Queens Co,CA
+E4A,NB,Bronson Settlement,CA
+E4A,NB,Chipman,CA
+E4A,NB,Coal Creek,CA
+E4A,NB,Cumberland Bay,CA
+E4A,NB,Dufferin Queens Co,CA
+E4A,NB,Gaspereau Forks,CA
+E4A,NB,Hardwood Ridge,CA
+E4A,NB,Immigrant Road,CA
+E4A,NB,Iron Bound Cove,CA
+E4A,NB,Midland Queens Co,CA
+E4A,NB,North Forks,CA
+E4A,NB,Red Bank Queens Co,CA
+E4A,NB,Salmon River Road,CA
+E4A,NB,Upper Salmon Creek,CA
+E4B,NB,Albrights Corner,CA
+E4B,NB,Clarks Corner,CA
+E4B,NB,Douglas Harbour,CA
+E4B,NB,Evans Road,CA
+E4B,NB,Flowers Cove,CA
+E4B,NB,Lakeville Corner,CA
+E4B,NB,Little River Hill,CA
+E4B,NB,Maquapit Lake,CA
+E4B,NB,Minto,CA
+E4B,NB,New Avon,CA
+E4B,NB,New England Settlement,CA
+E4B,NB,New Zion,CA
+E4B,NB,Newcastle Centre,CA
+E4B,NB,Newcastle Creek,CA
+E4B,NB,Old Avon,CA
+E4B,NB,Pondstream,CA
+E4B,NB,Princess Park,CA
+E4B,NB,Printz Cove,CA
+E4B,NB,Ripples,CA
+E4B,NB,Scotchtown,CA
+E4B,NB,Slope,CA
+E4B,NB,Sunnyside Beach,CA
+E4B,NB,Sypher Cove,CA
+E4B,NB,Wuhrs Beach,CA
+E4C,NB,Big Cove Queens Co,CA
+E4C,NB,Cambridge-Narrows,CA
+E4C,NB,Codys,CA
+E4C,NB,Coles Island Queens Co,CA
+E4C,NB,Highfield,CA
+E4C,NB,Hunters Home,CA
+E4C,NB,Jemseg,CA
+E4C,NB,Long Creek,CA
+E4C,NB,Lower Cambridge,CA
+E4C,NB,Mill Cove,CA
+E4C,NB,Picketts Cove,CA
+E4C,NB,Salmon Creek,CA
+E4C,NB,Waterborough,CA
+E4C,NB,Whites Cove,CA
+E4C,NB,Wickham,CA
+E4C,NB,Youngs Cove,CA
+E4E,NB,Cassidy Lake,CA
+E4E,NB,Cedar Camp,CA
+E4E,NB,Chambers Settlement,CA
+E4E,NB,Clover Hill,CA
+E4E,NB,Donegal,CA
+E4E,NB,Drurys Cove,CA
+E4E,NB,Dutch Valley,CA
+E4E,NB,Four Corners,CA
+E4E,NB,Hammondvale,CA
+E4E,NB,Hillsdale,CA
+E4E,NB,Jeffries Corner,CA
+E4E,NB,Lisson Settlement,CA
+E4E,NB,Little Salmon River West,CA
+E4E,NB,Londonderry,CA
+E4E,NB,Long Settlement Kings Co,CA
+E4E,NB,Lower Cove,CA
+E4E,NB,Markhamville,CA
+E4E,NB,Mechanic Settlement,CA
+E4E,NB,Mill Brook,CA
+E4E,NB,New Line,CA
+E4E,NB,Parlee Brook,CA
+E4E,NB,Penobsquis,CA
+E4E,NB,Picadilly,CA
+E4E,NB,Poodiac,CA
+E4E,NB,Ratter Corner,CA
+E4E,NB,Shepody Kings Co,CA
+E4E,NB,South Branch Kings Co,CA
+E4E,NB,Southfield,CA
+E4E,NB,Springdale,CA
+E4E,NB,Sussex Corner,CA
+E4E,NB,Sussex East,CA
+E4E,NB,Sussex South,CA
+E4E,NB,Sussex,CA
+E4E,NB,Vinegar Hill,CA
+E4E,NB,Walker Settlement,CA
+E4E,NB,Wards Creek,CA
+E4E,NB,Waterford,CA
+E4G,NB,Carsonville,CA
+E4G,NB,Dubee Settlement,CA
+E4G,NB,Dunsinane,CA
+E4G,NB,Four Corners,CA
+E4G,NB,Head of Millstream,CA
+E4G,NB,Jordan Mountain,CA
+E4G,NB,Knightville,CA
+E4G,NB,Mount Hebron,CA
+E4G,NB,Mount Middleton,CA
+E4G,NB,Mount Pisgah,CA
+E4G,NB,Newtown,CA
+E4G,NB,Penobsquis,CA
+E4G,NB,Perry Settlement,CA
+E4G,NB,Plumweseep,CA
+E4G,NB,Roachville,CA
+E4G,NB,Smiths Creek,CA
+E4G,NB,Summerfield Kings Co,CA
+E4G,NB,Sussex East,CA
+E4G,NB,Whites Mountain,CA
+E4H,NB,Albert Mines,CA
+E4H,NB,Alma,CA
+E4H,NB,Baltimore,CA
+E4H,NB,Beaverbrook Albert Co,CA
+E4H,NB,Caledonia Mountain,CA
+E4H,NB,Cape Enrage,CA
+E4H,NB,Cape Station,CA
+E4H,NB,Curryville,CA
+E4H,NB,Dawson Settlement,CA
+E4H,NB,Dennis Beach,CA
+E4H,NB,Dieppe,CA
+E4H,NB,Edgetts Landing,CA
+E4H,NB,Fundy National Park,CA
+E4H,NB,Germantown,CA
+E4H,NB,Harvey Albert Co,CA
+E4H,NB,Hebron,CA
+E4H,NB,Hillsborough West,CA
+E4H,NB,Hillsborough,CA
+E4H,NB,Hopewell Cape,CA
+E4H,NB,Hopewell Hill,CA
+E4H,NB,Lower Cape,CA
+E4H,NB,Midway,CA
+E4H,NB,New Horton,CA
+E4H,NB,Osborne Corner,CA
+E4H,NB,Riverside-Albert,CA
+E4H,NB,Rosevale,CA
+E4H,NB,Salem,CA
+E4H,NB,Shenstone,CA
+E4H,NB,Shepody Albert Co,CA
+E4H,NB,Waterside,CA
+E4H,NB,Weldon,CA
+E4H,NB,West River,CA
+E4J,NB,Colpitts Settlement,CA
+E4J,NB,Lewis Mountain,CA
+E4J,NB,Little River Albert Co,CA
+E4J,NB,Monteagle,CA
+E4J,NB,Parkindale,CA
+E4J,NB,Salisbury West,CA
+E4J,NB,Salisbury,CA
+E4J,NB,Second North River,CA
+E4J,NB,The Glades,CA
+E4K,NB,Cherry Burton,CA
+E4K,NB,Dieppe,CA
+E4K,NB,Dorchester Cape,CA
+E4K,NB,Dorchester,CA
+E4K,NB,Fairfield Westmorland Co,CA
+E4K,NB,Johnson's Mills,CA
+E4K,NB,Memramcook East,CA
+E4K,NB,Memramcook,CA
+E4K,NB,Middleton,CA
+E4K,NB,Rockport,CA
+E4K,NB,Sackville Road,CA
+E4K,NB,Taylor Village,CA
+E4K,NB,Upper Dorchester,CA
+E4K,NB,Upper Rockport,CA
+E4L,NB,Anderson Settlement,CA
+E4L,NB,Aulac,CA
+E4L,NB,Centre Village,CA
+E4L,NB,Cookville,CA
+E4L,NB,Frosty Hollow,CA
+E4L,NB,Jolicure,CA
+E4L,NB,Middle Sackville,CA
+E4L,NB,Midgic,CA
+E4L,NB,Point de Bute,CA
+E4L,NB,Sackville,CA
+E4L,NB,Upper Sackville,CA
+E4L,NB,Westcock,CA
+E4L,NB,Wood Point,CA
+E4M,NB,Baie Verte,CA
+E4M,NB,Bayfield,CA
+E4M,NB,Cape Spear,CA
+E4M,NB,Cape Tormentine,CA
+E4M,NB,Coburg,CA
+E4M,NB,Dieppe,CA
+E4M,NB,Johnston Point,CA
+E4M,NB,Little Shemogue,CA
+E4M,NB,Malden,CA
+E4M,NB,Mates Corner,CA
+E4M,NB,Melrose,CA
+E4M,NB,Murray Corner,CA
+E4M,NB,Otter Creek,CA
+E4M,NB,Port Elgin,CA
+E4M,NB,Timber River,CA
+E4M,NB,Upper Cape,CA
+E4M,NB,Woodside,CA
+E4N,NB,Bas-Cap-Pele,CA
+E4N,NB,Cap-Pele,CA
+E4N,NB,Dieppe,CA
+E4N,NB,Petit-Cap,CA
+E4N,NB,Portage,CA
+E4N,NB,Shemogue,CA
+E4N,NB,Trois-Ruisseaux,CA
+E4P,NB,Boudreau-Ouest,CA
+E4P,NB,Cormier-Village,CA
+E4P,NB,Dieppe,CA
+E4P,NB,Grand-Barachois,CA
+E4P,NB,Haute-Aboujagane,CA
+E4P,NB,Pointe-du-Chene,CA
+E4P,NB,Saint-Andre-Leblanc,CA
+E4P,NB,Scoudouc Road,CA
+E4P,NB,Scoudouc,CA
+E4P,NB,Shediac Cape,CA
+E4P,NB,Shediac,CA
+E4R,NB,Cocagne,CA
+E4R,NB,Dieppe,CA
+E4R,NB,Grande-Digue,CA
+E4R,NB,Shediac Bridge,CA
+E4R,NB,Shediac Bridge-Shediac River,CA
+E4R,NB,Shediac River,CA
+E4S,NB,Baie de Bouctouche,CA
+E4S,NB,Bouctouche Cove,CA
+E4S,NB,Bouctouche Reserve,CA
+E4S,NB,Bouctouche Sud,CA
+E4S,NB,Bouctouche,CA
+E4S,NB,McIntosh Hill,CA
+E4S,NB,Pointe Dixon Point,CA
+E4S,NB,Saint-Edouard-de-Kent,CA
+E4S,NB,Saint-Joseph-de-Kent,CA
+E4S,NB,Saint-Maurice,CA
+E4S,NB,Saint-Norbert,CA
+E4S,NB,Saint-Thomas-de-Kent,CA
+E4S,NB,Sainte-Anne-de-Kent,CA
+E4S,NB,Sainte-Marie-de-Kent,CA
+E4T,NB,Adamsville,CA
+E4T,NB,Bass River,CA
+E4T,NB,Beersville,CA
+E4T,NB,Birch Ridge,CA
+E4T,NB,Browns Yard,CA
+E4T,NB,Cails Mills,CA
+E4T,NB,Canaan Station,CA
+E4T,NB,Clairville,CA
+E4T,NB,Coal Branch,CA
+E4T,NB,Dieppe,CA
+E4T,NB,Fords Mills,CA
+E4T,NB,Harcourt,CA
+E4T,NB,Hebert,CA
+E4T,NB,Main River,CA
+E4T,NB,Saint-Paul,CA
+E4T,NB,Smith's Corner,CA
+E4T,NB,Targettville,CA
+E4V,NB,Dieppe,CA
+E4V,NB,Haut-Saint-Antoine,CA
+E4V,NB,McKees Mills,CA
+E4V,NB,Notre-Dame,CA
+E4V,NB,Pelerin,CA
+E4V,NB,Renauds Mills,CA
+E4V,NB,Saint-Antoine Sud,CA
+E4V,NB,Saint-Antoine,CA
+E4V,NB,Saint-Antoine-de-Kent,CA
+E4V,NB,Saint-Damien,CA
+E4V,NB,Saint-Gregoire,CA
+E4V,NB,St-Antoine Nord,CA
+E4W,NB,Aldouane,CA
+E4W,NB,Balla Philip,CA
+E4W,NB,Childs Creek,CA
+E4W,NB,Dieppe,CA
+E4W,NB,East Branch,CA
+E4W,NB,Elsipogtog First Nation,CA
+E4W,NB,Ford Bank,CA
+E4W,NB,Galloway,CA
+E4W,NB,Indian Island,CA
+E4W,NB,Jardineville,CA
+E4W,NB,Mundleville,CA
+E4W,NB,Pine Ridge,CA
+E4W,NB,Rexton,CA
+E4W,NB,Richibouctou-Village,CA
+E4W,NB,Richibucto,CA
+E4W,NB,Saint-Charles,CA
+E4W,NB,South Branch Kent Co,CA
+E4W,NB,Upper Rexton,CA
+E4W,NB,West Branch,CA
+E4X,NB,Canisto,CA
+E4X,NB,Dieppe,CA
+E4X,NB,Kouchibouguac National Park,CA
+E4X,NB,Kouchibouguac,CA
+E4X,NB,Portage St-Louis,CA
+E4X,NB,Saint-Ignace,CA
+E4X,NB,Saint-Louis,CA
+E4X,NB,Saint-Louis-de-Kent,CA
+E4Y,NB,Acadie Siding,CA
+E4Y,NB,Acadieville,CA
+E4Y,NB,Collette,CA
+E4Y,NB,Kent Junction,CA
+E4Y,NB,Murray Settlement,CA
+E4Y,NB,Noinville,CA
+E4Y,NB,Rogersville,CA
+E4Y,NB,Rogersville-Est,CA
+E4Y,NB,Rogersville-Ouest,CA
+E4Y,NB,Rosaireville,CA
+E4Z,NB,Anagance,CA
+E4Z,NB,Canaan Forks,CA
+E4Z,NB,Cornhill,CA
+E4Z,NB,Dieppe,CA
+E4Z,NB,Dobson Corner,CA
+E4Z,NB,Elgin,CA
+E4Z,NB,Fawcett Hill,CA
+E4Z,NB,Forest Glen,CA
+E4Z,NB,Glenvale,CA
+E4Z,NB,Harewood,CA
+E4Z,NB,Havelock,CA
+E4Z,NB,Hicksville,CA
+E4Z,NB,Hillgrove,CA
+E4Z,NB,Intervale,CA
+E4Z,NB,Killams Mills,CA
+E4Z,NB,Kinnear Settlement,CA
+E4Z,NB,Mannhurst,CA
+E4Z,NB,New Canaan,CA
+E4Z,NB,Parkindale,CA
+E4Z,NB,Petitcodiac East,CA
+E4Z,NB,Petitcodiac,CA
+E4Z,NB,Pollett River,CA
+E4Z,NB,Portage Vale,CA
+E4Z,NB,Prosser Brook,CA
+E4Z,NB,River Glade,CA
+E4Z,NB,South Canaan,CA
+E4Z,NB,Steeves Settlement,CA
+E4Z,NB,Wheaton Settlement,CA
+E5A,NB,Andersonville,CA
+E5A,NB,Baillie,CA
+E5A,NB,Canoose,CA
+E5A,NB,Dewolfe,CA
+E5A,NB,Elmsville,CA
+E5A,NB,Honeydale,CA
+E5A,NB,Johnson Settlement Charlotte C,CA
+E5A,NB,Lawrence Station,CA
+E5A,NB,Leverville,CA
+E5A,NB,Lynnfield,CA
+E5A,NB,Moores Mills,CA
+E5A,NB,Oak Hill,CA
+E5A,NB,Pleasant Ridge Char County,CA
+E5A,NB,Rollingdam,CA
+E5A,NB,Tower Hill,CA
+E5B,NB,Bartletts Mills,CA
+E5B,NB,Bayside,CA
+E5B,NB,Bocabec,CA
+E5B,NB,Chamcook,CA
+E5B,NB,Ministers Island,CA
+E5B,NB,St Andrews,CA
+E5C,NB,Back Bay,CA
+E5C,NB,Bethel,CA
+E5C,NB,Bonny River,CA
+E5C,NB,Breadalbane,CA
+E5C,NB,Caithness,CA
+E5C,NB,Canal,CA
+E5C,NB,Digdeguash,CA
+E5C,NB,L'Etete,CA
+E5C,NB,Lee Settlement,CA
+E5C,NB,Letang,CA
+E5C,NB,Mascarene,CA
+E5C,NB,Second Falls,CA
+E5C,NB,St George,CA
+E5C,NB,Upper Letang,CA
+E5C,NB,Utopia,CA
+E5E,NB,Welshpool,CA
+E5E,NB,Wilsons Beach,CA
+E5G,NB,Grand Manan,CA
+E5G,NB,White Head Island,CA
+E5G,NB,White Head,CA
+E5H,NB,Beaver Harbour,CA
+E5H,NB,Blacks Harbour,CA
+E5H,NB,Pennfield,CA
+E5H,NB,Seeleys Cove,CA
+E5J,NB,Chance Harbour,CA
+E5J,NB,Dipper Harbour,CA
+E5J,NB,Lepreau,CA
+E5J,NB,Little Lepreau,CA
+E5J,NB,Maces Bay,CA
+E5J,NB,Musquash,CA
+E5J,NB,New River Beach,CA
+E5J,NB,Pocologan,CA
+E5J,NB,Prince of Wales,CA
+E5K,NB,Clarendon,CA
+E5K,NB,Grand Bay-Westfield,CA
+E5K,NB,Lower Greenwich,CA
+E5K,NB,Morrisdale,CA
+E5K,NB,Nerepis,CA
+E5K,NB,Public Landing,CA
+E5K,NB,Welsford,CA
+E5K,NB,Woodmans Point,CA
+E5L,NB,Central Blissville,CA
+E5L,NB,Fredericton Junction,CA
+E5L,NB,Hoyt,CA
+E5L,NB,Peltoma Settlement,CA
+E5L,NB,Rooth,CA
+E5L,NB,South Oromocto Lake,CA
+E5L,NB,Three Tree Creek,CA
+E5L,NB,Tracy,CA
+E5L,NB,Tracyville,CA
+E5L,NB,Upper Tracy,CA
+E5L,NB,Vespra,CA
+E5L,NB,Wirral,CA
+E5M,NB,Browns Flat,CA
+E5M,NB,Central Greenwich,CA
+E5M,NB,Central Hampstead,CA
+E5M,NB,Elm Hill,CA
+E5M,NB,Evandale,CA
+E5M,NB,Gagetown,CA
+E5M,NB,Glenwood Kings Co,CA
+E5M,NB,Hampstead,CA
+E5M,NB,Oak Point Kings Co,CA
+E5M,NB,Pleasant Villa,CA
+E5M,NB,Queenstown,CA
+E5M,NB,Upper Gagetown,CA
+E5M,NB,Upper Hampstead,CA
+E5N,NB,Barnesville,CA
+E5N,NB,Bloomfield Kings Co,CA
+E5N,NB,Damascus,CA
+E5N,NB,Darlings Island,CA
+E5N,NB,Erbs Cove,CA
+E5N,NB,French Village Kings Co,CA
+E5N,NB,Grove Hill,CA
+E5N,NB,Hampton,CA
+E5N,NB,Hanford Brook,CA
+E5N,NB,Kingston,CA
+E5N,NB,Lakeside,CA
+E5N,NB,Long Point,CA
+E5N,NB,Lower Norton,CA
+E5N,NB,Nauwigewauk,CA
+E5N,NB,Passekeag,CA
+E5N,NB,Salt Springs,CA
+E5N,NB,Smithtown,CA
+E5N,NB,Titusville,CA
+E5N,NB,Upham,CA
+E5N,NB,Upperton,CA
+E5P,NB,Apohaqui,CA
+E5P,NB,Belleisle Creek,CA
+E5P,NB,Berwick,CA
+E5P,NB,Collina,CA
+E5P,NB,Erb Settlement,CA
+E5P,NB,Kierstead Mountain,CA
+E5P,NB,Lower Millstream,CA
+E5P,NB,Marrtown,CA
+E5P,NB,Parleeville,CA
+E5P,NB,Pearsonville,CA
+E5P,NB,Pleasant Ridge Kings Co,CA
+E5P,NB,Riverbank South,CA
+E5P,NB,Searsville,CA
+E5P,NB,Snider Mountain,CA
+E5R,NB,Bains Corner,CA
+E5R,NB,Bay View,CA
+E5R,NB,Fairfield,CA
+E5R,NB,Orange Hill,CA
+E5R,NB,Salmon River,CA
+E5R,NB,Shanklin,CA
+E5R,NB,St Martins North,CA
+E5R,NB,St Martins,CA
+E5R,NB,Tynemouth Creek,CA
+E5R,NB,West Quaco,CA
+E5S,NB,Bayswater,CA
+E5S,NB,Carters Point,CA
+E5S,NB,Clifton Royal,CA
+E5S,NB,Long Reach,CA
+E5S,NB,Summerville,CA
+E5T,NB,Elgin,CA
+E5T,NB,Hatfield Point,CA
+E5T,NB,Henderson Settlement,CA
+E5T,NB,Kars,CA
+E5T,NB,Kiersteadville,CA
+E5T,NB,Midland Kings Co,CA
+E5T,NB,Moosehorn Creek,CA
+E5T,NB,Norton,CA
+E5T,NB,Riverbank Kings Co,CA
+E5T,NB,Shannon,CA
+E5T,NB,Springfield Kings Co,CA
+E5T,NB,Wickham,CA
+E5V,NB,Calders Head,CA
+E5V,NB,Chocolate Cove,CA
+E5V,NB,Cummings Cove,CA
+E5V,NB,Fairhaven,CA
+E5V,NB,Hersonville,CA
+E5V,NB,Hibernia Cove,CA
+E5V,NB,Lambert's Cove,CA
+E5V,NB,Lambertville,CA
+E5V,NB,Leonardville,CA
+E5V,NB,Lord's Cove,CA
+E5V,NB,Northern Harbour,CA
+E5V,NB,Richardson,CA
+E5V,NB,Stuart Town,CA
+E6A,NB,Astle,CA
+E6A,NB,Bloomfield Ridge,CA
+E6A,NB,Boiestown,CA
+E6A,NB,Hayesville,CA
+E6A,NB,Holtville,CA
+E6A,NB,Parker Ridge,CA
+E6A,NB,Taxis River,CA
+E6B,NB,Cardigan,CA
+E6B,NB,Cross Creek,CA
+E6B,NB,Currieburg,CA
+E6B,NB,English Settlement,CA
+E6B,NB,Fredericksburg,CA
+E6B,NB,Giants Glen,CA
+E6B,NB,Green Hill,CA
+E6B,NB,Limekiln,CA
+E6B,NB,Maclaggan Bridge,CA
+E6B,NB,Maple Grove,CA
+E6B,NB,Napadogan,CA
+E6B,NB,North Tay,CA
+E6B,NB,Red Rock,CA
+E6B,NB,Stanley,CA
+E6B,NB,Tay Creek,CA
+E6B,NB,Tay Falls,CA
+E6B,NB,Ward Settlement,CA
+E6B,NB,Williamsburg,CA
+E6B,NB,Woodlands,CA
+E6C,NB,Durham Bridge,CA
+E6C,NB,McGivney,CA
+E6C,NB,Nashwaak Bridge,CA
+E6C,NB,Nashwaak Village,CA
+E6C,NB,Taymouth,CA
+E6C,NB,Zionville,CA
+E6E,NB,Brewers Mill,CA
+E6E,NB,Central Hainesville,CA
+E6E,NB,Clarkville,CA
+E6E,NB,Greenhill Lake,CA
+E6E,NB,Hawkins Corner,CA
+E6E,NB,Howland Ridge,CA
+E6E,NB,Lower Hainesville,CA
+E6E,NB,Maple Ridge,CA
+E6E,NB,Maplewood,CA
+E6E,NB,Middle Hainesville,CA
+E6E,NB,Millville,CA
+E6E,NB,Nortondale,CA
+E6E,NB,Springfield York Co,CA
+E6E,NB,Staples Settlement,CA
+E6E,NB,Upper Caverhill,CA
+E6E,NB,Upper Hainesville,CA
+E6E,NB,Wiggins Mill,CA
+E6G,NB,Barony,CA
+E6G,NB,Campbell Settlement York Co,CA
+E6G,NB,Central Waterville,CA
+E6G,NB,Dumfries,CA
+E6G,NB,Hartfield,CA
+E6G,NB,Hawkshaw,CA
+E6G,NB,Nackawic,CA
+E6G,NB,Pokiok,CA
+E6G,NB,Rossville,CA
+E6G,NB,Southampton,CA
+E6G,NB,Temperance Vale,CA
+E6G,NB,Upper Queensbury,CA
+E6H,NB,Canterbury,CA
+E6H,NB,Charlie Lake,CA
+E6H,NB,Dead Creek,CA
+E6H,NB,Dorrington Hill,CA
+E6H,NB,Dow Settlement,CA
+E6H,NB,Eel River Lake,CA
+E6H,NB,Forest City,CA
+E6H,NB,Fosterville,CA
+E6H,NB,Green Mountain,CA
+E6H,NB,Hartin Settlement,CA
+E6H,NB,Johnson Settlement York Co,CA
+E6H,NB,Marne,CA
+E6H,NB,Meductic,CA
+E6H,NB,North Lake,CA
+E6H,NB,Pemberton Ridge,CA
+E6H,NB,Ritchie,CA
+E6H,NB,Scott Siding,CA
+E6H,NB,Skiff Lake,CA
+E6H,NB,Temple,CA
+E6J,NB,McAdam,CA
+E6J,NB,St Croix,CA
+E6K,NB,Brockway,CA
+E6K,NB,Flume Ridge,CA
+E6K,NB,Harvey Station,CA
+E6K,NB,Harvey York Co,CA
+E6K,NB,Kings Landing Historical Settl,CA
+E6K,NB,Lake George,CA
+E6K,NB,New Market,CA
+E6K,NB,Prince William,CA
+E6K,NB,Smithfield,CA
+E6K,NB,Yoho,CA
+E6L,NB,Bear Island,CA
+E6L,NB,Burtts Corner,CA
+E6L,NB,Jewetts Mills,CA
+E6L,NB,Keswick Ridge,CA
+E6L,NB,Keswick,CA
+E6L,NB,Lower Queensbury,CA
+E6L,NB,Mactaquac,CA
+E6L,NB,Scotch Lake,CA
+E6L,NB,Scotch Settlement York Co,CA
+E6L,NB,Upper Keswick,CA
+E6L,NB,Zealand,CA
+E7A,NB,Baker Brook,CA
+E7A,NB,Clair,CA
+E7A,NB,Lac Baker,CA
+E7A,NB,Saint-Francois-de-Madawaska,CA
+E7B,NB,Saint-Jacques,CA
+E7B,NB,St-Joseph-de-Madawaska,CA
+E7C,NB,Madawaska Maliseet Frst Nation,CA
+E7C,NB,Riviere-Verte,CA
+E7C,NB,Saint-Basile,CA
+E7E,NB,Notre Dame de Lourdes,CA
+E7E,NB,Saint-Leonard,CA
+E7E,NB,Saint-Leonard-Parent,CA
+E7E,NB,Sainte-Anne-de-Madawaska,CA
+E7E,NB,Siegas,CA
+E7G,NB,Anderson Road,CA
+E7G,NB,Anfield,CA
+E7G,NB,Blue Bell,CA
+E7G,NB,Blue Mountain Bend,CA
+E7G,NB,Burntland Brook,CA
+E7G,NB,Crombie Settlement,CA
+E7G,NB,Enterprise,CA
+E7G,NB,Everett,CA
+E7G,NB,Hazeldean,CA
+E7G,NB,Lake Edward,CA
+E7G,NB,Linton Corner,CA
+E7G,NB,Maple View,CA
+E7G,NB,McLaughlin,CA
+E7G,NB,New Denmark,CA
+E7G,NB,Nictau,CA
+E7G,NB,North View,CA
+E7G,NB,Odell,CA
+E7G,NB,Oxbow,CA
+E7G,NB,Plaster Rock,CA
+E7G,NB,Riley Brook,CA
+E7G,NB,Sisson Brook,CA
+E7G,NB,Sisson Ridge,CA
+E7G,NB,St Almo,CA
+E7G,NB,Three Brooks,CA
+E7G,NB,Two Brooks,CA
+E7G,NB,Wapske,CA
+E7G,NB,Weaver,CA
+E7H,NB,Aroostook Junction,CA
+E7H,NB,Aroostook,CA
+E7H,NB,Arthurette,CA
+E7H,NB,Bairdsville,CA
+E7H,NB,Beaconsfield,CA
+E7H,NB,Bon Accord,CA
+E7H,NB,Carlingford,CA
+E7H,NB,Craig Flats,CA
+E7H,NB,Currie Siding,CA
+E7H,NB,Gladwyn,CA
+E7H,NB,Hillandale,CA
+E7H,NB,Kilburn,CA
+E7H,NB,Kincardine,CA
+E7H,NB,Leonard Colony,CA
+E7H,NB,Lower Kintore,CA
+E7H,NB,Medford,CA
+E7H,NB,Muniac,CA
+E7H,NB,Perth-Andover,CA
+E7H,NB,Quaker Brook,CA
+E7H,NB,Red Rapids,CA
+E7H,NB,River de Chute,CA
+E7H,NB,Rowena,CA
+E7H,NB,Tilley,CA
+E7H,NB,Tinker,CA
+E7H,NB,Tobique First Nation,CA
+E7H,NB,Tobique Narrows,CA
+E7H,NB,Upper Kintore,CA
+E7J,NB,Bath,CA
+E7J,NB,Beechwood,CA
+E7J,NB,Holmesville,CA
+E7J,NB,Johnville,CA
+E7J,NB,Killoween,CA
+E7J,NB,Maplehurst,CA
+E7J,NB,Monquart,CA
+E7J,NB,Moose Mountain,CA
+E7J,NB,Piercemont,CA
+E7J,NB,Upper Kent,CA
+E7K,NB,Avondale,CA
+E7K,NB,Beckim Settlement,CA
+E7K,NB,Bloomfield Carleton Co,CA
+E7K,NB,Brookville,CA
+E7K,NB,Centreville,CA
+E7K,NB,Charleston,CA
+E7K,NB,Deerville,CA
+E7K,NB,East Centreville,CA
+E7K,NB,Good Corner,CA
+E7K,NB,Gregg Settlement,CA
+E7K,NB,Hartley Settlement,CA
+E7K,NB,Lakeville Carleton Co,CA
+E7K,NB,Long Settlement,CA
+E7K,NB,Lower Knoxford,CA
+E7K,NB,Mount Delight,CA
+E7K,NB,Royalton,CA
+E7K,NB,Summerfield Carleton Co,CA
+E7K,NB,Tracey Mills,CA
+E7K,NB,Upper Knoxford,CA
+E7K,NB,Weston,CA
+E7K,NB,Williamstown Carleton Co,CA
+E7L,NB,Armond,CA
+E7L,NB,Bannon,CA
+E7L,NB,Bristol Junction,CA
+E7L,NB,Carlow,CA
+E7L,NB,Clearview,CA
+E7L,NB,Deersdale,CA
+E7L,NB,Divide,CA
+E7L,NB,East Coldstream,CA
+E7L,NB,Fielding,CA
+E7L,NB,Florenceville-Bristol,CA
+E7L,NB,Glassville,CA
+E7L,NB,Gordonsville,CA
+E7L,NB,Greenfield,CA
+E7L,NB,Juniper,CA
+E7L,NB,Knowlesville,CA
+E7L,NB,Lansdowne,CA
+E7L,NB,Mount Pleasant,CA
+E7L,NB,Oakland,CA
+E7L,NB,Peel,CA
+E7L,NB,Riverbank Carleton Co,CA
+E7L,NB,Stickney,CA
+E7L,NB,West Florenceville,CA
+E7L,NB,Wicklow,CA
+E7L,NB,Windsor,CA
+E7M,NB,Beardsley,CA
+E7M,NB,Bedell,CA
+E7M,NB,Belleville,CA
+E7M,NB,Campbell Settlement,CA
+E7M,NB,Green Road,CA
+E7M,NB,Hartford,CA
+E7M,NB,Irish Settlement,CA
+E7M,NB,Jackson Falls,CA
+E7M,NB,Jacksontown,CA
+E7M,NB,Jacksonville,CA
+E7M,NB,Lindsay,CA
+E7M,NB,Lower Woodstock,CA
+E7M,NB,Mapledale,CA
+E7M,NB,McKenzie Corner,CA
+E7M,NB,Oakville,CA
+E7M,NB,Plymouth,CA
+E7M,NB,Red Bridge,CA
+E7M,NB,Richmond Corner,CA
+E7M,NB,Richmond Settlement,CA
+E7M,NB,Rosedale,CA
+E7M,NB,Teeds Mills,CA
+E7M,NB,Upper Woodstock,CA
+E7M,NB,Wakefield,CA
+E7M,NB,Woodstock First Nation,CA
+E7M,NB,Woodstock,CA
+E7N,NB,Benton,CA
+E7N,NB,Bull Lake,CA
+E7N,NB,Bulls Creek,CA
+E7N,NB,Debec,CA
+E7N,NB,East Newbridge,CA
+E7N,NB,Elmwood,CA
+E7N,NB,Flemington,CA
+E7N,NB,Grafton,CA
+E7N,NB,Green Road,CA
+E7N,NB,Hay Settlement,CA
+E7N,NB,Kirkland,CA
+E7N,NB,Limestone,CA
+E7N,NB,Lower Woodstock,CA
+E7N,NB,Mapledale,CA
+E7N,NB,Maxwell,CA
+E7N,NB,McKenna,CA
+E7N,NB,McKenzie Corner,CA
+E7N,NB,Monument,CA
+E7N,NB,Newbridge,CA
+E7N,NB,Newburg,CA
+E7N,NB,Northampton,CA
+E7N,NB,Oak Mountain,CA
+E7N,NB,Pembroke,CA
+E7N,NB,Riceville,CA
+E7N,NB,Speerville,CA
+E7N,NB,Union Corner,CA
+E7P,NB,Ashland,CA
+E7P,NB,Bubartown,CA
+E7P,NB,Carlisle,CA
+E7P,NB,Cloverdale,CA
+E7P,NB,Coldstream,CA
+E7P,NB,Connell,CA
+E7P,NB,East Brighton,CA
+E7P,NB,Hartland,CA
+E7P,NB,Howard Brook,CA
+E7P,NB,Lower Brighton,CA
+E7P,NB,Mainstream,CA
+E7P,NB,Pole Hill,CA
+E7P,NB,Rockland,CA
+E7P,NB,Simonds,CA
+E7P,NB,Somerville,CA
+E7P,NB,St Thomas,CA
+E7P,NB,Upper Brighton,CA
+E7P,NB,Victoria Corner,CA
+E7P,NB,Waterville Carleton Co,CA
+E7P,NB,Wilmot,CA
+E8A,NB,Saint-Martin-de-Restigouche,CA
+E8A,NB,Saint-Quentin,CA
+E8B,NB,Adams Gulch,CA
+E8B,NB,Glenwood,CA
+E8B,NB,Kedgwick Nord,CA
+E8B,NB,Kedgwick Ouest,CA
+E8B,NB,Kedgwick River,CA
+E8B,NB,Kedgwick Sud,CA
+E8B,NB,Kedgwick,CA
+E8B,NB,Menneval,CA
+E8B,NB,St-Jean-Baptiste,CA
+E8B,NB,Whites Brook,CA
+E8C,NB,Dalhousie,CA
+E8C,NB,Eel River Bar First Nation,CA
+E8E,NB,Balmoral Estates,CA
+E8E,NB,Balmoral Sud,CA
+E8E,NB,Balmoral,CA
+E8E,NB,Blackland Restigouche Co,CA
+E8E,NB,Blair Athol,CA
+E8E,NB,Charlo South,CA
+E8E,NB,Charlo,CA
+E8E,NB,Dundee,CA
+E8E,NB,Eel River Cove,CA
+E8E,NB,Eel River Crossing,CA
+E8E,NB,North Shannonvale,CA
+E8E,NB,Saint-Maure,CA
+E8G,NB,Belledune,CA
+E8G,NB,Benjamin River,CA
+E8G,NB,Black Point,CA
+E8G,NB,Gravel Hill,CA
+E8G,NB,Lorne,CA
+E8G,NB,Nash Creek,CA
+E8G,NB,New Mills,CA
+E8G,NB,Sea Side,CA
+E8J,NB,Alcida,CA
+E8J,NB,Dauversiere,CA
+E8J,NB,Laplante,CA
+E8J,NB,Madran,CA
+E8J,NB,Petit-Rocher,CA
+E8J,NB,Petit-Rocher-Nord,CA
+E8J,NB,Petit-Rocher-Ouest,CA
+E8J,NB,Petit-Rocher-Sud,CA
+E8J,NB,Pointe-Verte,CA
+E8J,NB,Tremblay,CA
+E8K,NB,Beresford,CA
+E8K,NB,Dunlop,CA
+E8K,NB,Free Grant,CA
+E8K,NB,Lugar,CA
+E8K,NB,Nicholas Denys,CA
+E8K,NB,Nigadoo,CA
+E8K,NB,Robertville,CA
+E8K,NB,Saint-Laurent Nord,CA
+E8K,NB,Saint-Laurent,CA
+E8K,NB,Sainte-Louise,CA
+E8K,NB,Sainte-Rosette,CA
+E8K,NB,Sainte-Therese Sud,CA
+E8K,NB,Sormany,CA
+E8L,NB,Allardville,CA
+E8L,NB,Goodwin Mill,CA
+E8L,NB,Miramichi Road,CA
+E8L,NB,Poirier Subdivision,CA
+E8L,NB,Saint-Sauveur,CA
+E8M,NB,Bois-Gagnon,CA
+E8M,NB,Duguayville,CA
+E8M,NB,Hacheyville,CA
+E8M,NB,Saint-Isidore,CA
+E8M,NB,Tilley Road,CA
+E8N,NB,Anse-Bleue,CA
+E8N,NB,Dugas,CA
+E8N,NB,Grande-Anse,CA
+E8N,NB,Maisonnette,CA
+E8N,NB,Riviere du Nord,CA
+E8N,NB,Saint-Leolin,CA
+E8N,NB,Village-des-Poirier,CA
+E8P,NB,Evangeline,CA
+E8P,NB,Inkerman Ferry,CA
+E8P,NB,Inkerman,CA
+E8P,NB,Landry Office,CA
+E8P,NB,Maltempec,CA
+E8P,NB,Pokemouche,CA
+E8P,NB,Saint-Simon,CA
+E8P,NB,Village Blanchard,CA
+E8R,NB,Bas-Paquetville,CA
+E8R,NB,Bois-Blanc,CA
+E8R,NB,Burnsville,CA
+E8R,NB,Haut-Paquetville,CA
+E8R,NB,Notre-Dame-des-Erables,CA
+E8R,NB,Paquetville,CA
+E8R,NB,Petit-Paquetville,CA
+E8R,NB,Rang-Saint-Georges,CA
+E8R,NB,Saint-Amateur,CA
+E8R,NB,Trudel,CA
+E8R,NB,Val-Doucet,CA
+E8S,NB,Baie de Petit-Pokemouche,CA
+E8S,NB,Chiasson Office,CA
+E8S,NB,Haut-Shippagan,CA
+E8S,NB,Le Goulet,CA
+E8S,NB,Pointe-Brulee,CA
+E8S,NB,Pointe-Sauvage,CA
+E8S,NB,Savoie Landing,CA
+E8S,NB,Shippagan,CA
+E8T,NB,Cap-Bateau,CA
+E8T,NB,Coteau Road,CA
+E8T,NB,Haut-Lameque,CA
+E8T,NB,Lameque,CA
+E8T,NB,Miscou,CA
+E8T,NB,Petit-Shippagan,CA
+E8T,NB,Petite-Lameque,CA
+E8T,NB,Petite-Riviere-de-l'Ile,CA
+E8T,NB,Pigeon Hill,CA
+E8T,NB,Pointe-Alexandre,CA
+E8T,NB,Pointe-Canot,CA
+E8T,NB,Sainte-Cecile,CA
+E8T,NB,Sainte-Marie-Saint-Raphael,CA
+E9A,NB,Baie-Sainte-Anne,CA
+E9A,NB,Escuminac,CA
+E9A,NB,Hardwicke,CA
+E9A,NB,Pointe-Sapin,CA
+E9B,NB,Arbeau Settlement,CA
+E9B,NB,Barnettville,CA
+E9B,NB,Bartholomew,CA
+E9B,NB,Blackville,CA
+E9B,NB,Cains River,CA
+E9B,NB,Gray Rapids,CA
+E9B,NB,Howard,CA
+E9B,NB,Keenans,CA
+E9B,NB,Lockstead,CA
+E9B,NB,Smith Crossing,CA
+E9B,NB,Upper Blackville,CA
+E9B,NB,White Rapids,CA
+E9C,NB,Bettsburg,CA
+E9C,NB,Blissfield,CA
+E9C,NB,Carrolls Crossing,CA
+E9C,NB,Doaktown,CA
+E9C,NB,Grand Lake Road,CA
+E9C,NB,Hazelton,CA
+E9C,NB,Ludlow,CA
+E9C,NB,McNamee,CA
+E9C,NB,Nelson Hollow,CA
+E9C,NB,New Bandon Northumb Co,CA
+E9C,NB,Porter Cove,CA
+E9C,NB,Priceville,CA
+E9C,NB,Storeytown,CA
+E9C,NB,Weaver Siding,CA
+E9E,NB,Big Hole,CA
+E9E,NB,Boom Road,CA
+E9E,NB,Cassilis,CA
+E9E,NB,Chelmsford,CA
+E9E,NB,Curventon,CA
+E9E,NB,Doyles Brook,CA
+E9E,NB,Exmoor,CA
+E9E,NB,Halcomb,CA
+E9E,NB,Hilltop,CA
+E9E,NB,Lyttleton,CA
+E9E,NB,Matthews Settlement,CA
+E9E,NB,McKinleyville,CA
+E9E,NB,Miramichi,CA
+E9E,NB,Pineville,CA
+E9E,NB,Quarryville,CA
+E9E,NB,Red Bank Reserve,CA
+E9E,NB,Red Bank,CA
+E9E,NB,Renous,CA
+E9E,NB,Sevogle,CA
+E9E,NB,Sillikers,CA
+E9E,NB,Sunny Corner,CA
+E9E,NB,Trout Brook,CA
+E9E,NB,Upper Derby,CA
+E9E,NB,Warwick Settlement,CA
+E9E,NB,Wayerton,CA
+E9G,NB,Allainville,CA
+E9G,NB,Barryville,CA
+E9G,NB,Burnt Church First Nation,CA
+E9G,NB,Burnt Church,CA
+E9G,NB,Caissie Road,CA
+E9G,NB,Fairisle,CA
+E9G,NB,Lagaceville,CA
+E9G,NB,Lavillette,CA
+E9G,NB,Neguac,CA
+E9G,NB,New Jersey,CA
+E9G,NB,Robichaud Settlement,CA
+E9G,NB,Saint-Wilfred,CA
+E9G,NB,Stymiest,CA
+E9G,NB,Village-Saint-Laurent,CA
+E9H,NB,Brantville,CA
+E9H,NB,Haut-Riviere-du-Portage,CA
+E9H,NB,Riviere-du-Portage,CA
+E9H,NB,Tabusintac,CA
+G0A,QC,Beaupre,CA
+G0A,QC,Boischatel,CA
+G0A,QC,Cap-Sante,CA
+G0A,QC,Chateau-Richer,CA
+G0A,QC,Courcelette,CA
+G0A,QC,Deschambault,CA
+G0A,QC,Grondines,CA
+G0A,QC,Isle-aux-Coudres,CA
+G0A,QC,L'Ange Gardien,CA
+G0A,QC,La Baleine,CA
+G0A,QC,Lac-Sergent,CA
+G0A,QC,Les Eboulements,CA
+G0A,QC,Neuville,CA
+G0A,QC,Petite-Riviere-Saint-Francois,CA
+G0A,QC,Portneuf,CA
+G0A,QC,Riviere-a-Pierre,CA
+G0A,QC,Saint-Alban,CA
+G0A,QC,Saint-Basile,CA
+G0A,QC,Saint-Bernard-sur-Mer,CA
+G0A,QC,Saint-Casimir,CA
+G0A,QC,Saint-Ferreol-les-Neiges,CA
+G0A,QC,Saint-Francois-d'Orleans,CA
+G0A,QC,Saint-Gabriel-de-Valcartier,CA
+G0A,QC,Saint-Gilbert,CA
+G0A,QC,Saint-Hilarion,CA
+G0A,QC,Saint-Jean-d'Orleans,CA
+G0A,QC,Saint-Joseph-de-la-Rive,CA
+G0A,QC,Saint-Laurent-Ile-d'Orleans,CA
+G0A,QC,Saint-Leonard-de-Portneuf,CA
+G0A,QC,Saint-Marc-des-Carrieres,CA
+G0A,QC,Saint-Pierre-Ile-d'Orleans,CA
+G0A,QC,Saint-Thuribe,CA
+G0A,QC,Saint-Tite-des-Caps,CA
+G0A,QC,Saint-Ubalde,CA
+G0A,QC,Saint-Urbain-de-Charlevoix,CA
+G0A,QC,Sainte-Anne-de-Beaupre,CA
+G0A,QC,Sainte-Brigitte-de-Laval,CA
+G0A,QC,Sainte-Christine-d'Auvergne,CA
+G0A,QC,Sainte-Famille,CA
+G0A,QC,Sainte-Petronille,CA
+G0A,QC,Shannon,CA
+G0A,QC,St-Joachim-de-Montmorency,CA
+G0A,QC,Wendake,CA
+G0C,QC,Barachois,CA
+G0C,QC,Bonaventure,CA
+G0C,QC,Cap-d'Espoir,CA
+G0C,QC,Caplan,CA
+G0C,QC,Carleton,CA
+G0C,QC,Cascapedia-Saint-Jules,CA
+G0C,QC,Chandler,CA
+G0C,QC,Escuminac,CA
+G0C,QC,Gascons,CA
+G0C,QC,Gesgapegiag,CA
+G0C,QC,Grande-Riviere,CA
+G0C,QC,Grande-Riviere-Ouest,CA
+G0C,QC,Hope Town,CA
+G0C,QC,Hope,CA
+G0C,QC,L'Alverne,CA
+G0C,QC,Listuguj,CA
+G0C,QC,Maria,CA
+G0C,QC,New Carlisle,CA
+G0C,QC,New Richmond,CA
+G0C,QC,Newport,CA
+G0C,QC,Nouvelle,CA
+G0C,QC,Nouvelle-Ouest,CA
+G0C,QC,Pabos Mills,CA
+G0C,QC,Pabos,CA
+G0C,QC,Paspebiac,CA
+G0C,QC,Perce,CA
+G0C,QC,Pointe-a-la-Croix,CA
+G0C,QC,Pointe-a-la-Garde,CA
+G0C,QC,Port-Daniel,CA
+G0C,QC,Riviere-Paspebiac,CA
+G0C,QC,Saint-Alphonse-de-Caplan,CA
+G0C,QC,Saint-Elzear-de-Bonaventure,CA
+G0C,QC,Saint-Georges-de-Malbaie,CA
+G0C,QC,Saint-Godefroi,CA
+G0C,QC,Saint-Jogues,CA
+G0C,QC,Saint-Omer,CA
+G0C,QC,Saint-Simeon-de-Bonaventure,CA
+G0C,QC,Sainte-Therese-de-Gaspe,CA
+G0C,QC,Shigawake,CA
+G0C,QC,Val-d'Espoir,CA
+G0E,QC,Cap-au-Renard,CA
+G0E,QC,Cloridorme,CA
+G0E,QC,Grande-Vallee,CA
+G0E,QC,Gros-Morne,CA
+G0E,QC,L'Anse-Pleureuse,CA
+G0E,QC,La Martre,CA
+G0E,QC,Madeleine-Centre,CA
+G0E,QC,Manche-d'Epee,CA
+G0E,QC,Marsoui,CA
+G0E,QC,Mont-Louis,CA
+G0E,QC,Mont-Saint-Pierre,CA
+G0E,QC,Murdochville,CA
+G0E,QC,Petite-Vallee,CA
+G0E,QC,Riviere-Madeleine,CA
+G0E,QC,Riviere-a-Claude,CA
+G0E,QC,Ruisseau-a-Rebours,CA
+G0G,QC,Aguanish,CA
+G0G,QC,Baie-Johan-Beetz,CA
+G0G,QC,Blanc-Sablon,CA
+G0G,QC,Brador,CA
+G0G,QC,Chevery,CA
+G0G,QC,Clarke City,CA
+G0G,QC,Fermont,CA
+G0G,QC,Gallix,CA
+G0G,QC,Gethsemani,CA
+G0G,QC,Harrington Harbour,CA
+G0G,QC,Havre-Saint-Pierre,CA
+G0G,QC,Kawawachikamach,CA
+G0G,QC,Kegaska,CA
+G0G,QC,L'Ile-Michon,CA
+G0G,QC,La Tabatiere,CA
+G0G,QC,Longue-Pointe-de-Mingan,CA
+G0G,QC,Lourdes-de-Blanc-Sablon,CA
+G0G,QC,Middle Bay,CA
+G0G,QC,Moisie,CA
+G0G,QC,Mutton Bay,CA
+G0G,QC,Natashquan,CA
+G0G,QC,Old Fort Bay,CA
+G0G,QC,Port-Menier,CA
+G0G,QC,Riviere-Saint-Jean,CA
+G0G,QC,Riviere-Saint-Paul,CA
+G0G,QC,Riviere-au-Tonnerre,CA
+G0G,QC,Saint-Augustin-Saguenay,CA
+G0G,QC,Schefferville,CA
+G0G,QC,Sheldrake,CA
+G0G,QC,Tete-a-la-Baleine,CA
+G0H,QC,Baie-Trinite,CA
+G0H,QC,Betsiamites,CA
+G0H,QC,Chute-aux-Outardes,CA
+G0H,QC,Colombier,CA
+G0H,QC,Franquelin,CA
+G0H,QC,Godbout,CA
+G0H,QC,Les Buissons,CA
+G0H,QC,Pointe-Lebel,CA
+G0H,QC,Pointe-aux-Outardes,CA
+G0H,QC,Ragueneau,CA
+G0H,QC,Riviere-Pentecote,CA
+G0J,QC,Albertville,CA
+G0J,QC,Baie-des-Sables,CA
+G0J,QC,Cap-Chat,CA
+G0J,QC,Cap-Chat-Est,CA
+G0J,QC,Capucins,CA
+G0J,QC,Causapscal,CA
+G0J,QC,Grosses-Roches,CA
+G0J,QC,L'Ascension-de-Patapedia,CA
+G0J,QC,La Redemption,CA
+G0J,QC,Lac-Humqui,CA
+G0J,QC,Lac-au-Saumon,CA
+G0J,QC,Les Mechins,CA
+G0J,QC,Matapedia,CA
+G0J,QC,Metis-sur-Mer,CA
+G0J,QC,Padoue,CA
+G0J,QC,Price,CA
+G0J,QC,Ristigouche-Sud-Est,CA
+G0J,QC,Routhierville,CA
+G0J,QC,Saint-Adelme,CA
+G0J,QC,Saint-Alexandre-des-Lacs,CA
+G0J,QC,Saint-Alexis-de-Matapedia,CA
+G0J,QC,Saint-Andre-de-Restigouche,CA
+G0J,QC,Saint-Cleophas,CA
+G0J,QC,Saint-Damase-de-Matapedia,CA
+G0J,QC,Saint-Francois-d'Assise,CA
+G0J,QC,Saint-Jean-de-Cherbourg,CA
+G0J,QC,Saint-Leandre,CA
+G0J,QC,Saint-Leon-le-Grand,CA
+G0J,QC,Saint-Moise,CA
+G0J,QC,Saint-Noel,CA
+G0J,QC,Saint-Rene-de-Matane,CA
+G0J,QC,Saint-Tharcisius,CA
+G0J,QC,Saint-Ulric,CA
+G0J,QC,Saint-Vianney,CA
+G0J,QC,Sainte-Angele-de-Merici,CA
+G0J,QC,Sainte-Felicite,CA
+G0J,QC,Sainte-Flavie,CA
+G0J,QC,Sainte-Florence,CA
+G0J,QC,Sainte-Marguerite-Marie,CA
+G0J,QC,Sainte-Paule,CA
+G0J,QC,Sayabec,CA
+G0J,QC,St-Octave,CA
+G0J,QC,Ste-Irene-de-Matapedia,CA
+G0J,QC,Ste-Jeanne-d'Arc-de-Matane,CA
+G0J,QC,Val-Brillant,CA
+G0K,QC,Biencourt,CA
+G0K,QC,Esprit-Saint,CA
+G0K,QC,La Trinite-des-Monts,CA
+G0K,QC,Lac-des-Aigles,CA
+G0K,QC,Les Hauteurs,CA
+G0K,QC,Saint-Anaclet,CA
+G0K,QC,Saint-Charles-Garnier,CA
+G0K,QC,Saint-Donat,CA
+G0K,QC,Saint-Gabriel-de-Rimouski,CA
+G0K,QC,Saint-Guy,CA
+G0K,QC,Saint-Marcellin,CA
+G0K,QC,Saint-Narcisse-de-Rimouski,CA
+G0K,QC,Sainte-Luce,CA
+G0L,QC,Auclair,CA
+G0L,QC,Cacouna,CA
+G0L,QC,Kamouraska,CA
+G0L,QC,L'Isle-Verte,CA
+G0L,QC,Ladriere,CA
+G0L,QC,Lejeune,CA
+G0L,QC,Lots-Renverses,CA
+G0L,QC,Mont-Carmel,CA
+G0L,QC,Notre-Dame-des-Sept-Douleurs,CA
+G0L,QC,Notre-Dame-du-Portage,CA
+G0L,QC,Packington,CA
+G0L,QC,Pohenegamook,CA
+G0L,QC,Rimouski,CA
+G0L,QC,Riviere-Bleue,CA
+G0L,QC,Riviere-Ouelle,CA
+G0L,QC,Riviere-Trois-Pistoles,CA
+G0L,QC,Saint-Alexandre-de-Kamouraska,CA
+G0L,QC,Saint-Andre-de-Kamouraska,CA
+G0L,QC,Saint-Antonin,CA
+G0L,QC,Saint-Arsene,CA
+G0L,QC,Saint-Bruno-de-Kamouraska,CA
+G0L,QC,Saint-Clement,CA
+G0L,QC,Saint-Cyprien,CA
+G0L,QC,Saint-Denis-de-la-Bouteillerie,CA
+G0L,QC,Saint-Eloi,CA
+G0L,QC,Saint-Elzear-de-Temiscouata,CA
+G0L,QC,Saint-Epiphane,CA
+G0L,QC,Saint-Eusebe,CA
+G0L,QC,Saint-Fabien,CA
+G0L,QC,Saint-Francois-Xavier-de-Viger,CA
+G0L,QC,Saint-Germain,CA
+G0L,QC,Saint-Honore-de-Temiscouata,CA
+G0L,QC,Saint-Hubert-Riviere-du-Loup,CA
+G0L,QC,Saint-Jean-de-Dieu,CA
+G0L,QC,Saint-Jean-de-la-Lande,CA
+G0L,QC,Saint-Joseph-de-Kamouraska,CA
+G0L,QC,Saint-Juste-du-Lac,CA
+G0L,QC,Saint-Louis-du-Ha-Ha,CA
+G0L,QC,Saint-Marc-du-Lac-Long,CA
+G0L,QC,Saint-Mathieu-de-Rioux,CA
+G0L,QC,Saint-Medard,CA
+G0L,QC,Saint-Modeste,CA
+G0L,QC,Saint-Pacome,CA
+G0L,QC,Saint-Pascal,CA
+G0L,QC,Saint-Paul-de-la-Croix,CA
+G0L,QC,Saint-Philippe-de-Neri,CA
+G0L,QC,Saint-Pierre-de-Lamy,CA
+G0L,QC,Saint-Simon-de-Rimouski,CA
+G0L,QC,Saint-Valerien-de-Rimouski,CA
+G0L,QC,Sainte-Francoise,CA
+G0L,QC,Sainte-Helene-de-Kamouraska,CA
+G0L,QC,Sainte-Rita,CA
+G0L,QC,Squatec,CA
+G0L,QC,St-Athanase,CA
+G0L,QC,St-Gabriel-de-Kamouraska,CA
+G0L,QC,Temiscouata-sur-le-Lac,CA
+G0L,QC,Trois-Pistoles,CA
+G0M,QC,Courcelles,CA
+G0M,QC,La Guadeloupe,CA
+G0M,QC,Lambton,CA
+G0M,QC,Mailing Municipality Clean Up,CA
+G0M,QC,Notre-Dame-des-Pins,CA
+G0M,QC,Saint-Alfred,CA
+G0M,QC,Saint-Benjamin,CA
+G0M,QC,Saint-Benoit-Labre,CA
+G0M,QC,Saint-Come-Liniere,CA
+G0M,QC,Saint-Ephrem-de-Beauce,CA
+G0M,QC,Saint-Evariste-de-Forsyth,CA
+G0M,QC,Saint-Gedeon-de-Beauce,CA
+G0M,QC,Saint-Honore-de-Shenley,CA
+G0M,QC,Saint-Ludger,CA
+G0M,QC,Saint-Martin,CA
+G0M,QC,Saint-Philibert,CA
+G0M,QC,Saint-Prosper-de-Dorchester,CA
+G0M,QC,Saint-Rene,CA
+G0M,QC,Saint-Robert-Bellarmin,CA
+G0M,QC,Saint-Simon-les-Mines,CA
+G0M,QC,Saint-Theophile,CA
+G0M,QC,Saint-Victor,CA
+G0M,QC,Saint-Zacharie,CA
+G0M,QC,Sainte-Aurelie,CA
+G0M,QC,Sainte-Praxede,CA
+G0N,QC,Adstock,CA
+G0N,QC,Disraeli,CA
+G0N,QC,East Broughton Station,CA
+G0N,QC,East Broughton,CA
+G0N,QC,Kinnear's Mills,CA
+G0N,QC,Saint-Adrien-d'Irlande,CA
+G0N,QC,Saint-Ferdinand,CA
+G0N,QC,Saint-Frederic,CA
+G0N,QC,Saint-Jacques-de-Leeds,CA
+G0N,QC,Saint-Jacques-le-Majeur,CA
+G0N,QC,Saint-Joseph-de-Coleraine,CA
+G0N,QC,Saint-Jules,CA
+G0N,QC,Saint-Julien,CA
+G0N,QC,Saint-Pierre-de-Broughton,CA
+G0N,QC,Saint-Severin-de-Beauce,CA
+G0N,QC,Sainte-Clotilde-de-Beauce,CA
+G0N,QC,Sainte-Praxede,CA
+G0N,QC,Tring-Jonction,CA
+G0P,QC,Chesterville,CA
+G0P,QC,Ham-Nord,CA
+G0P,QC,Notre-Dame-de-Ham,CA
+G0P,QC,Saint-Fortunat,CA
+G0P,QC,Saint-Jacques-le-Majeur,CA
+G0P,QC,Saint-Norbert-d'Arthabaska,CA
+G0P,QC,Saint-Pierre-Baptiste,CA
+G0P,QC,Saint-Valere,CA
+G0P,QC,Sainte-Helene-de-Chester,CA
+G0P,QC,Sainte-Sophie-d'Halifax,CA
+G0P,QC,Saints-Martyrs-Canadiens,CA
+G0R,QC,Armagh,CA
+G0R,QC,Beaumont,CA
+G0R,QC,Berthier-sur-Mer,CA
+G0R,QC,Buckland,CA
+G0R,QC,Cap-Saint-Ignace,CA
+G0R,QC,Frampton,CA
+G0R,QC,Honfleur,CA
+G0R,QC,L'Isle-aux-Grues,CA
+G0R,QC,L'Islet,CA
+G0R,QC,L'Isletville,CA
+G0R,QC,La Durantaye,CA
+G0R,QC,La Pocatiere,CA
+G0R,QC,Lac-Etchemin,CA
+G0R,QC,Lac-Frontiere,CA
+G0R,QC,Lamartine,CA
+G0R,QC,Notre-Dame-du-Rosaire,CA
+G0R,QC,Ravignan,CA
+G0R,QC,Riviere-Ouelle,CA
+G0R,QC,Saint-Adalbert,CA
+G0R,QC,Saint-Anselme,CA
+G0R,QC,Saint-Aubert,CA
+G0R,QC,Saint-Camille-de-Lellis,CA
+G0R,QC,Saint-Charles-de-Bellechasse,CA
+G0R,QC,Saint-Cyprien-des-Etchemins,CA
+G0R,QC,Saint-Cyrille-de-l'Islet,CA
+G0R,QC,Saint-Damase-des-Aulnaies,CA
+G0R,QC,Saint-Damien-de-Buckland,CA
+G0R,QC,Saint-Fabien-de-Panet,CA
+G0R,QC,Saint-Gervais,CA
+G0R,QC,Saint-Henri-de-Levis,CA
+G0R,QC,Saint-Jean-Port-Joli,CA
+G0R,QC,Saint-Just-de-Bretenieres,CA
+G0R,QC,Saint-Lazare-de-Bellechasse,CA
+G0R,QC,Saint-Luc-de-Bellechasse,CA
+G0R,QC,Saint-Magloire,CA
+G0R,QC,Saint-Malachie,CA
+G0R,QC,Saint-Michel-de-Bellechasse,CA
+G0R,QC,Saint-Nazaire-de-Dorchester,CA
+G0R,QC,Saint-Neree,CA
+G0R,QC,Saint-Omer-l'Islet,CA
+G0R,QC,Saint-Pamphile,CA
+G0R,QC,Saint-Paul-de-Montminy,CA
+G0R,QC,Saint-Philemon,CA
+G0R,QC,Saint-Raphael,CA
+G0R,QC,Saint-Roch-des-Aulnaies,CA
+G0R,QC,Saint-Vallier,CA
+G0R,QC,Sainte-Anne-de-la-Pocatiere,CA
+G0R,QC,Sainte-Apolline-de-Patton,CA
+G0R,QC,Sainte-Claire,CA
+G0R,QC,Sainte-Euphemie,CA
+G0R,QC,Sainte-Felicite-de-l'Islet,CA
+G0R,QC,Sainte-Justine,CA
+G0R,QC,Sainte-Louise,CA
+G0R,QC,Sainte-Lucie-de-Beauregard,CA
+G0R,QC,Sainte-Perpetue-de-l'Islet,CA
+G0R,QC,Sainte-Rose-de-Watford,CA
+G0R,QC,Sainte-Sabine-de-Bellechasse,CA
+G0R,QC,St-Francois-de-la-Riviere-du-S,CA
+G0R,QC,St-Marcel-de-l'Islet,CA
+G0R,QC,St-Onesime,CA
+G0R,QC,St-Pierre-de-la-Riviere-du-Sud,CA
+G0R,QC,Standon,CA
+G0R,QC,Tourville,CA
+G0S,QC,Deschaillons-sur-Saint-Laurent,CA
+G0S,QC,Dosquet,CA
+G0S,QC,Fortierville,CA
+G0S,QC,Inverness,CA
+G0S,QC,Issoudun,CA
+G0S,QC,Joly,CA
+G0S,QC,Laurier-Station,CA
+G0S,QC,Laurierville,CA
+G0S,QC,Leclercville,CA
+G0S,QC,Levis,CA
+G0S,QC,Lotbiniere,CA
+G0S,QC,Lourdes,CA
+G0S,QC,Lyster,CA
+G0S,QC,Parisville,CA
+G0S,QC,Saint-Agapit,CA
+G0S,QC,Saint-Antoine-de-Tilly,CA
+G0S,QC,Saint-Apollinaire,CA
+G0S,QC,Saint-Bernard,CA
+G0S,QC,Saint-Edouard-de-Lotbiniere,CA
+G0S,QC,Saint-Elzear,CA
+G0S,QC,Saint-Flavien,CA
+G0S,QC,Saint-Gilles,CA
+G0S,QC,Saint-Isidore,CA
+G0S,QC,Saint-Joseph-de-Beauce,CA
+G0S,QC,Saint-Lambert-de-Lauzon,CA
+G0S,QC,Saint-Narcisse-de-Beaurivage,CA
+G0S,QC,Saint-Odilon,CA
+G0S,QC,Saint-Patrice-de-Beaurivage,CA
+G0S,QC,Saint-Sylvestre,CA
+G0S,QC,Sainte-Agathe-de-Lotbiniere,CA
+G0S,QC,Sainte-Croix,CA
+G0S,QC,Sainte-Francoise-de-Lotbiniere,CA
+G0S,QC,Sainte-Henedine,CA
+G0S,QC,Saints-Anges,CA
+G0S,QC,Scott,CA
+G0S,QC,Ste-Marguerite-de-Dorchester,CA
+G0S,QC,Val-Alain,CA
+G0S,QC,Vallee-Jonction,CA
+G0S,QC,Villeroy,CA
+G0T,QC,Baie-Sainte-Catherine,CA
+G0T,QC,Essipit,CA
+G0T,QC,Forestville,CA
+G0T,QC,Les Bergeronnes,CA
+G0T,QC,Les Escoumins,CA
+G0T,QC,Longue-Rive,CA
+G0T,QC,Notre-Dame-des-Monts,CA
+G0T,QC,Portneuf-sur-Mer,CA
+G0T,QC,Sacre-Coeur-Saguenay,CA
+G0T,QC,Saint-Aime-des-Lacs,CA
+G0T,QC,Saint-Irenee,CA
+G0T,QC,Saint-Simeon,CA
+G0T,QC,Tadoussac,CA
+G0V,QC,Alouette,CA
+G0V,QC,Begin,CA
+G0V,QC,Falardeau,CA
+G0V,QC,Ferland-et-Boilleau,CA
+G0V,QC,L'Anse-Saint-Jean,CA
+G0V,QC,Petit-Saguenay,CA
+G0V,QC,Riviere-Eternite,CA
+G0V,QC,Saint-Charles-de-Bourget,CA
+G0V,QC,Saint-Felix-d'Otis,CA
+G0V,QC,Saint-Fulgence,CA
+G0V,QC,Saint-Honore-de-Chicoutimi,CA
+G0V,QC,Sainte-Rose-du-Nord,CA
+G0W,QC,Chambord,CA
+G0W,QC,Chapais,CA
+G0W,QC,Dalmas,CA
+G0W,QC,Desbiens,CA
+G0W,QC,Girardville,CA
+G0W,QC,Hebertville-Station,CA
+G0W,QC,L'Ascension-de-Notre-Seigneur,CA
+G0W,QC,Labrecque,CA
+G0W,QC,Lac-Bouchette,CA
+G0W,QC,Lamarche,CA
+G0W,QC,Larouche,CA
+G0W,QC,Mashteuiatsh,CA
+G0W,QC,Mistissini,CA
+G0W,QC,Notre-Dame-de-Lorette,CA
+G0W,QC,Obedjiwan,CA
+G0W,QC,Ouje-Bougoumou,CA
+G0W,QC,Peribonka,CA
+G0W,QC,Saint-Andre-du-Lac-Saint-Jean,CA
+G0W,QC,Saint-Bruno-Lac-Saint-Jean,CA
+G0W,QC,Saint-Edmond-les-Plaines,CA
+G0W,QC,Saint-Eugene-d'Argentenay,CA
+G0W,QC,Saint-Francois-de-Sales,CA
+G0W,QC,Saint-Gedeon,CA
+G0W,QC,Saint-Ludger-de-Milot,CA
+G0W,QC,Saint-Thomas-Didyme,CA
+G0W,QC,Sainte-Hedwidge-de-Roberval,CA
+G0W,QC,Sainte-Jeanne-d'Arc,CA
+G0W,QC,Sainte-Monique-Lac-Saint-Jean,CA
+G0W,QC,St-Nazaire-du-Lac-St-Jean,CA
+G0W,QC,Taillon,CA
+G0X,QC,Batiscan,CA
+G0X,QC,Champlain,CA
+G0X,QC,Charette,CA
+G0X,QC,Clova,CA
+G0X,QC,Grandes-Piles,CA
+G0X,QC,Herouxville,CA
+G0X,QC,La Croche,CA
+G0X,QC,Lac-Edouard,CA
+G0X,QC,Lac-a-la-Tortue,CA
+G0X,QC,Lac-aux-Sables,CA
+G0X,QC,Lemieux,CA
+G0X,QC,Manseau,CA
+G0X,QC,Notre-Dame-de-Montauban,CA
+G0X,QC,Notre-Dame-du-Mont-Carmel,CA
+G0X,QC,Parent,CA
+G0X,QC,Proulxville,CA
+G0X,QC,Saint-Adelphe-de-Champlain,CA
+G0X,QC,Saint-Boniface,CA
+G0X,QC,Saint-Elie-de-Caxton,CA
+G0X,QC,Saint-Etienne-des-Gres,CA
+G0X,QC,Saint-Jean-des-Piles,CA
+G0X,QC,Saint-Luc-de-Vincennes,CA
+G0X,QC,Saint-Mathieu-du-Parc,CA
+G0X,QC,Saint-Maurice,CA
+G0X,QC,Saint-Narcisse,CA
+G0X,QC,Saint-Pierre-les-Becquets,CA
+G0X,QC,Saint-Prosper,CA
+G0X,QC,Saint-Roch-de-Mekinac,CA
+G0X,QC,Saint-Severe,CA
+G0X,QC,Saint-Stanislas-de-Champlain,CA
+G0X,QC,Saint-Tite,CA
+G0X,QC,Sainte-Anne-de-la-Perade,CA
+G0X,QC,Sainte-Cecile-de-Levrard,CA
+G0X,QC,Sainte-Genevieve-de-Batiscan,CA
+G0X,QC,Sainte-Marie-de-Blandford,CA
+G0X,QC,Sainte-Sophie-de-Levrard,CA
+G0X,QC,Sainte-Thecle,CA
+G0X,QC,St-Barnabe-Nord,CA
+G0X,QC,Trois-Rives,CA
+G0X,QC,Wemotaci,CA
+G0X,QC,Wolinak,CA
+G0X,QC,Yamachiche,CA
+G0Y,QC,Audet,CA
+G0Y,QC,Beaulac-Garthby,CA
+G0Y,QC,Lac-Drolet,CA
+G0Y,QC,Marston,CA
+G0Y,QC,Milan,CA
+G0Y,QC,Nantes,CA
+G0Y,QC,Piopolis,CA
+G0Y,QC,Saint-Romain,CA
+G0Y,QC,Saint-Sebastien-de-Frontenac,CA
+G0Y,QC,Sainte-Cecile-de-Whitton,CA
+G0Y,QC,Stornoway,CA
+G0Y,QC,Stratford,CA
+G0Y,QC,Val-Racine,CA
+G0Y,QC,Woburn,CA
+G0Z,QC,Aston-Jonction,CA
+G0Z,QC,Daveluyville,CA
+G0Z,QC,Maddington,CA
+G0Z,QC,Saint-Louis-de-Blandford,CA
+G0Z,QC,Saint-Rosaire,CA
+G0Z,QC,Saint-Samuel,CA
+G0Z,QC,Saint-Sylvere,CA
+G0Z,QC,Saint-Wenceslas,CA
+G0Z,QC,Sainte-Anne-du-Sault,CA
+G0Z,QC,Sainte-Eulalie,CA
+G1A,QC,Quebec,CA
+G1B,QC,Quebec,CA
+G1C,QC,Quebec,CA
+G1E,QC,Quebec,CA
+G1G,QC,Quebec,CA
+G1H,QC,Quebec,CA
+G1J,QC,Quebec,CA
+G1K,QC,Quebec,CA
+G1L,QC,Quebec,CA
+G1M,QC,Quebec,CA
+G1N,QC,Quebec,CA
+G1P,QC,Quebec,CA
+G1R,QC,Quebec,CA
+G1S,QC,Quebec,CA
+G1T,QC,Quebec,CA
+G1V,QC,Quebec,CA
+G1W,QC,Quebec,CA
+G1X,QC,Quebec,CA
+G1Y,QC,Quebec,CA
+G2A,QC,Quebec,CA
+G2B,QC,Quebec,CA
+G2C,QC,Quebec,CA
+G2E,QC,L'Ancienne-Lorette,CA
+G2E,QC,Quebec,CA
+G2G,QC,L'Ancienne-Lorette,CA
+G2G,QC,Quebec,CA
+G2J,QC,Quebec,CA
+G2K,QC,Quebec,CA
+G2L,QC,Quebec,CA
+G2M,QC,Quebec,CA
+G2N,QC,Quebec,CA
+G3A,QC,Quebec,CA
+G3A,QC,Saint-Augustin-de-Desmaures,CA
+G3B,QC,Lac-Beauport,CA
+G3C,QC,Lac-Delage,CA
+G3C,QC,Stoneham-et-Tewkesbury,CA
+G3E,QC,Quebec,CA
+G3G,QC,Quebec,CA
+G3H,QC,Pont-Rouge,CA
+G3J,QC,Quebec,CA
+G3K,QC,Quebec,CA
+G3L,QC,Saint-Raymond,CA
+G3M,QC,Donnacona,CA
+G3N,QC,Fossambault-sur-le-Lac,CA
+G3N,QC,Lac-Saint-Joseph,CA
+G3N,QC,Shannon,CA
+G3N,QC,Ste-Catherine-de-la-J-Cartier,CA
+G3Z,QC,Baie-Saint-Paul,CA
+G4A,QC,Clermont,CA
+G4R,QC,Maliotenam,CA
+G4R,QC,Sept-Iles,CA
+G4R,QC,Uashat,CA
+G4S,QC,Sept-Iles,CA
+G4S,QC,Uashat,CA
+G4T,QC,Bassin,CA
+G4T,QC,Cap-aux-Meules,CA
+G4T,QC,Fatima,CA
+G4T,QC,Grande-Entree,CA
+G4T,QC,Grosse-Ile,CA
+G4T,QC,Havre-Aubert,CA
+G4T,QC,Havre-aux-Maisons,CA
+G4T,QC,L'Etang-du-Nord,CA
+G4T,QC,L'Ile-d'Entree,CA
+G4T,QC,Pointe-aux-Loups,CA
+G4V,QC,Sainte-Anne-des-Monts,CA
+G4W,QC,Matane,CA
+G4X,QC,Gaspe,CA
+G4Z,QC,Baie-Comeau,CA
+G5A,QC,La Malbaie,CA
+G5B,QC,Port-Cartier,CA
+G5C,QC,Baie-Comeau,CA
+G5H,QC,Mont-Joli,CA
+G5H,QC,Saint-Joseph-de-Lepage,CA
+G5J,QC,Amqui,CA
+G5L,QC,Rimouski,CA
+G5M,QC,Rimouski,CA
+G5N,QC,Rimouski,CA
+G5R,QC,Riviere-du-Loup,CA
+G5T,QC,Degelis,CA
+G5V,QC,Montmagny,CA
+G5X,QC,Beauceville,CA
+G5Y,QC,Saint-Georges,CA
+G5Z,QC,Saint-Georges,CA
+G6A,QC,Saint-Georges,CA
+G6B,QC,Frontenac,CA
+G6B,QC,Lac-Megantic,CA
+G6B,QC,Nantes,CA
+G6C,QC,Levis,CA
+G6E,QC,Sainte-Marie,CA
+G6G,QC,Saint-Adrien-d'Irlande,CA
+G6G,QC,Saint-Jean-de-Brebeuf,CA
+G6G,QC,Thetford Mines,CA
+G6H,QC,Irlande,CA
+G6H,QC,Thetford Mines,CA
+G6J,QC,Levis,CA
+G6K,QC,Levis,CA
+G6L,QC,Plessisville,CA
+G6L,QC,Princeville,CA
+G6P,QC,Victoriaville,CA
+G6R,QC,Saint-Christophe-d'Arthabaska,CA
+G6R,QC,Victoriaville,CA
+G6S,QC,Saint-Christophe-d'Arthabaska,CA
+G6S,QC,Victoriaville,CA
+G6T,QC,Victoriaville,CA
+G6V,QC,Levis,CA
+G6W,QC,Levis,CA
+G6X,QC,Levis,CA
+G6Y,QC,Levis,CA
+G6Z,QC,Levis,CA
+G7A,QC,Levis,CA
+G7B,QC,Chicoutimi,CA
+G7B,QC,La Baie,CA
+G7G,QC,Canton Tremblay,CA
+G7G,QC,Chicoutimi,CA
+G7H,QC,Canton Tremblay,CA
+G7H,QC,Chicoutimi,CA
+G7J,QC,Chicoutimi,CA
+G7K,QC,Chicoutimi,CA
+G7N,QC,Lac-Ministuk,CA
+G7N,QC,Laterriere,CA
+G7P,QC,Jonquiere,CA
+G7P,QC,Saint-Ambroise,CA
+G7P,QC,Shipshaw,CA
+G7S,QC,Jonquiere,CA
+G7S,QC,Lac-Kenogami,CA
+G7T,QC,Jonquiere,CA
+G7X,QC,Jonquiere,CA
+G7X,QC,Lac-Kenogami,CA
+G7Y,QC,Jonquiere,CA
+G7Z,QC,Jonquiere,CA
+G8A,QC,Jonquiere,CA
+G8A,QC,Lac-Kenogami,CA
+G8B,QC,Alma,CA
+G8C,QC,Alma,CA
+G8E,QC,Alma,CA
+G8G,QC,Metabetchouan-Lac-a-la-Croix,CA
+G8H,QC,Roberval,CA
+G8H,QC,Sainte-Hedwidge-de-Roberval,CA
+G8J,QC,Chicoutimi,CA
+G8J,QC,La Dore,CA
+G8J,QC,Saint-Prime,CA
+G8K,QC,Saint-Felicien,CA
+G8L,QC,Dolbeau-Mistassini,CA
+G8L,QC,Saint-Stanislas,CA
+G8L,QC,Sainte-Elisabeth-de-Proulx,CA
+G8M,QC,Albanel,CA
+G8M,QC,Normandin,CA
+G8N,QC,Hebertville,CA
+G8P,QC,Chibougamau,CA
+G8T,QC,Trois-Rivieres,CA
+G8V,QC,Trois-Rivieres,CA
+G8W,QC,Trois-Rivieres,CA
+G8Y,QC,Trois-Rivieres,CA
+G8Z,QC,Trois-Rivieres,CA
+G9A,QC,Trois-Rivieres,CA
+G9B,QC,Trois-Rivieres,CA
+G9C,QC,Trois-Rivieres,CA
+G9H,QC,Becancour,CA
+G9N,QC,Saint-Gerard-des-Laurentides,CA
+G9N,QC,Shawinigan,CA
+G9N,QC,Shawinigan-Sud,CA
+G9P,QC,Shawinigan-Sud,CA
+G9R,QC,Saint-Gerard-des-Laurentides,CA
+G9R,QC,Shawinigan,CA
+G9T,QC,Grand-Mere,CA
+G9T,QC,Saint-Georges-de-Champlain,CA
+G9X,QC,La Bostonnais,CA
+G9X,QC,La Tuque,CA
+H0M,QC,Akwesasne,CA
+H1A,QC,Montreal,CA
+H1A,QC,Pointe-aux-Trembles,CA
+H1B,QC,Montreal,CA
+H1B,QC,Montreal-Est,CA
+H1B,QC,Pointe-aux-Trembles,CA
+H1C,QC,Montreal,CA
+H1C,QC,Montreal-Est,CA
+H1C,QC,Pointe-aux-Trembles,CA
+H1E,QC,Anjou,CA
+H1E,QC,Montreal,CA
+H1E,QC,Montreal-Est,CA
+H1G,QC,Montreal,CA
+H1G,QC,Montreal-Nord,CA
+H1H,QC,Montreal,CA
+H1H,QC,Montreal-Nord,CA
+H1J,QC,Anjou,CA
+H1J,QC,Montreal,CA
+H1K,QC,Anjou,CA
+H1K,QC,Montreal,CA
+H1L,QC,Montreal,CA
+H1L,QC,Montreal-Est,CA
+H1M,QC,Anjou,CA
+H1M,QC,Montreal,CA
+H1N,QC,Montreal,CA
+H1P,QC,Montreal-Nord,CA
+H1P,QC,Saint-Leonard,CA
+H1R,QC,Saint-Leonard,CA
+H1S,QC,Montreal,CA
+H1S,QC,Saint-Leonard,CA
+H1T,QC,Montreal,CA
+H1T,QC,Saint-Leonard,CA
+H1V,QC,Montreal,CA
+H1W,QC,Montreal,CA
+H1X,QC,Montreal,CA
+H1Y,QC,Montreal,CA
+H1Z,QC,Montreal,CA
+H2A,QC,Montreal,CA
+H2B,QC,Montreal,CA
+H2C,QC,Montreal,CA
+H2E,QC,Montreal,CA
+H2G,QC,Montreal,CA
+H2H,QC,Montreal,CA
+H2J,QC,Montreal,CA
+H2K,QC,Montreal,CA
+H2L,QC,Montreal,CA
+H2M,QC,Montreal,CA
+H2N,QC,Montreal,CA
+H2P,QC,Montreal,CA
+H2R,QC,Montreal,CA
+H2S,QC,Montreal,CA
+H2T,QC,Montreal,CA
+H2V,QC,Mont-Royal,CA
+H2V,QC,Montreal,CA
+H2V,QC,Outremont,CA
+H2W,QC,Montreal,CA
+H2X,QC,Montreal,CA
+H2Y,QC,Montreal,CA
+H2Z,QC,Montreal,CA
+H3A,QC,Montreal,CA
+H3B,QC,Montreal,CA
+H3C,QC,Montreal,CA
+H3E,QC,Verdun,CA
+H3G,QC,Montreal,CA
+H3H,QC,Montreal,CA
+H3J,QC,Montreal,CA
+H3K,QC,Montreal,CA
+H3L,QC,Montreal,CA
+H3M,QC,Montreal,CA
+H3N,QC,Montreal,CA
+H3P,QC,Mont-Royal,CA
+H3P,QC,Montreal,CA
+H3R,QC,Mont-Royal,CA
+H3R,QC,Montreal,CA
+H3S,QC,Mont-Royal,CA
+H3S,QC,Montreal,CA
+H3S,QC,Outremont,CA
+H3T,QC,Montreal,CA
+H3T,QC,Outremont,CA
+H3V,QC,Montreal,CA
+H3V,QC,Westmount,CA
+H3W,QC,Montreal,CA
+H3X,QC,Cote Saint-Luc,CA
+H3X,QC,Hampstead,CA
+H3X,QC,Montreal,CA
+H3Y,QC,Montreal,CA
+H3Y,QC,Westmount,CA
+H3Z,QC,Montreal,CA
+H3Z,QC,Westmount,CA
+H4A,QC,Montreal,CA
+H4B,QC,Montreal,CA
+H4B,QC,Montreal-Ouest,CA
+H4C,QC,Montreal,CA
+H4E,QC,Lasalle,CA
+H4E,QC,Montreal,CA
+H4G,QC,Verdun,CA
+H4H,QC,Verdun,CA
+H4J,QC,Montreal,CA
+H4K,QC,Montreal,CA
+H4K,QC,Saint-Laurent,CA
+H4L,QC,Saint-Laurent,CA
+H4M,QC,Saint-Laurent,CA
+H4N,QC,Mont-Royal,CA
+H4N,QC,Montreal,CA
+H4N,QC,Saint-Laurent,CA
+H4P,QC,Mont-Royal,CA
+H4P,QC,Montreal,CA
+H4P,QC,Saint-Laurent,CA
+H4R,QC,Saint-Laurent,CA
+H4S,QC,Dorval,CA
+H4S,QC,Saint-Laurent,CA
+H4T,QC,Mont-Royal,CA
+H4T,QC,Saint-Laurent,CA
+H4V,QC,Cote Saint-Luc,CA
+H4V,QC,Montreal,CA
+H4W,QC,Cote Saint-Luc,CA
+H4W,QC,Montreal,CA
+H4X,QC,Cote Saint-Luc,CA
+H4X,QC,Montreal-Ouest,CA
+H4Y,QC,Dorval,CA
+H4Y,QC,Pointe-Claire,CA
+H4Y,QC,Saint-Laurent,CA
+H4Z,QC,Montreal,CA
+H5A,QC,Montreal,CA
+H5B,QC,Montreal,CA
+H7A,QC,Laval,CA
+H7B,QC,Laval,CA
+H7C,QC,Laval,CA
+H7E,QC,Laval,CA
+H7G,QC,Laval,CA
+H7H,QC,Laval,CA
+H7J,QC,Laval,CA
+H7K,QC,Laval,CA
+H7K,QC,Vimont,CA
+H7L,QC,Laval,CA
+H7L,QC,Sainte-Rose,CA
+H7M,QC,Laval,CA
+H7M,QC,Vimont,CA
+H7N,QC,Laval,CA
+H7P,QC,Fabreville,CA
+H7P,QC,Laval,CA
+H7R,QC,Fabreville,CA
+H7R,QC,Laval,CA
+H7R,QC,Laval-Ouest,CA
+H7S,QC,Laval,CA
+H7T,QC,Laval,CA
+H7V,QC,Laval,CA
+H7W,QC,Laval,CA
+H7X,QC,Laval,CA
+H7X,QC,Sainte-Dorothee,CA
+H7Y,QC,Laval,CA
+H8N,QC,Lasalle,CA
+H8P,QC,Lasalle,CA
+H8R,QC,Lachine,CA
+H8R,QC,Lasalle,CA
+H8S,QC,Lachine,CA
+H8T,QC,Lachine,CA
+H8Y,QC,Dollard-des-Ormeaux,CA
+H8Y,QC,Pierrefonds,CA
+H8Y,QC,Roxboro,CA
+H8Z,QC,Pierrefonds,CA
+H9A,QC,Dollard-des-Ormeaux,CA
+H9A,QC,Pierrefonds,CA
+H9B,QC,Dollard-des-Ormeaux,CA
+H9B,QC,Pointe-Claire,CA
+H9C,QC,L'Ile-Bizard,CA
+H9E,QC,L'Ile-Bizard,CA
+H9G,QC,Dollard-des-Ormeaux,CA
+H9H,QC,Dollard-des-Ormeaux,CA
+H9H,QC,Kirkland,CA
+H9H,QC,Pierrefonds,CA
+H9H,QC,Sainte-Genevieve,CA
+H9J,QC,Kirkland,CA
+H9J,QC,Pierrefonds,CA
+H9K,QC,Kirkland,CA
+H9K,QC,Pierrefonds,CA
+H9P,QC,Dorval,CA
+H9P,QC,Pointe-Claire,CA
+H9R,QC,Dollard-des-Ormeaux,CA
+H9R,QC,Dorval,CA
+H9R,QC,Pointe-Claire,CA
+H9S,QC,Dorval,CA
+H9S,QC,Pointe-Claire,CA
+H9W,QC,Beaconsfield,CA
+H9X,QC,Baie-d'Urfe,CA
+H9X,QC,Sainte-Anne-de-Bellevue,CA
+H9X,QC,Senneville,CA
+J0A,QC,Danville,CA
+J0A,QC,Kingsey Falls,CA
+J0A,QC,Saint-Adrien,CA
+J0A,QC,Saint-Albert,CA
+J0A,QC,Saint-Camille,CA
+J0A,QC,Saint-Georges-de-Windsor,CA
+J0A,QC,Saint-Remi-de-Tingwick,CA
+J0A,QC,Sainte-Clotilde-de-Horton,CA
+J0A,QC,Sainte-Elizabeth-de-Warwick,CA
+J0A,QC,Sainte-Seraphine,CA
+J0A,QC,Tingwick,CA
+J0A,QC,Warwick,CA
+J0A,QC,Wotton,CA
+J0B,QC,Ascot Corner,CA
+J0B,QC,Austin,CA
+J0B,QC,Ayer's Cliff,CA
+J0B,QC,Bishopton,CA
+J0B,QC,Bury,CA
+J0B,QC,Canton-de-Hatley,CA
+J0B,QC,Chartierville,CA
+J0B,QC,Cleveland,CA
+J0B,QC,Compton,CA
+J0B,QC,Cookshire,CA
+J0B,QC,Cookshire-Eaton,CA
+J0B,QC,Dixville,CA
+J0B,QC,East Angus,CA
+J0B,QC,East Hereford,CA
+J0B,QC,Georgeville,CA
+J0B,QC,Hatley,CA
+J0B,QC,Kingsbury,CA
+J0B,QC,La Patrie,CA
+J0B,QC,Lingwick,CA
+J0B,QC,Marbleton,CA
+J0B,QC,Martinville,CA
+J0B,QC,Melbourne,CA
+J0B,QC,North Hatley,CA
+J0B,QC,Notre-Dame-des-Bois,CA
+J0B,QC,Ogden,CA
+J0B,QC,Richmond,CA
+J0B,QC,Saint-Benoit-du-Lac,CA
+J0B,QC,Saint-Claude,CA
+J0B,QC,Saint-Denis-de-Brompton,CA
+J0B,QC,Saint-Felix-de-Kingsey,CA
+J0B,QC,Saint-Hermenegilde,CA
+J0B,QC,Saint-Isidore-de-Clifton,CA
+J0B,QC,Saint-Joseph-de-Ham-Sud,CA
+J0B,QC,Saint-Malo,CA
+J0B,QC,Saint-Venant-de-Paquette,CA
+J0B,QC,Sainte-Catherine-de-Hatley,CA
+J0B,QC,Sainte-Edwidge,CA
+J0B,QC,Sawyerville,CA
+J0B,QC,Scotstown,CA
+J0B,QC,Sherbrooke,CA
+J0B,QC,St-Francois-Xavier-de-Brompton,CA
+J0B,QC,Stanstead,CA
+J0B,QC,Stoke,CA
+J0B,QC,Ulverton,CA
+J0B,QC,Waterville,CA
+J0B,QC,Weedon,CA
+J0B,QC,Westbury,CA
+J0C,QC,Bon-Conseil,CA
+J0C,QC,L'Avenir,CA
+J0C,QC,Saint-Bonaventure,CA
+J0C,QC,Saint-Celestin,CA
+J0C,QC,Saint-Edmond-de-Grantham,CA
+J0C,QC,Saint-Eugene-de-Grantham,CA
+J0C,QC,Saint-Germain-de-Grantham,CA
+J0C,QC,Saint-Guillaume,CA
+J0C,QC,Saint-Leonard-d'Aston,CA
+J0C,QC,Saint-Lucien,CA
+J0C,QC,Sainte-Brigitte-des-Saults,CA
+J0C,QC,Sainte-Perpetue,CA
+J0C,QC,Wickham,CA
+J0E,QC,Abercorn,CA
+J0E,QC,Ange-Gardien,CA
+J0E,QC,Bethanie,CA
+J0E,QC,Bolton-Est,CA
+J0E,QC,Bolton-Ouest,CA
+J0E,QC,Bonsecours,CA
+J0E,QC,Brome,CA
+J0E,QC,Dunham,CA
+J0E,QC,Eastman,CA
+J0E,QC,Foster,CA
+J0E,QC,Fulford,CA
+J0E,QC,Knowlton,CA
+J0E,QC,Lawrenceville,CA
+J0E,QC,Mansonville,CA
+J0E,QC,Maricourt,CA
+J0E,QC,Racine,CA
+J0E,QC,Roxton Pond,CA
+J0E,QC,Saint-Alphonse-de-Granby,CA
+J0E,QC,Saint-Etienne-de-Bolton,CA
+J0E,QC,Saint-Joachim-de-Shefford,CA
+J0E,QC,Saint-Paul-d'Abbotsford,CA
+J0E,QC,Sainte-Anne-de-la-Rochelle,CA
+J0E,QC,Sainte-Cecile-de-Milton,CA
+J0E,QC,Stukely-Sud,CA
+J0E,QC,Sutton,CA
+J0E,QC,Valcourt,CA
+J0E,QC,Warden,CA
+J0E,QC,Waterloo,CA
+J0E,QC,West Brome,CA
+J0G,QC,Baie-du-Febvre,CA
+J0G,QC,Grand-Saint-Esprit,CA
+J0G,QC,La Visitation-de-Yamaska,CA
+J0G,QC,Massueville,CA
+J0G,QC,Odanak,CA
+J0G,QC,Pierreville,CA
+J0G,QC,Saint-Aime,CA
+J0G,QC,Saint-David,CA
+J0G,QC,Saint-Elphege,CA
+J0G,QC,Saint-Francois-du-Lac,CA
+J0G,QC,Saint-Gerard-Majella,CA
+J0G,QC,Saint-Louis,CA
+J0G,QC,Saint-Ours,CA
+J0G,QC,Saint-Pie-de-Guire,CA
+J0G,QC,Saint-Robert,CA
+J0G,QC,Saint-Zephirin-de-Courval,CA
+J0G,QC,Sainte-Monique,CA
+J0G,QC,Sainte-Victoire-de-Sorel,CA
+J0G,QC,Yamaska,CA
+J0H,QC,Acton Vale,CA
+J0H,QC,Bethanie,CA
+J0H,QC,Durham-Sud,CA
+J0H,QC,La Presentation,CA
+J0H,QC,Lefebvre,CA
+J0H,QC,Maricourt,CA
+J0H,QC,Roxton Falls,CA
+J0H,QC,Saint-Barnabe-Sud,CA
+J0H,QC,Saint-Bernard-de-Michaudville,CA
+J0H,QC,Saint-Charles-sur-Richelieu,CA
+J0H,QC,Saint-Damase,CA
+J0H,QC,Saint-Denis-sur-Richelieu,CA
+J0H,QC,Saint-Dominique,CA
+J0H,QC,Saint-Hugues,CA
+J0H,QC,Saint-Jude,CA
+J0H,QC,Saint-Liboire,CA
+J0H,QC,Saint-Marcel-de-Richelieu,CA
+J0H,QC,Saint-Nazaire-d'Acton,CA
+J0H,QC,Saint-Pie,CA
+J0H,QC,Saint-Simon-de-Bagot,CA
+J0H,QC,Saint-Theodore-d'Acton,CA
+J0H,QC,Sainte-Christine,CA
+J0H,QC,Sainte-Helene-de-Bagot,CA
+J0H,QC,Sainte-Madeleine,CA
+J0H,QC,St-Valerien,CA
+J0H,QC,Upton,CA
+J0J,QC,Bedford,CA
+J0J,QC,Canton Bedford,CA
+J0J,QC,Clarenceville,CA
+J0J,QC,Frelighsburg,CA
+J0J,QC,Henryville,CA
+J0J,QC,Lacolle,CA
+J0J,QC,Mont-Saint-Gregoire,CA
+J0J,QC,Napierville,CA
+J0J,QC,Notre-Dame-de-Stanbridge,CA
+J0J,QC,Noyan,CA
+J0J,QC,Philipsburg,CA
+J0J,QC,Pike River,CA
+J0J,QC,Sabrevois,CA
+J0J,QC,Saint-Alexandre-d'Iberville,CA
+J0J,QC,Saint-Armand,CA
+J0J,QC,Saint-Bernard-de-Lacolle,CA
+J0J,QC,Saint-Blaise-sur-Richelieu,CA
+J0J,QC,Saint-Cyprien-de-Napierville,CA
+J0J,QC,Saint-Ignace-de-Stanbridge,CA
+J0J,QC,Saint-Jacques-le-Mineur,CA
+J0J,QC,Saint-Jean-sur-Richelieu,CA
+J0J,QC,Saint-Paul-de-l'Ile-aux-Noix,CA
+J0J,QC,Saint-Sebastien,CA
+J0J,QC,Saint-Valentin,CA
+J0J,QC,Sainte-Brigide-d'Iberville,CA
+J0J,QC,Sainte-Sabine,CA
+J0J,QC,Stanbridge East,CA
+J0J,QC,Stanbridge Station,CA
+J0J,QC,Venise-En-Quebec,CA
+J0K,QC,Berthierville,CA
+J0K,QC,Chertsey,CA
+J0K,QC,Crabtree,CA
+J0K,QC,La Visitation-de-l'Ile-Dupas,CA
+J0K,QC,Lanoraie,CA
+J0K,QC,Lourdes-de-Joliette,CA
+J0K,QC,Mandeville,CA
+J0K,QC,Manouane,CA
+J0K,QC,Maskinonge,CA
+J0K,QC,Rawdon,CA
+J0K,QC,Saint-Alexis-de-Montcalm,CA
+J0K,QC,Saint-Alexis-des-Monts,CA
+J0K,QC,Saint-Alphonse-Rodriguez,CA
+J0K,QC,Saint-Ambroise-de-Kildare,CA
+J0K,QC,Saint-Barthelemy,CA
+J0K,QC,Saint-Calixte,CA
+J0K,QC,Saint-Cleophas-de-Brandon,CA
+J0K,QC,Saint-Come,CA
+J0K,QC,Saint-Cuthbert,CA
+J0K,QC,Saint-Damien,CA
+J0K,QC,Saint-Didace,CA
+J0K,QC,Saint-Edouard-de-Maskinonge,CA
+J0K,QC,Saint-Esprit,CA
+J0K,QC,Saint-Felix-de-Valois,CA
+J0K,QC,Saint-Gabriel-de-Brandon,CA
+J0K,QC,Saint-Ignace-de-Loyola,CA
+J0K,QC,Saint-Jacques,CA
+J0K,QC,Saint-Jean-de-Matha,CA
+J0K,QC,Saint-Justin,CA
+J0K,QC,Saint-Leon,CA
+J0K,QC,Saint-Liguori,CA
+J0K,QC,Saint-Michel-des-Saints,CA
+J0K,QC,Saint-Norbert,CA
+J0K,QC,Saint-Paul,CA
+J0K,QC,Saint-Paulin,CA
+J0K,QC,Saint-Roch-Ouest,CA
+J0K,QC,Saint-Roch-de-l'Achigan,CA
+J0K,QC,Saint-Thomas,CA
+J0K,QC,Saint-Zenon,CA
+J0K,QC,Sainte-Angele-de-Premont,CA
+J0K,QC,Sainte-Beatrix,CA
+J0K,QC,Sainte-Elisabeth,CA
+J0K,QC,Sainte-Emelie-de-l'Energie,CA
+J0K,QC,Sainte-Julienne,CA
+J0K,QC,Sainte-Marcelline-de-Kildare,CA
+J0K,QC,Sainte-Marie-Salome,CA
+J0K,QC,Sainte-Melanie,CA
+J0K,QC,Sainte-Ursule,CA
+J0L,QC,Calixa-Lavallee,CA
+J0L,QC,Contrecoeur,CA
+J0L,QC,Hemmingford,CA
+J0L,QC,Kahnawake,CA
+J0L,QC,Rougemont,CA
+J0L,QC,Saint-Amable,CA
+J0L,QC,Saint-Antoine-sur-Richelieu,CA
+J0L,QC,Saint-Cesaire,CA
+J0L,QC,Saint-Edouard-de-Napierville,CA
+J0L,QC,Saint-Isidore-de-Laprairie,CA
+J0L,QC,Saint-Jean-Baptiste,CA
+J0L,QC,Saint-Marc-sur-Richelieu,CA
+J0L,QC,Saint-Mathieu-de-Laprairie,CA
+J0L,QC,Saint-Michel,CA
+J0L,QC,Saint-Philippe,CA
+J0L,QC,Saint-Remi,CA
+J0L,QC,Saint-Roch-de-Richelieu,CA
+J0L,QC,Sainte-Angele-de-Monnoir,CA
+J0L,QC,Sainte-Clotilde-de-Chateauguay,CA
+J0L,QC,Sherrington,CA
+J0L,QC,Vercheres,CA
+J0M,QC,Akulivik,CA
+J0M,QC,Aupaluk,CA
+J0M,QC,Chisasibi,CA
+J0M,QC,Eastmain,CA
+J0M,QC,Inukjuak,CA
+J0M,QC,Ivujivik,CA
+J0M,QC,Kangiqsualujjuaq,CA
+J0M,QC,Kangiqsujuaq,CA
+J0M,QC,Kangirsuk,CA
+J0M,QC,Kuujjuaq,CA
+J0M,QC,Kuujjuarapik,CA
+J0M,QC,Puvirnituq,CA
+J0M,QC,Quaqtaq,CA
+J0M,QC,Salluit,CA
+J0M,QC,Tasiujaq,CA
+J0M,QC,Umiujaq,CA
+J0M,QC,Waskaganish,CA
+J0M,QC,Wemindji,CA
+J0N,QC,Oka,CA
+J0N,QC,Pointe-Calumet,CA
+J0N,QC,Saint-Joseph-du-Lac,CA
+J0N,QC,Sainte-Anne-des-Plaines,CA
+J0N,QC,Sainte-Marthe-sur-le-Lac,CA
+J0N,QC,Terrebonne,CA
+J0P,QC,Coteau-du-Lac,CA
+J0P,QC,Dalhousie,CA
+J0P,QC,Hudson Heights,CA
+J0P,QC,Hudson,CA
+J0P,QC,Pointe-Fortune,CA
+J0P,QC,Pointe-des-Cascades,CA
+J0P,QC,Rigaud,CA
+J0P,QC,Riviere-Beaudette,CA
+J0P,QC,Saint-Clet,CA
+J0P,QC,Saint-Polycarpe,CA
+J0P,QC,Saint-Telesphore,CA
+J0P,QC,Saint-Zotique,CA
+J0P,QC,Sainte-Justine-de-Newton,CA
+J0P,QC,Sainte-Marthe,CA
+J0P,QC,Tres-Saint-Redempteur,CA
+J0R,QC,Mille-Isles,CA
+J0R,QC,Morin-Heights,CA
+J0R,QC,Piedmont,CA
+J0R,QC,Prevost,CA
+J0R,QC,Saint-Jerome,CA
+J0R,QC,Saint-Sauveur,CA
+J0R,QC,Sainte-Anne-des-Lacs,CA
+J0S,QC,Athelstan,CA
+J0S,QC,Cazaville,CA
+J0S,QC,Dewittville,CA
+J0S,QC,Elgin,CA
+J0S,QC,Franklin,CA
+J0S,QC,Godmanchester,CA
+J0S,QC,Havelock,CA
+J0S,QC,Hinchinbrooke,CA
+J0S,QC,Howick,CA
+J0S,QC,Huntingdon,CA
+J0S,QC,Melocheville,CA
+J0S,QC,Ormstown,CA
+J0S,QC,Saint-Anicet,CA
+J0S,QC,Saint-Antoine-Abbe,CA
+J0S,QC,Saint-Chrysostome,CA
+J0S,QC,Saint-Etienne-de-Beauharnois,CA
+J0S,QC,Saint-Louis-de-Gonzague,CA
+J0S,QC,Saint-Stanislas-de-Kostka,CA
+J0S,QC,Saint-Urbain-Premier,CA
+J0S,QC,Sainte-Agnes-de-Dundee,CA
+J0S,QC,Sainte-Barbe,CA
+J0S,QC,Sainte-Martine,CA
+J0T,QC,Amherst,CA
+J0T,QC,Arundel,CA
+J0T,QC,Barkmere,CA
+J0T,QC,Boileau,CA
+J0T,QC,Brebeuf,CA
+J0T,QC,Entrelacs,CA
+J0T,QC,Esterel,CA
+J0T,QC,Harrington,CA
+J0T,QC,Huberdeau,CA
+J0T,QC,L'Ascension,CA
+J0T,QC,La Conception,CA
+J0T,QC,La Macaza,CA
+J0T,QC,La Minerve,CA
+J0T,QC,Labelle,CA
+J0T,QC,Lac-Superieur,CA
+J0T,QC,Lac-des-Plages,CA
+J0T,QC,Lac-des-Seize-Iles,CA
+J0T,QC,Lantier,CA
+J0T,QC,Montcalm,CA
+J0T,QC,Notre-Dame-de-la-Merci,CA
+J0T,QC,Riviere-Rouge,CA
+J0T,QC,Saint-Adolphe-d'Howard,CA
+J0T,QC,Saint-Donat-de-Montcalm,CA
+J0T,QC,Saint-Emile-de-Suffolk,CA
+J0T,QC,Saint-Faustin-Lac-Carre,CA
+J0T,QC,Saint-Remi-d'Amherst,CA
+J0T,QC,Sainte-Lucie-des-Laurentides,CA
+J0T,QC,Ste-Marguerite-du-Lac-Masson,CA
+J0T,QC,Val-David,CA
+J0T,QC,Val-Morin,CA
+J0T,QC,Val-des-Lacs,CA
+J0T,QC,Vendee,CA
+J0T,QC,Wentworth,CA
+J0T,QC,Wentworth-Nord,CA
+J0V,QC,Boileau,CA
+J0V,QC,Cheneville,CA
+J0V,QC,Duhamel,CA
+J0V,QC,Fassett,CA
+J0V,QC,Gore,CA
+J0V,QC,Grenville,CA
+J0V,QC,Grenville-sur-la-Rouge,CA
+J0V,QC,Montebello,CA
+J0V,QC,Montpellier,CA
+J0V,QC,Namur,CA
+J0V,QC,Notre-Dame-de-la-Paix,CA
+J0V,QC,Papineauville,CA
+J0V,QC,Plaisance,CA
+J0V,QC,Ripon,CA
+J0V,QC,Saint-Andre-Avellin,CA
+J0V,QC,Saint-Andre-d'Argenteuil,CA
+J0V,QC,Saint-Emile-de-Suffolk,CA
+J0V,QC,Saint-Placide,CA
+J0W,QC,Aumond,CA
+J0W,QC,Chute-Saint-Philippe,CA
+J0W,QC,Ferme-Neuve,CA
+J0W,QC,Grand-Remous,CA
+J0W,QC,Kiamika,CA
+J0W,QC,Lac-Saguay,CA
+J0W,QC,Lac-Saint-Paul,CA
+J0W,QC,Lac-des-Ecorces,CA
+J0W,QC,Lac-des-Iles,CA
+J0W,QC,Lac-du-Cerf,CA
+J0W,QC,Mont-Laurier,CA
+J0W,QC,Mont-Saint-Michel,CA
+J0W,QC,Montcerf-Lytton,CA
+J0W,QC,Nominingue,CA
+J0W,QC,Notre-Dame-de-Pontmain,CA
+J0W,QC,Rapid Lake,CA
+J0W,QC,Sainte-Anne-du-Lac,CA
+J0X,QC,Alcove,CA
+J0X,QC,Blue Sea,CA
+J0X,QC,Bouchette,CA
+J0X,QC,Bowman,CA
+J0X,QC,Bristol,CA
+J0X,QC,Bryson,CA
+J0X,QC,Campbell's Bay,CA
+J0X,QC,Chapeau,CA
+J0X,QC,Danford Lake,CA
+J0X,QC,Davidson,CA
+J0X,QC,Deleage,CA
+J0X,QC,Denholm,CA
+J0X,QC,Duclos,CA
+J0X,QC,Farrellton,CA
+J0X,QC,Fort-Coulonge,CA
+J0X,QC,Gracefield,CA
+J0X,QC,Ile du Grand-Calumet,CA
+J0X,QC,Kazabazua,CA
+J0X,QC,Lac des Loups,CA
+J0X,QC,Lac-Cayamant,CA
+J0X,QC,Lac-Sainte-Marie,CA
+J0X,QC,Ladysmith,CA
+J0X,QC,Low,CA
+J0X,QC,Luskville,CA
+J0X,QC,Mansfield,CA
+J0X,QC,Messines,CA
+J0X,QC,Notre-Dame-de-la-Salette,CA
+J0X,QC,Notre-Dame-du-Laus,CA
+J0X,QC,Otter Lake,CA
+J0X,QC,Portage-du-Fort,CA
+J0X,QC,Quyon,CA
+J0X,QC,Rapides-des-Joachims,CA
+J0X,QC,Sainte-Cecile-de-Masham,CA
+J0X,QC,Sainte-Therese-de-la-Gatineau,CA
+J0X,QC,Shawville,CA
+J0X,QC,Sheenboro,CA
+J0X,QC,Thurso,CA
+J0X,QC,Val-des-Bois,CA
+J0X,QC,Venosta,CA
+J0X,QC,Wakefield,CA
+J0X,QC,Waltham,CA
+J0Y,QC,Barraute,CA
+J0Y,QC,Belcourt,CA
+J0Y,QC,Berry,CA
+J0Y,QC,Champneuf,CA
+J0Y,QC,Desmaraisville,CA
+J0Y,QC,Em-1-a-Sarcelle-Rupert,CA
+J0Y,QC,Guyenne,CA
+J0Y,QC,La Corne,CA
+J0Y,QC,La Morandiere,CA
+J0Y,QC,La Motte,CA
+J0Y,QC,Lac-Simon,CA
+J0Y,QC,Landrienne,CA
+J0Y,QC,Launay,CA
+J0Y,QC,Lebel-sur-Quevillon,CA
+J0Y,QC,Malartic,CA
+J0Y,QC,Matagami,CA
+J0Y,QC,Miquelon,CA
+J0Y,QC,Nemiscau,CA
+J0Y,QC,Preissac,CA
+J0Y,QC,Radisson,CA
+J0Y,QC,Riviere-Heva,CA
+J0Y,QC,Rochebaucourt,CA
+J0Y,QC,Rouyn-Noranda,CA
+J0Y,QC,Saint-Dominique-du-Rosaire,CA
+J0Y,QC,Saint-Felix-de-Dalquier,CA
+J0Y,QC,Saint-Marc-de-Figuery,CA
+J0Y,QC,Saint-Mathieu-d'Harricana,CA
+J0Y,QC,Sainte-Gertrude-Manneville,CA
+J0Y,QC,Senneterre,CA
+J0Y,QC,Trecesson,CA
+J0Y,QC,Waswanipi,CA
+J0Z,QC,Angliers,CA
+J0Z,QC,Authier,CA
+J0Z,QC,Authier-Nord,CA
+J0Z,QC,Bearn,CA
+J0Z,QC,Beaucanton,CA
+J0Z,QC,Belleterre,CA
+J0Z,QC,Chazel,CA
+J0Z,QC,Clerval,CA
+J0Z,QC,Desmeloizes,CA
+J0Z,QC,Duparquet,CA
+J0Z,QC,Dupuy,CA
+J0Z,QC,Fabre,CA
+J0Z,QC,Fugereville,CA
+J0Z,QC,Gallichan,CA
+J0Z,QC,Guerin,CA
+J0Z,QC,Kipawa,CA
+J0Z,QC,La Reine,CA
+J0Z,QC,Laforce,CA
+J0Z,QC,Laniel,CA
+J0Z,QC,Latulipe,CA
+J0Z,QC,Laverlochere,CA
+J0Z,QC,Lorrainville,CA
+J0Z,QC,Macamic,CA
+J0Z,QC,Mancebourg,CA
+J0Z,QC,Moffet,CA
+J0Z,QC,Nedelec,CA
+J0Z,QC,Normetal,CA
+J0Z,QC,Notre-Dame-du-Nord,CA
+J0Z,QC,Palmarolle,CA
+J0Z,QC,Poularies,CA
+J0Z,QC,Rapide-Danseur,CA
+J0Z,QC,Remigny,CA
+J0Z,QC,Roquemaure,CA
+J0Z,QC,Rouyn-Noranda,CA
+J0Z,QC,Saint-Bruno-de-Guigues,CA
+J0Z,QC,Saint-Eugene-de-Guigues,CA
+J0Z,QC,Saint-Vital-de-Clermont,CA
+J0Z,QC,Sainte-Germaine-Boule,CA
+J0Z,QC,Taschereau,CA
+J0Z,QC,Temiscaming,CA
+J0Z,QC,Val-Paradis,CA
+J0Z,QC,Val-Saint-Gilles,CA
+J0Z,QC,Villebois,CA
+J1A,QC,Coaticook,CA
+J1C,QC,Sherbrooke,CA
+J1E,QC,Sherbrooke,CA
+J1G,QC,Sherbrooke,CA
+J1H,QC,Sherbrooke,CA
+J1J,QC,Sherbrooke,CA
+J1K,QC,Sherbrooke,CA
+J1L,QC,Sherbrooke,CA
+J1M,QC,Sherbrooke,CA
+J1N,QC,Sherbrooke,CA
+J1R,QC,Sherbrooke,CA
+J1S,QC,Val-Joli,CA
+J1S,QC,Windsor,CA
+J1T,QC,Asbestos,CA
+J1X,QC,Canton Stanstead,CA
+J1X,QC,Magog,CA
+J1X,QC,Orford,CA
+J1Z,QC,Drummondville,CA
+J1Z,QC,Saint-Cyrille-de-Wendover,CA
+J2A,QC,Drummondville,CA
+J2B,QC,Drummondville,CA
+J2B,QC,Saint-Majorique,CA
+J2C,QC,Drummondville,CA
+J2E,QC,Drummondville,CA
+J2E,QC,Saint-Majorique,CA
+J2G,QC,Granby,CA
+J2H,QC,Granby,CA
+J2J,QC,Granby,CA
+J2K,QC,Brigham,CA
+J2K,QC,Cowansville,CA
+J2K,QC,East Farnham,CA
+J2K,QC,Saint-Alphonse-de-Granby,CA
+J2L,QC,Bromont,CA
+J2M,QC,Shefford,CA
+J2N,QC,Farnham,CA
+J2R,QC,Saint-Hyacinthe,CA
+J2S,QC,Saint-Hyacinthe,CA
+J2T,QC,Saint-Hyacinthe,CA
+J2W,QC,Saint-Jean-sur-Richelieu,CA
+J2X,QC,Saint-Jean-sur-Richelieu,CA
+J2Y,QC,Saint-Jean-sur-Richelieu,CA
+J3A,QC,Saint-Jean-sur-Richelieu,CA
+J3B,QC,Saint-Jean-sur-Richelieu,CA
+J3E,QC,Sainte-Julie,CA
+J3G,QC,Beloeil,CA
+J3G,QC,McMasterville,CA
+J3G,QC,Mont-Saint-Hilaire,CA
+J3G,QC,Otterburn Park,CA
+J3G,QC,Saint-Mathieu-de-Beloeil,CA
+J3H,QC,Mont-Saint-Hilaire,CA
+J3H,QC,Otterburn Park,CA
+J3L,QC,Carignan,CA
+J3L,QC,Chambly,CA
+J3L,QC,Richelieu,CA
+J3L,QC,Saint-Mathias-sur-Richelieu,CA
+J3M,QC,Marieville,CA
+J3N,QC,Saint-Basile-le-Grand,CA
+J3P,QC,Sainte-Anne-de-Sorel,CA
+J3P,QC,Sorel-Tracy,CA
+J3R,QC,Saint-Joseph-de-Sorel,CA
+J3R,QC,Sorel-Tracy,CA
+J3T,QC,Nicolet,CA
+J3V,QC,Saint-Bruno,CA
+J3X,QC,Varennes,CA
+J3Y,QC,Saint-Hubert,CA
+J3Z,QC,Saint-Hubert,CA
+J4B,QC,Boucherville,CA
+J4G,QC,Longueuil,CA
+J4H,QC,Longueuil,CA
+J4J,QC,Longueuil,CA
+J4K,QC,Longueuil,CA
+J4L,QC,Longueuil,CA
+J4M,QC,Longueuil,CA
+J4N,QC,Longueuil,CA
+J4P,QC,Lemoyne,CA
+J4P,QC,Longueuil,CA
+J4P,QC,Saint-Lambert,CA
+J4R,QC,Greenfield Park,CA
+J4R,QC,Lemoyne,CA
+J4R,QC,Saint-Lambert,CA
+J4S,QC,Saint-Lambert,CA
+J4T,QC,Saint-Hubert,CA
+J4V,QC,Greenfield Park,CA
+J4W,QC,Brossard,CA
+J4X,QC,Brossard,CA
+J4Y,QC,Brossard,CA
+J4Z,QC,Brossard,CA
+J5A,QC,Saint-Constant,CA
+J5B,QC,Delson,CA
+J5C,QC,Sainte-Catherine,CA
+J5J,QC,Sainte-Sophie,CA
+J5K,QC,Saint-Colomban,CA
+J5L,QC,Saint-Jerome,CA
+J5M,QC,Saint-Lin-Laurentides,CA
+J5R,QC,Candiac,CA
+J5R,QC,La Prairie,CA
+J5T,QC,Lavaltrie,CA
+J5V,QC,Louiseville,CA
+J5W,QC,L'Assomption,CA
+J5W,QC,Saint-Sulpice,CA
+J5X,QC,L'Epiphanie,CA
+J5Y,QC,Repentigny,CA
+J5Z,QC,Charlemagne,CA
+J5Z,QC,Repentigny,CA
+J6A,QC,Repentigny,CA
+J6E,QC,Joliette,CA
+J6E,QC,Notre-Dame-des-Prairies,CA
+J6E,QC,Saint-Charles-Borromee,CA
+J6E,QC,Saint-Paul,CA
+J6E,QC,Village Saint-Pierre,CA
+J6J,QC,Chateauguay,CA
+J6K,QC,Chateauguay,CA
+J6N,QC,Beauharnois,CA
+J6N,QC,Lery,CA
+J6R,QC,Mercier,CA
+J6S,QC,Salaberry-de-Valleyfield,CA
+J6T,QC,Salaberry-de-Valleyfield,CA
+J6V,QC,Terrebonne,CA
+J6W,QC,Terrebonne,CA
+J6X,QC,Terrebonne,CA
+J6Y,QC,Terrebonne,CA
+J6Z,QC,Bois-des-Filion,CA
+J6Z,QC,Lorraine,CA
+J7A,QC,Blainville,CA
+J7A,QC,Rosemere,CA
+J7B,QC,Blainville,CA
+J7B,QC,Rosemere,CA
+J7C,QC,Blainville,CA
+J7E,QC,Blainville,CA
+J7E,QC,Boisbriand,CA
+J7E,QC,Lorraine,CA
+J7E,QC,Sainte-Therese,CA
+J7G,QC,Boisbriand,CA
+J7H,QC,Boisbriand,CA
+J7J,QC,Mirabel,CA
+J7K,QC,Mascouche,CA
+J7K,QC,Terrebonne,CA
+J7L,QC,Mascouche,CA
+J7M,QC,Terrebonne,CA
+J7N,QC,Mirabel,CA
+J7P,QC,Saint-Eustache,CA
+J7R,QC,Deux-Montagnes,CA
+J7R,QC,Saint-Eustache,CA
+J7T,QC,Les Cedres,CA
+J7T,QC,Saint-Lazare,CA
+J7T,QC,Vaudreuil-Dorion,CA
+J7V,QC,L'Ile-Cadieux,CA
+J7V,QC,L'Ile-Perrot,CA
+J7V,QC,Notre-Dame-de-l'Ile-Perrot,CA
+J7V,QC,Pincourt,CA
+J7V,QC,Terrasse-Vaudreuil,CA
+J7V,QC,Vaudreuil-Dorion,CA
+J7V,QC,Vaudreuil-sur-le-Lac,CA
+J7W,QC,Pincourt,CA
+J7X,QC,Les Coteaux,CA
+J7Y,QC,Saint-Jerome,CA
+J7Z,QC,Saint-Jerome,CA
+J8A,QC,Saint-Hippolyte,CA
+J8B,QC,Sainte-Adele,CA
+J8C,QC,Ivry-sur-le-Lac,CA
+J8C,QC,Sainte-Agathe-Nord,CA
+J8C,QC,Sainte-Agathe-des-Monts,CA
+J8E,QC,Lac-Tremblant-Nord,CA
+J8E,QC,Mont-Tremblant,CA
+J8G,QC,Brownsburg-Chatham,CA
+J8G,QC,Harrington,CA
+J8H,QC,Lachute,CA
+J8H,QC,Wentworth,CA
+J8L,QC,Gatineau,CA
+J8L,QC,L'Ange-Gardien,CA
+J8L,QC,Mayo,CA
+J8L,QC,Mulgrave-et-Derry,CA
+J8M,QC,Gatineau,CA
+J8N,QC,Denholm,CA
+J8N,QC,Val-des-Monts,CA
+J8P,QC,Gatineau,CA
+J8R,QC,Gatineau,CA
+J8T,QC,Gatineau,CA
+J8V,QC,Cantley,CA
+J8V,QC,Gatineau,CA
+J8X,QC,Gatineau,CA
+J8Y,QC,Gatineau,CA
+J8Z,QC,Gatineau,CA
+J9A,QC,Gatineau,CA
+J9B,QC,Chelsea,CA
+J9E,QC,Bois-Franc,CA
+J9E,QC,Deleage,CA
+J9E,QC,Egan,CA
+J9E,QC,Maniwaki,CA
+J9H,QC,Gatineau,CA
+J9J,QC,Gatineau,CA
+J9L,QC,Mont-Laurier,CA
+J9P,QC,Val-d'Or,CA
+J9T,QC,Amos,CA
+J9V,QC,Duhamel-Ouest,CA
+J9V,QC,Ville-Marie,CA
+J9X,QC,Rouyn-Noranda,CA
+J9Y,QC,Rouyn-Noranda,CA
+J9Z,QC,La Sarre,CA
+K0A,ON,Almonte,CA
+K0A,ON,Ashton,CA
+K0A,ON,Bourget,CA
+K0A,ON,Braeside,CA
+K0A,ON,Carlsbad Springs,CA
+K0A,ON,Carp,CA
+K0A,ON,Casselman,CA
+K0A,ON,Clarence Creek,CA
+K0A,ON,Clayton,CA
+K0A,ON,Crysler,CA
+K0A,ON,Dunrobin,CA
+K0A,ON,Edwards,CA
+K0A,ON,Embrun,CA
+K0A,ON,Fitzroy Harbour,CA
+K0A,ON,Hammond,CA
+K0A,ON,Kars,CA
+K0A,ON,Kenmore,CA
+K0A,ON,Kinburn,CA
+K0A,ON,Limoges,CA
+K0A,ON,Metcalfe,CA
+K0A,ON,Morewood,CA
+K0A,ON,Munster,CA
+K0A,ON,North Gower,CA
+K0A,ON,Osgoode,CA
+K0A,ON,Pakenham,CA
+K0A,ON,Ramsayville,CA
+K0A,ON,Richmond,CA
+K0A,ON,Saint-Pascal-Baylon,CA
+K0A,ON,Sarsfield,CA
+K0A,ON,St Albert,CA
+K0A,ON,Vars,CA
+K0A,ON,Vernon,CA
+K0A,ON,Wendover,CA
+K0A,ON,White Lake,CA
+K0A,ON,Woodlawn,CA
+K0B,ON,Alfred,CA
+K0B,ON,Chute a Blondeau,CA
+K0B,ON,Curran,CA
+K0B,ON,Dalkeith,CA
+K0B,ON,Fournier,CA
+K0B,ON,Glen Robertson,CA
+K0B,ON,L'Orignal,CA
+K0B,ON,Lefaivre,CA
+K0B,ON,Plantagenet,CA
+K0B,ON,St Bernardin,CA
+K0B,ON,St Eugene,CA
+K0B,ON,Ste Anne de Prescott,CA
+K0B,ON,Vankleek Hill,CA
+K0C,ON,Alexandria,CA
+K0C,ON,Apple Hill,CA
+K0C,ON,Avonmore,CA
+K0C,ON,Bainsville,CA
+K0C,ON,Berwick,CA
+K0C,ON,Chesterville,CA
+K0C,ON,Dunvegan,CA
+K0C,ON,Finch,CA
+K0C,ON,Green Valley,CA
+K0C,ON,Ingleside,CA
+K0C,ON,Lancaster,CA
+K0C,ON,Long Sault,CA
+K0C,ON,Lunenburg,CA
+K0C,ON,Martintown,CA
+K0C,ON,Maxville,CA
+K0C,ON,Monkland,CA
+K0C,ON,Moose Creek,CA
+K0C,ON,Morrisburg,CA
+K0C,ON,Newington,CA
+K0C,ON,North Lancaster,CA
+K0C,ON,South Lancaster,CA
+K0C,ON,St Andrews West,CA
+K0C,ON,St Isidore,CA
+K0C,ON,Summerstown,CA
+K0C,ON,Upper Canada Village,CA
+K0C,ON,Williamsburg,CA
+K0C,ON,Williamstown,CA
+K0C,ON,Winchester Springs,CA
+K0C,ON,Winchester,CA
+K0E,ON,Addison,CA
+K0E,ON,Athens,CA
+K0E,ON,Augusta,CA
+K0E,ON,Brinston,CA
+K0E,ON,Cardinal,CA
+K0E,ON,Delta,CA
+K0E,ON,Frankville,CA
+K0E,ON,Inkerman,CA
+K0E,ON,Iroquois,CA
+K0E,ON,Johnstown,CA
+K0E,ON,Lansdowne,CA
+K0E,ON,Lyn,CA
+K0E,ON,Lyndhurst,CA
+K0E,ON,Maitland,CA
+K0E,ON,Mallorytown,CA
+K0E,ON,Mountain,CA
+K0E,ON,Prescott,CA
+K0E,ON,Rockport,CA
+K0E,ON,South Mountain,CA
+K0E,ON,Spencerville,CA
+K0E,ON,Toledo,CA
+K0G,ON,Balderson,CA
+K0G,ON,Burritts Rapids,CA
+K0G,ON,Elgin,CA
+K0G,ON,Jasper,CA
+K0G,ON,Kemptville,CA
+K0G,ON,Lanark,CA
+K0G,ON,Lombardy,CA
+K0G,ON,McDonalds Corners,CA
+K0G,ON,Merrickville,CA
+K0G,ON,Newboro,CA
+K0G,ON,North Augusta,CA
+K0G,ON,Oxford Mills,CA
+K0G,ON,Oxford Station,CA
+K0G,ON,Portland,CA
+K0G,ON,Rideau Ferry,CA
+K0G,ON,Westport,CA
+K0H,ON,Arden,CA
+K0H,ON,Ardoch,CA
+K0H,ON,Bath,CA
+K0H,ON,Battersea,CA
+K0H,ON,Clarendon Station,CA
+K0H,ON,Cloyne,CA
+K0H,ON,Denbigh,CA
+K0H,ON,Elginburg,CA
+K0H,ON,Flinton,CA
+K0H,ON,Glenburnie,CA
+K0H,ON,Godfrey,CA
+K0H,ON,Harrowsmith,CA
+K0H,ON,Hartington,CA
+K0H,ON,Inverary,CA
+K0H,ON,Joyceville,CA
+K0H,ON,Kaladar,CA
+K0H,ON,Maberly,CA
+K0H,ON,Mississippi Station,CA
+K0H,ON,Mountain Grove,CA
+K0H,ON,Northbrook,CA
+K0H,ON,Odessa,CA
+K0H,ON,Ompah,CA
+K0H,ON,Parham,CA
+K0H,ON,Perth Road,CA
+K0H,ON,Plevna,CA
+K0H,ON,Seeleys Bay,CA
+K0H,ON,Sharbot Lake,CA
+K0H,ON,Snow Road Station,CA
+K0H,ON,Stella,CA
+K0H,ON,Sydenham,CA
+K0H,ON,Tichborne,CA
+K0H,ON,Verona,CA
+K0H,ON,Wolfe Island,CA
+K0J,ON,Barrys Bay,CA
+K0J,ON,Beachburg,CA
+K0J,ON,Bissett Creek,CA
+K0J,ON,Burnstown,CA
+K0J,ON,Calabogie,CA
+K0J,ON,Chalk River,CA
+K0J,ON,Cobden,CA
+K0J,ON,Combermere,CA
+K0J,ON,Cormac,CA
+K0J,ON,Dacre,CA
+K0J,ON,Deep River,CA
+K0J,ON,Deux Rivieres,CA
+K0J,ON,Douglas,CA
+K0J,ON,Eganville,CA
+K0J,ON,Foresters Falls,CA
+K0J,ON,Foymount,CA
+K0J,ON,Golden Lake,CA
+K0J,ON,Griffith,CA
+K0J,ON,Haley Station,CA
+K0J,ON,Killaloe,CA
+K0J,ON,Mackey,CA
+K0J,ON,Madawaska,CA
+K0J,ON,Palmer Rapids,CA
+K0J,ON,Pikwakanagan,CA
+K0J,ON,Quadeville,CA
+K0J,ON,Rolphton,CA
+K0J,ON,Round Lake Centre,CA
+K0J,ON,Stonecliffe,CA
+K0J,ON,Westmeath,CA
+K0J,ON,Whitney,CA
+K0J,ON,Wilno,CA
+K0K,ON,Ameliasburg,CA
+K0K,ON,Astra,CA
+K0K,ON,Baltimore,CA
+K0K,ON,Batawa,CA
+K0K,ON,Bloomfield,CA
+K0K,ON,Brighton,CA
+K0K,ON,Camden East,CA
+K0K,ON,Cannifton,CA
+K0K,ON,Carrying Place,CA
+K0K,ON,Castleton,CA
+K0K,ON,Centreville,CA
+K0K,ON,Cherry Valley,CA
+K0K,ON,Codrington,CA
+K0K,ON,Colborne,CA
+K0K,ON,Consecon,CA
+K0K,ON,Corbyville,CA
+K0K,ON,Demorestville,CA
+K0K,ON,Deseronto,CA
+K0K,ON,Eldorado,CA
+K0K,ON,Enterprise,CA
+K0K,ON,Erinsville,CA
+K0K,ON,Foxboro,CA
+K0K,ON,Frankford,CA
+K0K,ON,Gores Landing,CA
+K0K,ON,Grafton,CA
+K0K,ON,Harwood,CA
+K0K,ON,Hillier,CA
+K0K,ON,Madoc,CA
+K0K,ON,Marlbank,CA
+K0K,ON,Marmora,CA
+K0K,ON,Marysville,CA
+K0K,ON,Milford,CA
+K0K,ON,Newburgh,CA
+K0K,ON,Picton,CA
+K0K,ON,Plainfield,CA
+K0K,ON,Quinte West,CA
+K0K,ON,Roblin,CA
+K0K,ON,Roseneath,CA
+K0K,ON,Roslin,CA
+K0K,ON,Selby,CA
+K0K,ON,Shannonville,CA
+K0K,ON,Springbrook,CA
+K0K,ON,Stirling,CA
+K0K,ON,Tamworth,CA
+K0K,ON,Thomasburg,CA
+K0K,ON,Tweed,CA
+K0K,ON,Warkworth,CA
+K0K,ON,Wellington,CA
+K0K,ON,Wooler,CA
+K0K,ON,Yarker,CA
+K0L,ON,Apsley,CA
+K0L,ON,Asphodel-Norwood,CA
+K0L,ON,Bailieboro,CA
+K0L,ON,Bancroft,CA
+K0L,ON,Bewdley,CA
+K0L,ON,Boulter,CA
+K0L,ON,Bridgenorth,CA
+K0L,ON,Buckhorn,CA
+K0L,ON,Campbellford,CA
+K0L,ON,Cardiff,CA
+K0L,ON,Coe Hill,CA
+K0L,ON,Curve Lake,CA
+K0L,ON,Douro-Dummer,CA
+K0L,ON,Ennismore,CA
+K0L,ON,Fraserville,CA
+K0L,ON,Gilmour,CA
+K0L,ON,Hamilton Township,CA
+K0L,ON,Harcourt,CA
+K0L,ON,Hastings,CA
+K0L,ON,Havelock,CA
+K0L,ON,Havelock-Belmont-Methuen Twp,CA
+K0L,ON,Highland Grove,CA
+K0L,ON,Indian River,CA
+K0L,ON,Juniper Island,CA
+K0L,ON,Keene,CA
+K0L,ON,L'Amable,CA
+K0L,ON,Lake St Peter,CA
+K0L,ON,Lakefield,CA
+K0L,ON,Lakehurst,CA
+K0L,ON,Maple Leaf,CA
+K0L,ON,Maynooth,CA
+K0L,ON,McArthurs Mills,CA
+K0L,ON,North Kawartha,CA
+K0L,ON,Norwood,CA
+K0L,ON,Omemee,CA
+K0L,ON,Otonabee,CA
+K0L,ON,Reaboro,CA
+K0L,ON,Selwyn,CA
+K0L,ON,Tory Hill,CA
+K0L,ON,Trent Lakes,CA
+K0L,ON,Trent River,CA
+K0L,ON,Warsaw,CA
+K0L,ON,Westwood,CA
+K0L,ON,Wilberforce,CA
+K0L,ON,Woodview,CA
+K0L,ON,Youngs Point,CA
+K0M,ON,Algonquin Highlands,CA
+K0M,ON,Bobcaygeon,CA
+K0M,ON,Bolsover,CA
+K0M,ON,Burnt River,CA
+K0M,ON,Cambray,CA
+K0M,ON,Cameron,CA
+K0M,ON,Coboconk,CA
+K0M,ON,Dunsford,CA
+K0M,ON,Eagle Lake,CA
+K0M,ON,Fenelon Falls,CA
+K0M,ON,Gooderham,CA
+K0M,ON,Haliburton,CA
+K0M,ON,Irondale,CA
+K0M,ON,Kinmount,CA
+K0M,ON,Kirkfield,CA
+K0M,ON,Little Britain,CA
+K0M,ON,Manilla,CA
+K0M,ON,Minden,CA
+K0M,ON,Norland,CA
+K0M,ON,Oakwood,CA
+K0M,ON,Trent Lakes,CA
+K0M,ON,West Guilford,CA
+K0M,ON,Woodville,CA
+K1A,ON,Gloucester,CA
+K1A,ON,Nepean,CA
+K1A,ON,Orleans,CA
+K1A,ON,Ottawa,CA
+K1A,ON,Vanier,CA
+K1A,QC,Gatineau,CA
+K1B,ON,Gloucester,CA
+K1B,ON,Ottawa,CA
+K1C,ON,Orleans,CA
+K1E,ON,Orleans,CA
+K1G,ON,Gloucester,CA
+K1G,ON,Ottawa,CA
+K1H,ON,Ottawa,CA
+K1J,ON,Gloucester,CA
+K1J,ON,Ottawa,CA
+K1K,ON,Ottawa,CA
+K1K,ON,Rockcliffe,CA
+K1K,ON,Vanier,CA
+K1L,ON,Ottawa,CA
+K1L,ON,Rockcliffe,CA
+K1L,ON,Vanier,CA
+K1M,ON,Ottawa,CA
+K1M,ON,Rockcliffe,CA
+K1N,ON,Ottawa,CA
+K1P,ON,Ottawa,CA
+K1R,ON,Ottawa,CA
+K1S,ON,Ottawa,CA
+K1T,ON,Gloucester,CA
+K1T,ON,Nepean,CA
+K1T,ON,Ottawa,CA
+K1V,ON,Gloucester,CA
+K1V,ON,Ottawa,CA
+K1W,ON,Gloucester,CA
+K1W,ON,Orleans,CA
+K1X,ON,Gloucester,CA
+K1Y,ON,Ottawa,CA
+K1Z,ON,Ottawa,CA
+K2A,ON,Ottawa,CA
+K2B,ON,Nepean,CA
+K2B,ON,Ottawa,CA
+K2C,ON,Nepean,CA
+K2C,ON,Ottawa,CA
+K2E,ON,Nepean,CA
+K2E,ON,Ottawa,CA
+K2G,ON,Nepean,CA
+K2G,ON,Ottawa,CA
+K2H,ON,Nepean,CA
+K2H,ON,Ottawa,CA
+K2J,ON,Nepean,CA
+K2K,ON,Kanata,CA
+K2K,ON,Nepean,CA
+K2K,ON,Stittsville,CA
+K2L,ON,Kanata,CA
+K2L,ON,Nepean,CA
+K2M,ON,Kanata,CA
+K2P,ON,Ottawa,CA
+K2R,ON,Nepean,CA
+K2S,ON,Kanata,CA
+K2S,ON,Stittsville,CA
+K2T,ON,Kanata,CA
+K2V,ON,Kanata,CA
+K2W,ON,Kanata,CA
+K4A,ON,Orleans,CA
+K4A,ON,Ottawa,CA
+K4B,ON,Cumberland,CA
+K4B,ON,Navan,CA
+K4C,ON,Cumberland,CA
+K4K,ON,Rockland,CA
+K4M,ON,Manotick,CA
+K4P,ON,Greely,CA
+K4R,ON,Russell,CA
+K6A,ON,Hawkesbury,CA
+K6H,ON,Akwesasne,CA
+K6H,ON,Cornwall,CA
+K6H,ON,South Glengarry,CA
+K6H,ON,South Stormont,CA
+K6J,ON,Cornwall,CA
+K6K,ON,Cornwall,CA
+K6K,ON,South Glengarry,CA
+K6K,ON,South Stormont,CA
+K6T,ON,Brockville,CA
+K6T,ON,Elizabethtown,CA
+K6T,ON,Lyn,CA
+K6V,ON,Brockville,CA
+K6V,ON,Elizabethtown,CA
+K7A,ON,Smiths Falls,CA
+K7C,ON,Carleton Place,CA
+K7G,ON,Gananoque,CA
+K7H,ON,Perth,CA
+K7K,ON,Kingston,CA
+K7L,ON,Kingston,CA
+K7M,ON,Amherstview,CA
+K7M,ON,Kingston,CA
+K7N,ON,Amherstview,CA
+K7N,ON,Kingston,CA
+K7P,ON,Kingston,CA
+K7P,ON,Westbrook,CA
+K7R,ON,Napanee,CA
+K7S,ON,Arnprior,CA
+K7S,ON,McNab/Braeside,CA
+K7V,ON,Greater Madawaska,CA
+K7V,ON,Horton,CA
+K7V,ON,McNab/Braeside,CA
+K7V,ON,Renfrew,CA
+K8A,ON,Pembroke,CA
+K8B,ON,Pembroke,CA
+K8H,ON,Petawawa,CA
+K8N,ON,Belleville,CA
+K8P,ON,Belleville,CA
+K8R,ON,Belleville,CA
+K8V,ON,Trenton,CA
+K9A,ON,Cobourg,CA
+K9H,ON,Peterborough,CA
+K9J,ON,Cavan Monaghan,CA
+K9J,ON,Douro-Dummer,CA
+K9J,ON,Hiawatha,CA
+K9J,ON,Keene,CA
+K9J,ON,Otonabee,CA
+K9J,ON,Peterborough,CA
+K9J,ON,Selwyn,CA
+K9K,ON,Peterborough,CA
+K9L,ON,Otonabee,CA
+K9L,ON,Peterborough,CA
+K9V,ON,Lindsay,CA
+L0A,ON,Bethany,CA
+L0A,ON,Campbellcroft,CA
+L0A,ON,Cavan,CA
+L0A,ON,Kendal,CA
+L0A,ON,Millbrook,CA
+L0A,ON,Newtonville,CA
+L0A,ON,Pontypool,CA
+L0B,ON,Ashburn,CA
+L0B,ON,Blackstock,CA
+L0B,ON,Caesarea,CA
+L0B,ON,Hampton,CA
+L0B,ON,Janetville,CA
+L0B,ON,Nestleton Station,CA
+L0B,ON,Orono,CA
+L0C,ON,Goodwood,CA
+L0C,ON,Greenbank,CA
+L0C,ON,Leaskdale,CA
+L0C,ON,Sandford,CA
+L0C,ON,Seagrave,CA
+L0C,ON,Sunderland,CA
+L0C,ON,Udora,CA
+L0E,ON,Baldwin,CA
+L0E,ON,Cannington,CA
+L0E,ON,Jacksons Point,CA
+L0E,ON,Pefferlaw,CA
+L0E,ON,Roches Point,CA
+L0E,ON,Sutton West,CA
+L0E,ON,Willow Beach,CA
+L0E,ON,Zephyr,CA
+L0G,ON,Beeton,CA
+L0G,ON,Bond Head,CA
+L0G,ON,Cedar Valley,CA
+L0G,ON,Loretto,CA
+L0G,ON,Mount Albert,CA
+L0G,ON,Nobleton,CA
+L0G,ON,Queensville,CA
+L0G,ON,Schomberg,CA
+L0G,ON,Sharon,CA
+L0G,ON,Tottenham,CA
+L0H,ON,Brougham,CA
+L0H,ON,Gormley,CA
+L0H,ON,Greenwood,CA
+L0H,ON,Locust Hill,CA
+L0H,ON,Whitevale,CA
+L0J,ON,Kleinburg,CA
+L0K,ON,Beaverton,CA
+L0K,ON,Brechin,CA
+L0K,ON,Coldwater,CA
+L0K,ON,Cumberland Beach,CA
+L0K,ON,Longford Mills,CA
+L0K,ON,Oro-Medonte,CA
+L0K,ON,Port McNicoll,CA
+L0K,ON,Port Severn,CA
+L0K,ON,Ramara,CA
+L0K,ON,Sebright,CA
+L0K,ON,Tiny,CA
+L0K,ON,Victoria Harbour,CA
+L0K,ON,Warminster,CA
+L0K,ON,Washago,CA
+L0K,ON,Waubaushene,CA
+L0K,ON,Wyebridge,CA
+L0L,ON,Belle Ewart,CA
+L0L,ON,Churchill,CA
+L0L,ON,Cookstown,CA
+L0L,ON,Egbert,CA
+L0L,ON,Elmvale,CA
+L0L,ON,Gilford,CA
+L0L,ON,Hillsdale,CA
+L0L,ON,Lefroy,CA
+L0L,ON,Midhurst,CA
+L0L,ON,Minesing,CA
+L0L,ON,Oro Station,CA
+L0L,ON,Oro,CA
+L0L,ON,Oro-Medonte,CA
+L0L,ON,Phelpston,CA
+L0L,ON,Thornton,CA
+L0L,ON,Tiny,CA
+L0M,ON,Angus,CA
+L0M,ON,Borden,CA
+L0M,ON,Creemore,CA
+L0M,ON,Duntroon,CA
+L0M,ON,Everett,CA
+L0M,ON,Glen Huron,CA
+L0M,ON,Glencairn,CA
+L0M,ON,Lisle,CA
+L0M,ON,New Lowell,CA
+L0M,ON,Nottawa,CA
+L0M,ON,Stayner,CA
+L0M,ON,Utopia,CA
+L0N,ON,Alton,CA
+L0N,ON,Caledon East,CA
+L0N,ON,Grand Valley,CA
+L0N,ON,Honeywood,CA
+L0N,ON,Mansfield,CA
+L0N,ON,Orton,CA
+L0N,ON,Palgrave,CA
+L0N,ON,Rosemont,CA
+L0N,ON,Shelburne,CA
+L0P,ON,Campbellville,CA
+L0P,ON,Hornby,CA
+L0P,ON,Limehouse,CA
+L0P,ON,Moffat,CA
+L0P,ON,Norval,CA
+L0P,ON,Terra Cotta,CA
+L0R,ON,Alberton,CA
+L0R,ON,Beamsville,CA
+L0R,ON,Binbrook,CA
+L0R,ON,Caistor Centre,CA
+L0R,ON,Campden,CA
+L0R,ON,Carlisle,CA
+L0R,ON,Copetown,CA
+L0R,ON,Freelton,CA
+L0R,ON,Grassie,CA
+L0R,ON,Hannon,CA
+L0R,ON,Jerseyville,CA
+L0R,ON,Jordan Station,CA
+L0R,ON,Lynden,CA
+L0R,ON,Millgrove,CA
+L0R,ON,Mount Hope,CA
+L0R,ON,Rockton,CA
+L0R,ON,Sheffield,CA
+L0R,ON,Smithville,CA
+L0R,ON,St Anns,CA
+L0R,ON,Troy,CA
+L0R,ON,Vineland Station,CA
+L0R,ON,Vineland,CA
+L0R,ON,Waterdown,CA
+L0R,ON,Wellandport,CA
+L0S,ON,Allanburg,CA
+L0S,ON,Crystal Beach,CA
+L0S,ON,Fenwick,CA
+L0S,ON,Fonthill,CA
+L0S,ON,Niagara on the Lake,CA
+L0S,ON,Port Robinson,CA
+L0S,ON,Queenston,CA
+L0S,ON,Ridgeville,CA
+L0S,ON,Ridgeway,CA
+L0S,ON,Sherkston,CA
+L0S,ON,St Davids,CA
+L0S,ON,Stevensville,CA
+L0S,ON,Virgil,CA
+L0S,ON,Wainfleet,CA
+L1A,ON,Port Hope,CA
+L1B,ON,Newcastle,CA
+L1C,ON,Bowmanville,CA
+L1C,ON,Courtice,CA
+L1C,ON,Haydon,CA
+L1E,ON,Bowmanville,CA
+L1E,ON,Courtice,CA
+L1G,ON,Oshawa,CA
+L1H,ON,Oshawa,CA
+L1J,ON,Oshawa,CA
+L1K,ON,Oshawa,CA
+L1L,ON,Oshawa,CA
+L1M,ON,Ajax,CA
+L1M,ON,Whitby,CA
+L1N,ON,Whitby,CA
+L1P,ON,Whitby,CA
+L1R,ON,Whitby,CA
+L1S,ON,Ajax,CA
+L1T,ON,Ajax,CA
+L1V,ON,Pickering,CA
+L1W,ON,Pickering,CA
+L1X,ON,Pickering,CA
+L1Y,ON,Claremont,CA
+L1Y,ON,Pickering,CA
+L1Z,ON,Ajax,CA
+L2A,ON,Fort Erie,CA
+L2E,ON,Niagara Falls,CA
+L2G,ON,Niagara Falls,CA
+L2H,ON,Niagara Falls,CA
+L2J,ON,Niagara Falls,CA
+L2M,ON,St Catharines,CA
+L2N,ON,St Catharines,CA
+L2P,ON,St Catharines,CA
+L2R,ON,St Catharines,CA
+L2S,ON,St Catharines,CA
+L2T,ON,St Catharines,CA
+L2V,ON,St Catharines,CA
+L2V,ON,Thorold,CA
+L2W,ON,St Catharines,CA
+L3B,ON,Welland,CA
+L3C,ON,Welland,CA
+L3K,ON,Port Colborne,CA
+L3M,ON,Grimsby,CA
+L3P,ON,Markham,CA
+L3P,ON,Richmond Hill,CA
+L3P,ON,Unionville,CA
+L3R,ON,Markham,CA
+L3R,ON,Unionville,CA
+L3S,ON,Markham,CA
+L3T,ON,Richmond Hill,CA
+L3T,ON,Thornhill,CA
+L3V,ON,Orillia,CA
+L3V,ON,Oro-Medonte,CA
+L3V,ON,Rama,CA
+L3V,ON,Ramara,CA
+L3V,ON,Sebright,CA
+L3V,ON,Severn,CA
+L3X,ON,Newmarket,CA
+L3Y,ON,Newmarket,CA
+L3Z,ON,Bradford,CA
+L4A,ON,Stouffville,CA
+L4B,ON,Richmond Hill,CA
+L4C,ON,Richmond Hill,CA
+L4E,ON,Richmond Hill,CA
+L4G,ON,Aurora,CA
+L4H,ON,Kleinburg,CA
+L4H,ON,Woodbridge,CA
+L4J,ON,Thornhill,CA
+L4K,ON,Concord,CA
+L4K,ON,Vaughan,CA
+L4L,ON,Woodbridge,CA
+L4M,ON,Barrie,CA
+L4N,ON,Barrie,CA
+L4P,ON,Keswick,CA
+L4R,ON,Midland,CA
+L4R,ON,Tiny,CA
+L4S,ON,Richmond Hill,CA
+L4T,ON,Brampton,CA
+L4T,ON,Mississauga,CA
+L4V,ON,Mississauga,CA
+L4W,ON,Mississauga,CA
+L4X,ON,Mississauga,CA
+L4Y,ON,Mississauga,CA
+L4Z,ON,Mississauga,CA
+L5A,ON,Mississauga,CA
+L5B,ON,Mississauga,CA
+L5C,ON,Mississauga,CA
+L5E,ON,Mississauga,CA
+L5G,ON,Mississauga,CA
+L5H,ON,Mississauga,CA
+L5J,ON,Mississauga,CA
+L5K,ON,Mississauga,CA
+L5L,ON,Mississauga,CA
+L5M,ON,Mississauga,CA
+L5N,ON,Mississauga,CA
+L5P,ON,Mississauga,CA
+L5R,ON,Mississauga,CA
+L5S,ON,Mississauga,CA
+L5T,ON,Mississauga,CA
+L5V,ON,Mississauga,CA
+L5W,ON,Mississauga,CA
+L6A,ON,Maple,CA
+L6A,ON,Vaughan,CA
+L6B,ON,Markham,CA
+L6C,ON,Markham,CA
+L6E,ON,Markham,CA
+L6G,ON,Markham,CA
+L6G,ON,Unionville,CA
+L6H,ON,Oakville,CA
+L6J,ON,Oakville,CA
+L6K,ON,Oakville,CA
+L6L,ON,Oakville,CA
+L6M,ON,Oakville,CA
+L6P,ON,Brampton,CA
+L6R,ON,Brampton,CA
+L6S,ON,Brampton,CA
+L6T,ON,Brampton,CA
+L6V,ON,Brampton,CA
+L6W,ON,Brampton,CA
+L6X,ON,Brampton,CA
+L6Y,ON,Brampton,CA
+L6Z,ON,Brampton,CA
+L7A,ON,Brampton,CA
+L7B,ON,King City,CA
+L7B,ON,King,CA
+L7B,ON,Nobleton,CA
+L7C,ON,Bolton,CA
+L7C,ON,Caledon East,CA
+L7C,ON,Caledon Village,CA
+L7C,ON,Caledon,CA
+L7C,ON,Cheltenham,CA
+L7C,ON,Inglewood,CA
+L7C,ON,Terra Cotta,CA
+L7E,ON,Bolton,CA
+L7E,ON,Caledon East,CA
+L7E,ON,Caledon,CA
+L7E,ON,Palgrave,CA
+L7G,ON,Georgetown,CA
+L7G,ON,Glen Williams,CA
+L7J,ON,Acton,CA
+L7K,ON,Alton,CA
+L7K,ON,Belfountain,CA
+L7K,ON,Caledon East,CA
+L7K,ON,Caledon Village,CA
+L7K,ON,Caledon,CA
+L7K,ON,Terra Cotta,CA
+L7L,ON,Burlington,CA
+L7M,ON,Burlington,CA
+L7N,ON,Burlington,CA
+L7P,ON,Burlington,CA
+L7R,ON,Burlington,CA
+L7S,ON,Burlington,CA
+L7T,ON,Burlington,CA
+L8B,ON,Waterdown,CA
+L8E,ON,Hamilton,CA
+L8E,ON,Stoney Creek,CA
+L8G,ON,Hamilton,CA
+L8G,ON,Stoney Creek,CA
+L8H,ON,Hamilton,CA
+L8H,ON,Stoney Creek,CA
+L8J,ON,Hamilton,CA
+L8J,ON,Stoney Creek,CA
+L8K,ON,Hamilton,CA
+L8L,ON,Hamilton,CA
+L8M,ON,Hamilton,CA
+L8N,ON,Hamilton,CA
+L8P,ON,Hamilton,CA
+L8R,ON,Hamilton,CA
+L8S,ON,Hamilton,CA
+L8T,ON,Hamilton,CA
+L8V,ON,Hamilton,CA
+L8W,ON,Hamilton,CA
+L9A,ON,Hamilton,CA
+L9B,ON,Hamilton,CA
+L9C,ON,Hamilton,CA
+L9E,ON,Milton,CA
+L9G,ON,Ancaster,CA
+L9H,ON,Ancaster,CA
+L9H,ON,Dundas,CA
+L9J,ON,Barrie,CA
+L9K,ON,Ancaster,CA
+L9L,ON,Port Perry,CA
+L9L,ON,Prince Albert,CA
+L9M,ON,Christian Island,CA
+L9M,ON,Penetanguishene,CA
+L9M,ON,Tiny,CA
+L9N,ON,East Gwillimbury,CA
+L9N,ON,Holland Landing,CA
+L9N,ON,River Drive Park,CA
+L9P,ON,Uxbridge,CA
+L9R,ON,Alliston,CA
+L9R,ON,New Tecumseth,CA
+L9S,ON,Innisfil,CA
+L9T,ON,Milton,CA
+L9V,ON,Amaranth,CA
+L9V,ON,Melancthon,CA
+L9V,ON,Mono,CA
+L9V,ON,Mulmur,CA
+L9V,ON,Shelburne,CA
+L9W,ON,Amaranth,CA
+L9W,ON,East Garafraxa,CA
+L9W,ON,Grand Valley,CA
+L9W,ON,Mono,CA
+L9W,ON,Orangeville,CA
+L9Y,ON,Blue Mountains,CA
+L9Y,ON,Collingwood,CA
+L9Z,ON,Wasaga Beach,CA
+M1B,ON,Scarborough,CA
+M1C,ON,Scarborough,CA
+M1E,ON,Scarborough,CA
+M1G,ON,Scarborough,CA
+M1H,ON,Scarborough,CA
+M1J,ON,Scarborough,CA
+M1K,ON,Scarborough,CA
+M1L,ON,North York,CA
+M1L,ON,Scarborough,CA
+M1M,ON,Scarborough,CA
+M1N,ON,Scarborough,CA
+M1P,ON,Scarborough,CA
+M1R,ON,North York,CA
+M1R,ON,Scarborough,CA
+M1S,ON,Scarborough,CA
+M1T,ON,Scarborough,CA
+M1V,ON,Scarborough,CA
+M1W,ON,Scarborough,CA
+M1X,ON,Scarborough,CA
+M2H,ON,North York,CA
+M2J,ON,North York,CA
+M2K,ON,North York,CA
+M2L,ON,North York,CA
+M2M,ON,North York,CA
+M2N,ON,North York,CA
+M2P,ON,North York,CA
+M2R,ON,North York,CA
+M3A,ON,North York,CA
+M3B,ON,North York,CA
+M3C,ON,East York,CA
+M3C,ON,North York,CA
+M3C,ON,Toronto,CA
+M3H,ON,North York,CA
+M3H,ON,Toronto,CA
+M3J,ON,North York,CA
+M3K,ON,North York,CA
+M3L,ON,North York,CA
+M3M,ON,North York,CA
+M3M,ON,Toronto,CA
+M3N,ON,North York,CA
+M4A,ON,East York,CA
+M4A,ON,North York,CA
+M4A,ON,Scarborough,CA
+M4B,ON,East York,CA
+M4B,ON,Scarborough,CA
+M4B,ON,Toronto,CA
+M4C,ON,East York,CA
+M4C,ON,Scarborough,CA
+M4C,ON,Toronto,CA
+M4E,ON,Scarborough,CA
+M4E,ON,Toronto,CA
+M4G,ON,East York,CA
+M4G,ON,North York,CA
+M4G,ON,Toronto,CA
+M4H,ON,East York,CA
+M4H,ON,Toronto,CA
+M4J,ON,East York,CA
+M4J,ON,Toronto,CA
+M4K,ON,East York,CA
+M4K,ON,Toronto,CA
+M4L,ON,Toronto,CA
+M4M,ON,Toronto,CA
+M4N,ON,North York,CA
+M4N,ON,Toronto,CA
+M4P,ON,East York,CA
+M4P,ON,North York,CA
+M4P,ON,Toronto,CA
+M4R,ON,North York,CA
+M4R,ON,Toronto,CA
+M4S,ON,Toronto,CA
+M4T,ON,Toronto,CA
+M4V,ON,Toronto,CA
+M4W,ON,East York,CA
+M4W,ON,Toronto,CA
+M4X,ON,Toronto,CA
+M4Y,ON,Toronto,CA
+M5A,ON,Toronto,CA
+M5B,ON,Toronto,CA
+M5C,ON,Toronto,CA
+M5E,ON,Toronto,CA
+M5G,ON,Toronto,CA
+M5H,ON,Toronto,CA
+M5J,ON,Toronto,CA
+M5K,ON,Toronto,CA
+M5L,ON,Toronto,CA
+M5M,ON,North York,CA
+M5M,ON,Toronto,CA
+M5N,ON,North York,CA
+M5N,ON,Toronto,CA
+M5P,ON,Toronto,CA
+M5P,ON,York,CA
+M5R,ON,Toronto,CA
+M5S,ON,Toronto,CA
+M5S,ON,York,CA
+M5T,ON,Toronto,CA
+M5V,ON,Toronto,CA
+M5W,ON,Toronto,CA
+M5X,ON,Toronto,CA
+M6A,ON,North York,CA
+M6A,ON,Toronto,CA
+M6B,ON,North York,CA
+M6B,ON,Toronto,CA
+M6B,ON,York,CA
+M6C,ON,Toronto,CA
+M6C,ON,York,CA
+M6E,ON,North York,CA
+M6E,ON,Toronto,CA
+M6E,ON,York,CA
+M6G,ON,Toronto,CA
+M6H,ON,Toronto,CA
+M6H,ON,York,CA
+M6J,ON,Toronto,CA
+M6K,ON,Toronto,CA
+M6L,ON,North York,CA
+M6L,ON,Toronto,CA
+M6M,ON,North York,CA
+M6M,ON,Toronto,CA
+M6M,ON,York,CA
+M6N,ON,Toronto,CA
+M6N,ON,York,CA
+M6P,ON,Etobicoke,CA
+M6P,ON,Toronto,CA
+M6R,ON,Toronto,CA
+M6S,ON,Toronto,CA
+M6S,ON,York,CA
+M7A,ON,North York,CA
+M7A,ON,Toronto,CA
+M7R,ON,Mississauga,CA
+M7Y,ON,Toronto,CA
+M8V,ON,Etobicoke,CA
+M8W,ON,Etobicoke,CA
+M8X,ON,Etobicoke,CA
+M8Y,ON,Etobicoke,CA
+M8Z,ON,Etobicoke,CA
+M9A,ON,Etobicoke,CA
+M9B,ON,Etobicoke,CA
+M9C,ON,Etobicoke,CA
+M9L,ON,North York,CA
+M9M,ON,North York,CA
+M9M,ON,Toronto,CA
+M9N,ON,North York,CA
+M9N,ON,Toronto,CA
+M9N,ON,York,CA
+M9P,ON,Etobicoke,CA
+M9R,ON,Etobicoke,CA
+M9V,ON,Etobicoke,CA
+M9W,ON,Etobicoke,CA
+N0A,ON,Canfield,CA
+N0A,ON,Cayuga,CA
+N0A,ON,Fisherville,CA
+N0A,ON,Hagersville,CA
+N0A,ON,Jarvis,CA
+N0A,ON,Lowbanks,CA
+N0A,ON,Nanticoke,CA
+N0A,ON,Ohsweken,CA
+N0A,ON,Port Dover,CA
+N0A,ON,Selkirk,CA
+N0A,ON,Townsend,CA
+N0A,ON,York,CA
+N0B,ON,Alma,CA
+N0B,ON,Ariss,CA
+N0B,ON,Arkell,CA
+N0B,ON,Ayr,CA
+N0B,ON,Ballinafad,CA
+N0B,ON,Belwood,CA
+N0B,ON,Bloomingdale,CA
+N0B,ON,Branchton,CA
+N0B,ON,Breslau,CA
+N0B,ON,Conestogo,CA
+N0B,ON,Eden Mills,CA
+N0B,ON,Elora,CA
+N0B,ON,Erin,CA
+N0B,ON,Floradale,CA
+N0B,ON,Glen Morris,CA
+N0B,ON,Guelph-Eramosa,CA
+N0B,ON,Hawkesville,CA
+N0B,ON,Heidelberg,CA
+N0B,ON,Hillsburgh,CA
+N0B,ON,Kitchener,CA
+N0B,ON,Linwood,CA
+N0B,ON,Maryhill,CA
+N0B,ON,Morriston,CA
+N0B,ON,New Dundee,CA
+N0B,ON,Petersburg,CA
+N0B,ON,Puslinch,CA
+N0B,ON,Rockwood,CA
+N0B,ON,Shakespeare,CA
+N0B,ON,St Agatha,CA
+N0B,ON,St Clements,CA
+N0B,ON,St Jacobs,CA
+N0B,ON,Tavistock,CA
+N0B,ON,Wallenstein,CA
+N0B,ON,Wellesley,CA
+N0B,ON,West Montrose,CA
+N0B,ON,Wilmot,CA
+N0C,ON,Badjeros,CA
+N0C,ON,Dundalk,CA
+N0C,ON,Feversham,CA
+N0C,ON,Flesherton,CA
+N0C,ON,Kimberley,CA
+N0C,ON,Markdale,CA
+N0C,ON,Maxwell,CA
+N0C,ON,Priceville,CA
+N0C,ON,Proton Station,CA
+N0C,ON,Singhampton,CA
+N0E,ON,Burford,CA
+N0E,ON,Cathcart,CA
+N0E,ON,Clear Creek,CA
+N0E,ON,Harley,CA
+N0E,ON,La Salette,CA
+N0E,ON,Langton,CA
+N0E,ON,Mount Pleasant,CA
+N0E,ON,Oakland,CA
+N0E,ON,Port Rowan,CA
+N0E,ON,Scotland,CA
+N0E,ON,St George Brant,CA
+N0E,ON,St Williams,CA
+N0E,ON,Teeterville,CA
+N0E,ON,Turkey Point,CA
+N0E,ON,Vanessa,CA
+N0E,ON,Vittoria,CA
+N0E,ON,Walsingham,CA
+N0E,ON,Waterford,CA
+N0E,ON,Wilsonville,CA
+N0E,ON,Windham Centre,CA
+N0G,ON,Arthur,CA
+N0G,ON,Atwood,CA
+N0G,ON,Ayton,CA
+N0G,ON,Belgrave,CA
+N0G,ON,Bluevale,CA
+N0G,ON,Brockton,CA
+N0G,ON,Brussels,CA
+N0G,ON,Cargill,CA
+N0G,ON,Chepstow,CA
+N0G,ON,Chesley,CA
+N0G,ON,Clifford,CA
+N0G,ON,Conn,CA
+N0G,ON,Drayton,CA
+N0G,ON,Durham,CA
+N0G,ON,Elmwood,CA
+N0G,ON,Ethel,CA
+N0G,ON,Fordwich,CA
+N0G,ON,Formosa,CA
+N0G,ON,Gorrie,CA
+N0G,ON,Gowanstown,CA
+N0G,ON,Harriston,CA
+N0G,ON,Holstein,CA
+N0G,ON,Holyrood,CA
+N0G,ON,Kenilworth,CA
+N0G,ON,Lucknow,CA
+N0G,ON,Mildmay,CA
+N0G,ON,Moorefield,CA
+N0G,ON,Mount Forest,CA
+N0G,ON,Neustadt,CA
+N0G,ON,Paisley,CA
+N0G,ON,Palmerston,CA
+N0G,ON,Ripley,CA
+N0G,ON,Teeswater,CA
+N0G,ON,Tiverton,CA
+N0G,ON,Walkerton,CA
+N0G,ON,Wingham,CA
+N0G,ON,Wroxeter,CA
+N0H,ON,Allenford,CA
+N0H,ON,Annan,CA
+N0H,ON,Berkeley,CA
+N0H,ON,Bognor,CA
+N0H,ON,Chatsworth,CA
+N0H,ON,Clarksburg,CA
+N0H,ON,Desboro,CA
+N0H,ON,Dobbinton,CA
+N0H,ON,Georgian Bluffs,CA
+N0H,ON,Heathcote,CA
+N0H,ON,Hepworth,CA
+N0H,ON,Holland Centre,CA
+N0H,ON,Kemble,CA
+N0H,ON,Leith,CA
+N0H,ON,Lions Head,CA
+N0H,ON,Mar,CA
+N0H,ON,Miller Lake,CA
+N0H,ON,Neyaashiinigmiing,CA
+N0H,ON,Northern Bruce Peninsula,CA
+N0H,ON,Port Elgin,CA
+N0H,ON,Ravenna,CA
+N0H,ON,Sauble Beach,CA
+N0H,ON,Shallow Lake,CA
+N0H,ON,South Bruce Peninsula,CA
+N0H,ON,Southampton,CA
+N0H,ON,Stokes Bay,CA
+N0H,ON,Tara,CA
+N0H,ON,Thornbury,CA
+N0H,ON,Tobermory,CA
+N0H,ON,Walters Falls,CA
+N0H,ON,Wiarton,CA
+N0H,ON,Williamsford,CA
+N0J,ON,Beachville,CA
+N0J,ON,Bright,CA
+N0J,ON,Burgessville,CA
+N0J,ON,Courtland,CA
+N0J,ON,Drumbo,CA
+N0J,ON,Eden,CA
+N0J,ON,Embro,CA
+N0J,ON,Hickson,CA
+N0J,ON,Innerkip,CA
+N0J,ON,Mount Elgin,CA
+N0J,ON,Norwich,CA
+N0J,ON,Otterville,CA
+N0J,ON,Plattsville,CA
+N0J,ON,Port Burwell,CA
+N0J,ON,Princeton,CA
+N0J,ON,Salford,CA
+N0J,ON,Springford,CA
+N0J,ON,Straffordville,CA
+N0J,ON,Vienna,CA
+N0K,ON,Bornholm,CA
+N0K,ON,Brodhagen,CA
+N0K,ON,Brunner,CA
+N0K,ON,Dublin,CA
+N0K,ON,Egmondville,CA
+N0K,ON,Fullarton,CA
+N0K,ON,Gads Hill,CA
+N0K,ON,Kirkton,CA
+N0K,ON,Millbank,CA
+N0K,ON,Milverton,CA
+N0K,ON,Mitchell,CA
+N0K,ON,Monkton,CA
+N0K,ON,Newton,CA
+N0K,ON,Poole,CA
+N0K,ON,Rostock,CA
+N0K,ON,Seaforth,CA
+N0K,ON,Sebringville,CA
+N0K,ON,St. Pauls,CA
+N0K,ON,Staffa,CA
+N0K,ON,Walton,CA
+N0K,ON,Woodham,CA
+N0L,ON,Appin,CA
+N0L,ON,Belmont,CA
+N0L,ON,Brownsville,CA
+N0L,ON,Delaware,CA
+N0L,ON,Dorchester,CA
+N0L,ON,Duart,CA
+N0L,ON,Dutton,CA
+N0L,ON,Fingal,CA
+N0L,ON,Glencoe,CA
+N0L,ON,Harrietsville,CA
+N0L,ON,Iona Station,CA
+N0L,ON,Komoka,CA
+N0L,ON,Melbourne,CA
+N0L,ON,Mossley,CA
+N0L,ON,Mount Brydges,CA
+N0L,ON,Muirkirk,CA
+N0L,ON,Muncey,CA
+N0L,ON,Newbury,CA
+N0L,ON,Putnam,CA
+N0L,ON,Rodney,CA
+N0L,ON,Shedden,CA
+N0L,ON,Southwold,CA
+N0L,ON,Sparta,CA
+N0L,ON,Springfield,CA
+N0L,ON,Talbotville Royal,CA
+N0L,ON,Union,CA
+N0L,ON,Wallacetown,CA
+N0L,ON,Wardsville,CA
+N0L,ON,West Lorne,CA
+N0M,ON,Ailsa Craig,CA
+N0M,ON,Arkona,CA
+N0M,ON,Arva,CA
+N0M,ON,Auburn,CA
+N0M,ON,Bayfield,CA
+N0M,ON,Blyth,CA
+N0M,ON,Brucefield,CA
+N0M,ON,Centralia,CA
+N0M,ON,Clinton,CA
+N0M,ON,Crediton,CA
+N0M,ON,Dashwood,CA
+N0M,ON,Denfield,CA
+N0M,ON,Dungannon,CA
+N0M,ON,Exeter,CA
+N0M,ON,Grand Bend,CA
+N0M,ON,Granton,CA
+N0M,ON,Hay,CA
+N0M,ON,Hensall,CA
+N0M,ON,Huron Park,CA
+N0M,ON,Ilderton,CA
+N0M,ON,Kerwood,CA
+N0M,ON,Kintore,CA
+N0M,ON,Kippen,CA
+N0M,ON,Lakeside,CA
+N0M,ON,Londesborough,CA
+N0M,ON,Lucan,CA
+N0M,ON,Parkhill,CA
+N0M,ON,Port Franks,CA
+N0M,ON,Thamesford,CA
+N0M,ON,Thedford,CA
+N0M,ON,Thorndale,CA
+N0M,ON,Varna,CA
+N0M,ON,Watford,CA
+N0M,ON,Zurich,CA
+N0N,ON,Alvinston,CA
+N0N,ON,Brigden,CA
+N0N,ON,Bright's Grove,CA
+N0N,ON,Camlachie,CA
+N0N,ON,Corunna,CA
+N0N,ON,Courtright,CA
+N0N,ON,Forest,CA
+N0N,ON,Inwood,CA
+N0N,ON,Kettle and Stony Point Fn,CA
+N0N,ON,Lambton Shores,CA
+N0N,ON,Mooretown,CA
+N0N,ON,Oil City,CA
+N0N,ON,Oil Springs,CA
+N0N,ON,Petrolia,CA
+N0N,ON,Plympton-Wyoming,CA
+N0N,ON,Warwick Township,CA
+N0N,ON,Wyoming,CA
+N0P,ON,Blenheim,CA
+N0P,ON,Bothwell,CA
+N0P,ON,Cedar Springs,CA
+N0P,ON,Charing Cross,CA
+N0P,ON,Coatsworth Station,CA
+N0P,ON,Comber,CA
+N0P,ON,Croton,CA
+N0P,ON,Dover Centre,CA
+N0P,ON,Dresden,CA
+N0P,ON,Erieau,CA
+N0P,ON,Florence,CA
+N0P,ON,Grande Pointe,CA
+N0P,ON,Highgate,CA
+N0P,ON,Kent Bridge,CA
+N0P,ON,Merlin,CA
+N0P,ON,Morpeth,CA
+N0P,ON,North Buxton,CA
+N0P,ON,Pain Court,CA
+N0P,ON,Port Alma,CA
+N0P,ON,Port Lambton,CA
+N0P,ON,Ridgetown,CA
+N0P,ON,Ruthven,CA
+N0P,ON,Sombra,CA
+N0P,ON,Staples,CA
+N0P,ON,Thamesville,CA
+N0P,ON,Tilbury,CA
+N0P,ON,Tupperville,CA
+N0P,ON,Wheatley,CA
+N0P,ON,Wilkesport,CA
+N0R,ON,Amherstburg,CA
+N0R,ON,Belle River,CA
+N0R,ON,Cottam,CA
+N0R,ON,Emeryville,CA
+N0R,ON,Essex,CA
+N0R,ON,Harrow,CA
+N0R,ON,Maidstone,CA
+N0R,ON,McGregor,CA
+N0R,ON,Oldcastle,CA
+N0R,ON,Pelee Island,CA
+N0R,ON,Pointe aux Roches,CA
+N0R,ON,Ruscom Station,CA
+N0R,ON,South Woodslee,CA
+N0R,ON,St Joachim,CA
+N1A,ON,Dunnville,CA
+N1C,ON,Guelph,CA
+N1E,ON,Guelph,CA
+N1G,ON,Guelph,CA
+N1H,ON,Guelph,CA
+N1K,ON,Guelph,CA
+N1L,ON,Guelph,CA
+N1M,ON,Fergus,CA
+N1P,ON,Cambridge,CA
+N1R,ON,Cambridge,CA
+N1S,ON,Cambridge,CA
+N1T,ON,Cambridge,CA
+N2A,ON,Kitchener,CA
+N2B,ON,Kitchener,CA
+N2C,ON,Kitchener,CA
+N2E,ON,Kitchener,CA
+N2G,ON,Kitchener,CA
+N2H,ON,Kitchener,CA
+N2J,ON,Kitchener,CA
+N2J,ON,Waterloo,CA
+N2K,ON,Kitchener,CA
+N2K,ON,Waterloo,CA
+N2L,ON,Waterloo,CA
+N2M,ON,Kitchener,CA
+N2N,ON,Kitchener,CA
+N2P,ON,Kitchener,CA
+N2R,ON,Kitchener,CA
+N2T,ON,Waterloo,CA
+N2V,ON,Waterloo,CA
+N2Z,ON,Kincardine,CA
+N3A,ON,Baden,CA
+N3A,ON,New Hamburg,CA
+N3B,ON,Elmira,CA
+N3C,ON,Cambridge,CA
+N3E,ON,Cambridge,CA
+N3H,ON,Cambridge,CA
+N3L,ON,Paris,CA
+N3P,ON,Brantford,CA
+N3R,ON,Brantford,CA
+N3S,ON,Brantford,CA
+N3T,ON,Brantford,CA
+N3V,ON,Brantford,CA
+N3W,ON,Caledonia,CA
+N3Y,ON,Simcoe,CA
+N4B,ON,Delhi,CA
+N4G,ON,Tillsonburg,CA
+N4K,ON,Owen Sound,CA
+N4L,ON,Meaford,CA
+N4N,ON,Hanover,CA
+N4S,ON,Woodstock,CA
+N4T,ON,Woodstock,CA
+N4V,ON,Woodstock,CA
+N4W,ON,Listowel,CA
+N4X,ON,St Marys,CA
+N4Z,ON,Stratford,CA
+N5A,ON,Stratford,CA
+N5C,ON,Ingersoll,CA
+N5H,ON,Aylmer,CA
+N5L,ON,Port Stanley,CA
+N5P,ON,St Thomas,CA
+N5R,ON,St Thomas,CA
+N5V,ON,London,CA
+N5W,ON,London,CA
+N5X,ON,London,CA
+N5Y,ON,London,CA
+N5Z,ON,London,CA
+N6A,ON,London,CA
+N6B,ON,London,CA
+N6C,ON,London,CA
+N6E,ON,London,CA
+N6G,ON,London,CA
+N6H,ON,London,CA
+N6J,ON,London,CA
+N6K,ON,London,CA
+N6L,ON,London,CA
+N6M,ON,London,CA
+N6N,ON,London,CA
+N6P,ON,London,CA
+N7A,ON,Goderich,CA
+N7G,ON,Strathroy,CA
+N7L,ON,Chatham,CA
+N7M,ON,Chatham,CA
+N7S,ON,Sarnia,CA
+N7T,ON,Point Edward,CA
+N7T,ON,Sarnia,CA
+N7V,ON,Point Edward,CA
+N7V,ON,Sarnia,CA
+N7W,ON,Sarnia,CA
+N7X,ON,Sarnia,CA
+N8A,ON,Wallaceburg,CA
+N8H,ON,Leamington,CA
+N8M,ON,Essex,CA
+N8N,ON,Tecumseh,CA
+N8N,ON,Windsor,CA
+N8P,ON,Tecumseh,CA
+N8P,ON,Windsor,CA
+N8R,ON,Windsor,CA
+N8S,ON,Windsor,CA
+N8T,ON,Windsor,CA
+N8V,ON,Windsor,CA
+N8W,ON,Windsor,CA
+N8X,ON,Windsor,CA
+N8Y,ON,Windsor,CA
+N9A,ON,Windsor,CA
+N9B,ON,Windsor,CA
+N9C,ON,Windsor,CA
+N9E,ON,Windsor,CA
+N9G,ON,Windsor,CA
+N9H,ON,Lasalle,CA
+N9H,ON,Windsor,CA
+N9J,ON,Lasalle,CA
+N9J,ON,Windsor,CA
+N9K,ON,Tecumseh,CA
+N9K,ON,Windsor,CA
+N9V,ON,Amherstburg,CA
+N9Y,ON,Kingsville,CA
+P0A,ON,Ahmic Harbour,CA
+P0A,ON,Burks Falls,CA
+P0A,ON,Dorset,CA
+P0A,ON,Dunchurch,CA
+P0A,ON,Dwight,CA
+P0A,ON,Emsdale,CA
+P0A,ON,Katrine,CA
+P0A,ON,Kearney,CA
+P0A,ON,Magnetawan,CA
+P0A,ON,Novar,CA
+P0A,ON,South River,CA
+P0A,ON,Sprucedale,CA
+P0A,ON,Sundridge,CA
+P0B,ON,Baysville,CA
+P0B,ON,Milford Bay,CA
+P0B,ON,Minett,CA
+P0B,ON,Port Carling,CA
+P0B,ON,Port Sandfield,CA
+P0B,ON,Port Sydney,CA
+P0B,ON,Utterson,CA
+P0B,ON,Windermere,CA
+P0C,ON,Bala,CA
+P0C,ON,Mactier,CA
+P0C,ON,Rosseau,CA
+P0C,ON,Torrance,CA
+P0E,ON,Honey Harbour,CA
+P0E,ON,Kilworthy,CA
+P0E,ON,Severn Bridge,CA
+P0G,ON,Britt,CA
+P0G,ON,Byng Inlet,CA
+P0G,ON,McKellar,CA
+P0G,ON,Nobel,CA
+P0G,ON,Pickerel,CA
+P0G,ON,Pointe-au-Baril-Station,CA
+P0H,ON,Arnstein,CA
+P0H,ON,Astorville,CA
+P0H,ON,Bear Island,CA
+P0H,ON,Bonfield,CA
+P0H,ON,Cache Bay,CA
+P0H,ON,Callander,CA
+P0H,ON,Commanda,CA
+P0H,ON,Corbeil,CA
+P0H,ON,Crystal Falls,CA
+P0H,ON,Field,CA
+P0H,ON,Golden Valley,CA
+P0H,ON,Hornell Heights,CA
+P0H,ON,Lavigne,CA
+P0H,ON,Loring,CA
+P0H,ON,Marten River,CA
+P0H,ON,Mattawa,CA
+P0H,ON,Nipissing,CA
+P0H,ON,Port Loring,CA
+P0H,ON,Powassan,CA
+P0H,ON,Redbridge,CA
+P0H,ON,Restoule,CA
+P0H,ON,River Valley,CA
+P0H,ON,Rutherglen,CA
+P0H,ON,Temagami,CA
+P0H,ON,Thorne,CA
+P0H,ON,Tilden Lake,CA
+P0H,ON,Trout Creek,CA
+P0H,ON,Verner,CA
+P0H,ON,Warren,CA
+P0J,ON,Belle Vallee,CA
+P0J,ON,Charlton,CA
+P0J,ON,Cobalt,CA
+P0J,ON,Earlton,CA
+P0J,ON,Elk Lake,CA
+P0J,ON,Englehart,CA
+P0J,ON,Gowganda,CA
+P0J,ON,Haileybury,CA
+P0J,ON,Hilliardton,CA
+P0J,ON,Kenabeek,CA
+P0J,ON,Latchford,CA
+P0J,ON,New Liskeard,CA
+P0J,ON,North Cobalt,CA
+P0J,ON,Thornloe,CA
+P0K,ON,Chaput Hughes,CA
+P0K,ON,Dobie,CA
+P0K,ON,Holtyre,CA
+P0K,ON,Iroquois Falls,CA
+P0K,ON,Kearns,CA
+P0K,ON,King Kirkland,CA
+P0K,ON,Larder Lake,CA
+P0K,ON,Matachewan,CA
+P0K,ON,Matheson,CA
+P0K,ON,Monteith,CA
+P0K,ON,Ramore,CA
+P0K,ON,Sesekinika,CA
+P0K,ON,Swastika,CA
+P0K,ON,Tarzwell,CA
+P0K,ON,Val Gagne,CA
+P0K,ON,Virginiatown,CA
+P0L,ON,Attawapiskat,CA
+P0L,ON,Cochrane,CA
+P0L,ON,Constance Lake,CA
+P0L,ON,Driftwood,CA
+P0L,ON,Fauquier,CA
+P0L,ON,Fort Albany,CA
+P0L,ON,Frederickhouse,CA
+P0L,ON,Hallebourg,CA
+P0L,ON,Harty,CA
+P0L,ON,Hearst,CA
+P0L,ON,Hunta,CA
+P0L,ON,Jogues,CA
+P0L,ON,Kashechewan,CA
+P0L,ON,Mattice,CA
+P0L,ON,Moonbeam,CA
+P0L,ON,Moose Factory,CA
+P0L,ON,Moosonee,CA
+P0L,ON,Opasatika,CA
+P0L,ON,Peawanuck,CA
+P0L,ON,Smooth Rock Falls,CA
+P0L,ON,Strickland,CA
+P0L,ON,Val Cote,CA
+P0L,ON,Val Rita,CA
+P0M,ON,Alban,CA
+P0M,ON,Azilda,CA
+P0M,ON,Biscotasing,CA
+P0M,ON,Blezard Valley,CA
+P0M,ON,Capreol,CA
+P0M,ON,Cartier,CA
+P0M,ON,Chapleau,CA
+P0M,ON,Chelmsford,CA
+P0M,ON,Coniston,CA
+P0M,ON,Copper Cliff,CA
+P0M,ON,Dokis First Nation,CA
+P0M,ON,Dowling,CA
+P0M,ON,Falconbridge,CA
+P0M,ON,Foleyet,CA
+P0M,ON,Gogama,CA
+P0M,ON,Hagar,CA
+P0M,ON,Hornepayne,CA
+P0M,ON,Killarney,CA
+P0M,ON,Levack,CA
+P0M,ON,Markstay,CA
+P0M,ON,Missanabie,CA
+P0M,ON,Mobert,CA
+P0M,ON,Monetville,CA
+P0M,ON,Nairn Centre,CA
+P0M,ON,Naughton,CA
+P0M,ON,Noelville,CA
+P0M,ON,Oba,CA
+P0M,ON,Onaping,CA
+P0M,ON,Ramsey,CA
+P0M,ON,Shining Tree,CA
+P0M,ON,Skead,CA
+P0M,ON,St Charles,CA
+P0M,ON,Sultan,CA
+P0M,ON,Wahnapitae,CA
+P0M,ON,White River,CA
+P0M,ON,Whitefish,CA
+P0M,ON,Worthington,CA
+P0N,ON,Connaught,CA
+P0N,ON,Porcupine,CA
+P0N,ON,Porquis Junction,CA
+P0N,ON,Schumacher,CA
+P0N,ON,South Porcupine,CA
+P0N,ON,Tunis,CA
+P0P,ON,Birch Island,CA
+P0P,ON,Cutler,CA
+P0P,ON,Evansville,CA
+P0P,ON,Gore Bay,CA
+P0P,ON,Kagawong,CA
+P0P,ON,Little Current,CA
+P0P,ON,M'chigeeng,CA
+P0P,ON,Manitowaning,CA
+P0P,ON,Massey,CA
+P0P,ON,McKerrow,CA
+P0P,ON,Meldrum Bay,CA
+P0P,ON,Mindemoya,CA
+P0P,ON,Providence Bay,CA
+P0P,ON,Serpent River,CA
+P0P,ON,Sheguiandah,CA
+P0P,ON,Sheshegwaning,CA
+P0P,ON,Silver Water,CA
+P0P,ON,South Baymouth,CA
+P0P,ON,Spanish,CA
+P0P,ON,Spring Bay,CA
+P0P,ON,Tehkummah,CA
+P0P,ON,Walford Station,CA
+P0P,ON,Webbwood,CA
+P0P,ON,Whitefish Falls,CA
+P0P,ON,Wikwemikong,CA
+P0R,ON,Algoma Mills,CA
+P0R,ON,Blind River,CA
+P0R,ON,Bruce Mines,CA
+P0R,ON,Desbarats,CA
+P0R,ON,Hilton Beach,CA
+P0R,ON,Iron Bridge,CA
+P0R,ON,Richards Landing,CA
+P0R,ON,Spragge,CA
+P0R,ON,Thessalon,CA
+P0S,ON,Batchawana Bay,CA
+P0S,ON,Dubreuilville,CA
+P0S,ON,Echo Bay,CA
+P0S,ON,Goulais River,CA
+P0S,ON,Hawk Junction,CA
+P0S,ON,Montreal River Harbour,CA
+P0S,ON,Searchmont,CA
+P0S,ON,Wawa,CA
+P0T,ON,Armstrong Station,CA
+P0T,ON,Aroland,CA
+P0T,ON,Atikokan,CA
+P0T,ON,Beardmore,CA
+P0T,ON,Caramat,CA
+P0T,ON,Dorion,CA
+P0T,ON,Eabamet Lake,CA
+P0T,ON,Geraldton,CA
+P0T,ON,Graham,CA
+P0T,ON,Gull Bay,CA
+P0T,ON,Heron Bay,CA
+P0T,ON,Ignace,CA
+P0T,ON,Jellicoe,CA
+P0T,ON,Kakabeka Falls,CA
+P0T,ON,Kaministiquia,CA
+P0T,ON,Kashabowie,CA
+P0T,ON,Lac la Croix First Nation,CA
+P0T,ON,Lansdowne House,CA
+P0T,ON,Longlac,CA
+P0T,ON,Macdiarmid,CA
+P0T,ON,Manitouwadge,CA
+P0T,ON,Marathon,CA
+P0T,ON,Murillo,CA
+P0T,ON,Nakina,CA
+P0T,ON,Nipigon,CA
+P0T,ON,Nolalu,CA
+P0T,ON,Ogoki,CA
+P0T,ON,Pass Lake,CA
+P0T,ON,Pays Plat,CA
+P0T,ON,Raith,CA
+P0T,ON,Red Rock,CA
+P0T,ON,Rossport,CA
+P0T,ON,Schreiber,CA
+P0T,ON,Shebandowan,CA
+P0T,ON,Shuniah,CA
+P0T,ON,South Gillies,CA
+P0T,ON,Summer Beaver,CA
+P0T,ON,Terrace Bay,CA
+P0T,ON,Upsala,CA
+P0T,ON,Webequie,CA
+P0V,ON,Angling Lake,CA
+P0V,ON,Balmertown,CA
+P0V,ON,Bearskin Lake,CA
+P0V,ON,Big Trout Lake,CA
+P0V,ON,Cat Lake,CA
+P0V,ON,Cochenour,CA
+P0V,ON,Collins,CA
+P0V,ON,Deer Lake,CA
+P0V,ON,Dinorwic,CA
+P0V,ON,Eagle River,CA
+P0V,ON,Ear Falls,CA
+P0V,ON,Fort Severn,CA
+P0V,ON,Hudson,CA
+P0V,ON,Kasabonika,CA
+P0V,ON,Keewaywin,CA
+P0V,ON,Kingfisher Lake,CA
+P0V,ON,Lac Seul,CA
+P0V,ON,Madsen,CA
+P0V,ON,McKenzie Island,CA
+P0V,ON,Migisi Sahgaigan,CA
+P0V,ON,Minnitaki,CA
+P0V,ON,Muskrat Dam,CA
+P0V,ON,North Spirit Lake,CA
+P0V,ON,Osnaburgh House,CA
+P0V,ON,Oxdrift,CA
+P0V,ON,Perrault Falls,CA
+P0V,ON,Pickle Lake,CA
+P0V,ON,Pikangikum,CA
+P0V,ON,Poplar Hill,CA
+P0V,ON,Red Lake,CA
+P0V,ON,Sachigo Lake,CA
+P0V,ON,Sandy Lake,CA
+P0V,ON,Savant Lake,CA
+P0V,ON,Slate Falls,CA
+P0V,ON,Vermilion Bay,CA
+P0V,ON,Wabigoon,CA
+P0V,ON,Waldhof,CA
+P0V,ON,Weagamow Lake,CA
+P0V,ON,Wunnumin Lake,CA
+P0W,ON,Barwick,CA
+P0W,ON,Devlin,CA
+P0W,ON,Emo,CA
+P0W,ON,Mine Centre,CA
+P0W,ON,Morson,CA
+P0W,ON,Pinewood,CA
+P0W,ON,Rainy River,CA
+P0W,ON,Sleeman,CA
+P0W,ON,Stratton,CA
+P0X,ON,Clearwater Bay,CA
+P0X,ON,Grassy Narrows,CA
+P0X,ON,Keewatin,CA
+P0X,ON,Kejick,CA
+P0X,ON,Longbow Lake,CA
+P0X,ON,Minaki,CA
+P0X,ON,Nestor Falls,CA
+P0X,ON,Pawitik,CA
+P0X,ON,Redditt,CA
+P0X,ON,Sioux Narrows,CA
+P0X,ON,Whitedog,CA
+P0Y,ON,Ingolf,CA
+P1A,ON,North Bay,CA
+P1B,ON,North Bay,CA
+P1C,ON,North Bay,CA
+P1H,ON,Huntsville,CA
+P1H,ON,Lake of Bays,CA
+P1L,ON,Beaumaris,CA
+P1L,ON,Bracebridge,CA
+P1P,ON,Gravenhurst,CA
+P2A,ON,McDougall,CA
+P2A,ON,McKellar,CA
+P2A,ON,Parry Sound,CA
+P2A,ON,Seguin,CA
+P2A,ON,The Archipelago,CA
+P2B,ON,Garden Village,CA
+P2B,ON,Sturgeon Falls,CA
+P2N,ON,Kirkland Lake,CA
+P3A,ON,Garson,CA
+P3A,ON,Sudbury,CA
+P3B,ON,Sudbury,CA
+P3C,ON,Sudbury,CA
+P3E,ON,Sudbury,CA
+P3G,ON,Sudbury,CA
+P3L,ON,Garson,CA
+P3N,ON,Val Caron,CA
+P3P,ON,Hanmer,CA
+P3P,ON,Val Therese,CA
+P3Y,ON,Lively,CA
+P4N,ON,Timmins,CA
+P4P,ON,Timmins,CA
+P4R,ON,Timmins,CA
+P5A,ON,Elliot Lake,CA
+P5E,ON,Espanola,CA
+P5N,ON,Kapuskasing,CA
+P6A,ON,Aweres Township,CA
+P6A,ON,Batchewana First Nation,CA
+P6A,ON,Garden River,CA
+P6A,ON,Prince Township,CA
+P6A,ON,Sault Ste. Marie,CA
+P6B,ON,Sault Ste. Marie,CA
+P6C,ON,Sault Ste. Marie,CA
+P7A,ON,Shuniah,CA
+P7A,ON,Thunder Bay,CA
+P7B,ON,Thunder Bay,CA
+P7C,ON,Thunder Bay,CA
+P7E,ON,Thunder Bay,CA
+P7G,ON,Fowler,CA
+P7G,ON,Gorham,CA
+P7G,ON,Jacques,CA
+P7G,ON,Murillo,CA
+P7G,ON,Thunder Bay,CA
+P7J,ON,Fort William First Nation,CA
+P7J,ON,Slate River,CA
+P7J,ON,Thunder Bay,CA
+P7K,ON,Kakabeka Falls,CA
+P7K,ON,Murillo,CA
+P7K,ON,Rosslyn,CA
+P7K,ON,Thunder Bay,CA
+P7L,ON,Neebing,CA
+P8N,ON,Dryden,CA
+P8T,ON,Sioux Lookout,CA
+P9A,ON,Fort Frances,CA
+P9A,ON,Watten Township,CA
+P9N,ON,Dalles,CA
+P9N,ON,Kenora,CA
+R0A,MB,Arnaud,CA
+R0A,MB,Blumenort,CA
+R0A,MB,Buffalo Point,CA
+R0A,MB,Carlowrie,CA
+R0A,MB,Dominion City,CA
+R0A,MB,Dufresne,CA
+R0A,MB,Dufrost,CA
+R0A,MB,Emerson,CA
+R0A,MB,Gardenton,CA
+R0A,MB,Ginew,CA
+R0A,MB,Giroux,CA
+R0A,MB,Green Ridge,CA
+R0A,MB,Grunthal,CA
+R0A,MB,Halbstadt,CA
+R0A,MB,Ile des Chenes,CA
+R0A,MB,Kleefeld,CA
+R0A,MB,La Broquerie West,CA
+R0A,MB,La Broquerie,CA
+R0A,MB,Landmark,CA
+R0A,MB,Lorette,CA
+R0A,MB,Marchand,CA
+R0A,MB,Menisino,CA
+R0A,MB,Middlebro,CA
+R0A,MB,New Bothwell,CA
+R0A,MB,Niverville,CA
+R0A,MB,Otterburne,CA
+R0A,MB,Overstoneville,CA
+R0A,MB,Pansy,CA
+R0A,MB,Piney,CA
+R0A,MB,Randolph,CA
+R0A,MB,Ridgeville,CA
+R0A,MB,Rosa,CA
+R0A,MB,Roseau River,CA
+R0A,MB,Sandilands,CA
+R0A,MB,Sarto,CA
+R0A,MB,South Junction,CA
+R0A,MB,Sprague,CA
+R0A,MB,St Malo,CA
+R0A,MB,St Pierre Jolys,CA
+R0A,MB,Stuartburn,CA
+R0A,MB,Sundown,CA
+R0A,MB,Tolstoi,CA
+R0A,MB,Tourond,CA
+R0A,MB,Vassar,CA
+R0A,MB,Vita,CA
+R0A,MB,Woodmore,CA
+R0A,MB,Woodridge,CA
+R0A,MB,Zhoda,CA
+R0B,MB,Berens River,CA
+R0B,MB,Brochet,CA
+R0B,MB,Channing,CA
+R0B,MB,Churchill,CA
+R0B,MB,Cormorant,CA
+R0B,MB,Cranberry Portage,CA
+R0B,MB,Cross Lake,CA
+R0B,MB,Gillam,CA
+R0B,MB,Gods Lake Narrows,CA
+R0B,MB,Gods River,CA
+R0B,MB,Ilford,CA
+R0B,MB,Island Lake,CA
+R0B,MB,Lac Brochet,CA
+R0B,MB,Leaf Rapids,CA
+R0B,MB,Little Grand Rapids,CA
+R0B,MB,Lynn Lake,CA
+R0B,MB,Moose Lake,CA
+R0B,MB,Negginan,CA
+R0B,MB,Nelson House,CA
+R0B,MB,Norway House,CA
+R0B,MB,Opaskwayak,CA
+R0B,MB,Oxford House,CA
+R0B,MB,Pauingassi,CA
+R0B,MB,Pikwitonei,CA
+R0B,MB,Pukatawagan,CA
+R0B,MB,Red Sucker Lake,CA
+R0B,MB,Shamattawa,CA
+R0B,MB,Sherridon,CA
+R0B,MB,Snow Lake,CA
+R0B,MB,South Indian Lake,CA
+R0B,MB,Split Lake,CA
+R0B,MB,St Theresa Point,CA
+R0B,MB,Stevenson Island,CA
+R0B,MB,Tadoule Lake,CA
+R0B,MB,Thicket Portage,CA
+R0B,MB,Wabowden,CA
+R0B,MB,Wanless,CA
+R0B,MB,Wasagamack,CA
+R0B,MB,York Landing,CA
+R0C,MB,Arborg,CA
+R0C,MB,Argyle,CA
+R0C,MB,Arnes,CA
+R0C,MB,Ashern,CA
+R0C,MB,Balmoral,CA
+R0C,MB,Bloodvein,CA
+R0C,MB,Broad Valley,CA
+R0C,MB,Camp Morton,CA
+R0C,MB,Chatfield,CA
+R0C,MB,Clandeboye,CA
+R0C,MB,Dallas,CA
+R0C,MB,Easterville,CA
+R0C,MB,Eriksdale,CA
+R0C,MB,Fairford,CA
+R0C,MB,Faulkner,CA
+R0C,MB,Fisher Branch,CA
+R0C,MB,Fraserwood,CA
+R0C,MB,Gimli,CA
+R0C,MB,Grahamdale,CA
+R0C,MB,Grand Rapids,CA
+R0C,MB,Grosse Isle,CA
+R0C,MB,Gunton,CA
+R0C,MB,Gypsumville,CA
+R0C,MB,Hilbre,CA
+R0C,MB,Hodgson,CA
+R0C,MB,Inwood,CA
+R0C,MB,Komarno,CA
+R0C,MB,Koostatak,CA
+R0C,MB,Lake Francis,CA
+R0C,MB,Lake Manitoba First Nation,CA
+R0C,MB,Little Bullhead,CA
+R0C,MB,Lundar,CA
+R0C,MB,Malonton,CA
+R0C,MB,Matheson Island,CA
+R0C,MB,Matlock,CA
+R0C,MB,Meleb,CA
+R0C,MB,Moosehorn,CA
+R0C,MB,Mulvihill,CA
+R0C,MB,Narcisse,CA
+R0C,MB,Oak Point,CA
+R0C,MB,Oakview,CA
+R0C,MB,Peguis,CA
+R0C,MB,Petersfield,CA
+R0C,MB,Poplarfield,CA
+R0C,MB,Princess Harbour,CA
+R0C,MB,Riverton,CA
+R0C,MB,Sandy Hook,CA
+R0C,MB,Silver,CA
+R0C,MB,St Laurent,CA
+R0C,MB,St Martin,CA
+R0C,MB,Steep Rock,CA
+R0C,MB,Stonewall,CA
+R0C,MB,Stony Mountain,CA
+R0C,MB,Teulon,CA
+R0C,MB,Vogar,CA
+R0C,MB,Warren,CA
+R0C,MB,Winnipeg Beach,CA
+R0C,MB,Woodlands,CA
+R0E,MB,Anola,CA
+R0E,MB,Beaconia,CA
+R0E,MB,Beausejour,CA
+R0E,MB,Belair,CA
+R0E,MB,Bissett,CA
+R0E,MB,Dugald,CA
+R0E,MB,East Braintree,CA
+R0E,MB,East Selkirk,CA
+R0E,MB,Elma,CA
+R0E,MB,Falcon Beach,CA
+R0E,MB,Fort Alexander,CA
+R0E,MB,Garson,CA
+R0E,MB,Grand Marais,CA
+R0E,MB,Great Falls,CA
+R0E,MB,Hadashville,CA
+R0E,MB,Hazelridge,CA
+R0E,MB,Lac du Bonnet,CA
+R0E,MB,Libau,CA
+R0E,MB,Manigotagan,CA
+R0E,MB,O'Hanly,CA
+R0E,MB,Oakbank,CA
+R0E,MB,Pinawa,CA
+R0E,MB,Pine Falls,CA
+R0E,MB,Pointe du Bois,CA
+R0E,MB,Powerview,CA
+R0E,MB,Rennie,CA
+R0E,MB,Richer,CA
+R0E,MB,River Hills,CA
+R0E,MB,Scanterbury,CA
+R0E,MB,Seddons Corner,CA
+R0E,MB,Seven Sisters Falls,CA
+R0E,MB,St. Georges,CA
+R0E,MB,Stead,CA
+R0E,MB,Traverse Bay,CA
+R0E,MB,Tyndall,CA
+R0E,MB,Victoria Beach,CA
+R0E,MB,Wanipigow,CA
+R0E,MB,Whitemouth,CA
+R0E,MB,Whiteshell,CA
+R0G,MB,Altamont,CA
+R0G,MB,Altona,CA
+R0G,MB,Aubigny,CA
+R0G,MB,Brunkild,CA
+R0G,MB,Bruxelles,CA
+R0G,MB,Carman,CA
+R0G,MB,Darlingford,CA
+R0G,MB,Domain,CA
+R0G,MB,Elm Creek,CA
+R0G,MB,Fannystelle,CA
+R0G,MB,Glenlea,CA
+R0G,MB,Graysville,CA
+R0G,MB,Gretna,CA
+R0G,MB,Haywood,CA
+R0G,MB,Holland,CA
+R0G,MB,Homewood,CA
+R0G,MB,Horndean,CA
+R0G,MB,La Riviere,CA
+R0G,MB,La Salle,CA
+R0G,MB,Letellier,CA
+R0G,MB,Lowe Farm,CA
+R0G,MB,Manitou,CA
+R0G,MB,Miami,CA
+R0G,MB,Morris,CA
+R0G,MB,Notre Dame de Lourdes,CA
+R0G,MB,Oak Bluff,CA
+R0G,MB,Pilot Mound,CA
+R0G,MB,Plum Coulee,CA
+R0G,MB,Rathwell,CA
+R0G,MB,Roland,CA
+R0G,MB,Roseisle,CA
+R0G,MB,Rosenfeld,CA
+R0G,MB,Rosenort,CA
+R0G,MB,Sanford,CA
+R0G,MB,Snowflake,CA
+R0G,MB,Somerset,CA
+R0G,MB,Sperling,CA
+R0G,MB,Springstein,CA
+R0G,MB,St Claude,CA
+R0G,MB,St Jean Baptiste,CA
+R0G,MB,St Joseph,CA
+R0G,MB,St Leon,CA
+R0G,MB,Starbuck,CA
+R0G,MB,Ste Agathe,CA
+R0G,MB,Stephenfield,CA
+R0G,MB,Swan Lake,CA
+R0G,MB,Thornhill,CA
+R0G,MB,Treherne,CA
+R0G,MB,Vermette,CA
+R0H,MB,Alonsa,CA
+R0H,MB,Amaranth,CA
+R0H,MB,Austin,CA
+R0H,MB,Bagot,CA
+R0H,MB,Edwin,CA
+R0H,MB,Elie,CA
+R0H,MB,High Bluff,CA
+R0H,MB,Kinosota,CA
+R0H,MB,Lakeland,CA
+R0H,MB,Langruth,CA
+R0H,MB,Lavenham,CA
+R0H,MB,Macdonald,CA
+R0H,MB,Macgregor,CA
+R0H,MB,Marius,CA
+R0H,MB,Marquette,CA
+R0H,MB,Newton Siding,CA
+R0H,MB,Oakville,CA
+R0H,MB,Poplar Point,CA
+R0H,MB,Rossendale,CA
+R0H,MB,Rosser,CA
+R0H,MB,Sidney,CA
+R0H,MB,Silver Ridge,CA
+R0H,MB,Southport,CA
+R0H,MB,St Ambroise,CA
+R0H,MB,St Eustache,CA
+R0H,MB,St Marks,CA
+R0H,MB,Westbourne,CA
+R0H,MB,Woodside,CA
+R0J,MB,Angusville,CA
+R0J,MB,Arden,CA
+R0J,MB,Bethany,CA
+R0J,MB,Binscarth,CA
+R0J,MB,Birnie,CA
+R0J,MB,Clanwilliam,CA
+R0J,MB,Dropmore,CA
+R0J,MB,Eden,CA
+R0J,MB,Elphinstone,CA
+R0J,MB,Erickson,CA
+R0J,MB,Foxwarren,CA
+R0J,MB,Franklin,CA
+R0J,MB,Gladstone,CA
+R0J,MB,Glenella,CA
+R0J,MB,Inglis,CA
+R0J,MB,Kelwood,CA
+R0J,MB,Lake Audy,CA
+R0J,MB,Laurier,CA
+R0J,MB,McCreary,CA
+R0J,MB,Menzie,CA
+R0J,MB,Minnedosa,CA
+R0J,MB,Mountain Road,CA
+R0J,MB,Neepawa,CA
+R0J,MB,Newdale,CA
+R0J,MB,Oakburn,CA
+R0J,MB,Olha,CA
+R0J,MB,Onanole,CA
+R0J,MB,Plumas,CA
+R0J,MB,Polonia,CA
+R0J,MB,Riding Mountain,CA
+R0J,MB,Rossburn,CA
+R0J,MB,Russell,CA
+R0J,MB,Sandy Lake,CA
+R0J,MB,Shellmouth,CA
+R0J,MB,Shoal Lake,CA
+R0J,MB,Solsgirth,CA
+R0J,MB,Strathclair,CA
+R0J,MB,Vista,CA
+R0J,MB,Waldersee,CA
+R0J,MB,Waywayseecappo,CA
+R0K,MB,Alexander,CA
+R0K,MB,Baldur,CA
+R0K,MB,Belmont,CA
+R0K,MB,Boissevain,CA
+R0K,MB,Brookdale,CA
+R0K,MB,Carberry,CA
+R0K,MB,Cardale,CA
+R0K,MB,Carroll,CA
+R0K,MB,Cartwright,CA
+R0K,MB,Clearwater,CA
+R0K,MB,Crystal City,CA
+R0K,MB,Cypress River,CA
+R0K,MB,Douglas,CA
+R0K,MB,Dunrea,CA
+R0K,MB,Elgin,CA
+R0K,MB,Fairfax,CA
+R0K,MB,Forrest Station,CA
+R0K,MB,Glenboro,CA
+R0K,MB,Glenora,CA
+R0K,MB,Holmfield,CA
+R0K,MB,Justice,CA
+R0K,MB,Killarney,CA
+R0K,MB,Margaret,CA
+R0K,MB,Mariapolis,CA
+R0K,MB,Mather,CA
+R0K,MB,Minto,CA
+R0K,MB,Nesbitt,CA
+R0K,MB,Ninette,CA
+R0K,MB,Ninga,CA
+R0K,MB,Oak River,CA
+R0K,MB,Rapid City,CA
+R0K,MB,Rivers,CA
+R0K,MB,Shilo,CA
+R0K,MB,Souris,CA
+R0K,MB,St Alphonse,CA
+R0K,MB,Stockton,CA
+R0K,MB,Wawanesa,CA
+R0K,MB,Wellwood,CA
+R0L,MB,Ashville,CA
+R0L,MB,Barrows,CA
+R0L,MB,Benito,CA
+R0L,MB,Birch River,CA
+R0L,MB,Boggy Creek,CA
+R0L,MB,Bowsman,CA
+R0L,MB,Camperville,CA
+R0L,MB,Cayer,CA
+R0L,MB,Cowan,CA
+R0L,MB,Crane River,CA
+R0L,MB,Duck Bay,CA
+R0L,MB,Durban,CA
+R0L,MB,Ebb and Flow,CA
+R0L,MB,Eddystone,CA
+R0L,MB,Ethelbert,CA
+R0L,MB,Fork River,CA
+R0L,MB,Garland,CA
+R0L,MB,Gilbert Plains,CA
+R0L,MB,Grandview,CA
+R0L,MB,Kenville,CA
+R0L,MB,Mafeking,CA
+R0L,MB,Makinak,CA
+R0L,MB,Meadow Portage,CA
+R0L,MB,Minitonas,CA
+R0L,MB,Ochre River,CA
+R0L,MB,Pelican Rapids,CA
+R0L,MB,Pine River,CA
+R0L,MB,Renwer,CA
+R0L,MB,Roblin,CA
+R0L,MB,Rock Ridge,CA
+R0L,MB,Rorketon,CA
+R0L,MB,San Clara,CA
+R0L,MB,Shortdale,CA
+R0L,MB,Sifton,CA
+R0L,MB,Skownan,CA
+R0L,MB,Ste Rose du Lac,CA
+R0L,MB,Swan River,CA
+R0L,MB,Tootinaowaziibeeng,CA
+R0L,MB,Toutes Aides,CA
+R0L,MB,Valley River,CA
+R0L,MB,Waterhen,CA
+R0L,MB,Winnipegosis,CA
+R0M,MB,Arrow River,CA
+R0M,MB,Belleview,CA
+R0M,MB,Beulah,CA
+R0M,MB,Birtle,CA
+R0M,MB,Bradwardine,CA
+R0M,MB,Coulter,CA
+R0M,MB,Crandall,CA
+R0M,MB,Cromer,CA
+R0M,MB,Decker,CA
+R0M,MB,Deleau,CA
+R0M,MB,Deloraine,CA
+R0M,MB,Elkhorn,CA
+R0M,MB,Goodlands,CA
+R0M,MB,Griswold,CA
+R0M,MB,Hamiota,CA
+R0M,MB,Harding,CA
+R0M,MB,Hargrave,CA
+R0M,MB,Hartney,CA
+R0M,MB,Isabella,CA
+R0M,MB,Kenton,CA
+R0M,MB,Kirkella,CA
+R0M,MB,Kola,CA
+R0M,MB,Lauder,CA
+R0M,MB,Lenore,CA
+R0M,MB,Lyleton,CA
+R0M,MB,Manson,CA
+R0M,MB,McAuley,CA
+R0M,MB,Medora,CA
+R0M,MB,Melita,CA
+R0M,MB,Miniota,CA
+R0M,MB,Napinka,CA
+R0M,MB,Oak Lake,CA
+R0M,MB,Pierson,CA
+R0M,MB,Pipestone,CA
+R0M,MB,Reston,CA
+R0M,MB,Sinclair,CA
+R0M,MB,St Lazare,CA
+R0M,MB,Tilston,CA
+R0M,MB,Virden,CA
+R0M,MB,Waskada,CA
+R1A,MB,Lockport,CA
+R1A,MB,Selkirk,CA
+R1A,MB,St Andrews,CA
+R1B,MB,Lockport,CA
+R1C,MB,Gonor,CA
+R1C,MB,Narol,CA
+R1C,MB,West Pine Ridge,CA
+R1N,MB,Dakota Tipi,CA
+R1N,MB,Portage la Prairie,CA
+R2C,MB,Springfield,CA
+R2C,MB,Winnipeg,CA
+R2E,MB,East St Paul,CA
+R2E,MB,Springfield,CA
+R2G,MB,East St Paul,CA
+R2G,MB,Winnipeg,CA
+R2H,MB,Winnipeg,CA
+R2J,MB,Springfield,CA
+R2J,MB,Winnipeg,CA
+R2K,MB,Winnipeg,CA
+R2L,MB,Winnipeg,CA
+R2M,MB,Winnipeg,CA
+R2N,MB,Winnipeg,CA
+R2P,MB,West St Paul,CA
+R2P,MB,Winnipeg,CA
+R2R,MB,Winnipeg,CA
+R2V,MB,West St Paul,CA
+R2V,MB,Winnipeg,CA
+R2W,MB,Winnipeg,CA
+R2X,MB,Winnipeg,CA
+R2Y,MB,Winnipeg,CA
+R3A,MB,Winnipeg,CA
+R3B,MB,Winnipeg,CA
+R3C,MB,Winnipeg,CA
+R3E,MB,Winnipeg,CA
+R3G,MB,Winnipeg,CA
+R3H,MB,Winnipeg,CA
+R3J,MB,Winnipeg,CA
+R3K,MB,Winnipeg,CA
+R3L,MB,Winnipeg,CA
+R3M,MB,Winnipeg,CA
+R3N,MB,Winnipeg,CA
+R3P,MB,Winnipeg,CA
+R3R,MB,Winnipeg,CA
+R3S,MB,Winnipeg,CA
+R3T,MB,Winnipeg,CA
+R3V,MB,Winnipeg,CA
+R3W,MB,Winnipeg,CA
+R3X,MB,Springfield,CA
+R3X,MB,Winnipeg,CA
+R3Y,MB,Winnipeg,CA
+R4A,MB,West St Paul,CA
+R4G,MB,Oak Bluff,CA
+R4H,MB,Headingley,CA
+R4J,MB,Headingley,CA
+R4K,MB,Cartier,CA
+R4K,MB,Dacotah,CA
+R4L,MB,St Francois Xavier,CA
+R5A,MB,Grande Pointe,CA
+R5A,MB,Howden,CA
+R5A,MB,La Barriere,CA
+R5A,MB,St Adolphe,CA
+R5A,MB,St Germain South,CA
+R5G,MB,Mitchell,CA
+R5G,MB,Steinbach,CA
+R5H,MB,Ste Anne,CA
+R6M,MB,Morden,CA
+R6W,MB,Reinfeld,CA
+R6W,MB,Schanzenfeld,CA
+R6W,MB,Winkler,CA
+R7A,MB,Brandon,CA
+R7B,MB,Brandon,CA
+R7C,MB,Brandon,CA
+R7N,MB,Dauphin,CA
+R8A,MB,Flin Flon,CA
+R8N,MB,Thompson,CA
+R9A,MB,The Pas,CA
+S0A,SK,Abernethy,CA
+S0A,SK,Arran,CA
+S0A,SK,Atwater,CA
+S0A,SK,Bangor,CA
+S0A,SK,Bankend,CA
+S0A,SK,Bredenbury,CA
+S0A,SK,Buchanan,CA
+S0A,SK,Calder,CA
+S0A,SK,Canora,CA
+S0A,SK,Churchbridge,CA
+S0A,SK,Clair,CA
+S0A,SK,Danbury,CA
+S0A,SK,Dubuc,CA
+S0A,SK,Duff,CA
+S0A,SK,Ebenezer,CA
+S0A,SK,Elfros,CA
+S0A,SK,Endeavour,CA
+S0A,SK,Esterhazy,CA
+S0A,SK,Fenwood,CA
+S0A,SK,Foam Lake,CA
+S0A,SK,Gerald,CA
+S0A,SK,Good Spirit Acres,CA
+S0A,SK,Goodeve,CA
+S0A,SK,Grayson,CA
+S0A,SK,Hazel Dell,CA
+S0A,SK,Hubbard,CA
+S0A,SK,Hyas,CA
+S0A,SK,Insinger,CA
+S0A,SK,Invermay,CA
+S0A,SK,Ituna,CA
+S0A,SK,Jedburgh,CA
+S0A,SK,Kamsack,CA
+S0A,SK,Kelliher,CA
+S0A,SK,Kelvington,CA
+S0A,SK,Killaly,CA
+S0A,SK,Kuroki,CA
+S0A,SK,Kylemore,CA
+S0A,SK,Langenburg,CA
+S0A,SK,Lemberg,CA
+S0A,SK,Leross,CA
+S0A,SK,Leslie,CA
+S0A,SK,Lestock,CA
+S0A,SK,Lintlaw,CA
+S0A,SK,Macnutt,CA
+S0A,SK,Margo,CA
+S0A,SK,Melville,CA
+S0A,SK,Mikado,CA
+S0A,SK,Mozart,CA
+S0A,SK,Neudorf,CA
+S0A,SK,Norquay,CA
+S0A,SK,Nut Mountain,CA
+S0A,SK,Okla,CA
+S0A,SK,Pelly,CA
+S0A,SK,Preeceville,CA
+S0A,SK,Punnichy,CA
+S0A,SK,Quill Lake,CA
+S0A,SK,Quinton,CA
+S0A,SK,Rama,CA
+S0A,SK,Raymore,CA
+S0A,SK,Rhein,CA
+S0A,SK,Rocanville,CA
+S0A,SK,Rokeby,CA
+S0A,SK,Runnymede,CA
+S0A,SK,Saltcoats,CA
+S0A,SK,Semans,CA
+S0A,SK,Sheho,CA
+S0A,SK,Springside,CA
+S0A,SK,Spy Hill,CA
+S0A,SK,Stenen,CA
+S0A,SK,Stockholm,CA
+S0A,SK,Stornoway,CA
+S0A,SK,Sturgis,CA
+S0A,SK,Tantallon,CA
+S0A,SK,Theodore,CA
+S0A,SK,Togo,CA
+S0A,SK,Tuffnell,CA
+S0A,SK,Veregin,CA
+S0A,SK,Wadena,CA
+S0A,SK,Waldron,CA
+S0A,SK,Welwyn,CA
+S0A,SK,West Bend,CA
+S0A,SK,Willowbrook,CA
+S0A,SK,Wishart,CA
+S0A,SK,Wroxton,CA
+S0A,SK,Wynyard,CA
+S0A,SK,Yarbo,CA
+S0A,SK,Yellow Quill,CA
+S0C,SK,Alameda,CA
+S0C,SK,Alida,CA
+S0C,SK,Antler,CA
+S0C,SK,Arcola,CA
+S0C,SK,Beaubier,CA
+S0C,SK,Bellegarde,CA
+S0C,SK,Bengough,CA
+S0C,SK,Benson,CA
+S0C,SK,Bienfait,CA
+S0C,SK,Bromhead,CA
+S0C,SK,Carievale,CA
+S0C,SK,Carlyle,CA
+S0C,SK,Carnduff,CA
+S0C,SK,Ceylon,CA
+S0C,SK,Colgate,CA
+S0C,SK,Fertile,CA
+S0C,SK,Forget,CA
+S0C,SK,Frobisher,CA
+S0C,SK,Gainsborough,CA
+S0C,SK,Gladmar,CA
+S0C,SK,Glasnevin,CA
+S0C,SK,Glen Ewen,CA
+S0C,SK,Goodwater,CA
+S0C,SK,Griffin,CA
+S0C,SK,Halbrite,CA
+S0C,SK,Kenosee Lake,CA
+S0C,SK,Khedive,CA
+S0C,SK,Kisbey,CA
+S0C,SK,Lake Alma,CA
+S0C,SK,Lampman,CA
+S0C,SK,Macoun,CA
+S0C,SK,Manor,CA
+S0C,SK,Midale,CA
+S0C,SK,Minton,CA
+S0C,SK,North Portal,CA
+S0C,SK,North Weyburn,CA
+S0C,SK,Ogema,CA
+S0C,SK,Oungre,CA
+S0C,SK,Oxbow,CA
+S0C,SK,Pangman,CA
+S0C,SK,Parkman,CA
+S0C,SK,Radville,CA
+S0C,SK,Redvers,CA
+S0C,SK,Steelman,CA
+S0C,SK,Storthoaks,CA
+S0C,SK,Torquay,CA
+S0C,SK,Tribune,CA
+S0C,SK,Trossachs,CA
+S0C,SK,Wauchope,CA
+S0E,SK,Arborfield,CA
+S0E,SK,Archerwill,CA
+S0E,SK,Aylsham,CA
+S0E,SK,Bjorkdale,CA
+S0E,SK,Brockington,CA
+S0E,SK,Brooksby,CA
+S0E,SK,Carragana,CA
+S0E,SK,Carrot River,CA
+S0E,SK,Chelan,CA
+S0E,SK,Codette,CA
+S0E,SK,Crooked River,CA
+S0E,SK,Cumberland House,CA
+S0E,SK,Fairy Glen,CA
+S0E,SK,Fosston,CA
+S0E,SK,Gronlid,CA
+S0E,SK,Hendon,CA
+S0E,SK,Hudson Bay,CA
+S0E,SK,Melfort,CA
+S0E,SK,Mistatim,CA
+S0E,SK,Nipawin,CA
+S0E,SK,Pakwaw Lake,CA
+S0E,SK,Porcupine Plain,CA
+S0E,SK,Prairie River,CA
+S0E,SK,Red Earth,CA
+S0E,SK,Ridgedale,CA
+S0E,SK,Rose Valley,CA
+S0E,SK,Star City,CA
+S0E,SK,Sylvania,CA
+S0E,SK,Tisdale,CA
+S0E,SK,Weekes,CA
+S0E,SK,Zenon Park,CA
+S0G,SK,Avonhurst,CA
+S0G,SK,Aylesbury,CA
+S0G,SK,Balcarres,CA
+S0G,SK,Balgonie,CA
+S0G,SK,Belle Plaine,CA
+S0G,SK,Bethune,CA
+S0G,SK,Bladworth,CA
+S0G,SK,Broadview,CA
+S0G,SK,Bulyea,CA
+S0G,SK,Candiac,CA
+S0G,SK,Chamberlain,CA
+S0G,SK,Colfax,CA
+S0G,SK,Corning,CA
+S0G,SK,Cowessess,CA
+S0G,SK,Craik,CA
+S0G,SK,Craven,CA
+S0G,SK,Creelman,CA
+S0G,SK,Cupar,CA
+S0G,SK,Cymric,CA
+S0G,SK,Davidson,CA
+S0G,SK,Davin,CA
+S0G,SK,Dilke,CA
+S0G,SK,Duval,CA
+S0G,SK,Dysart,CA
+S0G,SK,Earl Grey,CA
+S0G,SK,Edenwold,CA
+S0G,SK,Edgeley,CA
+S0G,SK,Fairlight,CA
+S0G,SK,Fillmore,CA
+S0G,SK,Findlater,CA
+S0G,SK,Fleming,CA
+S0G,SK,Fort Qu'appelle,CA
+S0G,SK,Francis,CA
+S0G,SK,Glenavon,CA
+S0G,SK,Govan,CA
+S0G,SK,Gray,CA
+S0G,SK,Grenfell,CA
+S0G,SK,Hanley,CA
+S0G,SK,Heward,CA
+S0G,SK,Holdfast,CA
+S0G,SK,Imperial,CA
+S0G,SK,Indian Head,CA
+S0G,SK,Kenaston,CA
+S0G,SK,Kendal,CA
+S0G,SK,Kennedy,CA
+S0G,SK,Kipling,CA
+S0G,SK,Kronau,CA
+S0G,SK,Lajord,CA
+S0G,SK,Lang,CA
+S0G,SK,Langbank,CA
+S0G,SK,Lebret,CA
+S0G,SK,Lewvan,CA
+S0G,SK,Liberty,CA
+S0G,SK,Lipton,CA
+S0G,SK,Lumsden,CA
+S0G,SK,Markinch,CA
+S0G,SK,Maryfield,CA
+S0G,SK,McLean,CA
+S0G,SK,McTaggart,CA
+S0G,SK,Milestone,CA
+S0G,SK,Montmartre,CA
+S0G,SK,Moosomin,CA
+S0G,SK,Nokomis,CA
+S0G,SK,Odessa,CA
+S0G,SK,Osage,CA
+S0G,SK,Pasqua,CA
+S0G,SK,Peebles,CA
+S0G,SK,Pense,CA
+S0G,SK,Penzance,CA
+S0G,SK,Pilot Butte,CA
+S0G,SK,Qu'appelle,CA
+S0G,SK,Regina Beach,CA
+S0G,SK,Riceton,CA
+S0G,SK,Richardson,CA
+S0G,SK,Rouleau,CA
+S0G,SK,Sedley,CA
+S0G,SK,Silton,CA
+S0G,SK,Simpson,CA
+S0G,SK,Sintaluta,CA
+S0G,SK,Southey,CA
+S0G,SK,Stalwart,CA
+S0G,SK,Stony Beach,CA
+S0G,SK,Stoughton,CA
+S0G,SK,Strasbourg,CA
+S0G,SK,Summerberry,CA
+S0G,SK,Tyvan,CA
+S0G,SK,Vibank,CA
+S0G,SK,Wapella,CA
+S0G,SK,Wawota,CA
+S0G,SK,Whitewood,CA
+S0G,SK,Wilcox,CA
+S0G,SK,Windthorst,CA
+S0G,SK,Wolseley,CA
+S0G,SK,Yellow Grass,CA
+S0G,SK,Zehner,CA
+S0H,SK,Ardill,CA
+S0H,SK,Assiniboia,CA
+S0H,SK,Avonlea,CA
+S0H,SK,Bateman,CA
+S0H,SK,Big Beaver,CA
+S0H,SK,Briercrest,CA
+S0H,SK,Broderick,CA
+S0H,SK,Brownlee,CA
+S0H,SK,Bushell Park,CA
+S0H,SK,Cardross,CA
+S0H,SK,Caron,CA
+S0H,SK,Caronport,CA
+S0H,SK,Central Butte,CA
+S0H,SK,Chaplin,CA
+S0H,SK,Claybank,CA
+S0H,SK,Coderre,CA
+S0H,SK,Congress,CA
+S0H,SK,Coronach,CA
+S0H,SK,Courval,CA
+S0H,SK,Crane Valley,CA
+S0H,SK,Drinkwater,CA
+S0H,SK,Dummer,CA
+S0H,SK,Elbow,CA
+S0H,SK,Ernfold,CA
+S0H,SK,Eyebrow,CA
+S0H,SK,Ferland,CA
+S0H,SK,Fife Lake,CA
+S0H,SK,Fir Mountain,CA
+S0H,SK,Flintoft,CA
+S0H,SK,Glenside,CA
+S0H,SK,Glentworth,CA
+S0H,SK,Gouldtown,CA
+S0H,SK,Gravelbourg,CA
+S0H,SK,Hawarden,CA
+S0H,SK,Hearne,CA
+S0H,SK,Herbert,CA
+S0H,SK,Hodgeville,CA
+S0H,SK,Kayville,CA
+S0H,SK,Keeler,CA
+S0H,SK,Kincaid,CA
+S0H,SK,Lafleche,CA
+S0H,SK,Limerick,CA
+S0H,SK,Lisieux,CA
+S0H,SK,Loreburn,CA
+S0H,SK,Main Centre,CA
+S0H,SK,Mankota,CA
+S0H,SK,Marquis,CA
+S0H,SK,Mazenod,CA
+S0H,SK,McCord,CA
+S0H,SK,Meyronne,CA
+S0H,SK,Morse,CA
+S0H,SK,Mortlach,CA
+S0H,SK,Mossbank,CA
+S0H,SK,Ormiston,CA
+S0H,SK,Palmer,CA
+S0H,SK,Parkbeg,CA
+S0H,SK,Parry,CA
+S0H,SK,Prairie View,CA
+S0H,SK,Riverhurst,CA
+S0H,SK,Rockglen,CA
+S0H,SK,Rush Lake,CA
+S0H,SK,Scout Lake,CA
+S0H,SK,Shamrock,CA
+S0H,SK,Spring Valley,CA
+S0H,SK,St Victor,CA
+S0H,SK,Strongfield,CA
+S0H,SK,Truax,CA
+S0H,SK,Tugaske,CA
+S0H,SK,Tuxford,CA
+S0H,SK,Verwood,CA
+S0H,SK,Viceroy,CA
+S0H,SK,Waldeck,CA
+S0H,SK,Willow Bunch,CA
+S0H,SK,Wood Mountain,CA
+S0H,SK,Woodrow,CA
+S0J,SK,Air Ronge,CA
+S0J,SK,Albertville,CA
+S0J,SK,Beatty,CA
+S0J,SK,Big River,CA
+S0J,SK,Birch Hills,CA
+S0J,SK,Black Lake,CA
+S0J,SK,Blaine Lake,CA
+S0J,SK,Candle Lake,CA
+S0J,SK,Canwood,CA
+S0J,SK,Chitek Lake,CA
+S0J,SK,Choiceland,CA
+S0J,SK,Christopher Lake,CA
+S0J,SK,Debden,CA
+S0J,SK,Fond du Lac,CA
+S0J,SK,Foxford,CA
+S0J,SK,Garrick,CA
+S0J,SK,Hafford,CA
+S0J,SK,Hagen,CA
+S0J,SK,Henribourg,CA
+S0J,SK,Hoey,CA
+S0J,SK,Holbein,CA
+S0J,SK,Kinistino,CA
+S0J,SK,Krydor,CA
+S0J,SK,La Ronge,CA
+S0J,SK,Leask,CA
+S0J,SK,Leoville,CA
+S0J,SK,Love,CA
+S0J,SK,Marcelin,CA
+S0J,SK,Mayview,CA
+S0J,SK,Meath Park,CA
+S0J,SK,Mildred,CA
+S0J,SK,Mont Nebo,CA
+S0J,SK,Montreal Lake,CA
+S0J,SK,Muskoday,CA
+S0J,SK,Paddockwood,CA
+S0J,SK,Parkside,CA
+S0J,SK,Pinehouse Lake,CA
+S0J,SK,Shell Lake,CA
+S0J,SK,Shellbrook,CA
+S0J,SK,Shipman,CA
+S0J,SK,Smeaton,CA
+S0J,SK,Snowden,CA
+S0J,SK,Southend,CA
+S0J,SK,Spiritwood,CA
+S0J,SK,Spruce Home,CA
+S0J,SK,St Louis,CA
+S0J,SK,Stanley Mission,CA
+S0J,SK,Stony Rapids,CA
+S0J,SK,Stump Lake,CA
+S0J,SK,Sturgeon Lake,CA
+S0J,SK,Timber Bay,CA
+S0J,SK,Uranium City,CA
+S0J,SK,Victoire,CA
+S0J,SK,Waskesiu Lake,CA
+S0J,SK,Weirdale,CA
+S0J,SK,Weldon,CA
+S0J,SK,Weyakwin,CA
+S0J,SK,White Fox,CA
+S0J,SK,Wollaston Lake,CA
+S0K,SK,Aberdeen,CA
+S0K,SK,Allan,CA
+S0K,SK,Alvena,CA
+S0K,SK,Annaheim,CA
+S0K,SK,Arelee,CA
+S0K,SK,Asquith,CA
+S0K,SK,Biggar,CA
+S0K,SK,Borden,CA
+S0K,SK,Bradwell,CA
+S0K,SK,Bruno,CA
+S0K,SK,Burr,CA
+S0K,SK,Cando,CA
+S0K,SK,Carmel,CA
+S0K,SK,Clavet,CA
+S0K,SK,Colonsay,CA
+S0K,SK,Crystal Springs,CA
+S0K,SK,Cudworth,CA
+S0K,SK,Dafoe,CA
+S0K,SK,Dalmeny,CA
+S0K,SK,Domremy,CA
+S0K,SK,Drake,CA
+S0K,SK,Duck Lake,CA
+S0K,SK,Dundurn,CA
+S0K,SK,Duperow,CA
+S0K,SK,Elstow,CA
+S0K,SK,Englefeld,CA
+S0K,SK,Fulda,CA
+S0K,SK,Grandora,CA
+S0K,SK,Guernsey,CA
+S0K,SK,Hague,CA
+S0K,SK,Handel,CA
+S0K,SK,Hepburn,CA
+S0K,SK,Humboldt,CA
+S0K,SK,Jansen,CA
+S0K,SK,Kelfield,CA
+S0K,SK,Kinley,CA
+S0K,SK,Lac Vert,CA
+S0K,SK,Laird,CA
+S0K,SK,Lake Lenore,CA
+S0K,SK,Landis,CA
+S0K,SK,Langham,CA
+S0K,SK,Lanigan,CA
+S0K,SK,Leroy,CA
+S0K,SK,Lockwood,CA
+S0K,SK,Macdowall,CA
+S0K,SK,Manitou Beach,CA
+S0K,SK,Martensville,CA
+S0K,SK,Meacham,CA
+S0K,SK,Meskanaw,CA
+S0K,SK,Middle Lake,CA
+S0K,SK,Muenster,CA
+S0K,SK,Naicam,CA
+S0K,SK,Osler,CA
+S0K,SK,Pathlow,CA
+S0K,SK,Perdue,CA
+S0K,SK,Phippen,CA
+S0K,SK,Pilger,CA
+S0K,SK,Pleasantdale,CA
+S0K,SK,Plunkett,CA
+S0K,SK,Prud'homme,CA
+S0K,SK,Radisson,CA
+S0K,SK,Reward,CA
+S0K,SK,Rosthern,CA
+S0K,SK,Ruthilda,CA
+S0K,SK,Scott,CA
+S0K,SK,Sonningdale,CA
+S0K,SK,Spalding,CA
+S0K,SK,Springwater,CA
+S0K,SK,St Benedict,CA
+S0K,SK,St Brieux,CA
+S0K,SK,St Denis,CA
+S0K,SK,St Gregor,CA
+S0K,SK,St Isidore de Bellevue,CA
+S0K,SK,Tramping Lake,CA
+S0K,SK,Tway,CA
+S0K,SK,Unity,CA
+S0K,SK,Viscount,CA
+S0K,SK,Vonda,CA
+S0K,SK,Wakaw,CA
+S0K,SK,Waldheim,CA
+S0K,SK,Warman,CA
+S0K,SK,Watrous,CA
+S0K,SK,Watson,CA
+S0K,SK,Wilkie,CA
+S0K,SK,Yellow Creek,CA
+S0K,SK,Young,CA
+S0L,SK,Alsask,CA
+S0L,SK,Ardath,CA
+S0L,SK,Beechy,CA
+S0L,SK,Birsay,CA
+S0L,SK,Brock,CA
+S0L,SK,Cactus Lake,CA
+S0L,SK,Coleville,CA
+S0L,SK,Conquest,CA
+S0L,SK,D'Arcy Station,CA
+S0L,SK,Delisle,CA
+S0L,SK,Demaine,CA
+S0L,SK,Denzil,CA
+S0L,SK,Dinsmore,CA
+S0L,SK,Dodsland,CA
+S0L,SK,Eatonia,CA
+S0L,SK,Elrose,CA
+S0L,SK,Eston,CA
+S0L,SK,Evesham,CA
+S0L,SK,Fiske,CA
+S0L,SK,Flaxcombe,CA
+S0L,SK,Glidden,CA
+S0L,SK,Harris,CA
+S0L,SK,Herschel,CA
+S0L,SK,Hoosier,CA
+S0L,SK,Kerrobert,CA
+S0L,SK,Kindersley,CA
+S0L,SK,Kyle,CA
+S0L,SK,Lacadena,CA
+S0L,SK,Laporte,CA
+S0L,SK,Loverna,CA
+S0L,SK,Lucky Lake,CA
+S0L,SK,Luseland,CA
+S0L,SK,Macklin,CA
+S0L,SK,Macrorie,CA
+S0L,SK,Madison,CA
+S0L,SK,Major,CA
+S0L,SK,Mantario,CA
+S0L,SK,Marengo,CA
+S0L,SK,Milden,CA
+S0L,SK,Netherhill,CA
+S0L,SK,Outlook,CA
+S0L,SK,Plato,CA
+S0L,SK,Plenty,CA
+S0L,SK,Primate,CA
+S0L,SK,Richlea,CA
+S0L,SK,Rosetown,CA
+S0L,SK,Senlac,CA
+S0L,SK,Smiley,CA
+S0L,SK,Sovereign,CA
+S0L,SK,Stranraer,CA
+S0L,SK,Tessier,CA
+S0L,SK,Tyner,CA
+S0L,SK,Vanscoy,CA
+S0L,SK,White Bear,CA
+S0L,SK,Wiseton,CA
+S0L,SK,Zealandia,CA
+S0M,SK,Alticane,CA
+S0M,SK,Baldwinton,CA
+S0M,SK,Barthel,CA
+S0M,SK,Battleford,CA
+S0M,SK,Beauval,CA
+S0M,SK,Bright Sand,CA
+S0M,SK,Buffalo Narrows,CA
+S0M,SK,Canoe Narrows,CA
+S0M,SK,Clearwater River,CA
+S0M,SK,Cochin,CA
+S0M,SK,Cole Bay,CA
+S0M,SK,Cut Knife,CA
+S0M,SK,Delmas,CA
+S0M,SK,Denholm,CA
+S0M,SK,Dillon,CA
+S0M,SK,Dorintosh,CA
+S0M,SK,Edam,CA
+S0M,SK,Frenchman Butte,CA
+S0M,SK,Gallivan,CA
+S0M,SK,Glaslyn,CA
+S0M,SK,Glenbush,CA
+S0M,SK,Goodsoil,CA
+S0M,SK,Green Lake,CA
+S0M,SK,Ile-a-la-Crosse,CA
+S0M,SK,Island Lake,CA
+S0M,SK,La Loche,CA
+S0M,SK,Lashburn,CA
+S0M,SK,Livelong,CA
+S0M,SK,Lone Rock,CA
+S0M,SK,Loon Lake,CA
+S0M,SK,Maidstone,CA
+S0M,SK,Makwa,CA
+S0M,SK,Marsden,CA
+S0M,SK,Marshall,CA
+S0M,SK,Mayfair,CA
+S0M,SK,Maymont,CA
+S0M,SK,Medstead,CA
+S0M,SK,Meota,CA
+S0M,SK,Mervin,CA
+S0M,SK,Mullingar,CA
+S0M,SK,Neilburg,CA
+S0M,SK,Onion Lake,CA
+S0M,SK,Paradise Hill,CA
+S0M,SK,Patuanak,CA
+S0M,SK,Paynton,CA
+S0M,SK,Pierceland,CA
+S0M,SK,Rabbit Lake,CA
+S0M,SK,Rapid View,CA
+S0M,SK,Richard,CA
+S0M,SK,Rockhaven,CA
+S0M,SK,Ruddell,CA
+S0M,SK,Speers,CA
+S0M,SK,Spruce Lake,CA
+S0M,SK,St Walburg,CA
+S0M,SK,Turnor Lake,CA
+S0M,SK,Turtleford,CA
+S0M,SK,Vawn,CA
+S0M,SK,Waseca,CA
+S0M,SK,Waterhen Lake,CA
+S0M,SK,Whelan,CA
+S0N,SK,Abbey,CA
+S0N,SK,Admiral,CA
+S0N,SK,Aneroid,CA
+S0N,SK,Blumenhof,CA
+S0N,SK,Bracken,CA
+S0N,SK,Burstall,CA
+S0N,SK,Cabri,CA
+S0N,SK,Cadillac,CA
+S0N,SK,Claydon,CA
+S0N,SK,Climax,CA
+S0N,SK,Consul,CA
+S0N,SK,Dollard,CA
+S0N,SK,Eastend,CA
+S0N,SK,Fox Valley,CA
+S0N,SK,Frontier,CA
+S0N,SK,Glenbain,CA
+S0N,SK,Golden Prairie,CA
+S0N,SK,Gull Lake,CA
+S0N,SK,Hazenmore,CA
+S0N,SK,Hazlet,CA
+S0N,SK,Lancer,CA
+S0N,SK,Leader,CA
+S0N,SK,Liebenthal,CA
+S0N,SK,Maple Creek,CA
+S0N,SK,McMahon,CA
+S0N,SK,Mendham,CA
+S0N,SK,Neidpath,CA
+S0N,SK,Neville,CA
+S0N,SK,Orkney,CA
+S0N,SK,Pambrun,CA
+S0N,SK,Pennant Station,CA
+S0N,SK,Piapot,CA
+S0N,SK,Ponteix,CA
+S0N,SK,Portreeve,CA
+S0N,SK,Prelate,CA
+S0N,SK,Richmound,CA
+S0N,SK,Robsart,CA
+S0N,SK,Sceptre,CA
+S0N,SK,Shackleton,CA
+S0N,SK,Shaunavon,CA
+S0N,SK,Simmie,CA
+S0N,SK,Stewart Valley,CA
+S0N,SK,Success,CA
+S0N,SK,Tompkins,CA
+S0N,SK,Val Marie,CA
+S0N,SK,Vanguard,CA
+S0N,SK,Vidora,CA
+S0N,SK,Webb,CA
+S0N,SK,Wymark,CA
+S0P,SK,Creighton,CA
+S0P,SK,Denare Beach,CA
+S0P,SK,Deschambault Lake,CA
+S0P,SK,Kinoosao,CA
+S0P,SK,Pelican Narrows,CA
+S0P,SK,Sandy Bay,CA
+S0P,SK,Sturgeon Landing,CA
+S2V,SK,Buena Vista,CA
+S2V,SK,Deer Valley,CA
+S3N,SK,Yorkton,CA
+S4A,SK,Estevan,CA
+S4H,SK,Weyburn,CA
+S4L,SK,Coppersands,CA
+S4L,SK,Emerald Park,CA
+S4L,SK,White City,CA
+S4M,SK,Regina,CA
+S4N,SK,Regina,CA
+S4P,SK,Regina,CA
+S4R,SK,Regina,CA
+S4S,SK,Regina,CA
+S4T,SK,Regina,CA
+S4V,SK,Regina,CA
+S4W,SK,Regina,CA
+S4X,SK,Regina,CA
+S4Y,SK,Regina,CA
+S4Z,SK,Regina,CA
+S6H,SK,Moose Jaw,CA
+S6J,SK,Moose Jaw,CA
+S6K,SK,Moose Jaw,CA
+S6V,SK,Prince Albert,CA
+S6W,SK,Prince Albert,CA
+S6X,SK,Prince Albert,CA
+S7H,SK,Saskatoon,CA
+S7J,SK,Saskatoon,CA
+S7K,SK,Beaver Creek,CA
+S7K,SK,Eagle Ridge,CA
+S7K,SK,Saskatoon,CA
+S7K,SK,Whitecap,CA
+S7L,SK,Saskatoon,CA
+S7M,SK,Saskatoon,CA
+S7N,SK,Saskatoon,CA
+S7P,SK,Corman Park,CA
+S7P,SK,Saskatoon,CA
+S7R,SK,Corman Park,CA
+S7R,SK,Saskatoon,CA
+S7S,SK,Saskatoon,CA
+S7T,SK,Casa Rio,CA
+S7T,SK,Corman Park,CA
+S7T,SK,Crossmount,CA
+S7T,SK,Furdale,CA
+S7T,SK,Grasswood,CA
+S7T,SK,Riverside Estates,CA
+S7T,SK,Saskatoon,CA
+S7V,SK,Corman Park,CA
+S7V,SK,Saskatoon,CA
+S7W,SK,Saskatoon,CA
+S9A,SK,North Battleford,CA
+S9H,SK,Swift Current,CA
+S9V,SK,Lloydminster,CA
+S9X,SK,Meadow Lake,CA
+T0A,AB,Abee,CA
+T0A,AB,Ardmore,CA
+T0A,AB,Ashmont,CA
+T0A,AB,Atmore,CA
+T0A,AB,Bellis,CA
+T0A,AB,Bon Accord,CA
+T0A,AB,Boyle,CA
+T0A,AB,Boyne Lake,CA
+T0A,AB,Breynat,CA
+T0A,AB,Caslan,CA
+T0A,AB,Cherry Grove,CA
+T0A,AB,Egremont,CA
+T0A,AB,Elk Point,CA
+T0A,AB,Ellscott,CA
+T0A,AB,Foisy,CA
+T0A,AB,Fort Kent,CA
+T0A,AB,Frog Lake,CA
+T0A,AB,Gibbons,CA
+T0A,AB,Glendon,CA
+T0A,AB,Goodfish Lake,CA
+T0A,AB,Goodridge,CA
+T0A,AB,Grassland,CA
+T0A,AB,Heinsburg,CA
+T0A,AB,Hylo,CA
+T0A,AB,Iron River,CA
+T0A,AB,Kehewin,CA
+T0A,AB,Kikino,CA
+T0A,AB,La Corey,CA
+T0A,AB,Lac la Biche,CA
+T0A,AB,Lafond,CA
+T0A,AB,Lancaster Park,CA
+T0A,AB,Lindbergh,CA
+T0A,AB,Mallaig,CA
+T0A,AB,McRae,CA
+T0A,AB,Namao,CA
+T0A,AB,Newbrook,CA
+T0A,AB,Opal,CA
+T0A,AB,Plamondon,CA
+T0A,AB,Radway,CA
+T0A,AB,Redwater,CA
+T0A,AB,Saddle Lake,CA
+T0A,AB,Smoky Lake,CA
+T0A,AB,Spedden,CA
+T0A,AB,Sputinow,CA
+T0A,AB,St Brides,CA
+T0A,AB,St Lina,CA
+T0A,AB,St Paul,CA
+T0A,AB,St Vincent,CA
+T0A,AB,Sturgeon County,CA
+T0A,AB,Thorhild,CA
+T0A,AB,Tulliby Lake,CA
+T0A,AB,Vilna,CA
+T0A,AB,Wandering River,CA
+T0A,AB,Warspite,CA
+T0A,AB,Waskatenau,CA
+T0B,AB,Alliance,CA
+T0B,AB,Amisk,CA
+T0B,AB,Andrew,CA
+T0B,AB,Armena,CA
+T0B,AB,Bashaw,CA
+T0B,AB,Bawlf,CA
+T0B,AB,Beauvallon,CA
+T0B,AB,Beaver County,CA
+T0B,AB,Blackfoot,CA
+T0B,AB,Bodo,CA
+T0B,AB,Brosseau,CA
+T0B,AB,Bruce,CA
+T0B,AB,Bruderheim,CA
+T0B,AB,Cadogan,CA
+T0B,AB,Chauvin,CA
+T0B,AB,Chipman,CA
+T0B,AB,Clandonald,CA
+T0B,AB,Czar,CA
+T0B,AB,Daysland,CA
+T0B,AB,Denwood,CA
+T0B,AB,Derwent,CA
+T0B,AB,Dewberry,CA
+T0B,AB,Donalda,CA
+T0B,AB,Edberg,CA
+T0B,AB,Edgerton,CA
+T0B,AB,Ferintosh,CA
+T0B,AB,Forestburg,CA
+T0B,AB,Galahad,CA
+T0B,AB,Hairy Hill,CA
+T0B,AB,Hardisty,CA
+T0B,AB,Hay Lakes,CA
+T0B,AB,Hayter,CA
+T0B,AB,Heisler,CA
+T0B,AB,Hilliard,CA
+T0B,AB,Holden,CA
+T0B,AB,Hughenden,CA
+T0B,AB,Innisfree,CA
+T0B,AB,Irma,CA
+T0B,AB,Islay,CA
+T0B,AB,Kelsey,CA
+T0B,AB,Killam,CA
+T0B,AB,Kingman,CA
+T0B,AB,Kinsella,CA
+T0B,AB,Kitscoty,CA
+T0B,AB,Lamont,CA
+T0B,AB,Lavoy,CA
+T0B,AB,Leduc County,CA
+T0B,AB,Lougheed,CA
+T0B,AB,Mannville,CA
+T0B,AB,Marwayne,CA
+T0B,AB,McLaughlin,CA
+T0B,AB,Meeting Creek,CA
+T0B,AB,Metiskow,CA
+T0B,AB,Minburn,CA
+T0B,AB,Mirror,CA
+T0B,AB,Mundare,CA
+T0B,AB,Musidora,CA
+T0B,AB,Myrnam,CA
+T0B,AB,New Norway,CA
+T0B,AB,New Sarepta,CA
+T0B,AB,Ohaton,CA
+T0B,AB,Paradise Valley,CA
+T0B,AB,Provost,CA
+T0B,AB,Ranfurly,CA
+T0B,AB,Red Willow,CA
+T0B,AB,Rivercourse,CA
+T0B,AB,Rosalind,CA
+T0B,AB,Round Hill,CA
+T0B,AB,Ryley,CA
+T0B,AB,Sedgewick,CA
+T0B,AB,St Michael,CA
+T0B,AB,Star,CA
+T0B,AB,Streamstown,CA
+T0B,AB,Strome,CA
+T0B,AB,Tofield,CA
+T0B,AB,Two Hills,CA
+T0B,AB,Viking,CA
+T0B,AB,Willingdon,CA
+T0B,AB,Wostok,CA
+T0C,AB,Alder Flats,CA
+T0C,AB,Alix,CA
+T0C,AB,Alsike,CA
+T0C,AB,Altario,CA
+T0C,AB,Bentley,CA
+T0C,AB,Bittern Lake,CA
+T0C,AB,Bluffton,CA
+T0C,AB,Botha,CA
+T0C,AB,Breton,CA
+T0C,AB,Brownfield,CA
+T0C,AB,Buck Creek,CA
+T0C,AB,Buck Lake,CA
+T0C,AB,Calmar,CA
+T0C,AB,Carnwood,CA
+T0C,AB,Castor,CA
+T0C,AB,Clive,CA
+T0C,AB,Compeer,CA
+T0C,AB,Consort,CA
+T0C,AB,Coronation,CA
+T0C,AB,Erskine,CA
+T0C,AB,Falun,CA
+T0C,AB,Gadsby,CA
+T0C,AB,Gwynne,CA
+T0C,AB,Halkirk,CA
+T0C,AB,Kirriemuir,CA
+T0C,AB,Lindale,CA
+T0C,AB,Ma-Me-O Beach,CA
+T0C,AB,Maskwacis,CA
+T0C,AB,Millet,CA
+T0C,AB,Monitor,CA
+T0C,AB,Mulhurst Bay,CA
+T0C,AB,Nevis,CA
+T0C,AB,Rimbey,CA
+T0C,AB,Rochon Sands,CA
+T0C,AB,Rolly View,CA
+T0C,AB,Stettler,CA
+T0C,AB,Sunnybrook,CA
+T0C,AB,Tees,CA
+T0C,AB,Thorsby,CA
+T0C,AB,Veteran,CA
+T0C,AB,Warburg,CA
+T0C,AB,Westerose,CA
+T0C,AB,Winfield,CA
+T0E,AB,Alberta Beach,CA
+T0E,AB,Blue Ridge,CA
+T0E,AB,Brule,CA
+T0E,AB,Cadomin,CA
+T0E,AB,Carrot Creek,CA
+T0E,AB,Carvel,CA
+T0E,AB,Cherhill,CA
+T0E,AB,Cynthia,CA
+T0E,AB,Darwell,CA
+T0E,AB,Duffield,CA
+T0E,AB,Entwistle,CA
+T0E,AB,Evansburg,CA
+T0E,AB,Fallis,CA
+T0E,AB,Gainford,CA
+T0E,AB,Glenevis,CA
+T0E,AB,Grande Cache,CA
+T0E,AB,Gunn,CA
+T0E,AB,Jasper,CA
+T0E,AB,Kapasiwin,CA
+T0E,AB,Lac Ste. Anne County,CA
+T0E,AB,Lake Isle,CA
+T0E,AB,Lodgepole,CA
+T0E,AB,Mayerthorpe,CA
+T0E,AB,Niton Junction,CA
+T0E,AB,Onoway,CA
+T0E,AB,Parkland County,CA
+T0E,AB,Peers,CA
+T0E,AB,Robb,CA
+T0E,AB,Rochfort Bridge,CA
+T0E,AB,Rocky Rapids,CA
+T0E,AB,Sangudo,CA
+T0E,AB,Seba Beach,CA
+T0E,AB,Tomahawk,CA
+T0E,AB,Wabamun,CA
+T0E,AB,West Cove,CA
+T0E,AB,Wildwood,CA
+T0G,AB,Alcomdale,CA
+T0G,AB,Atikameg,CA
+T0G,AB,Bloomsbury,CA
+T0G,AB,Busby,CA
+T0G,AB,Calahoo,CA
+T0G,AB,Calling Lake,CA
+T0G,AB,Camp Creek,CA
+T0G,AB,Canyon Creek,CA
+T0G,AB,Chisholm Mills,CA
+T0G,AB,Clyde,CA
+T0G,AB,Colinton,CA
+T0G,AB,County of Barrhead,CA
+T0G,AB,Dapp,CA
+T0G,AB,Driftpile,CA
+T0G,AB,Enilda,CA
+T0G,AB,Faust,CA
+T0G,AB,Fawcett,CA
+T0G,AB,Flatbush,CA
+T0G,AB,Fort Assiniboine,CA
+T0G,AB,Gift Lake,CA
+T0G,AB,Grouard,CA
+T0G,AB,High Prairie,CA
+T0G,AB,Hondo,CA
+T0G,AB,Jarvie,CA
+T0G,AB,Joussard,CA
+T0G,AB,Kinuso,CA
+T0G,AB,Legal,CA
+T0G,AB,Lone Pine,CA
+T0G,AB,Neerlandia,CA
+T0G,AB,Nestow,CA
+T0G,AB,Peerless Lake,CA
+T0G,AB,Perryvale,CA
+T0G,AB,Pickardville,CA
+T0G,AB,Red Earth Creek,CA
+T0G,AB,Riviere Qui Barre,CA
+T0G,AB,Rochester,CA
+T0G,AB,Slave Lake,CA
+T0G,AB,Smith,CA
+T0G,AB,Sturgeon County,CA
+T0G,AB,Swan Hills,CA
+T0G,AB,Tawatinaw,CA
+T0G,AB,Tiger Lily,CA
+T0G,AB,Trout Lake,CA
+T0G,AB,Vega,CA
+T0G,AB,Vimy,CA
+T0G,AB,Wabasca,CA
+T0G,AB,Widewater,CA
+T0H,AB,Bay Tree,CA
+T0H,AB,Bear Canyon,CA
+T0H,AB,Beaverlodge,CA
+T0H,AB,Berwyn,CA
+T0H,AB,Bezanson,CA
+T0H,AB,Blueberry Mountain,CA
+T0H,AB,Bluesky,CA
+T0H,AB,Bonanza,CA
+T0H,AB,Brownvale,CA
+T0H,AB,Buffalo Head Prairie,CA
+T0H,AB,Cadotte Lake,CA
+T0H,AB,Calais,CA
+T0H,AB,Chateh,CA
+T0H,AB,Cherry Point,CA
+T0H,AB,Clairmont,CA
+T0H,AB,Cleardale,CA
+T0H,AB,Crooked Creek,CA
+T0H,AB,Deadwood,CA
+T0H,AB,Debolt,CA
+T0H,AB,Demmitt,CA
+T0H,AB,Dixonville,CA
+T0H,AB,Donnelly,CA
+T0H,AB,Eaglesham,CA
+T0H,AB,Elmworth,CA
+T0H,AB,Eureka River,CA
+T0H,AB,Fairview,CA
+T0H,AB,Falher,CA
+T0H,AB,Fort Vermilion,CA
+T0H,AB,Fox Creek,CA
+T0H,AB,Fox Lake,CA
+T0H,AB,Garden River,CA
+T0H,AB,Girouxville,CA
+T0H,AB,Goodfare,CA
+T0H,AB,Gordondale,CA
+T0H,AB,Grimshaw,CA
+T0H,AB,Grovedale,CA
+T0H,AB,Gundy,CA
+T0H,AB,Guy,CA
+T0H,AB,High Level,CA
+T0H,AB,Hines Creek,CA
+T0H,AB,Hotchkiss,CA
+T0H,AB,Hythe,CA
+T0H,AB,Jean Cote,CA
+T0H,AB,John d'Or Prairie,CA
+T0H,AB,Keg River,CA
+T0H,AB,La Crete,CA
+T0H,AB,La Glace,CA
+T0H,AB,Little Smoky,CA
+T0H,AB,Manning,CA
+T0H,AB,Marie Reine,CA
+T0H,AB,McLennan,CA
+T0H,AB,Meander River,CA
+T0H,AB,Nampa,CA
+T0H,AB,North Star,CA
+T0H,AB,Northern Sunrise County,CA
+T0H,AB,Notikewin,CA
+T0H,AB,Paddle Prairie,CA
+T0H,AB,Rainbow Lake,CA
+T0H,AB,Rycroft,CA
+T0H,AB,Sexsmith,CA
+T0H,AB,Silver Valley,CA
+T0H,AB,Spirit River,CA
+T0H,AB,St Isidore,CA
+T0H,AB,Sunset House,CA
+T0H,AB,Tangent,CA
+T0H,AB,Valhalla Centre,CA
+T0H,AB,Valleyview,CA
+T0H,AB,Wanham,CA
+T0H,AB,Watino,CA
+T0H,AB,Wembley,CA
+T0H,AB,Whitelaw,CA
+T0H,AB,Woking,CA
+T0H,AB,Worsley,CA
+T0H,AB,Zama City,CA
+T0J,AB,Acadia Valley,CA
+T0J,AB,Bassano,CA
+T0J,AB,Big Stone,CA
+T0J,AB,Big Valley,CA
+T0J,AB,Bindloss,CA
+T0J,AB,Buffalo,CA
+T0J,AB,Byemoor,CA
+T0J,AB,Carseland,CA
+T0J,AB,Cereal,CA
+T0J,AB,Cessford,CA
+T0J,AB,Chinook,CA
+T0J,AB,Cluny,CA
+T0J,AB,Craigmyle,CA
+T0J,AB,Dalemead,CA
+T0J,AB,Delia,CA
+T0J,AB,Dorothy,CA
+T0J,AB,Drumheller,CA
+T0J,AB,Duchess,CA
+T0J,AB,East Coulee,CA
+T0J,AB,Elkwater,CA
+T0J,AB,Empress,CA
+T0J,AB,Endiang,CA
+T0J,AB,Esther,CA
+T0J,AB,Fenn,CA
+T0J,AB,Finnegan,CA
+T0J,AB,Gem,CA
+T0J,AB,Gleichen,CA
+T0J,AB,Hanna,CA
+T0J,AB,Hilda,CA
+T0J,AB,Hussar,CA
+T0J,AB,Iddesleigh,CA
+T0J,AB,Irvine,CA
+T0J,AB,Jenner,CA
+T0J,AB,Langdon,CA
+T0J,AB,Lyalta,CA
+T0J,AB,Millicent,CA
+T0J,AB,Morrin,CA
+T0J,AB,Munson,CA
+T0J,AB,New Brigden,CA
+T0J,AB,Oyen,CA
+T0J,AB,Patricia,CA
+T0J,AB,Pollockville,CA
+T0J,AB,Rainier,CA
+T0J,AB,Ralston,CA
+T0J,AB,Redcliff,CA
+T0J,AB,Rockyford,CA
+T0J,AB,Rolling Hills,CA
+T0J,AB,Rosebud,CA
+T0J,AB,Rosedale Station,CA
+T0J,AB,Rosemary,CA
+T0J,AB,Rowley,CA
+T0J,AB,Rumsey,CA
+T0J,AB,Scandia,CA
+T0J,AB,Schuler,CA
+T0J,AB,Sedalia,CA
+T0J,AB,Sibbald,CA
+T0J,AB,Siksika,CA
+T0J,AB,Standard,CA
+T0J,AB,Sunnynook,CA
+T0J,AB,Tilley,CA
+T0J,AB,Walsh,CA
+T0J,AB,Wardlow,CA
+T0J,AB,Youngstown,CA
+T0K,AB,Aden,CA
+T0K,AB,Aetna,CA
+T0K,AB,Barnwell,CA
+T0K,AB,Bellevue,CA
+T0K,AB,Blairmore,CA
+T0K,AB,Bow Island,CA
+T0K,AB,Brocket,CA
+T0K,AB,Burdett,CA
+T0K,AB,Cardston,CA
+T0K,AB,Coleman,CA
+T0K,AB,Coutts,CA
+T0K,AB,Cowley,CA
+T0K,AB,Cranford,CA
+T0K,AB,Del Bonita,CA
+T0K,AB,Diamond City,CA
+T0K,AB,Enchant,CA
+T0K,AB,Etzikom,CA
+T0K,AB,Foremost,CA
+T0K,AB,Glenwood,CA
+T0K,AB,Grassy Lake,CA
+T0K,AB,Hays,CA
+T0K,AB,Hill Spring,CA
+T0K,AB,Hillcrest Mines,CA
+T0K,AB,Iron Springs,CA
+T0K,AB,Lundbreck,CA
+T0K,AB,Magrath,CA
+T0K,AB,Maleb,CA
+T0K,AB,Manyberries,CA
+T0K,AB,Milk River,CA
+T0K,AB,Mountain View,CA
+T0K,AB,New Dayton,CA
+T0K,AB,Onefour,CA
+T0K,AB,Orion,CA
+T0K,AB,Picture Butte,CA
+T0K,AB,Pincher Creek,CA
+T0K,AB,Purple Springs,CA
+T0K,AB,Raymond,CA
+T0K,AB,Seven Persons,CA
+T0K,AB,Shaughnessy,CA
+T0K,AB,Skiff,CA
+T0K,AB,Spring Coulee,CA
+T0K,AB,Stirling,CA
+T0K,AB,Turin,CA
+T0K,AB,Twin Butte,CA
+T0K,AB,Vauxhall,CA
+T0K,AB,Warner,CA
+T0K,AB,Waterton Park,CA
+T0K,AB,Welling,CA
+T0K,AB,Wrentham,CA
+T0L,AB,Aldersyde,CA
+T0L,AB,Arrowwood,CA
+T0L,AB,Barons,CA
+T0L,AB,Black Diamond,CA
+T0L,AB,Blackie,CA
+T0L,AB,Bragg Creek,CA
+T0L,AB,Brant,CA
+T0L,AB,Carmangay,CA
+T0L,AB,Cayley,CA
+T0L,AB,Champion,CA
+T0L,AB,Claresholm,CA
+T0L,AB,Coalhurst,CA
+T0L,AB,De Winton,CA
+T0L,AB,Eden Valley,CA
+T0L,AB,Exshaw,CA
+T0L,AB,Fort Macleod,CA
+T0L,AB,Granum,CA
+T0L,AB,Kananaskis,CA
+T0L,AB,Lake Louise,CA
+T0L,AB,Lomond,CA
+T0L,AB,Longview,CA
+T0L,AB,Millarville,CA
+T0L,AB,Milo,CA
+T0L,AB,Monarch,CA
+T0L,AB,Morley,CA
+T0L,AB,Mossleigh,CA
+T0L,AB,Nanton,CA
+T0L,AB,Nobleford,CA
+T0L,AB,Parkland,CA
+T0L,AB,Priddis,CA
+T0L,AB,Stand Off,CA
+T0L,AB,Stavely,CA
+T0L,AB,Turner Valley,CA
+T0L,AB,Vulcan,CA
+T0M,AB,Acme,CA
+T0M,AB,Alhambra,CA
+T0M,AB,Balzac,CA
+T0M,AB,Beiseker,CA
+T0M,AB,Benalto,CA
+T0M,AB,Blackfalds,CA
+T0M,AB,Bowden,CA
+T0M,AB,Carbon,CA
+T0M,AB,Caroline,CA
+T0M,AB,Carstairs,CA
+T0M,AB,Condor,CA
+T0M,AB,Cremona,CA
+T0M,AB,Crossfield,CA
+T0M,AB,Delacour,CA
+T0M,AB,Delburne,CA
+T0M,AB,Didsbury,CA
+T0M,AB,Eckville,CA
+T0M,AB,Elnora,CA
+T0M,AB,Huxley,CA
+T0M,AB,Irricana,CA
+T0M,AB,James River Bridge,CA
+T0M,AB,Kathyrn,CA
+T0M,AB,Keoma,CA
+T0M,AB,Leslieville,CA
+T0M,AB,Linden,CA
+T0M,AB,Lousana,CA
+T0M,AB,Madden,CA
+T0M,AB,Markerville,CA
+T0M,AB,Nordegg,CA
+T0M,AB,Penhold,CA
+T0M,AB,Pine Lake,CA
+T0M,AB,Spruce View,CA
+T0M,AB,Stauffer,CA
+T0M,AB,Sundre,CA
+T0M,AB,Swalwell,CA
+T0M,AB,Three Hills,CA
+T0M,AB,Torrington,CA
+T0M,AB,Trochu,CA
+T0M,AB,Water Valley,CA
+T0M,AB,Wimborne,CA
+T0P,AB,Anzac,CA
+T0P,AB,Chard,CA
+T0P,AB,Conklin,CA
+T0P,AB,Fort Chipewyan,CA
+T0P,AB,Fort Mackay,CA
+T0V,AB,Fitzgerald,CA
+T1A,AB,Cypress County,CA
+T1A,AB,Medicine Hat,CA
+T1A,AB,Veinerville,CA
+T1B,AB,Cypress County,CA
+T1B,AB,Desert Blume,CA
+T1B,AB,Dunmore,CA
+T1B,AB,Medicine Hat,CA
+T1C,AB,Medicine Hat,CA
+T1G,AB,Taber,CA
+T1H,AB,Lethbridge,CA
+T1J,AB,Lethbridge,CA
+T1K,AB,Lethbridge,CA
+T1L,AB,Banff,CA
+T1M,AB,Coaldale,CA
+T1P,AB,Strathmore,CA
+T1R,AB,Brooks,CA
+T1R,AB,Lake Newell Resort,CA
+T1S,AB,Okotoks,CA
+T1V,AB,High River,CA
+T1W,AB,Canmore,CA
+T1W,AB,Dead Man's Flats,CA
+T1W,AB,Harvie Heights,CA
+T1W,AB,Lac des Arcs,CA
+T1X,AB,Calgary,CA
+T1X,AB,Chestermere,CA
+T1X,AB,Indus,CA
+T1X,AB,Rocky View County,CA
+T1Y,AB,Calgary,CA
+T1Z,AB,Rocky View County,CA
+T2A,AB,Calgary,CA
+T2B,AB,Calgary,CA
+T2C,AB,Calgary,CA
+T2E,AB,Calgary,CA
+T2G,AB,Calgary,CA
+T2H,AB,Calgary,CA
+T2J,AB,Calgary,CA
+T2K,AB,Calgary,CA
+T2L,AB,Calgary,CA
+T2M,AB,Calgary,CA
+T2N,AB,Calgary,CA
+T2P,AB,Calgary,CA
+T2R,AB,Calgary,CA
+T2S,AB,Calgary,CA
+T2T,AB,Calgary,CA
+T2V,AB,Calgary,CA
+T2W,AB,Calgary,CA
+T2W,AB,Tsuu T'ina,CA
+T2X,AB,Calgary,CA
+T2Y,AB,Calgary,CA
+T2Z,AB,Calgary,CA
+T3A,AB,Calgary,CA
+T3B,AB,Calgary,CA
+T3C,AB,Calgary,CA
+T3E,AB,Calgary,CA
+T3E,AB,Tsuu T'ina,CA
+T3G,AB,Calgary,CA
+T3H,AB,Calgary,CA
+T3J,AB,Calgary,CA
+T3K,AB,Calgary,CA
+T3L,AB,Calgary,CA
+T3M,AB,Calgary,CA
+T3N,AB,Calgary,CA
+T3P,AB,Calgary,CA
+T3P,AB,Rocky View County,CA
+T3R,AB,Calgary,CA
+T3S,AB,Calgary,CA
+T3Z,AB,Calgary,CA
+T3Z,AB,Redwood Meadows,CA
+T4A,AB,Airdrie,CA
+T4A,AB,Calgary,CA
+T4A,AB,Rocky View County,CA
+T4B,AB,Airdrie,CA
+T4B,AB,Balzac,CA
+T4B,AB,Calgary,CA
+T4B,AB,Rocky View County,CA
+T4C,AB,Cochrane,CA
+T4E,AB,Red Deer County,CA
+T4G,AB,Dickson,CA
+T4G,AB,Innisfail,CA
+T4G,AB,Red Deer County,CA
+T4H,AB,Olds,CA
+T4J,AB,Ponoka,CA
+T4L,AB,College Heights,CA
+T4L,AB,Lacombe County,CA
+T4L,AB,Lacombe,CA
+T4L,AB,Rosedale Valley,CA
+T4M,AB,Blackfalds,CA
+T4N,AB,Red Deer,CA
+T4P,AB,Red Deer,CA
+T4R,AB,Red Deer,CA
+T4S,AB,Halfmoon Bay,CA
+T4S,AB,Norglenwold,CA
+T4S,AB,Red Deer County,CA
+T4S,AB,Springbrook,CA
+T4S,AB,Sylvan Lake,CA
+T4T,AB,Rocky Mountain House,CA
+T4V,AB,Camrose County,CA
+T4V,AB,Camrose,CA
+T4X,AB,Beaumont,CA
+T4X,AB,Leduc County,CA
+T4X,AB,Rolly View,CA
+T5A,AB,Edmonton,CA
+T5B,AB,Edmonton,CA
+T5C,AB,Edmonton,CA
+T5E,AB,Edmonton,CA
+T5G,AB,Edmonton,CA
+T5H,AB,Edmonton,CA
+T5J,AB,Edmonton,CA
+T5K,AB,Edmonton,CA
+T5L,AB,Edmonton,CA
+T5M,AB,Edmonton,CA
+T5N,AB,Edmonton,CA
+T5P,AB,Edmonton,CA
+T5R,AB,Edmonton,CA
+T5S,AB,Edmonton,CA
+T5T,AB,Edmonton,CA
+T5V,AB,Edmonton,CA
+T5W,AB,Edmonton,CA
+T5X,AB,Edmonton,CA
+T5Y,AB,Edmonton,CA
+T5Z,AB,Edmonton,CA
+T6A,AB,Edmonton,CA
+T6B,AB,Edmonton,CA
+T6C,AB,Edmonton,CA
+T6E,AB,Edmonton,CA
+T6G,AB,Edmonton,CA
+T6H,AB,Edmonton,CA
+T6J,AB,Edmonton,CA
+T6K,AB,Edmonton,CA
+T6L,AB,Edmonton,CA
+T6M,AB,Edmonton,CA
+T6N,AB,Edmonton,CA
+T6P,AB,Edmonton,CA
+T6R,AB,Edmonton,CA
+T6S,AB,Edmonton,CA
+T6T,AB,Edmonton,CA
+T6V,AB,Edmonton,CA
+T6W,AB,Edmonton,CA
+T6X,AB,Edmonton,CA
+T7A,AB,Brazeau County,CA
+T7A,AB,Drayton Valley,CA
+T7E,AB,Edson,CA
+T7E,AB,Marlboro,CA
+T7E,AB,Yellowhead County,CA
+T7N,AB,Barrhead,CA
+T7N,AB,County of Barrhead,CA
+T7P,AB,Westlock County,CA
+T7P,AB,Westlock,CA
+T7S,AB,Whitecourt,CA
+T7V,AB,Hinton,CA
+T7X,AB,Acheson,CA
+T7X,AB,Enoch,CA
+T7X,AB,Parkland County,CA
+T7X,AB,Spruce Grove,CA
+T7Y,AB,Parkland County,CA
+T7Y,AB,Spruce Grove,CA
+T7Z,AB,Parkland County,CA
+T7Z,AB,Spring Lake,CA
+T7Z,AB,Stony Plain,CA
+T8A,AB,Sherwood Park,CA
+T8B,AB,Sherwood Park,CA
+T8C,AB,Sherwood Park,CA
+T8E,AB,Ardrossan,CA
+T8E,AB,Cooking Lake,CA
+T8E,AB,Sherwood Park,CA
+T8G,AB,Ardrossan,CA
+T8G,AB,Sherwood Park,CA
+T8H,AB,Sherwood Park,CA
+T8L,AB,Fort Saskatchewan,CA
+T8L,AB,Sturgeon County,CA
+T8N,AB,St. Albert,CA
+T8N,AB,Sturgeon County,CA
+T8R,AB,Morinville,CA
+T8R,AB,Sturgeon County,CA
+T8S,AB,Peace River,CA
+T8T,AB,Sturgeon County,CA
+T8V,AB,Grande Prairie,CA
+T8W,AB,County of Grande Prairie No. 1,CA
+T8W,AB,Grande Prairie,CA
+T8X,AB,Clairmont,CA
+T8X,AB,County of Grande Prairie No. 1,CA
+T8X,AB,Grande Prairie,CA
+T9A,AB,Wetaskiwin,CA
+T9C,AB,Vegreville,CA
+T9E,AB,Edmonton International Airport,CA
+T9E,AB,Leduc,CA
+T9E,AB,Nisku,CA
+T9G,AB,Devon,CA
+T9G,AB,Leduc County,CA
+T9H,AB,Fort McMurray,CA
+T9J,AB,Fort McMurray,CA
+T9K,AB,Fort McMurray,CA
+T9M,AB,Cold Lake,CA
+T9N,AB,Bonnyville,CA
+T9N,AB,Md of Bonnyville,CA
+T9S,AB,Athabasca,CA
+T9S,AB,Island Lake South,CA
+T9S,AB,Island Lake,CA
+T9S,AB,South Baptiste,CA
+T9S,AB,Sunset Beach,CA
+T9S,AB,West Baptiste,CA
+T9S,AB,Whispering Hills,CA
+T9S,AB,White Gull,CA
+T9V,AB,Lloydminster,CA
+T9W,AB,Wainwright,CA
+T9X,AB,Vermilion,CA
+V0A,BC,Brisco,CA
+V0A,BC,Edgewater,CA
+V0A,BC,Field,CA
+V0A,BC,Golden,CA
+V0A,BC,Harrogate,CA
+V0A,BC,Invermere,CA
+V0A,BC,Panorama,CA
+V0A,BC,Parson,CA
+V0A,BC,Radium Hot Springs,CA
+V0A,BC,Spillimacheen,CA
+V0B,BC,Arrow Creek,CA
+V0B,BC,Baynes Lake,CA
+V0B,BC,Boswell,CA
+V0B,BC,Canal Flats,CA
+V0B,BC,Canyon,CA
+V0B,BC,Crawford Bay,CA
+V0B,BC,Creston,CA
+V0B,BC,Destiny Bay,CA
+V0B,BC,Elkford,CA
+V0B,BC,Elko,CA
+V0B,BC,Erickson,CA
+V0B,BC,Fairmont Hot Springs,CA
+V0B,BC,Fernie,CA
+V0B,BC,Fort Steele,CA
+V0B,BC,Galloway,CA
+V0B,BC,Gold Creek,CA
+V0B,BC,Grasmere,CA
+V0B,BC,Gray Creek,CA
+V0B,BC,Jaffray,CA
+V0B,BC,Kingsgate,CA
+V0B,BC,Kitchener,CA
+V0B,BC,Koocanusa - West,CA
+V0B,BC,Kootenay Bay,CA
+V0B,BC,Kuskanook,CA
+V0B,BC,Moyie,CA
+V0B,BC,Newgate,CA
+V0B,BC,Riondel,CA
+V0B,BC,Sanca,CA
+V0B,BC,Sirdar,CA
+V0B,BC,Skookumchuck,CA
+V0B,BC,Sparwood,CA
+V0B,BC,Ta Ta Creek,CA
+V0B,BC,Wardner,CA
+V0B,BC,Wasa,CA
+V0B,BC,West Creston,CA
+V0B,BC,Windermere,CA
+V0B,BC,Wynndel,CA
+V0B,BC,Yahk,CA
+V0C,BC,Altona,CA
+V0C,BC,Arras,CA
+V0C,BC,Baldonnel,CA
+V0C,BC,Buick,CA
+V0C,BC,Cecil Lake,CA
+V0C,BC,Charlie Lake,CA
+V0C,BC,Chetwynd,CA
+V0C,BC,Clayhurst,CA
+V0C,BC,Dease Lake,CA
+V0C,BC,Farmington,CA
+V0C,BC,Fort Nelson,CA
+V0C,BC,Good Hope Lake,CA
+V0C,BC,Goodlow,CA
+V0C,BC,Groundbirch,CA
+V0C,BC,Hudson's Hope,CA
+V0C,BC,Jade City,CA
+V0C,BC,Lower Post,CA
+V0C,BC,Moberly Lake,CA
+V0C,BC,Montney,CA
+V0C,BC,Muncho Lake,CA
+V0C,BC,North Pine,CA
+V0C,BC,Pink Mountain,CA
+V0C,BC,Pouce Coupe,CA
+V0C,BC,Prespatou,CA
+V0C,BC,Progress,CA
+V0C,BC,Prophet River,CA
+V0C,BC,Rolla,CA
+V0C,BC,Rose Prairie,CA
+V0C,BC,Sunset Prairie,CA
+V0C,BC,Taylor,CA
+V0C,BC,Toad River,CA
+V0C,BC,Tomslake,CA
+V0C,BC,Tumbler Ridge,CA
+V0C,BC,Wonowon,CA
+V0E,BC,Anglemont,CA
+V0E,BC,Armstrong,CA
+V0E,BC,Avola,CA
+V0E,BC,Barriere,CA
+V0E,BC,Blind Bay,CA
+V0E,BC,Blue River,CA
+V0E,BC,Canoe,CA
+V0E,BC,Celista,CA
+V0E,BC,Chase,CA
+V0E,BC,Cherryville,CA
+V0E,BC,Clearwater,CA
+V0E,BC,Darfield,CA
+V0E,BC,Douglas Lake,CA
+V0E,BC,Eagle Bay,CA
+V0E,BC,Enderby,CA
+V0E,BC,Falkland,CA
+V0E,BC,Grindrod,CA
+V0E,BC,Heffley Creek,CA
+V0E,BC,Knutsford,CA
+V0E,BC,Lee Creek,CA
+V0E,BC,Little Fort,CA
+V0E,BC,Louis Creek,CA
+V0E,BC,Lumby,CA
+V0E,BC,Magna Bay,CA
+V0E,BC,Malakwa,CA
+V0E,BC,Mara,CA
+V0E,BC,McLure,CA
+V0E,BC,Mica Creek,CA
+V0E,BC,Monte Creek,CA
+V0E,BC,Monte Lake,CA
+V0E,BC,Pinantan Lake,CA
+V0E,BC,Pritchard,CA
+V0E,BC,Quilchena,CA
+V0E,BC,Revelstoke,CA
+V0E,BC,Scotch Creek,CA
+V0E,BC,Sicamous,CA
+V0E,BC,Sorrento,CA
+V0E,BC,St Ives,CA
+V0E,BC,Sun Peaks,CA
+V0E,BC,Swansea Point,CA
+V0E,BC,Tappen,CA
+V0E,BC,Valemount,CA
+V0E,BC,Vavenby,CA
+V0E,BC,Westwold,CA
+V0G,BC,Ainsworth Hot Springs,CA
+V0G,BC,Argenta,CA
+V0G,BC,Balfour,CA
+V0G,BC,Beasley,CA
+V0G,BC,Bonnington,CA
+V0G,BC,Burton,CA
+V0G,BC,Crescent Valley,CA
+V0G,BC,Edgewood,CA
+V0G,BC,Fauquier,CA
+V0G,BC,Fruitvale,CA
+V0G,BC,Genelle,CA
+V0G,BC,Kaslo,CA
+V0G,BC,Krestova,CA
+V0G,BC,Meadow Creek,CA
+V0G,BC,Montrose,CA
+V0G,BC,Nakusp,CA
+V0G,BC,New Denver,CA
+V0G,BC,Procter,CA
+V0G,BC,Robson,CA
+V0G,BC,Ross Spur,CA
+V0G,BC,Rossland,CA
+V0G,BC,Salmo,CA
+V0G,BC,Silverton,CA
+V0G,BC,Slocan Park,CA
+V0G,BC,Slocan,CA
+V0G,BC,South Slocan,CA
+V0G,BC,Winlaw,CA
+V0G,BC,Ymir,CA
+V0H,BC,Beaverdell,CA
+V0H,BC,Bridesville,CA
+V0H,BC,Christina Lake,CA
+V0H,BC,Grand Forks,CA
+V0H,BC,Greenwood,CA
+V0H,BC,Kaleden,CA
+V0H,BC,Midway,CA
+V0H,BC,Naramata,CA
+V0H,BC,Okanagan Falls,CA
+V0H,BC,Oliver,CA
+V0H,BC,Osoyoos,CA
+V0H,BC,Peachland,CA
+V0H,BC,Rock Creek,CA
+V0H,BC,Summerland,CA
+V0H,BC,Westbridge,CA
+V0J,BC,Aiyansh,CA
+V0J,BC,Bear Lake,CA
+V0J,BC,Burns Lake,CA
+V0J,BC,Cedarvale,CA
+V0J,BC,Crescent Spur,CA
+V0J,BC,Dome Creek,CA
+V0J,BC,Dunster,CA
+V0J,BC,Endako,CA
+V0J,BC,Fort Fraser,CA
+V0J,BC,Fort St. James,CA
+V0J,BC,Francois Lake,CA
+V0J,BC,Fraser Lake,CA
+V0J,BC,Germansen Landing,CA
+V0J,BC,Gitanmaax,CA
+V0J,BC,Gitsegukla,CA
+V0J,BC,Gitwinksihlkw,CA
+V0J,BC,Granisle,CA
+V0J,BC,Greenville,CA
+V0J,BC,Hazelton,CA
+V0J,BC,Houston,CA
+V0J,BC,Iskut,CA
+V0J,BC,Kispiox,CA
+V0J,BC,Kitwanga,CA
+V0J,BC,Laxgalts'ap,CA
+V0J,BC,Longworth,CA
+V0J,BC,Mackenzie,CA
+V0J,BC,Manson Creek,CA
+V0J,BC,McBride,CA
+V0J,BC,McLeod Lake,CA
+V0J,BC,Meziadin Lake,CA
+V0J,BC,Nass Camp,CA
+V0J,BC,New Hazelton,CA
+V0J,BC,Penny,CA
+V0J,BC,Sik-E-Dakh,CA
+V0J,BC,Sinclair Mills,CA
+V0J,BC,Smithers,CA
+V0J,BC,South Hazelton,CA
+V0J,BC,Southbank,CA
+V0J,BC,Summit Lake,CA
+V0J,BC,Takla Landing,CA
+V0J,BC,Telegraph Creek,CA
+V0J,BC,Telkwa,CA
+V0J,BC,Topley,CA
+V0J,BC,Tsay Keh Dene,CA
+V0J,BC,Upper Fraser,CA
+V0J,BC,Vanderhoof,CA
+V0J,BC,Ware,CA
+V0J,BC,Willow River,CA
+V0K,BC,100 Mile House,CA
+V0K,BC,108 Mile Ranch,CA
+V0K,BC,150 Mile House,CA
+V0K,BC,70 Mile House,CA
+V0K,BC,Ashcroft,CA
+V0K,BC,Barkerville,CA
+V0K,BC,Boston Bar,CA
+V0K,BC,Bridge Lake,CA
+V0K,BC,Buffalo Creek,CA
+V0K,BC,Cache Creek,CA
+V0K,BC,Canim Lake,CA
+V0K,BC,Clinton,CA
+V0K,BC,Eagle Creek,CA
+V0K,BC,Forest Grove,CA
+V0K,BC,Gang Ranch,CA
+V0K,BC,Gold Bridge,CA
+V0K,BC,Hixon,CA
+V0K,BC,Lac la Hache,CA
+V0K,BC,Lillooet,CA
+V0K,BC,Logan Lake,CA
+V0K,BC,Lone Butte,CA
+V0K,BC,Lower Nicola,CA
+V0K,BC,Lytton,CA
+V0K,BC,North Bend,CA
+V0K,BC,Pavilion,CA
+V0K,BC,Savona,CA
+V0K,BC,Spences Bridge,CA
+V0K,BC,Spuzzum,CA
+V0K,BC,Walhachin,CA
+V0K,BC,Wells,CA
+V0K,BC,Yale,CA
+V0L,BC,Alexis Creek,CA
+V0L,BC,Alkali Lake,CA
+V0L,BC,Anahim Lake,CA
+V0L,BC,Big Lake Ranch,CA
+V0L,BC,Chilanko Forks,CA
+V0L,BC,Dog Creek,CA
+V0L,BC,Hanceville,CA
+V0L,BC,Horsefly,CA
+V0L,BC,Kleena Kleene,CA
+V0L,BC,Likely,CA
+V0L,BC,McLeese Lake,CA
+V0L,BC,Nemaiah Valley,CA
+V0L,BC,Nimpo Lake,CA
+V0L,BC,Redstone,CA
+V0L,BC,Riske Creek,CA
+V0L,BC,Tatla Lake,CA
+V0L,BC,Tatlayoko Lake,CA
+V0M,BC,Agassiz,CA
+V0M,BC,Deroche,CA
+V0M,BC,Dewdney,CA
+V0M,BC,Harrison Hot Springs,CA
+V0M,BC,Harrison Mills,CA
+V0M,BC,Lake Errock,CA
+V0N,BC,Alert Bay,CA
+V0N,BC,Blubber Bay,CA
+V0N,BC,Bowen Island,CA
+V0N,BC,Brackendale,CA
+V0N,BC,Britannia Beach,CA
+V0N,BC,Coal Harbour,CA
+V0N,BC,D'Arcy,CA
+V0N,BC,Dawsons Landing,CA
+V0N,BC,Egmont,CA
+V0N,BC,Furry Creek,CA
+V0N,BC,Galiano,CA
+V0N,BC,Gambier Island,CA
+V0N,BC,Garden Bay,CA
+V0N,BC,Garibaldi Highlands,CA
+V0N,BC,Gibsons,CA
+V0N,BC,Gillies Bay,CA
+V0N,BC,Halfmoon Bay,CA
+V0N,BC,Holberg,CA
+V0N,BC,Kingcome Inlet,CA
+V0N,BC,Lions Bay,CA
+V0N,BC,Lund,CA
+V0N,BC,Madeira Park,CA
+V0N,BC,Mayne Island,CA
+V0N,BC,Mount Currie,CA
+V0N,BC,Pemberton,CA
+V0N,BC,Pender Island,CA
+V0N,BC,Port Alice,CA
+V0N,BC,Port Hardy,CA
+V0N,BC,Port McNeill,CA
+V0N,BC,Port Mellon,CA
+V0N,BC,Quatsino,CA
+V0N,BC,Roberts Creek,CA
+V0N,BC,Saturna,CA
+V0N,BC,Sechelt,CA
+V0N,BC,Seton Portage,CA
+V0N,BC,Shalalth,CA
+V0N,BC,Sointula,CA
+V0N,BC,Telegraph Cove,CA
+V0N,BC,Van Anda,CA
+V0N,BC,Whistler,CA
+V0N,BC,Winter Harbour,CA
+V0N,BC,Woss,CA
+V0P,BC,Blind Channel,CA
+V0P,BC,Gold River,CA
+V0P,BC,Heriot Bay,CA
+V0P,BC,Kyuquot,CA
+V0P,BC,Mansons Landing,CA
+V0P,BC,Minstrel Island,CA
+V0P,BC,Quathiaski Cove,CA
+V0P,BC,Refuge Cove,CA
+V0P,BC,Sayward,CA
+V0P,BC,Simoom Sound,CA
+V0P,BC,Squirrel Cove,CA
+V0P,BC,Stuart Island,CA
+V0P,BC,Surge Narrows,CA
+V0P,BC,Tahsis,CA
+V0P,BC,Whaletown,CA
+V0P,BC,Zeballos,CA
+V0R,BC,Ahousat,CA
+V0R,BC,Bamfield,CA
+V0R,BC,Bowser,CA
+V0R,BC,Cassidy,CA
+V0R,BC,Chemainus,CA
+V0R,BC,Cobble Hill,CA
+V0R,BC,Coombs,CA
+V0R,BC,Cowichan Bay,CA
+V0R,BC,Crofton,CA
+V0R,BC,Cumberland,CA
+V0R,BC,Denman Island,CA
+V0R,BC,Errington,CA
+V0R,BC,Fanny Bay,CA
+V0R,BC,Gabriola,CA
+V0R,BC,Honeymoon Bay,CA
+V0R,BC,Hornby Island,CA
+V0R,BC,Kildonan,CA
+V0R,BC,Koksilah,CA
+V0R,BC,Lake Cowichan,CA
+V0R,BC,Lantzville,CA
+V0R,BC,Lasqueti,CA
+V0R,BC,Lazo,CA
+V0R,BC,Malahat,CA
+V0R,BC,Merville,CA
+V0R,BC,Mesachie Lake,CA
+V0R,BC,Mill Bay,CA
+V0R,BC,Royston,CA
+V0R,BC,Shawnigan Lake,CA
+V0R,BC,Thetis Island,CA
+V0R,BC,Tofino,CA
+V0R,BC,Ucluelet,CA
+V0R,BC,Union Bay,CA
+V0R,BC,Westholme,CA
+V0R,BC,Youbou,CA
+V0S,BC,Port Renfrew,CA
+V0T,BC,Bella Bella,CA
+V0T,BC,Bella Coola,CA
+V0T,BC,Denny Island,CA
+V0T,BC,Hagensborg,CA
+V0T,BC,Haisla,CA
+V0T,BC,Juskatla,CA
+V0T,BC,Klemtu,CA
+V0T,BC,Masset,CA
+V0T,BC,Ocean Falls,CA
+V0T,BC,Port Clements,CA
+V0T,BC,Queen Charlotte,CA
+V0T,BC,Sandspit,CA
+V0T,BC,Stewart,CA
+V0T,BC,Tlell,CA
+V0V,BC,Hartley Bay,CA
+V0V,BC,Kincolith,CA
+V0V,BC,Kitkatla,CA
+V0V,BC,Lax Kw'alaams,CA
+V0V,BC,Oona River,CA
+V0V,BC,Port Edward,CA
+V0W,BC,Atlin,CA
+V0X,BC,Cawston,CA
+V0X,BC,Coalmont,CA
+V0X,BC,East Gate,CA
+V0X,BC,Hedley,CA
+V0X,BC,Hope,CA
+V0X,BC,Keremeos,CA
+V0X,BC,Milner,CA
+V0X,BC,Princeton,CA
+V0X,BC,Rosedale,CA
+V0X,BC,Tulameen,CA
+V1A,BC,Kimberley,CA
+V1B,BC,Coldstream,CA
+V1B,BC,Lavington,CA
+V1B,BC,Vernon,CA
+V1C,BC,Cranbrook,CA
+V1E,BC,Salmon Arm,CA
+V1G,BC,Dawson Creek,CA
+V1G,BC,Peace River Regional District,CA
+V1H,BC,Vernon,CA
+V1J,BC,Fort St. John,CA
+V1K,BC,Merritt,CA
+V1L,BC,Nelson,CA
+V1M,BC,Langley,CA
+V1N,BC,Castlegar,CA
+V1P,BC,Kelowna,CA
+V1R,BC,Trail,CA
+V1S,BC,Kamloops,CA
+V1S,BC,Tobiano,CA
+V1T,BC,Vernon,CA
+V1V,BC,Kelowna,CA
+V1W,BC,Kelowna,CA
+V1X,BC,Kelowna,CA
+V1Y,BC,Kelowna,CA
+V1Z,BC,Kelowna,CA
+V1Z,BC,West Kelowna,CA
+V2A,BC,Penticton,CA
+V2B,BC,Kamloops,CA
+V2C,BC,Kamloops,CA
+V2E,BC,Kamloops,CA
+V2G,BC,Williams Lake,CA
+V2H,BC,Kamloops,CA
+V2J,BC,Baker Creek,CA
+V2J,BC,Batnuni Lake,CA
+V2J,BC,Nazko,CA
+V2J,BC,Quesnel,CA
+V2K,BC,Prince George,CA
+V2L,BC,Prince George,CA
+V2M,BC,Prince George,CA
+V2N,BC,Prince George,CA
+V2P,BC,Chilliwack,CA
+V2R,BC,Chilliwack,CA
+V2R,BC,Cultus Lake,CA
+V2R,BC,Lindell Beach,CA
+V2S,BC,Abbotsford,CA
+V2T,BC,Abbotsford,CA
+V2V,BC,Mission,CA
+V2W,BC,Maple Ridge,CA
+V2X,BC,Maple Ridge,CA
+V2Y,BC,Langley,CA
+V2Z,BC,Aldergrove,CA
+V2Z,BC,Langley,CA
+V3A,BC,Langley,CA
+V3B,BC,Coquitlam,CA
+V3B,BC,Port Coquitlam,CA
+V3C,BC,Coquitlam,CA
+V3C,BC,Port Coquitlam,CA
+V3E,BC,Coquitlam,CA
+V3E,BC,Port Coquitlam,CA
+V3G,BC,Abbotsford,CA
+V3H,BC,Anmore,CA
+V3H,BC,Belcarra,CA
+V3H,BC,Coquitlam,CA
+V3H,BC,Port Coquitlam,CA
+V3H,BC,Port Moody,CA
+V3J,BC,Burnaby,CA
+V3J,BC,Coquitlam,CA
+V3K,BC,Coquitlam,CA
+V3L,BC,Coquitlam,CA
+V3L,BC,New Westminster,CA
+V3M,BC,Delta,CA
+V3M,BC,New Westminster,CA
+V3N,BC,Burnaby,CA
+V3R,BC,Surrey,CA
+V3S,BC,Surrey,CA
+V3T,BC,Surrey,CA
+V3V,BC,Surrey,CA
+V3W,BC,Surrey,CA
+V3X,BC,Surrey,CA
+V3Y,BC,Pitt Meadows,CA
+V3Z,BC,Surrey,CA
+V4A,BC,Surrey,CA
+V4B,BC,White Rock,CA
+V4C,BC,Delta,CA
+V4E,BC,Delta,CA
+V4G,BC,Delta,CA
+V4K,BC,Delta,CA
+V4L,BC,Delta,CA
+V4M,BC,Delta,CA
+V4M,BC,Tsawwassen,CA
+V4N,BC,Surrey,CA
+V4P,BC,Surrey,CA
+V4R,BC,Maple Ridge,CA
+V4S,BC,Mission,CA
+V4T,BC,West Kelowna,CA
+V4T,BC,Westbank,CA
+V4V,BC,Kelowna,CA
+V4V,BC,Lake Country,CA
+V4W,BC,Aldergrove,CA
+V4W,BC,Langley,CA
+V4X,BC,Abbotsford,CA
+V4Z,BC,Chilliwack,CA
+V5A,BC,Burnaby,CA
+V5B,BC,Burnaby,CA
+V5C,BC,Burnaby,CA
+V5E,BC,Burnaby,CA
+V5G,BC,Burnaby,CA
+V5H,BC,Burnaby,CA
+V5J,BC,Burnaby,CA
+V5K,BC,Burnaby,CA
+V5K,BC,Vancouver,CA
+V5L,BC,Vancouver,CA
+V5M,BC,Burnaby,CA
+V5M,BC,Vancouver,CA
+V5N,BC,Vancouver,CA
+V5P,BC,Vancouver,CA
+V5R,BC,Burnaby,CA
+V5R,BC,Vancouver,CA
+V5S,BC,Burnaby,CA
+V5S,BC,Vancouver,CA
+V5T,BC,Vancouver,CA
+V5V,BC,Vancouver,CA
+V5W,BC,Vancouver,CA
+V5X,BC,Vancouver,CA
+V5Y,BC,Vancouver,CA
+V5Z,BC,Vancouver,CA
+V6A,BC,Vancouver,CA
+V6B,BC,Vancouver,CA
+V6C,BC,Vancouver,CA
+V6E,BC,Vancouver,CA
+V6G,BC,Vancouver,CA
+V6H,BC,Vancouver,CA
+V6J,BC,Vancouver,CA
+V6K,BC,Vancouver,CA
+V6L,BC,Vancouver,CA
+V6M,BC,Vancouver,CA
+V6N,BC,Vancouver,CA
+V6P,BC,Richmond,CA
+V6P,BC,Vancouver,CA
+V6R,BC,Vancouver,CA
+V6S,BC,Vancouver,CA
+V6T,BC,Vancouver,CA
+V6V,BC,Richmond,CA
+V6W,BC,Richmond,CA
+V6X,BC,Richmond,CA
+V6Y,BC,Richmond,CA
+V6Z,BC,Vancouver,CA
+V7A,BC,Richmond,CA
+V7B,BC,Richmond,CA
+V7C,BC,Richmond,CA
+V7E,BC,Richmond,CA
+V7G,BC,North Vancouver,CA
+V7H,BC,North Vancouver,CA
+V7J,BC,North Vancouver,CA
+V7K,BC,North Vancouver,CA
+V7L,BC,North Vancouver,CA
+V7M,BC,North Vancouver,CA
+V7N,BC,North Vancouver,CA
+V7P,BC,North Vancouver,CA
+V7P,BC,West Vancouver,CA
+V7R,BC,North Vancouver,CA
+V7S,BC,West Vancouver,CA
+V7T,BC,West Vancouver,CA
+V7V,BC,West Vancouver,CA
+V7W,BC,West Vancouver,CA
+V7X,BC,Vancouver,CA
+V7Y,BC,Vancouver,CA
+V8A,BC,Powell River,CA
+V8B,BC,Squamish,CA
+V8C,BC,Kitimat,CA
+V8G,BC,Terrace,CA
+V8G,BC,Thornhill,CA
+V8J,BC,Prince Rupert,CA
+V8K,BC,Salt Spring Island,CA
+V8L,BC,North Saanich,CA
+V8L,BC,Sidney,CA
+V8M,BC,Brentwood Bay,CA
+V8M,BC,Saanichton,CA
+V8N,BC,Victoria,CA
+V8P,BC,Victoria,CA
+V8R,BC,Victoria,CA
+V8S,BC,Victoria,CA
+V8T,BC,Victoria,CA
+V8V,BC,Victoria,CA
+V8W,BC,Victoria,CA
+V8X,BC,Victoria,CA
+V8Y,BC,Victoria,CA
+V8Z,BC,Victoria,CA
+V9A,BC,Victoria,CA
+V9B,BC,Victoria,CA
+V9C,BC,Victoria,CA
+V9E,BC,Victoria,CA
+V9G,BC,Ladysmith,CA
+V9H,BC,Campbell River,CA
+V9J,BC,Black Creek,CA
+V9J,BC,Courtenay,CA
+V9K,BC,Qualicum Beach,CA
+V9L,BC,Duncan,CA
+V9M,BC,Comox,CA
+V9N,BC,Courtenay,CA
+V9P,BC,Nanoose Bay,CA
+V9P,BC,Parksville,CA
+V9R,BC,Nanaimo,CA
+V9S,BC,Nanaimo,CA
+V9T,BC,Nanaimo,CA
+V9V,BC,Nanaimo,CA
+V9W,BC,Campbell River,CA
+V9X,BC,Nanaimo,CA
+V9Y,BC,Port Alberni,CA
+V9Z,BC,Jordan River,CA
+V9Z,BC,Shirley,CA
+V9Z,BC,Sooke,CA
+X0A,NU,Arctic Bay,CA
+X0A,NU,Cape Dorset,CA
+X0A,NU,Clyde River,CA
+X0A,NU,Eureka,CA
+X0A,NU,Grise Fiord,CA
+X0A,NU,Hall Beach,CA
+X0A,NU,Igloolik,CA
+X0A,NU,Iqaluit,CA
+X0A,NU,Kimmirut,CA
+X0A,NU,Pangnirtung,CA
+X0A,NU,Pond Inlet,CA
+X0A,NU,Qikiqtarjuaq,CA
+X0A,NU,Resolute,CA
+X0A,NU,Sanikiluaq,CA
+X0B,NU,Bay Chimo,CA
+X0B,NU,Cambridge Bay,CA
+X0B,NU,Gjoa Haven,CA
+X0B,NU,Kugaaruk,CA
+X0B,NU,Kugluktuk,CA
+X0B,NU,Taloyoak,CA
+X0C,NU,Arviat,CA
+X0C,NU,Baker Lake,CA
+X0C,NU,Chesterfield Inlet,CA
+X0C,NU,Coral Harbour,CA
+X0C,NU,Rankin Inlet,CA
+X0C,NU,Repulse Bay,CA
+X0C,NU,Whale Cove,CA
+X0E,NT,Aklavik,CA
+X0E,NT,Behchoko,CA
+X0E,NT,Colville Lake,CA
+X0E,NT,Deline,CA
+X0E,NT,Enterprise,CA
+X0E,NT,Fort Good Hope,CA
+X0E,NT,Fort McPherson,CA
+X0E,NT,Fort Providence,CA
+X0E,NT,Fort Resolution,CA
+X0E,NT,Fort Simpson,CA
+X0E,NT,Fort Smith,CA
+X0E,NT,Gameti,CA
+X0E,NT,Hay River,CA
+X0E,NT,Inuvik,CA
+X0E,NT,Lutselk'e,CA
+X0E,NT,Norman Wells,CA
+X0E,NT,Paulatuk,CA
+X0E,NT,Sachs Harbour,CA
+X0E,NT,Trout Lake,CA
+X0E,NT,Tsiigehtchic,CA
+X0E,NT,Tuktoyaktuk,CA
+X0E,NT,Tulita,CA
+X0E,NT,Ulukhaktok,CA
+X0E,NT,Wekweti,CA
+X0E,NT,Whati,CA
+X0E,NT,Wrigley,CA
+X0G,NT,Fort Liard,CA
+X1A,NT,Yellowknife,CA
+Y0A,YT,Teslin,CA
+Y0A,YT,Watson Lake,CA
+Y0B,YT,Beaver Creek,CA
+Y0B,YT,Burwash Landing,CA
+Y0B,YT,Carcross,CA
+Y0B,YT,Carmacks,CA
+Y0B,YT,Dawson,CA
+Y0B,YT,Destruction Bay,CA
+Y0B,YT,Elsa,CA
+Y0B,YT,Faro,CA
+Y0B,YT,Haines Junction,CA
+Y0B,YT,Marsh Lake,CA
+Y0B,YT,Mayo,CA
+Y0B,YT,Old Crow,CA
+Y0B,YT,Pelly Crossing,CA
+Y0B,YT,Ross River,CA
+Y0B,YT,Tagish,CA
+Y1A,YT,Whitehorse,CA

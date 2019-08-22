@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<plugin
+  interface="IDatamodelUpgrade"
+  name="IDatamodelUpgrade">
+  <plugin-gosu
+    disabled="true"
+    gosuclass="gw.plugin.upgrade.AddLinkIDDatamodelUpgradePlugin"/>
+</plugin>

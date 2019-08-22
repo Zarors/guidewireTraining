@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Entity
+  name="GroupUser">
+  <Columns>
+    <Column
+      beanPath="GroupUser.User"
+      displayName="true"
+      name="user"
+      sortOrder="0"/>
+    <Column
+      beanPath="GroupUser.Group"
+      displayName="true"
+      name="group"
+      sortOrder="1"/>
+  </Columns>
+  <DisplayName><![CDATA[return gw.api.locale.DisplayKey.get("Java.Assign.UserInGroupDisplay", user, group);]]></DisplayName>
+</Entity>

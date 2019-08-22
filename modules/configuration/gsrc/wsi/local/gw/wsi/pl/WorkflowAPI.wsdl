@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.WorkflowAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/WorkflowAPI" name="WorkflowAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/WorkflowAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/WorkflowAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <!-- complete(String) -->
+      <xs:element name="complete">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="workflowID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="completeResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="BadIdentifierException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="EntityStateException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- suspend(String) -->
+      <xs:element name="suspend">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="workflowID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="suspendResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- resumeWorkflow(String) -->
+      <xs:element name="resumeWorkflow">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="workflowID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resumeWorkflowResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- resumeAllWorkflows() -->
+      <xs:element name="resumeAllWorkflows">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="resumeAllWorkflowsResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!-- invokeTrigger(String, String) -->
+      <xs:element name="invokeTrigger">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="workflowID" type="xs:string" minOccurs="0"/>
+            <xs:element name="triggerKey" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeTriggerResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RuntimeException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- isTriggerAvailable(String, String) : boolean -->
+      <xs:element name="isTriggerAvailable">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="workflowID" type="xs:string" minOccurs="0"/>
+            <xs:element name="triggerKey" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isTriggerAvailableResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="WorkflowAPIPortType">
+    <wsdl:operation name="complete">
+      <wsdl:input name="complete" message="tns:complete"/>
+      <wsdl:output name="completeResponse" message="tns:completeResponse"/>
+      <!-- If the workflow id did not match a valid workflow. -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- if can not be forced into completion from this state -->
+      <wsdl:fault name="EntityStateException" message="tns:EntityStateException"/>
+    </wsdl:operation>
+    <wsdl:operation name="suspend">
+      <wsdl:input name="suspend" message="tns:suspend"/>
+      <wsdl:output name="suspendResponse" message="tns:suspendResponse"/>
+      <!-- if can not be suspended from this state -->
+      <wsdl:fault name="EntityStateException" message="tns:EntityStateException"/>
+      <!-- If the workflow id did not match a valid workflow. -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="resumeWorkflow">
+      <wsdl:input name="resumeWorkflow" message="tns:resumeWorkflow"/>
+      <wsdl:output name="resumeWorkflowResponse" message="tns:resumeWorkflowResponse"/>
+      <!-- if can not be resumed from this state -->
+      <wsdl:fault name="EntityStateException" message="tns:EntityStateException"/>
+      <!-- If the workflow id did not match a valid workflow. -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="resumeAllWorkflows">
+      <wsdl:input name="resumeAllWorkflows" message="tns:resumeAllWorkflows"/>
+      <wsdl:output name="resumeAllWorkflowsResponse" message="tns:resumeAllWorkflowsResponse"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTrigger">
+      <wsdl:input name="invokeTrigger" message="tns:invokeTrigger"/>
+      <wsdl:output name="invokeTriggerResponse" message="tns:invokeTriggerResponse"/>
+      <!-- if trigger is not found. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if trigger is not available. -->
+      <wsdl:fault name="EntityStateException" message="tns:EntityStateException"/>
+      <!-- On failure to invoke trigger, typically trigger does not exist on current step. -->
+      <wsdl:fault name="RuntimeException" message="tns:RuntimeException"/>
+      <!-- If the workflow id did not match a valid workflow. -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isTriggerAvailable">
+      <wsdl:input name="isTriggerAvailable" message="tns:isTriggerAvailable"/>
+      <wsdl:output name="isTriggerAvailableResponse" message="tns:isTriggerAvailableResponse"/>
+      <!-- if trigger is not found. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- If the workflow id did not match a valid workflow. -->
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <!-- On permission or authentication errors -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkflowAPISoap12Binding" type="tns:WorkflowAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="complete">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="complete">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="EntityStateException">
+        <soap12:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="suspend">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="suspend">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EntityStateException">
+        <soap12:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeWorkflow">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="resumeWorkflow">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeWorkflowResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EntityStateException">
+        <soap12:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeAllWorkflows">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="resumeAllWorkflows">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeAllWorkflowsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTrigger">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="invokeTrigger">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="invokeTriggerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="EntityStateException">
+        <soap12:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap12:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isTriggerAvailable">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isTriggerAvailable">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isTriggerAvailableResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WorkflowAPISoap11Binding" type="tns:WorkflowAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="complete">
+      <soap11:operation style="document"/>
+      <wsdl:input name="complete">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="EntityStateException">
+        <soap11:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="suspend">
+      <soap11:operation style="document"/>
+      <wsdl:input name="suspend">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EntityStateException">
+        <soap11:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeWorkflow">
+      <soap11:operation style="document"/>
+      <wsdl:input name="resumeWorkflow">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeWorkflowResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EntityStateException">
+        <soap11:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="resumeAllWorkflows">
+      <soap11:operation style="document"/>
+      <wsdl:input name="resumeAllWorkflows">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resumeAllWorkflowsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTrigger">
+      <soap11:operation style="document"/>
+      <wsdl:input name="invokeTrigger">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="invokeTriggerResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="EntityStateException">
+        <soap11:fault name="EntityStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RuntimeException">
+        <soap11:fault name="RuntimeException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isTriggerAvailable">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isTriggerAvailable">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isTriggerAvailableResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkflowAPI">
+    <wsdl:port name="WorkflowAPISoap12Port" binding="tns:WorkflowAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/WorkflowAPI"/>
+    </wsdl:port>
+    <wsdl:port name="WorkflowAPISoap11Port" binding="tns:WorkflowAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/WorkflowAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="complete">
+    <wsdl:part name="parameters" element="tns:complete"/>
+  </wsdl:message>
+  <wsdl:message name="completeResponse">
+    <wsdl:part name="parameters" element="tns:completeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="BadIdentifierException">
+    <wsdl:part name="BadIdentifierException" element="tns:BadIdentifierException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="EntityStateException">
+    <wsdl:part name="EntityStateException" element="tns:EntityStateException"/>
+  </wsdl:message>
+  <wsdl:message name="suspend">
+    <wsdl:part name="parameters" element="tns:suspend"/>
+  </wsdl:message>
+  <wsdl:message name="suspendResponse">
+    <wsdl:part name="parameters" element="tns:suspendResponse"/>
+  </wsdl:message>
+  <wsdl:message name="resumeWorkflow">
+    <wsdl:part name="parameters" element="tns:resumeWorkflow"/>
+  </wsdl:message>
+  <wsdl:message name="resumeWorkflowResponse">
+    <wsdl:part name="parameters" element="tns:resumeWorkflowResponse"/>
+  </wsdl:message>
+  <wsdl:message name="resumeAllWorkflows">
+    <wsdl:part name="parameters" element="tns:resumeAllWorkflows"/>
+  </wsdl:message>
+  <wsdl:message name="resumeAllWorkflowsResponse">
+    <wsdl:part name="parameters" element="tns:resumeAllWorkflowsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="invokeTrigger">
+    <wsdl:part name="parameters" element="tns:invokeTrigger"/>
+  </wsdl:message>
+  <wsdl:message name="invokeTriggerResponse">
+    <wsdl:part name="parameters" element="tns:invokeTriggerResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="RuntimeException">
+    <wsdl:part name="RuntimeException" element="tns:RuntimeException"/>
+  </wsdl:message>
+  <wsdl:message name="isTriggerAvailable">
+    <wsdl:part name="parameters" element="tns:isTriggerAvailable"/>
+  </wsdl:message>
+  <wsdl:message name="isTriggerAvailableResponse">
+    <wsdl:part name="parameters" element="tns:isTriggerAvailableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

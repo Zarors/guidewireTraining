@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ###  Exclusion table for loader
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="LUWIDs to be excluded by the loader."
+  entity="LoadExclusion"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="loadexclusion"
+  type="nonkeyable">
+  <column
+    desc="Logical Unit of Work ID"
+    name="LUWID"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="64"/>
+  </column>
+  <index
+    desc="Unique index for loader exclusion functionality"
+    name="loadexclusionu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LUWID"/>
+  </index>
+</entity>

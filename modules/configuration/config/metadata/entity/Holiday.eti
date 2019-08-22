@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="List of holidays."
+  entity="Holiday"
+  extendable="false"
+  platform="true"
+  table="holiday"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.impl.HolidayInternalMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.HolidayImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.HolidayPublicMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.HolidayImpl"/>
+  <column
+    desc="The name of a holiday in the business calendar."
+    name="Name"
+    nullok="false"
+    type="shorttext">
+    <localization
+      nullok="false"
+      tableName="holiday_nam_l10n"/>
+  </column>
+  <column
+    desc="The date of a holiday in the business calendar."
+    name="OccurrenceDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    default="1"
+    desc="True if this holiday applies to all zones (in which case HolidayZones should be empty). If false and HolidayZones has elements, this holiday applies to those zones.  If false and HolidayZones is empty, this holiday doesn't apply anywhere."
+    name="AppliesToAllZones"
+    nullok="false"
+    type="bit"/>
+  <array
+    arrayentity="HolidayZone"
+    arrayfield="Holiday"
+    desc="The zones that observe this holiday."
+    name="HolidayZones"/>
+  <array
+    arrayentity="HolidayTag"
+    arrayfield="Holiday"
+    desc="The tags that observe this holiday."
+    name="HolidayTags"/>
+  <index
+    desc="Enforce uniqueness, name of holiday must be unique per occurrence date"
+    name="holidayu1"
+    unique="true">
+    <indexcol
+      keyposition="2"
+      name="Name"/>
+    <indexcol
+      keyposition="1"
+      name="OccurrenceDate"/>
+  </index>
+  <index
+    desc="Speed up search for holiday by date"
+    name="holiday1"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="OccurrenceDate"/>
+  </index>
+</entity>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Validatable"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.validation.impl.ValidatableInternalMethods"
+    impl="com.guidewire.pl.domain.validation.impl.ValidatableImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.validation.ValidatablePublicMethods"
+    impl="com.guidewire.pl.domain.validation.impl.ValidatableImpl"/>
+</delegate>

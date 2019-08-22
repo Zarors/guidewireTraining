@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Used to determine the format of the Note Template search results"
+  entity="NoteTemplateSearchResults"
+  extendable="true"
+  platform="true">
+  <column
+    name="Name"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    name="Subject"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    name="Body"
+    nullok="true"
+    type="longtext"/>
+  <typekey
+    name="Topic"
+    nullok="true"
+    typelist="NoteTopicType"/>
+  <typekey
+    name="Type"
+    nullok="true"
+    typelist="NoteType"/>
+  <typekey
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+</nonPersistentEntity>

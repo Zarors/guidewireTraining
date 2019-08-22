@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="ImportWizard_UploadScreen">
+    <Require
+      name="ImportDataInfo"
+      type="gw.api.admin.ImportDataInfo"/>
+    <Toolbar>
+      <WizardButtons/>
+    </Toolbar>
+    <Verbatim
+      id="Errors"
+      label="DisplayKey.get(&quot;Web.Admin.ImportWizard.UploadDV.ErrorsFoundMessage&quot;,  ImportDataInfo.ErrorString)"
+      visible="ImportDataInfo.hasErrors()"
+      warning="true"/>
+    <PanelRef
+      def="ImportWizard_UploadDV(ImportDataInfo)"/>
+  </Screen>
+</PCF>

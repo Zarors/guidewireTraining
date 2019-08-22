@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    countsAsWork="false"
+    id="PlannedShutdownStatusPopup"
+    title="DisplayKey.get(&quot;Web.InternalTools.PlannedShutdownStatusPopup.Title&quot;, serverId)">
+    <LocationEntryPoint
+      signature="PlannedShutdownStatusPopup(serverId: String)"/>
+    <Variable
+      name="serverId"
+      type="String"/>
+    <Variable
+      initialValue="new gw.api.tools.ClusterMembersData().getPlannedShutdownStatus(serverId)"
+      name="shutdownStatus"
+      recalculateOnRefresh="true"
+      type="gw.api.system.cluster.NodePlannedShutdownStatus"/>
+    <Screen>
+      <Verbatim
+        label="DisplayKey.get(&quot;Web.InternalTools.PlannedShutdownStatusPopup.PlannedShutdownNotScheduled&quot;)"
+        visible="shutdownStatus == null"/>
+      <PanelSet>
+        <PanelRef
+          visible="shutdownStatus != null">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.InternalTools.PlannedShutdownStatusPopup.BgTaskComponents&quot;)"/>
+          <ListViewPanel>
+            <RowIterator
+              canPick="false"
+              editable="false"
+              elementName="component"
+              pageSize="0"
+              value="shutdownStatus.ComponentStatuses"
+              valueType="java.util.List&lt;gw.api.system.cluster.ComponentPlannedShutdownStatus&gt;">
+              <Row>
+                <TextCell
+                  id="Name"
+                  label="DisplayKey.get(&quot;Web.InternalTools.PlannedShutdownStatusPopup.LV.Name&quot;)"
+                  value="component.LocalizedName"/>
+                <DateCell
+                  dateFormat="medium"
+                  id="StopRequested"
+                  label="DisplayKey.get(&quot;Web.InternalTools.PlannedShutdownStatusPopup.LV.StopRequested&quot;)"
+                  timeFormat="short"
+                  value="component.StopRequested"/>
+                <DateCell
+                  dateFormat="medium"
+                  id="Stopped"
+                  label="DisplayKey.get(&quot;Web.InternalTools.PlannedShutdownStatusPopup.LV.Stopped&quot;)"
+                  timeFormat="short"
+                  value="component.Stopped"/>
+              </Row>
+            </RowIterator>
+          </ListViewPanel>
+        </PanelRef>
+      </PanelSet>
+    </Screen>
+  </Popup>
+</PCF>

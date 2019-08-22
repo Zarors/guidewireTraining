@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<internaltypelistextension xmlns="http://guidewire.com/typelists" name="PurgeType" desc="">
+  <typecode
+    code="PersonalData"
+    desc="Personal data"
+    name="PersonalData"/>
+</internaltypelistextension>

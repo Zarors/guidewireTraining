@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Association between a user and another user who serves as his or her backup."
+  entity="UserBackup"
+  platform="true"
+  table="userbackup"
+  type="joinarray">
+  <fulldescription><![CDATA[
+        Supports the creation of backup user attribute for a particular User.
+      
+    ]]></fulldescription>
+  <foreignkey
+    columnName="UserID"
+    desc="User."
+    exportable="false"
+    fkentity="User"
+    name="User"
+    nullok="false"/>
+  <foreignkey
+    columnName="BackupUserID"
+    desc="User that will serve as backup."
+    exportable="false"
+    fkentity="User"
+    name="BackupUser"
+    nullok="false"/>
+  <index
+    desc="A person can have at most one backup user"
+    name="userbackup1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UserID"/>
+  </index>
+  <checkconstraint
+    desc="User cannot have himself as a backup."
+    predicate="UserID &lt;&gt; BackupUserID"/>
+</entity>

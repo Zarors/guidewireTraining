@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <Popup
+    countsAsWork="false"
+    id="ClusterComponentHistoryPopup"
+    title="DisplayKey.get(&quot;Web.InternalTools.ClusterComponentHistoryPopup.Title&quot;, component.Name?:component.Code)">
+    <LocationEntryPoint
+      signature="ClusterComponentHistoryPopup(data : gw.api.tools.ClusterComponentsData, component : gw.api.system.cluster.ComponentInfo)"/>
+    <Variable
+      name="data"
+      type="gw.api.tools.ClusterComponentsData"/>
+    <Variable
+      name="component"
+      type="gw.api.system.cluster.ComponentInfo"/>
+    <Screen>
+      <Toolbar>
+        <ToolbarButton
+          action="data.reload()"
+          id="RefreshButton"
+          label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+      </Toolbar>
+      <PanelRef
+        def="ClusterComponentsLV(data, data.getComponentHistory(component.Type, component.Code), false)"/>
+    </Screen>
+  </Popup>
+</PCF>

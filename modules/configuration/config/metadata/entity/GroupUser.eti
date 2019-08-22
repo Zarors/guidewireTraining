@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Links users to groups."
+  entity="GroupUser"
+  platform="true"
+  table="groupuser"
+  type="joinarray">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.GroupUserPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.GroupUserImpl"/>
+  <fulldescription><![CDATA[
+        Links a user to a group. The GroupUser entity also stores data used by the system when making assignments by
+        workload. The system creates this object each time a user is added to a group.
+        
+    ]]></fulldescription>
+  <column
+    createhistogram="true"
+    default="true"
+    desc="Flag indicating whether the user is a working member of the group (for purposes of work assignment, for example), as opposed to simply being associated with the group as a manager or other auxiliary person."
+    name="Member"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Flag indicating whether the user has permission to see activity within the group."
+    name="Manager"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="General-purpose text field."
+    name="TextField1"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="General-purpose text field."
+    name="TextField2"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="General-purpose text field."
+    name="TextField3"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    columnName="GroupID"
+    desc="The associated group."
+    exportable="false"
+    fkentity="Group"
+    name="Group"
+    nullok="false"/>
+  <foreignkey
+    columnName="UserID"
+    desc="The associated user."
+    fkentity="User"
+    name="User"
+    nullok="false"/>
+  <typekey
+    desc="Type of load factor privileges the user has."
+    name="LoadFactorType"
+    nullok="true"
+    typelist="LoadFactorType"/>
+  <column
+    desc="Percentage value of normal workload to be given to this user in this group. This is used for round-robin assignment."
+    name="LoadFactor"
+    nullok="true"
+    type="integer"/>
+  <events/>
+  <!-- All array tables must have a unique index.  groupuser accessed through
+      group, so we have key be (groupid, userid, groupusertype) and
+      eliminate backing index on groupid since unique index is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, must be only one entry joining a particular group and user"
+    name="groupuseru1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GroupID"/>
+    <indexcol
+      keyposition="2"
+      name="UserID"/>
+  </index>
+</entity>

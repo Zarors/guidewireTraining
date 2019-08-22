@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="List of regions and their regional phone codes"
+  final="false"
+  name="PhoneType"
+  platform="true">
+  <typecode
+    code="Work"
+    desc="Work"
+    name="Work"/>
+  <typecode
+    code="Fax"
+    desc="Fax"
+    name="Fax"/>
+  <typecode
+    code="Home"
+    desc="Home"
+    name="Home"/>
+  <typecode
+    code="Cell"
+    desc="Mobile"
+    name="Mobile"/>
+  <typecode
+    code="Generic"
+    desc="Generic"
+    name="Generic"/>
+</typelist>

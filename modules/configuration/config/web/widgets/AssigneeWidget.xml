@@ -1,0 +1,13 @@
+<WidgetTemplate name="AssigneeWidgetTemplate" inputWidgetName="AssigneeInput">
+
+  <TemplateAttribute name="pickerLocation" default="AssigneePickerPopup" type="xsd:string" />
+  <TemplateAttribute name="pickerIcon" default="&quot;search&quot;" type="xsd:string" />
+  <TemplateAttribute name="assignable" type="expression" />
+
+  <ExpressionRangeValue>
+    <MenuItem id="#{id}_PickerButton" icon="#{pickerIcon}" iconType="svgFileName"
+              action="#{pickerLocation}.push(new gw.api.assignment.AssigneePicker(entity.Activity.Type.isAssignableFrom(typeof (#{assignable}))))"
+                 hideIfReadOnly="true" />
+
+  </ExpressionRangeValue>
+</WidgetTemplate>

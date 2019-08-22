@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of contact tags"
+  final="false"
+  name="ContactTagType"
+  platform="true">
+  <typecode
+    code="client"
+    desc="Client"
+    name="Client"/>
+  <typecode
+    code="claimparty"
+    desc="Claim Party"
+    name="Claim Party"/>
+  <typecode
+    code="vendor"
+    desc="Vendor"
+    name="Vendor"/>
+</typelist>

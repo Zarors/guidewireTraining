@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- ### ==========================================================
+  ### Array data distribution (owned by Table data distribution)
+  ### ========================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores array data distribution."
+  entity="ArrayDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="arraydatadist"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.ArrayDataDistInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.ArrayDataDistImpl"/>
+  <column
+    desc="Name of array."
+    name="ArrayName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    default="none"
+    desc="Entity associated with array"
+    name="ArrayEntityName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    default="none"
+    desc="Table for array entity"
+    name="ArrayEntityTableName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Count of # of non null values."
+    name="NumNonNull"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Mean size of arrays."
+    name="MeanSize"
+    nullok="false"
+    type="dbstat"/>
+  <column
+    desc="Median size of arrays."
+    name="MedianSize"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Minimum array size."
+    name="MinSize"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Maximum array size."
+    name="MaxSize"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <array
+    arrayentity="ArraySizeCntDD"
+    desc="Collection of ArraySizeCntDDs linked to this ArrayDataDist."
+    exportable="true"
+    name="ArraySizeCntDDs"
+    owner="true"/>
+</entity>

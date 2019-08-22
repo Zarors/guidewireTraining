@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<internalExtension xmlns="http://guidewire.com/datamodel" entityName="Contact">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.personaldata.purge.DestructionRootPinnablePublicMethods"
+    impl="com.guidewire.ab.domain.contact.ContactImpl"/>
+</internalExtension>

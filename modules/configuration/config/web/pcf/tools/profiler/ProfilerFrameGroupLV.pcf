@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="ProfilerFrameGroupLV">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Require
+      name="profilerFrameGroupSource"
+      type="gw.api.profiler.ProfilerFrameGroupSource"/>
+    <RowIterator
+      editable="false"
+      elementName="group"
+      value="profilerFrameGroupSource.FrameGroups"
+      valueType="gw.api.profiler.ProfilerFrameGroup[]">
+      <Row>
+        <TextCell
+          footerLabel="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo.Totals&quot;)"
+          id="path"
+          label="DisplayKey.get(&quot;Web.Profiler.Tag.Name&quot;)"
+          value="group.ProfilerTag.Name"/>
+        <TextCell
+          id="num"
+          label="DisplayKey.get(&quot;Web.Profiler.Number&quot;)"
+          value="group.FrameCount"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          id="time"
+          label="DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+          sortDirection="descending"
+          sortOrder="1"
+          value="group.TotalElapsedTime"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          format="&quot;####0.0&quot;"
+          id="meanElapsedTime"
+          label="DisplayKey.get(&quot;Web.Profiler.Mean&quot;)"
+          sortDirection="descending"
+          value="group.MeanElapsedTime"
+          valueType="java.lang.Double"/>
+        <TextCell
+          format="&quot;###0.0&quot;"
+          id="elapsedTimeSD"
+          label="DisplayKey.get(&quot;Web.Profiler.StandardDeviation&quot;)"
+          sortDirection="descending"
+          value="group.StandardDeviationOfElapsedTime"
+          valueType="java.lang.Double"/>
+        <TextCell
+          format="&quot;#0.00%&quot;"
+          id="timePct"
+          label="DisplayKey.get(&quot;Web.Profiler.Percent&quot;)"
+          value="getPercentageTime(group.TotalElapsedTime)"
+          valueType="java.lang.Double"/>
+        <TextCell
+          footerSumValue="group.TotalFrameTime"
+          id="frameTime"
+          label="DisplayKey.get(&quot;Web.Profiler.FrameTime&quot;)"
+          sortDirection="descending"
+          sortOrder="2"
+          value="group.TotalFrameTime"
+          valueType="java.lang.Integer"/>
+        <TextCell
+          format="&quot;####0.0&quot;"
+          id="meanFrameTime"
+          label="DisplayKey.get(&quot;Web.Profiler.Mean&quot;)"
+          sortDirection="descending"
+          value="group.MeanFrameTime"
+          valueType="java.lang.Double"/>
+        <TextCell
+          format="&quot;####0.0&quot;"
+          id="frameTimeSD"
+          label="DisplayKey.get(&quot;Web.Profiler.StandardDeviation&quot;)"
+          sortDirection="descending"
+          value="group.StandardDeviationOfFrameTime"
+          valueType="java.lang.Double"/>
+        <TextCell
+          footerSumValue="getPercentageTime(group.TotalFrameTime)"
+          format="&quot;#0.00%&quot;"
+          id="frameTimePct"
+          label="DisplayKey.get(&quot;Web.Profiler.Percent&quot;)"
+          value="getPercentageTime(group.TotalFrameTime)"
+          valueType="java.lang.Double"/>
+        <TextCell
+          id="propsAndCounters"
+          label="DisplayKey.get(&quot;Web.Profiler.PropertiesAndCounters&quot;)"
+          value="gw.api.profiler.ProfilerPageHelper.getPropertiesAndCountersExcludingTracesString( group )"
+          visible="profilerFrameGroupSource.shouldShowPropertiesAndCounters()"/>
+        <LinkCell
+          id="ReportsCell"
+          label="DisplayKey.get(&quot;Web.Profiler.DbmsInstrumentationReports&quot;)"
+          visible="false">
+          <LinkIterator
+            elementName="report"
+            value="gw.api.profiler.ProfilerPageHelper.getDbmsReports( group, profilerDataSource ).toTypedArray()"
+            valueType="gw.api.profiler.DbmsReportZipProvider[]">
+            <IteratorSort
+              sortBy="report.Name"
+              sortOrder="1"/>
+            <Link
+              action="gw.api.profiler.ProfilerPageHelper.downloadReport(report)"
+              download="true"
+              id="reportLink"
+              label="report.Name"
+              styleClass="miniButton"/>
+            <Link
+              id="reportSeparator"
+              label="&quot; &quot;"/>
+          </LinkIterator>
+        </LinkCell>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[
+function getPercentageTime(t : int) : java.lang.Double {
+    if (profilerFrameGroupSource.TotalElapsedTime == 0) {
+      return 0.0
+    }
+    return t/ profilerFrameGroupSource.TotalElapsedTime  
+  }
+      
+    ]]></Code>
+  </ListViewPanel>
+</PCF>

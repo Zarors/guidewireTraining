@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="FailoverState"
+  name="FailoverState"
+  platform="true">
+  <typecode
+    code="NotStarted"
+    desc="Automatic failover not started"
+    name="Not Started"/>
+  <typecode
+    code="InProgress"
+    desc="Automatic failover is in progress"
+    name="In Progress"/>
+  <typecode
+    code="Postponed"
+    desc="Automatic failover is postponed"
+    name="Postponed"/>
+  <typecode
+    code="Failed"
+    desc="Automatic failover failed (requires manual intervention)"
+    name="Failed"/>
+</typelist>

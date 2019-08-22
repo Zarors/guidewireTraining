@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="ABContact">
+  <column-override
+    desc="Primary email address associated with the contact."
+    name="EmailAddress1"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+    <columnParam
+      name="validator"
+      value="Email"/>
+  </column-override>
+  <column-override
+    desc="Secondary email address associated with the contact."
+    name="EmailAddress2"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+    <columnParam
+      name="validator"
+      value="Email"/>
+  </column-override>
+  <column-override
+    desc="Tax ID for the contact (SSN or EIN)."
+    name="TaxID"
+    nullok="true"
+    type="ssn">
+    <columnParam
+      name="encryption"
+      value="true"/>
+  </column-override>
+  <column
+    default="false"
+    desc="Has W-9 form been received"
+    name="W9Received"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="W-9 form received date"
+    name="W9ReceivedDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="W-9 valid start date"
+    name="W9ValidFrom"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="W-9 valid to date"
+    name="W9ValidTo"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="KeywordKanji is the general term for the Kanji Name (Companies and Places) and LastName (for Persons).  Used only for Japanese names and will be null otherwise."
+    name="KeywordKanji"
+    nullok="true"
+    overwrittenInStagingTable="true"
+    type="shorttext"/>
+  <array
+    arrayentity="EFTData"
+    arrayfield="Contact"
+    desc="Electronic Funds Transfer data for the contact"
+    name="EFTRecords"/>
+  <index
+    desc="Index to speed up Search by Specialist Service with City and State"
+    name="ABSpecialist"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="CityDenorm"/>
+    <indexcol
+      keyposition="2"
+      name="StateDenorm"/>
+    <indexcol
+      keyposition="3"
+      name="PostalCodeDenorm"/>
+    <indexcol
+      keyposition="4"
+      name="Subtype"/>
+    <indexcol
+      keyposition="5"
+      name="CreateStatus"/>
+    <indexcol
+      keyposition="6"
+      name="Retired"/>
+    <indexcol
+      keyposition="7"
+      name="Id"/>
+  </index>
+  <foreignkey
+    columnName="AssignedUserID"
+    desc="Assigned user"
+    fkentity="User"
+    name="AssignedUser"
+    nullok="true"/>
+  <column
+    default="false"
+    desc="Does this contact prefer to be contacted via email"
+    name="PrefersContactByEmail"
+    nullok="true"
+    type="bit"/>
+  <array
+    arrayentity="BankAccount"
+    desc="Bank accounts"
+    name="BankAccounts"
+    triggersValidation="true"/>
+  <onetoone
+    desc="Financial summary for contact (if contact holds one or more policies)"
+    fkentity="FinancialSummary"
+    name="FinancialSummary"
+    nullok="true"/>
+  <array
+    arrayentity="Building_Ext"
+    desc="Buildings"
+    name="Buildings_Ext"/>
+  <array
+    arrayentity="FlagEntry"
+    desc="Flag entries"
+    name="FlagEntries"/>
+  <array
+    arrayentity="HistoryEntry"
+    desc="History entries"
+    name="HistoryEntries"/>
+  <array
+    arrayentity="LegalCase"
+    desc="Legal cases"
+    name="LegalCases"/>
+  <column
+    desc="Date the last legal case report was received"
+    name="LastLegalCaseReportDate"
+    nullok="true"
+    type="datetime"/>
+  <typekey
+    default="never_requested"
+    desc="Status of legal case reports"
+    name="LegalCaseReportStatus"
+    nullok="true"
+    typelist="LegalCaseReportStatus"/>
+  <array
+    arrayentity="VendorEvaluation"
+    desc="Vendor evaluations"
+    name="VendorEvaluations"/>
+  <column
+    default="false"
+    desc="Has this vendor contact been recommended to external service evaluation companies?"
+    name="IsVendorRecommended"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="ID for profile created by external service evaluation companies"
+    name="VendorProfileCode"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="10"/>
+  </column>
+  <array
+    arrayentity="ContactNote"
+    desc="Notes"
+    name="ContactNotes"/>
+  <typekey
+    name="ContactTier"
+    nullok="true"
+    typelist="ContactTier"/>
+  <column
+    name="WebAddress_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+  <array
+    arrayentity="Incidente_Ext"
+    name="Incidentes"/>
+  <column
+    name="CustomerRating_Ext"
+    nullok="true"
+    type="decimal">
+    <columnParam
+      name="precision"
+      value="4"/>
+    <columnParam
+      name="scale"
+      value="1"/>
+  </column>
+  <column
+    name="IsStrategicPartner_Ext"
+    nullok="true"
+    type="bit"/>
+  <column
+    name="LastCourtesyContact_Ext"
+    nullok="true"
+    type="dateonly"/>
+  <column
+    name="FraudInvestigationNum_Ext"
+    nullok="true"
+    type="integer"/>
+</extension>

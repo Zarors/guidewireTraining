@@ -1,0 +1,5 @@
+<div class="gw-ListView--table-wrapper" ${tableWrapperStyling}>
+  <table class="gw-ListViewWidget--table gw-table">
+    ${:children}
+  </table>
+</div>

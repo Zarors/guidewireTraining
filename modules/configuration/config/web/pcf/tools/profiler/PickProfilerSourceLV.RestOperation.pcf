@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="RestOperation">
+    
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="restCallHistory"
+      pickValue="restCallHistory.ProfilerData"
+      toRemove="deleteProfilerData(restCallHistory)"
+      value="gw.api.database.Query.make(RestCallHistory).select()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.RestCallHistory&gt;">
+      <ToolbarFlag
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="false"
+        name="CannotDelete"/>
+      <Row>
+        <TextCell
+          id="ServerName"
+          label="DisplayKey.get(&quot;Web.Profiler.SoapProfilerServerId&quot;)"
+          sortOrder="1"
+          value="restCallHistory.ServerName"/>
+        <TextCell
+          id="OperationName"
+          label="DisplayKey.get(&quot;Web.Profiler.RestOperationName&quot;)"
+          sortOrder="2"
+          value="restCallHistory.OperationName"/>
+        <TextCell
+          id="HttpOperation"
+          label="DisplayKey.get(&quot;Web.Profiler.RestHttpOperation&quot;)"
+          value="restCallHistory.HttpOperation"/>
+        <TextCell
+          id="TraceabilityId"
+          label="DisplayKey.get(&quot;Web.Profiler.TraceabilityId&quot;)"
+          value="restCallHistory.TraceabilityId"/>
+        <DateCell
+          dateFormat="short"
+          id="StartDate"
+          label="DisplayKey.get(&quot;Web.Profiler.StartDate&quot;)"
+          sortDirection="descending"
+          sortOrder="4"
+          timeFormat="short"
+          value="restCallHistory.StartDate"/>
+        <DateCell
+          dateFormat="short"
+          id="CompleteDate"
+          label="DisplayKey.get(&quot;Web.Profiler.CompleteDate&quot;)"
+          timeFormat="short"
+          value="restCallHistory.CompleteDate"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[function deleteProfilerData(restCallHistory : RestCallHistory) {
+  gw.transaction.Transaction.runWithNewBundle( \ bundle -> {
+      bundle.delete( restCallHistory )
+    }
+  )
+}]]></Code>
+  </ListViewPanel>
+</PCF>

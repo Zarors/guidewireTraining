@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListDetailPanel
+    id="ArgsSummaryLDV"
+    selectionName="selectedArgsSummary"
+    selectionType="gw.api.profiler.ArgsAggregatedQuerySummary">
+    <Require
+      name="argsSummaries"
+      type="gw.api.profiler.ArgsAggregatedQuerySummary[]"/>
+    <PanelRef>
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Profiler.ArgumentDetails&quot;)"/>
+      <Toolbar/>
+      <ListViewPanel
+        id="StackDetailsLV">
+        <RowIterator
+          editable="false"
+          elementName="argsSummary"
+          value="argsSummaries"
+          valueType="gw.api.profiler.ArgsAggregatedQuerySummary[]">
+          <Row>
+            <TextCell
+              footerLabel="DisplayKey.get(&quot;Web.Profiler.Total&quot;)"
+              id="ShortArgs"
+              label="DisplayKey.get(&quot;Web.Profiler.Arguments&quot;)"
+              value="argsSummary.getShortArgs(80)"/>
+            <TextCell
+              footerSumValue="argsSummary.ExecutionCount"
+              id="QueryCount"
+              label="DisplayKey.get(&quot;Web.Profiler.TotalExecutions&quot;)"
+              sortDirection="descending"
+              sortOrder="1"
+              value="argsSummary.ExecutionCount"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              footerSumValue="argsSummary.TotalTime"
+              id="TotalQueryTime"
+              label="DisplayKey.get(&quot;Web.Profiler.TotalQueryTime&quot;)"
+              sortDirection="descending"
+              sortOrder="2"
+              value="argsSummary.TotalTime"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              id="AverageTime"
+              label="DisplayKey.get(&quot;Web.Profiler.AverageQueryTime&quot;)"
+              outputConversion="formatAverage(VALUE)"
+              value="argsSummary.AverageTime"
+              valueType="java.lang.Double"/>
+            <TextCell
+              id="MaxQueryTime"
+              label="DisplayKey.get(&quot;Web.Profiler.MaxQueryTime&quot;)"
+              value="argsSummary.MaxQueryTime"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              footerSumValue="argsSummary.TotalRowCount"
+              id="TotalRowCount"
+              label="DisplayKey.get(&quot;Web.Profiler.TotalRowCount&quot;)"
+              sortDirection="descending"
+              sortOrder="3"
+              value="argsSummary.TotalRowCount"
+              valueType="java.lang.Integer"/>
+            <TextCell
+              id="AverageRowCount"
+              label="DisplayKey.get(&quot;Web.Profiler.AverageRowCount&quot;)"
+              outputConversion="formatAverage(VALUE)"
+              value="argsSummary.AverageRowCount"
+              valueType="java.lang.Double"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </PanelRef>
+    <CardViewPanel>
+      <Card
+        id="SQL"
+        title="DisplayKey.get(&quot;Web.Profiler.SQL&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <% printContent(selectedArgsSummary.PrettyPrintedSQL, false) %>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+      <Card
+        id="Args"
+        title="DisplayKey.get(&quot;Web.Profiler.Args&quot;)">
+        <TemplatePanel>
+          <TemplatePanelContents><![CDATA[<div style="width:1040;height:500;overflow-x:scroll;overflow-y:scroll;">
+              <% printContent(selectedArgsSummary.Args, false) %>
+            </div>
+        ]]></TemplatePanelContents>
+        </TemplatePanel>
+      </Card>
+    </CardViewPanel>
+    <Code><![CDATA[
+function formatAverage(value: java.lang.Double): String {
+        return gw.api.util.StringUtil.formatNumber(value, "#,##0.00")
+      }
+    ]]></Code>
+  </ListDetailPanel>
+</PCF>

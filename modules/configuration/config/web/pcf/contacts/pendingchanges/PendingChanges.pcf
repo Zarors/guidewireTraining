@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="false"
+    canVisit="perm.ABContact.viewpending"
+    id="PendingChanges"
+    title="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Title&quot;)">
+    <Variable
+      name="pendingCreateID"
+      type="String"/>
+    <Screen
+      id="PendingChangesScreen">
+      <CardViewPanel>
+        <Card
+          id="UpdatesCard"
+          onSelect="gw.api.web.contact.PendingContactChangeUtil.closeWorksheet(); gw.api.web.contact.PendingContactChangeUtil.clearMessages();"
+          title="DisplayKey.get(&quot;Web.Contacts.PendingChanges.PendingUpdatesCard.Title&quot;, gw.api.desktop.DesktopCounts.getDesktopCounts().PendingContactUpdates)">
+          <ListDetailPanel
+            id="PendingUpdatesListDetailPanel"
+            lockWhileEditing="true"
+            selectionName="selectedPendingContactUpdateView"
+            selectionType="PendingContactUpdateView">
+            <PanelRef
+              def="PendingContactUpdateDetailedLV()">
+              <Toolbar
+                id="ApproveRejectToolbar"
+                visible="selectedPendingContactUpdateView != null">
+                <ToolbarButton
+                  action="gw.api.web.contact.PendingContactChangeUtil.approveUpdate(selectedPendingContactUpdateView.PendingContactUpdate, CurrentLocation)"
+                  hideIfEditable="true"
+                  id="PendingContactCreate_ApproveButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.Approve&quot;)"/>
+                <ToolbarButton
+                  action="RejectChangePopup.push(selectedPendingContactUpdateView.PendingContactUpdate)"
+                  hideIfEditable="true"
+                  id="PendingContactCreate_RejectButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.Reject&quot;)"/>
+                <ToolbarButton
+                  action="gw.api.web.contact.PendingContactChangeUtil.approveThenEditUpdate(selectedPendingContactUpdateView.PendingContactUpdate, CurrentLocation)"
+                  id="PendingContactCreate_ApproveThenEditButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.ApproveThenEdit&quot;)"/>
+              </Toolbar>
+            </PanelRef>
+            <CardViewPanel
+              hideTabIfSingle="true">
+              <Variable
+                initialValue="gw.api.web.contact.PendingContactChangeUtil.createDiffDisplayTree(selectedPendingContactUpdateView.PendingContactUpdate)"
+                name="updateDiffDisplay"
+                recalculateOnRefresh="true"
+                type="gw.api.bean.compare.ui.DiffDisplay"/>
+              <Variable
+                initialValue="!gw.api.contact.pendingchanges.DiffDisplays.getVisibleChildren(updateDiffDisplay).Empty"
+                name="pendingUpdateHasChanges"
+                recalculateOnRefresh="true"
+                type="boolean"/>
+              <Card
+                id="PendingUpdatesContactCard"
+                title="null"
+                visible="pendingUpdateHasChanges">
+                <PanelRef
+                  def="ContactComparisonLV(selectedPendingContactUpdateView.PendingContactUpdate, updateDiffDisplay, findContactByID(selectedPendingContactUpdateView.ABContact))"
+                  id="ContactComparisonLVPanelRef"/>
+              </Card>
+              <Card
+                id="PendingChangeAlreadyAppliedCard"
+                title="null"
+                visible="!pendingUpdateHasChanges">
+                <PanelSet>
+                  <Verbatim
+                    id="AlreadyAppliedText"
+                    label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.RejectChangePopup.AlreadyApplied&quot;)"/>
+                </PanelSet>
+                <DetailViewPanel>
+                  <InputColumn>
+                    <ButtonInput
+                      action="gw.web.PendingChangesWebUtil.rejectAlreadyAppliedPendingChanges(selectedPendingContactUpdateView.PendingContactUpdate, CurrentLocation)//gw.api.web.contact.PendingContactChangeUtil.rejectChange(selectedPendingContactUpdateView.PendingContactUpdate, CurrentLocation) //"
+                      id="AlreadyAppliedButton"
+                      value="DisplayKey.get(&quot;Web.Contacts.PendingChanges.RejectChangePopup.AlreadyAppliedOK&quot;)"/>
+                  </InputColumn>
+                </DetailViewPanel>
+              </Card>
+            </CardViewPanel>
+          </ListDetailPanel>
+        </Card>
+        <Card
+          id="CreatesCard"
+          title="DisplayKey.get(&quot;Web.Contacts.PendingChanges.PendingCreateCard.Title&quot;, gw.api.desktop.DesktopCounts.getDesktopCounts().PendingContactCreates)">
+          <ListDetailPanel
+            id="PendingCreatesListDetailPanel"
+            lockWhileEditing="true"
+            selectionName="selectedPendingContactCreateView"
+            selectionType="PendingContactCreateView">
+            <PanelRef
+              def="PendingContactCreateDetailedLV()">
+              <Toolbar
+                visible="selectedPendingContactCreateView != null">
+                <ToolbarButton
+                  action="approveCreate(selectedPendingContactCreateView)"
+                  hideIfEditable="true"
+                  id="PendingContactCreate_ApproveButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.Approve&quot;)"/>
+                <ToolbarButton
+                  action="rejectCreate(selectedPendingContactCreateView)"
+                  hideIfEditable="true"
+                  id="PendingContactCreate_RejectButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.Reject&quot;)"/>
+                <ToolbarButton
+                  action="gw.api.web.contact.PendingContactChangeUtil.approveThenEditCreate(selectedPendingContactCreateView.PendingContactCreate, CurrentLocation)"
+                  id="ApproveAndEditButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.ApproveThenEdit&quot;)"/>
+                <ToolbarButton
+                  action="gw.api.web.contact.PendingContactChangeUtil.findDuplicates(selectedPendingContactCreateView.PendingContactCreate)"
+                  id="PendingContactCreate_FindDuplicatesButton"
+                  label="DisplayKey.get(&quot;Web.Contacts.PendingChanges.Buttons.FindDuplicates&quot;)"/>
+              </Toolbar>
+            </PanelRef>
+            <CardViewPanel>
+              <Card
+                id="PendingCreateContactBasics"
+                title="DisplayKey.get(&quot;Web.ContactDetail.PageLinks.Basics&quot;)">
+                <PanelRef
+                  def="ContactBasicsDV(selectedPendingContactCreateView.PendingContactCreate.ABContact)"
+                  mode="selectedPendingContactCreateView.PendingContactCreate.ABContact.Subtype"
+                  visible="clearMessage(selectedPendingContactCreateView)">
+                  <Toolbar/>
+                </PanelRef>
+              </Card>
+              <Card
+                id="AddressesCard"
+                title="DisplayKey.get(&quot;Web.ContactDetail.PageLinks.Addresses&quot;)"
+                visible="!(selectedPendingContactCreateView.PendingContactCreate.ABContact typeis ABPlace)">
+                <ListDetailPanel
+                  selectionName="selectedAddress"
+                  selectionType="Address">
+                  <PanelRef
+                    def="ABAddressesLV(selectedPendingContactCreateView.PendingContactCreate.ABContact)">
+                    <Toolbar/>
+                  </PanelRef>
+                  <CardViewPanel>
+                    <Card
+                      id="AddressDetailCard"
+                      title="DisplayKey.get(&quot;Web.ContactDetail.AddressDetail&quot;)">
+                      <PanelRef
+                        def="ABAddressDetailDV(selectedAddress)"/>
+                    </Card>
+                  </CardViewPanel>
+                </ListDetailPanel>
+              </Card>
+              <Card
+                id="RelatedContactsCard"
+                title="DisplayKey.get(&quot;Web.ContactDetail.PageLinks.RelatedContacts&quot;)">
+                <PanelRef
+                  def="RelatedContactsLV(selectedPendingContactCreateView.PendingContactCreate.ABContact)">
+                  <Toolbar/>
+                </PanelRef>
+              </Card>
+            </CardViewPanel>
+          </ListDetailPanel>
+        </Card>
+      </CardViewPanel>
+    </Screen>
+    <Code><![CDATA[uses gw.pl.persistence.core.Key
+
+uses gw.api.database.Query
+
+function rejectCreate(selectedPendingContactCreateView : PendingContactCreateView) {
+  gw.api.web.contact.PendingContactChangeUtil.closeWorksheet()
+  RejectChangePopup.push(selectedPendingContactCreateView.PendingContactCreate)
+}
+
+function approveCreate(selectedPendingContactCreateView : PendingContactCreateView) {
+  gw.api.web.contact.PendingContactChangeUtil.closeWorksheet()
+  gw.api.web.contact.PendingContactChangeUtil.approveCreate(selectedPendingContactCreateView.PendingContactCreate, CurrentLocation)
+}
+
+function findDuplicateForCreate(selectedPendingContactCreateView : PendingContactCreateView) {
+  gw.api.web.contact.PendingContactChangeUtil.closeWorksheet()
+  gw.api.web.contact.PendingContactChangeUtil.findDuplicates(selectedPendingContactCreateView.PendingContactCreate)
+}
+
+function clearMessage(selectedPendingContactCreateView : PendingContactCreateView) : boolean {
+  if (selectedPendingContactCreateView.PendingContactCreate.PublicID != pendingCreateID or pendingCreateID == null) {
+    gw.api.web.contact.PendingContactChangeUtil.clearMessages()
+    gw.api.web.contact.PendingContactChangeUtil.closeWorksheet()
+    pendingCreateID = selectedPendingContactCreateView.PendingContactCreate.PublicID
+  }
+  return true;
+}
+
+function findContactByID(id : Key) : ABContact {
+  if (id == null)
+    return null
+  var q = Query.make(ABContact.Type)
+  q.compare(ABContact#ID.PropertyInfo.Name, Equals, id)
+  return q.select().single()
+}
+ ]]></Code>
+  </Page>
+</PCF>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Lerk-Ling Chang (Guidewire Software) -->
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Status of employment"
+  name="EmploymentStatusType">
+  <typecode
+    code="fulltime"
+    desc="Full-time Employee"
+    name="Full-time Employee"
+    priority="1"/>
+  <typecode
+    code="parttime"
+    desc="Part-time Employee"
+    name="Part-time Employee"
+    priority="2"/>
+  <typecode
+    code="unemployed"
+    desc="Unemployed"
+    name="Unemployed"
+    priority="3"/>
+  <typecode
+    code="onstrike"
+    desc="On Strike"
+    name="On Strike"
+    priority="4"/>
+  <typecode
+    code="disabled"
+    desc="Disabled"
+    name="Disabled"
+    priority="5"/>
+  <typecode
+    code="retired"
+    desc="Retired"
+    name="Retired"
+    priority="6"/>
+  <typecode
+    code="other"
+    desc="Other"
+    name="Other"
+    priority="7"/>
+  <typecode
+    code="seasonal"
+    desc="Seasonal"
+    name="Seasonal"
+    priority="8"/>
+  <typecode
+    code="volunteer"
+    desc="Volunteer"
+    name="Volunteer"
+    priority="9"/>
+  <typecode
+    code="ft_apprentice"
+    desc="Full-time Apprentice"
+    name="Full-time Apprentice"
+    priority="10"/>
+  <typecode
+    code="pt_apprentice"
+    desc="Part-time Apprentice"
+    name="Part-time Apprentice"
+    priority="11"/>
+  <typecode
+    code="pieceworker"
+    desc="Pieceworker"
+    name="Pieceworker"
+    priority="12"/>
+  <typecode
+    code="temporary"
+    desc="Temporary"
+    name="Temporary"
+    priority="13"/>
+</typelistextension>

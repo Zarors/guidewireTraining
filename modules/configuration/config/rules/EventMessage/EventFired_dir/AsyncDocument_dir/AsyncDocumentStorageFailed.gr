@@ -1,0 +1,30 @@
+package rules.EventMessage.EventFired_dir.AsyncDocument_dir
+
+uses gw.api.system.ABLoggerCategory
+
+@gw.rules.RuleName("Async Document Storage Failed")
+internal class AsyncDocumentStorageFailed {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+/*start00rule*/
+return messageContext.DestID == 324 and messageContext.EventName == "FailedDocumentStore"
+/*end00rule*/
+}
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+/*start00rule*/
+
+    /**
+     * There was an error when transporting the asynchronous document to the DMS.
+     *
+     * This is where you will add the error handling for the "FailedDocumentStore" event
+     *
+     * In this demo implementation, we create a new message which will be handled in the DocumentStoreTransport#send.
+     */
+    var failedDocument = messageContext.Root as Document
+    messageContext.createMessage("There was a problem sending the document from the temporary location to the DMS." +
+        " Document '" + failedDocument.Name + "' with PublicID: " + failedDocument.PublicID + " and " +
+        " docUID '" + failedDocument.DocUID + "'.")
+
+/*end00rule*/
+  }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ArchiveDocumentReferences"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="archivedocrefs"
+  type="editable">
+  <fulldescription><![CDATA[
+        Keep track of all beans in database that are referenced directly via foreign keys from archive documents.
+
+    ]]></fulldescription>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.extract.ArchiveDocumentReferencesPublicMethods"
+    impl="com.guidewire.pl.domain.extract.impl.ArchiveDocumentReferencesImpl"/>
+  <column
+    desc="The PublicID of the root of an archive document."
+    name="RootPublicID"
+    nullok="false"
+    setterScriptability="hidden"
+    type="publicid"/>
+  <array
+    arrayentity="ArchiveDocumentReferenceItem"
+    desc="Beans in database referenced by beans in an archive document."
+    name="ReferenceItems"
+    owner="true"
+    setterScriptability="hidden"/>
+  <index
+    desc="Unique index on RootPublicID"
+    name="rootpubicididx"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="RootPublicID"/>
+  </index>
+</entity>

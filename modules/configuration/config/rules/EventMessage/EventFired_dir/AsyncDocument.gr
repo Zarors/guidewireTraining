@@ -1,0 +1,16 @@
+package rules.EventMessage.EventFired_dir
+
+@gw.rules.RuleName("Async Document")
+internal class AsyncDocument {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+/*start00rule*/
+return true
+/*end00rule*/
+}
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+/*start00rule*/
+ 
+/*end00rule*/
+  }
+}

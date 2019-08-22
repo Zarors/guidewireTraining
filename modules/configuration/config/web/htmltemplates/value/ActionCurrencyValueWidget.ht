@@ -1,0 +1,2 @@
+<div :wrapIf="altValue || action" data-gw-click="${action}" class="gw-CurrencyValue--modelValue ${action?'gw-ActionValueWidget'}">${currentValue}</div>
+<div :if="altValue" class="gw-CurrencyValue--altValue">${altValue}</div>

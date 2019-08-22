@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+
+  <!--  FR address example from "FR-Locations.txt" is:	1130,Giron -->
+  <Zones countryCode="FR">
+    <Zone code="postalcode" fileColumn="1" regionMatchOrder="1" granularity="2" unique="true">
+      <AddressZoneValue>Address.PostalCode</AddressZoneValue>
+      <Links>
+        <Link toZone="city" lookupOrder="1"/>
+      </Links>
+    </Zone>
+    <Zone code="city" fileColumn="2" regionMatchOrder="2" granularity="1">
+      <AddressZoneValue>Address.City</AddressZoneValue>
+      <Links>
+        <Link toZone="postalcode" lookupOrder="1"/>
+      </Links>
+    </Zone>
+    <Zone code="postcodearea" regionMatchOrder="3" granularity="3">
+      <ZoneCode>postalcode.substring(0,2)</ZoneCode>
+      <AddressZoneValue>Address.PostalCode.substring(0,2)</AddressZoneValue>
+      <Links>
+        <Link toZone="city" lookupOrder="1"/>
+      </Links>
+    </Zone>
+  </Zones>
+</ZoneConfig>

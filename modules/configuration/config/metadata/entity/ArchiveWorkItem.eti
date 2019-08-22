@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Workitem for items to be processed for archiving."
+  entity="ArchiveWorkItem"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="archiveworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItem"/>
+  <fulldescription><![CDATA[Represents a unit of work pending for archive.]]></fulldescription>
+  <column
+    columnName="Item"
+    desc="Soft foreign key to the item to be processed for archive."
+    name="Item"
+    nullok="false"
+    type="softentityreference"/>
+</entity>

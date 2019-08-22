@@ -1,0 +1,13 @@
+package rules.Preupdate
+
+@gw.rules.RuleName("ABContact Preupdate")
+@gw.rules.RuleSetDescription("This is the ABContact Preupdate rule set to permit modification of the contact and related entities. Exceptions will cause the bounding database transaction to roll back, effectively vetoing the update.")
+class ABContactPreupdate extends gw.rules.RuleSetBase {
+  static function invoke(bean : entity.ABContact) : gw.rules.ExecutionSession {
+    return invoke( new gw.rules.ExecutionSession(), bean )
+  }
+
+  static function invoke(exeSession : gw.rules.ExecutionSession, bean : entity.ABContact) : gw.rules.ExecutionSession {
+    return _invoke( exeSession, bean, "ABContact Pre-update", ABContactPreupdate )
+  }
+}

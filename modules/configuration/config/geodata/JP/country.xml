@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- JP -->
+<Country xmlns="http://guidewire.com/country"
+  visibleFields="Country,PostalCode,State,City,CityKanji,AddressLine1,AddressLine1Kanji,AddressLine2,AddressLine2Kanji"
+  stateDisplayKey="Web.AddressBook.AddressInputSet.Prefecture"
+  postalCodeDisplayKey="Web.AddressBook.AddressInputSet.Postcode"
+  PCFMode="BigToSmall"
+/>

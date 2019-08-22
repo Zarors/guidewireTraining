@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Geographic zone."
+  entity="Zone"
+  extendable="true"
+  platform="true"
+  table="zone"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.geodata.zone.ZonePublicMethods"
+    impl="com.guidewire.pl.domain.geodata.zone.impl.ZoneImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.geodata.zone.impl.ZoneInternalMethods"
+    impl="com.guidewire.pl.domain.geodata.zone.impl.ZoneImpl"/>
+  <column
+    desc="The code for this zone, this is the value that should be used for lookups."
+    name="Code"
+    nullok="false"
+    supportsLinguisticSearch="true"
+    type="shorttext"/>
+  <column
+    desc="The name of the zone, this is the value used to populate fields."
+    name="Name"
+    nullok="false"
+    supportsLinguisticSearch="true"
+    type="shorttext"/>
+  <typekey
+    desc="Type of zone."
+    name="ZoneType"
+    nullok="false"
+    typelist="ZoneType"/>
+  <typekey
+    desc="The country to which the zone belongs."
+    name="Country"
+    nullok="false"
+    typelist="Country"/>
+  <array
+    arrayentity="ZoneLink"
+    arrayfield="Zone1"
+    desc="Zones that are forward linked to this zone."
+    name="ForwardLinkedZones"/>
+  <array
+    arrayentity="ZoneLink"
+    arrayfield="Zone2"
+    desc="Zones that are reverse linked to this zone."
+    name="ReverseLinkedZones"/>
+  <index
+    desc="This index is for looking up zones based on the code, used for autofill, autocomplete and location based assignment."
+    name="zoneu1"
+    trackUsage="true"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ZoneType"/>
+    <indexcol
+      keyposition="2"
+      name="Country"/>
+    <indexcol
+      keyposition="3"
+      name="CodeDenorm"/>
+    <indexcol
+      keyposition="4"
+      name="ID"/>
+  </index>
+  <index
+    desc="This index is needed so that the right index is generated on the staging tables for removing dup zones, and also for inserting zone links."
+    name="zoneu2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Code"/>
+    <indexcol
+      keyposition="2"
+      name="ZoneType"/>
+    <indexcol
+      keyposition="3"
+      name="Country"/>
+  </index>
+  <index
+    desc="Index to speed up searching for zones by type"
+    name="zone1"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="ZoneType"/>
+  </index>
+  <index
+    desc="Index used for getting auto-suggested zone names. NameDenorm goes last because it's used in a LIKE clause"
+    name="zone2"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="ZoneType"/>
+    <indexcol
+      keyposition="2"
+      name="Country"/>
+    <indexcol
+      keyposition="3"
+      name="NameDenorm"/>
+  </index>
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.geodata.zone.dbchecks.ZoneCheckBuilder"/>
+</entity>

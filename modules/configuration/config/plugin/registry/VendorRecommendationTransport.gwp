@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageTransport"
+  name="VendorRecommendationTransport">
+  <plugin-gosu
+    gosuclass="trainingapp.messaging.vendorrecommendation.VendorRecommendationTransport"/>
+</plugin>

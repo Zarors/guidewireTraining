@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A zone that observes a certain businessweek."
+  entity="BusinessWeekZone"
+  extendable="false"
+  platform="true"
+  table="businessweek_zone"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.impl.BusinessWeekZoneInternalMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.BusinessWeekZoneImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.BusinessWeekZonePublicMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.BusinessWeekZoneImpl"/>
+  <column
+    desc="The code for this zone, this is the value that should be used for zone lookups."
+    name="Code"
+    nullok="false"
+    type="shorttext"/>
+  <typekey
+    desc="Country of this zone."
+    name="Country"
+    nullok="false"
+    typelist="Country"/>
+  <typekey
+    desc="Type of this zone."
+    name="ZoneType"
+    nullok="false"
+    typelist="ZoneType"/>
+  <foreignkey
+    columnName="BusinessWeekId"
+    desc="The businessweek."
+    fkentity="BusinessWeek"
+    name="BusinessWeek"
+    nullok="false"/>
+  <index
+    desc="Enforce uniquneness, a particular code can only appear once"
+    name="businessweekzoneu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Code"/>
+    <indexcol
+      keyposition="2"
+      name="ZoneType"/>
+    <indexcol
+      keyposition="3"
+      name="Country"/>
+  </index>
+</entity>

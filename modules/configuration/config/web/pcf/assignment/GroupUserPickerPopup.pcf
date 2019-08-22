@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    id="GroupUserPickerPopup"
+    returnType="GroupUser"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.GroupUserPicker.Title&quot;)">
+    <Screen
+      id="GroupUserPickerScreen">
+      <SearchPanel
+        criteriaName="SearchCriteria"
+        resultsName="SearchResult"
+        search="SearchCriteria.performGroupUserSearch() as gw.api.database.IQueryBeanResult&lt;GroupUser&gt;"
+        searchCriteria="new UserSearchCriteria()"
+        searchCriteriaType="entity.UserSearchCriteria"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;GroupUser&gt;">
+        <PanelRef
+          def="GroupUserSearchDV(SearchCriteria)"/>
+        <PanelRef
+          def="GroupUserLV(SearchResult)">
+          <Toolbar/>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Popup>
+</PCF>

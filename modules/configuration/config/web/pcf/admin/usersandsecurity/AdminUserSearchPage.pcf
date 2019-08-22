@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.Group.viewtree"
+    countsAsWork="false"
+    id="AdminUserSearchPage"
+    title="DisplayKey.get(&quot;Web.Admin.UsersAndSecurity.UserSearch&quot;)">
+    <LocationEntryPoint
+      signature="AdminUserSearchPage()"/>
+    <Variable
+      initialValue="new gw.api.contact.ProximitySearchPageHelper()"
+      name="psph"
+      type="gw.api.contact.ProximitySearchPageHelper"/>
+    <Screen
+      id="UserSearchScreen">
+      <SearchPanel
+        criteriaName="SearchCriteria"
+        resultsName="searchResults"
+        search="new gw.api.name.UserSearchNameOwner(SearchCriteria.Contact).clearNonvisibleFields(); return SearchCriteria.performSearchByProximity(CurrentLocation, psph) as gw.api.database.IQueryBeanResult&lt;User&gt;"
+        searchCriteria="new UserSearchCriteria()"
+        searchCriteriaType="entity.UserSearchCriteria"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;User&gt;">
+        <PanelRef
+          def="UserSearchDV(SearchCriteria)"/>
+        <PanelRef
+          def="UserSearchResultsLV(searchResults, false, SearchCriteria, false)">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.Search.Results&quot;)"/>
+          <Toolbar/>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Page>
+</PCF>

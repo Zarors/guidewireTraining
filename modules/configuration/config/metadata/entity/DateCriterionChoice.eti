@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="DateCriterionChoice"
+  exportable="true"
+  extendable="false"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.impl.DateCriterionChoiceInternalMethods"
+    impl="com.guidewire.pl.domain.custom.impl.DateCriterionChoiceImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.DateCriterionChoicePublicMethods"
+    impl="com.guidewire.pl.domain.custom.impl.DateCriterionChoiceImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.service.search.SearchCriterionChoice"
+    impl="com.guidewire.pl.domain.custom.impl.DateCriterionChoiceImpl"/>
+  <fulldescription><![CDATA[
+        A component used as part of a larger search criteria entity. Encapsulates the information
+        entered by the user to restrict the search to a particular date range. Specifies the date
+        field to be restricted and allows the date range to be restricted either through a typelist of
+        preset ranges (such as next 30 days) or through a start and end date.
+        <p>
+        Very similar to DateCriteria, but DateCriterionChoice supports configurable search.
+        (See the Configuration Guide for details of customizing search screens.)
+      
+    ]]></fulldescription>
+  <typekey
+    desc="The type of search, filters the preset ranges allowed in the DateRangeChoice field."
+    name="SearchType"
+    nullok="false"
+    typelist="SearchObjectType"/>
+  <column
+    desc="The chosen configurable search option, specifies the date field to be restricted."
+    name="ChosenOption"
+    nullok="true"
+    type="shorttext"/>
+  <typekey
+    desc="The type of date search, either &quot;fromlist&quot; (for a preset range) or &quot;enteredrange&quot; (for an explicitly entered range)."
+    name="DateSearchType"
+    nullok="false"
+    typelist="DateSearchType"/>
+  <typekey
+    desc="The chosen preset date range, if any. The available ranges are filtered by the SearchType field. Used if DateSearchType is &quot;fromlist&quot;."
+    name="DateRangeChoice"
+    nullok="false"
+    typelist="DateRangeChoiceType">
+    <keyfilters>
+      <keyfilter
+        name="SearchType"/>
+    </keyfilters>
+  </typekey>
+  <column
+    desc="The start (inclusive) of the date range to which the chosen date field should be restricted. Used if DateSearchType is &quot;enteredrange&quot;."
+    name="StartDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="The end (inclusive) of the date range to which the chosen date field should be restricted.  Used if DateSearchType is &quot;enteredrange&quot;."
+    name="EndDate"
+    nullok="true"
+    type="datetime"/>
+</nonPersistentEntity>

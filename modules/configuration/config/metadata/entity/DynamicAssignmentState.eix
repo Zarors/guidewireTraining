@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="DynamicAssignmentState">
+  <description>Assignment state data for a particular fingerprint.</description>
+  <implementsEntity
+    name="LastAssignedUserContainer"/>
+  <events/>
+</internalExtension>

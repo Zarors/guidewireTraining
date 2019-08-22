@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="HolidayDetailDV"
+    mode="CA">
+    <Require
+      name="Holiday"
+      type="Holiday"/>
+    <Variable
+      initialValue="null"
+      name="zoneType"
+      type="ZoneType"/>
+    <Variable
+      initialValue="null"
+      name="linkedZone"
+      type="Zone"/>
+    <Variable
+      initialValue="typekey.Country.TC_CA"
+      name="country"
+      type="Country"/>
+    <InputColumn>
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="ZoneType"
+        label="DisplayKey.get(&quot;Web.Admin.HolidayDetailDV.ZoneType&quot;)"
+        required="true"
+        value="zoneType"
+        valueRange="gw.api.admin.BaseAdminUtil.getRegionZoneTypesWithGranularity(country)"
+        valueType="typekey.ZoneType"
+        visible="!Holiday.AppliesToAllZones">
+        <PostOnChange
+          onChange="linkedZone=null;Holiday.FilterCriteria.LinkedZone=null;                         Holiday.FilterCriteria.ZoneType=zoneType"/>
+      </RangeInput>
+      <ListViewInput
+        def="HolidayZonesLV(Holiday, zoneType, country)"
+        editable="true"
+        hideIfReadOnly="true"
+        label="DisplayKey.get(&quot;Web.Admin.HolidaysLV.Zones&quot;)"
+        visible="Holiday.FilterCriteria.ZoneType==TC_FSA">
+        <Toolbar
+          visible="true">
+          <IteratorButtons
+            iterator="HolidayZonesLV.HolidayZonesLV"/>
+        </Toolbar>
+      </ListViewInput>
+      <!-- filter for cities, filter on province before showing
+           shuttlelist -->
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="province"
+        label="DisplayKey.get(&quot;Java.Admin.Holidays.SelectProvince&quot;)"
+        value="linkedZone"
+        valueRange="Zone.finder.findZones(country,typekey.ZoneType.TC_PROVINCE)"
+        valueType="entity.Zone"
+        visible="Holiday.FilterCriteria.ZoneType == TC_CITY">
+        <PostOnChange
+          onChange="Holiday.FilterCriteria.LinkedZone=linkedZone"/>
+      </RangeInput>
+      <!-- TODO: change this once indexed properties are supported  shuttle-list for zone selection.
+           used here for counties,provinces,states and cities
+           not visible if applicable filter has not been selected -->
+      <RangeInput
+        editable="true"
+        hideIfReadOnly="true"
+        id="ZoneInput"
+        label="DisplayKey.get(&quot;Web.Admin.HolidayDetailDV.Zones&quot;)"
+        multiSelect="true"
+        numRows="10"
+        shuttleList="true"
+        value="Holiday.ZoneCodes"
+        valueRange="Zone.finder.findZoneCodes(country,Holiday.FilterCriteria.ZoneType,Holiday.FilterCriteria.LinkedZone)"
+        valueType="java.lang.String[]"
+        visible="!(Holiday.FilterCriteria.ZoneType==null || Holiday.FilterCriteria.ZoneType==TC_FSA                   || (Holiday.FilterCriteria.ZoneType == TC_CITY and Holiday.FilterCriteria.LinkedZone==null))"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

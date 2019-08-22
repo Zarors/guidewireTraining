@@ -1,0 +1,6 @@
+<input type="file"
+       id="${renderId}--file"
+       style="display: none" disabled="${disabled}" multiple="${multiple}"
+       data-gw-postOnChange="${onChange}" data-gw-change="gwFileValue.fileChangeHandler id:${renderId}"/>
+<input :if="valueDisplayed" type="text" id="${renderId}--text" readonly value="${currentValue}"/>
+<div id="${renderId}--browseButton" data-gw-click="gwFileValue.browseHandler id:${renderId}" class="gw-FileInputWidget--button">${buttonText}</div>

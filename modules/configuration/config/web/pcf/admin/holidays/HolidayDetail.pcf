@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="Holidays.go()"
+    beforeCommit="Holiday.removeNullZones()"
+    canEdit="perm.Holiday.edit"
+    canVisit="perm.Holiday.view"
+    id="HolidayDetail"
+    parent="HolidaysPage()"
+    showUpLink="true"
+    title="DisplayKey.get(&quot;Web.Admin.HolidayDetail&quot;, Holiday.Name)">
+    <LocationEntryPoint
+      signature="HolidayDetail(Holiday : Holiday)"/>
+    <Variable
+      name="Holiday"
+      type="Holiday"/>
+    <ScreenRef
+      def="HolidayDetailScreen(Holiday)"/>
+  </Page>
+</PCF>

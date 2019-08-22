@@ -1,0 +1,5 @@
+<div id="${renderId}">
+  <div id="gw-west-panel--children">
+    ${:children}
+  </div>
+</div>

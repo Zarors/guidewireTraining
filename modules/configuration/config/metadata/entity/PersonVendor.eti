@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Contact type representing vendors that are individual persons."
+  displayName="Vendor (Person)"
+  entity="PersonVendor"
+  final="false"
+  platform="true"
+  supertype="Person"/>

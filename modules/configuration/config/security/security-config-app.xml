@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SecurityConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../security-config.xsd">
+
+  <StaticHandler entity="User" permKey="clientapp" desc="Permission to access from an external application" internal="true">
+    <SystemPermType code="clientapp"/>
+  </StaticHandler>
+
+  <!-- ================================================ ABContact ================================================ -->
+  <OptionalObjectHandler entity="ABContact" permKey="view" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.security.ViewABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="ABContact" permKey="viewsearch" desc="Permission to search contact entries in the address book" internal="true">
+    <SystemPermType code="abviewsearch"/>
+  </StaticHandler>
+  <StaticHandler entity="ABContact" permKey="viewmerge" desc="Permission to view the merge pages" internal="true">
+    <SystemPermType code="abviewmerge"/>
+  </StaticHandler>
+  <StaticHandler entity="ABContact" permKey="viewpending" desc="Permission to view the pending changes page" internal="true">
+    <SystemPermType code="abviewpending"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="ABContact" permKey="create" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.security.CreateABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="ABContact" permKey="createpreferred" desc="Permission to add a preferred vendor to the address book" internal="true">
+    <SystemPermType code="abcreatepref"/>
+  </StaticHandler>
+  <ObjectHandler entity="ABContact" permKey="edit" internal="true">
+    <Handler code="com.guidewire.ab.domain.addressbook.impl.CustomEditABContactPermissionHandler"/>
+  </ObjectHandler>
+  <StaticHandler entity="ABContact" permKey="editpreferred" desc="Permission to modify a preferred vendor AB Contact or change an existing contact to be a preferred vendor" internal="true">
+    <SystemPermType code="abeditpref"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="ABContact" permKey="delete" internal="true">
+    <Handler code="com.guidewire.ab.domain.addressbook.impl.CustomDeleteABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="ABContact" permKey="deletepreferred" desc="Permission to delete a preferred vendor AB Contact" internal="true">
+    <SystemPermType code="abdeletepref"/>
+  </StaticHandler>
+
+  <!-- ================================================ ReviewSummary ================================================ -->
+  <StaticHandler entity="ReviewSummary" permKey="view" desc="Permission view the Review Summary page to see the category scores for each summarized Review" internal="true">
+    <SystemPermType code="revsumviewdetail"/>
+  </StaticHandler>
+  <StaticHandler entity="ReviewSummary" permKey="list" desc="Permission to view the list of Reviews Summaries and the reviews tab on an ABContact" internal="true">
+    <SystemPermType code="revsumviewlist"/>
+  </StaticHandler>
+
+</SecurityConfig>

@@ -1,0 +1,9 @@
+<input type="text"
+       name="${renderId}"
+       class="gw-picker-input ${reflectionApplies ? 'gw-value-input-reflector'} ${noTrack ? 'gw-noTrack'}"
+       disabled="${disabled}"
+       value="${currentValue}"
+       maxlength="${maxlength}"
+       readonly="${freeInputDisabled}"
+       data-gw-readonly-focusable
+       placeholder="${placeholder}" ${systemAttributes}/>

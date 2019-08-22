@@ -1,0 +1,66 @@
+.gw-TileWidget {
+  .gw-TileInputColumnWidget.gw-StyleContainer--TileWidget,
+  .gw-TileInputColumnWidget.gw-StyleContainer--DetailViewWidget {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 100%;
+    overflow: hidden;
+    //margin: $gw-app--SPACING-rem-M;
+
+    .gw-InputColumnWidget {
+      min-width: 0;
+    }
+
+    .gw-InputWidget {
+      flex-wrap: wrap;
+      max-width: 100%;
+
+      .gw-label {
+
+      }
+
+      .gw-value {
+        //flex-grow: 1;
+        //flex-basis: $gw-app--DetailViewTileWidget--input--min-width;
+        //width: initial;
+
+        .gw-vw--value {
+          //white-space: pre-line;
+          //max-width: 100%;
+        }
+      }
+
+      .gw-BarValueWidget {
+        flex-wrap: wrap;
+        .gw-progress--holder {
+          margin-right: $gw-app--SPACING-rem-M;
+        }
+        .gw-progress--status-label {
+          flex-grow: 1;
+          max-width: 100%;
+          // moving margin to the progress--holder
+          margin-left: initial;
+          padding-left: initial;
+        }
+      }
+    }
+
+    //.gw-InputWidget:first-child:not(.gw-LabelWidget) {
+    //  margin-top: 0;
+    //  margin-bottom: $gw-app--DetailViewTileWidget--topInput--marginBottom;
+    //}
+
+    //.gw-InputWidget.gw-LabelWidget {
+    //  padding: $gw-app--TileWidget--header--padding;
+    //  flex-direction: row;
+    //  justify-content: stretch;
+    //  min-height: 0;
+    //  margin-top: 0;
+    //
+    //  .gw-label {
+    //    width: 100%;
+    //    flex-grow: 1;
+    //  }
+    //}
+  }
+}

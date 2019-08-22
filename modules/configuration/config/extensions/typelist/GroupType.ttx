@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="GroupType">
+  <typecode
+    code="homeofficeuw"
+    desc="Home Office UW"
+    name="Home Office U.W."/>
+  <typecode
+    code="regionuw"
+    desc="Regional UW"
+    name="Regional UW"/>
+  <typecode
+    code="branchuw"
+    desc="Branch UW"
+    name="Branch UW"/>
+  <typecode
+    code="homeofficelc"
+    desc="Home Office L.C."
+    name="Home Office L.C."/>
+  <typecode
+    code="regionlc"
+    desc="Regional L.C."
+    name="Regional L.C."/>
+  <typecode
+    code="branchlc"
+    desc="Branch L.C."
+    name="Branch L.C."/>
+  <typecode
+    code="regionaudit"
+    desc="Regional Audit"
+    name="Regional Audit"/>
+  <typecode
+    code="branchaudit"
+    desc="Branch Audit"
+    name="Branch Audit"/>
+  <typecode
+    code="premacct"
+    desc="Premium Accounting"
+    name="Premium Accounting"/>
+  <typecode
+    code="custserv"
+    desc="Customer Service"
+    name="Customer Service"/>
+  <typecode
+    code="homeofficemkt"
+    desc="Home Office Marketing"
+    name="Home Office Marketing"/>
+  <typecode
+    code="regionmkt"
+    desc="Regional Marketing"
+    name="Regional Marketing"/>
+  <typecode
+    code="branchmkt"
+    desc="Branch Marketing"
+    name="Branch Marketing"/>
+  <typecode
+    code="clerical"
+    desc="Clerical support"
+    name="Clerical support"/>
+  <typecode
+    code="solutions"
+    desc="Solutions Group"
+    name="Solutions Group"/>
+  <typecode
+    code="siu"
+    desc="Special investigative unit"
+    name="Special investigative unit"/>
+  <typecode
+    code="facre"
+    desc="Fac Reinsurance Unit"
+    name="Fac Reinsurance Unit"/>
+  <typecode
+    code="eservices"
+    desc="Web Services unit"
+    name="Web Services unit"/>
+  <typecode
+    code="hq"
+    desc="Corporate headquarters"
+    name="Corporate headquarters"/>
+  <typecode
+    code="finance"
+    desc="Finance and Treasury"
+    name="Finance and Treasury"/>
+  <typecode
+    code="extaudit"
+    desc="Fee Audit"
+    name="Fee Audit"/>
+  <typecode
+    code="extlc"
+    desc="Fee Inspection"
+    name="Fee Inspection"/>
+  <typecode
+    code="systemadmin"
+    desc="System administrators"
+    name="System administrators"/>
+  <typecode
+    code="actuary"
+    desc="Actuary Unit"
+    name="Actuary Unit"/>
+  <typecode
+    code="mga"
+    desc="Managing General Agent"
+    name="Managing General Agt"/>
+  <typecode
+    code="producer"
+    desc="Producer"
+    name="Producer"/>
+  <typecode
+    code="general"
+    desc="General"
+    name="General"/>
+  <typecode
+    code="homeofficeadmin"
+    desc="Home Office Admin Services"
+    name="Home Office Admin Services"/>
+  <typecode
+    code="policyserve"
+    desc="Policy Services"
+    name="Policy Services"/>
+  <!-- main groups for claim assignnment
+        Customer can choose whether to have specialization with loss types or not -->
+  <typecode
+    code="autofasttrack"
+    desc="Fast track auto team"
+    name="Auto - fast track"/>
+  <typecode
+    code="autonormal"
+    desc="Auto team"
+    name="Auto"/>
+  <typecode
+    code="autocomplex"
+    desc="Complex auto team"
+    name="Auto - complex"/>
+  <typecode
+    code="propfasttrack"
+    desc="Fast track property team"
+    name="Property - fast track"/>
+  <typecode
+    code="propnormal"
+    desc="Property team"
+    name="Property"/>
+  <typecode
+    code="propcomplex"
+    desc="Complex property team"
+    name="Property - complex"/>
+  <typecode
+    code="lbltyfasttrack"
+    desc="Fast track liability team"
+    name="Liability - fast track"/>
+  <typecode
+    code="lbltynormal"
+    desc="Liability team"
+    name="Liability"/>
+  <typecode
+    code="lbltycomplex"
+    desc="Complex liability team"
+    name="Liability - complex"/>
+  <typecode
+    code="lbltyspecs"
+    desc="Specialists for highly complex liability claims"
+    name="Liability specialists"/>
+  <typecode
+    code="wc_med_only"
+    desc="Workers' comp med only team"
+    name="Workers' comp - med only"/>
+  <typecode
+    code="wc_lost_time"
+    desc="Workers' comp lost time team"
+    name="Workers' comp - lost time"/>
+  <typecode
+    code="wc_normal"
+    desc="Workers' comp team"
+    name="Workers' comp"/>
+  <!-- groups of groups -->
+  <typecode
+    code="regional"
+    desc="Regional service center"
+    name="Regional service center"/>
+  <typecode
+    code="local"
+    desc="Local office"
+    name="Local office"/>
+  <!-- groups for specialized activities -->
+  <typecode
+    code="auto_inspectors"
+    desc="Auto damage appraisers"
+    name="Auto damage appraisers"/>
+  <typecode
+    code="attorneys"
+    desc="Defense attorneys"
+    name="Defense attorneys"/>
+  <typecode
+    code="cleanup"
+    desc="Clean-up services"
+    name="Clean-up services"/>
+  <typecode
+    code="drive_in"
+    desc="Drive-in centers"
+    name="Drive-in centers"/>
+  <typecode
+    code="independent"
+    desc="Independent adjusters"
+    name="Independent adjusters"/>
+  <typecode
+    code="injury_specs"
+    desc="Injury liability specialists"
+    name="Injury liability specialists"/>
+  <typecode
+    code="intake"
+    desc="New claim processing"
+    name="New claim processing"/>
+  <typecode
+    code="litigation"
+    desc="Litigation unit"
+    name="Litigation unit"/>
+  <typecode
+    code="medical_mgmt"
+    desc="Medical management"
+    name="Medical management"/>
+  <typecode
+    code="policy"
+    desc="Policy processing"
+    name="Policy processing"/>
+  <typecode
+    code="preferred"
+    desc="Preferred repair shops"
+    name="Preferred repair shops"/>
+  <typecode
+    code="prop_inspectors"
+    desc="Property damage appraisers"
+    name="Property damage appraisers"/>
+  <typecode
+    code="rehab"
+    desc="Rehab/nursing"
+    name="Rehab/nursing"/>
+  <typecode
+    code="salvage"
+    desc="Salvage unit"
+    name="Salvage unit"/>
+  <typecode
+    code="subro"
+    desc="Subrogration unit"
+    name="Subrogration unit"/>
+  <typecode
+    code="underwriting"
+    desc="Underwriting"
+    name="Underwriting"/>
+  <typecode
+    code="police"
+    desc="Police"
+    name="Police"/>
+</typelistextension>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Criteria set for searching for organizations."
+  entity="OrganizationSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.community.impl.OrganizationSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.OrganizationSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.OrganizationSearchCriteriaImpl"/>
+  <fulldescription><![CDATA[
+      Defines a organization search criteria. The OrganizationSearchCriteria entity exists only for the purposes of a
+      search. It is not stored in the database.
+      
+    ]]></fulldescription>
+  <column
+    desc="Flag indicating whether the organization is a carrier."
+    name="Carrier"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="The name of the organization."
+    name="Name"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <typekey
+    desc="The type of the organization."
+    name="Type"
+    nullok="true"
+    typelist="BusinessType"/>
+  <column
+    desc="The contact name for the organization."
+    name="ContactName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="The contact city for the organization."
+    name="ContactCity"
+    nullok="true"
+    type="shorttext"/>
+  <typekey
+    desc="The contact state for the organization."
+    name="ContactState"
+    nullok="true"
+    typelist="state"/>
+  <column
+    desc="The contact zip code/postal code for the organization."
+    name="ContactPostal"
+    nullok="true"
+    type="postalcode"/>
+  <typekey
+    desc="The contact country for the organization."
+    name="ContactCountry"
+    nullok="true"
+    typelist="country"/>
+</nonPersistentEntity>

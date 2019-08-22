@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<module xmlns="http://guidewire.com/xml/module" name="ab-customer-build">
+    <dependencies>
+        <dependency name="pl"/>
+        <dependency name="ab"/>
+        <!-- genSchemaJar -->
+        <!--dependency name="ab-customer-schemas"/-->
+    </dependencies>
+    <settings>
+        <setting name="gx.product" value="ab"/>
+        <setting name="gx.use-gosu-enhancements" value="true"/>
+    </settings>
+    <excludes>
+        <!-- <pattern>path/to/schema.xsd</pattern> -->
+    </excludes>
+    <included-only>
+        <!-- <pattern>path/to/schema.xsd</pattern> -->
+    </included-only>
+</module>

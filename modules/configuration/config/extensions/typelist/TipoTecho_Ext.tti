@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="TipoTecho_Ext" desc="">
+  <typecode
+    code="Plano"
+    name="Techo Plano"
+    priority="10"/>
+  <typecode
+    code="Elevado"
+    name="Elevado"
+    priority="20"/>
+  <typecode
+    code="Otro"
+    name="Otro"
+    priority="30"/>
+</typelist>

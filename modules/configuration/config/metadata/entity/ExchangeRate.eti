@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A rate for converting one currency to another."
+  entity="ExchangeRate"
+  loadable="true"
+  platform="true"
+  table="exchangerate"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.currency.impl.ExchangeRateInternalMethods"
+    impl="com.guidewire.pl.domain.currency.impl.ExchangeRateImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.currency.ExchangeRatePublicMethods"
+    impl="com.guidewire.pl.domain.currency.impl.ExchangeRateImpl"/>
+  <typekey
+    desc="From Currency. The Currency this ExchangeRate converts from."
+    name="BaseCurrency"
+    nullok="false"
+    typelist="Currency"/>
+  <typekey
+    desc="To Currency. The Currency this ExchangeRate converts to."
+    name="PriceCurrency"
+    nullok="false"
+    typelist="Currency"/>
+  <column
+    desc="BaseUnits of BaseCurrency = NormalizedRate * 10^-RateScale * PriceUnits of PriceCurrency."
+    name="NormalizedRate"
+    nullok="false"
+    type="normalizedexchangerate"/>
+  <column
+    default="0"
+    desc="Amount by which NormalizedRate was scaled. ExchangeRates are stored as a normalized value plus a scale so that exact floating-point exchange rates can be stored in fixed-width database columnns."
+    name="RateScale"
+    nullok="false"
+    type="integer"/>
+  <foreignkey
+    columnName="ExchangeRateSetID"
+    desc="The ExchangeRateSet this ExchangeRate belongs to."
+    fkentity="ExchangeRateSet"
+    name="ExchangeRateSet"
+    nullok="false"/>
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.currency.dbchecks.ExchangeRateDBCheckBuilder"/>
+</entity>

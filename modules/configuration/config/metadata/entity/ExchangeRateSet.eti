@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A collection of exchange rates."
+  entity="ExchangeRateSet"
+  loadable="true"
+  platform="true"
+  table="exchangerateset"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.currency.impl.ExchangeRateSetImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.currency.ExchangeRateSetPublicMethods"
+    impl="com.guidewire.pl.domain.currency.impl.ExchangeRateSetImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.currency.impl.ExchangeRateSetInternalMethods"
+    impl="com.guidewire.pl.domain.currency.impl.ExchangeRateSetImpl"/>
+  <column
+    desc="The name of the rate set."
+    name="Name"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="A longer description of the rate set."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="The date and time this rate set becomes effective."
+    name="EffectiveDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="The date and time this rate set is no longer effective."
+    name="ExpireDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="True if this rate set should be included in search for latest market rates."
+    name="MarketRates"
+    nullok="false"
+    type="bit"/>
+  <array
+    arrayentity="ExchangeRate"
+    desc="ExchangeRates in this ExchangeRateSet."
+    name="ExchangeRates"/>
+</entity>

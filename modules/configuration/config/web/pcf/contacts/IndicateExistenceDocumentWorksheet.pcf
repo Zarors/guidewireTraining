@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Worksheet
+    afterCommit="documentCMContext.linkDocumentsToContact()"
+    beforeCommit="document.DateModified = Date.CurrentDate"
+    canEdit="true"
+    canVisit="true"
+    id="IndicateExistenceDocumentWorksheet"
+    startInEditMode="true"
+    tabLabel="DisplayKey.get(&quot;Web.ContactDetail.Documents.NewDocument.IndicateExistence&quot;)"
+    title="DisplayKey.get(&quot;Web.ContactDetail.Documents.NewDocument.IndicateExistence&quot;)">
+    <LocationEntryPoint
+      signature="IndicateExistenceDocumentWorksheet(contact: ABContact)"/>
+    <Scope
+      location="ContactDetail(contact)"/>
+    <Variable
+      initialValue="contact"
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="new gw.document.DocumentCMContext(contact)"
+      name="documentCMContext"
+      type="gw.document.DocumentCMContext"/>
+    <Variable
+      initialValue="documentCMContext.initDocumentExistence()"
+      name="document"
+      type="entity.Document"/>
+    <ScreenRef
+      def="IndicateExistenceDocumentScreen(documentCMContext, document)"/>
+  </Worksheet>
+</PCF>

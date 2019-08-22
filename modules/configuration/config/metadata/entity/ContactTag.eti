@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="ContactTag"
+  entity="ContactTag"
+  exportable="true"
+  extendable="true"
+  final="true"
+  platform="true"
+  table="contacttag"
+  type="retireable">
+  <implementsEntity
+    name="AddressBookLinkable"/>
+  <typekey
+    desc="Type of this ContactTag."
+    name="Type"
+    nullok="false"
+    typelist="ContactTagType"/>
+  <foreignkey
+    columnName="ContactID"
+    desc="Contact"
+    fkentity="Contact"
+    name="Contact"
+    nullok="false"
+    setterScriptability="hidden"/>
+  <index
+    desc="Enforce that Contact has at most one ContactTag of any specific type"
+    name="contacttagtype"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ContactID"/>
+    <indexcol
+      keyposition="2"
+      name="Type"/>
+    <indexcol
+      keyposition="3"
+      name="Retired"/>
+  </index>
+</entity>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.bajurisdictionmodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel" schemaLocation="ClauseModel.xsd"/>
+  <xs:element name="BAJurisdiction" type="BAJurisdiction" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.bajurisdictionmodel"/>
+  <xs:complexType name="BAJurisdiction">
+    <xs:sequence>
+      <xs:element name="Conditions" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Clause" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Coverages" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Clause" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Exclusions" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" type="Clause" minOccurs="0" maxOccurs="unbounded" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.clausemodel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HiredAutoBasis" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Basis" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+            <xs:element name="IfAnyExposure" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NonOwnedBasis" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NumEmployees" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+            <xs:element name="NumPartners" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+            <xs:element name="NumVolunteers" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="State" type="xs:string" minOccurs="0" nillable="true"/>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,24 @@
+package rules.Preupdate.ABContactPreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Pending Contact Create History Event")
+internal class PendingContactCreateHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.New
+and aBContact.ChangedFields.contains("CreateStatus")
+and aBContact.CreateStatus == ContactCreationApprovalStatus.TC_APPROVED
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+aBContact.addHistory(CustomHistoryType.TC_PENDINGCREATEAPPROVED, DisplayKey.get("Rules.Preupdate.ABContact.Created"))
+/*end00rule*/
+
+  }
+}

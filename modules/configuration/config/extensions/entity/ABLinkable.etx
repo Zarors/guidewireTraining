@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="ABLinkable">
+  <index
+    name="linkid"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LinkID"/>
+  </index>
+</extension>

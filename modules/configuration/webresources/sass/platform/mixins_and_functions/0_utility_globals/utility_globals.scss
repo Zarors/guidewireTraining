@@ -1,0 +1,92 @@
+// Only Global Variables are Allowed Here
+// Variables here are NOT allowed to be overridden by app/customers
+// Therefore no Variables should be followed by !default;
+
+$gw-debug: false;
+$gw-img--path: "../../img/";
+$gw-img--ext: ".png";
+
+$gw-z-indexes: (
+        clickOverlay: 99999, // This is actually hard coded in 2_app.scss
+        loginScreen: 9999,
+        dragging: 1000,
+        draggingbelow: 999,
+        tooltips: 950,
+        prefPanel: 900,
+        shortcutHelp: 900,
+        animated: 800,
+        subMenus: 700,
+        autocomplete: 650,
+        helptext: 600,
+        pageLoadBar: 500,
+        datePicker: 400,
+        panelDrag: 375,
+        absoluteInputs: 360,
+        inputContainers: 359,
+        fixedButtons: 355,
+        floatingButtons: 315,
+        topToolbar: 300,
+        centerTopSection: 295,
+        southPanel: 290,
+        chat: 210,
+        cardTab: 200,
+        card: 100
+);
+
+@mixin gw-z-index($name) {
+  z-index: map-get($gw-z-indexes, $name);
+}
+
+@mixin gw-hidden() {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin gw-appearanceClear() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin gw-filter($val) {
+  -webkit-filter: $val;
+  filter: $val;
+}
+
+@mixin gw-transform($val) {
+  -webkit-transform: $val;
+  transform: $val
+}
+
+@mixin gw-animation($val) {
+  -webkit-animation: $val;
+  animation: $val;
+}
+
+/**
+  Uses @content
+ */
+@mixin gw-keyframes($keyframename) {
+  @-webkit-keyframes #{$keyframename} {
+    @content;
+  }
+
+  @keyframes #{$keyframename} {
+    @content;
+  }
+}
+
+@mixin gw-circular-background($bg-fill-color, $stroke-col: transparent, $stroke-w: 0,  $radiusInPixels: $gw-app--base-font-size--in-px, $insetInPixels: 0) {
+  $fill: $bg-fill-color;
+  $stroke-w: gw-stripUnit($stroke-w);
+  $r: gw-stripUnit($radiusInPixels) - (2 * $stroke-w);
+  $inset: gw-stripUnit($insetInPixels);
+  $c: $inset + $r + $stroke-w;
+  $s: ($inset * 2) + ($r * 2) + ($stroke-w * 2);
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$s} #{$s}"><circle fill="#{$bg-fill-color}" stroke="#{$stroke-col}" stroke-width="#{$stroke-w}" cx="#{$c}" cy="#{$c}" r="#{$r}"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+

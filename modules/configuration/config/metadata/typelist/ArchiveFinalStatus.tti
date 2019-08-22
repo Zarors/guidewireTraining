@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The final status of the archive store or retrieve action"
+  final="true"
+  name="ArchiveFinalStatus"
+  platform="true">
+  <typecode
+    code="succeeded"
+    desc="The store or retrieve succeeded completely"
+    name="Succeeded"
+    priority="1"/>
+  <typecode
+    code="failedprestore"
+    desc="Something after the prepare call and before the store call failed"
+    name="Failed Prestore"
+    priority="1"/>
+  <typecode
+    code="failedstore"
+    desc="The store failed"
+    name="Failed Store"
+    priority="1"/>
+  <typecode
+    code="failedcommit"
+    desc="The store or retrieve failed to commit"
+    name="Failed Commit"
+    priority="1"/>
+  <typecode
+    code="failedupgrade"
+    desc="The retrieve failed to upgrade"
+    name="Failed Upgraded"
+    priority="1"/>
+  <typecode
+    code="failedimport"
+    desc="The retrieve failed to import"
+    name="Failed Import"
+    priority="1"/>
+  <typecode
+    code="upgradewarnings"
+    desc="The retrieve upgraded with warnings"
+    name="Upgraded with Warnings"
+    priority="1"/>
+</typelist>

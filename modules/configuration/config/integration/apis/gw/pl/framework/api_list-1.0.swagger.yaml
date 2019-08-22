@@ -1,0 +1,23 @@
+swagger: '2.0'
+info:
+  description: "Dynamically lists the APIs that are available"
+  version: '1.0'
+  title: "API List"
+basePath: /apis
+x-gw-schema-import:
+  api_list : gw.pl.framework.api_list-1.0
+paths:
+  /:
+    get:
+      summary: "Returns a list of available APIs"
+      description: "Returns a list of available APIs"
+      operationId: listApis
+      produces:
+      - application/json
+      x-gw-authenticated: false
+      x-gw-apihandler: gw.api.rest.framework.v1.ApiListHandler
+      responses:
+        '200':
+          description: "Successful operation"
+          schema:
+            $ref: "api_list#/definitions/ApiList"

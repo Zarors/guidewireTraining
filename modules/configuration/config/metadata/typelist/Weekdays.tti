@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="A list of weekdays"
+  final="true"
+  name="Weekdays"
+  platform="true">
+  <typecode
+    code="Sunday"
+    desc="Sunday"
+    name="Sunday"
+    priority="0"/>
+  <typecode
+    code="Monday"
+    desc="Monday"
+    name="Monday"
+    priority="1"/>
+  <typecode
+    code="Tuesday"
+    desc="Tuesday"
+    name="Tuesday"
+    priority="2"/>
+  <typecode
+    code="Wednesday"
+    desc="Wednesday"
+    name="Wednesday"
+    priority="3"/>
+  <typecode
+    code="Thursday"
+    desc="Thursday"
+    name="Thursday"
+    priority="4"/>
+  <typecode
+    code="Friday"
+    desc="Friday"
+    name="Friday"
+    priority="5"/>
+  <typecode
+    code="Saturday"
+    desc="Saturday"
+    name="Saturday"
+    priority="6"/>
+</typelist>

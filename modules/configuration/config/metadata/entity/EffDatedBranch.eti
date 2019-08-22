@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="EffDatedBranch"
+  platform="true"
+  requiresType="keyable">
+  <implementsEntity
+    name="EffDatedBase"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.EffDatedBasePublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBranchProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.impl.EffDatedBaseInternalMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBranchProxy"/>
+  <implementsEntity
+    name="Retireable"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.RetireablePublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBranchProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.impl.RetireableInternalMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBranchProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.EffDatedBranch"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBranchProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.impl.EffDatedBranchInternal"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBranchProxy"/>
+  <column
+    createhistogram="true"
+    default="0"
+    desc="True if this row has been locked (cannot be edited)"
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="Locked"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    createhistogram="true"
+    default="0"
+    desc="True if this row has committed (if false branch is temporary)"
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    loadable="false"
+    name="TemporaryBranch"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    default="0"
+    desc="True if when bound this branch had future bound periods"
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="FuturePeriods"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    default="0"
+    desc="True if when bound this branch has been preempted"
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="Preempted"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    createhistogram="true"
+    desc="Lower bound of all effective dates of this root"
+    exportable="false"
+    ignoreforevents="true"
+    name="PeriodStart"
+    nullok="false"
+    type="datetime"/>
+  <column
+    createhistogram="true"
+    desc="Upper bound of all expiration dates of this root"
+    exportable="false"
+    ignoreforevents="true"
+    name="PeriodEnd"
+    nullok="false"
+    type="datetime"/>
+  <column
+    default="0"
+    desc="True if a gap is allowed between this period and its previous period (if one exists)"
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    loadable="false"
+    name="AllowGapsBefore"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    createhistogram="true"
+    desc="Date this period was canceled, or null if still active"
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="CancellationDate"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="If this is a renewal, date it was based on"
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    loadable="false"
+    name="BasedOnDate"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    createhistogram="true"
+    desc="Dates edits are effective"
+    exportable="false"
+    ignoreforevents="true"
+    name="EditEffectiveDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    createhistogram="true"
+    desc="Modelnumber."
+    exportable="false"
+    ignoreforevents="true"
+    name="ModelNumber"
+    nullok="true"
+    setterScriptability="hidden"
+    type="integer"/>
+  <column
+    desc="Date corresponding to the model number"
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="ModelDate"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Used as non-null unique index with PeriodId."
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    name="ModelNumberIndex"
+    nullok="false"
+    setterScriptability="hidden"
+    type="publicid"/>
+  <column
+    createhistogram="true"
+    default="0"
+    desc="True if this branch is the most recent model (has the highest model number)"
+    exportable="false"
+    ignoreforevents="true"
+    name="MostRecentModel"
+    nullok="false"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    desc="Used as non-null unique index with PeriodId."
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    name="MostRecentModelIndex"
+    nullok="false"
+    setterScriptability="hidden"
+    type="publicid"/>
+</delegate>

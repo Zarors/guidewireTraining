@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="User">
+  <implementsEntity
+    name="Obfuscatable"/>
+  <implementsInterface
+    iface="gw.api.obfuscation.Obfuscator"
+    impl="gw.api.obfuscation.UnsupportedObfuscator"/>
+  <checkconstraint
+    desc="User must have a UserSettings object unless it has been obfuscated."
+    predicate="UserSettingsID IS NOT NULL OR (ObfuscatedInternal IS NOT NULL AND ObfuscatedInternal = 1)"/>
+</internalExtension>

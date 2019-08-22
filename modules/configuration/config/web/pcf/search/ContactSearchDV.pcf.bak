@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ContactSearchDV">
+    <Require
+      name="requiredContactType"
+      type="Type"/>
+    <Require
+      name="SearchCriteria"
+      type="ABContactSearchCriteria"/>
+    <Require
+      name="proximitySearchPageHelper"
+      type="gw.api.contact.ProximitySearchPageHelper"/>
+    <Require
+      name="searchSpec"
+      type="gw.api.webservice.addressbook.contactapi.ABContactSearchSpecWithoutPaging"/>
+    <InputColumn>
+      <RangeInput
+        editable="true"
+        id="ContactSubtype"
+        label="DisplayKey.get(&quot;Web.ContactSearch.Person.ContactSubtype&quot;)"
+        required="true"
+        value="SearchCriteria.ContactSubtype"
+        valueRange="SearchCriteria.getAvailableSubtypes(requiredContactType)"
+        valueType="typekey.ABContact">
+        <PostOnChange
+          onChange="gw.api.util.SearchUtil.resetResultOnly()"
+          target="ContactSearchDV"/>
+      </RangeInput>
+      <InputSetRef
+        def="GlobalPersonNameInputSet(new gw.api.name.SearchNameOwner(SearchCriteria, isPerson(SearchCriteria)))"
+        mode="gw.api.name.NameLocaleSettings.PCFMode"
+        visible="isPerson(SearchCriteria)"/>
+      <InputSetRef
+        def="GlobalContactNameInputSet(new gw.api.name.SearchNameOwner(SearchCriteria, not isPerson(SearchCriteria)))"
+        mode="gw.api.name.NameLocaleSettings.PCFMode"
+        visible="not isPerson(SearchCriteria)"/>
+      <InputSet
+        visible="isCompany(SearchCriteria) or (isPerson(SearchCriteria) and !isUserContact(SearchCriteria) and !isAdjudicator(SearchCriteria))">
+        <TextInput
+          editable="true"
+          id="TaxID"
+          label="DisplayKey.get(&quot;Web.ContactSearch.Company.TaxID&quot;)"
+          value="SearchCriteria.TaxID"/>
+      </InputSet>
+      <InputSet
+        visible="isPerson(SearchCriteria) and !(isPersonVendor(SearchCriteria) or isUserContact(SearchCriteria))">
+        <TextInput
+          editable="true"
+          id="OrganizationName"
+          label="DisplayKey.get(&quot;Web.ContactSearch.OrganizationName&quot;)"
+          value="SearchCriteria.OrganizationName"/>
+      </InputSet>
+      <InputSet
+        visible="isAttorney(SearchCriteria)">
+        <TypeKeyInput
+          editable="true"
+          id="AttorneySpecialty"
+          label="DisplayKey.get(&quot;Web.ContactSearch.AttorneySpecialty&quot;)"
+          value="SearchCriteria.AttorneySpecialty"
+          valueType="typekey.LegalSpecialty"/>
+      </InputSet>
+      <InputSet
+        visible="isDoctor(SearchCriteria)">
+        <TypeKeyInput
+          editable="true"
+          id="DoctorSpecialty"
+          label="DisplayKey.get(&quot;Web.ContactSearch.DoctorSpecialty&quot;)"
+          value="SearchCriteria.DoctorSpecialty"
+          valueType="typekey.SpecialtyType"/>
+      </InputSet>
+      <InputSet
+        visible="isAdjudicator(SearchCriteria)">
+        <TypeKeyInput
+          editable="true"
+          id="AdjudicativeDomain"
+          label="DisplayKey.get(&quot;Web.ContactSearch.AdjudicativeDomain&quot;)"
+          value="SearchCriteria.AdjudicativeDomain"
+          valueType="typekey.AdjudicativeDomain"/>
+      </InputSet>
+      <InputSet
+        visible="isMedicalCareOrg(SearchCriteria)">
+        <TypeKeyInput
+          editable="true"
+          id="MedicalSpecialty"
+          label="DisplayKey.get(&quot;Web.ContactSearch.MedicalSpecialty&quot;)"
+          value="SearchCriteria.MedicalOrgSpecialty"
+          valueType="typekey.SpecialtyType"/>
+      </InputSet>
+      <InputSet
+        visible="isLawFirm(SearchCriteria)">
+        <TypeKeyInput
+          editable="true"
+          id="LawFirmSpecialty"
+          label="DisplayKey.get(&quot;Web.ContactSearch.LawFirmSpecialty&quot;)"
+          value="SearchCriteria.LawFirmSpecialty"
+          valueType="typekey.LegalSpecialty"/>
+      </InputSet>
+      <InputSet
+        visible="isUserContact(SearchCriteria)">
+        <TextInput
+          editable="true"
+          id="EmployeeNumber"
+          label="DisplayKey.get(&quot;Web.ContactSearch.EmployeeNumber&quot;)"
+          value="SearchCriteria.EmployeeNumber"/>
+      </InputSet>
+      <InputSet
+        visible="isVendor(SearchCriteria)">
+        <BooleanRadioInput
+          editable="true"
+          id="PreferredVendors"
+          label="DisplayKey.get(&quot;Web.ContactSearch.Company.PreferredVendors&quot;)"
+          value="SearchCriteria.PreferredVendors"/>
+      </InputSet>
+      <RangeInput
+        editable="true"
+        id="MinimumScore"
+        label="DisplayKey.get(&quot;Web.Reviews.MinimumScore&quot;)"
+        value="SearchCriteria.Score"
+        valueRange="scoreRange()"
+        valueType="java.lang.Integer"/>
+      <RangeInput
+        editable="true"
+        id="Tags"
+        label="DisplayKey.get(&quot;Web.ContactDetail.Tags&quot;)"
+        multiSelect="true"
+        numRows="3"
+        value="SearchCriteria.TagTypes"
+        valueRange="ContactTagType.getTypeKeys(false)"
+        valueType="typekey.ContactTagType[]"/>
+      <BooleanRadioInput
+        editable="true"
+        falseLabel="DisplayKey.get(&quot;Java.Select.Any&quot;)"
+        id="AllTagsRequired"
+        label="DisplayKey.get(&quot;Web.ContactDetail.TagsRequired&quot;)"
+        trueLabel="DisplayKey.get(&quot;Java.Select.All&quot;)"
+        value="SearchCriteria.AllTagsRequired"/>
+      <TypeKeyInput
+        editable="true"
+        id="VendorAvailability"
+        label="DisplayKey.get(&quot;Web.ContactDetail.VendorAvailability&quot;)"
+        value="SearchCriteria.VendorAvailability"
+        valueType="typekey.VendorAvailabilityType"/>
+      <CheckBoxInput
+        editable="true"
+        id="IncludePendingCreates"
+        label="DisplayKey.get(&quot;Web.ContactSearch.IncludePendingCreates&quot;)"
+        value="searchSpec.IncludePendingCreates"/>
+    </InputColumn>
+    <InputColumn>
+      <Label
+        label="DisplayKey.get(&quot;Web.ContactSearch.Location&quot;)"/>
+      <InputSetRef
+        def="AddressSearchInputSet(SearchCriteria)"/>
+    </InputColumn>
+    <InputColumn>
+      <InputSetRef
+        def="ContactSearchProximityInputSet(SearchCriteria, proximitySearchPageHelper)"
+        visible="proximitySearchPageHelper.useGeocodeUIinAddressBook()"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputSetRef
+        def="SearchAndResetInputSet()"/>
+    </InputFooterSection>
+    <Code><![CDATA[function isAdjudicator(c : ABContactSearchCriteria) : boolean { return entity.ABAdjudicator.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isAttorney(c : ABContactSearchCriteria) : boolean { return entity.ABAttorney.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isCompany(c : ABContactSearchCriteria) : boolean { return entity.ABCompany.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isDoctor(c : ABContactSearchCriteria) : boolean { return entity.ABDoctor.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isLawFirm(c : ABContactSearchCriteria) : boolean { return entity.ABLawFirm.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isMedicalCareOrg(c : ABContactSearchCriteria) : boolean { return entity.ABMedicalCareOrg.Type.isAssignableFrom( c.ContactSubtypeType )}
+      function isPerson(c : ABContactSearchCriteria) : boolean { return entity.ABPerson.Type.isAssignableFrom( c.ContactSubtypeType )}
+      function isPersonVendor(c : ABContactSearchCriteria) : boolean { return entity.ABPersonVendor.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isPlace(c : ABContactSearchCriteria) : boolean { return entity.ABPlace.Type.isAssignableFrom( c.ContactSubtypeType )}
+      function isUserContact(c : ABContactSearchCriteria) : boolean { return entity.ABUserContact.Type.isAssignableFrom(c.ContactSubtypeType )}
+      function isVendor(c: ABContactSearchCriteria) : boolean { return (entity.ABCompanyVendor.Type.isAssignableFrom(c.ContactSubtypeType ) 
+                                                                or entity.ABPersonVendor.Type.isAssignableFrom( c.ContactSubtypeType )) }
+      function scoreRange() : java.lang.Integer[] {
+        return { 0, 10, 20, 30, 40, 50, 60, 70, 80, 90}
+      }
+      function getCountryCode(country : Country) : String {
+        if (country == null) {
+          return gw.api.admin.BaseAdminUtil.getDefaultCountry().Code;
+        }
+        return country.Code;
+      }]]></Code>
+  </DetailViewPanel>
+</PCF>

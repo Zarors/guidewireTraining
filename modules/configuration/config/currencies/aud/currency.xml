@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Currency xmlns="http://guidewire.com/currency">
+    <CurrencyType code="aud" desc="Australian Dollar" storageScale="2">
+        <CurrencyFormat zeroValue="-"/>
+    </CurrencyType>
+</Currency>

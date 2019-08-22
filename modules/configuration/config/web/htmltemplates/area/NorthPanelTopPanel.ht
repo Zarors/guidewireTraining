@@ -1,0 +1,3 @@
+<div class="gw-topPanel">
+  ${:children}
+</div>

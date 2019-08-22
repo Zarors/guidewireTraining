@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    alwaysInEditMode="false"
+    beforeCommit="contact.SpecialistServices = pickedValue*.Service.toList()"
+    beforeValidate="contactDetailsVendorHelper.validateServices(pickedValue*.Service)"
+    canEdit="true"
+    id="SelectServicesPopup"
+    returnType="java.util.Set&lt;gw.web.ContactDetailsVendorHelper.ServiceRow&gt;"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.ContactDetail.Services.SelectServices&quot;)">
+    <LocationEntryPoint
+      signature="SelectServicesPopup(contact: ABContact)"/>
+    <Variable
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="new gw.web.ContactDetailsVendorHelper(contact)"
+      name="contactDetailsVendorHelper"
+      type="gw.web.ContactDetailsVendorHelper"/>
+   <Variable
+     initialValue="new gw.api.tree.RowTreeRootNode(contactDetailsVendorHelper.getAllRows(), \ss -&gt;  contactDetailsVendorHelper.getChildren(ss as gw.web.ContactDetailsVendorHelper.ServiceRow), \ss -&gt; true)"
+      name="root"
+      type="gw.api.tree.RowTreeRootNode"/>
+    <Screen>
+      <Toolbar>
+        <CheckedValuesToolbarButton
+          id="UpdateSpecialistServices"
+          iterator="SpecialistServiceTree"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Services.UpdateServices&quot;)"
+          pickValue="CheckedValues.toSet()"/>
+        <EditButtons
+          editVisible="false"
+          updateVisible="false"/>
+        <ToolbarButton
+          action="contact.SpecialistServices = new ArrayList&lt;SpecialistService&gt;(); CurrentLocation.commit()"
+          confirmMessage="DisplayKey.get(&quot;Web.ContactDetail.Services.RemoveAll.Confirmation&quot;)"
+          id="RemoveAll"
+          label="DisplayKey.get(&quot;Web.ContactDetail.Services.RemoveAll&quot;)"/>
+      </Toolbar>
+      <ListViewPanel
+        id="SpecialistServiceTreeLV">
+        <RowTree
+          canPick="false"
+          checkBoxVisible="service.Service.Leaf or service.ContactHasService"
+          contentType="gw.web.ContactDetailsVendorHelper.ServiceRow"
+          elementName="service"
+          hasCheckBoxes="true"
+          id="SpecialistServiceTree"
+          startChecked="service.ContactHasService"
+          value="root">
+          <Row>
+            <TextCell
+              enableSort="false"
+              fontColor="service.Service.Active ? null : gw.api.web.color.GWColor.THEME_DISABLED "
+              id="ServiceLeaf"
+              label="DisplayKey.get(&quot;Web.ContactDetail.Services.ServiceType&quot;)"
+              required="false"
+              value="service.Service.Name"/>
+            <LinkCell>
+              <Link
+                icon="&quot;warning&quot;"
+                iconColor="gw.api.web.color.GWColor.THEME_ALERT_WARNING"
+                iconType="svgFileName"
+                id="HasServiceWarning"
+                visible="!service.Service.Leaf and service.ContactHasService"/>
+            </LinkCell>
+          </Row>
+        </RowTree>
+      </ListViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

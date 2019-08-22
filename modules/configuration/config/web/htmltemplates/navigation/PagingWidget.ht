@@ -1,0 +1,4 @@
+<div class="gw-Paging--prev ${!prevPage ? 'gw-disabled'}" data-gw-click="?{prevPage} gwPaging.page id:${renderId} page:${prevPage}"><div class="gw-icon"></div></div>
+<div class="gw-Paging--next ${!nextPage ? 'gw-disabled'}" data-gw-click="?{nextPage} gwPaging.page id:${renderId} page:${nextPage}"><div class="gw-icon"></div></div>
+<div class="gw-Paging--parent ${!parentPage ? 'gw-disabled'}" data-gw-click="?{parentPage} gwPaging.parent id:${renderId}"><div class="gw-icon"></div></div>
+<div class="gw-Paging--child ${!childPage ? 'gw-disabled'}" data-gw-click="?{childPage} gwPaging.child id:${renderId}"><div class="gw-icon"></div></div>

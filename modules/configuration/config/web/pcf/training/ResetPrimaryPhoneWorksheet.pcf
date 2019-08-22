@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Worksheet
+    beforeCommit="anABPerson.NewPrimaryPhone = EnteredPhoneNumber"
+    canEdit="true"
+    id="ResetPrimaryPhoneWorksheet"
+    startInEditMode="true"
+    tabLabel="DisplayKey.get(&quot;Training.ResetPrimaryPhone&quot;, anABPerson.FullName)"
+    title="DisplayKey.get(&quot;Training.ResetPrimaryPhone&quot;, anABPerson.FullName)">
+    <LocationEntryPoint
+      signature="ResetPrimaryPhoneWorksheet(anABPerson:ABPerson)"/>
+    <Scope
+      location="ABContactLG(anABPerson)"/>
+    <Variable
+      name="anABPerson"
+      type="ABPerson"/>
+    <Variable
+      name="EnteredPhoneNumber"
+      type="String"/>
+    <Screen>
+      <PanelRef>
+        <Toolbar>
+          <EditButtons/>
+        </Toolbar>
+        <DetailViewPanel>
+          <InputColumn>
+            <TypeKeyInput
+              id="PrimaryPhone"
+              label="DisplayKey.get(&quot;Training.CurrentPrimaryPhoneType&quot;)"
+              value="anABPerson.PrimaryPhone"
+              valueType="typekey.PrimaryPhoneType"/>
+            <TextInput
+              id="HomePhone"
+              label="DisplayKey.get(&quot;Training.CurrentHomePhone&quot;)"
+              value="anABPerson.HomePhone"/>
+            <TextInput
+              id="CellPhone"
+              label="DisplayKey.get(&quot;Training.CurrentCellPhone&quot;)"
+              value="anABPerson.CellPhone"/>
+            <TextInput
+              id="BusinessPhone"
+              label="DisplayKey.get(&quot;Training.CurrentWorkPhone&quot;)"
+              value="anABPerson.WorkPhone"/>
+            <TextInput
+              editable="true"
+              id="NewPrimaryPhoneNumber"
+              label="DisplayKey.get(&quot;Training.NewPrimaryPhoneNumber&quot;)"
+              value="EnteredPhoneNumber"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+    </Screen>
+  </Worksheet>
+</PCF>

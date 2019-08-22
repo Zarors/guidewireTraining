@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Corrected address retrieved during Geocoding."
+  entity="AddressCorrection"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="addresscorrection"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.AddressCorrectionInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.AddressCorrectionImpl"/>
+  <fulldescription><![CDATA[
+      Encapsulates a copy of those fields within a persistent Address which represent a physical address,
+      at the point in time it was Geocoded, and any corrected fields received upon Geocoding that Address.<p/>
+      AddressCorrection entities will not be created for temporary Address, if no
+      corrections are received, or if Geocoding fails for that Address. If an Address is edited more than
+      once, and the Geocoding is updated, more than one AddressCorrection may exist for a given address.<p/>
+      Note that the corrected address may not capture all information from the original; in particular, MapPoint
+      will discard apartment/suite/floor/mailstop numbers. Similarly, "duplicate" corrections may be produced.
+    ]]></fulldescription>
+  <foreignkey
+    columnName="AddressID"
+    desc="The Address that has been corrected."
+    fkentity="Address"
+    name="Address"
+    nullok="false"/>
+  <column
+    desc="First line of original mailing address."
+    name="AddressLine1"
+    nullok="true"
+    type="addressline"/>
+  <column
+    desc="Second line of original mailing address."
+    name="AddressLine2"
+    nullok="true"
+    type="addressline"/>
+  <column
+    desc="Original City."
+    name="City"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Original County."
+    name="County"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Original Postal code; string to handle Zip+4 and international codes."
+    name="PostalCode"
+    nullok="true"
+    type="postalcode"/>
+  <typekey
+    desc="Original State."
+    name="State"
+    nullok="true"
+    typelist="State"/>
+  <typekey
+    desc="Original Country."
+    name="Country"
+    nullok="true"
+    typelist="Country"/>
+  <column
+    desc="First line of corrected mailing address."
+    name="CorrectedAddressLine1"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Second line of corrected mailing address."
+    name="CorrectedAddressLine2"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Corrected City."
+    name="CorrectedCity"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Corrected County."
+    name="CorrectedCounty"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Corrected Postal code; string to handle Zip+4 and international codes."
+    name="CorrectedPostalCode"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="12"/>
+  </column>
+  <column
+    desc="Corrected State."
+    name="CorrectedState"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Corrected Country."
+    name="CorrectedCountry"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+</entity>

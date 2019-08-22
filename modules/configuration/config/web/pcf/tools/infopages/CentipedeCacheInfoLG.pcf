@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <LocationGroup
+    canVisit="perm.User.ViewCacheInfo or perm.User.DevAllAccess"
+    id="CentipedeCacheInfoLG"
+    tabBar="InternalToolsTabBar()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.CacheInfo&quot;)">
+    <Variable
+      initialValue="gw.api.cache2.CacheInfoPageHelper.INSTANCE.reload(); return gw.api.cache2.CacheInfoPageHelper.INSTANCE"
+      name="pageHelper"
+      recalculateOnRefresh="true"
+      type="gw.api.cache2.CacheInfoPageHelper"/>
+    <LocationRef
+      location="CentipedeCacheInfo()"/>
+    <LocationRef
+      location="CentipedeCacheInfoHistory()"/>
+    <LocationRef
+      location="CentipedeCacheInfoDetails()"/>
+  </LocationGroup>
+</PCF>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Steps within a load command."
+  entity="LoadStep"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadstep"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.staging.LoadStepPublicMethods"
+    impl="com.guidewire.pl.domain.staging.impl.LoadStepImpl"/>
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <implementsEntity
+    name="OrdereddLoaderObject"/>
+  <typekey
+    desc="Type of load step."
+    name="StepType"
+    nullok="false"
+    typelist="loadsteptype"/>
+  <array
+    arrayentity="LoadOperation"
+    desc="Detailed operations."
+    name="Operations"
+    owner="true"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Parent."
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <edgeForeignKey
+    desc="For non-root steps, points to parent step."
+    edgeTableName="loadparentstep"
+    exportable="false"
+    fkentity="LoadStep"
+    loadable="false"
+    name="ParentStep"
+    nullok="true"/>
+  <!-- Unique index on LoadCommandID, StepType -->
+  <index
+    desc="(LoadCommandID, StepType) is unique across load steps"
+    name="loadsteppu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="StepType"/>
+  </index>
+</entity>

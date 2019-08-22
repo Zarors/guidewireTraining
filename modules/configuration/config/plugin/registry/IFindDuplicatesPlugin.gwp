@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="IFindDuplicatesPlugin">
+  <plugin-gosu
+    gosuclass="gw.plugin.contact.findduplicates.FindDuplicatesPlugin"/>
+</plugin>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Profiler configuration for a work queue"
+  entity="WQProfilerConfig"
+  final="true"
+  platform="true"
+  supertype="ProfilerConfig">
+  <column
+    default="false"
+    desc="True to capture individual stacks; null or false to aggregate the stacks"
+    name="IndividualStacks"
+    nullok="false"
+    type="bit"/>
+</subtype>

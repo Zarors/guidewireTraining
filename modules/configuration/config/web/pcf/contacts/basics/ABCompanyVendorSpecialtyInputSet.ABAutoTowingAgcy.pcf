@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="ABCompanyVendorSpecialtyInputSet"
+    mode="ABAutoTowingAgcy">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <TextInput
+      editable="true"
+      id="AutoTowingAgcyBusinessLicense"
+      label="DisplayKey.get(&quot;Web.ContactDetail.AutoTowingAgcy.BusinessLicense&quot;)"
+      value="(contact as ABAutoTowingAgcy).AutoTowingLicense"/>
+  </InputSet>
+</PCF>

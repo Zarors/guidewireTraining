@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="A log entry that is just text."
+  entity="WorkflowTextLog"
+  final="false"
+  platform="true"
+  priority="1"
+  supertype="WorkflowLogEntry">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowLogEntryPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowTextLogImpl"/>
+  <column
+    desc="Short description"
+    name="Summary"
+    nullok="false"
+    setterScriptability="hidden"
+    type="mediumtext"/>
+  <column
+    desc="Optional detailed description (may include stack trace)"
+    name="Description"
+    nullok="true"
+    setterScriptability="hidden"
+    type="longtext"/>
+</subtype>

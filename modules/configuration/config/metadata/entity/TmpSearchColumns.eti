@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Temp table used to populate search column from the batch process."
+  entity="TmpSearchColumns"
+  exportable="false"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="tmpSearchColumns"
+  temporary="true"
+  type="nonkeyable">
+  <fulldescription><![CDATA[
+        Temporary table to improve performance for PopulateSearchColumnBatchProcess.
+    ]]></fulldescription>
+  <column
+    desc="key id."
+    exportable="false"
+    name="ID"
+    nullok="false"
+    type="softentityreference"/>
+  <column
+    desc="for populate varchar based value based search columns"
+    exportable="false"
+    name="VarCharValue"
+    nullok="true"
+    type="mediumtext"/>
+  <column
+    desc="for populate int value based search columns"
+    exportable="false"
+    name="IntValue"
+    nullok="true"
+    type="integer"/>
+  <index
+    desc="Improves performance of PopulateSearchColumnBatachProcess"
+    name="upperfkey"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ID"/>
+  </index>
+</entity>

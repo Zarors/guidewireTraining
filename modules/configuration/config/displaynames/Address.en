@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Entity
+  name="Address">
+  <Columns>
+    <Column
+      beanPath="Address.AddressLine1"
+      name="addressLine1"
+      sortOrder="1"/>
+    <Column
+      beanPath="Address.AddressLine2"
+      name="addressLine2"
+      sortOrder="2"/>
+    <Column
+      beanPath="Address.AddressLine3"
+      name="addressLine3"
+      sortOrder="3"/>
+    <Column
+      beanPath="Address.City"
+      name="city"
+      sortOrder="4"/>
+    <Column
+      beanPath="Address.State"
+      name="stateCode"
+      sortOrder="5"/>
+    <Column
+      beanPath="Address.PostalCode"
+      name="postalCode"
+      sortOrder="6"/>
+    <Column
+      beanPath="Address.Country"
+      name="country"
+      sortOrder="7"/>
+    <Column
+      beanPath="Address.AddressLine1Kanji"
+      name="addressLine1Kanji"/>
+    <Column
+      beanPath="Address.AddressLine2Kanji"
+      name="addressLine2Kanji"/>
+    <Column
+      beanPath="Address.CityKanji"
+      name="cityKanji"/>
+    <Column
+      beanPath="Address.CEDEX"
+      name="CEDEX"/>
+    <Column
+      beanPath="Address.CEDEXBureau"
+      name="CEDEXBureau"/>
+    <Column
+      beanPath="Address.County"
+      name="county"/>
+    <Column
+      beanPath="Address.Description"
+      name="description"/>
+    <Column
+      beanPath="Address.ValidUntil"
+      name="ValidUntil"/>
+    <Column
+      beanPath="Address.AddressType"
+      name="addressType"/>
+  </Columns>
+  <DisplayName><![CDATA[var formatter =  new gw.api.address.AddressFormatter() {
+    :Country = country,
+    :AddressLine1 = addressLine1,
+    :AddressLine2 = addressLine2,
+    :AddressLine3 = addressLine3,
+    :City = city,
+    :County = county,
+    :State = stateCode,
+    :PostalCode = postalCode,
+    :AddressLine1Kanji = addressLine1Kanji,
+    :AddressLine2Kanji = addressLine2Kanji,
+    :CityKanji = cityKanji,
+    :CEDEX = CEDEX,
+    :CEDEXBureau = CEDEXBureau
+}
+                                      
+return formatter.format(formatter, ", ")
+]]></DisplayName>
+  <DisplayName
+    type="Full"><![CDATA[uses java.lang.StringBuilder
+
+var delimiter = "\n"
+
+var formatter =  new gw.api.address.AddressFormatter() {
+  :Country = country,
+  :AddressLine1 = addressLine1,
+  :AddressLine2 = addressLine2,
+  :AddressLine3 = addressLine3,
+  :City = city,
+  :County = county,
+  :State = stateCode,
+  :PostalCode = postalCode,
+  :AddressLine1Kanji = addressLine1Kanji,
+  :AddressLine2Kanji = addressLine2Kanji,
+  :CityKanji = cityKanji,
+  :CEDEX = CEDEX,
+  :CEDEXBureau = CEDEXBureau
+}
+                                                         
+var retString = new StringBuilder()
+
+if (addressType != null) {
+  retString.append(addressType.DisplayName)
+}
+retString.appendIfHasContent(delimiter, description)
+
+var baseAddress = formatter.format(formatter, delimiter)
+if (not formatter.IsEmpty)
+  retString.appendIfHasContent(delimiter, baseAddress)
+
+if (county.HasContent) {
+  retString.append(county).append(" ").append(gw.api.locale.DisplayKey.get("DisplayName.ABAddress.County"))
+  var sep = (stateCode != null) or (postalCode.HasContent) ? ", ": "\n"
+  retString.append(sep)
+}
+
+if (ValidUntil != null) {
+  retString.append("\n").append(gw.api.locale.DisplayKey.get("DisplayName.ABAddress.ValidUntil")).append(" ").append(ValidUntil).append("\n")
+}
+return retString
+]]></DisplayName>
+</Entity>

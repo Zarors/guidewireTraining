@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <CardViewPanel
+    hideTabIfSingle="true"
+    id="ProfilerResultsCV"
+    mode="Elapsed">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Card
+      id="Empty"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)"
+      visible="profilerDataSource.ProfilerStacks.length == 0">
+      <PanelRef
+        def="ProfilerResultsEmptyDV()"/>
+    </Card>
+    <Card
+      id="Card"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)"
+      visible="profilerDataSource.ProfilerStacks.length &gt; 0">
+      <ListDetailPanel
+        selectionName="stack"
+        selectionType="gw.api.profiler.ProfilerStack">
+        <ListViewPanel
+          id="StacksLV">
+          <RowIterator
+            editable="false"
+            elementName="lvStack"
+            value="profilerDataSource.ProfilerStacks"
+            valueType="gw.api.profiler.ProfilerStack[]">
+            <Row>
+              <TextCell
+                id="stackName"
+                label="DisplayKey.get(&quot;Web.Profiler.StackName&quot;)"
+                sortOrder="1"
+                value="lvStack.StackName"/>
+              <TextCell
+                id="frameCount"
+                label="DisplayKey.get(&quot;Web.Profiler.Frames&quot;)"
+                value="lvStack.FrameCount"
+                valueType="java.lang.Integer"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+        <CardViewPanel
+          hideTabIfSingle="true">
+          <Card
+            id="StackCard"
+            title="&quot;&quot;">
+            <DetailViewPanel>
+              <InputColumn>
+                <Label
+                  id="TreeLabel"
+                  label="DisplayKey.get(&quot;Web.Profiler.TreeViewDesc&quot;)"
+                  visible="true"/>
+              </InputColumn>
+            </DetailViewPanel>
+            <TreeViewPanel
+              id="TreeViewForFrame">
+              <TreeView
+                elementLabel="getTreeLabel(profilerFrame)"
+                elementName="profilerFrame"
+                id="ProfilerTreeView"
+                value="createTreeRoot(stack.EntryPointFrame)"/>
+            </TreeViewPanel>
+          </Card>
+        </CardViewPanel>
+      </ListDetailPanel>
+    </Card>
+    <Code><![CDATA[function createTreeRoot(frame : gw.api.profiler.ProfilerFrame) : gw.api.tree.TreeNode {
+  var rootNode = new gw.api.profiler.ProfilerLazyLoadingTreeNode(
+                    frame,
+                    \x->((x as gw.api.profiler.ProfilerFrame).Children).copy().sortBy(\ p -> -p.ElapsedTime ),
+                    \x->((x as gw.api.profiler.ProfilerFrame).Children.Count)
+                    )
+  return rootNode
+}
+
+function getTreeLabel(node : Object) : String {
+   if (node typeis gw.api.profiler.ProfilerFrame) {
+    return "[" + node.FrameTime + "/" + node.ElapsedTime + "] " + " (" + node.Tag.Name + ") " + node.PropertiesAndCounters
+  } else if (node typeis String) {
+    return node
+  }
+  return "unknown"
+}]]></Code>
+  </CardViewPanel>
+</PCF>

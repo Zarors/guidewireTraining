@@ -1,0 +1,17 @@
+package rules.Preupdate.PendingContactChangePreupdate_dir
+uses gw.api.web.contact.PendingContactChangeUtil
+
+@gw.rules.RuleName("Pending Update Cache Update")
+internal class PendingUpdateCacheUpdate {
+  static function doCondition(pendingContactChange  :  entity.PendingContactChange) : boolean {
+/*start00rule*/
+return typeof pendingContactChange == PendingContactUpdate
+/*end00rule*/
+}
+
+  static function doAction(pendingContactChange  :  entity.PendingContactChange, actions : gw.rules.Action) {
+/*start00rule*/
+PendingContactChangeUtil.clearCacheEntriesForContact(pendingContactChange.ABContact) 
+/*end00rule*/
+  }
+}

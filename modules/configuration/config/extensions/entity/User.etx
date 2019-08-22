@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- NOTE: If you modify the contents of this file you must increment the version attribute -->
+<extension xmlns="http://guidewire.com/datamodel" entityName="User">
+  <column default="12" desc="integer extension; default value of '12'" name="IntegerExt" nullok="true" type="integer"/>
+    <!-- BEGIN :: Fields needed for TrainingApp "base application" -->
+  	<column name="UseHelperLabels" type="bit" desc="Should the helper labels be displayed?" default="false"  nullok="true" />
+  	<typekey name="MeasurementSystemPreference" typelist="MeasurementSystem" desc="Measurement System Preference"  nullok="true" />
+    <!-- END :: Fields needed for TrainingApp "base application" -->
+</extension>

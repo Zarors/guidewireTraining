@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="ConsistencyChecksLV">
+    <Require
+      name="CCPageHelper"
+      type="gw.api.tools.ConsistencyChecksRunsPageHelper"/>
+    <Require
+      name="tableSearch"
+      type="String"/>
+    <RowIterator
+      editable="false"
+      elementName="consistencyCheck"
+      value="CCPageHelper.getConsistencyChecks( tableSearch )"
+      valueType="gw.api.database.ConsistencyCheck[]">
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.LoadIntegrityCheckType&quot;)"
+        name="CheckTypeFilterSet">
+        <ToolbarFilterOptionGroup
+          filters="new gw.api.filters.ConsistencyCheckTypelistFilterSet().FilterOptions"/>
+      </ToolbarFilter>
+      <Row>
+        <TextCell
+          id="table"
+          label="DisplayKey.get(&quot;Web.ConsistencyCheck.TableName&quot;)"
+          value="consistencyCheck.AssociatedTable.Name"
+          valueVisible="true"/>
+        <TextCell
+          id="Cell0"
+          label="DisplayKey.get(&quot;Web.ConsistencyCheck.CheckName&quot;)"
+          value="consistencyCheck.ConsistencyCheckType.DisplayName"/>
+        <TextCell
+          enableSort="false"
+          id="consistencyCheckDescription"
+          label="DisplayKey.get(&quot;Web.ConsistencyCheck.Desc&quot;)"
+          value="consistencyCheck.getDescription()"
+          width="600"
+          wrap="true"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

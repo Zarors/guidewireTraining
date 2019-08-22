@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ABCompanyMergeDetailsRowSet"
+    mode="Japan">
+    <Require
+      name="companies"
+      type="ABCompany[]"/>
+    <Require
+      name="mergedCompany"
+      type="ABCompany"/>
+    <Require
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Row
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.NP_NAME)">
+      <TextCell
+        available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+        id="nameLabel"
+        value="nameOwner.ContactNamePhoneticLabel"/>
+      <CellIterator
+        elementName="aContact"
+        id="lastNamePhonetic"
+        value="companies"
+        valueType="entity.ABCompany[]">
+        <TextCell
+          available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+          editable="aContact == mergedCompany &amp;&amp; nameOwner.isEditable(gw.api.name.NameOwnerFieldId.NP_NAME)"
+          id="name"
+          required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.NP_NAME)"
+          value="aContact.Name"/>
+      </CellIterator>
+    </Row>
+    <Row
+      visible="nameOwner.isVisible(gw.api.name.NameOwnerFieldId.NAMEKANJI)">
+      <TextCell
+        available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+        id="nameLabelKanji"
+        value="nameOwner.ContactNameLabel"/>
+      <CellIterator
+        elementName="aContact"
+        id="nameKanji"
+        value="companies"
+        valueType="entity.ABCompany[]">
+        <TextCell
+          available="nameOwner.isAvailable(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+          editable="aContact == mergedCompany &amp;&amp; nameOwner.isEditable(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+          id="nameKanji"
+          required="nameOwner.isRequired(gw.api.name.NameOwnerFieldId.NAMEKANJI)"
+          value="aContact.NameKanji"/>
+      </CellIterator>
+    </Row>
+  </RowSet>
+</PCF>

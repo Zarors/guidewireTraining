@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- ************************************* IMPORTANT ********************************************************************
+     If this schema is changed in a way such that the changes cannot be implemented by simply creating the new ojbects,
+    you must increment the final static int UpgraderInstrumentation.EXPECTEDUPGRADESCHEMAVERSION, which will force
+    all these tables to be dropped and recreated.
+  ************************************* IMPORTANT ********************************************************************
+
+  ### ============================================================================
+  ###  DBMS-specific performance info for in upgrade version triggers
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="DBMS-specific performance information for a version trigger."
+  entity="UpgradeVTDBMSDump"
+  exportable="false"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="upgradevtdbmsdump"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.upgrader.UpgradeVTDBMSDumpPublicMethods"
+    impl="com.guidewire.pl.domain.upgrader.impl.UpgradeVTDBMSDumpImpl"/>
+  <implementsEntity
+    name="TimedUpgraderObject"/>
+  <foreignkey
+    desc="UpgradeInstance"
+    fkentity="UpgradeInstance"
+    name="UpgradeInstance"
+    nullok="false"/>
+  <column
+    desc="Fully qualified name of version trigger to which this applies"
+    name="VersionActionName"
+    nullok="false"
+    type="text"/>
+  <column
+    desc="query"
+    name="Contents"
+    nullok="false"
+    type="blob"/>
+</entity>

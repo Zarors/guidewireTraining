@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><entity entity="ViewedContact" table="viewedcontact" type="retireable" desc="Viewed contact" exportable="true" xmlns="http://guidewire.com/datamodel">
+<implementsEntity
+    name="Extractable"/>
+  <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+  <!-- ViewedContact entity used to enable behavior of Contact tab. (Show most recently viewed contact when clicked and  -->
+  <!--  display list of previously viewed contacts in tab menu) In the genuine Guidewire applications, this behavior is  -->
+  <!-- managed through session-based information, not through database tables.) -->
+  	<foreignkey name="ViewingUser"   columnName="ViewingUserID"   fkentity="User"      desc="User who viewed contact" nullok="true" />
+	<foreignkey name="ViewedContact" columnName="ViewedContactID" fkentity="ABContact" desc="Contact that was viewed" nullok="true" />
+</entity>

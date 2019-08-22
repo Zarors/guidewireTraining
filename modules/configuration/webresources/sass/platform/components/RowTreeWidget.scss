@@ -1,0 +1,122 @@
+// A RowTreeWidget is a collection of rows where the first column is made up of a RowTreeExpansionWidget inside CellWidget
+$gw-RowTree--leaf-icon-size-em: gw-emFixed(.2); //TODO: Cooper theme or replace
+
+.gw-row-tree-row {
+  @if ($gw-app--RowTree--row-fixed-h-em != null) {
+    height: $gw-app--RowTree--row-fixed-h-em + gw-emFixed($gw-app--border-width-px * 2 / $gw-app--base-font-size--in-px);
+  }
+
+  .gw-cell-inner.gw-rowtree-expansion-cell {
+    @include gw-wrapNever();
+    text-align: left;
+    vertical-align: top;
+
+    .gw-multi-content-cell {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      @include gw-wrapNever();
+
+      .gw-RowTreeExpansionWidget {
+        display: inline-flex;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        @include gw-wrapNever();
+
+        .gw-marker {
+          display: inline;
+          height: $gw-app--RowTree--expand-collapse-marker-height-em;
+          margin-right: $gw-app--RowTree--expand-collapse-margin-right-em + $gw-app--RowTree--expand-collapse-size-em;
+
+          @if ($gw-app--RowTree--show-ancestor-lines) {
+            &.gw-ancestor-line { //TODO: Cooper theme or replace
+              border-left: $gw-app--border-width-px dashed $gw-app--buttons--bg;
+              margin-left: $gw-app--RowTree--expand-collapse-size-em * .5;
+              margin-right: $gw-app--RowTree--expand-collapse-margin-right-em + $gw-app--RowTree--expand-collapse-size-em * .5;
+            }
+          }
+        }
+
+        .gw-toggle-icon {
+          display: inline-block;
+          width: $gw-app--RowTree--expand-collapse-size-em;
+          margin-right: $gw-app--RowTree--expand-collapse-margin-right-em;
+
+          @if ($gw-app--RowTree--expand-collapse-glyph-as-button) {
+            @include gw-button--secondary($is-square: true, $pad-h: 0, $pad-v: 0);
+            height: $gw-app--RowTree--expand-collapse-size-em;
+            position: relative;
+
+            .gw-icon {
+              display: flex;
+              height: 100%;
+              align-items: center;
+              justify-content: center;
+            }
+
+            &.gw-expanded {
+              .gw-icon {
+                @include gw-iconAfter($gw-app--RowTree--collapse-glyph, $size: $gw-app--RowTree--expand-collapse-glyph-size-em, $display: block, $h-align: middle);
+              }
+            }
+
+            &:not(.gw-expanded) {
+              .gw-icon {
+                @include gw-iconAfter($gw-app--RowTree--expand-glyph, $size: $gw-app--RowTree--expand-collapse-glyph-size-em, $display: block, $h-align: middle);
+              }
+            }
+          } @else {
+            &.gw-expanded {
+              .gw-icon {
+                @include gw-icon($gw-app--RowTree--collapse-glyph, $gw-app--RowTree--expand-collapse-glyph-size-em, $h-align: middle);
+              }
+            }
+
+            &:not(.gw-expanded) {
+              .gw-icon {
+                @include gw-icon($gw-app--RowTree--expand-glyph, $gw-app--RowTree--expand-collapse-glyph-size-em, $h-align: middle);
+              }
+            }
+          }
+
+          &.gw-last-child {
+            // Not currently using
+          }
+
+          &:not(.gw-last-child) {
+            // Not currently using
+          }
+        }
+
+        @if ($gw-app--RowTree--show-leaf-dot) {
+          .gw-leaf { //TODO: theme or replace
+            position: relative;
+            display: inline;
+            margin-left: $gw-app--RowTree--expand-collapse-size-em * .5 - $gw-RowTree--leaf-icon-size-em * .5;
+            margin-right: $gw-app--RowTree--expand-collapse-margin-right-em + $gw-app--RowTree--expand-collapse-size-em * .5 - $gw-RowTree--leaf-icon-size-em * .5;
+
+            @include gw-iconAfter("circle", $gw-RowTree--leaf-icon-size-em, $gw-app--buttons--bg, $display: inline); //TODO: Cooper theme or replace
+
+            &.gw-last-child {
+              // Not currently using
+            }
+
+            &:not(.gw-last-child) {
+              // Not currently using
+            }
+          }
+        }
+
+        & + .gw-IteratorEntryCheckBoxWidget {
+          margin-right: $gw-app--RowTree--expand-collapse-margin-right-em;
+        }
+      }
+
+      & > .gw-ValueWidget {
+        vertical-align: middle;
+        display: inline-flex;
+        max-width: none;
+      }
+    }
+  }
+}

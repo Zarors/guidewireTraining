@@ -1,0 +1,4 @@
+// Just a partial helper to pull in the platform colors to a blank theme
+// This type of partial is only needed if you plan to make use of variables from the imported files in the theme
+// If all you plan to do is override existing variables, then there's no reason to import this partial
+@import "../global_variables/2_platform_globals/1_platform_colors_base.scss";

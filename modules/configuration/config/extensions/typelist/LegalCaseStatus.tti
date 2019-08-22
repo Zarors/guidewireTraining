@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="LegalCaseStatus"
+  name="LegalCaseStatus">
+  <typecode
+    code="in_progress"
+    desc="In Progress"
+    name="In Progress"
+    priority="10"/>
+  <typecode
+    code="case_dismissed"
+    desc="Case Dismissed (court rejected it)"
+    name="Case Dismissed"/>
+  <typecode
+    code="case_dropped"
+    desc="Case Dropped (plaintiff withdrew)"
+    name="Case Dropped"/>
+  <typecode
+    code="settled"
+    desc="Settled Out of Court"
+    name="Settled Out of Court"/>
+  <typecode
+    code="guilty"
+    desc="Guilty"
+    name="Guilty"/>
+  <typecode
+    code="not_guilty"
+    desc="Not Guilty"
+    name="Not Guilty"/>
+  <typecode
+    code="mistrial"
+    desc="Mistrial"
+    name="Mistrial"/>
+</typelist>

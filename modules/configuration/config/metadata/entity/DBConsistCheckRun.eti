@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!-- ### ==========================
+  ### Database consistency checker
+  ### ========================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores consistency checker info in the database."
+  entity="DBConsistCheckRun"
+  exportable="false"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="dbconsistcheckrun"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.DBConsistCheckRunPublicMethods"
+    impl="com.guidewire.pl.domain.database.impl.DBConsistCheckRunImpl"/>
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="mediumtext"/>
+  <column
+    desc="Start time of consistency check process."
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="End time of consistency check process."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Elapsed time in seconds"
+    name="Duration"
+    nullok="true"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="3"/>
+    <columnParam
+      name="precision"
+      value="10"/>
+  </column>
+  <column
+    default="0"
+    desc="Major Schema Version at time of check "
+    name="MajorSchemaVersion"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Minor Schema Version at time of check "
+    name="MinorSchemaVersion"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="3"
+    desc="Platform Major Schema Version at time of check "
+    name="PlatformMajorSchemaVersion"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Platform Minor Schema Version at time of check "
+    name="PlatformMinorSchemaVersion"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Extensions version number at time of check"
+    name="ExtensionsSchemaVersion"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Total number of checks in this run"
+    name="TotalNumChecks"
+    nullok="true"
+    type="integer"/>
+  <column
+    default="1"
+    desc="Number of threads used to run this job"
+    name="NumberOfThreads"
+    nullok="false"
+    type="integer"/>
+  <!-- Should be non-nullable but that incurs an upgrade cost -->
+  <array
+    arrayentity="DBConsistCheckQueryExec"
+    desc="Collection of DBConsistCheckQueryExecs linked to this DBConsistCheckExec."
+    exportable="true"
+    name="DBConsistCheckQueryExecs"
+    owner="true"/>
+</entity>

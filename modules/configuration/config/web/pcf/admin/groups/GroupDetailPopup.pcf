@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    canEdit="perm.Group.edit"
+    canVisit="perm.Group.view"
+    id="GroupDetailPopup"
+    title="DisplayKey.get(&quot;Web.Admin.GroupDetail&quot;, Group.DisplayName)">
+    <LocationEntryPoint
+      signature="GroupDetailPopup(Group : Group)"/>
+    <Variable
+      name="Group"
+      type="Group"/>
+    <ScreenRef
+      def="GroupDetailScreen(Group)"/>
+  </Popup>
+</PCF>

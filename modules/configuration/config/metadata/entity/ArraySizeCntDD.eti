@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- ### ===============================================================================
+  ### Array data distribution size and count pairs (owned by Array data distribution)
+  ### =============================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores array data distribution size count pairs."
+  entity="ArraySizeCntDD"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="arraysizecntdd"
+  type="keyable">
+  <column
+    desc="Size of array."
+    name="DistSize"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Count of arrays  of that size."
+    name="DistCount"
+    nullok="false"
+    type="longint"/>
+  <foreignkey
+    columnName="ArrayDataDistID"
+    desc="ArrayDataDist for this object."
+    exportable="false"
+    fkentity="ArrayDataDist"
+    ignoreforevents="true"
+    name="ArrayDataDist"
+    nullok="false"/>
+</entity>

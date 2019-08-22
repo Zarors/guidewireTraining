@@ -1,0 +1,33 @@
+// Position to other widgets
+$gw-app--TreeViewPanelWidget--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TreeViewPanelWidget--spacing-widget-left-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--TreeViewPanelWidget--spacing-widget-right-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--TreeViewPanelWidget--spacing-widget-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+// Internal padding
+$gw-app--TreeViewPanelWidget--spacing-inner-top-rem: null !default;
+$gw-app--TreeViewPanelWidget--spacing-inner-left-rem: null !default;
+$gw-app--TreeViewPanelWidget--spacing-inner-right-rem: null !default;
+$gw-app--TreeViewPanelWidget--spacing-inner-bottom-rem: null !default;
+
+// Other
+$gw-app--TreeViewPanelWidget--has-border-radius: true !default;
+$gw-app--TreeViewPanelWidget--min-height: null !default;
+$gw-app--TreeViewPanelWidget--min-width: null !default;
+
+// Internal TreeViewWidget Styling:
+$gw-app--TreeViewPanelWidget--row-spacing-inner-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--TreeViewPanelWidget--row-spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TreeViewPanelWidget--row-spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--TreeViewPanelWidget--row-spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+$gw-app--TreeViewPanelWidget--even-odd-row-highlighting: true !default;
+$gw-app--TreeViewPanelWidget--even-row-bg: $gw-app--tables--rows--even !default;
+$gw-app--TreeViewPanelWidget--odd-row-bg: $gw-app--tables--rows--odd !default;
+
+$gw-app--TreeViewPanelWidget--row-hover-bg: $gw-app--tables--cell--hover-bg !default;
+$gw-app--TreeViewPanelWidget--row-hover-col: null !default;
+
+$gw-app--TreeViewPanelWidget--expand-collapse-hover-col: $gw-app--buttons--hover--col !default;
+$gw-app--TreeViewPanelWidget--expand-collapse-hover-bg: $gw-app--buttons--hover--bg !default;
+

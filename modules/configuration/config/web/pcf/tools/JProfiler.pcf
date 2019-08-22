@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    canVisit="perm.User.EditJProfiler or perm.User.DevAllAccess"
+    countsAsWork="false"
+    id="JProfiler"
+    parent="ServerTools()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.JProfiler&quot;)">
+    <LocationEntryPoint
+      signature="JProfiler()"/>
+    <LocationEntryPoint
+      signature="JProfiler(Result : String)"/>
+    <Variable
+      name="Result"
+      type="String"/>
+    <Screen
+      id="JProfilerScreen">
+      <Variable
+        initialValue="gw.api.tools.InternalToolsUtil.isJProfilerAvailable()"
+        name="JProfilerAvailable"
+        type="boolean"/>
+      <Verbatim
+        label="Result"/>
+      <AlertBar
+        id="JProfilerIsNotAvailable"
+        label="DisplayKey.get(&quot;Web.InternalTools.JProfiler.unavailable&quot;)"
+        visible="not JProfilerAvailable"/>
+      <DetailViewPanel
+        id="JProfilerDV">
+        <InputColumn>
+          <ButtonInput
+            action="Result = gw.api.tools.InternalToolsUtil.doJProfilerAction(&quot;startmemory&quot;)"
+            align="center"
+            available="JProfilerAvailable"
+            hideIfDisabled="false"
+            id="startmemory"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.JProfiler.startmemory&quot;)"/>
+          <ButtonInput
+            action="Result = gw.api.tools.InternalToolsUtil.doJProfilerAction(&quot;startcpu&quot;)"
+            align="center"
+            available="JProfilerAvailable"
+            hideIfDisabled="false"
+            id="startcpu"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.JProfiler.startcpu&quot;)"/>
+          <ButtonInput
+            action="Result = gw.api.tools.InternalToolsUtil.doJProfilerAction(&quot;startthread&quot;)"
+            align="center"
+            available="JProfilerAvailable"
+            hideIfDisabled="false"
+            id="startthread"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.JProfiler.startthread&quot;)"/>
+          <ButtonInput
+            action="Result = gw.api.tools.InternalToolsUtil.doJProfilerAction(&quot;stopAndRestartCPUAndThread&quot;)"
+            align="center"
+            available="JProfilerAvailable"
+            hideIfDisabled="false"
+            id="stopAndRestartCPUAndThread"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.JProfiler.stopAndRestartCPUAndThread&quot;)"/>
+          <ButtonInput
+            action="Result = gw.api.tools.InternalToolsUtil.doJProfilerAction(&quot;stop&quot;)"
+            align="center"
+            available="JProfilerAvailable"
+            hideIfDisabled="false"
+            id="stop"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.JProfiler.stop&quot;)"/>
+          <ButtonInput
+            action="Result = gw.api.tools.InternalToolsUtil.doJProfilerAction(&quot;dump&quot;)"
+            align="center"
+            available="JProfilerAvailable"
+            hideIfDisabled="false"
+            id="dump"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.InternalTools.JProfiler.dump&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

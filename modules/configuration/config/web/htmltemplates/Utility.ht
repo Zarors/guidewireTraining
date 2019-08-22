@@ -1,0 +1,11 @@
+<div id="${renderId}" class="gw-hidden">
+  <input type="hidden" name="eventSource" id="gw-event-source"/>
+  <input type="hidden" name="eventTarget" id="gw-event-target"/>
+  <input type="hidden" id="gw-event-param"/>
+  <input type="hidden" name="paging" id="gw-paging"/>
+  <input type="hidden" name="gw-util--headers" id="gw-util--headers"/>
+  <input type="hidden" name="gw-util--treeview" id="gw-util--treeview"/>
+  <input type="hidden" name="gw-util--preferences" id="gw-util--preferences"/>
+  ${:children}
+</div>
+

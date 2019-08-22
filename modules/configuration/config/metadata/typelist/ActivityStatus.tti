@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The status of the activity"
+  final="true"
+  name="ActivityStatus"
+  platform="true">
+  <typecode
+    code="open"
+    desc="Open"
+    name="Open"
+    priority="1"/>
+  <typecode
+    code="skipped"
+    desc="Skipped"
+    name="Skipped"
+    priority="2"/>
+  <typecode
+    code="complete"
+    desc="Complete"
+    name="Complete"
+    priority="3"/>
+  <typecode
+    code="canceled"
+    desc="Canceled activity that is still visible to the user"
+    name="Canceled"
+    priority="4"/>
+</typelist>

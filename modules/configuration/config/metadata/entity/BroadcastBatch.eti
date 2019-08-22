@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  entity="BroadcastBatch"
+  exportable="false"
+  extendable="false"
+  final="true"
+  instrumentationtable="false"
+  loadable="false"
+  platform="true"
+  table="broadcastbatch"
+  type="keyable">
+  <column
+    desc="Sequence ID"
+    name="SeqNo"
+    nullok="true"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="0"/>
+    <columnParam
+      name="precision"
+      value="19"/>
+  </column>
+  <column
+    desc="Sender's serverID"
+    name="ServerId"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Time batch inserted"
+    name="TimeInserted"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="Serialized list of messages"
+    name="Messages"
+    nullok="false"
+    type="blob"/>
+  <index
+    desc="Index to speed up the selection of new batches of messages"
+    name="BroadcastBatch1">
+    <indexcol
+      keyposition="1"
+      name="SeqNo"/>
+  </index>
+  <index
+    desc="Index to speed up the selection of initial list of batches of messages"
+    name="BroadcastBatch2">
+    <indexcol
+      keyposition="1"
+      name="TimeInserted"/>
+    <indexcol
+      keyposition="2"
+      name="SeqNo"/>
+  </index>
+</entity>

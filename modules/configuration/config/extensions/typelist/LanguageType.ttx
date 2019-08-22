@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="LanguageType">
+  
+  <typecode 
+        code="de" 
+        desc="Deutsch" 
+        name="Deutsch"/>
+  
+  <typecode 
+        code="es" 
+        desc="Español" 
+        name="Español"/>
+  
+  <typecode 
+        code="fr" 
+        desc="Français" 
+        name="Français"/>
+  
+  <typecode 
+        code="it" 
+        desc="Italiano" 
+        name="Italiano"/>
+  
+  <typecode 
+        code="ja" 
+        desc="日本語" 
+        name="日本語"/>
+  
+  <!--<typecode 
+        code="nl" 
+        desc="Nederlands" 
+        name="Nederlands"/>-->
+  
+  <!--<typecode 
+        code="pt" 
+        desc="Português" 
+        name="Português"/>-->
+  
+  <!--<typecode 
+        code="ru" 
+        desc="Русский" 
+        name="Русский"/>-->
+  
+  <!--<typecode 
+        code="zh_CN" 
+        desc="中文（中国）" 
+        name="中文（中国）"/>-->
+
+</typelistextension>

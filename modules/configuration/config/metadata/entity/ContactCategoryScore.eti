@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Table linking Contacts to Category Scores"
+  entity="ContactCategoryScore"
+  exportable="true"
+  platform="true"
+  table="contactcatsScore"
+  type="joinarray">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.AddressBookConvertableImplCallback"
+    impl="com.guidewire.pl.domain.contact.impl.ContactCategoryScoreImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.CommonCategoryScore"
+    impl="com.guidewire.pl.domain.contact.impl.ContactCategoryScoreImpl"/>
+  <implementsEntity
+    name="AddressBookConvertable"/>
+  <foreignkey
+    columnName="ContactID"
+    desc="Associated Contact."
+    fkentity="Contact"
+    name="Contact"
+    nullok="false"/>
+  <typekey
+    desc="Category of this Score."
+    name="ReviewCategory"
+    nullok="true"
+    typelist="ReviewCategory"/>
+  <column
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <index
+    desc="Enforcing uniqueness, a particular review category can only appear once per contact"
+    name="contactcatscu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ContactID"/>
+    <indexcol
+      keyposition="2"
+      name="ReviewCategory"/>
+  </index>
+</entity>

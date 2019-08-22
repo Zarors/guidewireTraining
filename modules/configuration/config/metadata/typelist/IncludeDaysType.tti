@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Which days to include in the day count"
+  final="true"
+  name="IncludeDaysType"
+  platform="true">
+  <typecode
+    code="elapsed"
+    desc="The number of calendar days elapsed since the starting point; includes all weekends and holidays"
+    name="Calendar days"/>
+  <typecode
+    code="businessdays"
+    desc="The number of business days since the starting point; does not include weekends and holidays"
+    name="Business days"/>
+</typelist>

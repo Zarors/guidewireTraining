@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<entity
+  admin="true"
+  loadable="false"
+  platform="true"
+  xmlns="http://guidewire.com/datamodel"
+  entity="ILConfig"
+  desc="Configuration of Intentional Logging feature"
+  table="ilconfig"
+  type="versionable">
+  <column
+    default="true"
+    name="Enabled"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="true"
+    name="Singleton"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    type="bit"/>
+  <index
+    desc="Unique constr to assure only one entity can ever be stored"
+    name="SingletonConstr"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Singleton"/>
+  </index>
+</entity>

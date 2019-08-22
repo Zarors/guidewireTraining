@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  Workflow -                                                            ==================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="true"
+  desc="Table for workflow definitions"
+  entity="Workflow"
+  exportable="false"
+  extendable="true"
+  final="false"
+  loadable="false"
+  platform="true"
+  table="workflow"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.CommitCallback"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.impl.WorkflowInternalMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowImpl"/>
+  <!-- Fields used by all workflows -->
+  <typekey
+    desc="What infrastructure handles this Workflow?"
+    name="Handler"
+    nullok="false"
+    setterScriptability="hidden"
+    typelist="WorkflowHandler"/>
+  <typekey
+    desc="State of this workflow (e.g., 'started', 'completed', etc.)"
+    name="State"
+    nullok="false"
+    setterScriptability="hidden"
+    typelist="WorkflowState"/>
+  <typekey
+    desc="Specific state of this workflow if active (e.g. running, waitmanual, waitactivity)."
+    name="ActiveState"
+    nullok="true"
+    setterScriptability="hidden"
+    typelist="WorkflowActiveState"/>
+  <edgeForeignKey
+    desc="What workflow called this workflow"
+    edgeTableName="SubWorkflows"
+    fkentity="Workflow"
+    name="Caller"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <array
+    arrayentity="Activity"
+    desc="Active activities on this workflow."
+    exportable="false"
+    name="Activities"
+    setterScriptability="hidden"/>
+  <array
+    arrayentity="WorkflowLogEntry"
+    desc="Log of what work this Workflow has performed"
+    exportable="false"
+    name="Log"
+    setterScriptability="hidden"/>
+  <column
+    desc="Counter for assigning a sort order to log entries"
+    getterScriptability="hidden"
+    name="LogEntryCounter"
+    nullok="true"
+    setterScriptability="hidden"
+    type="integer"/>
+  <column
+    desc="Version of the workflow process used, if this uses an internal workflow"
+    name="ProcessVersion"
+    nullok="true"
+    setterScriptability="hidden"
+    type="integer"/>
+  <typekey
+    desc="What action is the Workflow currently trying to take?"
+    name="CurrentAction"
+    nullok="true"
+    setterScriptability="hidden"
+    typelist="WorkflowActionType"/>
+  <column
+    desc="ID of the workflow's current step."
+    name="CurrentStep"
+    nullok="true"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <column
+    desc="ID of the step the workflow was on BEFORE the current step."
+    name="PreviousStep"
+    nullok="true"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <column
+    desc="ID of the branch the workflow is currently trying to execute."
+    name="CurrentBranch"
+    nullok="true"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <column
+    desc="Time when the Workflow entered the current step"
+    name="EnteredStep"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    default="0"
+    desc="Total system time spent actively processing the current step, in millis.  Does not include time spent waiting on triggers, activities, or timeouts"
+    name="StepExecTime"
+    nullok="false"
+    setterScriptability="hidden"
+    type="longint"/>
+  <typekey
+    desc="Marks the key of a Trigger that was invoked, or null"
+    name="TriggerInvoked"
+    nullok="true"
+    setterScriptability="hidden"
+    typelist="WorkflowTriggerKey"/>
+  <column
+    desc="Date/time when current step will time out."
+    name="TimeoutTime"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    columnName="MessageID"
+    desc="Integration message associated with this workflow"
+    fkentity="Message"
+    name="Message"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <column
+    columnName="MessageHistoryID"
+    desc="Completed integration message associated with this workflow"
+    name="MessageHistoryID"
+    nullok="true"
+    setterScriptability="hidden"
+    type="softentityreference"/>
+  <!-- Fields used by test workflows only -->
+  <column
+    desc="What time the Workflow thinks it is"
+    name="TestTime"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="ID of the next workflow timeout branch to take."
+    name="ForceTimeoutBranch"
+    nullok="true"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <index
+    desc="Index on timeouttime, state, handler for batch process that finds timed out flows"
+    name="Timeout1"
+    trackUsage="true">
+    <indexcol
+      keyposition="1"
+      name="State"/>
+    <indexcol
+      keyposition="2"
+      name="Handler"/>
+    <indexcol
+      keyposition="3"
+      name="TimeoutTime"/>
+  </index>
+  <index
+    desc="Perf index to improve performance of looking up workflows from a message."
+    name="MessagePerf1">
+    <indexcol
+      keyposition="1"
+      name="MessageID"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+  <dbcheckbuilder
+    className="com.guidewire.pl.system.workflow.dbchecks.InternalWorkflowDBCheckBuilder"/>
+</entity>

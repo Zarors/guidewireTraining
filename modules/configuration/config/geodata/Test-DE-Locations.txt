@@ -1,0 +1,101 @@
+# Short list for dev and test purposes
+01945,SN,Lindenau
+01945,SN,Schwarzbach
+01945,SN,Guteborn
+01968,SN,Schipkau
+01979,SN,Lauchhammer
+01983,SN,Großräschen
+01987,SN,Schwarzheide
+01990,SN,Großkmehlen
+01993,SN,Schipkau Schipkau
+01994,SN,Schipkau Annahütte
+01998,SN,Schipkau Klettwitz
+03042,BB,Cottbus
+03044,BB,Cottbus
+03046,BB,Cottbus
+03048,BB,Cottbus
+03050,BB,Cottbus
+03051,BB,Cottbus
+03052,BB,Cottbus
+03053,BB,Cottbus
+03054,BB,Cottbus
+03055,BB,Cottbus
+03058,BB,Roggosen
+03096,BB,Schmogrow-Fehrow
+03099,BB,Kolkwitz
+03103,BB,Neu-Seeland
+03116,BB,Drebkau
+03119,BB,Welzow
+03130,BB,Bagenz
+03149,BB,Wiesengrund
+03159,BB,Wiesengrund
+03172,BB,Atterwasch
+03185,BB,Peitz
+03197,BB,Jänschwalde
+03205,BB,Saßleben
+03222,BB,Ragow
+03226,BB,Suschow
+03229,BB,Altdöbern
+03238,BB,Sallgast
+03246,BB,Babben
+03249,BB,Bahren
+03253,BB,Nexdorf
+04895,SN,Falkenberg/Elster
+04910,SN,Haida
+04916,SN,Wildberg
+04924,SN,Bad Liebenwerda
+04928,SN,Döllingen
+04931,SN,Mühlberg (Elbe)
+04932,SN,Prösen
+04934,SN,Dreska
+04936,SN,Schöna-Kolpien
+04938,SN,Uebigau-Wahrenbrück
+12529,BB,Schönefeld
+14467,BB,Potsdam
+14469,BB,Potsdam
+14471,BB,Potsdam
+14473,BB,Potsdam
+14476,BB,Groß Glienicke
+14478,BB,Potsdam
+14480,BB,Potsdam
+14482,BB,Potsdam
+14513,BB,Teltow
+14532,BB,Kleinmachnow
+14542,BB,Werder (Havel)
+14547,BB,Beelitz
+14548,BB,Schwielowsee
+14550,BB,Bochow
+14552,BB,Wildenbruch
+14554,BB,Seddiner See
+14557,BB,Langerwisch
+14558,BB,Bergholz-Rehbrücke
+14612,BB,Falkensee
+14621,BB,Schönwalde
+14624,BB,Dallgow-Döberitz
+14641,BB,Berge
+14656,BB,Brieselang
+14662,BB,Warsow
+14669,BB,Zachow
+14712,BB,Rathenow
+14715,BB,Bamme
+14727,BB,Premnitz
+14728,BB,Rhinow
+14770,BB,Brandenburg an der Havel
+14772,BB,Brandenburg an der Havel
+14774,BB,Brandenburg an der Havel
+14776,BB,Brandenburg an der Havel
+14778,BB,Beetzsee
+14789,BB,Bensdorf
+14793,BB,Buckautal
+14797,BB,Kloster Lehnin
+14798,BB,Havelsee
+14806,BB,Belzig
+14822,BB,Linthe
+14823,BB,Rabenstein/Fläming
+14827,BB,Wiesenburg
+14828,BB,Görzke
+14913,BB,Wahlsdorf
+14929,BB,Treuenbrietzen
+14943,BB,Lühsdorf
+14959,BB,Trebbin
+14974,BB,Ludwigsfelde

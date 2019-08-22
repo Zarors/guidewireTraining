@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  desc="Describes a set of Work Items"
+  entity="WorkItemSet"
+  extendable="false"
+  final="true"
+  loadable="false"
+  lockable="false"
+  platform="true"
+  table="workitemset"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workitemset.WorkItemSetPublicMethods"
+    impl="com.guidewire.pl.domain.workitemset.impl.WorkItemSetImpl"/>
+  <column
+    desc="timestamp when we started processing the WorkItemSet"
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="timestamp when the last WorkItem finished processing"
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Reference to the ProcessHistory instance of the batch process that generated this WorkItemSet"
+    name="ProcessHistory"
+    nullok="false"
+    type="softentityreference"/>
+  <typekey
+    desc="The type of WorkItemSet"
+    name="WorkItemSetType"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <typekey
+    desc="The state of this WorkItemSet"
+    name="State"
+    nullok="false"
+    typelist="WorkItemSetState"/>
+  <column
+    desc="Total number of operations (WorkItems) that make up this WorkItemSet"
+    name="NumTotalOps"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Number of operations completed (successfully or otherwise)"
+    name="NumOpsCompleted"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Number of operations that have failed"
+    name="NumOpsFailed"
+    nullok="false"
+    type="integer"/>
+  <column
+    default="0"
+    desc="Number of operations that were not processed because the user canceled the WorkItemSet"
+    name="NumOpsCanceled"
+    nullok="false"
+    type="integer"/>
+</entity>

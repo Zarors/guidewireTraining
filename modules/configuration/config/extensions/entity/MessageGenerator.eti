@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <entity entity="MessageGenerator" table="messagegenerator" type="retireable" desc="Event-aware entity for generating basic messagrd" exportable="true" xmlns="http://guidewire.com/datamodel">
+   <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+   <events/>
+   <column name="Name" type="varchar" desc="Name of instance that is triggering a message" nullok="false">
+			<columnParam name="size" value="10"/>
+	</column>
+   <column name="ThrowExceptionInRequest" type="bit" desc="Should an exception be thrown during the Request plugin's beforeSend() method?" default="false" nullok="true"/>
+   <column name="ThrowExceptionInTransport" type="bit" desc="Should an exception be thrown during the Transport plugin's send() method?" default="false" nullok="true"/>
+   <column name="ThrowExceptionInReply" type="bit" desc="Should an exception be thrown when processing the message reply?" default="false" nullok="true"/>
+   <column name="AutoAckMessage" type="bit" desc="Should the message generated from this instance be synchronously acknowledged?" default="false" nullok="true"/>
+  </entity>

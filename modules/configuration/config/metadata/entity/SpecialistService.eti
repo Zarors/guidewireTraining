@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="A node in the specialist services tree."
+  entity="SpecialistService"
+  extendable="true"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="specialistservice"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.vendormanagement.SpecialistServicePublicMethods"
+    impl="com.guidewire.pl.domain.vendormanagement.impl.SpecialistServiceImpl"/>
+  <fulldescription><![CDATA[A node in the specialist services tree.]]></fulldescription>
+  <column
+    desc="Name of the service."
+    name="Name"
+    nullok="false"
+    type="shorttext">
+    <localization
+      nullok="true"
+      tableName="specsvcname_l10n"/>
+  </column>
+  <column
+    desc="Description of the service."
+    name="Description"
+    nullok="true"
+    type="shorttext">
+    <localization
+      nullok="true"
+      tableName="specsvcdesc_l10n"/>
+  </column>
+  <column
+    desc="Unique string identifying this service."
+    name="Code"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    default="true"
+    desc="Indicates whether the service should be used for new service requests."
+    name="Active"
+    nullok="false"
+    type="bit"/>
+  <edgeForeignKey
+    desc="Reference to the parent SpecialistService.  Null for top level nodes, which have no parent."
+    edgeTableEntityName="SpecialistServiceParent"
+    edgeTableName="spclstsvcparent"
+    fkentity="SpecialistService"
+    name="Parent"
+    nullok="true"/>
+  <array
+    arrayentity="SpecialistServiceParent"
+    arrayfield="ForeignEntity"
+    desc="Array of SpecialistServiceParents corresponding to SpecialistServices for which this is the Parent."
+    getterScriptability="doesNotExist"
+    name="ChildSpecialistServiceParents"
+    setterScriptability="doesNotExist"/>
+  <index
+    desc="Index used to enforce uniqueness of Code"
+    name="codeindex"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Code"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+</entity>

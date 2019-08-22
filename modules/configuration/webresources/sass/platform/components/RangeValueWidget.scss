@@ -1,0 +1,62 @@
+.gw-select-wrapper {
+  @include gw-convertSelectWrapperWithGlyph($use-secondary-base: true);
+}
+
+.gw-ExpressionRangeValueWidget {
+  select[multiple] {
+    overflow: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0;
+    align-self: stretch;
+
+    min-width: $gw-app--RangeShuttleValueWidget--section-min-width-em;
+    width: $gw-app--RangeShuttleValueWidget--section-width-em;
+    max-width: $gw-app--RangeShuttleValueWidget--section-max-width-em;
+    min-height: $gw-app--RangeShuttleValueWidget--min-height-em;
+    height: $gw-app--RangeShuttleValueWidget--height-em;
+    max-height: $gw-app--RangeShuttleValueWidget--max-height-em;
+
+    option {
+      padding: $gw-app--RangeShuttleValueWidget--option-pad-v-rem $gw-app--RangeShuttleValueWidget--option-pad-h-rem;
+      height: gw-lineHeightStripped() + (2 * $gw-app--RangeShuttleValueWidget--option-pad-v-rem);
+    }
+
+    option:checked {
+      //If the design requires a custom background, this linear-gradient hack can be used, but the font color can't be customized in all situations
+      //background: linear-gradient(to bottom, #{$gw-app--RangeShuttleValueWidget--selected-bg} 0%, #{$gw-app--RangeShuttleValueWidget--selected-bg} 100%);
+    }
+  }
+}
+
+.gw-RangeShuttleValueWidget {
+  .gw-button-section {
+    padding: $gw-app--RangeShuttleValueWidget--button-margin-h-rem;
+    display: inline-block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-self: center;
+  }
+
+  .gw-shuttle-left-button, .gw-shuttle-right-button {
+    @include gw-button--normal($is-square: true);
+    display: block;
+  }
+
+  .gw-shuttle-right-button {
+    margin-bottom: $gw-app--RangeShuttleValueWidget--button-margin-v-rem;
+    .gw-icon {
+      @include gw-icon($gw-app--RangeShuttleValueWidget--add-glyph, $v-align: baseline);
+    }
+  }
+
+  .gw-shuttle-left-button {
+    .gw-icon {
+      @include gw-icon($gw-app--RangeShuttleValueWidget--remove-glyph, $v-align: baseline);
+    }
+  }
+}
+
+.gw-rv { //TODO: change this to a more informative class once we solve the 1MB test page problem on Long List View
+
+}

@@ -1,0 +1,7 @@
+.gw-ImageButtonWidget.gw-StyleContainer--ValueWidget {
+  margin-left: $gw-app--SPACING-rem-S;
+}
+
+.gw-ImageButtonWidget:not(.gw-StyleContainer--AlertBarWidget) {
+  @include gw-button--secondary();
+}

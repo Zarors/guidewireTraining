@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="AssignmentUserLV">
+    <Require
+      name="GroupUsers"
+      type="gw.api.database.IQueryBeanResult&lt;GroupUser&gt;"/>
+    <RowIterator
+      editable="false"
+      elementName="GroupUser"
+      pickValue="new gw.api.assignment.UserAssignee(GroupUser)"
+      selectLabel="DisplayKey.get(&quot;Button.Assign&quot;)"
+      value="GroupUsers"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.GroupUser&gt;">
+      <Row>
+        <TextCell
+          id="User"
+          label="DisplayKey.get(&quot;Web.Assignment.Search.User&quot;)"
+          sortOrder="1"
+          value="GroupUser.User"
+          valueType="entity.User"/>
+        <GroupCell
+          enableSort="false"
+          id="Group"
+          label="DisplayKey.get(&quot;Web.Assignment.Search.Group&quot;)"
+          sortBy="GroupUser.Group.Name"
+          value="GroupUser.Group"/>
+        <GroupCell
+          enableSort="false"
+          id="ParentGroup"
+          label="DisplayKey.get(&quot;Web.Assignment.Search.ParentGroup&quot;)"
+          sortBy="GroupUser.Group.Parent"
+          value="GroupUser.Group.Parent"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

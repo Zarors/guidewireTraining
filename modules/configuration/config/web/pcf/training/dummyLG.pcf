@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- CurrDev Do NOT DELETE for TrainingApp 8.0 -->
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <LocationGroup
+    id="dummyLG"
+    title="&quot;DummyLG Not Used&quot;">
+    <LocationRef
+      location="PendingChanges()"/>
+    <LocationRef
+      location="MergeContacts()"/>
+  </LocationGroup>
+</PCF>

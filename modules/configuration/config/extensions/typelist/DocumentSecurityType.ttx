@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of the document for access-restriction purposes"
+  name="DocumentSecurityType">
+  <typecode
+    code="unrestricted"
+    desc="Document which does not require access restriction"
+    name="Unrestricted document"/>
+  <typecode
+    code="sensitive"
+    desc="Document which is sensitive in nature"
+    name="Sensitive document"/>
+</typelistextension>

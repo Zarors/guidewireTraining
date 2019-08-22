@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of official id (i.e. SSN, FEIN, State Tax, State Unemployment, etc)"
+  final="false"
+  name="OfficialIDType"
+  platform="true">
+  <typecode
+    code="BureauID"
+    desc="Bureau ID"
+    name="Bureau ID"/>
+  <typecode
+    code="DOLID"
+    desc="Dept of Labor ID"
+    name="Dept of Labor ID"/>
+  <typecode
+    code="DUNS"
+    desc="Dun &amp; Bradstreet Number"
+    name="Dun &amp; Bradstreet Number"/>
+  <typecode
+    code="FEIN"
+    desc="Federal Employer Identification Number"
+    name="FEIN"/>
+  <typecode
+    code="NCCIID"
+    desc="Bureau ID"
+    name="Bureau ID"/>
+  <typecode
+    code="SSN"
+    desc="Social Security Number"
+    name="SSN"/>
+  <typecode
+    code="STAX"
+    desc="State Tax Identification Number"
+    name="State Tax ID"/>
+  <typecode
+    code="STUN"
+    desc="State Unemployment Identification Number"
+    name="State Unemployment ID"/>
+  <typecode
+    code="TUNS"
+    desc="Temporary Dun &amp; Bradstreet Number"
+    name="Temporary Dun &amp; Bradstreet Number"/>
+</typelist>

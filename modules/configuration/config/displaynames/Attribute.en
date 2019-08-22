@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Entity
+  name="Attribute">
+  <Columns>
+    <Column
+      beanPath="Attribute.Name"
+      name="name"
+      sortOrder="0"/>
+  </Columns>
+  <DisplayName><![CDATA[name]]></DisplayName>
+</Entity>

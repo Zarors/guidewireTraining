@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Rollup snapshot for the global cache for a particular time slice"
+  entity="CacheStatisticsRollupSnapshot"
+  exportable="false"
+  final="true"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="cachestatsrollupsnap"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.cache2.CacheStatisticsRollupSnapshotPublicMethods"
+    impl="com.guidewire.pl.domain.cache2.impl.CacheStatisticsRollupSnapshotImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.cache2.CacheStatisticsRollupSnapshotData"
+    impl="com.guidewire.pl.domain.cache2.impl.CacheStatisticsRollupSnapshotImpl"/>
+  <column
+    desc="ServerId of the host that generated the statistics"
+    name="ServerId"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Lower end of this time slice, i.e 00:00:00,000 for the range 00:00:00,000 to 00:29:59,999"
+    name="SliceTimestamp"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="Average space retained in bytes for this time slice"
+    name="AverageSpaceRetained"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Average number of hits for this time slice"
+    name="AverageNumHits"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Average number of misses for this time slice"
+    name="AverageNumMisses"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Average number of misses because the item was evicted when the cache was full for this time slice"
+    name="AverageNumMissesWhenCacheFull"
+    nullok="false"
+    type="longint"/>
+</entity>

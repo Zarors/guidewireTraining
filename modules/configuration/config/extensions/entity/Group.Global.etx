@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="Group">
+  <column
+    desc="The group name in Kanji. Used only for Japanese and will be null otherwise."
+    name="NameKanji"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="100"/>
+  </column>
+
+  <index desc="Group names must be unique within an organization" name="group1" unique="true">
+    <indexcol keyposition="1" name="Name"/>
+    <indexcol keyposition="2" name="OrganizationID"/>
+    <indexcol keyposition="3" name="Retired"/>
+  </index>
+
+  <!-- KanjiIndexDefinition: Uncomment the group1K index below if you use kanji name fields for Japanese AND comment out the group1 index defined above
+
+  <index desc="Group names must be unique within an organization" name="group1K" unique="true">
+    <indexcol keyposition="1" name="Name"/>
+    <indexcol keyposition="2" name="NameKanji"/>
+    <indexcol keyposition="3" name="OrganizationID"/>
+    <indexcol keyposition="4" name="Retired"/>
+  </index>
+
+  -->
+</extension>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin name="AuthenticationServicePlugin">
+    <plugin-java disabled="true" javaclass="com.guidewire.pl.system.security.impl.DefaultAuthenticationServicePlugin" plugindir="authenticationservice"/>
+</plugin>

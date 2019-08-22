@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="Ocupacion_Ext" desc="">
+  <typecode
+    code="Casa"
+    name="Casa"/>
+  <typecode
+    code="Oficina"
+    name="Oficina"/>
+  <typecode
+    code="Departamento"
+    name="Departamento"/>
+</typelist>

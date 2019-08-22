@@ -1,0 +1,12 @@
+<div class="gw-ListView--UI-section">
+  <div class="gw-ListView--UI-left">
+    <div :if="title" class="gw-ListView--UI--title">${title}</div>
+    ${lvToolbar}
+    <div :if="lvFilters" class="gw-ListView--UI-filters">
+      ${lvFilters}
+    </div>
+  </div>
+  <div class="gw-ListView--UI-right">
+    ${:children}
+  </div>
+</div>

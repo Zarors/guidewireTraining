@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.businessvehiclemodel">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.clausemodel" schemaLocation="ClauseModel.xsd"/>
+  <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.businessvehiclemodel" name="BusinessVehicle" nillable="true" type="BusinessVehicle"/>
+  <xs:complexType name="BusinessVehicle">
+    <xs:sequence>
+      <xs:element gw:type="gw.pl.currency.MonetaryAmount" minOccurs="0" name="CostNew" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Coverages" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.clausemodel" maxOccurs="unbounded" minOccurs="0" name="Entry" nillable="true" type="Clause"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Experience" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Industry" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IndustryUse" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.Boolean" minOccurs="0" name="LeaseOrRent" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="LengthOfLease" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="LicensePlate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LicenseState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Location" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.Integer" minOccurs="0" name="LocationNum" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="Make" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="Model" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaryUse" nillable="true" type="xs:string"/>
+      <xs:element gw:type="gw.pl.currency.MonetaryAmount" minOccurs="0" name="StatedValue" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="VehicleClassCode" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.Boolean" minOccurs="0" name="VehicleCondition" nillable="true" type="xs:boolean"/>
+      <xs:element gw:type="java.lang.Integer" minOccurs="0" name="VehicleNumber" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="VehicleRadius" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleSizeClass" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="Vin" nillable="true" type="xs:string"/>
+      <xs:element gw:type="java.lang.Integer" minOccurs="0" name="Year" nillable="true" type="xs:int"/>
+      <xs:element gw:type="java.lang.Integer" minOccurs="0" name="YearPurchased" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

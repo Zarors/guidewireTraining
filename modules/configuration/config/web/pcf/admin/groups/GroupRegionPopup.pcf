@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    id="GroupRegionPopup"
+    returnType="Region[]"
+    title="DisplayKey.get(&quot;Web.Admin.BrowseGroupRegion&quot;)">
+    <Screen
+      id="GroupRegionPopupScreen">
+      <SearchPanel
+        criteriaName="SearchCriteria"
+        resultsName="SearchResult"
+        search="SearchCriteria.performSearch() as gw.api.database.IQueryBeanResult&lt;Region&gt;"
+        searchCriteria="new gw.api.admin.RegionSearchCriteria()"
+        searchCriteriaType="gw.api.admin.RegionSearchCriteria"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;Region&gt;">
+        <PanelRef
+          def="RegionSearchDV(SearchCriteria)"/>
+        <PanelRef
+          def="RegionSearchResultsLV(SearchResult, false, true)">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.Search.Results&quot;)"/>
+          <Toolbar>
+            <CheckedValuesToolbarButton
+              flags="any Region"
+              id="GroupRegionPopup_SelectButton"
+              iterator="RegionSearchResultsLV.RegionSearchResultsLV"
+              label="DisplayKey.get(&quot;Button.Select&quot;)"
+              pickValue="CheckedValues"/>
+          </Toolbar>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Popup>
+</PCF>

@@ -1,0 +1,15 @@
+<div class="gw-Pref">
+    <div class="gw-Pref--inner">
+        <div class="gw-label">${label}</div>
+        <div class="gw-value">
+            <div class="gw-select-wrapper">
+                <select data-gw-change="gwPrefPanel.change" class="gw-noTrack gw-Pref--val gw-Pref--list" name="${name}">
+                    <option :if="defaultOption" value="${defaultOption.value}">${defaultOption.display}</option>
+                    <option value="${selectedOption.value}" selected>${selectedOption.display}</option>
+                    <option :for="option" :in="notSelectedOptions" value="${option.value}">${option.display}</option>
+                </select>
+                <div class="gw-icon"></div>
+            </div>
+        </div>
+    </div>
+</div>

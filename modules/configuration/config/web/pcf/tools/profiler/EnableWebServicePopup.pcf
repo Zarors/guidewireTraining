@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=false;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_WSPROFILERCONFIG, gw.api.profiler.WebServiceProfiler.getEntryPointName( serviceName, operationName ) )"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableWebServicePopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForWebService&quot;)">
+    <LocationEntryPoint
+      signature="EnableWebServicePopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="serviceName"
+      type="String"/>
+    <Variable
+      name="operationName"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="WebServiceName"
+            label="DisplayKey.get(&quot;Web.Profiler.WebService&quot;)"
+            required="true"
+            value="serviceName"
+            valueRange="gw.api.profiler.WebServiceProfilerPageHelper.getAllServiceNames().toTypedArray()"
+            valueType="java.lang.String">
+            <PostOnChange/>
+          </RangeInput>
+          <RangeInput
+            available="serviceName != null"
+            editable="true"
+            id="OperationName"
+            label="DisplayKey.get(&quot;Web.Profiler.WebServiceOperationName&quot;)"
+            required="true"
+            value="operationName"
+            valueRange="gw.api.profiler.WebServiceProfilerPageHelper.getAllOperationNames( serviceName ).toTypedArray()"
+            valueType="java.lang.String"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

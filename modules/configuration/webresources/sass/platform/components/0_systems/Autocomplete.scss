@@ -1,0 +1,54 @@
+.gw-autocomplete {
+  display: none;
+  position: fixed;
+  max-width: 100vw;
+  max-height: $gw-app--autocomplete--max-h-em;
+  background-color: $gw-app--menus--bg;
+  color: $gw-app--menus--col;
+  border: gw-border($gw-app--palette--gray-D); //TODO: theme
+  @include gw-borderRadius();
+  @include gw-boxShadowStandard();
+  @include gw-z-index(autocomplete);
+  box-shadow: $gw-app--menus--shadow;
+  padding: $gw-app--menus--submenu-pad-v-rem 0;
+
+  .gw-autocomplete--entry {
+    @include gw-wrapNever();
+    @include gw-textEllipse();
+    background-color: $gw-app--menus--bg;
+    color: $gw-app--menus--col;
+    display: flex;
+    padding: $gw-app--menus--pad-v-rem $gw-app--menus--pad-h-rem;
+    @include gw-clickable($gw-app--default-focus-outline-col);
+
+    &.gw-autocomplete--current-entry {
+      @include gw-clickable($gw-app--menus--active--col);
+      background-color: $gw-app--menus--active--bg;
+      color: $gw-app--menus--active--col;
+    }
+
+    &:hover {
+      @include gw-clickable($gw-app--menus--hover--col);
+      background-color: $gw-app--menus--hover--bg;
+      color: $gw-app--menus--hover--col;
+    }
+
+    .gw-autocomplete--markup {
+      display: inline;
+      vertical-align: baseline;
+
+      &.gw-i {
+        font-style: italic;
+      }
+
+      &.gw-b {
+        font-weight: bold;
+      }
+
+      &.gw-hl {
+        background-color: $gw-app--autocomplete--highlight--bg;
+        color: $gw-app--autocomplete--highlight--col;
+      }
+    }
+  }
+}

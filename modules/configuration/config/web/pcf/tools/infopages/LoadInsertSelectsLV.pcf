@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="LoadInsertSelectsLV">
+    <Require
+      name="PageHelper"
+      type="gw.api.tools.LoadHistoryHelper"/>
+    <Require
+      name="InsertSelects"
+      type="gw.api.database.IQueryBeanResult&lt;LoadInsertSelect&gt;"/>
+    <RowIterator
+      editable="false"
+      elementName="Insert"
+      value="InsertSelects"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.LoadInsertSelect&gt;">
+      <Row>
+        <TextCell
+          id="insertstagingtablename"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StagingTableName&quot;)"
+          sortBy="Insert.LoadOperation.TableName"
+          value="Insert.LoadOperation.TableName"/>
+        <TextCell
+          id="insertexecuteorder"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.ExecutionOrder&quot;)"
+          value="Insert.ExecutionOrder"
+          valueType="java.lang.Integer"
+          wrapLabel="true"/>
+        <TextCell
+          id="insertstarttime"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.StartTime&quot;)"
+          sortBy="Insert.StartTime"
+          value="gw.api.util.StringUtil.formatDate(Insert.StartTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+        <TextCell
+          id="insertendtime"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.EndTime&quot;)"
+          sortBy="Insert.EndTime"
+          value="gw.api.util.StringUtil.formatDate(Insert.EndTime, &quot;MM/dd/yy HH:mm:ss.SSS&quot;)"/>
+        <TextCell
+          align="right"
+          enableSort="false"
+          id="insertduration"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Duration&quot;)"
+          value="PageHelper.getDurationString(Insert.StartTime, Insert.EndTime)"
+          wrapLabel="true"/>
+        <TextCell
+          id="affectedrowcount"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.AffectedRowCount&quot;)"
+          value="Insert.AffectedRowCount"
+          valueType="java.lang.Long"/>
+        <TextAreaCell
+          enableSort="false"
+          id="insertquery"
+          label="DisplayKey.get(&quot;Web.InternalTools.InfoPages.LoadHistory.Query&quot;)"
+          numRows="2"
+          value="Insert.Query"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

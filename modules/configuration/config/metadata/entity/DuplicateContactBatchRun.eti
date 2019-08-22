@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- others -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a duplicate contact search batch process run."
+  entity="DuplicateContactBatchRun"
+  exportable="false"
+  platform="false"
+  table="duplicatecontactbatchrun"
+  type="versionable">
+  <column
+    desc="Date the batch process last ran."
+    name="LastRunTime"
+    nullok="false"
+    type="datetime"/>
+</entity>

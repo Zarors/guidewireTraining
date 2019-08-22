@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="The set of additional criteria needed to perform a proximity search."
+  entity="ProximitySearchParameters"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.ProximitySearchParametersInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ProximitySearchParametersImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.ProximitySearchParametersPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.ProximitySearchParametersImpl"/>
+  <fulldescription><![CDATA[<p>
+      Encapsulates the set of additional criteria needed to perform a proximity search. This entity is
+      a child object to the <code>ContactSearchCriteria</code> entity.
+      </p><p>
+      Note that there are two ways to specify the origin location for a proximity search: the Geocode fields on
+      the <code>ProximitySearchParameters</code> itself (SpatialPoint/GeocodeStatus) or the
+      <code>ConstactSearchCriteria.ProximitySearchCenter</code> field. If both are set prior to performing the search,
+      the system will use Geocode fields and ignore the <code>ProximitySearchCenter</code> field.</p>
+      <p>
+      See <code>ContactSearchCriteria</code> for more information
+    ]]></fulldescription>
+  <column
+    default="true"
+    desc="Indicates whether this is a distance based search (within n-mi/km) or an ordinal search (nearest-n)"
+    name="DistanceBasedSearch"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Indicates either the radius (in UnitOfDistance units) if a distance based search, or the number of results to return if an ordinal search."
+    name="Number"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Indicates the maximum number of items to return on a radius search.  Ignored if DistanceBasedSearch is false; if DistanceBasedSearch is true, and this value is null, zero, or negative, the search will be limited by the value of ProximityRadiusSearchDefaultMaxResultCount"
+    name="RadiusSearchMaxResults"
+    nullok="true"
+    type="integer"/>
+  <typekey
+    desc="Indicates the UnitOfDistance to use, both to return distances in results and to indicate the unit of radius for distance-based searches."
+    name="UnitOfDistance"
+    nullok="true"
+    typelist="UnitOfDistance"/>
+  <typekey
+    default="None"
+    desc="Gives the status of the provided SpatialPoint; this is normally copied from the a Geocodable entity."
+    name="GeocodeStatus"
+    nullok="true"
+    typelist="GeocodeStatus"/>
+  <column
+    desc="SpatialPoint to do a proximity search from; this is normally copied from the a Geocodable entity."
+    loadable="false"
+    name="SpatialPoint"
+    nullok="true"
+    type="spatialpoint"/>
+  <column
+    desc="Used internally by ProximitySearchPageHelper to save the search center address (if any) in standardized form; DO NOT USE unless you are overriding the standard performProximitySearch() method."
+    name="SavedSearchCenter"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="250"/>
+  </column>
+  <column
+    desc="The corrected address (if any) corresponding to the SpatialPoint of that is being searched for, in localized/user-displayable form. This is normally set by the ProximitySearchPageHelper."
+    name="CorrectedSearchCenter"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="250"/>
+  </column>
+</nonPersistentEntity>

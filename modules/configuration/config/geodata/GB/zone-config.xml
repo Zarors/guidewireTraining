@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ZoneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../xsd/zone-config.xsd">
+
+  <Zones countryCode="GB">
+    <Zone code="postcoderegion" fileColumn="1" regionMatchOrder="1" granularity="1" unique="true">
+      <AddressZoneValue>Address.PostalCode</AddressZoneValue>
+    </Zone>
+    <Zone code="city" fileColumn="2" regionMatchOrder="2" granularity="2">
+      <AddressZoneValue>Address.City</AddressZoneValue>
+    </Zone>
+  </Zones>
+</ZoneConfig>

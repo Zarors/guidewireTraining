@@ -1,0 +1,7 @@
+<div class="gw-SouthPanelWidget--top-section" data-gw-click="gwSouthPanel.unMinimize" data-gw-no-tab-index>
+    <div id="gw-south-panel-toggleMinMax_float" data-gw-click="gwSouthPanel.toggleCollapse"><div class="gw-icon"></div></div>
+    ${:children}
+    <div class="gw-SouthPanelWidget--layout-bar">
+        <div id="gw-SouthPanel--toggle" data-gw-click="gwSouthPanel.toggleCollapse"></div>
+    </div>
+</div>

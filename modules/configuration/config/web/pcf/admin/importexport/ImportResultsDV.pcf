@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ImportResultsDV">
+    <Require
+      name="ImportDataInfo"
+      type="gw.api.admin.ImportDataInfo"/>
+    <InputColumn>
+      <Label
+        id="Canceled"
+        label="DisplayKey.get(&quot;Web.Admin.ImportResultsDV.Canceled&quot;)"
+        visible="ImportDataInfo.Results.Canceled"/>
+      <Label
+        id="Success"
+        label="DisplayKey.get(&quot;Web.Admin.ImportResultsDV.SuccessWithDelete&quot;,  ImportDataInfo.Results.NumInserted ,  ImportDataInfo.Results.NumUpdated, ImportDataInfo.Results.NumDeleted)"
+        visible="!ImportDataInfo.Results.Canceled and ImportDataInfo.Results.Success"/>
+      <Label
+        id="Failure"
+        label="DisplayKey.get(&quot;Web.Admin.ImportResultsDV.Failure&quot;,  ImportDataInfo.Results.ErrorMessage)"
+        visible="!ImportDataInfo.Results.Canceled and !ImportDataInfo.Results.Success"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

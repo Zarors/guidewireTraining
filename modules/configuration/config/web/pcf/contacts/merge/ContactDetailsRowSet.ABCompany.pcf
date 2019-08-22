@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ContactDetailsRowSet"
+    mode="ABCompany|ABCompanyVendor|ABMedicalCareOrg|ABAutoRepairShop|ABAutoTowingAgcy|ABLawFirm|ABPolicyCompany">
+    <Require
+      name="keptContact"
+      type="entity.ABContact"/>
+    <Require
+      name="retiredContact"
+      type="entity.ABContact"/>
+    <Require
+      name="mergedContact"
+      type="entity.ABContact"/>
+    <Require
+      name="addressDataHolder"
+      type="gw.web.merge.MergeContactsAddressHolder"/>
+    <Require
+      name="phoneHolder"
+      type="gw.web.merge.MergeContactsPhoneHolder"/>
+    <Variable
+      initialValue="keptContact as ABCompany"
+      name="keptCompany"
+      type="entity.ABCompany"/>
+    <Variable
+      initialValue="retiredContact as ABCompany"
+      name="retiredCompany"
+      type="entity.ABCompany"/>
+    <Variable
+      initialValue="(mergedContact as ABCompany)"
+      name="mergedCompany"
+      type="entity.ABCompany"/>
+    <Variable
+      initialValue="{keptCompany, retiredCompany, mergedCompany}"
+      name="companies"
+      type="ABCompany[]"/>
+    <Variable
+      initialValue="new gw.api.name.ContactNameOwner(new gw.api.name.ABContactNameDelegate(mergedCompany as ABCompany))"
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <Row>
+      <TextCell
+        bold="true"
+        colspan="4"
+        id="keptCompany"
+        value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.Company&quot;)"/>
+    </Row>
+    <RowSetRef
+      def="ABCompanyMergeDetailsRowSet(companies, mergedCompany, nameOwner)"
+      mode="gw.api.name.NameLocaleSettings.PCFMode"/>
+    <Row>
+      <TextCell
+        id="taxIdLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.Name.TaxID.EIN&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="taxId"
+        value="companies"
+        valueType="entity.ABCompany[]">
+        <PrivacyCell
+          editable="aContact == mergedCompany"
+          encryptionExpression="aContact.maskTaxId(VALUE)"
+          id="taxId"
+          value="aContact.TaxID"/>
+      </CellIterator>
+    </Row>
+    <RowSetRef
+      def="ContactTagRowSet(keptContact, retiredContact, mergedContact)"
+      id="tag"/>
+    <RowSetRef
+      def="ContactInfoRowSet(keptContact, retiredContact, mergedContact, phoneHolder)"/>
+    <RowSetRef
+      def="NotesRowSet(keptContact, retiredContact, mergedContact)"/>
+    <RowSetRef
+      def="ABCompanyVendorRowSet(keptCompany, retiredCompany, mergedCompany)"
+      mode="mergedCompany.Subtype"/>
+    <RowSetRef
+      def="ABCompanyAdditionalInfoRowSet(keptCompany, retiredCompany, mergedCompany)"
+      mode="mergedCompany.Subtype"/>
+  </RowSet>
+</PCF>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddressConfig xmlns="http://guidewire.com/address-config">
+  <AddressDef name="JP">
+    <Match>
+      <Field name="Country" value="JP"/>
+    </Match>
+    <Fields>
+      <Field name="CityKanji" zonecode="citykanji">
+        <AutoFillFromZone code="postalcode"/>
+      </Field>
+      <Field name="City" zonecode="city">
+        <AutoFillFromZone code="postalcode"/>
+      </Field>
+      <Field name="State" zonecode="prefecture">
+        <AutoFillFromZone code="postalcode"/>
+      </Field>
+      <Field name="PostalCode" zonecode="postalcode">
+        <ValidatorDef description="Validator.PostalCode.JP" input-mask="###-####" value="[0-9]{3}-[0-9]{4}"/>
+      </Field>
+    </Fields>
+  </AddressDef>
+</AddressConfig>

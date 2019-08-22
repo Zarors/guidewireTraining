@@ -1,0 +1,8 @@
+<input type="text"
+       name="${renderId}"
+       class="${reflectionApplies ? 'gw-value-input-reflector'} ${noTrack ? 'gw-noTrack'}"
+       disabled="${disabled}"
+       value="${currentValue}"
+       maxlength="${maxlength}"
+       readonly="${readonly}"
+       placeholder="${placeholder}" ${systemAttributes}/>

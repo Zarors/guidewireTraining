@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="state of the data in archive process"
+  final="true"
+  name="ArchiveState"
+  platform="true">
+  <typecode
+    code="archived"
+    desc="Graph has been archived"
+    name="Archived"/>
+  <typecode
+    code="retrieving"
+    desc="Graph is marked for retrieving"
+    name="Retrieving"/>
+</typelist>

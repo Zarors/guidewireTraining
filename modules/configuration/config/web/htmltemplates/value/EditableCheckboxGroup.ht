@@ -1,0 +1,10 @@
+<div class="gw-CheckboxGroup--inner ${reflectionApplies ? 'gw-value-checkboxGroup-reflector'}" ${systemAttributes}>
+  <div :for="option" :in="range" class="gw-editableCheckbox ${option.retired ? 'gw-retired'}">
+    <label :wrapIf="option.label">
+      <input type="checkbox" name="${renderId}" value="${option.value}" class="${noTrack ? 'gw-noTrack'}"
+             disabled="${disabled}" checked="${option.selected}"/>
+      ${option.icon}
+      ${option.label}
+    </label>
+  </div>
+</div>

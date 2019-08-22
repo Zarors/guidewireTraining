@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<internalExtension xmlns="http://guidewire.com/datamodel" entityName="Person">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.contact.impl.PersonCoreExtMethods"
+    impl="com.guidewire.ab.domain.contact.impl.PersonCoreExtMethodsImpl"/>
+  <index desc="Covering index for search by person last name" expectedtobecovering="true" name="PersonLastN" trackUsage="true" unique="true">
+    <indexcol keyposition="1" name="LastNameDenorm"/>
+    <indexcol keyposition="2" name="Subtype"/>
+    <indexcol keyposition="3" name="Retired"/>
+    <indexcol keyposition="4" name="ID"/>
+  </index>
+  <index desc="Covering index for search by person first name" name="PersonFirstN" trackUsage="true" unique="true">
+    <indexcol keyposition="1" name="FirstNameDenorm"/>
+    <indexcol keyposition="2" name="Subtype"/>
+    <indexcol keyposition="3" name="Retired"/>
+    <indexcol keyposition="4" name="ID"/>
+  </index>
+</internalExtension>

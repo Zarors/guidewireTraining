@@ -1,0 +1,134 @@
+.gw-CardViewWidget {
+  display: block;
+
+  margin-top: $gw-app--CardView--spacing-widget-top-rem;
+  margin-left: $gw-app--CardView--spacing-widget-left-rem;
+  margin-right: $gw-app--CardView--spacing-widget-right-rem;
+  margin-bottom: $gw-app--CardView--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--CardView--spacing-inner-top-rem;
+  padding-left: $gw-app--CardView--spacing-inner-left-rem;
+  padding-right: $gw-app--CardView--spacing-inner-right-rem;
+  padding-bottom: $gw-app--CardView--spacing-inner-bottom-rem;
+
+  background-color: $gw-app--CardView--bg;
+}
+
+.gw-CardWidget {
+  display: block;
+
+  @include gw-z-index(card);
+
+  // Position to other widgets
+  margin-top: $gw-app--Card--spacing-widget-top-rem;
+  margin-left: $gw-app--Card--spacing-widget-left-rem;
+  margin-right: $gw-app--Card--spacing-widget-right-rem;
+  margin-bottom: $gw-app--Card--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--Card--spacing-inner-top-rem;
+  padding-left: $gw-app--Card--spacing-inner-left-rem;
+  padding-right: $gw-app--Card--spacing-inner-right-rem;
+  padding-bottom: $gw-app--Card--spacing-inner-bottom-rem;
+}
+
+//If a card follows a visible card widget with at least 1 tab, then give the card widget a border
+.gw-CardTabsWidget:not(.gw-placeholder):not(:empty):not(.gw-hidden) + .gw-CardWidget {
+  border-top: gw-border($gw-app--CardTabs--border-col);
+}
+
+.gw-CardTabsWidget, .gw-WorksheetTabBarWidget {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  vertical-align: top;
+  position: relative;
+  @include gw-wrapNever();
+
+  &.gw-column-dividers {
+    > div + div {
+      border-left: gw-border();
+    }
+  }
+
+  @include gw-z-index(cardTab);
+
+  // Position to other widgets
+  margin-top: $gw-app--CardTabs--spacing-widget-top-rem;
+  margin-left: $gw-app--CardTabs--spacing-widget-left-rem;
+  margin-right: $gw-app--CardTabs--spacing-widget-right-rem;
+  margin-bottom: $gw-app--CardTabs--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--CardTabs--spacing-inner-top-rem;
+  padding-left: $gw-app--CardTabs--spacing-inner-left-rem;
+  padding-right: $gw-app--CardTabs--spacing-inner-right-rem;
+  padding-bottom: $gw-app--CardTabs--spacing-inner-bottom-rem;
+
+  .gw-CardTabWidget, .gw-WorksheetTabWidget {
+    position: relative;
+    bottom: -1 * $gw-app--border-width-px;
+
+    .gw-minimized-view {
+      display: none;
+    }
+
+    & > .gw-action--inner {
+      .gw-icon + .gw-label:not(.gw-emptyLabel):not(:empty) {
+        padding-left: $gw-app--SPACING-rem-M;
+      }
+    }
+
+    display: inline-block;
+    border-top: gw-border($gw-app--CardTabs--border-col);
+    border-left: gw-border($gw-app--CardTabs--border-col);
+    border-bottom: gw-border($gw-app--CardTabs--border-col);
+    background-color: $gw-app--CardTab--standard--inactive-bg;
+    color: $gw-app--CardTab--standard--inactive-col;
+
+    &:first-child {
+      border-top-left-radius: $gw-app--border-radius-px;
+    }
+
+    &:last-child {
+      border-top-right-radius: $gw-app--border-radius-px;
+      border-right: gw-border($gw-app--CardTabs--border-col);
+    }
+
+    &.gw-event-temp-active {
+      & > .gw-action--inner, & > .gw-action--expand-button {
+        background-color: $gw-app--CardTab--standard--active-bg;
+        color: $gw-app--CardTab--standard--active-col;
+      }
+    }
+
+    &.gw-active {
+      background-color: $gw-app--CardTab--standard--active-bg;
+      color: $gw-app--CardTab--standard--active-col;
+      border-bottom: gw-border($gw-app--CardTab--standard--active-bg);
+
+      @if ($gw-app--CardTab--use-top-active-border) {
+        border-top: $gw-app--border-width-thick-px solid $gw-app--CardTab--standard--active-col !important;
+        font-weight: bold;
+      }
+    }
+
+    &:not(.gw-active) {
+      &:hover {
+        cursor: pointer;
+        background-color: $gw-app--CardTab--standard--active-bg;
+        color: $gw-app--CardTab--standard--active-col;
+      }
+    }
+
+    .gw-action--inner {
+      display: inline-block;
+      padding-top: $gw-app--CardTab--spacing-inner-top-rem;
+      padding-left: $gw-app--CardTab--spacing-inner-left-rem;
+      padding-right: $gw-app--CardTab--spacing-inner-right-rem;
+      padding-bottom: $gw-app--CardTab--spacing-inner-bottom-rem;
+    }
+
+  }
+}

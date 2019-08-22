@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Table linking contacts to addresses."
+  entity="ContactAddress"
+  exportable="true"
+  platform="true"
+  table="contactaddress"
+  type="joinarray">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactAddressImplCallback"
+    impl="com.guidewire.pl.domain.contact.impl.ContactAddressImpl"/>
+  <implementsEntity
+    name="CommonContactAddress"/>
+  <implementsEntity
+    name="AddressBookLinkable"/>
+  <fulldescription><![CDATA[
+      Table linking contacts to addresses. Note that Contacts can also be related to Addresses through
+      a direct foreign key/relationship to their Primary Address.<p/>
+      This is represented as a many-to-many relationship, although addresses created through the UI will always
+      belong uniquely to only one contact.
+    ]]></fulldescription>
+  <foreignkey
+    archivingOwner="source"
+    columnName="AddressID"
+    desc="Associated address."
+    fkentity="Address"
+    name="Address"
+    nullok="false"
+    triggersValidation="true"/>
+  <foreignkey
+    columnName="ContactID"
+    desc="Associated contact."
+    exportable="false"
+    fkentity="Contact"
+    name="Contact"
+    nullok="false"/>
+  <!-- All array tables must have a unique index.  contactaddress accessed through
+      contact, so we have key be (addressid, contactid) and
+      eliminate backing index on contactid since unique index is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, only one entry can join a particular address to a contact"
+    name="contactaddressu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ContactID"/>
+    <indexcol
+      keyposition="2"
+      name="AddressID"/>
+  </index>
+  <index
+    desc="Enforce uniqueness, contacts cannot share addresses"
+    name="contactaddressu2"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="AddressID"/>
+  </index>
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.contact.dbchecks.UniqueContactAddressPrimaryAddressDBCheckBuilder"/>
+</entity>

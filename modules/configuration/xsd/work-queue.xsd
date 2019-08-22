@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://guidewire.com/work-queue" xmlns="http://guidewire.com/work-queue">
+
+  <xsd:element name="work-queues">
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element ref="work-queue"/>
+      </xsd:choice>
+      <xsd:attribute name="defaultServer" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="work-queue">
+    <xsd:complexType>
+      <xsd:sequence>                    
+        <xsd:element ref="worker" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="workQueueClass" type="xsd:string" use="required"/>
+      <xsd:attribute name="overrideClass" type="xsd:string" default="" use="optional"/>
+      <xsd:attribute name="progressinterval" type="xsd:decimal" use="required"/>
+      <xsd:attribute name="retryInterval" type="xsd:decimal" use="optional" default="0"/>
+      <xsd:attribute name="retryLimit" type="xsd:int" use="optional"/>
+	    <xsd:attribute name="logRetryableCDCEsAtDebugLevel" type="xsd:boolean" default="false" use="optional"/>
+	    <xsd:attribute name="blockWorkersWhenWriterActive" type="xsd:boolean" default="false" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="worker">
+    <xsd:complexType>
+      <xsd:attribute name="instances" type="xsd:int" use="optional" default="1"/>
+      <xsd:attribute name="throttleinterval" type="xsd:decimal" use="optional" default="0"/>
+      <xsd:attribute name="maxpollinterval" type="xsd:decimal" use="optional" default="60000"/>
+      <xsd:attribute name="batchsize" type="xsd:int" use="optional" default="10"/>
+      <xsd:attribute name="env" type="xsd:string" use="optional"/>
+      <xsd:attribute name="server" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

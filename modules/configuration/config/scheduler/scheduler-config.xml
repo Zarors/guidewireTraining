@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="scheduler-config.xsd"
+          server="#scheduler" initialDelay="180">
+  <!-- <ProcessSchedule process="ClaimException">
+    <CronSchedule hours="2"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="UserException">
+    <CronSchedule hours="3"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="GroupException">
+    <CronSchedule hours="4"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="ActivityEsc">
+    <CronSchedule minutes="0,30"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="FinancialsEsc">
+    <CronSchedule minutes="15"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="IdleClaim">
+    <CronSchedule dayofmonth="?" dayofweek="SUN" hours="12"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="Statistics">
+    <CronSchedule minutes="3"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="ABGeocode">
+    <CronSchedule minutes="0"/>
+  </ProcessSchedule> -->
+  <!-- <ProcessSchedule process="ABContactScoring">
+    <CronSchedule hours="0"/>
+  </ProcessSchedule> -->
+  <ProcessSchedule process="DuplicateContacts">
+      <CronSchedule dayofmonth="?" dayofweek="SUN" hours="12"/>
+  </ProcessSchedule>
+  <!-- Run the first of every month after midnight-->
+  <ProcessSchedule process="PurgeFailedWorkItems">
+    <CronSchedule dayofmonth="1" hours="1"/>
+  </ProcessSchedule>
+  <!-- Purges the batch process history on the 2nd day of every month -->
+  <ProcessSchedule process="ProcessHistoryPurge">
+    <CronSchedule dayofmonth="3" hours="1" minutes="30"/>
+  </ProcessSchedule>
+</Schedule>

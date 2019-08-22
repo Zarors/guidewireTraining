@@ -1,0 +1,13 @@
+package rules.Validation
+
+@gw.rules.RuleName("ABContact Validation Rules")
+@gw.rules.RuleSetDescription("The ABContact Validation rules can be used to describe complex data requirements that cannot be encoded as required fields, single-field validations, or edit masks. ABContact validation rules can ensure that the contact data stored is sufficient and valid.")
+class ABContactValidationRules extends gw.rules.RuleSetBase {
+  static function invoke(bean : entity.ABContact) : gw.rules.ExecutionSession {
+    return invoke( new gw.rules.ExecutionSession(), bean )
+  }
+
+  static function invoke(exeSession : gw.rules.ExecutionSession, bean : entity.ABContact) : gw.rules.ExecutionSession {
+    return _invoke( exeSession, bean, "ABContact Validation Rules", ABContactValidationRules )
+  }
+}

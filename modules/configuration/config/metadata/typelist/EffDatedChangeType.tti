@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of change made to this row"
+  final="true"
+  name="EffDatedChangeType"
+  platform="true">
+  <typecode
+    code="slice"
+    desc="Change made in slice mode"
+    name="Slice"/>
+  <typecode
+    code="slice_merged"
+    desc="Bean has had its changes resolved if OOSE change"
+    name="SliceMerged"/>
+  <typecode
+    code="merge"
+    desc="Change made by merging forward change"
+    name="Merge"/>
+  <typecode
+    code="window"
+    desc="Change made in window mode"
+    name="Window"/>
+  <typecode
+    code="merge_base"
+    desc="The base for merges if entity does not have a BasedOn"
+    name="MergeBase"/>
+</typelist>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Editable"
+  platform="true">
+  <implementsEntity
+    name="Versionable"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.impl.VersionableInternal"
+    impl="com.guidewire.pl.system.entity.proxy.AbstractEditableBeanProxy"/>
+  <column
+    desc="Timestamp when the object was created"
+    exportable="false"
+    loadable="false"
+    name="CreateTime"
+    nullok="false"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the object was last updated"
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="UpdateTime"
+    nullok="false"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <foreignkey
+    columnName="CreateUserID"
+    createConstraint="false"
+    desc="User who created the object"
+    exportable="false"
+    fkentity="User"
+    loadable="false"
+    name="CreateUser"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <foreignkey
+    columnName="UpdateUserID"
+    createConstraint="false"
+    desc="User who last updated the object"
+    exportable="false"
+    fkentity="User"
+    ignoreforevents="true"
+    loadable="false"
+    name="UpdateUser"
+    nullok="true"
+    setterScriptability="hidden"/>
+</delegate>

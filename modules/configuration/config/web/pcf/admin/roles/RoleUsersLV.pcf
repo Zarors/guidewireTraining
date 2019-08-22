@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="RoleUsersLV">
+    <ExposeIterator
+      valueType="entity.User"
+      widget="RoleUsersLV"/>
+    <Require
+      name="Role"
+      type="Role"/>
+    <RowIterator
+      checkBoxVisible="not User.Contact.Obfuscated or perm.System.editobfuscatedusercontact"
+      editable="true"
+      elementName="User"
+      hasCheckBoxes="true"
+      hideCheckBoxesIfReadOnly="true"
+      pickLocation="UserSearchPopup.push(null)"
+      toAdd="Role.addRoleToUser(User)"
+      toRemove="Role.removeRoleFromUser(User)"
+      value="Role.AllUsersArray"
+      valueType="entity.User[]">
+      <Row>
+        <TextCell
+          id="Name"
+          label="DisplayKey.get(&quot;Web.Admin.RoleUsers.Name&quot;)"
+          value="User.Contact.DisplayName"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

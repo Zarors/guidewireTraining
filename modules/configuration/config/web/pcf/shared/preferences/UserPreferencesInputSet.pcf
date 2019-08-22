@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="UserPreferencesInputSet">
+    <Require
+      name="user"
+      type="User"/>
+    <TypeKeyInput
+      editable="true"
+      id="Language"
+      label="DisplayKey.get(&quot;Web.User.Preferences.UserLanguage&quot;)"
+      value="user.UserLanguage"
+      valueType="typekey.LanguageType"
+      visible="gw.api.util.LocaleUtil.canSwitchLanguage()"/>
+    <TypeKeyInput
+      editable="true"
+      id="RegionalFormats"
+      label="DisplayKey.get(&quot;Web.User.Preferences.UserRegionalFormats&quot;)"
+      value="user.UserLocale"
+      valueType="typekey.LocaleType"
+      visible="gw.api.util.LocaleUtil.canSwitchLocale()"/>
+    <TypeKeyInput
+      editable="true"
+      id="DefaultCountry"
+      label="DisplayKey.get(&quot;Web.User.Preferences.UserDefaultCountry&quot;)"
+      value="user.UserDefaultCountry"
+      valueType="typekey.Country"/>
+    <TypeKeyInput
+      editable="true"
+      id="DefaultPhoneCountry"
+      label="DisplayKey.get(&quot;Web.User.Preferences.UserDefaultPhoneRegion&quot;)"
+      value="user.UserDefaultPhoneCountry"
+      valueType="typekey.PhoneCountryCode"/>
+  </InputSet>
+</PCF>

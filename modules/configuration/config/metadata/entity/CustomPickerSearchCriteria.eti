@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="CustomPickerSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.custom.CustomPickerSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.custom.impl.CustomPickerSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.custom.impl.CustomPickerSearchCriteriaImpl"/>
+  <fulldescription><![CDATA[
+        Encapsulates the search criteria for a custom picker search. The custom
+        picker mechanism is deprecated and is only provided for backwards compatibility. The extra
+        configurability provided by PCF makes the entire custom picker mechanism redundant.
+      
+    ]]></fulldescription>
+  <column
+    desc="Text search criterion"
+    name="TextColumn"
+    nullok="true"
+    type="shorttext"/>
+  <typekey
+    desc="TypeKey search criterion"
+    name="State"
+    nullok="true"
+    typelist="State"/>
+</nonPersistentEntity>

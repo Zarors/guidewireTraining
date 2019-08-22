@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!-- ### =============================================================
+  ### Date analysis data distribution (owned by Table data distribution)
+  ### ============================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores date analysis data distribution."
+  entity="DateAnalysisDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="dateanalysisdatadist"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.DateAnalysisDataDistPublicMethods"
+    impl="com.guidewire.pl.domain.database.impl.DateAnalysisDataDistImpl"/>
+  <column
+    desc="Name of datetime column."
+    name="DatetimeColumnName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Year"
+    name="yr"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Month"
+    name="mnth"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Number of distinct non-null dates."
+    name="NumDistinctDates"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Number of non-null, non-loadable rows."
+    name="NumNonNullNonLoadableDates"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Minimum number of rows per date."
+    name="MinRowsPerDate"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Maximum number of rows per date."
+    name="MaxRowsPerDate"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Average number of rows per date."
+    name="AvgRowsPerDate"
+    nullok="false"
+    type="decimal">
+    <columnParam
+      name="precision"
+      value="14"/>
+    <columnParam
+      name="scale"
+      value="2"/>
+  </column>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+</entity>

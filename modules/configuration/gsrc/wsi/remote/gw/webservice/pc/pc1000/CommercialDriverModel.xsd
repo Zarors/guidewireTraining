@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.commercialdrivermodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CommercialDriver" type="CommercialDriver" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.commercialdrivermodel"/>
+  <xs:complexType name="CommercialDriver">
+    <xs:sequence>
+      <xs:element name="DateOfBirth" type="xs:dateTime" minOccurs="0" nillable="true" gw:type="java.util.Date"/>
+      <xs:element name="DriverTraining" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="EffectiveDate" type="xs:dateTime" minOccurs="0" nillable="true" gw:type="java.util.Date"/>
+      <xs:element name="ExpirationDate" type="xs:dateTime" minOccurs="0" nillable="true" gw:type="java.util.Date"/>
+      <xs:element name="FirstName" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="Gender" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="GoodDriverDiscount" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="HireDate" type="xs:dateTime" minOccurs="0" nillable="true" gw:type="java.util.Date"/>
+      <xs:element name="LastName" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="LicenseNumber" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="LicenseState" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="MaritalStatus" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="MatureDriverTraining" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="NumberofAccidents" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="NumberofViolations" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="SeqNumber" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+      <xs:element name="Student" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="YearLicensed" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+      <xs:element name="YearsExperience" type="xs:string" minOccurs="0" nillable="true"/>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="EffDated"
+  platform="true"
+  requiresType="keyable">
+  <implementsEntity
+    name="EffDatedBase"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.EffDatedBasePublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.impl.EffDatedBaseInternalMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.EffDatedPublicMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.effdate.impl.EffDatedInternalMethods"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBeanProxy"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.pl.system.entity.proxy.EffDatedBeanProxy"/>
+  <column
+    desc="Effective date of this row.  A value of NULL in the database indicates that this row's effective date is equal to the Period Start."
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="EffectiveDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Expiration date of this row.  A value of NULL in the database indicates that this row's expiration date is equal to the Period End."
+    exportable="false"
+    ignoreforevents="true"
+    loadable="false"
+    name="ExpirationDate"
+    nullok="true"
+    type="datetime"/>
+  <typekey
+    createhistogram="true"
+    desc="Type of change made to this row"
+    exportable="false"
+    loadable="false"
+    name="ChangeType"
+    nullok="true"
+    setterScriptability="doesNotExist"
+    typelist="EffDatedChangeType"/>
+</delegate>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!-- ************************************* IMPORTANT ********************************************************************
+     If this schema is changed in a way such that the changes cannot be implemented by simply creating the new ojbects,
+    you must increment the final static int UpgraderInstrumentation.EXPECTEDUPGRADESCHEMAVERSION, which will force
+    all these tables to be dropped and recreated.
+  ************************************* IMPORTANT ********************************************************************
+
+  ### ============================================================================
+  ### Upgrade database storage set results (owned by Upgrade database storage set)
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores results of database storage set."
+  entity="UpgradeDBStorageSetResult"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="upgradedbstoragesetresults"
+  type="keyable">
+  <foreignkey
+    columnName="UpgradeDBStorageSetID"
+    desc="Database storage set for this object"
+    exportable="false"
+    fkentity="UpgradeDBStorageSet"
+    ignoreforevents="true"
+    name="UpgradeDBStorageSet"
+    nullok="false"/>
+  <column
+    desc="Result value."
+    name="Value"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="0-based ordering of row of result within DBSS results"
+    name="RowOrder"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="0-based ordering of column of result within DBSS results"
+    name="ColumnOrder"
+    nullok="false"
+    type="integer"/>
+  <index
+    desc="Unique index for upgrade instrumentation"
+    name="udbssresultsu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="UpgradeDBStorageSetID"/>
+    <indexcol
+      keyposition="2"
+      name="RowOrder"/>
+    <indexcol
+      keyposition="3"
+      name="ColumnOrder"/>
+  </index>
+</entity>

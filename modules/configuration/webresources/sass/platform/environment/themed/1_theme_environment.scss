@@ -1,0 +1,219 @@
+& { // will be the html element with the theme id on it
+  font-size: $gw-app--base-font-size--in-px;
+  line-height: gw-stripUnit($gw-app--line-height-unitless); // Need to strip the unit here and use just ie 1.2, to prevent direct inheritance
+}
+
+body {
+  font-family: $gw-app--font-family;
+  color: $gw-app--col;
+  box-sizing: border-box;
+  font-size: $gw-app--base-font-size--in-px;
+  background-color: $gw-app--bg;
+}
+
+.gw-focus {
+  @include gw-addFocusOutline();
+}
+
+a {
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+table, .gw-table {
+  display: table;
+  border-collapse: collapse;
+  empty-cells: show;
+  vertical-align: middle;
+}
+
+tbody, .gw-table-body {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+tr, .gw-table-row {
+  display: table-row;
+  vertical-align: middle;
+}
+
+td, .gw-table-cell {
+  display: table-cell;
+  padding: 0;
+  vertical-align: middle;
+}
+
+th, .gw-header-cell {
+  padding: 0;
+  vertical-align: middle;
+}
+
+input, textarea, select, optgroup {
+  background-color: $gw-app--inputs--bg;
+  color: $gw-app--inputs--col;
+  border: gw-border($gw-app--inputs--border--col);
+  padding: $gw-app--inputs--pad-v-rem $gw-app--inputs--pad-h-rem;
+  @include gw-borderRadius();
+}
+
+input[type="text"], textarea, select {
+  min-width: $gw-app--inputs--min-text-input-width-em;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+input[type="radio"] {
+  outline-offset: gw-pxFixed(1);
+}
+
+textarea {
+  resize: none;
+}
+
+*::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $gw-app--inputs--placeholder--col;
+}
+
+*::-moz-placeholder { /* Firefox 19+ */
+  color: $gw-app--inputs--placeholder--col;
+}
+
+*:-ms-input-placeholder { /* IE 10+ */
+  color: $gw-app--inputs--placeholder--col;
+}
+
+input,
+textarea,
+select,
+optgroup {
+  @include gw-disabled($gw-app--inputs--disabled-bg, $gw-app--inputs--disabled-col);
+}
+
+.gw-label, .gw-text, .gw-label-min, .gw-value-readonly-wrapper, .gw-label--inner {
+  display: inline;
+  .gw-shortcutKey {
+    text-decoration: underline;
+    display: inline;
+    vertical-align: baseline;
+  }
+  > div {
+    display: inline;
+  }
+}
+
+.gw-label {
+  vertical-align: baseline; //TODO: current experiment
+}
+
+.gw-icon, .gw-icon-min {
+  display: inline;
+  vertical-align: baseline;
+}
+
+.gw-png-icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: gw-lineHeightInFixedEms();
+  width: gw-lineHeightInFixedEms();
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: gw-stripUnit($gw-app--line-height-unitless);
+  margin: 0;
+}
+
+input:not([readonly]), textarea:not([readonly]), select[multiple] {
+  &:not(.gw-disabled):not([disabled]) {
+    box-shadow: $gw-app--inputs--editable-inner-shadow;
+  }
+}
+
+img, label {
+  line-height: gw-stripUnit($gw-app--line-height-unitless);
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp,
+pre {
+  font-family: $gw-app--font-family--monospace, $gw-app--font-family--monospace;
+  font-size: gw-emFixed(1);
+}
+
+#gw-body.gw-disableFocusOutline {
+  .gw-focus {
+    outline-style: none !important;
+    outline-width: 0 !important;
+    outline-color: transparent !important;
+    outline-offset: 0 !important;
+  }
+}
+
+.gw-text-small {
+  font-size: $gw-app--font-size--smaller-px;
+  font-family: $gw-app--font-family--small;
+}
+
+img.gw-icon, .gw-icon img {
+  width: gw-emFixed(1);
+  height: gw-emFixed(1);
+}
+
+*::-ms-clear {
+  display: none;
+}
+
+.gw-boldLabel, .gw-bold {
+  font-weight: $gw-app--bold-label-weight;
+}
+
+.gw-boldValue {
+  font-weight: bold;
+  textarea, input, select, button {
+    font-weight: bold;
+  }
+}
+
+.gw-align-h--center {
+  text-align: center;
+  justify-content: center;
+}
+
+.gw-align-h--right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.gw-align-h--left {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.gw-margin-gap {
+  display: block;
+  height: 1px; //@px-allowed
+  margin-bottom: -1px; //@px-allowed
+}

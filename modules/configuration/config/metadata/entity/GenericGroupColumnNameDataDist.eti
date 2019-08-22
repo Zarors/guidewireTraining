@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- ### ==========================================================================
+  ### Generic value-group column names data distribution (owned by GenericGroup data distribution)
+  ### ========================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores column names for the generic value-group data distribution."
+  entity="GenericGroupColumnNameDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="genericgroupcolumndatadist"
+  type="keyable">
+  <column
+    desc="Name of column."
+    name="ColumnName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <foreignkey
+    columnName="GenericGroupDataDistID"
+    desc="GenericGroupDataDist for this object."
+    exportable="false"
+    fkentity="GenericGroupDataDist"
+    ignoreforevents="true"
+    name="GenericGroupDataDist"
+    nullok="false"/>
+  <index
+    desc="Ensure uniqueness for combination of GenericGroupDataDist and ColumnName"
+    name="ggcnddu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GenericGroupDataDistID"/>
+    <indexcol
+      keyposition="2"
+      name="ColumnName"/>
+  </index>
+</entity>

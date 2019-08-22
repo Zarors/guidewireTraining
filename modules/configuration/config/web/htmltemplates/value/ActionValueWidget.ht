@@ -1,0 +1,4 @@
+<div class="gw-ActionValueWidget ${reflectionApplies ? 'gw-value-reflector'}"
+     id="${renderId}_button" data-gw-click="${action}" ${systemAttributes}>
+  ${currentValue}
+</div>

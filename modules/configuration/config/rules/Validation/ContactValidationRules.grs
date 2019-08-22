@@ -1,0 +1,14 @@
+package rules.Validation
+
+@gw.rules.RuleName("ContactValidationRules")
+@gw.rules.RuleSetDescription("Verifies that phones cannot have null or unparseable country codes")
+@gw.lang.Export
+class ContactValidationRules extends gw.rules.RuleSetBase {
+  static function invoke(bean : entity.Contact) : gw.rules.ExecutionSession {
+    return invoke( new gw.rules.ExecutionSession(), bean )
+  }
+
+  static function invoke(exeSession : gw.rules.ExecutionSession, bean : entity.Contact) : gw.rules.ExecutionSession {
+    return _invoke( exeSession, bean, "ContactValidationRules", ContactValidationRules)
+  }
+}

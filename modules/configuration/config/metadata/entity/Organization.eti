@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    ORGANIZATION TABLES
+  ******************************************************************************************************************** -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Defines an organization that has a hierarchy of groups"
+  entity="Organization"
+  exportable="true"
+  extendable="true"
+  loadable="false"
+  platform="true"
+  table="organization"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.OrganizationPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.OrganizationImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.OrganizationInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.OrganizationImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.RemoveCallback"
+    impl="com.guidewire.pl.domain.community.impl.OrganizationImpl"/>
+  <fulldescription><![CDATA[
+        Represents a gathering of people brought together to form a business. Each organization contains a hierarchy of
+        groups. Unlike a group, an organization has a related Contact.
+      
+    ]]></fulldescription>
+  <column
+    default="false"
+    desc="Flag indicating whether this organization corresponds to the carrier itself."
+    name="Carrier"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Flag indicating whether this organization is the superuser organization with admin powers over all organizations."
+    name="MasterAdmin"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="The name of the organization."
+    name="Name"
+    nullok="false"
+    setterScriptability="hidden"
+    supportsLinguisticSearch="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <typekey
+    desc="The type of the organization."
+    name="Type"
+    nullok="true"
+    typelist="BusinessType"/>
+  <foreignkey
+    archivingOwner="source"
+    columnName="ContactID"
+    desc="Contact entry related to the organization."
+    fkentity="Contact"
+    name="Contact"
+    nullok="true"/>
+  <edgeForeignKey
+    desc="The organization's root group."
+    edgeTableName="orggroup"
+    fkentity="Group"
+    loadable="false"
+    name="RootGroup"
+    nullok="false"
+    setterScriptability="hidden"
+    soapnullok="true"/>
+  <!-- OrganizationBase-related consistency checks and loader validations. -->
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.community.dbchecks.OrganizationBaseDBCheckBuilder"/>
+  <index
+    desc="Improve performance of search for organization by name"
+    name="orgnameu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Carrier"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+    <indexcol
+      keyposition="3"
+      name="NameDenorm"/>
+    <indexcol
+      keyposition="4"
+      name="ID"/>
+  </index>
+  <array
+    arrayentity="OrganizationZoneAdmin"
+    desc="Link to joiner table for zones to admin."
+    exportable="true"
+    name="ZonesToAdmin"
+    triggersValidation="true"/>
+</entity>

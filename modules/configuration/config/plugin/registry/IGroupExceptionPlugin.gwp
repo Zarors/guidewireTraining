@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="IGroupExceptionPlugin">
+  <plugin-java
+    javaclass="com.guidewire.pl.domain.escalation.RulesBasedGroupExceptionPlugin"/>
+</plugin>

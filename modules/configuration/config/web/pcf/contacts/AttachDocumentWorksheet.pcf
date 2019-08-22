@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Worksheet
+    afterCommit="documentCMContext.linkDocumentsToContact()"
+    canEdit="true"
+    canVisit="true"
+    id="AttachDocumentWorksheet"
+    startInEditMode="true"
+    tabLabel="DisplayKey.get(&quot;Web.ContactDetail.Documents.NewDocument.UploadDocuments&quot;)"
+    title="DisplayKey.get(&quot;Web.ContactDetail.Documents.NewDocument.UploadDocuments&quot;)">
+    <LocationEntryPoint
+      signature="AttachDocumentWorksheet(contact : ABContact)"/>
+    <Scope
+      location="ContactDetail(contact)"/>
+    <Variable
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="new gw.document.DocumentCMContext(contact)"
+      name="documentCMContext"
+      type="gw.document.DocumentCMContext"/>
+    <ScreenRef
+      def="UploadDocumentScreen(documentCMContext)"/>
+  </Worksheet>
+</PCF>

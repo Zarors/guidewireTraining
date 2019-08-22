@@ -1,0 +1,43 @@
+.gw-SearchItemWidget {
+  display: flex;
+  align-items: center;
+  border-top: gw-border($gw-app--menus--divider-col);
+  border-bottom: gw-border($gw-app--menus--divider-col);
+  padding: $gw-app--SPACING-rem-S 0;
+
+  @include gw-menuContainer($pad-right: 0);
+  .gw-SearchItemWidget--label {
+    min-width: gw-emFixed(5);
+    padding-right: $gw-app--SPACING-rem-M;
+  }
+
+  .gw-SearchItemWidget--input-and-icon {
+    display: flex;
+    align-items: center;
+    margin-right: $gw-app--SPACING-rem-S;
+  }
+
+  &.gw-StyleContainer--ToolbarWidget {
+    border-width: 0;
+    background-color: transparent;
+  }
+}
+
+.gw-StyleContainer--SearchItemWidget {
+  &.gw-ValueWidget {
+    flex-grow: 1;
+
+    input {
+      width: $gw-app--SearchItemWidget--input-width-em;
+    }
+  }
+}
+
+.gw-SearchItemButtonWidget {
+  order: 1;
+  margin-left: $gw-app--SPACING-rem-S;
+  .gw-icon {
+    @include gw-icon("search", $v-align: baseline);
+  }
+}
+

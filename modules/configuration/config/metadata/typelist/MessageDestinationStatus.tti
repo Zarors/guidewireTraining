@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Message Destination Status"
+  final="true"
+  name="MessageDestinationStatus"
+  platform="true">
+  <typecode
+    code="Retrying"
+    desc="Retrying"
+    name="Retrying"/>
+  <typecode
+    code="Shutdown"
+    desc="Shutdown"
+    name="Shutdown"/>
+  <typecode
+    code="Started"
+    desc="Started"
+    name="Started"/>
+  <typecode
+    code="Suspended"
+    desc="Suspended"
+    name="Suspended"/>
+  <typecode
+    code="Suspending"
+    desc="Suspending"
+    name="Suspending"/>
+  <typecode
+    code="Resuming"
+    desc="Resuming"
+    name="Resuming"/>
+  <typecode
+    code="SuspendedInbound"
+    desc="Suspended inbound"
+    name="Suspended Inbound"/>
+  <typecode
+    code="SuspendedOutbound"
+    desc="Suspended outbound"
+    name="Suspended Outbound"/>
+  <typecode
+    code="Unknown"
+    desc="Unknown"
+    name="Unknown"/>
+</typelist>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_0.dtd">
+<Configure id="Server" class="com.guidewire.commons.jetty.GWServerJettyServerMain$JettyServer">
+  <Call name="addConnector">
+    <Arg>
+      <New class="org.eclipse.jetty.server.ServerConnector">
+        <Arg name="server"><Ref refid="Server" /></Arg>
+        <Set name="port">
+          <SystemProperty name="gw.port" default="8080"/>
+        </Set>
+        <Set name="reuseAddress">false</Set>
+      </New>
+    </Arg>
+  </Call>
+
+  <Set name="handler">
+    <New id="WebAppContext" class="org.eclipse.jetty.webapp.WebAppContext">
+      <Set name="war"><SystemProperty name="gw.webapp"/></Set>
+      <Set name="contextPath"><SystemProperty name="gw.context"/></Set>
+      <Set name="configurationClasses">
+        <Array type="java.lang.String">
+          <Item>org.eclipse.jetty.webapp.WebInfConfiguration</Item>
+          <Item>org.eclipse.jetty.webapp.WebXmlConfiguration</Item>
+          <Item>org.eclipse.jetty.webapp.MetaInfConfiguration</Item>
+          <Item>org.eclipse.jetty.webapp.FragmentConfiguration</Item>
+          <Item>org.eclipse.jetty.plus.webapp.EnvConfiguration</Item>     <!-- add for jndi -->
+          <Item>org.eclipse.jetty.plus.webapp.PlusConfiguration</Item>    <!-- add for jndi -->
+          <Item>org.eclipse.jetty.webapp.JettyWebXmlConfiguration</Item>
+        </Array>
+      </Set>
+      <Set name="sessionHandler">
+        <New class="org.eclipse.jetty.server.session.SessionHandler">
+            <Set name="sessionCookie">JSESSIONID-<SystemProperty name="gw.port" default="0"/></Set>
+        </New>
+      </Set>
+      <Call name="setInitParameter">
+        <Arg>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</Arg>
+        <Arg>false</Arg>
+      </Call>
+    </New>
+  </Set>
+  <Call
+    class="org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer"
+    name="configureContext">
+    <Arg>
+      <Ref
+        refid="WebAppContext"/>
+    </Arg>
+  </Call>
+</Configure>

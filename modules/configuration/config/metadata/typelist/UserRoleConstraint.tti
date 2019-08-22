@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Constraints that can be applied to UserRoles"
+  final="true"
+  name="UserRoleConstraint"
+  platform="true">
+  <typecode
+    code="objectowner"
+    desc="Indicates that the user assigned to this role must have the same permissions that are required to be the owner of the assignable object."
+    name="ObjectOwner"/>
+</typelist>

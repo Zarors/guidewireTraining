@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="PLNameInputSet"
+    mode="Person">
+    <Require
+      name="nameOwner"
+      type="gw.api.name.NameOwner"/>
+    <InputSetRef
+      def="GlobalPersonNameInputSet(nameOwner)"
+      mode="gw.api.name.NameLocaleSettings.PCFMode"/>
+  </InputSet>
+</PCF>

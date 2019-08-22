@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="An individual's marital status"
+  name="MaritalStatus">
+  <typecode
+    code="single"
+    desc="Single"
+    name="Single"
+    priority="1"/>
+  <typecode
+    code="married"
+    desc="Married"
+    name="Married"
+    priority="2"/>
+  <typecode
+    code="divorced"
+    desc="Divorced"
+    name="Divorced"
+    priority="3"/>
+  <typecode
+    code="widowed"
+    desc="Spouse deceased"
+    name="Spouse deceased"
+    priority="4"/>
+  <typecode
+    code="common"
+    desc="Common law spouse"
+    name="Common law spouse"
+    priority="5"/>
+  <typecode
+    code="separated"
+    desc="Separated"
+    name="Separated"
+    priority="6"/>
+  <typecode
+    code="unknown"
+    desc="Unknown"
+    name="Unknown"
+    priority="7"/>
+</typelistextension>

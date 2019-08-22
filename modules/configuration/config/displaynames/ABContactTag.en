@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Entity
+  name="ABContactTag">
+  <Columns>
+    <Column
+      beanPath="ABContactTag.Type"
+      name="tagType"/>
+  </Columns>
+  <DisplayName><![CDATA[return tagType]]></DisplayName>
+</Entity>

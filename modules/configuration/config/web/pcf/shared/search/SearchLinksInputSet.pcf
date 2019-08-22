@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- DON NOT reference this file directly, but use SearchAndResetInputSet or SearchOnlyInputSet instead -->
+  <InputSet
+    id="SearchLinksInputSet">
+    <Require
+      name="searchVisible"
+      type="Boolean"/>
+    <Require
+      name="resetVisible"
+      type="Boolean"/>
+    <ContentInput
+      id="searchBtns"
+      labelAbove="true">
+      <Link
+        action="gw.api.util.SearchUtil.search()"
+        default="true"
+        id="Search"
+        label="DisplayKey.get(&quot;Button.Search&quot;)"
+        shortcut="S"
+        styleClass="bigButton"
+        visible="searchVisible"/>
+      <Link
+        action="gw.api.util.SearchUtil.reset()"
+        id="Reset"
+        label="DisplayKey.get(&quot;Button.Reset&quot;)"
+        shortcut="R"
+        styleClass="bigButton"
+        visible="resetVisible"/>
+    </ContentInput>
+  </InputSet>
+</PCF>

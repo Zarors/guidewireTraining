@@ -1,0 +1,1 @@
+<%@ params(imagepath : String) %><fo:external-graphic src="${ imagepath }"/>

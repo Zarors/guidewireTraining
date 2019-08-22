@@ -1,0 +1,1836 @@
+<?xml version="1.0"?>
+<wsdl:definitions targetNamespace="http://guidewire.com/pc/ws/gw/webservice/pc/pc1000/contact/ContactAPI" name="ContactAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/pc/typekey" xmlns:pogo2="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIPendingChangeContext" xmlns:pogo3="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDContainer" xmlns:pogo4="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDTuple" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pc/ws/gw/webservice/pc/pc1000/contact/ContactAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pc/ws/gw/webservice/pc/pc1000/contact/ContactAPI" elementFormDefault="qualified" xmlns:imported="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.jobmodel" xmlns:imported2="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.policyperiodmodel" xmlns:imported3="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.accountmodel" xmlns:imported4="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.contactmodel" xmlns:imported5="http://guidewire.com/ctc/beanmodel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDTuple"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDContainer"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIPendingChangeContext"/>
+      <xs:import namespace="http://guidewire.com/ctc/beanmodel" schemaLocation="BeanModel.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.contactmodel" schemaLocation="ContactModel.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.accountmodel" schemaLocation="AccountModel.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.policyperiodmodel" schemaLocation="PolicyPeriodModel.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.jobmodel" schemaLocation="JobModel.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/typekey"/>
+      <xs:element name="removeContactByPublicID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="contactPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="removeContactByPublicIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="BadIdentifierException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="activateContactOnAllAccounts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="contactPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="activate" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="activateContactOnAllAccountsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mergeContactAddressesByPublicId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="contactPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="survivingAddressPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="mergedAddressPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mergeContactAddressesByPublicIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="mergeContactAddressesByABUID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="contactABUID" type="xs:string" minOccurs="0"/>
+            <xs:element name="survivingAddressABUID" type="xs:string" minOccurs="0"/>
+            <xs:element name="mergedAddressABUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mergeContactAddressesByABUIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedWorkOrders">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+            <xs:element name="workOrderStatus" type="pogo:PolicyPeriodStatus" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedWorkOrdersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="imported:Job" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedWorkOrdersByPublicID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="publicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="workOrderStatus" type="pogo:PolicyPeriodStatus" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedWorkOrdersByPublicIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="imported:Job" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedPolicies">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedPoliciesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="imported2:PolicyPeriod" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedPoliciesByPublicID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="publicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedPoliciesByPublicIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="imported2:PolicyPeriod" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedAccounts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedAccountsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="imported3:Account" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedAccountsByPublicID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="publicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssociatedAccountsByPublicIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="imported3:Account" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addContact">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="externalContact" type="imported4:Contact" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addContactResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateContact">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="contactXML" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported5:xmlBackedInstance"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateContactResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalStateException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="removeContact">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="removeContactResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="isContactDeletable">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="addressBookUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isContactDeletableResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isContactDeletableByPublicID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="publicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isContactDeletableByPublicIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mergeContacts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="keptContactABUID" type="xs:string" minOccurs="0"/>
+            <xs:element name="deletedContactABUID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mergeContactsResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="mergeContactsByPublicId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="keptContactPubId" type="xs:string" minOccurs="0"/>
+            <xs:element name="deletedContactPubId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mergeContactsByPublicIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pendingUpdateRejected">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context" type="pogo2:ABClientAPIPendingChangeContext" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pendingUpdateRejectedResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="UnsupportedOperationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="pendingCreateRejected">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context" type="pogo2:ABClientAPIPendingChangeContext" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pendingCreateRejectedResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="pendingCreateApproved">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context" type="pogo2:ABClientAPIPendingChangeContext" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pendingCreateApprovedResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="pendingUpdateApproved">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context" type="pogo2:ABClientAPIPendingChangeContext" minOccurs="0"/>
+            <xs:element name="abuidContainer" type="pogo3:ABClientAPIAddressBookUIDContainer" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pendingUpdateApprovedResponse">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pc/typekey" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDTuple"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDContainer"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIPendingChangeContext"/>
+      <xs:simpleType name="PolicyPeriodStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Draft"/>
+          <xs:enumeration value="Rated"/>
+          <xs:enumeration value="Temporary"/>
+          <xs:enumeration value="Withdrawn"/>
+          <xs:enumeration value="Declined"/>
+          <xs:enumeration value="Expired"/>
+          <xs:enumeration value="New"/>
+          <xs:enumeration value="NonRenewing"/>
+          <xs:enumeration value="Quoted"/>
+          <xs:enumeration value="Quoting"/>
+          <xs:enumeration value="Binding"/>
+          <xs:enumeration value="Bound"/>
+          <xs:enumeration value="Canceling"/>
+          <xs:enumeration value="AuditComplete"/>
+          <xs:enumeration value="NonRenewed"/>
+          <xs:enumeration value="NotTaken"/>
+          <xs:enumeration value="NotTaking"/>
+          <xs:enumeration value="Reinstating"/>
+          <xs:enumeration value="Renewing"/>
+          <xs:enumeration value="Rescinded"/>
+          <xs:enumeration value="Rescinding"/>
+          <xs:enumeration value="Waived"/>
+          <xs:enumeration value="LegacyConversion"/>
+          <xs:enumeration value="QuoteRequested"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContactChangeResolution">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="already_applied"/>
+          <xs:enumeration value="approved"/>
+          <xs:enumeration value="more_info_req"/>
+          <xs:enumeration value="rejected"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIPendingChangeContext" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDTuple"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDContainer"/>
+      <xs:import namespace="http://guidewire.com/pc/typekey"/>
+      <xs:complexType name="ABClientAPIPendingChangeContext">
+        <xs:sequence>
+          <xs:element name="AddressBookUID" type="xs:string" minOccurs="0"/>
+          <xs:element name="ChangeEntityTypeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="ChangeXML" type="xs:string" minOccurs="0"/>
+          <xs:element name="PublicID" type="xs:string" minOccurs="0"/>
+          <xs:element name="Resolution" type="pogo:ContactChangeResolution" minOccurs="0"/>
+          <xs:element name="ResolutionReason" type="xs:string" minOccurs="0"/>
+          <xs:element name="RootEntityDisplayName" type="xs:string" minOccurs="0"/>
+          <xs:element name="RootEntityID" type="xs:string" minOccurs="0"/>
+          <xs:element name="RootEntityType" type="xs:string" minOccurs="0"/>
+          <xs:element name="UserDisplayName" type="xs:string" minOccurs="0"/>
+          <xs:element name="Username" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDContainer" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDTuple"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIPendingChangeContext"/>
+      <xs:import namespace="http://guidewire.com/pc/typekey"/>
+      <xs:complexType name="ABClientAPIAddressBookUIDContainer">
+        <xs:sequence>
+          <xs:element name="AddressBookUIDTuples" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo4:ABClientAPIAddressBookUIDTuple" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ContactABUID" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDTuple" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIAddressBookUIDContainer"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/webservice/contactapi/ab1000/ABClientAPIPendingChangeContext"/>
+      <xs:import namespace="http://guidewire.com/pc/typekey"/>
+      <xs:complexType name="ABClientAPIAddressBookUIDTuple">
+        <xs:sequence>
+          <xs:element name="EntityType" type="xs:string" minOccurs="0"/>
+          <xs:element name="External_PublicID" type="xs:string" minOccurs="0"/>
+          <xs:element name="LinkID" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="ContactAPIPortType">
+    <wsdl:operation name="removeContactByPublicID">
+      <wsdl:input name="removeContactByPublicID" message="tns:removeContactByPublicID"/>
+      <wsdl:output name="removeContactByPublicIDResponse" message="tns:removeContactByPublicIDResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="activateContactOnAllAccounts">
+      <wsdl:input name="activateContactOnAllAccounts" message="tns:activateContactOnAllAccounts"/>
+      <wsdl:output name="activateContactOnAllAccountsResponse" message="tns:activateContactOnAllAccountsResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactAddressesByPublicId">
+      <wsdl:input name="mergeContactAddressesByPublicId" message="tns:mergeContactAddressesByPublicId"/>
+      <wsdl:output name="mergeContactAddressesByPublicIdResponse" message="tns:mergeContactAddressesByPublicIdResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactAddressesByABUID">
+      <wsdl:input name="mergeContactAddressesByABUID" message="tns:mergeContactAddressesByABUID"/>
+      <wsdl:output name="mergeContactAddressesByABUIDResponse" message="tns:mergeContactAddressesByABUIDResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedWorkOrders">
+      <wsdl:input name="getAssociatedWorkOrders" message="tns:getAssociatedWorkOrders"/>
+      <wsdl:output name="getAssociatedWorkOrdersResponse" message="tns:getAssociatedWorkOrdersResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedWorkOrdersByPublicID">
+      <wsdl:input name="getAssociatedWorkOrdersByPublicID" message="tns:getAssociatedWorkOrdersByPublicID"/>
+      <wsdl:output name="getAssociatedWorkOrdersByPublicIDResponse" message="tns:getAssociatedWorkOrdersByPublicIDResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedPolicies">
+      <wsdl:input name="getAssociatedPolicies" message="tns:getAssociatedPolicies"/>
+      <wsdl:output name="getAssociatedPoliciesResponse" message="tns:getAssociatedPoliciesResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedPoliciesByPublicID">
+      <wsdl:input name="getAssociatedPoliciesByPublicID" message="tns:getAssociatedPoliciesByPublicID"/>
+      <wsdl:output name="getAssociatedPoliciesByPublicIDResponse" message="tns:getAssociatedPoliciesByPublicIDResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedAccounts">
+      <wsdl:input name="getAssociatedAccounts" message="tns:getAssociatedAccounts"/>
+      <wsdl:output name="getAssociatedAccountsResponse" message="tns:getAssociatedAccountsResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedAccountsByPublicID">
+      <wsdl:input name="getAssociatedAccountsByPublicID" message="tns:getAssociatedAccountsByPublicID"/>
+      <wsdl:output name="getAssociatedAccountsByPublicIDResponse" message="tns:getAssociatedAccountsByPublicIDResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <wsdl:input name="addContact" message="tns:addContact"/>
+      <wsdl:output name="addContactResponse" message="tns:addContactResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateContact">
+      <wsdl:input name="updateContact" message="tns:updateContact"/>
+      <wsdl:output name="updateContactResponse" message="tns:updateContactResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="IllegalStateException" message="tns:IllegalStateException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="removeContact">
+      <wsdl:input name="removeContact" message="tns:removeContact"/>
+      <wsdl:output name="removeContactResponse" message="tns:removeContactResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="IllegalStateException" message="tns:IllegalStateException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isContactDeletable">
+      <wsdl:input name="isContactDeletable" message="tns:isContactDeletable"/>
+      <wsdl:output name="isContactDeletableResponse" message="tns:isContactDeletableResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="isContactDeletableByPublicID">
+      <wsdl:input name="isContactDeletableByPublicID" message="tns:isContactDeletableByPublicID"/>
+      <wsdl:output name="isContactDeletableByPublicIDResponse" message="tns:isContactDeletableByPublicIDResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContacts">
+      <wsdl:input name="mergeContacts" message="tns:mergeContacts"/>
+      <wsdl:output name="mergeContactsResponse" message="tns:mergeContactsResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactsByPublicId">
+      <wsdl:input name="mergeContactsByPublicId" message="tns:mergeContactsByPublicId"/>
+      <wsdl:output name="mergeContactsByPublicIdResponse" message="tns:mergeContactsByPublicIdResponse"/>
+      <wsdl:fault name="SOAPException" message="tns:SOAPException"/>
+      <wsdl:fault name="RequiredFieldException" message="tns:RequiredFieldException"/>
+      <wsdl:fault name="BadIdentifierException" message="tns:BadIdentifierException"/>
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="pendingUpdateRejected">
+      <wsdl:input name="pendingUpdateRejected" message="tns:pendingUpdateRejected"/>
+      <wsdl:output name="pendingUpdateRejectedResponse" message="tns:pendingUpdateRejectedResponse"/>
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="pendingCreateRejected">
+      <wsdl:input name="pendingCreateRejected" message="tns:pendingCreateRejected"/>
+      <wsdl:output name="pendingCreateRejectedResponse" message="tns:pendingCreateRejectedResponse"/>
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="pendingCreateApproved">
+      <wsdl:input name="pendingCreateApproved" message="tns:pendingCreateApproved"/>
+      <wsdl:output name="pendingCreateApprovedResponse" message="tns:pendingCreateApprovedResponse"/>
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="pendingUpdateApproved">
+      <wsdl:input name="pendingUpdateApproved" message="tns:pendingUpdateApproved"/>
+      <wsdl:output name="pendingUpdateApprovedResponse" message="tns:pendingUpdateApprovedResponse"/>
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContactAPISoap12Binding" type="tns:ContactAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="removeContactByPublicID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="removeContactByPublicID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeContactByPublicIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="activateContactOnAllAccounts">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="activateContactOnAllAccounts">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activateContactOnAllAccountsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactAddressesByPublicId">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="mergeContactAddressesByPublicId">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactAddressesByPublicIdResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactAddressesByABUID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="mergeContactAddressesByABUID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactAddressesByABUIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedWorkOrders">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAssociatedWorkOrders">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedWorkOrdersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedWorkOrdersByPublicID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAssociatedWorkOrdersByPublicID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedWorkOrdersByPublicIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedPolicies">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAssociatedPolicies">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedPoliciesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedPoliciesByPublicID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAssociatedPoliciesByPublicID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedPoliciesByPublicIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedAccounts">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAssociatedAccounts">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedAccountsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedAccountsByPublicID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAssociatedAccountsByPublicID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedAccountsByPublicIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="addContact">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addContactResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateContact">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="updateContact">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-transaction-id" part="gw-transaction-id" use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateContactResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap12:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeContact">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="removeContact">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-transaction-id" part="gw-transaction-id" use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeContactResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap12:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isContactDeletable">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isContactDeletable">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isContactDeletableResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isContactDeletableByPublicID">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="isContactDeletableByPublicID">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isContactDeletableByPublicIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContacts">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="mergeContacts">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-transaction-id" part="gw-transaction-id" use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactsByPublicId">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="mergeContactsByPublicId">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactsByPublicIdResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap12:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingUpdateRejected">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="pendingUpdateRejected">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingUpdateRejectedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingCreateRejected">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="pendingCreateRejected">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingCreateRejectedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingCreateApproved">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="pendingCreateApproved">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingCreateApprovedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingUpdateApproved">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="pendingUpdateApproved">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingUpdateApprovedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ContactAPISoap11Binding" type="tns:ContactAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="removeContactByPublicID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="removeContactByPublicID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeContactByPublicIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="activateContactOnAllAccounts">
+      <soap11:operation style="document"/>
+      <wsdl:input name="activateContactOnAllAccounts">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activateContactOnAllAccountsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactAddressesByPublicId">
+      <soap11:operation style="document"/>
+      <wsdl:input name="mergeContactAddressesByPublicId">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactAddressesByPublicIdResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactAddressesByABUID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="mergeContactAddressesByABUID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactAddressesByABUIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedWorkOrders">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAssociatedWorkOrders">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedWorkOrdersResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedWorkOrdersByPublicID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAssociatedWorkOrdersByPublicID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedWorkOrdersByPublicIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedPolicies">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAssociatedPolicies">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedPoliciesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedPoliciesByPublicID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAssociatedPoliciesByPublicID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedPoliciesByPublicIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedAccounts">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAssociatedAccounts">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedAccountsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssociatedAccountsByPublicID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAssociatedAccountsByPublicID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssociatedAccountsByPublicIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <soap11:operation style="document"/>
+      <wsdl:input name="addContact">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addContactResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateContact">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateContact">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-transaction-id" part="gw-transaction-id" use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateContactResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap11:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeContact">
+      <soap11:operation style="document"/>
+      <wsdl:input name="removeContact">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-transaction-id" part="gw-transaction-id" use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeContactResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap11:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isContactDeletable">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isContactDeletable">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isContactDeletableResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isContactDeletableByPublicID">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isContactDeletableByPublicID">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isContactDeletableByPublicIDResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContacts">
+      <soap11:operation style="document"/>
+      <wsdl:input name="mergeContacts">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-transaction-id" part="gw-transaction-id" use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeContactsByPublicId">
+      <soap11:operation style="document"/>
+      <wsdl:input name="mergeContactsByPublicId">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mergeContactsByPublicIdResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BadIdentifierException">
+        <soap11:fault name="BadIdentifierException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingUpdateRejected">
+      <soap11:operation style="document"/>
+      <wsdl:input name="pendingUpdateRejected">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingUpdateRejectedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingCreateRejected">
+      <soap11:operation style="document"/>
+      <wsdl:input name="pendingCreateRejected">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingCreateRejectedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingCreateApproved">
+      <soap11:operation style="document"/>
+      <wsdl:input name="pendingCreateApproved">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingCreateApprovedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pendingUpdateApproved">
+      <soap11:operation style="document"/>
+      <wsdl:input name="pendingUpdateApproved">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pendingUpdateApprovedResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContactAPI">
+    <wsdl:port name="ContactAPISoap12Port" binding="tns:ContactAPISoap12Binding">
+      <soap12:address location="http://localhost:8180/pc/ws/gw/webservice/pc/pc1000/contact/ContactAPI"/>
+      <gwwsdl:address location="${pc}/ws/gw/webservice/pc/pc1000/contact/ContactAPI"/>
+    </wsdl:port>
+    <wsdl:port name="ContactAPISoap11Port" binding="tns:ContactAPISoap11Binding">
+      <soap11:address location="http://localhost:8180/pc/ws/gw/webservice/pc/pc1000/contact/ContactAPI/soap11"/>
+      <gwwsdl:address location="${pc}/ws/gw/webservice/pc/pc1000/contact/ContactAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="removeContactByPublicID">
+    <wsdl:part name="parameters" element="tns:removeContactByPublicID"/>
+  </wsdl:message>
+  <wsdl:message name="removeContactByPublicIDResponse">
+    <wsdl:part name="parameters" element="tns:removeContactByPublicIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="tns:SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="tns:RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="BadIdentifierException">
+    <wsdl:part name="BadIdentifierException" element="tns:BadIdentifierException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="activateContactOnAllAccounts">
+    <wsdl:part name="parameters" element="tns:activateContactOnAllAccounts"/>
+  </wsdl:message>
+  <wsdl:message name="activateContactOnAllAccountsResponse">
+    <wsdl:part name="parameters" element="tns:activateContactOnAllAccountsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactAddressesByPublicId">
+    <wsdl:part name="parameters" element="tns:mergeContactAddressesByPublicId"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactAddressesByPublicIdResponse">
+    <wsdl:part name="parameters" element="tns:mergeContactAddressesByPublicIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactAddressesByABUID">
+    <wsdl:part name="parameters" element="tns:mergeContactAddressesByABUID"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactAddressesByABUIDResponse">
+    <wsdl:part name="parameters" element="tns:mergeContactAddressesByABUIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedWorkOrders">
+    <wsdl:part name="parameters" element="tns:getAssociatedWorkOrders"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedWorkOrdersResponse">
+    <wsdl:part name="parameters" element="tns:getAssociatedWorkOrdersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedWorkOrdersByPublicID">
+    <wsdl:part name="parameters" element="tns:getAssociatedWorkOrdersByPublicID"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedWorkOrdersByPublicIDResponse">
+    <wsdl:part name="parameters" element="tns:getAssociatedWorkOrdersByPublicIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedPolicies">
+    <wsdl:part name="parameters" element="tns:getAssociatedPolicies"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedPoliciesResponse">
+    <wsdl:part name="parameters" element="tns:getAssociatedPoliciesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedPoliciesByPublicID">
+    <wsdl:part name="parameters" element="tns:getAssociatedPoliciesByPublicID"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedPoliciesByPublicIDResponse">
+    <wsdl:part name="parameters" element="tns:getAssociatedPoliciesByPublicIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedAccounts">
+    <wsdl:part name="parameters" element="tns:getAssociatedAccounts"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedAccountsResponse">
+    <wsdl:part name="parameters" element="tns:getAssociatedAccountsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedAccountsByPublicID">
+    <wsdl:part name="parameters" element="tns:getAssociatedAccountsByPublicID"/>
+  </wsdl:message>
+  <wsdl:message name="getAssociatedAccountsByPublicIDResponse">
+    <wsdl:part name="parameters" element="tns:getAssociatedAccountsByPublicIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="addContact">
+    <wsdl:part name="parameters" element="tns:addContact"/>
+  </wsdl:message>
+  <wsdl:message name="addContactResponse">
+    <wsdl:part name="parameters" element="tns:addContactResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateContact">
+    <wsdl:part name="parameters" element="tns:updateContact"/>
+  </wsdl:message>
+  <wsdl:message name="updateContactResponse">
+    <wsdl:part name="parameters" element="tns:updateContactResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalStateException">
+    <wsdl:part name="IllegalStateException" element="tns:IllegalStateException"/>
+  </wsdl:message>
+  <wsdl:message name="removeContact">
+    <wsdl:part name="parameters" element="tns:removeContact"/>
+  </wsdl:message>
+  <wsdl:message name="removeContactResponse">
+    <wsdl:part name="parameters" element="tns:removeContactResponse"/>
+  </wsdl:message>
+  <wsdl:message name="isContactDeletable">
+    <wsdl:part name="parameters" element="tns:isContactDeletable"/>
+  </wsdl:message>
+  <wsdl:message name="isContactDeletableResponse">
+    <wsdl:part name="parameters" element="tns:isContactDeletableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="isContactDeletableByPublicID">
+    <wsdl:part name="parameters" element="tns:isContactDeletableByPublicID"/>
+  </wsdl:message>
+  <wsdl:message name="isContactDeletableByPublicIDResponse">
+    <wsdl:part name="parameters" element="tns:isContactDeletableByPublicIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContacts">
+    <wsdl:part name="parameters" element="tns:mergeContacts"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactsResponse">
+    <wsdl:part name="parameters" element="tns:mergeContactsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactsByPublicId">
+    <wsdl:part name="parameters" element="tns:mergeContactsByPublicId"/>
+  </wsdl:message>
+  <wsdl:message name="mergeContactsByPublicIdResponse">
+    <wsdl:part name="parameters" element="tns:mergeContactsByPublicIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="pendingUpdateRejected">
+    <wsdl:part name="parameters" element="tns:pendingUpdateRejected"/>
+  </wsdl:message>
+  <wsdl:message name="pendingUpdateRejectedResponse">
+    <wsdl:part name="parameters" element="tns:pendingUpdateRejectedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UnsupportedOperationException">
+    <wsdl:part name="UnsupportedOperationException" element="tns:UnsupportedOperationException"/>
+  </wsdl:message>
+  <wsdl:message name="pendingCreateRejected">
+    <wsdl:part name="parameters" element="tns:pendingCreateRejected"/>
+  </wsdl:message>
+  <wsdl:message name="pendingCreateRejectedResponse">
+    <wsdl:part name="parameters" element="tns:pendingCreateRejectedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="pendingCreateApproved">
+    <wsdl:part name="parameters" element="tns:pendingCreateApproved"/>
+  </wsdl:message>
+  <wsdl:message name="pendingCreateApprovedResponse">
+    <wsdl:part name="parameters" element="tns:pendingCreateApprovedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="pendingUpdateApproved">
+    <wsdl:part name="parameters" element="tns:pendingUpdateApproved"/>
+  </wsdl:message>
+  <wsdl:message name="pendingUpdateApprovedResponse">
+    <wsdl:part name="parameters" element="tns:pendingUpdateApprovedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

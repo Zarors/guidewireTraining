@@ -1,0 +1,11 @@
+{
+	"animation": ["-webkit-"],
+	"keyframes": ["-webkit-"],
+	"filter": ["-webkit-"],
+	"hyphens": ["-webkit-", "-moz-", "-ms-"],
+	"transform": ["-webkit-", "-ms-"],
+	"appearance": ["-webkit-", "-moz-"],
+	"text-size-adjust": ["-ms-", "-webkit-"],
+	"text-decoration-skip": ["-webkit-"],
+	"font-smoothing": ["-webkit-", "-moz-osx-"]
+}

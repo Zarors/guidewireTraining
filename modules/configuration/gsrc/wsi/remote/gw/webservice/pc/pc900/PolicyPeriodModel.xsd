@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" elementFormDefault="qualified" targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policyperiodmodel">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.businessautolinemodel" schemaLocation="BusinessAutoLineModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.periodanswermodel" schemaLocation="PeriodAnswerModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policycontactrolemodel" schemaLocation="PolicyContactRoleModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policylocationmodel" schemaLocation="PolicyLocationModel.xsd"/>
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.contactmodel" schemaLocation="ContactModel.xsd"/>
+  <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policyperiodmodel" name="PolicyPeriod" nillable="true" type="PolicyPeriod"/>
+  <xs:complexType name="PolicyPeriod">
+    <xs:sequence>
+      <xs:element gw:type="java.lang.Boolean" minOccurs="0" name="AssignedRisk" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="BaseState" nillable="true" type="xs:string"/>
+      <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.businessautolinemodel" minOccurs="0" name="BusinessAutoLine" nillable="true" type="BusinessAutoLine"/>
+      <xs:element gw:type="gw.pl.currency.MonetaryAmount" minOccurs="0" name="DepositAmount" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Offering" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.lang.String" minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PeriodAnswers" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.periodanswermodel" maxOccurs="unbounded" minOccurs="0" name="Entry" nillable="true" type="PeriodAnswer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element gw:type="java.util.Date" minOccurs="0" name="PeriodEnd" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Policy" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element gw:type="java.util.Date" minOccurs="0" name="IssueDate" nillable="true" type="xs:dateTime"/>
+            <xs:element gw:type="java.util.Date" minOccurs="0" name="OriginalEffectiveDate" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xs:string"/>
+            <xs:element gw:type="gw.pl.currency.MonetaryAmount" minOccurs="0" name="PriorPremiums" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PolicyContactRoles" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policycontactrolemodel" maxOccurs="unbounded" minOccurs="0" name="Entry" nillable="true" type="PolicyContactRole"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PolicyLocations" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.policylocationmodel" maxOccurs="unbounded" minOccurs="0" name="Entry" nillable="true" type="PolicyLocation"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element gw:type="java.lang.String" minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PreferredCoverageCurrency" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PreferredSettlementCurrency" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaryNamedInsured" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AccountContactRole" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="AccountContact" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc900.gxmodel.contactmodel" minOccurs="0" name="Contact" nillable="true" type="Contact"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element gw:type="java.lang.Integer" minOccurs="0" name="TermNumber" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="UWCompany" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element gw:type="java.util.Date" minOccurs="0" name="WrittenDate" nillable="true" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

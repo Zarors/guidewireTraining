@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="LegalCaseType"
+  name="LegalCaseType">
+  <typecode
+    code="malpractice"
+    desc="Malpractice"
+    name="Malpractice"/>
+  <typecode
+    code="fraud"
+    desc="Fraud"
+    name="Fraud"/>
+  <typecode
+    code="wrongful_death"
+    desc="Wrongful Death"
+    name="Wrongful Death"/>
+  <typecode
+    code="negligence"
+    desc="Negligence"
+    name="Negligence"/>
+</typelist>

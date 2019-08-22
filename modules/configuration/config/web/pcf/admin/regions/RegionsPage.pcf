@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.Region.view"
+    id="RegionsPage"
+    parent="RegionsForward()"
+    title="DisplayKey.get(&quot;Web.Admin.Regions&quot;)">
+    <Variable
+      initialValue="new gw.admin.RegionsUIHelper()"
+      name="uiHelper"
+      recalculateOnRefresh="true"
+      type="gw.admin.RegionsUIHelper"/>
+    <Screen
+      id="RegionsScreen">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Admin.Regions&quot;)"/>
+      <Verbatim
+        label="DisplayKey.get(&quot;Web.Regions.CannotEditRegions&quot;)"
+        visible="gw.api.admin.BaseAdminUtil.getRegionZoneTypesForDefaultCountry().length == 0"/>
+      <SearchPanel
+        cachingEnabled="false"
+        criteriaName="SearchCriteria"
+        resultsName="allRegions"
+        search="SearchCriteria.performSearch() as gw.api.database.IQueryBeanResult&lt;Region&gt;"
+        searchCriteria="new gw.api.admin.RegionSearchCriteria()"
+        searchCriteriaType="gw.api.admin.RegionSearchCriteria"
+        searchOnEnter="true"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;Region&gt;">
+        <PanelRef
+          def="RegionSearchDV(SearchCriteria)"
+          visible="uiHelper.searchPanelVisible()"/>
+        <PanelRef
+          def="RegionSearchResultsLV(allRegions,true,true)">
+          <TitleBar
+            id="SearchResultsTitleBar"
+            title="DisplayKey.get(&quot;Web.Search.Results&quot;)"
+            visible="uiHelper.searchPanelVisible()"/>
+          <Toolbar
+            visible="gw.api.admin.BaseAdminUtil.getRegionZoneTypesForDefaultCountry().length != 0">
+            <ToolbarButton
+              action="NewRegion.go()"
+              id="Regions_AddRegionButton"
+              label="DisplayKey.get(&quot;Web.Admin.AddRegion&quot;)"
+              shortcut="R"/>
+            <CheckedValuesToolbarButton
+              allCheckedRowsAction="gw.api.admin.BaseAdminUtil.deleteRegions(CheckedValues)"
+              flags="any Region"
+              id="Regions_DeleteButton"
+              iterator="RegionSearchResultsLV.RegionSearchResultsLV"
+              label="DisplayKey.get(&quot;Button.Delete&quot;)"
+              shortcut="L"
+              visible="perm.Region.delete"/>
+          </Toolbar>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Page>
+</PCF>

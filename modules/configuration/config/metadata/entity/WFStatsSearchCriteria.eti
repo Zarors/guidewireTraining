@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Search criteria used for workflow stats searches."
+  entity="WFStatsSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WFStatsSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WFStatsSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.workflow.impl.WFStatsSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.impl.WFStatsSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WFStatsSearchCriteriaImpl"/>
+  <typekey
+    desc="The type of workflow."
+    name="Type"
+    nullok="true"
+    typelist="Workflow"/>
+  <column
+    desc="Date lower bound."
+    name="DateFrom"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Date upper bound."
+    name="DateTo"
+    nullok="true"
+    type="datetime"/>
+</nonPersistentEntity>

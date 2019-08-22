@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html id="${currentTheme}">
+  <head>
+    <title>${versionInfo} ${appName}</title> <!-- Title value should be overwritten via client command. Set this default value just in case. -->
+    <base href="${webResourcesUrl}/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1280"/> <!-- height=device-height, initial-scale=0.5  -->
+
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/gen/pretheme.css"/>
+    <link rel="stylesheet" href="css/gen/${currentTheme}.css">
+
+    <link href="${webResourcesUrl}/img/app/favicon.ico" rel="icon" type="image/x-icon">
+
+    <script src="js/gen/app-ts.js"></script>
+    <script src="js/gen/all.js"></script>
+  </head>
+  <body class="gw-app-${appCode}" data-gw-config="${config}">
+    <form class="gw-top-level" id="gw-root-form" method="POST">${:children}</form>
+    <div class="gw-click-overlay" id="gw-click-overlay"></div>
+    <div id="gw-serverError" class="gw-hidden"></div>
+    <script type="text/javascript" src="${baseUrl}/service/displaykeyvalues?checksum=${displayKeyChecksum}"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Non-persistent entity used as wrapper for the list of document security types in the search criteria"
+  entity="DocumentSecurityTypeSearchWrapper"
+  extendable="false"
+  platform="true">
+  <typekey
+    name="DocumentSecurityType"
+    nullok="true"
+    typelist="DocumentSecurityType"/>
+  <foreignkey
+    fkentity="DocumentSearchCriteria"
+    name="DocumentSearchCriteria"
+    nullok="true"/>
+</nonPersistentEntity>

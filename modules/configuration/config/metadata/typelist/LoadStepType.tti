@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of load step events"
+  final="true"
+  name="LoadStepType"
+  platform="true">
+  <typecode
+    code="errorcleared"
+    desc="Error table cleared"
+    name="Error table cleared"/>
+  <typecode
+    code="exclusioncleared"
+    desc="Exclusion table cleared"
+    name="Exclusion table cleared"/>
+  <typecode
+    code="stagingcleared"
+    desc="Staging tables cleared"
+    name="Staging tables cleared"/>
+  <typecode
+    code="excludeddeleted"
+    desc="Excluded rows deleted from staging tables"
+    name="Excluded rows deleted"/>
+  <typecode
+    code="exclusionpop"
+    desc="Exclusion table populated with failed rows from error table"
+    name="Exclusion table populated"/>
+  <typecode
+    code="integritychecked"
+    desc="Integrity of staging tables checked (Entire phase)"
+    name="Integrity of staging tables checked"/>
+  <typecode
+    code="idsgenerated"
+    desc="IDs generated for staging tables"
+    name="IDs generated for staging tables"/>
+  <typecode
+    code="rownumsgenerated"
+    desc="Row numbers generated for staging tables"
+    name="Row numbers generated for staging tables"/>
+  <typecode
+    code="sourceloaded"
+    desc="Source tables loaded from staging tables (Entire phase)"
+    name="Source tables loaded"/>
+  <typecode
+    code="nonexcludeddeleted"
+    desc="Non-excluded rows deleted from staging tables"
+    name="Non-excluded rows deleted"/>
+  <typecode
+    code="ppesexecuted"
+    desc="PostPopulatorExecutors executed after populating staging tables"
+    name="PostPopulatorExecutors executed"/>
+  <typecode
+    code="consistencychecked"
+    desc="Custom consistency checks executed after populating staging tables"
+    name="ConsistencyChecker executed"/>
+  <typecode
+    code="integrityexecuted"
+    desc="Integrity check queries checks executed"
+    name="Integrity check queries executed"/>
+  <typecode
+    code="insertselects"
+    desc="INSERT SELECTs from staging to source tables executed"
+    name="INSERT SELECTs executed"/>
+  <typecode
+    code="estimatedbstatistics"
+    desc="DB statistics updated with estimates for source tables"
+    name="DB statistics updated with estimates for source tables"/>
+  <typecode
+    code="lcbeforeidgeneration"
+    desc="LoaderCallbacks executed before id generation"
+    name="LoaderCallback before id generation"/>
+  <typecode
+    code="lcbeforeinsertselect"
+    desc="LoaderCallbacks executed before insert/selects into source tables"
+    name="LoaderCallback before execution of insert/selects"/>
+  <typecode
+    code="lcafterinsertselect"
+    desc="LoaderCallbacks executed after insert/selects into source tables"
+    name="LoaderCallback after execution of insert/selects"/>
+  <typecode
+    code="overwrittencleared"
+    desc="Overwritten staging tables and columns cleared"
+    name="Overwritten staging tables and columns cleared"/>
+</typelist>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Screen
+    id="ABContactSearchScreen">
+    <Require
+      name="isSelectMode"
+      type="boolean"/>
+    <Require
+      name="CanPotentiallyDelete"
+      type="boolean"/>
+    <Require
+      name="requiredContactType"
+      type="Type"/>
+    <Variable
+      initialValue="!isSelectMode"
+      name="isClearBundle"
+      type="boolean"/>
+    <Variable
+      initialValue="new gw.api.contact.ABProximitySearchPageHelper()"
+      name="PageHelper"
+      type="gw.api.contact.ABProximitySearchPageHelper"/>
+    <Variable
+      initialValue="new gw.api.webservice.addressbook.contactapi.ABContactSearchSpecWithoutPaging()"
+      name="searchSpec"
+      type="gw.api.webservice.addressbook.contactapi.ABContactSearchSpecWithoutPaging"/>
+    <SearchPanel
+      clearInvisibleInputs="true"
+      criteriaName="SearchCriteria"
+      maxSearchResults="gw.api.system.ABConfigParameters.MaxContactSearchResults.getValue()"
+      resultsName="SearchResults"
+      search="new gw.api.name.SearchNameOwner(SearchCriteria).clearNonvisibleFields(); return PageHelper.performProximitySearch(CurrentLocation,SearchCriteria,searchSpec,isClearBundle) as gw.api.database.IQueryBeanResult&lt;ABContact&gt;"
+      searchCriteria="createNewSearchCriteria()"
+      searchCriteriaType="entity.ABContactSearchCriteria"
+      searchOnEnter="false"
+      searchResultsType="gw.api.database.IQueryBeanResult&lt;ABContact&gt;">
+      <PanelRef
+        def="ContactSearchDV(requiredContactType, SearchCriteria, PageHelper, searchSpec)"/>
+      <PanelRef
+        def="ContactSearchResultsLV(SearchResults, CanPotentiallyDelete, isSelectMode, PageHelper, SearchCriteria, searchSpec)">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.Search.Results&quot;)"/>
+        <Toolbar>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="PageHelper.getDrivingDirectionsCache().getSelectedDirections(CheckedValues, SearchCriteria);"
+            flags="any abContact"
+            id="RetrieveRequested"
+            iterator="ContactSearchResultsLV.ContactSearchResultsLV"
+            label="DisplayKey.get(&quot;Web.AddressBook.Search.Result.GetRequested&quot;)"
+            visible="SearchCriteria.isProximitySearch()"/>
+          <CheckedValuesToolbarButton
+            checkedRowAction="CheckedValue.remove()"
+            confirmMessage="DisplayKey.get(&quot;Web.ContactSearch.Delete.Warning&quot;)"
+            flags="all CanDeleteContact"
+            id="ABContactSearchScreen_DeleteButton"
+            iterator="ContactSearchResultsLV.ContactSearchResultsLV"
+            label="DisplayKey.get(&quot;Web.ContactSearch.Delete&quot;)"
+            shortcut="L"
+            visible="CanPotentiallyDelete"/>
+        </Toolbar>
+      </PanelRef>
+    </SearchPanel>
+    <Code><![CDATA[function createNewSearchCriteria() : ABContactSearchCriteria {
+  var c = new ABContactSearchCriteria()
+  c.ContactSubtype = typekey.ABContact.get(requiredContactType.RelativeName)
+  c.Address.Country = null
+  c.ProximitySearchCenter.Country = null
+  return c
+}]]></Code>
+  </Screen>
+</PCF>

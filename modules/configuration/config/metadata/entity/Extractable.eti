@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Extractable"
+  platform="true">
+  <column
+    desc="Unique number to partition the data so that the multiple workers can work independently"
+    exportable="false"
+    getterScriptability="doesNotExist"
+    loadable="false"
+    name="ArchivePartition"
+    nullok="true"
+    setterScriptability="doesNotExist"
+    type="softentityreference"/>
+</delegate>

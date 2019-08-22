@@ -1,0 +1,27 @@
+$gw-app--ChartPanel--padding-rem: $gw-app--SPACING-rem-S !default;
+
+$gw-app--ChartPanel--pie-legend--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--title--mar-v-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--title--mar-h-rem: 0 !default;
+$gw-app--ChartPanel--title--pad-v-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--legend--pad-v-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--ChartPanel--legend--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--marker-height: gw-emFixed(8/14) !default;
+$gw-app--ChartPanel--marker-width: gw-emFixed(16/14) !default;
+$gw-app--ChartPanel--legend-text--margin-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--legend--dual-axis--pad-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--tick--font-size-px: $gw-app--font-size--smaller-px !default;
+$gw-app--ChartPanel--axisLabel--font-size-px: $gw-app--base-font-size--in-px !default;
+$gw-app--ChartPanel--graph--padding-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--ChartPanel--stackedBar--strokeWidth-px: $gw-app--border-width-px !default;
+//Base colors for the charts palette. Palette will contain also darker and lighter versions of these colors,
+//so will be effectively 3 times larger than this array.
+$gw-app--ChartPanel--color-palette: $gw-app--palette--blue-gray $gw-app--palette--blue-light $gw-app--palette--orange $gw-app--palette--green-dark $gw-app--palette--purple $gw-app--palette--green-light $gw-app--palette--red-light !default;
+$gw-app--ChartPanel--circle--fill: $gw-app--palette--white !default;
+$gw-app--ChartPanel--x-axis-color: $gw-app--palette--gray-A !default;
+$gw-app--ChartPanel--secondary-axis-color: $gw-app--palette--gray-D !default;
+$gw-app--ChartPanel--y-axis-color: $gw-app--palette--gray-D !default;
+$gw-app--ChartPanel--y-axis-stroke: none !default;
+$gw-app--ChartPanel--secondary-series-color: $gw-app--palette--blue-dark-accent !default;
+$gw-app--ChartPanel--placeholder--fill: $gw-app--palette--offwhite !default;
+$gw-app--ChartPanel--placeholder--text-color: $gw-app--palette--gray-5 !default;

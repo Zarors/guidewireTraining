@@ -1,0 +1,36 @@
+.gw-VerbatimWidget {
+  // Position to other widgets
+  margin-top: $gw-app--Verbatim--spacing-widget-top-rem;
+  margin-left: $gw-app--Verbatim--spacing-widget-left-rem;
+  margin-right: $gw-app--Verbatim--spacing-widget-right-rem;
+  margin-bottom: $gw-app--Verbatim--spacing-widget-bottom-rem;
+
+  &.gw-VerbatimWidget--info {
+    .gw-VerbatimWidget--inner {
+      font-weight: $gw-app--Verbatim--weight;
+      color: $gw-app--Verbatim--col;
+    }
+  }
+
+  &.gw-VerbatimWidget--warning {
+    .gw-VerbatimWidget--inner {
+      font-weight: $gw-app--Verbatim--weight;
+      color: $gw-app--Verbatim--warning-col;
+    }
+  }
+
+  .gw-VerbatimWidget--inner {
+    // Internal padding
+    padding-top: $gw-app--Verbatim--spacing-inner-top-rem;
+    padding-left: $gw-app--Verbatim--spacing-inner-left-rem;
+    padding-right: $gw-app--Verbatim--spacing-inner-right-rem;
+    padding-bottom: $gw-app--Verbatim--spacing-inner-bottom-rem;
+
+    @if ($gw-app--Verbatim--fill-container-width) {
+      display: block;
+    } @else {
+      display: inline-block;
+    }
+  }
+}
+

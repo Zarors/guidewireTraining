@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><subtype xmlns="http://guidewire.com/datamodel" displayName="Auto Towing Agency" entity="ABAutoTowingAgcy" supertype="ABCompanyVendor">
+  <column desc="Auto towing agency business license number" name="AutoTowingLicense" nullok="true" type="varchar">
+    <columnParam name="size" value="30"/>
+  </column>
+</subtype>

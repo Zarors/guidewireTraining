@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The classification of a contact"
+  final="false"
+  name="ContactClass"
+  platform="true">
+  <typecode
+    code="general"
+    desc="Basic contact with no specific classification"
+    name="Basic"/>
+  <typecode
+    code="user"
+    desc="User"
+    name="User"/>
+  <typecode
+    code="vendor"
+    desc="Vendor"
+    name="Vendor"/>
+  <typecode
+    code="venue"
+    desc="Authority that handles legal matters (for example, a court house)"
+    name="Legal Venue"/>
+</typelist>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- "Join table" connecting roles and privileges -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Joins a Role with the permissions granted by it."
+  entity="RolePrivilege"
+  loadable="false"
+  platform="true"
+  table="privilege"
+  type="versionable">
+  <foreignkey
+    columnName="RoleID"
+    desc="The parent role."
+    exportable="false"
+    fkentity="Role"
+    name="Role"
+    nullok="false"/>
+  <typekey
+    desc="Permission granted by the parent role."
+    name="Permission"
+    nullok="false"
+    typelist="SystemPermissionType"/>
+  <!-- All array tables must have a unique index.  roleprivilege accessed through
+      role, so we have key be (roldeid, permission) and
+      eliminate backing index on roleid since unique permission is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, each permission only appears once per role"
+    name="roleprivilegeu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="RoleID"/>
+    <indexcol
+      keyposition="2"
+      name="Permission"/>
+  </index>
+</entity>

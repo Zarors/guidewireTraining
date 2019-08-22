@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="A log entry for user actions."
+  entity="WorkflowActionLog"
+  final="false"
+  platform="true"
+  priority="1"
+  supertype="WorkflowLogEntry">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowLogEntryPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowActionLogImpl"/>
+  <column
+    desc="The current step of the id"
+    name="StepId"
+    nullok="true"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <typekey
+    desc="The current action"
+    name="Action"
+    nullok="true"
+    setterScriptability="hidden"
+    typelist="WorkflowActionType"/>
+</subtype>

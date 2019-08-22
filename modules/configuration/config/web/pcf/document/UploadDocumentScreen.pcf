@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../app-px/pcf.xsd">
+  <Screen
+    id="UploadDocumentScreen">
+    <Require
+      name="DocumentApplicationContext"
+      type="gw.document.DocumentApplicationContext"/>
+    <Variable
+      initialValue="null"
+      name="UploadedWebFiles"
+      type="java.util.Collection&lt;gw.api.web.WebFile&gt;"/>
+    <Variable
+      initialValue="new java.util.ArrayList&lt;gw.document.DocumentCreationInfo&gt;()"
+      name="DocumentCreationInfos"
+      type="java.util.Collection&lt;gw.document.DocumentCreationInfo&gt;"/>
+    <!-- Force the evaluation of the dropzone flag to be evaluated when rendering
+         by using a recalculateOnRefresh variable. This is necessary to pick up
+          any iterator updates on the request. -->
+    <Variable
+      name="enableDefaultDropzoneFlag"
+      type="boolean"
+      initialValue="enableDefaultDropzone()"
+      recalculateOnRefresh="true"
+      />
+    <Toolbar>
+      <ToolbarButton
+        action="CurrentLocation.commit()"
+        id="CustomUpdate"
+        label="DisplayKey.get(&quot;Web.DocumentsLV.Button.Update&quot;)"
+        available="DocumentCreationInfos.Count &gt; 0"/>
+      <EditButtons
+        editVisible="false"
+        updateVisible="false"/>
+      <ToolbarDivider/>
+      <FileInput
+        buttonText="DisplayKey.get(&quot;Web.DocumentDetails.DocumentContents.AddFiles&quot;)"
+        dropzoneWidgets="UploadDocumentScreen"
+        editable="true"
+        id="FileInput"
+        multiple="true"
+        value="UploadedWebFiles"
+        valueDisplayed="false"
+        valueWidgetType="FileValue">
+        <PostOnChange
+          onChange="addDocumentCreationInfos()"/>
+      </FileInput>
+    </Toolbar>
+    <PanelSet>
+      <Verbatim
+        id="DefaultDropzone"
+        label="DisplayKey.get(&quot;Web.DocumentDetails.DocumentContents.DropzoneLabel&quot;)"
+        labelStyleClass="g-dropzone"
+        visible="enableDefaultDropzoneFlag"/>
+      <PanelRef
+        def="DocumentDetailsEditLVPanelSet(DocumentApplicationContext,DocumentCreationInfos)"
+        visible="DocumentCreationInfos.Count &gt; 0">
+        <Toolbar id="DocumentDetailsEditLVPanelToolbar">
+          <RemoveButton
+            id="RemoveDocumentCreationInfo"
+            iterator="DocumentDetailsEditLVPanelSet.DocumentCreationInfoIterator"
+            label="DisplayKey.get(&quot;Web.DocumentsLV.Button.Remove&quot;)"/>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="BulkEditDocumentDetailsPopup.push(DocumentApplicationContext.createDocumentDetailsHelper(CheckedValues*.Document))"
+            id="EditDocumentCreationInfo"
+            iterator="DocumentDetailsEditLVPanelSet.DocumentCreationInfoIterator"
+            label="DisplayKey.get(&quot;Web.DocumentDetails.DocumentContents.EditDetails&quot;)"
+            showConfirmMessage="false"/>
+        </Toolbar>
+      </PanelRef>
+    </PanelSet>
+    <Code><![CDATA[function addDocumentCreationInfos() : gw.document.DocumentCreationInfo[] {
+  var newDocumentCreationInfos = new java.util.ArrayList<gw.document.DocumentCreationInfo>()
+  if (UploadedWebFiles != null) {
+    var iter = UploadedWebFiles.iterator();
+    while (iter.hasNext()) {
+      var newDocumentCreationInfo = DocumentApplicationContext.createDocumentCreationInfo();
+      newDocumentCreationInfo.File = iter.next()
+      iter.remove()
+      newDocumentCreationInfos.add(newDocumentCreationInfo)
+    }
+  }
+
+  DocumentCreationInfos.addAll(newDocumentCreationInfos)
+  return newDocumentCreationInfos.toTypedArray()
+}
+
+function enableDefaultDropzone() : boolean {
+  if (DocumentCreationInfos.Count == 0)
+    return true
+  gw.api.util.LocationUtil.addRequestScopedInfoMessage(DisplayKey.get("Web.DocumentDetails.DocumentContents.DropzoneAlert"))
+  return false
+}]]></Code>
+  </Screen>
+</PCF>

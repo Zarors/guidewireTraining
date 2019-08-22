@@ -1,0 +1,848 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.ImportToolsAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ImportToolsAPI" name="ImportToolsAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/webservice/importTools" xmlns:pogo2="http://guidewire.com/pl/ws/gw/wsi/pl/ExportEntities" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/ImportToolsAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ImportToolsAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportEntities"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/importTools"/>
+      <!-- importXml(XmlElement) : ImportResults -->
+      <xs:element name="importXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xml" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:any processContents="skip"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DataConversionException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- importArchiveXmlData(String) : ImportResults -->
+      <xs:element name="importArchiveXmlData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xmlData" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importArchiveXmlDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- importArchiveXmlDataAsByteArray(byte[]) : ImportResults -->
+      <xs:element name="importArchiveXmlDataAsByteArray">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xmlData" type="xs:hexBinary" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importArchiveXmlDataAsByteArrayResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- exportXml(ExportEntities[]) : XmlElement -->
+      <xs:element name="exportXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="entities" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo2:ExportEntities" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="exportXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:any processContents="skip"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- importXmlData(String) : ImportResults -->
+      <xs:element name="importXmlData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xmlData" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importXmlDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- importXmlDataAsByteArray(byte[]) : ImportResults -->
+      <xs:element name="importXmlDataAsByteArray">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xmlData" type="xs:hexBinary" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importXmlDataAsByteArrayResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- importCsvData(String, int, boolean, boolean) : ImportResults -->
+      <xs:element name="importCsvData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="csvData" type="xs:string" minOccurs="0"/>
+            <xs:element name="dataSet" type="xs:int"/>
+            <xs:element name="ignoreNullConstraintViolations" type="xs:boolean"/>
+            <xs:element name="ignoreAllErrors" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importCsvDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- csvToXml(String, int, boolean, boolean) : String -->
+      <xs:element name="csvToXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="csvData" type="xs:string" minOccurs="0"/>
+            <xs:element name="dataSet" type="xs:int"/>
+            <xs:element name="ignoreNullConstraintViolations" type="xs:boolean"/>
+            <xs:element name="ignoreAllErrors" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="csvToXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- xmlToCsv(String) : String -->
+      <xs:element name="xmlToCsv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xmlData" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="xmlToCsvResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- rebuildRolePrivileges() -->
+      <xs:element name="rebuildRolePrivileges">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="rebuildRolePrivilegesResponse">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/importTools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportEntities"/>
+      <xs:complexType name="ImportResults">
+        <xs:sequence>
+          <xs:element name="Details" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo:ImportResultDetail" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ErrorLog" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Ok" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ParseTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="Summaries" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo:ImportResultSummary" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="WriteTime" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ImportResultDetail">
+        <xs:sequence>
+          <xs:element name="EntityName" type="xs:string" minOccurs="0"/>
+          <xs:element name="ExternalID" type="xs:string" minOccurs="0"/>
+          <xs:element name="ExternalSource" type="xs:string" minOccurs="0"/>
+          <xs:element name="InternalID" type="xs:long" minOccurs="0"/>
+          <xs:element name="Type" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ImportResultSummary">
+        <xs:sequence>
+          <xs:element name="Count" type="xs:int" minOccurs="0"/>
+          <xs:element name="EntityName" type="xs:string" minOccurs="0"/>
+          <xs:element name="Type" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportEntities" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/importTools"/>
+      <xs:complexType name="ExportEntities">
+        <xs:sequence>
+          <xs:element name="PublicIds" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TypeName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="ImportToolsAPIPortType">
+    <wsdl:operation name="importXml">
+      <wsdl:input name="importXml" message="tns:importXml"/>
+      <wsdl:output name="importXmlResponse" message="tns:importXmlResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If xml is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="importArchiveXmlData">
+      <wsdl:input name="importArchiveXmlData" message="tns:importArchiveXmlData"/>
+      <wsdl:output name="importArchiveXmlDataResponse" message="tns:importArchiveXmlDataResponse"/>
+      <!-- If xmlData is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="importArchiveXmlDataAsByteArray">
+      <wsdl:input name="importArchiveXmlDataAsByteArray" message="tns:importArchiveXmlDataAsByteArray"/>
+      <wsdl:output name="importArchiveXmlDataAsByteArrayResponse" message="tns:importArchiveXmlDataAsByteArrayResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If xmlData is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="exportXml">
+      <wsdl:input name="exportXml" message="tns:exportXml"/>
+      <wsdl:output name="exportXmlResponse" message="tns:exportXmlResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If xmlData is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="importXmlData">
+      <wsdl:input name="importXmlData" message="tns:importXmlData"/>
+      <wsdl:output name="importXmlDataResponse" message="tns:importXmlDataResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If xmlData is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="importXmlDataAsByteArray">
+      <wsdl:input name="importXmlDataAsByteArray" message="tns:importXmlDataAsByteArray"/>
+      <wsdl:output name="importXmlDataAsByteArrayResponse" message="tns:importXmlDataAsByteArrayResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If xmlData is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="importCsvData">
+      <wsdl:input name="importCsvData" message="tns:importCsvData"/>
+      <wsdl:output name="importCsvDataResponse" message="tns:importCsvDataResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If csvData is null. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="csvToXml">
+      <wsdl:input name="csvToXml" message="tns:csvToXml"/>
+      <wsdl:output name="csvToXmlResponse" message="tns:csvToXmlResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If csvData is null. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="xmlToCsv">
+      <wsdl:input name="xmlToCsv" message="tns:xmlToCsv"/>
+      <wsdl:output name="xmlToCsvResponse" message="tns:xmlToCsvResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+      <!-- If csvData is null. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+    </wsdl:operation>
+    <wsdl:operation name="rebuildRolePrivileges">
+      <wsdl:input name="rebuildRolePrivileges" message="tns:rebuildRolePrivileges"/>
+      <wsdl:output name="rebuildRolePrivilegesResponse" message="tns:rebuildRolePrivilegesResponse"/>
+      <!-- if the caller does not have soapadmin permission -->
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImportToolsAPISoap12Binding" type="tns:ImportToolsAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="importXml">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importXml">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importArchiveXmlData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importArchiveXmlData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importArchiveXmlDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importArchiveXmlDataAsByteArray">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importArchiveXmlDataAsByteArray">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importArchiveXmlDataAsByteArrayResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportXml">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="exportXml">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportXmlResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importXmlData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importXmlData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importXmlDataAsByteArray">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importXmlDataAsByteArray">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlDataAsByteArrayResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importCsvData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importCsvData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importCsvDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="csvToXml">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="csvToXml">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="csvToXmlResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="xmlToCsv">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="xmlToCsv">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="xmlToCsvResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rebuildRolePrivileges">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="rebuildRolePrivileges">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rebuildRolePrivilegesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImportToolsAPISoap11Binding" type="tns:ImportToolsAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="importXml">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importXml">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importArchiveXmlData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importArchiveXmlData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importArchiveXmlDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importArchiveXmlDataAsByteArray">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importArchiveXmlDataAsByteArray">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importArchiveXmlDataAsByteArrayResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportXml">
+      <soap11:operation style="document"/>
+      <wsdl:input name="exportXml">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportXmlResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importXmlData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importXmlData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importXmlDataAsByteArray">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importXmlDataAsByteArray">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlDataAsByteArrayResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importCsvData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importCsvData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importCsvDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="csvToXml">
+      <soap11:operation style="document"/>
+      <wsdl:input name="csvToXml">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="csvToXmlResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="xmlToCsv">
+      <soap11:operation style="document"/>
+      <wsdl:input name="xmlToCsv">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="xmlToCsvResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rebuildRolePrivileges">
+      <soap11:operation style="document"/>
+      <wsdl:input name="rebuildRolePrivileges">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rebuildRolePrivilegesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImportToolsAPI">
+    <wsdl:port name="ImportToolsAPISoap12Port" binding="tns:ImportToolsAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/ImportToolsAPI"/>
+    </wsdl:port>
+    <wsdl:port name="ImportToolsAPISoap11Port" binding="tns:ImportToolsAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/ImportToolsAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="importXml">
+    <wsdl:part name="parameters" element="tns:importXml"/>
+  </wsdl:message>
+  <wsdl:message name="importXmlResponse">
+    <wsdl:part name="parameters" element="tns:importXmlResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataConversionException">
+    <wsdl:part name="DataConversionException" element="tns:DataConversionException"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="importArchiveXmlData">
+    <wsdl:part name="parameters" element="tns:importArchiveXmlData"/>
+  </wsdl:message>
+  <wsdl:message name="importArchiveXmlDataResponse">
+    <wsdl:part name="parameters" element="tns:importArchiveXmlDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="importArchiveXmlDataAsByteArray">
+    <wsdl:part name="parameters" element="tns:importArchiveXmlDataAsByteArray"/>
+  </wsdl:message>
+  <wsdl:message name="importArchiveXmlDataAsByteArrayResponse">
+    <wsdl:part name="parameters" element="tns:importArchiveXmlDataAsByteArrayResponse"/>
+  </wsdl:message>
+  <wsdl:message name="exportXml">
+    <wsdl:part name="parameters" element="tns:exportXml"/>
+  </wsdl:message>
+  <wsdl:message name="exportXmlResponse">
+    <wsdl:part name="parameters" element="tns:exportXmlResponse"/>
+  </wsdl:message>
+  <wsdl:message name="importXmlData">
+    <wsdl:part name="parameters" element="tns:importXmlData"/>
+  </wsdl:message>
+  <wsdl:message name="importXmlDataResponse">
+    <wsdl:part name="parameters" element="tns:importXmlDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="importXmlDataAsByteArray">
+    <wsdl:part name="parameters" element="tns:importXmlDataAsByteArray"/>
+  </wsdl:message>
+  <wsdl:message name="importXmlDataAsByteArrayResponse">
+    <wsdl:part name="parameters" element="tns:importXmlDataAsByteArrayResponse"/>
+  </wsdl:message>
+  <wsdl:message name="importCsvData">
+    <wsdl:part name="parameters" element="tns:importCsvData"/>
+  </wsdl:message>
+  <wsdl:message name="importCsvDataResponse">
+    <wsdl:part name="parameters" element="tns:importCsvDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="csvToXml">
+    <wsdl:part name="parameters" element="tns:csvToXml"/>
+  </wsdl:message>
+  <wsdl:message name="csvToXmlResponse">
+    <wsdl:part name="parameters" element="tns:csvToXmlResponse"/>
+  </wsdl:message>
+  <wsdl:message name="xmlToCsv">
+    <wsdl:part name="parameters" element="tns:xmlToCsv"/>
+  </wsdl:message>
+  <wsdl:message name="xmlToCsvResponse">
+    <wsdl:part name="parameters" element="tns:xmlToCsvResponse"/>
+  </wsdl:message>
+  <wsdl:message name="rebuildRolePrivileges">
+    <wsdl:part name="parameters" element="tns:rebuildRolePrivileges"/>
+  </wsdl:message>
+  <wsdl:message name="rebuildRolePrivilegesResponse">
+    <wsdl:part name="parameters" element="tns:rebuildRolePrivilegesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

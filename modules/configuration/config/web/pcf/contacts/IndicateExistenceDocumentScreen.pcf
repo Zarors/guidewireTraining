@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Screen
+    id="IndicateExistenceDocumentScreen">
+    <Require
+      name="documentCMContext"
+      type="gw.document.DocumentCMContext"/>
+    <Require
+      name="document"
+      type="entity.Document"/>
+    <Toolbar>
+      <EditButtons/>
+    </Toolbar>
+    <DetailViewPanel>
+      <Layout
+        columns="1"
+        type="table"/>
+      <InputSetRef
+        def="DocumentDetailsEditInputSet(new gw.document.DocumentPropertiesCMHelper(document).resetVisibility(true, false))"/>
+    </DetailViewPanel>
+  </Screen>
+</PCF>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<DataTypeDef xmlns="http://guidewire.com/datatype" type="com.guidewire.pl.metadata.datatype2.impl.CompanyNameDataTypeDef" valueType="java.lang.String">
+  <ParameterDef name="validator" desc="The name of a ValidatorDef (fieldvalidators.xml) that should be used to validate values of this data type." required="false" type="java.lang.String"/>
+  <ParameterDef name="logicalSize" desc="The maximum length allowed by this data type's constraints." required="false" type="java.lang.Integer"/>
+  <ParameterDef name="encryption" desc="Whether values of this data type are encrypted in the database. Defaults to false." required="false" type="java.lang.Boolean"/>
+  <ParameterDef name="trimwhitespace" desc="Whether to trim leading and trailing whitespace from values of this data type. Defaults to true." required="false" type="java.lang.Boolean"/>
+  <ParameterDef name="linguistic" desc="Whether values of this data type represent values used in linguistic search. This parameter is for internal use only. Defaults to false." required="false" type="java.lang.Boolean"/>
+</DataTypeDef>

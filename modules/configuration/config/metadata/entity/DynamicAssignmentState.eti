@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Assignment state data for a particular dynamically generated fingerprint."
+  entity="DynamicAssignmentState"
+  extendable="true"
+  loadable="false"
+  lockable="true"
+  platform="true"
+  table="dynamic_assign"
+  type="retireable">
+  <implementsEntity
+    name="LastAssignedUserContainerBase"/>
+  <fulldescription><![CDATA[
+        Maintains round-robin assignment state for a particular fingerprint. The fingerprint is generated
+        from some entity (such as a UserSearchCriteria) which determines the set of users to be chosen
+        via round-robin. This is an internal class which should only be used by the internals of the
+        assignment engine.
+      
+    ]]></fulldescription>
+  <column
+    desc="The fingerprint this state is tracking."
+    name="Fingerprint"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+  <column
+    default="false"
+    desc="Flag indicating whether the row represents a Group assignment only, or a Group and User assignment"
+    name="GroupOnly"
+    nullok="true"
+    type="bit"/>
+  <index
+    desc="Index to help the performance of assign by proximity search"
+    name="dynassignu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Fingerprint"/>
+    <indexcol
+      keyposition="2"
+      name="GroupOnly"/>
+    <indexcol
+      keyposition="3"
+      name="Retired"/>
+  </index>
+</entity>

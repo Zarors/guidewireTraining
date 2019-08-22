@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Describes a change to a value of a field of an entity in the Address Book.  The exact field that is to be changed is described by the following three columns together: EntityTypeName, ObjectID, and Field."
+  entity="FieldChangeUpdateOp"
+  platform="true"
+  supertype="UpdateOp">
+  <fulldescription><![CDATA[This non-persistent entity has been deprecated since ClaimCenter 8.0 along with the IAddressBookAdapter.]]></fulldescription>
+  <column
+    desc="Identifies the entity type.  e.g. Person, Company, or Adjudicator.  (Entity type on the application side not a ContactManager entity type)"
+    name="EntityTypeName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Uniquely identifies target object of the operation.  Can be either an AddressBookUId or a temporary ObjectId that was defined in a CreateUpdateOp."
+    name="ObjectUId"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    columnName="UpdateBatchID"
+    desc="Associated UpdateBatch."
+    fkentity="UpdateBatch"
+    getterScriptability="hidden"
+    name="UpdateBatch"
+    nullok="false"
+    setterScriptability="hidden"/>
+  <column
+    desc="Identifies the field for the application side."
+    name="Field"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Identifies the value of the field on the app side."
+    name="Value"
+    nullok="true"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="1000000000"/>
+  </column>
+</subtype>

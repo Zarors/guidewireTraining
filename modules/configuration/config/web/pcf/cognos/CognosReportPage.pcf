@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    hideLeftNavIfEmpty="true"
+    id="CognosReportPage"
+    title="DisplayKey.get(&quot;Web.TabBar.Reporting&quot;)">
+    <LocationEntryPoint
+      signature="CognosReportPage(repletName : String)"/>
+    <Variable
+      name="repletName"
+      type="String"/>
+    <Screen
+      id="CognosReportScreen">
+      <Toolbar/>
+      <TemplatePanel>
+        <TemplatePanelContents><![CDATA[
+          <iframe id="cognosFrame" src="<%printContent(gw.plugin.cognos.CognosPlugin.getSetCognosCookiesUrl(), false)%>?gwGatewayEndPointUrl=<%printContent(gw.plugin.cognos.CognosPlugin.getGatewayEndPointUrl(), false)%>&gwDispatcherEndPointUrl=<%printContent(gw.plugin.cognos.CognosPlugin.getDispatcherEndPointUrl(), false)%>&gwNamespace=<%printContent(com.guidewire.pl.system.dependency.PLDependencies.getPluginConfig().getPluginDef("CognosPlugin").getParams().get("namespace"), false)%>&gwUser=<%printContent(com.guidewire.pl.system.dependency.PLDependencies.getCommonDependencies().getCurrentUser().getCredential().getUserName().toLowerCase(), false)%>&gwPassword=<%printContent(java.net.URLEncoder.encode(com.guidewire.pl.system.dependency.PLDependencies.getCommonDependencies().getCurrentUser().getCredential().getPassword()), false)%>" scrolling="no" style="overflow: auto;width:100%;height:1050px"></iframe>
+        
+      ]]></TemplatePanelContents>
+      </TemplatePanel>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<gx-model type="entity.ABContact" xmlns="http://guidewire.com/gx" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <includes>
+    <include
+      path="PublicID"
+      propertyInclusionType="KEY"
+      type="java.lang.String"
+      xmlType="xs:string"/>
+    <include
+      path="EmailAddress1"
+      propertyInclusionType="NORMAL"
+      type="java.lang.String"
+      xmlType="xs:string"/>
+    <include
+      path="AssignedUser.Credential.Active"
+      propertyInclusionType="NORMAL"
+      type="java.lang.Boolean"
+      xmlType="xs:boolean"/>
+  </includes>
+</gx-model>

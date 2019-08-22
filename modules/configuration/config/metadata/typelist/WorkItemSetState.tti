@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="State of a WorkItemSet"
+  final="true"
+  name="WorkItemSetState"
+  platform="true">
+  <typecode
+    code="Processing"
+    desc="the WorkItemSet is being worked on, i.e. there is at least one WorkItem that has not been completed yet"
+    name="Processing"/>
+  <typecode
+    code="Completed"
+    desc="all WorkItems have been processed. Some WorkItems may have been successful and others may have failed"
+    name="Completed"/>
+  <typecode
+    code="Canceling"
+    desc="a WorkItemSet goes into this state when the user requests that we cease further processing. Workers will continue processing current WorkItems, but will not start new ones."
+    name="Canceling"/>
+  <typecode
+    code="CurrentlyPaused"
+    desc="the WorkItemSet is currently paused"
+    name="Paused"/>
+  <typecode
+    code="CurrentlyStarting"
+    desc="the WorkItemSet is currently starting up"
+    name="Starting"/>
+  <typecode
+    code="CurrentlyStuck"
+    desc="the WorkItemSet appears to be stuck. Please cancel."
+    name="Stuck"/>
+</typelist>

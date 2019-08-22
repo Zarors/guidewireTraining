@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    afterCommit="DocumentPropertiesPopup.push(document, contact)"
+    beforeCommit="document.isCompatibleMimeType(documentDetailsInfo.getFile())"
+    canEdit="perm.Document.edit(documentDetailsInfo.Document)"
+    id="DocumentPropertiesPopup"
+    title="DisplayKey.get(&quot;Web.DocumentProperties.Title&quot;)">
+    <LocationEntryPoint
+      signature="DocumentPropertiesPopup(document : Document, contact: ABContact)"/>
+    <LocationEntryPoint
+      signature="DocumentPropertiesPopup(document : Document, contact: ABContact, editMetadata: boolean)"/>
+    <Variable
+      name="document"
+      type="Document"/>
+    <Variable
+      initialValue="true"
+      name="editMetadata"
+      type="boolean"/>
+    <Variable
+      initialValue="new gw.document.DocumentDetailsInfo(document)"
+      name="documentDetailsInfo"
+      type="gw.document.DocumentDetailsInfo"/>
+    <Variable
+      name="contact"
+      type="ABContact"/>
+    <Variable
+      initialValue="(contact.Documents*.Name).subtract({document.Name})"
+      name="contactDocNames"
+      type="java.util.Set&lt;String&gt;"/>
+    <Variable
+      initialValue="new gw.web.ContactDocumentsActionsHelper(contact)"
+      name="contactDocumentsHelper"
+      type="gw.web.ContactDocumentsActionsHelper"/>
+    <Variable
+      name="documentPropertiesCMHelper"
+      type="gw.document.DocumentPropertiesCMHelper"
+      initialValue="new gw.document.DocumentPropertiesCMHelper(document)"/>
+    <Variable
+      initialValue="contactDocumentsHelper.DocumentContentServerAvailable"
+      name="contentActionsEnabled"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <Variable
+      initialValue="contactDocumentsHelper.isDocumentContentActionsAvailable()"
+      name="contentActionsAvailable"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <Variable
+      initialValue="contactDocumentsHelper.isDocumentMetadataActionsAvailable()"
+      name="metadataActionsEnabled"
+      recalculateOnRefresh="true"
+      type="boolean"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="editMetadata and perm.Document.edit(documentDetailsInfo.Document) and documentDetailsInfo.Document.PendingDocUID == null and document.Status != DocumentStatusType.TC_FINAL"/>
+      </Toolbar>
+      <AlertBar
+        id="ContentSourceDisabledWarning"
+        label="DisplayKey.get(&quot;Web.ContactDetail.Documents.DocumentManagementSystem.ContentPlugin.Disabled&quot;)"
+        visible="not contactDocumentsHelper.ContentSourceEnabled"/>
+      <AlertBar
+        id="ContentSourceUnavailableWarning"
+        label="DisplayKey.get(&quot;Web.ContactDetail.Documents.DocumentManagementSystem.ContentPlugin.Unavailable&quot;)"
+        visible="contactDocumentsHelper.ContentSourceEnabled and not contentActionsEnabled"/>
+      <AlertBar
+        id="MetadataSourceUnavailableWarning"
+        label="DisplayKey.get(&quot;Web.ContactDetail.Documents.DocumentManagementSystem.MetadataPlugin.Unavailable&quot;)"
+        visible="contactDocumentsHelper.MetadataSourceEnabled and not contactDocumentsHelper.DocumentMetadataServerAvailable"/>
+      <AlertBar
+        id="ContentlessNoActionsText"
+        label="DisplayKey.get(&quot;Web.DocumentProperties.ContentActionsDisabled&quot;)"
+        visible="!document.DMS"/>
+      <PanelRef>
+        <DetailViewPanel>
+          <InputColumn>
+            <ContentInput
+              labelAbove="true">
+              <Link
+                action="document.downloadContent()"
+                available="contactDocumentsHelper.isDownloadDocumentContentAvailableInDocumentProperties(document, contentActionsAvailable)"
+                download="attachment"
+                icon="&quot;document_download&quot; "
+                iconType="svgFileName"
+                id="DownloadLink"
+                styleClass="none"
+                tooltip="contactDocumentsHelper.DownloadDocumentContentTooltip(document)"
+                visible="contactDocumentsHelper.isDownloadDocumentContentVisibleInDocumentProperties(CurrentLocation.InEditMode, document)"/>
+              <Link
+                action="UploadDocumentContentPopup.push(document)"
+                available="contactDocumentsHelper.isUploadDocumentContentAvailable(document, metadataActionsEnabled, contentActionsAvailable)"
+                icon="&quot;document_upload&quot;"
+                iconType="svgFileName"
+                id="UploadLink"
+                styleClass="none"
+                tooltip="contactDocumentsHelper.UploadDocumentContentTooltip(document)"
+                visible="editMetadata and contactDocumentsHelper.isUploadDocumentContentVisibleInDocumentProperties(CurrentLocation.InEditMode, document)"/>
+              <Link
+                action="contact.unlinkDocumentForUI(document); ABContactDetailPopup.push(contact, true);"
+                available="contactDocumentsHelper.isRemoveDocumentLinkAvailableInDocumentProperties(document, metadataActionsEnabled)"
+                confirmMessage="DisplayKey.get(&quot;Web.ContactDetail.DocumentsLV.Actions.Delete.Confirm&quot;)"
+                icon="&quot;document_remove&quot; "
+                iconType="svgFileName"
+                id="ContactDocumentsLV_DeleteLink"
+                styleClass="none"
+                tooltip="contactDocumentsHelper.RemoveDocumentLinkTooltip(document)"
+                visible="editMetadata and contactDocumentsHelper.isRemoveDocumentLinkVisibleInDocumentProperties(CurrentLocation.InEditMode, document)"/>
+            </ContentInput>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+      <DetailViewPanel>
+        <InputColumn>
+          <ContentInput
+            id="DocumentLink"
+            label="DisplayKey.get(&quot;Web.DocumentProperties.Name&quot;)"
+            visible="not CurrentLocation.InEditMode">
+            <Link
+              action="document.downloadContent()"
+              download="inline"
+              available="contactDocumentsHelper.isViewDocumentContentAvailable(document, contentActionsAvailable)"
+              id="NameLink"
+              label="document.Name"
+              styleClass="none"
+              tooltip="contactDocumentsHelper.ViewDocumentContentTooltip(document)"/>
+          </ContentInput>
+          <!-- Because this Popup can toggle between edit and read-only mode, some fields on the CMHelper must be reset with each refresh-->
+          <InputSetRef
+            def="DocumentDetailsEditInputSet(documentPropertiesCMHelper.resetVisibility(CurrentLocation.InEditMode, document.DMS) as gw.document.DocumentDetailsApplicationHelper)"/>
+          <BooleanRadioInput
+            editable="true"
+            id="Hidden"
+            label="DisplayKey.get(&quot;Web.DocumentProperties.Hidden&quot;)"
+            required="true"
+            value="document.Obsolete"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

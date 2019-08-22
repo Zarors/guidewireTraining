@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Field validation error or warning raised on an entity"
+  entity="FieldValidation"
+  platform="true"
+  supertype="ValidationIssue">
+  <column
+    name="FieldName"
+    nullok="false"
+    type="longtext"/>
+  <column
+    name="BadValue"
+    nullok="true"
+    type="longtext"/>
+</subtype>

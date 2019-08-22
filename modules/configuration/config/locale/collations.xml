@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Collations xmlns="http://guidewire.com/collations">
+  <Database type="ORACLE">
+    <Collation locale="de" primary="GERMAN_AI" secondary="GERMAN_CI" tertiary="GERMAN"/>
+    <Collation locale="en" primary="BINARY_AI" secondary="BINARY_CI" tertiary="BINARY"/>
+    <Collation locale="es" primary="SPANISH_AI" secondary="SPANISH_CI" tertiary="SPANISH"/>
+    <Collation locale="fr" primary="FRENCH_M_AI" secondary="FRENCH_M_CI" tertiary="FRENCH_M"/>
+    <Collation locale="fr_CA" primary="CANADIAN_M_AI" secondary="CANADIAN_M_CI" tertiary="CANADIAN_M"/>
+    <Collation locale="it" primary="WEST_EUROPEAN_AI" secondary="WEST_EUROPEAN_CI" tertiary="WEST_EUROPEAN"/>
+    <Collation locale="ja" primary="JAPANESE_M_AI" secondary="JAPANESE_M_CI" tertiary="JAPANESE_M"/>
+    <Collation locale="nl" primary="DUTCH_AI" secondary="DUTCH_CI" tertiary="DUTCH"/>
+    <Collation locale="pl" primary="POLISH_AI" secondary="POLISH_CI" tertiary="POLISH"/>
+    <Collation locale="pt" primary="WEST_EUROPEAN_AI" secondary="WEST_EUROPEAN_CI" tertiary="WEST_EUROPEAN"/>
+    <Collation locale="ru" primary="GENERIC_M_AI" secondary="GENERIC_M_CI" tertiary="GENERIC_M"/>
+    <Collation locale="se" primary="SWEDISH_AI" secondary="SWEDISH_CI" tertiary="SWEDISH"/>
+    <Collation locale="zh_CN" primary="SCHINESE_STROKE_M_AI" secondary="SCHINESE_STROKE_M_CI" tertiary="SCHINESE_STROKE_M"/>
+    <Collation locale="zh_tw" primary="TCHINESE_STROKE_M_AI" secondary="TCHINESE_STROKE_M_CI" tertiary="TCHINESE_STROKE_M"/>
+  <DBJavaClass> <![CDATA[
+import java.util.Arrays;
+import java.text.Normalizer;
+
+public class GWNormalize {
+  // _littleKatakanaLetters must be in numeric order by code point, as they are the object of a binary search
+  // Equivalent hiragana letters will be treated the same as the katakana letters
+  // 'KATAKANA LETTER SMALL A', 'KATAKANA LETTER SMALL I', 'KATAKANA LETTER SMALL U', 'KATAKANA LETTER SMALL E', 'KATAKANA LETTER SMALL O',
+  // 'KATAKANA LETTER SMALL TU', 'KATAKANA LETTER SMALL YA', 'KATAKANA LETTER SMALL YU', 'KATAKANA LETTER SMALL YO', 'KATAKANA LETTER SMALL WA'
+  static private int[] _littleKatakanaLetters = {'\u30A1', '\u30A3', '\u30A5', '\u30A7', '\u30A9', '\u30C3', '\u30E3', '\u30E5', '\u30E7', '\u30EE'};
+  // 'KATAKANA LETTER A', 'KATAKANA LETTER I', 'KATAKANA LETTER U', 'KATAKANA LETTER E', 'KATAKANA LETTER O',
+  // 'KATAKANA LETTER TU', 'KATAKANA LETTER YA', 'KATAKANA LETTER YU', 'KATAKANA LETTER YO', 'KATAKANA LETTER WA'
+  static private int[] _bigKatakanaLetters = {'\u30A2', '\u30A4', '\u30A6', '\u30A8', '\u30AA', '\u30C4', '\u30E4', '\u30E6', '\u30E8', '\u30EF'};
+  // _japaneseDiacritics must be in numeric order by code point, as they are the object of a binary search
+  // 'COMBINING KATAKANA-HIRAGANA VOICED SOUND MARK', 'COMBINING KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK', 'KATAKANA-HIRAGANA VOICED SOUND MARK', 'KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK'
+  static int[] _japaneseDiacritics = {'\u3099', '\u309A', '\u309B', '\u309C'};
+  // 'COMBINING DIAERESIS'
+  static private int _umlaut = '\u0308';
+  // 'LATIN SMALL LETTER SHARP S'
+  static private int _EsZett = '\u00DF';
+  static private int _hiraganaToKatakanaConverter = 96;  // (int) 'KATAKANA LETTER A' - (int) 'HIRAGANA LETTER A'
+  // _japaneseCharactersToStrip must be in numeric order by code point, as they are the object of a binary search
+  // 'KATAKANA-HIRAGANA PROLONGED SOUND MARK'
+  static private int[] _japaneseCharactersToStrip = {'\u30FC'};
+
+  static public String normalize(String input, String lang, String country, int strength) {
+    if (input == null) {
+      return null;
+    }
+    boolean accentInsensitive = strength == 0;
+    boolean japanese = lang.equalsIgnoreCase("ja");
+    boolean german = lang.equalsIgnoreCase("de");
+    // This converts half-width katakana to full-width, and splits diacritics from base characters
+    String normalizedString = Normalizer.normalize(input, Normalizer.Form.NFKD);
+    // Always case insensitive
+    normalizedString = normalizedString.toLowerCase();
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < normalizedString.length(); i++) {
+      int ch = normalizedString.codePointAt(i);
+      // character replacements
+      if (german) {
+        if (ch == _umlaut) {
+          builder.append('e');
+          continue;
+        }
+        if (ch == _EsZett) {
+          builder.append("ss");
+          continue;
+        }
+      } else if (japanese) {
+        // Don't convert diacritics.  They stay in the hiragana block!
+        if (ch >= '\u3041' && ch <= '\u3094') {
+          ch = ch + _hiraganaToKatakanaConverter;
+        }
+        if (Arrays.binarySearch(_japaneseCharactersToStrip, ch) >= 0) {
+          // strip it
+          continue;
+        }
+        if (accentInsensitive) {
+          int littleLetterIndex = Arrays.binarySearch(_littleKatakanaLetters, ch);
+          if (littleLetterIndex >= 0) {
+            builder.append((char) _bigKatakanaLetters[littleLetterIndex]);
+            continue;
+          }
+          if (Arrays.binarySearch(_japaneseDiacritics, ch) >= 0) {
+            // strip it
+            continue;
+          }
+        }
+      }
+      if (accentInsensitive) {
+        if (Character.UnicodeBlock.of(ch).equals(Character.UnicodeBlock.COMBINING_DIACRITICAL_MARKS)) {
+          // strip it
+          continue;
+        }
+      }
+      builder.append((char) ch);
+    }
+    return builder.toString();
+  }
+}
+]]></DBJavaClass>
+  </Database>
+  <Database type="SQL_SERVER">
+    <Collation locale="de" primary="German_PhoneBook_CI_AI" secondary="German_PhoneBook_CI_AS" tertiary="German_PhoneBook_CS_AS"/>
+    <Collation locale="en" primary="Latin1_General_CI_AI" secondary="Latin1_General_CI_AS" tertiary="Latin1_General_CS_AS"/>
+    <Collation locale="es" primary="Modern_Spanish_CI_AI" secondary="Modern_Spanish_CI_AS" tertiary="Modern_Spanish_CS_AS"/>
+    <Collation locale="fr" primary="French_CI_AI" secondary="French_CI_AS" tertiary="French_CS_AS"/>
+    <Collation locale="it" primary="Latin1_General_CI_AI" secondary="Latin1_General_CI_AS" tertiary="Latin1_General_CS_AS"/>
+    <Collation locale="ja" primary="Japanese_CI_AI" secondary="Japanese_CI_AS" tertiary="Japanese_CS_AS"/>
+    <Collation locale="nl" primary="Latin1_General_CI_AI" secondary="Latin1_General_CI_AS" tertiary="Latin1_General_CS_AS"/>
+    <Collation locale="pl" primary="Polish_CI_AI" secondary="Polish_CI" tertiary="Polish"/>
+    <Collation locale="pt" primary="Latin1_General_CI_AI" secondary="Latin1_General_CI_AS" tertiary="Latin1_General_CS_AS"/>
+    <Collation locale="ru" primary="Cyrillic_General_CI_AI" secondary="Cyrillic_General_CI_AS" tertiary="Cyrillic_General_CS_AS"/>
+    <Collation locale="se" primary="Latin1_General_CI_AI" secondary="Latin1_General_CI_AS" tertiary="Latin1_General_CS_AS"/>
+    <Collation locale="zh_CN" primary="Chinese_PRC_CI_AI" secondary="Chinese_PRC_CI_AS" tertiary="Chinese_PRC_CS_AS"/>
+    <Collation locale="zh_tw" primary="Chinese_Taiwan_Stroke_CI_AI" secondary="Chinese_Taiwan_Stroke_CI" tertiary="Chinese_Taiwan_Stroke"/>
+  </Database>
+  <Database type="POSTGRESQL">
+    <!-- In PostgreSQL, out-of-the-box, sort collations are not differentiated by strength. Customers should create their own
+       collations (using CREATE COLLATION) and use them by updating this file. -->
+    <Collation locale="de" primary="de-x-icu" secondary="de-x-icu" tertiary="de-x-icu"/>
+    <Collation locale="en" primary="en-x-icu" secondary="en-x-icu" tertiary="en-x-icu"/>
+    <Collation locale="es" primary="es-x-icu" secondary="es-x-icu" tertiary="es-x-icu"/>
+    <Collation locale="fr" primary="fr-x-icu" secondary="fr-x-icu" tertiary="fr-x-icu"/>
+    <Collation locale="fr_CA" primary="fr-CA-x-icu" secondary="fr-CA-x-icu" tertiary="fr-CA-x-icu"/>
+    <Collation locale="it" primary="it-x-icu" secondary="it-x-icu" tertiary="it-x-icu"/>
+    <Collation locale="ja" primary="ja-x-icu" secondary="ja-x-icu" tertiary="ja-x-icu"/>
+    <Collation locale="nl" primary="nl-x-icu" secondary="nl-x-icu" tertiary="nl-x-icu"/>
+    <Collation locale="pl" primary="pl-x-icu" secondary="pl-x-icu" tertiary="pl-x-icu"/>
+    <Collation locale="pt" primary="pt-x-icu" secondary="pt-x-icu" tertiary="pt-x-icu"/>
+    <Collation locale="ru" primary="ru-x-icu" secondary="ru-x-icu" tertiary="ru-x-icu"/>
+    <Collation locale="se" primary="se-x-icu" secondary="se-x-icu" tertiary="se-x-icu"/>
+    <Collation locale="zh_CN" primary="zh-Hans-x-icu" secondary="zh-Hans-x-icu" tertiary="zh-Hans-x-icu"/>
+    <Collation locale="zh_tw" primary="zh-Hant-x-icu" secondary="zh-Hant-x-icu" tertiary="zh-Hant-x-icu"/>
+  </Database>
+</Collations>

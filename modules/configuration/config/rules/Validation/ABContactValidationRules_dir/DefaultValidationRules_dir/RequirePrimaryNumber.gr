@@ -1,0 +1,33 @@
+package rules.Validation.ABContactValidationRules_dir.DefaultValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleDisabled
+@gw.rules.RuleName("Require Primary Number")
+internal class RequirePrimaryNumber {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return aBContact.PrimaryPhone == null
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+var count = 0;
+if (aBContact.WorkPhone != null)
+  count = count+1;
+if (aBContact.HomePhone != null)
+  count = count+1;
+if (aBContact.FaxPhone != null)
+  count = count+1;
+if ((aBContact typeis ABPerson) && (aBContact.CellPhone != null))
+  count = count+1;
+if (count >= 2 )
+  aBContact.reject( TC_LOADSAVE, DisplayKey.get("Rules.Validation.ABContact.PrimaryPhoneNumberRequired"), null, null )
+/*end00rule*/
+
+  }
+}

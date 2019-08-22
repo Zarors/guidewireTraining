@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A zone that observes a certain holiday."
+  entity="HolidayZone"
+  extendable="false"
+  platform="true"
+  table="holiday_zone"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.impl.HolidayZoneInternalMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.HolidayZoneImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.calendar.HolidayZonePublicMethods"
+    impl="com.guidewire.pl.domain.calendar.impl.HolidayZoneImpl"/>
+  <column
+    desc="The code for this zone, this is the value that should be used for zone lookups."
+    name="Code"
+    nullok="false"
+    type="shorttext"/>
+  <typekey
+    desc="Country of this holiday zone."
+    name="Country"
+    nullok="false"
+    typelist="Country"/>
+  <typekey
+    desc="Type of this holiday zone."
+    name="ZoneType"
+    nullok="false"
+    typelist="ZoneType"/>
+  <foreignkey
+    columnName="HolidayId"
+    desc="The holiday."
+    fkentity="Holiday"
+    name="Holiday"
+    nullok="false"/>
+  <index
+    desc="Enforce uniquneness, a particular code can only appear once per holiday"
+    name="holidayzoneu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="HolidayId"/>
+    <indexcol
+      keyposition="2"
+      name="Code"/>
+    <indexcol
+      keyposition="3"
+      name="ZoneType"/>
+    <indexcol
+      keyposition="4"
+      name="Country"/>
+  </index>
+</entity>

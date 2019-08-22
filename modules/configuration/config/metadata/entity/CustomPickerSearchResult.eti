@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="CustomPickerSearchResult"
+  extendable="true"
+  platform="true">
+  <fulldescription><![CDATA[
+        Represents the results of a custom picker search. The custom
+        picker mechanism is deprecated and is only provided for backwards compatibility. The extra
+        configurability provided by PCF makes the entire custom picker mechanism redundant.
+      
+    ]]></fulldescription>
+  <column
+    desc="Name"
+    name="Name"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Description"
+    name="Description"
+    nullok="true"
+    type="shorttext"/>
+</nonPersistentEntity>

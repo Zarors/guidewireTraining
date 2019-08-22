@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageTransport"
+  name="DefaultPrintToConsoleTransport">
+  <plugin-gosu
+    gosuclass="trainingapp.base.DefaultPrintToConsoleTransport"/>
+</plugin>

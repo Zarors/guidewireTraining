@@ -1,0 +1,22 @@
+package rules.Preupdate.ABContactContactPreupdate_dir
+
+@gw.rules.RuleName("ABContactContact Updated History Event")
+internal class ABContactContactUpdatedHistoryEvent {
+  static function doCondition(abContactContact : entity.ABContactContact) : boolean {
+    
+/*start00rule*/
+return !abContactContact.New 
+
+/*end00rule*/
+
+  }
+
+  static function doAction(abContactContact : entity.ABContactContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+abContactContact.addHistoryEvents()
+
+/*end00rule*/
+
+  }
+}

@@ -1,0 +1,40 @@
+package rules.Preupdate.ABContactPreupdate_dir.ABPU1000SubtypeABContact_dir
+
+@gw.rules.RuleName("ABPU1040 - Unverify changed bank accounts")
+internal class ABPU1040Unverifychangedbankaccounts {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+// Have any bank accounts on this contact changed?
+return (aBContact.BankAccounts.where(\ currentBankAccount -> currentBankAccount.Changed)).length > 0
+
+/* This conditions uses the where() method, which is available on every array. It makes
+   use of a block (the lambda/arrow syntax). The block says "find every bank account
+   in the BankAccounts array where this bank account's Changed field is set to true. The
+   where() method returns an array of all changed bank accounts. The condition then checks
+   to see if there are any bank accounts in the returned array. (Is the length of the array
+   greater than 0?)
+*/ 
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+for (currentBankAccount in aBContact.BankAccounts) {
+  // if the bank name, routing number, account number, or account type changed...
+  if (currentBankAccount.isFieldChanged("BankName") or
+      currentBankAccount.isFieldChanged("RoutingNumber") or
+      currentBankAccount.isFieldChanged("AccountNumber") or
+      currentBankAccount.isFieldChanged("AccountType")) {
+  // ...set that bank account's verified status to pending    
+      currentBankAccount.IsVerified = VerificationStatus.TC_PENDING
+      }
+}
+
+      
+/*end00rule*/
+
+  }
+}

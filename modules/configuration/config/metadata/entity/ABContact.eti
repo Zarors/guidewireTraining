@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="true"
+  desc="Generic contact (either a person or a company)."
+  displayName="Contact"
+  entity="ABContact"
+  exportable="true"
+  final="false"
+  table="abcontact"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactImplCallback"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABContact"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.RemoveCallback"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsEntity
+    name="Validatable"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.validation.impl.ValidatableInternalMethods"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsEntity
+    name="CommonContact"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactInternalMethods"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsEntity
+    name="ABLinkable"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.addressbook.impl.ABLinkableInternal"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsEntity
+    name="HistoryEventContainer"/>
+  <implementsInterface
+    iface="gw.ab.history.entity.HistoryEventContainer"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsEntity
+    name="GlobalContactName"/>
+  <implementsEntity
+    name="Extractable"/>
+  <implementsEntity
+    name="RootInfo"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.contact.ABContactPurgeInternal"
+    impl="com.guidewire.ab.domain.contact.impl.ABContactPurgeInternalImpl"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.archiving.Purgeable"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.personaldata.purge.DestructionRootPinnablePublicMethods"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactImpl"/>
+  <implementsInterface
+    iface="gw.api.contact.ABContactPurgeMethods"
+    impl="gw.api.contact.ABContactPurgeMethodsImpl"/>
+  <column
+    desc="Primary email address associated with the contact."
+    name="EmailAddress1"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Secondary email address associated with the contact."
+    name="EmailAddress2"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <typekey
+    desc="Fax phone country."
+    name="FaxPhoneCountry"
+    nullok="true"
+    typelist="PhoneCountryCode"/>
+  <column
+    desc="Fax number associated with the contact."
+    name="FaxPhone"
+    nullok="true"
+    type="phone">
+    <columnParam
+      name="phonecountrycodeProperty"
+      value="FaxPhoneCountry"/>
+    <columnParam
+      name="extensionProperty"
+      value="FaxPhoneExtension"/>
+  </column>
+  <column
+    desc="This contact's name."
+    name="Name"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="companyname"/>
+  <column
+    desc="Keyword is the general term for Name (Companies and Places) and LastName (for Persons)"
+    name="Keyword"
+    nullok="true"
+    overwrittenInStagingTable="true"
+    supportsLinguisticSearch="true"
+    type="shorttext"/>
+  <column
+    desc="Notes on this contact."
+    name="Notes"
+    nullok="true"
+    type="longtext"/>
+  <column
+    default="false"
+    desc="Whether the vendor is a preferred vendor."
+    name="Preferred"
+    nullok="false"
+    type="bit"/>
+  <typekey
+    desc="The availability of a vendor."
+    name="VendorAvailability"
+    nullok="true"
+    typelist="VendorAvailabilityType"/>
+  <column
+    desc="Message decribing a vendor's unavailability."
+    name="VendorUnavailableMessage"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Tax ID for the contact (SSN or EIN)."
+    name="TaxID"
+    nullok="true"
+    type="ssn"/>
+  <column
+    desc="Vendor number for the contact."
+    name="VendorNumber"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Fax phone extension."
+    name="FaxPhoneExtension"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <typekey
+    desc="Home phone country."
+    name="HomePhoneCountry"
+    nullok="true"
+    typelist="PhoneCountryCode"/>
+  <column
+    desc="Home phone number associated with the contact."
+    name="HomePhone"
+    nullok="true"
+    type="phone">
+    <columnParam
+      name="phonecountrycodeProperty"
+      value="HomePhoneCountry"/>
+    <columnParam
+      name="extensionProperty"
+      value="HomePhoneExtension"/>
+  </column>
+  <column
+    desc="Home phone extension."
+    name="HomePhoneExtension"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <typekey
+    desc="Work phone country."
+    name="WorkPhoneCountry"
+    nullok="true"
+    typelist="PhoneCountryCode"/>
+  <column
+    desc="Business phone number associated with the contact."
+    name="WorkPhone"
+    nullok="true"
+    type="phone">
+    <columnParam
+      name="phonecountrycodeProperty"
+      value="WorkPhoneCountry"/>
+    <columnParam
+      name="extensionProperty"
+      value="WorkPhoneExtension"/>
+  </column>
+  <column
+    desc="Business phone extension."
+    name="WorkPhoneExtension"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="The contact's backup withholding rate, or null if backup withholding is not required or is not known to be required."
+    name="WithholdingRate"
+    nullok="true"
+    type="percentagedec"/>
+  <column
+    desc="Overall review Score for this Contact"
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Flag indicating the score needs to be updated because of new or deleted ReviewSummaries."
+    name="UpdateScore"
+    nullok="true"
+    type="bit"/>
+  <column
+    default="false"
+    desc="Whether this entity has been verified by the VerifyMinimumCriteria batch process."
+    exportable="false"
+    name="MinimumCriteriaVerified"
+    nullok="true"
+    type="bit"/>
+  <typekey
+    default="approved"
+    desc="Creation status of this contact"
+    name="CreateStatus"
+    nullok="false"
+    typelist="ContactCreationApprovalStatus"/>
+  <typekey
+    desc="Primary phone number type for the contact."
+    name="PrimaryPhone"
+    nullok="true"
+    typelist="PrimaryPhoneType">
+    <keyfilters>
+      <keyfilter
+        name="Subtype"/>
+    </keyfilters>
+  </typekey>
+  <typekey
+    default="unconfirmed"
+    desc="Status of the contact's tax ID; whether it is known or unknown."
+    name="TaxStatus"
+    nullok="true"
+    typelist="TaxStatus"/>
+  <typekey
+    desc="The company's vendor type."
+    name="VendorType"
+    nullok="true"
+    typelist="VendorType"/>
+  <typekey
+    desc="Validation level that this object passed (if any) before it was stored."
+    exportable="false"
+    name="ValidationLevel"
+    nullok="true"
+    typelist="ValidationLevel"/>
+  <typekey
+    desc="The contact's preferred currency."
+    name="PreferredCurrency"
+    nullok="true"
+    typelist="Currency"/>
+  <foreignkey
+    columnName="PrimaryAddressID"
+    desc="Primary address."
+    fkentity="Address"
+    importableagainstexistingobject="false"
+    name="PrimaryAddress"
+    nullok="true"
+    triggersValidation="true"/>
+  <array
+    arrayentity="ABContactAddress"
+    desc="Secondary addresses associated with the contact."
+    name="ContactAddresses"
+    owner="true"
+    triggersValidation="true"/>
+  <array
+    arrayentity="ABContactContact"
+    arrayfield="RelABContact"
+    cascadeDelete="true"
+    desc="Contacts that point to this contact."
+    exportable="false"
+    name="SourceRelatedContacts"
+    triggersValidation="true"/>
+  <array
+    arrayentity="ABContactContact"
+    arrayfield="SrcABContact"
+    cascadeDelete="true"
+    desc="Contacts that this Contact points to."
+    exportable="false"
+    name="TargetRelatedContacts"
+    triggersValidation="true"/>
+  <array
+    arrayentity="ABContactCategoryScore"
+    desc="List of categories and their scores, associated with this Review."
+    name="CategoryScores"
+    owner="true"/>
+  <array
+    arrayentity="ContactHistory"
+    arrayfield="ABContact"
+    desc="History entries on this contact"
+    exportable="false"
+    name="History"/>
+  <array
+    arrayentity="ABContactTag"
+    desc="List of ABContactTags."
+    name="Tags"
+    owner="true"/>
+  <array
+    arrayentity="ABContactSpecialistService"
+    desc="Array of ABContactSpecialistServices."
+    getterScriptability="doesNotExist"
+    name="ABContactSpecialistServices"
+    owner="true"
+    setterScriptability="doesNotExist"/>
+  <array
+    arrayentity="MergedContactPair"
+    arrayfield="KeptContact"
+    cascadeDelete="true"
+    desc="MergedContactPairs for which this is the KeptContact."
+    exportable="false"
+    getterScriptability="hidden"
+    ignoreforevents="true"
+    name="KeptMergedContactPairs"
+    setterScriptability="hidden"
+    triggersValidation="true"/>
+  <array
+    arrayentity="PendingContactChange"
+    arrayfield="ABContact"
+    cascadeDelete="true"
+    desc="PendingContactChanges for which this is the associated ABContact."
+    exportable="false"
+    ignoreforevents="true"
+    name="PendingContactChanges"/>
+  <onetoone
+    desc="MergedContactPairs for which this is the RetiredContact."
+    exportable="false"
+    fkentity="MergedContactPair"
+    getterScriptability="doesNotExist"
+    ignoreforevents="true"
+    linkField="RetiredContact"
+    name="RetiredMergedContactPair"
+    nullok="true"
+    setterScriptability="doesNotExist"/>
+  <events>
+    <event
+      description="ABContact resync event. Generated only as a result of an administrator requesting an abcontact resync.  All pending messages for the abcontact are dumped and the event is fired.  Implementors will generally handle this event to dump the entire abcontact to bring the remote system up to date."
+      name="ABContactResync"/>
+    <event
+      description="PendingChangeRejected event. Generated when a PendingContactChange is rejected."
+      name="ABContactPendingChangeRejected"/>
+    <event
+      description="ABContact is created with a status of Approved via the 800 ABContactAPI"
+      name="ABContactCreatedApproved"/>
+    <event
+      description="ABContact has been purged for Personal Data Removal"
+      name="PersonalDataPurge"/>
+  </events>
+  <index
+    name="abcontact1">
+    <indexcol
+      keyposition="1"
+      name="TaxID"/>
+  </index>
+  <index
+    desc="Preserve uniqueness of LinkID"
+    name="abcontactlinkid"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LinkID"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+  <index
+    desc="Speed up searching on Contacts' addresses for PostalCode search actions"
+    name="abcontactpostal"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="PostalCodeDenorm"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+    <indexcol
+      keyposition="3"
+      name="Subtype"/>
+    <indexcol
+      keyposition="4"
+      name="id"/>
+  </index>
+  <index
+    desc="Speed up searching contacts by name"
+    name="contactnamedenorm"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="NameDenorm"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+    <indexcol
+      keyposition="3"
+      name="Subtype"/>
+    <indexcol
+      keyposition="4"
+      name="id"/>
+  </index>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.ABContactKeywordDBCheckBuilder"/>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.UniqueABContactAddressPrimaryAddressDBCheckBuilder"/>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.UniqueABContactPrimaryAddressDBCheckBuilder"/>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.VendorConstraintsDBCheckBuilder"/>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.ABContactsHaveTagsDBCheckBuilder"/>
+  <searchColumn
+    desc="Primary Address City, this is searchColumn for City on Address entity"
+    name="CityDenorm"
+    sourceColumn="CityDenorm"
+    sourceForeignKey="PrimaryAddress"/>
+  <searchColumn
+    desc="Primary Address Postal code, this is searchColumn for Postal code on Address entity"
+    name="PostalCodeDenorm"
+    sourceColumn="PostalCodeDenorm"
+    sourceForeignKey="PrimaryAddress"/>
+  <searchTypekey
+    desc="Primary Address State, this is denormalized column for State on Address entity"
+    name="StateDenorm"
+    sourceForeignKey="PrimaryAddress"
+    sourceTypekey="State"/>
+  <searchTypekey
+    desc="Primary Address Country, this is denormalized column for Country on Address entity"
+    name="CountryDenorm"
+    sourceForeignKey="PrimaryAddress"
+    sourceTypekey="Country"/>
+  <searchColumn
+    desc="A denormalized searchColumn for SpatialPoint on Address entity"
+    name="SpatialPointDenorm"
+    sourceColumn="SpatialPoint"
+    sourceForeignKey="PrimaryAddress"/>
+  <array
+    arrayentity="ABContactDocumentLink"
+    cascadeDelete="true"
+    desc="The information about the associated documents to this ABContact"
+    getterScriptability="doesNotExist"
+    name="DocumentLinks"
+    setterScriptability="doesNotExist"/>
+  <typekey
+    desc="Field to indicate the status of the vendor during vendor import/export"
+    name="VendorServicesLoadStatus"
+    nullok="true"
+    typelist="VendorServicesLoadStatus"/>
+  <implementsEntity
+    name="DestructionRootPinnable"/>
+</entity>

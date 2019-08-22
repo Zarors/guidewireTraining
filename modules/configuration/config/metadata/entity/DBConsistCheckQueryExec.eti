@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!-- ### =============================================================
+  ### Query from consistency checker
+  ### ============================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores instrumented queries from consistency checker."
+  entity="DBConsistCheckQueryExec"
+  exportable="false"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="dbconsistcheckqueryexec"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.DBConsistCheckQueryExecPublicMethods"
+    impl="com.guidewire.pl.domain.database.impl.DBConsistCheckQueryExecImpl"/>
+  <column
+    desc="# of rows failing check"
+    name="NumRows"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Query."
+    name="QueryText"
+    nullok="true"
+    type="longtext"/>
+  <column
+    desc="Query to identify rows."
+    name="QueryToIdentifyRows"
+    nullok="true"
+    type="longtext"/>
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="Table name"
+    name="TableName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Elapsed time in seconds"
+    name="Duration"
+    nullok="true"
+    type="decimal">
+    <columnParam
+      name="scale"
+      value="3"/>
+    <columnParam
+      name="precision"
+      value="10"/>
+  </column>
+  <column
+    desc="Start time of query execution."
+    name="StartTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="End time of query execution."
+    name="EndTime"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Fingerprint of query, if query-based"
+    name="Fingerprint"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="16"/>
+  </column>
+  <column
+    desc="SQL failure stack trace"
+    name="SQLFailureMsg"
+    nullok="true"
+    type="longtext"/>
+  <typekey
+    desc="Type of consistency check"
+    name="ConsistencyCheckType"
+    nullok="false"
+    typelist="ConsistencyCheckType"/>
+  <foreignkey
+    columnName="DBConsistCheckRunID"
+    desc="DBConsistCheckRun for this object."
+    exportable="false"
+    fkentity="DBConsistCheckRun"
+    ignoreforevents="true"
+    name="DBConsistCheckRun"
+    nullok="false"/>
+</entity>

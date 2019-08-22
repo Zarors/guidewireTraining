@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="NoteTopicType">
+  <typecode
+    code="fnol"
+    desc="First notice of loss"
+    name="First notice of loss"
+    priority="2"/>
+  <typecode
+    code="coverage"
+    desc="Coverage"
+    name="Coverage"
+    priority="3"/>
+  <typecode
+    code="investigation"
+    desc="Investigation"
+    name="Investigation"
+    priority="4"/>
+  <typecode
+    code="medical"
+    desc="Medical issues"
+    name="Medical issues"
+    priority="5"/>
+  <typecode
+    code="evaluation"
+    desc="Evaluation"
+    name="Evaluation"
+    priority="6"/>
+  <typecode
+    code="settlement"
+    desc="Settlement"
+    name="Settlement"
+    priority="7"/>
+  <typecode
+    code="subrogation"
+    desc="Subrogation"
+    name="Subrogation"
+    priority="8"/>
+  <typecode
+    code="salvage"
+    desc="Salvage"
+    name="Salvage"
+    priority="9"/>
+  <typecode
+    code="litigation"
+    desc="Litigation"
+    name="Litigation"
+    priority="10"/>
+</typelistextension>

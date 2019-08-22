@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<internaltypelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="CustomHistoryType"
+  desc="Custom history event types, used to add customer-defined events to a contact's history">
+  <typecode
+    name="Contact Removed"
+    desc="Contact Removed"
+    code="contactremoved"/>
+  <typecode
+    name="Contact Merged (Kept)"
+    desc="Contact Merged (Kept)"
+    code="contactmergedkept"/>
+  <typecode
+    name="Contact Merged (Retired)"
+    desc="Contact Merged (Retired)"
+    code="contactmergedretired"/>
+  <typecode
+    code="documentassociated"
+    desc="A document was associated with the ABContact"
+    name="Document Associated"/>
+  <typecode
+    code="documentdisassociated"
+    desc="A document was disassociated from the ABContact"
+    name="Document Disassociated"/>
+  <typecode
+    code="subtypechanged"
+    desc="Contact Subtype Changed"
+    name="Contact Subtype Changed"/>
+  <typecode
+    code="relatedcontactadded"
+    desc="Related Contact Added"
+    name="Related Contact Added"/>
+  <typecode
+    code="relatedcontactupdated"
+    desc="Related Contact Updated"
+    name="Related Contact Updated"/>
+  <typecode
+    code="relatedcontactremoved"
+    desc="Related Contact Removed"
+    name="Related Contact Removed"/>
+</internaltypelistextension>

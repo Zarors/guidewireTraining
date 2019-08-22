@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="AssignmentSearchDV">
+    <Require
+      name="AssignmentSearchTypes"
+      type="AssignmentSearchType[]"/>
+    <Require
+      name="SearchResult"
+      type="gw.api.assignment.AssignmentSearchResult"/>
+    <Require
+      name="SearchCriteria"
+      type="gw.api.assignment.AssignmentSearchCriteria"/>
+    <InputColumn>
+      <InputSetRef
+        def="AssignmentSearchInputSet(AssignmentSearchTypes, SearchResult, SearchCriteria)"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputSetRef
+        def="SearchAndResetInputSet()"/>
+    </InputFooterSection>
+  </DetailViewPanel>
+</PCF>

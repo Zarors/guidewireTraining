@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- ********************************************************************************************************************
+    ORGANIZATION TYPELISTS
+  ******************************************************************************************************************** -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of external organizations"
+  final="false"
+  name="BusinessType"
+  platform="true"/>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Queue of ABContacts to be checked for duplication. This is a system-internal entity."
+  entity="DuplicateContactWorkItem"
+  ignoreForEvents="true"
+  loadable="false"
+  platform="false"
+  table="duplicatecontactworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItem"/>
+  <fulldescription><![CDATA[Queue of ABContacts to be checked for duplication. This is a system-internal entity.
+    ]]></fulldescription>
+  <column
+    desc="The number of duplicates found."
+    name="NumberOfResults"
+    nullok="true"
+    type="integer"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="ABContact to be evaluated."
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="false"/>
+  <foreignkey
+    columnName="DuplicateContactBatchRunID"
+    desc="The corresponding DuplicateContactBatchRun where this contact has been found."
+    fkentity="DuplicateContactBatchRun"
+    name="BatchRun"
+    nullok="false"/>
+</entity>

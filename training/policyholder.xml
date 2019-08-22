@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PolicyHolder xmlns="http://acmePolicyPerson/ab/gx/sandbox.PolicyHolderModel">
+  <AllAddresses>
+    <Entry>
+      <AddressLine1>345 Fir Lane</AddressLine1>
+      <AddressType>home</AddressType>
+      <City>La Canada</City>
+      <PostalCode>91352</PostalCode>
+      <Primary>true</Primary>
+      <State>CA</State>
+    </Entry>
+    <Entry>
+      <AddressLine1>2121 W. Camden Drive</AddressLine1>
+      <AddressLine2>Suite 17</AddressLine2>
+      <AddressType>billing</AddressType>
+      <City>Los Angeles</City>
+      <PostalCode>90122</PostalCode>
+      <Primary>false</Primary>
+      <State>CA</State>
+    </Entry>
+  </AllAddresses>
+  <CollateralRequired>true</CollateralRequired>
+  <FinancialSummary>
+    <NumberOfClaims>1</NumberOfClaims>
+    <TotalClaimPaymentsMade>561.00</TotalClaimPaymentsMade>
+    <TotalPolicyPremiumBilled>217.00</TotalPolicyPremiumBilled>
+    <TotalPolicyPremiumPaid>217.00</TotalPolicyPremiumPaid>
+  </FinancialSummary>
+  <FullName>Paul Monroe</FullName>
+  <PrefersContactByEmail>false</PrefersContactByEmail>
+  <TaxID>123-84-7740</TaxID>
+  <Children>false</Children>
+</PolicyHolder>

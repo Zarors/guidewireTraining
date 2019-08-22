@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<DataTypeDef xmlns="http://guidewire.com/datatype" type="com.guidewire.pl.metadata.datatype2.impl.SpatialPolygonDataTypeDef" valueType="gw.api.database.spatial.SpatialPolygon">
+</DataTypeDef>

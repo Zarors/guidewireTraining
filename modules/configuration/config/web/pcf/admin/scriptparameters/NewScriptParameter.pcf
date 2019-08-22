@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    afterCancel="pcf.ScriptParametersPage.go()"
+    afterCommit="pcf.ScriptParametersPage.go()"
+    canEdit="true"
+    canVisit="perm.ScriptParameter.create"
+    id="NewScriptParameter"
+    parent="ScriptParametersPage()"
+    showUpLink="true"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.NewScriptParameter&quot;)">
+    <LocationEntryPoint
+      signature="NewScriptParameter()"/>
+    <Variable
+      initialValue="new ScriptParameter()"
+      name="ScriptParameter"
+      type="ScriptParameter"/>
+    <ScreenRef
+      def="ScriptParameterDetailScreen(ScriptParameter)"/>
+  </Page>
+</PCF>

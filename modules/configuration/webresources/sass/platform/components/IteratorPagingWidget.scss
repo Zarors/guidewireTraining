@@ -1,0 +1,61 @@
+.gw-IteratorPagingWidget {
+  // Position to other widgets
+  margin-top: $gw-app--IteratorPaging--spacing-widget-top-rem;
+  margin-left: $gw-app--IteratorPaging--spacing-widget-left-rem;
+  margin-right: $gw-app--IteratorPaging--spacing-widget-right-rem;
+  margin-bottom: $gw-app--IteratorPaging--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--IteratorPaging--spacing-inner-top-rem;
+  padding-left: $gw-app--IteratorPaging--spacing-inner-left-rem;
+  padding-right: $gw-app--IteratorPaging--spacing-inner-right-rem;
+  padding-bottom: $gw-app--IteratorPaging--spacing-inner-bottom-rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  > *:not(:last-child) {
+    margin-right: $gw-IteratorPaging--child-spacing-rem;
+  }
+
+  .gw-paging--button {
+    @include gw-button--normal($is-square: true);
+  }
+  .gw-paging--button-first {
+    @include gw-icon("angle-double-left", $v-align: baseline); //TODO: globalize
+  }
+  .gw-paging--button-prev {
+    @include gw-icon("angle-left", $v-align: baseline);
+  }
+  .gw-paging--label-pre {
+    display: none;
+    //NOTE: this can be used to add an icon to the left of the page input box
+    //@include gw-icon("file-o");
+  }
+  .gw-paging--input {
+    text-align: right;
+    width: gw-emFixed(2.8); //TODO: maybe themeable, not important though
+  }
+
+  .gw-paging--label-post {
+    .gw-page-total-divider {
+      display: inline-block;
+      &:before {
+        content: $gw-IteratorPaging--page-divider-glyph;
+      }
+    }
+  }
+  .gw-paging--button-next {
+    @include gw-icon("angle-right", $v-align: baseline);
+  }
+  .gw-paging--button-last {
+    @include gw-icon("angle-double-right", $v-align: baseline);
+  }
+
+  .gw--paging-info {
+    display: inline-block;
+    margin-right: $gw-app--SPACING-rem-M;
+    vertical-align: middle;
+  }
+}

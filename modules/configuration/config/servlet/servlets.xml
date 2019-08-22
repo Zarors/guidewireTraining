@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<servlets
+  xmlns="http://guidewire.com/servlet">
+  <servlet
+    class="gw.database.DBInfoDownloadServlet"/>
+  <servlet
+    class="gw.database.LoadInfoDownloadServlet"/>
+  <servlet
+    class="gw.database.ReportViewServlet"/>
+  <servlet
+    class="gw.api.logging.LogViewerServlet"/>
+  <servlet
+    class="gw.api.about.AboutServlet"/>
+  <servlet
+    class="com.guidewire.pl.system.servlet.InfoServlet"
+    info-description="This servlet will dump the information about its state and its servlets it presents. If ExposeDetails it will also dump the parameters"
+    info-path="info">
+    <param
+      name="ExposeDetails"
+      value="false"/>
+    <param
+      env="detail"
+      name="ExposeDetails"
+      value="true"/>
+    <param
+      name="ExposeInProduction"
+      value="false"/>
+  </servlet>
+  <servlet
+    class="gw.api.web.DisplayKeyValuesServlet"/>
+  <servlet
+    class="gw.servlet.CustomAuthServlet"/>
+  <!-- Servlet for sharing DMS across applications -->
+  <servlet
+    class="com.guidewire.pl.docexamples.DMSServlet"/>
+</servlets>

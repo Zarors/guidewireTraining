@@ -1,0 +1,39 @@
+package rules.Validation.ABContactValidationRules_dir.DefaultValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Require Valid Phone Country")
+internal class RequireValidPhoneCountry {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+/*start00rule*/
+return aBContact.HomePhone != null
+or aBContact.WorkPhone != null
+or aBContact.FaxPhone != null
+or (aBContact typeis ABPerson ? (aBContact as ABPerson).CellPhone != null : false)
+/*end00rule*/
+}
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+/*start00rule*/
+
+if (aBContact.HomePhone != null and aBContact.HomePhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+  aBContact.rejectField("HomePhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Home.CountryCode.Unparseable"), null, null)
+}
+
+if (aBContact.WorkPhone != null and aBContact.WorkPhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+  aBContact.rejectField("WorkPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Work.CountryCode.Unparseable"), null, null)
+}
+
+if (aBContact.FaxPhone != null and aBContact.FaxPhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+  aBContact.rejectField("FaxPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Fax.CountryCode.Unparseable"), null, null)
+}
+
+if (aBContact typeis ABPerson) {
+  var aBPerson = aBContact as ABPerson
+  if (aBPerson.CellPhone != null and aBPerson.CellPhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+    aBPerson.rejectField("CellPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Cell.CountryCode.Unparseable"), null, null)
+  }
+}
+/*end00rule*/
+  }
+}

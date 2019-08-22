@@ -1,0 +1,8 @@
+.gw-ExpressionRangeValueWidget {
+  & > div:first-of-type {
+
+    .gw-actionRangeValue > div {
+      @include gw-link()
+    }
+  }
+}

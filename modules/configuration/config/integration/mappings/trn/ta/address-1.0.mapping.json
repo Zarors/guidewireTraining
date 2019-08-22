@@ -1,0 +1,29 @@
+{
+  "schemaName" : "trn.ta.address-1.0",
+  "mappers" : {
+    "AddressDetails" : {
+      "schemaDefinition" : "AddressDetails",
+      "root" : "entity.Address",
+      "properties" : {
+        "AddressType" : {
+          "path" : "Address.AddressType"
+        },
+        "AddressLine1" : {
+          "path" : "Address.AddressLine1"
+        },
+        "AddressLine2" : {
+          "path" : "Address.AddressLine2"
+        },
+        "City" : {
+          "path" : "Address.City"
+        },
+        "State" : {
+          "path" : "Address.State"
+        },
+        "PostalCode" : {
+          "path" : "Address.PostalCode"
+        }
+      }
+    }
+  }
+}

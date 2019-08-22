@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Internal representation of a physical or electronic document."
+  entity="Document"
+  exportable="true"
+  extendable="true"
+  platform="true"
+  table="document"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.DocumentPublicMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.CommitCallback"
+    impl="com.guidewire.pl.domain.document.impl.DocumentImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.RemoveCallback"
+    impl="com.guidewire.pl.domain.document.impl.DocumentImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.document.impl.DocumentInternalMethods"
+    impl="com.guidewire.pl.domain.document.impl.DocumentImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.UpdateCallback"
+    impl="com.guidewire.pl.domain.document.impl.DocumentImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.document.impl.DocumentImpl"/>
+  <column
+    desc="The Unique Identifier (UID) for this document.     The format of this UID is specific to the deployed Document Management System (DMS), and is passed to the configured IDocumentContentSource implementation."
+    name="DocUID"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <column
+    desc="Whether this document has content stored in a Document Management System."
+    name="DMS"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Human-readable name of the document."
+    name="Name"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <column
+    desc="The MIME type of this document; for example, application/msword for a Microsoft Word document."
+    name="MimeType"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="80"/>
+  </column>
+  <column
+    desc="Whether the document is an inbound, outbound, or stationary (null) document"
+    name="Inbound"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Description of the document."
+    name="Description"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Date and time the document was last modified."
+    name="DateModified"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Date and time the document was created."
+    name="DateCreated"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Name of the person who created the document."
+    name="Author"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Name of the intended recipient of the document (if any)."
+    name="Recipient"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    desc="Short human-readable identifier for the document, often used as an extra storage location for form codes, when name and documenttype are inadequate."
+    name="DocumentIdentifier"
+    nullok="true"
+    supportsLinguisticSearch="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    default="false"
+    desc="If true, the information in the document can no longer be relied upon to be up-to-date and relevant. This is often used instead of deletion to preserve history."
+    name="Obsolete"
+    nullok="true"
+    type="bit"/>
+  <typekey
+    desc="The current status of the document, if any."
+    name="Status"
+    nullok="true"
+    typelist="documentstatustype"/>
+  <typekey
+    desc="The section to which this document belongs, if any."
+    name="Section"
+    nullok="true"
+    typelist="documentsection"/>
+  <typekey
+    desc="Type of document used for access-restriction purposes, in conjunction with the information in security-config.xml."
+    name="SecurityType"
+    nullok="true"
+    typelist="documentsecuritytype"/>
+  <typekey
+    desc="The specific type of the document, if any."
+    name="Type"
+    nullok="true"
+    typelist="documenttype"/>
+  <typekey
+    desc="The language in which this document is created."
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+  <column
+    desc="The document is pending, and it's pending storage has Unique Identifier (UID).     The format of this UID is specific to the IDCS implementation."
+    name="PendingDocUID"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <events>
+    <event
+      description="This is used by the asynchronous storage to inform the transport that this document needs to be processed."
+      name="DocumentStore"/>
+  </events>
+</entity>

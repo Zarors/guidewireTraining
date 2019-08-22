@@ -1,0 +1,80 @@
+{
+  "name": "swagger-ui-dist",
+  "version": "3.3.2",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/swagger-api/swagger-ui.git"
+  },
+  "contributors": [
+    {
+      "url": "in alphabetical order"
+    },
+    {
+      "name": "Anna Bodnia",
+      "email": "anna.bodnia@gmail.com"
+    },
+    {
+      "name": "Buu Nguyen",
+      "email": "buunguyen@gmail.com"
+    },
+    {
+      "name": "Josh Ponelat",
+      "email": "jponelat@gmail.com"
+    },
+    {
+      "name": "Kyle Shockey",
+      "email": "kyleshockey1@gmail.com"
+    },
+    {
+      "name": "Robert Barnwell",
+      "email": "robert@robertismy.name"
+    },
+    {
+      "name": "Sahar Jafari",
+      "email": "shr.jafari@gmail.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "description": "[![NPM version](https://badge.fury.io/js/swagger-ui-dist.svg)](http://badge.fury.io/js/swagger-ui-dist)",
+  "bugs": {
+    "url": "https://github.com/swagger-api/swagger-ui/issues"
+  },
+  "homepage": "https://github.com/swagger-api/swagger-ui#readme",
+  "_id": "swagger-ui-dist@3.3.2",
+  "scripts": {},
+  "_shasum": "2c2217e0f0e31e14ba93cd5437454a7248ce0af5",
+  "_from": "swagger-ui-dist@*",
+  "_npmVersion": "3.10.10",
+  "_nodeVersion": "6.9.5",
+  "_npmUser": {
+    "name": "swagger",
+    "email": "apiteam@swagger.io"
+  },
+  "dist": {
+    "shasum": "2c2217e0f0e31e14ba93cd5437454a7248ce0af5",
+    "tarball": "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-3.3.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "kyleshockey",
+      "email": "kyle.shockey1@gmail.com"
+    },
+    {
+      "name": "swagger",
+      "email": "apiteam@swagger.io"
+    },
+    {
+      "name": "swagger-api",
+      "email": "apiteam@swagger.io"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/swagger-ui-dist-3.3.2.tgz_1507957204226_0.8163463938981295"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-3.3.2.tgz"
+}

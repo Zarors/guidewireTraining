@@ -1,0 +1,2 @@
+<input type="text" name="${renderId}" value="${currentValue}" disabled="${disabled || encrypted}"
+       placeholder="${placeholder}" class="gw-PrivacyValueWidget--valueField ${noTrack ? 'gw-noTrack'}" ${systemAttributes}/>

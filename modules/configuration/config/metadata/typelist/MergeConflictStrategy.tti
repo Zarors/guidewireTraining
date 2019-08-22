@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Identifies a strategy for resolving merge conflicts."
+  final="true"
+  name="MergeConflictStrategy"
+  platform="true">
+  <typecode
+    code="retain_old"
+    desc="Strategy that retains the previously existing value with a later effective date."
+    name="Retain old future-dated value"/>
+  <typecode
+    code="merge_new_forward"
+    desc="Strategy that merges the new value with an earlier effective date forward."
+    name="Merge new back-dated value forward"/>
+</typelist>

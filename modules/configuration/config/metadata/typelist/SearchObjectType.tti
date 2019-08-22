@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of search"
+  final="true"
+  name="SearchObjectType"
+  platform="true"/>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- Common delegate for Contact/Contact join tables in AB and in other apps -->
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="CommonContactContact"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactContactInternalMethods"
+    impl="com.guidewire.pl.domain.contact.impl.CommonContactContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.CommonContactContactPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.CommonContactContactImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactContactImplCallback"/>
+  <fulldescription><![CDATA[
+      Allows code to operate on those common properties held by either {@link ContactContact} or <code>ABContactContact</code>.
+      This is a shared delegate/interface that allows code-sharing in cases where code might be used by both ContactManager
+      and another Guidewire application.
+      
+    ]]></fulldescription>
+</delegate>

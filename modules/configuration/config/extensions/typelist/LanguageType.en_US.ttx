@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="LanguageType">
+  <typecode
+    code="en_US"
+    desc="English (US)"
+    name="English (US)"
+    priority="1"/>
+</typelistextension>

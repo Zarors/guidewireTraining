@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <WebMessageWorksheet
+    id="WebMessageWorksheet"
+    tabLabel="DisplayKey.get(&quot;Web.Validation.ResultsTitle&quot;)"
+    title="DisplayKey.get(&quot;Web.Validation.ResultsTitle&quot;)">
+    <Scope
+      location="*"/>
+    <Screen
+      id="WebMessageWorksheetScreen">
+      <Toolbar>
+        <ToolbarButton
+          action="CurrentLocation.cancel()"
+          id="WebMessageWorksheet_ClearButton"
+          label="DisplayKey.get(&quot;Button.Clear&quot;)"/>
+      </Toolbar>
+      <Messages
+        groupScope="true"
+        id="grpMsgs"/>
+    </Screen>
+  </WebMessageWorksheet>
+</PCF>

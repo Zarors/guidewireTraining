@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of external organizations"
+  name="BusinessType">
+  <typecode
+    code="insurer"
+    desc="Insurer"
+    name="Insurer"/>
+  <typecode
+    code="broker"
+    desc="Broker"
+    name="Broker"/>
+  <typecode
+    code="agency"
+    desc="Agency"
+    name="Agency"/>
+</typelistextension>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ABPersonAdditionalInfoRowSet"
+    mode="ABUserContact">
+    <Require
+      name="contact"
+      type="ABPerson"/>
+    <Require
+      name="duplicate"
+      type="ABPerson"/>
+    <Require
+      name="merged"
+      type="ABPerson"/>
+    <Variable
+      initialValue="{contact, duplicate, merged}"
+      name="contacts"
+      type="ABPerson[]"/>
+    <Row>
+      <TextCell
+        bold="true"
+        colspan="4"
+        id="additionalInfo"
+        value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.AdditionalInfo&quot;)"/>
+    </Row>
+    <Row>
+      <TextCell
+        id="employeeNumberLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.EmployeeNumber&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="employeeNumber"
+        value="contacts"
+        valueType="entity.ABPerson[]">
+        <TextCell
+          editable="aContact == merged"
+          id="employeeNumber"
+          value="(aContact as ABUserContact).EmployeeNumber"/>
+      </CellIterator>
+    </Row>
+  </RowSet>
+</PCF>

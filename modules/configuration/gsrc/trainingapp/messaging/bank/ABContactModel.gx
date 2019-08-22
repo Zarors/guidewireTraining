@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gx-model type="entity.ABContact" xmlns="http://guidewire.com/gx" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <includes>
+    <include
+      path="Name"
+      type="java.lang.String"
+      xmlType="xs:string"
+      propertyInclusionType="KEY"/>
+  </includes>
+</gx-model>

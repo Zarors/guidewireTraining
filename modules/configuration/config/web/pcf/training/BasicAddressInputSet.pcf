@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="BasicAddressInputSet">
+    <Require
+      name="anAddress"
+      type="Address"/>
+    <Variable
+      initialValue="showUSSpecificFields()"
+      name="ShowUSSpecificFields"
+      type="boolean"/>
+    <TextInput
+      editable="true"
+      id="AddressLine1"
+      label="DisplayKey.get(&quot;Training.AddressLine1&quot;)"
+      value="anAddress.AddressLine1"/>
+    <TextInput
+      editable="true"
+      id="AddressLine2"
+      label="DisplayKey.get(&quot;Training.AddressLine2&quot;)"
+      value="anAddress.AddressLine2"/>
+    <TextInput
+      editable="true"
+      id="City"
+      label="DisplayKey.get(&quot;Training.City&quot;)"
+      required="false"
+      value="anAddress.City"/>
+    <TextInput
+      editable="true"
+      id="County"
+      label="DisplayKey.get(&quot;Training.County&quot;)"
+      value="anAddress.County"/>
+    <TypeKeyInput
+      editable="true"
+      id="State"
+      label="DisplayKey.get(&quot;Training.State&quot;)"
+      value="anAddress.State"
+      visible="ShowUSSpecificFields"
+      valueType="typekey.State"/>
+    <TextInput
+      editable="true"
+      id="PostalCode"
+      label="DisplayKey.get(&quot;Training.PostalCode&quot;)"
+      value="anAddress.PostalCode"/>
+    <TypeKeyInput
+      editable="true"
+      id="Country"
+      label="DisplayKey.get(&quot;Training.Country&quot;)"
+      value="anAddress.Country"
+      valueType="typekey.Country"/>
+    <TextInput
+      editable="true"
+      id="Description"
+      label="DisplayKey.get(&quot;Training.Description&quot;)"
+      value="anAddress.Description"/>
+    <DateInput
+      editable="true"
+      id="ValidUntil"
+      label="DisplayKey.get(&quot;Training.ValidUntil&quot;)"
+      value="anAddress.ValidUntil"/>
+    <Code><![CDATA[/* function returns  local variable for PCF; use local variables where possible for ScriptParameters */
+function showUSSpecificFields() : boolean {
+  if (ScriptParameters.ShowUSSpecificFields !=null) {
+    return ScriptParameters.ShowUSSpecificFields
+  }
+  return true
+} ]]></Code>
+  </InputSet>
+</PCF>

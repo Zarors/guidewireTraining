@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Represents the link status of a Contact with its associated Address Book Contact."
+  final="true"
+  name="ContactLinkStatusType"
+  platform="true">
+  <typecode
+    code="NOT_FOUND"
+    desc="No associated Address Book Contact found."
+    name="Not found"/>
+  <typecode
+    code="OUT_OF_SYNC"
+    desc="The Contact is out of sync with the associated Address Book Contact."
+    name="Out of sync"/>
+  <typecode
+    code="IN_SYNC"
+    desc="The Contact is in sync with the associated Address Book Contact."
+    name="In sync"/>
+</typelist>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- ### ===================================================================
+   ### Custom data distribution request (owned by Table data distribution)
+   ### =================================================================== -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="false"
+  admin="true"
+  cacheable="false"
+  desc="Stores custom data distribution request."
+  entity="CustomDataDistRequest"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="customdatadistreq"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.CustomDataDistRequestInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.CustomDataDistRequestImpl"/>
+  <typekey
+    desc="Data distribution type"
+    name="DistType"
+    nullok="false"
+    typelist="DataDistributionType"/>
+  <column
+    desc="Query."
+    name="Query"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="mediumtext"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <array
+    arrayentity="CustomDDColumn"
+    desc="Collection of CustomDDColumns linked to this CustomDataDistRequest."
+    exportable="true"
+    name="CustomDDColumns"
+    owner="true"/>
+  <array
+    arrayentity="CustomDDResult"
+    desc="Collection of CustomDDResults linked to this CustomDataDistRequest."
+    exportable="true"
+    name="CustomDDResults"
+    owner="true"/>
+</entity>

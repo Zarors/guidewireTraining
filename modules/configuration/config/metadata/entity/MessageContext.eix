@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="MessageContext">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.messaging.impl.MessageContextCoreExtMethods"
+    impl="com.guidewire.ab.domain.messaging.impl.MessageContextCoreExtMethodsImpl"/>
+  <description>Provides convenience methods for creating integration messages.</description>
+</internalExtension>

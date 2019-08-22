@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    beforeCommit="document.isCompatibleMimeType(documentFile); document.uploadContent(documentFile)"
+    canEdit="true"
+    canVisit="perm.Document.edit(document)"
+    id="UploadDocumentContentPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.ContactDetail.Documents.UpdateDocument.Title&quot;)">
+    <LocationEntryPoint
+      signature="UploadDocumentContentPopup(document : Document)"/>
+    <Variable
+      name="documentFile"
+      type="gw.api.web.WebFile"/>
+    <Variable
+      name="document"
+      type="Document"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel
+        id="UploadDV">
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Web.ContactDetail.Documents.UpdateDocument.UpdateContent&quot;, document.getMimeTypeLabel(document.MimeType), document.Name)"/>
+          <FileInput
+            editable="true"
+            id="Attachment"
+            label="DisplayKey.get(&quot;Web.DocumentProperties.Attachment&quot;)"
+            required="true"
+            value="documentFile">
+            <PostOnChange
+              target="UploadDV"/>
+          </FileInput>
+          <TextInput
+            id="DocType"
+            label="DisplayKey.get(&quot;Web.DocumentProperties.FileType&quot;)"
+            required="true"
+            value="documentFile.MIMEType"
+            valueType="java.lang.String"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

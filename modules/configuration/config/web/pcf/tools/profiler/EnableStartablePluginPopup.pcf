@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PCF>
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=false;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_SPPROFILERCONFIG, pluginName )"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableStartablePluginPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForStartablePlugin&quot;)">
+    <LocationEntryPoint
+      signature="EnableStartablePluginPopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="pluginName"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="PluginName"
+            label="DisplayKey.get(&quot;Web.Profiler.PluginName&quot;)"
+            required="true"
+            value="pluginName"
+            valueRange="gw.api.startable.StartablePluginPageHelper.getNotProfilerEnabledStartablePluginNames().toTypedArray()"
+            valueType="java.lang.String"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Popup
+    autosaveable="false"
+    canEdit="true"
+    countsAsWork="false"
+    id="UserSelectPopup"
+    returnType="User"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Admin.UserSelectPopup&quot;)">
+    <Screen
+      id="UserSelectPopupScreen">
+      <Toolbar/>
+      <TreeViewPanel
+        id="UserSelectPopup">
+        <Variable
+          initialValue="new gw.api.admin.ABGroupTreeNode()"
+          name="group"
+          type="gw.api.admin.ABGroupTreeNode"/>
+        <TreeView
+          canClickElement="element typeis User"
+          elementLabel="element"
+          elementName="element"
+          id="UserSelectPopupPicker"
+          onClickElement="CurrentLocation.pickValueAndCommit(element as User)"
+          value="group"/>
+      </TreeViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

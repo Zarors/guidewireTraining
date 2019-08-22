@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="ABCompanyVendorBasicInputSet"
+    mode="ABCompanyVendor|ABAutoRepairShop|ABAutoTowingAgcy|ABLawFirm|ABMedicalCareOrg">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <BooleanRadioInput
+      editable="perm.ABContact.createpreferred"
+      id="IsPreferredVendor"
+      label="DisplayKey.get(&quot;Web.ContactDetail.AdditionalInfo.IsPreferredVendor&quot;)"
+      value="(contact as ABCompanyVendor).Preferred"/>
+  </InputSet>
+</PCF>

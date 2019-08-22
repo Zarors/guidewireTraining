@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serialization
+   xmlns="http://guidewire.com/xml"
+   xmlns:tns="http://guidewire.com/xml"
+   xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+   xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <script-parameters>
+  <!-- Script paramenters for TrainingApp -->
+    <ScriptParameterPack ParamName="RecordInHistory_UserViewsOfContacts" ParamType="bit">
+      <ParamValue>true</ParamValue>
+    </ScriptParameterPack>
+    <ScriptParameterPack ParamName="RecordInHistory_ContactFlags" ParamType="bit">
+      <ParamValue>true</ParamValue>
+    </ScriptParameterPack>
+    <ScriptParameterPack ParamName="RecordInHistory_ChangesToAssignedUser" ParamType="bit">
+      <ParamValue>true</ParamValue>
+    </ScriptParameterPack>
+    <ScriptParameterPack ParamName="RequiredCollateralMinimum" ParamType="integer">
+      <ParamValue>5000</ParamValue>
+    </ScriptParameterPack>
+    <ScriptParameterPack ParamName="MaximumViewedContacts" ParamType="integer">
+      <ParamValue>5</ParamValue>
+    </ScriptParameterPack>
+    <ScriptParameterPack ParamName="ShowUSSpecificFields" ParamType="bit">
+      <ParamValue>true</ParamValue>
+    </ScriptParameterPack>
+    <ScriptParameterPack ParamName="MaxRetriesForRetryableMessage" ParamType="integer">
+      <ParamValue>1</ParamValue>
+    </ScriptParameterPack>
+  </script-parameters>
+</serialization>

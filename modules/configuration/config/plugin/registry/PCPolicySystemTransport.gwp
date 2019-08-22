@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageTransport"
+  name="PCPolicySystemTransport">
+    <plugin-gosu
+      gosuclass="gw.plugin.integration.InitializableClientSystemTransport">
+        <param name="PluginName" value="PolicySystemPlugin"/>
+    </plugin-gosu>
+</plugin>

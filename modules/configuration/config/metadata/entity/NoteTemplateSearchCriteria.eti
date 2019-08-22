@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Used to populate the Note Template search criteria NVV"
+  entity="NoteTemplateSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.note.impl.NoteTemplateSearchCriteriaImpl"/>
+  <typekey
+    name="Topic"
+    nullok="true"
+    typelist="NoteTopicType"/>
+  <typekey
+    name="Type"
+    nullok="true"
+    typelist="NoteType"/>
+  <typekey
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+  <column
+    name="Keywords"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    name="AvailableSymbols"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="64"/>
+  </column>
+</nonPersistentEntity>

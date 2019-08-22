@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.System.integadmin or perm.System.eventmessageview"
+    id="MessagingDestinationControlList"
+    parent="Admin()"
+    title="DisplayKey.get(&quot;Web.Admin.MessagingDestinationControlLists&quot;)">
+    <Screen
+      id="MessagingDestinationControlListScreen">
+      <PanelRef
+        def="MessagingDestinationsControlLV()">
+        <Toolbar>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="gw.api.admin.MessagingUtil.suspendDestinations(CheckedValues)"
+            id="MessagingDestinationControlList_SuspendButton"
+            iterator="MessagingDestinationsControlLV.MessagingDestinationsControlLV"
+            label="DisplayKey.get(&quot;Button.Suspend&quot;)"
+            shortcut="S"/>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="gw.api.admin.MessagingUtil.resumeDestinations(CheckedValues)"
+            flags="all SuspendedDestination"
+            id="MessagingDestinationControlList_ResumeButton"
+            iterator="MessagingDestinationsControlLV.MessagingDestinationsControlLV"
+            label="DisplayKey.get(&quot;Button.Resume&quot;)"
+            shortcut="E"/>
+          <CheckedValuesToolbarButton
+            allCheckedRowsAction="gw.api.admin.MessagingUtil.restartDestinations(CheckedValues, 0)"
+            flags="all RestartableDestination"
+            id="MessagingDestinationControlList_RestartButton"
+            iterator="MessagingDestinationsControlLV.MessagingDestinationsControlLV"
+            label="DisplayKey.get(&quot;Button.Restart&quot;)"
+            shortcut="A"/>
+          <ToolbarDivider/>
+          <ToolbarButton
+            action="gw.api.admin.MessagingUtil.restartMessageEngine()"
+            confirmMessage="DisplayKey.get(&quot;Web.Admin.MessagingDestinationControl.ConfirmRestart&quot;)"
+            id="MessagingDestinationControlList_RestartMessagingEngineButton"
+            label="DisplayKey.get(&quot;Button.RestartMessagingEngine&quot;)"
+            shortcut="R"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

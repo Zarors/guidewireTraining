@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Queue of statistics to run. This is a system-internal entity."
+  entity="DBStatisticsWorkItem"
+  extendable="true"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="dbstatsworkitem"
+  type="keyable">
+  <implementsEntity
+    name="WorkItemSetItem"/>
+  <column
+    desc="The reference on DatabaseUpdateStats"
+    name="DBUpdateStatsID"
+    nullok="false"
+    type="softentityreference"/>
+  <column
+    desc="Serialized DBStatisticsTableWrapper"
+    name="Data"
+    nullok="false"
+    type="blob"/>
+</entity>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="One entry in the temp id to perm id mapping"
+  entity="TempToPermEntry"
+  exportable="true"
+  extendable="true"
+  platform="true">
+  <fulldescription><![CDATA[
+      After an addressbook client-application (for example, ClaimCenter) adds an entity (for example, <code>Contact</code>
+      or <code>Address</code>) to the addressbook, it usually needs to link the local entity to the newly created entity
+      in the addressbook by setting the <code>AddressBookUId</code> in the local entity.
+      After calling <code>AddressBookPluginGateway.submitUpdates(UpdateBatch,AddressBookConvertable)</code>
+      the client application can get the newly generated <code>AddressBookUId</code> from the
+      <code>ContactUpdateResult.getTempToPermEntrys()</code>.
+    ]]></fulldescription>
+  <column
+    desc="The temporary id given by an UpdateBatch CreateUpdateOp"
+    name="TempId"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="The permanent AddressBookUId given by the address book"
+    name="PermId"
+    nullok="true"
+    type="shorttext"/>
+  <foreignkey
+    desc="The ContactUpdateResult which owns this entry."
+    fkentity="ContactUpdateResult"
+    name="ContactUpdateResult"
+    nullok="true"/>
+</nonPersistentEntity>

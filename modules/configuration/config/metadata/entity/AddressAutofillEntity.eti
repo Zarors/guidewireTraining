@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="AddressAutofillEntity"
+  extendable="false"
+  final="true"
+  platform="true">
+  <implementsEntity
+    name="AddressAutofillable"/>
+  <fulldescription><![CDATA[<p>Helper class used for managing address autocomplete/autofill, for internal use only.</p>
+    ]]></fulldescription>
+</nonPersistentEntity>

@@ -1,0 +1,19 @@
+<WidgetTemplate name="ABContactWidgetTemplate" inputWidgetName="ABContactInput" cellWidgetName="ABContactCell">
+
+  <TemplateAttribute name="showSearchInMenu" default="true" type="xsd:boolean"/>
+  <TemplateAttribute name="forceContactSubtype" default="statictypeof (#{value})" type="expression"/>
+  <TemplateAttribute name="newContactMenu" default="NewContactPickerMenuItemSet" type="expression"/>
+  <TemplateAttribute name="searchLocation" default="ABContactSearchPopup.push(#{forceContactSubtype})" type="expression"/>
+  <TemplateAttribute name="setNoneSelected" default="#{value} = null" type="expression"/>
+  <TemplateAttribute name="parentContact" default="null" type="expression"/>
+
+  <!-- TODO - AHK - This uses implicit symbol passing still!  Kill off externalContactSource or templatize it away!-->
+  <PlainTextValue action="ABContactDetailPopup.push(#{value})" actionEnabled="#{value} != null" emptyLabel="DisplayKey.get('Java.ABContactValueWidget.NoContactSelected')">
+    <MenuItemSetRef def="#{ gw.api.contact.ContactTemplateHelper.replaceRequiredTypeVariable(newContactMenu, forceContactSubtype, parentContact)}" hideIfReadOnly="true"/>
+
+    <MenuItem id="MenuItem_Search" label="DisplayKey.get('Java.ContactPicker.Search')" action="#{searchLocation}" visible="&quot;#{searchLocation}&quot; != &quot;&quot; &amp;&amp; #{showSearchInMenu}" hideIfReadOnly="true"/>
+
+
+  </PlainTextValue>
+
+</WidgetTemplate>

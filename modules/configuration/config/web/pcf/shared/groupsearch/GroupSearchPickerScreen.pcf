@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="GroupSearchPickerScreen">
+    <Require
+      name="RestrictedGroup"
+      type="Group"/>
+    <SearchPanel
+      criteriaName="SearchCriteria"
+      resultsName="Groups"
+      search="SearchCriteria.performSearch() as gw.api.database.IQueryBeanResult&lt;Group&gt;"
+      searchCriteria="new GroupSearchCriteria()"
+      searchCriteriaType="entity.GroupSearchCriteria"
+      searchResultsType="gw.api.database.IQueryBeanResult&lt;Group&gt;">
+      <PanelRef
+        def="GroupSearchDV(SearchCriteria)"/>
+      <PanelRef
+        def="GroupSearchPickerResultsLV(Groups, RestrictedGroup)">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.Search.Results&quot;)"/>
+        <Toolbar/>
+      </PanelRef>
+    </SearchPanel>
+  </Screen>
+</PCF>

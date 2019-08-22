@@ -1,0 +1,19 @@
+.gw-ToolbarInputWidget, .gw-ToolbarFilterWidget, .gw-ToolbarRangeInputWidget {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0;
+
+  .gw-ExpressionRangeValueWidget {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gw-label:not(.gw-emptyLabel) + .gw-value {
+    padding-left: $gw-app--SPACING-rem-S;
+  }
+
+  & + .gw-ToolbarInputWidget, & + .gw-ToolbarFilterWidget, & + .gw-ToolbarRangeInputWidget {
+    margin-left: $gw-app--SPACING-rem-M
+  }
+}

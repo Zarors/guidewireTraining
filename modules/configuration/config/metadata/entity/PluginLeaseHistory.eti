@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  entity="PluginLeaseHistory"
+  extendable="false"
+  loadable="false"
+  lockable="true"
+  platform="true"
+  table="pluginleasehistory"
+  type="keyable">
+  <implementsEntity
+    name="LeaseHistory"/>
+</entity>

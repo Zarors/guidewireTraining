@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canVisit="perm.System.workflowview"
+    countsAsWork="false"
+    id="WorkflowSearch"
+    parent="Admin()"
+    title="DisplayKey.get(&quot;Web.Admin.WorkflowSearch.Title&quot;)">
+    <Screen
+      id="WorkflowSearchScreen">
+      <SearchPanel
+        criteriaName="SearchCriteria"
+        resultsName="Workflows"
+        search="SearchCriteria.performSearch() as gw.api.database.IQueryBeanResult&lt;Workflow&gt;"
+        searchCriteria="new WorkflowSearchCriteria()"
+        searchCriteriaType="entity.WorkflowSearchCriteria"
+        searchResultsType="gw.api.database.IQueryBeanResult&lt;Workflow&gt;">
+        <PanelRef
+          def="WorkflowsDV(SearchCriteria)"/>
+        <PanelRef
+          def="WorkflowsLV(Workflows, false)">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.Admin.Workflows.Results&quot;)"/>
+          <Toolbar>
+            <CheckedValuesToolbarButton
+              allCheckedRowsAction="ManageWorkflows.go(CheckedValues)"
+              id="Workflows_ManageButton"
+              iterator="WorkflowsLV.WorkflowsLV"
+              label="DisplayKey.get(&quot;Web.Admin.WorkflowSearch.Manage&quot;)"
+              shortcut="M"/>
+            <ToolbarButton
+              action="ManageWorkflows.go(Workflows, SearchCriteria)"
+              available="Workflows == null ? false : Workflows.getCount() &gt; 0"
+              id="Workflows_ManageAllButton"
+              label="DisplayKey.get(&quot;Web.Admin.WorkflowSearch.ManageAll&quot;)"
+              shortcut="A"/>
+          </Toolbar>
+        </PanelRef>
+      </SearchPanel>
+    </Screen>
+  </Page>
+</PCF>

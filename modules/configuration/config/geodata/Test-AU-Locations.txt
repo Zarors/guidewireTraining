@@ -1,0 +1,81 @@
+# Short list for dev and test purposes
+0800,Darwin,NT
+0800,Darwin,NT
+0801,Darwin,NT
+0804,Parap,NT
+0810,Alawa,NT
+0810,Brinkin,NT
+0810,Casuarina,NT
+0810,Coconut Grove,NT
+0810,Jingili,NT
+0810,Lee Point,NT
+1215,Australia Square,NSW
+1220,Grosvenor Place,NSW
+1225,Royal Exchange,NSW
+1230,Queen Victoria Building,NSW
+1235,Sydney South,NSW
+1240,Haymarket,NSW
+1300,Darlinghurst,NSW
+1335,Potts Point,NSW
+1340,Kings Cross,NSW
+1350,Woollahra,NSW
+2900,Greenway,ACT
+2900,Tuggeranong,ACT
+2901,Tuggeranong Dc,ACT
+2902,Kambah,ACT
+2903,Erindale Centre,ACT
+2903,Oxley,ACT
+2903,Wanniassa,ACT
+2904,Fadden,ACT
+2904,Gowrie,ACT
+2904,Macarthur,ACT
+3000,Melbourne,VIC
+3001,Melbourne,VIC
+3002,East Melbourne,VIC
+3003,West Melbourne,VIC
+3004,Melbourne,VIC
+3006,Southbank,VIC
+3008,Docklands,VIC
+3010,University Of Melbourne,VIC
+3011,Footscray,VIC
+3011,Seddon,VIC
+4000,Brisbane,QLD
+4000,Brisbane Adelaide Street,QLD
+4000,Spring Hill,QLD
+4001,Brisbane,QLD
+4001,Central Plaza,QLD
+4001,Riverside Centre,QLD
+4001,Waterfront Place,QLD
+4002,City East,QLD
+4002,Wintergarden,QLD
+4003,George Street,QLD
+5000,Adelaide,SA
+5000,Adelaide Bc,SA
+5000,Halifax Street,SA
+5000,Hutt Street,SA
+5000,Rundle Mall,SA
+5000,Station Arcade,SA
+5001,Adelaide,SA
+5005,Adelaide University,SA
+5005,The University Of Adelaide,SA
+5006,North Adelaide,SA
+6000,Perth,WA
+6003,Highgate,WA
+6003,Northbridge,WA
+6004,East Perth,WA
+6005,Kings Park,WA
+6005,West Perth,WA
+6006,North Perth,WA
+6007,Leederville,WA
+6007,West Leederville,WA
+6008,Daglish,WA
+7000,Glebe,TAS
+7000,Hobart,TAS
+7000,Mount Stuart,TAS
+7000,North Hobart,TAS
+7000,West Hobart,TAS
+7001,Hobart,TAS
+7002,North Hobart,TAS
+7004,Battery Point,TAS
+7004,South Hobart,TAS
+7005,Dynnyrne,TAS

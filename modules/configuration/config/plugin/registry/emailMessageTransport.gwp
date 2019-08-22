@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<plugin
+  interface="MessageTransport"
+  name="emailMessageTransport">
+  <!-- Plugin for email. -->
+    <plugin-gosu
+      gosuclass="gw.plugin.email.impl.EmailMessageTransport">
+        <param
+          name="smtpPort"
+          value="25"/>
+        <param
+          name="smtpHost"
+          value="mailhost"/>
+        <param
+          name="defaultSenderName"
+          value="Example Name"/>
+        <param
+          name="defaultSenderAddress"
+          value="example@example.com"/>
+    </plugin-gosu>
+</plugin>

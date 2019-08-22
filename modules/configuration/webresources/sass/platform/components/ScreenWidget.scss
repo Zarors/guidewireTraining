@@ -1,0 +1,10 @@
+.gw-ScreenWidget {
+  display: inline-block;
+  min-width: 100%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  padding-top: $gw-app--Screen--spacing-inner-top-rem;
+  padding-left: $gw-app--Screen--spacing-inner-left-rem;
+  padding-right: $gw-app--Screen--spacing-inner-right-rem;
+  padding-bottom: $gw-app--Screen--spacing-inner-bottom-rem;
+}

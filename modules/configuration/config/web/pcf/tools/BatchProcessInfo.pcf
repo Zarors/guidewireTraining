@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="false"
+    canVisit="(perm.User.ViewBatchProcess or perm.User.DevAllAccess)"
+    countsAsWork="false"
+    id="BatchProcessInfo"
+    title="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Title&quot;)">
+    <LocationEntryPoint
+      signature="BatchProcessInfo(batchProcessTypes : BatchProcessType[])"/>
+    <LocationEntryPoint
+      signature="BatchProcessInfo()"/>
+    <Variable
+      initialValue="BatchProcessType.getTypeKeys( false )?.toTypedArray()"
+      name="batchProcessTypes"
+      type="BatchProcessType[]"/>
+    <ScreenRef
+      def="BatchProcessScreen(batchProcessTypes)"/>
+  </Page>
+</PCF>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<plugin
+  name="ClusterUnicastTransportFactory">
+  <plugin-osgi
+    servicepid="com.guidewire.pl.cluster.internal.ptp.PointToPointUnicastTransportFactory"/>
+  <!-- <plugin-osgi
+    servicepid="com.guidewire.pl.cluster.internal.SimpleTcpUnicastTransportFactory"/> -->
+</plugin>

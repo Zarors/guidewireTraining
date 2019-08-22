@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Deprecated (since 8.0) use the IFindDuplicatesPlugin instead. -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="PotentialMatchConfig">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="PotentialMatchSet" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="PotentialMatchSet">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="AppliesToField" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="PartialMatchField" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="subtype" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="MatchFieldBase">
+    <xsd:attribute name="path" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+  <xsd:element name="AppliesToSubtype">
+    <xsd:complexType>
+      <xsd:attribute name="subtype" type="xsd:NMTOKEN" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ExactMatchField">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="MatchFieldBase"/>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="AppliesToField">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="MatchFieldBase">
+          <xsd:attribute name="value" type="xsd:string" use="required"/>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="PartialMatchField">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="MatchFieldBase">
+          <xsd:attribute name="matchType" type="MatchType" default="equals"/>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="MatchType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="equals"/>
+      <xsd:enumeration value="startsWith"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

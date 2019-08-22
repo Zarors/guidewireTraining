@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.policylocationmodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.accountlocationmodel" schemaLocation="AccountLocationModel.xsd"/>
+  <xs:element name="PolicyLocation" type="PolicyLocation" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.policylocationmodel"/>
+  <xs:complexType name="PolicyLocation">
+    <xs:sequence>
+      <xs:element name="AccountLocation" type="AccountLocation" minOccurs="0" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.accountlocationmodel"/>
+      <xs:element name="FireProtectClass" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="IndustryCode" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Code" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LocationNum" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+      <xs:element name="TerritoryCodes" minOccurs="0" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Code" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+                </xs:sequence>
+                <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

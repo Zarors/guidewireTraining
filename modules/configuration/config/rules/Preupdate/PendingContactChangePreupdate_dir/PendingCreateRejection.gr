@@ -1,0 +1,44 @@
+package rules.Preupdate.PendingContactChangePreupdate_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleName("Pending Create Rejection")
+internal class PendingCreateRejection {
+  static function doCondition(pendingContactChange : entity.PendingContactChange) : boolean {
+    
+/*start00rule*/
+return typeof pendingContactChange == PendingContactCreate and
+pendingContactChange.Resolution != null
+/*end00rule*/
+
+  }
+
+  static function doAction(pendingContactChange : entity.PendingContactChange, actions : gw.rules.Action) {
+
+/*start00rule*/
+var contact = pendingContactChange.ABContact
+
+contact.ExternalUpdateApp = pendingContactChange.Application
+contact.ExternalUpdateUser = pendingContactChange.AppUserName
+
+var history = contact.addHistory(CustomHistoryType.TC_PENDINGCHANGEREJECTED, DisplayKey.get("Rules.Preupdate.ABContact.PendingUpdateRejected"))
+
+
+var resolution = new TrackedChange()
+resolution.Field = "Resolution"
+resolution.DisplayKey = "Web.Contacts.PendingChanges.RejectChangePopup.RejectReasonCode"
+resolution.OldValue = null
+resolution.NewValue = pendingContactChange.Resolution.DisplayName
+    
+var reason = new TrackedChange()
+reason.Field = "Rejection Reason"
+reason.DisplayKey = "Web.Contacts.PendingChanges.RejectChangePopup.RejectReasonText"
+reason.OldValue = null
+reason.NewValue = pendingContactChange.ResolutionReasonText
+    
+history.addToTrackedChanges(resolution)
+history.addToTrackedChanges(reason)
+/*end00rule*/
+
+  }
+}

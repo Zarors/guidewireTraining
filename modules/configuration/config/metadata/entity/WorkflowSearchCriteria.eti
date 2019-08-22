@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Search criteria used for workflow searches."
+  entity="WorkflowSearchCriteria"
+  extendable="true"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.impl.WorkflowSearchCriteriaInternalMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="java.io.Serializable"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowSearchCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowSearchCriteriaImpl"/>
+  <typekey
+    desc="The workflow's current state."
+    name="State"
+    nullok="true"
+    typelist="WorkflowState"/>
+  <typekey
+    desc="The specific state of the workflow if it's active."
+    name="ActiveState"
+    nullok="true"
+    typelist="WorkflowActiveState"/>
+  <typekey
+    desc="The type of the workflow."
+    name="Workflowtype"
+    nullok="true"
+    typelist="Workflow"/>
+  <column
+    desc="The version number of the workflow definition."
+    name="ProcessVersion"
+    nullok="true"
+    type="integer"/>
+  <typekey
+    desc="What infrastructure component is handling the workflow?"
+    name="Handler"
+    nullok="true"
+    typelist="WorkflowHandler"/>
+  <column
+    desc="Name of the current step the workflow is on."
+    name="CurrentStep"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Start date lower bound."
+    name="StartDateFrom"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Start date upper bound."
+    name="StartDateTo"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Update date lower bound."
+    name="UpdateDateFrom"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Update date upper bound."
+    name="UpdateDateTo"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    desc="The workflow's parent workflow."
+    fkentity="Workflow"
+    name="Parent"
+    nullok="true"/>
+  <column
+    desc="Whether this workflows work item is checked out."
+    name="CheckedOut"
+    nullok="true"
+    type="bit"/>
+</nonPersistentEntity>

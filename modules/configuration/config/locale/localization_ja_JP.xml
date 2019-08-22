@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Localization xmlns="http://guidewire.com/localization">
+  <GWLocale
+    code="ja_JP"
+	name="Japanese"
+	typecode="ja_JP">
+    <JapaneseImperialDateFormat
+	  long="EEEE, Gy年M月d日"
+	  medium="G yy-MM-dd"
+	  short="G yy/MM/dd"
+	  yearSymbol="年"/>
+    <NameFormat
+	  PCFMode="Japan"
+	  textFormatMode="Japan"
+	  visibleFields="LastName,FirstName,LastNameKanji,FirstNameKanji,Name,NameKanji"/>
+  </GWLocale>
+</Localization>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="DestructionRequestStatus" desc="Status in the Contact Purge Process">
+  <typecode
+    code="DoesNotExist"
+    desc="Request for destruction does not exist"
+    name="Does Not Exist">
+  </typecode>
+  <typecode
+    code="Unprocessed"
+    desc="New Request that has not been processed yet"
+    name="Unprocessed">
+  </typecode>
+  <typecode
+    code="InProgress"
+    desc="The destruction request is in progress"
+    name="In Progress">
+  </typecode>
+  <typecode
+    code="Finished"
+    desc="Request has been processed and the contact should have been destroyed if possible."
+    name="Finished">
+  </typecode>
+</typelist>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents contact data for a system user."
+  displayName="User Contact"
+  entity="UserContact"
+  platform="true"
+  supertype="Person">
+  <fulldescription><![CDATA[
+      Represents the contact data for a system User as a Person.  One UserContact entity
+      will normally exist in the system for each User, and is linked to by a direct foreign key from that User.
+    ]]></fulldescription>
+  <column
+    desc="Employee ID number. Applies to user contacts."
+    name="EmployeeNumber"
+    nullok="true"
+    type="shorttext"/>
+</subtype>

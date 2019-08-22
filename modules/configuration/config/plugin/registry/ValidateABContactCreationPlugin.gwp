@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<plugin
+  name="ValidateABContactCreationPlugin">
+  <plugin-gosu
+    gosuclass="gw.plugin.contact.ValidateABContactCreationPluginImpl">
+    <param
+      name="RequiresTaxID"
+      value="true"/>
+  </plugin-gosu>
+</plugin>

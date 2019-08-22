@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of batch processes"
+  name="BatchProcessType">
+  <!-- batch processes -->
+  <typecode
+    code="ActivityEsc"
+    desc="Activity escalation monitor"
+    name="Activity Escalation"/>
+  <typecode
+    code="DBStats"
+    desc="Database statistics"
+    name="Database statistics">
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="DataDistribution"
+    desc="Data distribution for the database"
+    name="Data Distribution">
+    <category
+      code="APIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="GroupException"
+    desc="Group exception Monitor"
+    name="Group Exception"/>
+  <typecode
+    code="UserException"
+    desc="User exception Monitor"
+    name="User Exception"/>
+  <typecode
+    code="Workflow"
+    desc="Will execute the workflow writer."
+    name="Workflow"/>
+  <typecode
+    code="Geocode"
+    desc="Geocoding Addresses queue writer."
+    name="Geocode Writer"/>
+  <typecode
+    code="PhoneNumberNormalizer"
+    desc="Performs a normalization of phone numbers contact"
+    name="Phone number normalizer">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="ABContactScoring"
+    desc="Calculates aggregate review scores for ABContacts from submitted ReviewSummaries."
+    name="AB Contact Score Aggregator">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="ABGeocode"
+    desc="Geocoding ABAddresses queue writer."
+    name="AB Geocode Writer">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="DuplicateContacts"
+    desc="Finds new duplicate contacts and creates a browsable list of said contacts."
+    name="Duplicate Contacts Finder">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="VerifyMinimumCriteria"
+    desc="Verifies the minimum creation criteria for all staging table loaded contacts."
+    name="Verify Minimum Criteria">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="Statistics"
+    desc="Statistics calculator"
+    name="Statistics"/>
+  <typecode
+    code="Unknown"
+    desc="Unknown value for BatchProcessType"
+    name="Unknown"
+    retired="true"/>
+   <typecode
+    code="FlagOverdueLegalReports"
+    desc="Flag Overdue Legal Reports"
+    name="Flag Overdue Legal Reports"
+    priority="100">
+    <category
+      code="APIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+</typelistextension>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Interaction"
+  entity="Interaction_Ext"
+  exportable="true"
+  table="interaction"
+  type="retireable">
+  <foreignkey
+    desc="Associated ABContact"
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="false"/>
+  <column
+    desc="Interaction date"
+    name="InteractionDate"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="Initiated by contact?"
+    name="InitiatedByContact"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Summary"
+    name="Summary"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <foreignkey
+    desc="Associated user"
+    fkentity="User"
+    name="AssociatedUser"
+    nullok="true"/>
+  <typekey
+    name="Reason"
+    nullok="false"
+    typelist="InteractionReason_Ext"/>
+  <typekey
+    name="Channel"
+    nullok="true"
+    typelist="ChannelType_Ext"/>
+</entity>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="true"
+  admin="true"
+  desc="Profiler configuration for an entry point"
+  entity="ProfilerConfig"
+  exportable="false"
+  extendable="true"
+  final="false"
+  loadable="false"
+  platform="true"
+  table="profilerconfig"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.impl.VersionableInternal"
+    impl="com.guidewire.pl.domain.profiler.impl.ProfilerConfigImpl"/>
+  <column
+    desc="Name of entry point"
+    name="EntryPoint"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    default="false"
+    desc="Whether to use hi-resolution clock for timing (Windows only)"
+    name="HiResClock"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Whether profiling is enabled for this entry point"
+    name="ProfilerEnabled"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Whether stack tracing is enabled. Only meaningful if ProfilerEnabled is true."
+    name="StackTraceTracking"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Whether query optimizer tracing is enabled. Only meaningful if ProfilerEnabled is true."
+    name="QueryOptimizerTracing"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Whether extended query tracing is enabled. Only meaningful if ProfilerEnabled is true."
+    name="ExtendedQueryTracing"
+    nullok="false"
+    type="bit"/>
+  <column
+    default="0"
+    desc="The threshold for generating a report using dbms counters for the interval (start of profiling session, end of profiling session). Use 0 to disable. Only meaningful if ProfilerEnabled is true."
+    name="DbmsCounterThresholdMs"
+    nullok="false"
+    type="nonnegativeinteger"/>
+  <column
+    default="false"
+    desc="Whether diffing DBMS counters is enabled. Only meaningful if ProfilerEnabled and DbmsCounterThresholdMs are true."
+    name="DiffDbmsCounters"
+    nullok="false"
+    type="bit"/>
+  <index
+    desc="EntryPoint can only be either enabled or not"
+    name="pcu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Subtype"/>
+    <indexcol
+      keyposition="2"
+      name="EntryPoint"/>
+  </index>
+</entity>

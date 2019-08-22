@@ -1,0 +1,24 @@
+package rules.EventMessage.EventFired_dir
+
+@gw.rules.RuleName("ABEF1000 - Vendor Recommendation")
+internal class ABEF1000VendorRecommendation {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.DestID == 14 // Vendor Recommendation
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("\n*** Stage 1 -- Triggering the message ***")
+print("    Event Fired rule set: " + actions.Rule.DisplayName )
+print("    Messaging Destination ID is " + messageContext.DestID)
+// execute child rules
+
+/*end00rule*/
+
+  }
+}

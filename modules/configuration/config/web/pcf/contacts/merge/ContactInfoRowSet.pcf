@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ContactInfoRowSet">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <Require
+      name="duplicate"
+      type="ABContact"/>
+    <Require
+      name="merged"
+      type="ABContact"/>
+    <Require
+      name="phoneHolder"
+      type="gw.web.merge.MergeContactsPhoneHolder"/>
+    <Variable
+      initialValue="{contact, duplicate, merged}"
+      name="contacts"
+      type="ABContact[]"/>
+    <Row>
+      <TextCell
+        bold="true"
+        colspan="4"
+        id="contactInfo"
+        value="DisplayKey.get(&quot;Web.Contacts.ReviewDuplicateContacts.ContactInfo&quot;)"/>
+    </Row>
+    <Row>
+      <TextCell
+        id="WorkPhoneLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.Phone.Work&quot;)"/>
+      <TextCell
+        id="keptWorkPhone"
+        value="gw.web.merge.MergeContactsWebUtil.Instance.contactPhoneDisplay(contact, ABContact#WorkPhone, false)"/>
+      <TextCell
+        id="retiredWorkPhone"
+        value="gw.web.merge.MergeContactsWebUtil.Instance.contactPhoneDisplay(duplicate, ABContact#WorkPhone, false)"/>
+      <RangeCell
+        editable="true"
+        id="mergedWorkPhone"
+        required="true"
+        value="phoneHolder.KeptWorkPhone"
+        valueRange="phoneHolder.collectPhones(PhoneType.TC_WORK)"
+        valueType="gw.web.merge.MergeContactsPhoneHolder.PhoneData"/>
+    </Row>
+    <!-- <ButtonCell
+      action="PhoneSelectionPopup.push(contact, duplicate, merged, PhoneType.TC_WORK)"
+      id="mergedWorkPhone"
+      value="gw.web.merge.MergeContactsWebUtil.Instance.contactPhoneDisplay(merged, ABContact#WorkPhone, true)"/> -->
+    <Row>
+      <TextCell
+        id="FaxPhoneLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.Phone.Fax&quot;)"/>
+      <TextCell
+        id="keptFaxPhone"
+        value="gw.web.merge.MergeContactsWebUtil.Instance.contactPhoneDisplay(contact, ABContact#FaxPhone, false)"/>
+      <TextCell
+        id="retiredFaxPhone"
+        value="gw.web.merge.MergeContactsWebUtil.Instance.contactPhoneDisplay(duplicate, ABContact#FaxPhone, false)"/>
+      <RangeCell
+        editable="true"
+        id="mergedFaxPhone"
+        required="true"
+        value="phoneHolder.KeptFaxPhone"
+        valueRange="phoneHolder.collectPhones(PhoneType.TC_FAX)"
+        valueType="gw.web.merge.MergeContactsPhoneHolder.PhoneData"/>
+    </Row>
+    <!-- <ButtonCell
+      action="PhoneSelectionPopup.push(contact, duplicate, merged, PhoneType.TC_FAX)"
+      id="mergedFaxPhone"
+      value="gw.web.merge.MergeContactsWebUtil.Instance.contactPhoneDisplay(merged, ABContact#FaxPhone, true)"/> -->
+    <Row>
+      <TextCell
+        id="primaryEmailLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.PrimaryContact.Email1&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="primaryEmail"
+        value="contacts"
+        valueType="entity.ABContact[]">
+        <TextCell
+          editable="aContact == merged"
+          id="primaryEmail"
+          value="aContact.EmailAddress1"/>
+      </CellIterator>
+    </Row>
+    <Row>
+      <TextCell
+        id="alternateEmailLabel"
+        value="DisplayKey.get(&quot;Web.ContactDetail.PrimaryContact.Email2&quot;)"/>
+      <CellIterator
+        elementName="aContact"
+        id="alternateEmail"
+        value="contacts"
+        valueType="entity.ABContact[]">
+        <TextCell
+          editable="aContact == merged"
+          id="alternateEmail"
+          value="aContact.EmailAddress2"/>
+      </CellIterator>
+    </Row>
+  </RowSet>
+</PCF>

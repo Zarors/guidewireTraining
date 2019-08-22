@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="IValidationPlugin">
+  <plugin-java
+    javaclass="com.guidewire.pl.system.validation.RulesBasedValidationPlugin"/>
+</plugin>

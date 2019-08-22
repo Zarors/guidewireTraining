@@ -1,0 +1,25 @@
+package rules.Validation.ContactValidationRules_dir
+
+uses gw.api.locale.DisplayKey
+
+@gw.rules.RuleDisabled
+@gw.rules.RuleName("Fax phone country code must be valid")
+internal class Faxphonecountrycodemustbevalid {
+  static function doCondition(contact : entity.Contact) : boolean {
+/*start00rule*/
+return contact.FaxPhone != null
+/*end00rule*/
+}
+
+  static function doAction(contact : entity.Contact, actions : gw.rules.Action) {
+/*start00rule*/
+if (contact.FaxPhoneCountry == PhoneCountryCode.TC_UNPARSEABLE){
+  contact.rejectField("FaxPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Fax.CountryCode.Unparseable"), null, null)
+}
+
+if (contact.FaxPhoneCountry == null){
+  contact.rejectField("FaxPhoneCountry", ValidationLevel.TC_LOADSAVE, DisplayKey.get("Validator.Phone.Fax.CountryCode.Null"), null, null)
+}
+/*end00rule*/
+  }
+}

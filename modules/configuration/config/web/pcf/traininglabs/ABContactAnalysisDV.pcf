@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="ABContactAnalysisDV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <Label
+        label="&quot;Contact Analysis&quot;"/>
+      <RangeInput
+        editable="true"
+        id="contactTier"
+        label="&quot;Contact Tier&quot;"
+        value="anABContact.ContactTier"
+        valueRange="typekey.ContactTier.AllTypeKeys"
+        valueType="typekey.ContactTier"/>
+      <TextInput
+        editable="true"
+        id="customerRating"
+        label="&quot;Customer Rating&quot;"
+        value="anABContact.CustomerRating_Ext"
+        valueType="java.math.BigDecimal"/>
+      <BooleanRadioInput
+        editable="true"
+        id="strategicPartner"
+        label="&quot;Is Strategic Partner&quot;"
+        value="anABContact.IsStrategicPartner_Ext"/>
+      <DateInput
+        editable="true"
+        id="lastCourtesyContact"
+        label="&quot;Last Courtesy Contact&quot;"
+        value="anABContact.LastCourtesyContact_Ext"/>
+      <TextInput
+        id="FraudInv"
+        label="&quot;Fraud Investigation&quot;"
+        value="anABContact.FraudInvestigationNum_Ext"
+        valueType="java.lang.Integer"/>
+      <TextInput
+        editable="true"
+        id="WebAddress"
+        label="&quot;Web Address&quot;"
+        value="anABContact.WebAddress_Ext"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>
+

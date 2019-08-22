@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  abstract="true"
+  desc="Represents the application context for an update to a contact in ContactManager."
+  entity="PendingContactChange"
+  extendable="true"
+  final="false"
+  table="pendingcontactchange"
+  type="editable">
+  <implementsEntity
+    name="Validatable"/>
+  <implementsEntity
+    name="Extractable"/>
+  <fulldescription><![CDATA[
+       This entity is the abstract base entity for storing information about contact change requests to ContactManager
+        that will require approval in ContactManager before being applied.
+       There are two subtypes included with ContactManager, PendingContactUpdate to handle update changes to
+        an existing ABContact and PendingContactCreate to handle the creation of a new ABContact.
+       Once a PendingContactChange has been processed by the system it is deleted from the database.
+    ]]></fulldescription>
+  <column
+    desc="The application the contact update came from."
+    name="Application"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="The username in the application of the user who made the update."
+    name="AppUserName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="The Display Name of the application user who made the update."
+    name="AppUserDisplayName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="90"/>
+  </column>
+  <column
+    desc="The type of the application root entity the contact being updated is referenced by."
+    name="AppRootEntityType"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="The ID of the application root entity the contact being updated is referenced by."
+    name="AppRootEntityID"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="The Display Name of the application root entity the contact being updated is referenced by."
+    name="AppRootEntityDisplayName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="90"/>
+  </column>
+  <column
+    desc="Client application's PublicID for the contact being changed"
+    name="ClientAppPublicID"
+    nullok="true"
+    type="publicid"/>
+  <typekey
+    desc="Resolution state of this pending change"
+    name="Resolution"
+    nullok="true"
+    typelist="ContactChangeResolution"/>
+  <column
+    desc="Reason, if any, for the resolution"
+    name="ResolutionReasonText"
+    nullok="true"
+    type="longtext"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="ABContact associated with this change."
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="false"/>
+  <dbcheckbuilder
+    className="com.guidewire.ab.domain.addressbook.dbchecks.PendingContactChangesDBCheckBuilder"/>
+</entity>

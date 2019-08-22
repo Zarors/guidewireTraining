@@ -1,0 +1,40 @@
+//------------- Info Bar
+// Position to other widgets
+$gw-app--InfoBar--spacing-widget-top-rem: null !default;
+$gw-app--InfoBar--spacing-widget-left-rem: null !default;
+$gw-app--InfoBar--spacing-widget-right-rem: null !default;
+$gw-app--InfoBar--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--InfoBar--spacing-inner-top-rem: null !default;
+$gw-app--InfoBar--spacing-inner-left-rem: null !default;
+$gw-app--InfoBar--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InfoBar--spacing-inner-bottom-rem: $gw-app--SPACING-rem-M !default;
+
+
+//Other
+$gw-app--InfoBar--info-bar-bg: $gw-app--NorthPanel--bg !default;
+$gw-app--InfoBar--info-bar-col: $gw-app--NorthPanel--col !default;
+$gw-app--InfoBar--info-bar-max-height-em: gw-emFixed(6) !default;
+$gw-app--InfoBar--info-bar-border-bottom: 1px solid $gw-app--NorthPanel--border--col !default;
+$gw-app--InfoBar--info-bar-shadow-bottom: null !default;
+
+
+// ------------ InfoBarElement
+// Position to other widgets
+$gw-app--InfoBarElement--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InfoBarElement--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--InfoBarElement--spacing-widget-right-rem: null !default;
+$gw-app--InfoBarElement--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--InfoBarElement--spacing-inner-top-rem: null !default;
+$gw-app--InfoBarElement--spacing-inner-left-rem: null !default;
+$gw-app--InfoBarElement--spacing-inner-right-rem: null !default;
+$gw-app--InfoBarElement--spacing-inner-bottom-rem: null !default;
+
+//Other
+$gw-app--InfoBarElement--icon-margin-right-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--InfoBarElement--value-font-weight: gw-weight(normal) !default;
+$gw-app--InfoBarElement--icon-font-size: inherit !default;
+$gw-app--InfoBarElement--actionable-focus-offset: 2px !default;

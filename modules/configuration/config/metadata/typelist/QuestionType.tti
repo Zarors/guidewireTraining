@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="A kind of question"
+  final="true"
+  name="QuestionType"
+  platform="true">
+  <typecode
+    code="Boolean"
+    desc="A question whose answer is Yes or No"
+    name="Boolean"/>
+  <typecode
+    code="Date"
+    desc="A question whose answer is a Date"
+    name="Date"/>
+  <typecode
+    code="Integer"
+    desc="A question whose answer is an Integer"
+    name="Integer"/>
+  <typecode
+    code="String"
+    desc="A question whose answer is a String"
+    name="String"/>
+  <typecode
+    code="Choice"
+    desc="A multiple-choice question whose answer is an entry in the QuestionChoice table"
+    name="Choice"/>
+</typelist>

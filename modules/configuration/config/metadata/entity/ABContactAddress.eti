@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Table linking contacts to addresses."
+  entity="ABContactAddress"
+  exportable="true"
+  platform="false"
+  table="abcontactaddress"
+  type="joinarray">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.impl.CommonContactAddressImplCallback"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactAddressImpl"/>
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABContactAddress"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactAddressImpl"/>
+  <implementsEntity
+    name="CommonContactAddress"/>
+  <implementsEntity
+    name="ABLinkable"/>
+  <implementsEntity
+    name="Extractable"/>
+  <foreignkey
+    columnName="AddressID"
+    desc="Associated address."
+    fkentity="Address"
+    name="Address"
+    nullok="false"
+    triggersValidation="true"/>
+  <foreignkey
+    columnName="ContactID"
+    desc="Associated contact."
+    exportable="false"
+    fkentity="ABContact"
+    name="Contact"
+    nullok="false"/>
+  <!-- All array tables must have a unique index.  contactaddress accessed through contact, so we have key be
+      (addressid, contactid) and eliminate backing index on contactid since unique index is usable for FK. -->
+  <index
+    name="abcontactaddressu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ContactID"/>
+    <indexcol
+      keyposition="2"
+      name="AddressID"/>
+  </index>
+  <index
+    name="abcontactaddress1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="AddressID"/>
+  </index>
+  <index
+    desc="Preserve uniqueness of LinkID"
+    name="abcalinkid"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LinkID"/>
+  </index>
+</entity>

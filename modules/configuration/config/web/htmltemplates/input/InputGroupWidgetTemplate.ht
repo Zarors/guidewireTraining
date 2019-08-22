@@ -1,0 +1,12 @@
+<div class="gw-InputGroup--header">
+    ${checkbox}
+    ${icon}
+    <div class="gw-InputGroup--header--label">${groupLabel}</div>
+</div>
+<div class="gw-InputGroup--body">
+${:children}
+</div>
+<div class="gw-InputGroup--footer">
+    <div class="gw-label"></div>
+    <div class="gw-value"></div>
+</div>

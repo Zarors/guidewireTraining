@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of consistency check"
+  final="true"
+  name="ConsistencyCheckType"
+  platform="true">
+  <typecode
+    code="0lengthstringcheck"
+    desc="Verifies no 0 length strings within varchar column"
+    name="0 length string check"/>
+  <typecode
+    code="adtvaluescheck"
+    desc="Verifies values are valid for abstract data types"
+    name="ADT values check"/>
+  <typecode
+    code="appspecificcheck"
+    desc="Verifies application-specific relationships in the database"
+    name="Application-specific check"/>
+  <typecode
+    code="arrayrequiredmatch"
+    desc="Verifies that every row in the container has a nonempty array"
+    name="Array required match"/>
+  <typecode
+    code="assignmentcheck"
+    desc="Verifies that the database is consistent relative to assignment"
+    name="Assignment check"/>
+  <typecode
+    code="beanversioncheck"
+    desc="Verifies that the database is consistent relative to bean versions"
+    name="Bean version check"/>
+  <typecode
+    code="caseinsensitivecheck"
+    desc="Verifies that the linguistic search denorm columns are in sync with the associated source columns"
+    name="Linguistic search denorm check"/>
+  <typecode
+    code="searchdenormcheck"
+    desc="Verifies that the search denorm columns are in sync with the associated source columns"
+    name="Search denorm check"/>
+  <typecode
+    code="checkconstraintcheck"
+    desc="Verifies data is valid relative to check constraints"
+    name="Check constraint check"/>
+  <typecode
+    code="consistentchildren"
+    desc="Verifies that the consistent children property holds"
+    name="Consistent children"/>
+  <typecode
+    code="customcheck"
+    desc="Custom consistency check declared in a data model file"
+    name="Custom check"/>
+  <typecode
+    code="datetimeorderingcheck"
+    desc="Verifies data is valid relative to datetime orderings"
+    name="Datetime ordering check"/>
+  <typecode
+    code="effdatedregistrycheck"
+    desc="Verifies that an effdated table appears in the effdated registry of all referenced branches"
+    name="Effdated registry check"/>
+  <typecode
+    code="fkcheck"
+    desc="Verifies foreign key references when RI is not enforced in the database"
+    name="Foreign key check"/>
+  <typecode
+    code="fksubtypecheck"
+    desc="Verifies foreign key reference to a subtype is to correct subtype"
+    name="Foreign key subtype check"/>
+  <typecode
+    code="jointablecheck"
+    desc="Verifies data is valid relative to jointable declarations"
+    name="Join table check"/>
+  <typecode
+    code="localizedcolumncheck"
+    desc="Verifies required localized columns have values for all languages"
+    name="Localized column check"/>
+  <typecode
+    code="maxkeycheck"
+    desc="Verifies data in max key table is in synch with table"
+    name="Max key check"/>
+  <typecode
+    code="revisioningcheck"
+    desc="Verifies that the database is consistent relative to revisioning"
+    name="Revisioning check"/>
+  <typecode
+    code="subtypecolumncheck"
+    desc="Verifies subtype column contains valid values"
+    name="Subtype column check"/>
+  <typecode
+    code="subtypenonnullcheck"
+    desc="Verifies non-nullable subtype-specific columns have non-null values for subtype rows"
+    name="Subtype non-null check"/>
+  <typecode
+    code="subtypespecificcheck"
+    desc="Verifies subtype-specific columns are null when row is a different subtype"
+    name="Subtype-specific column check"/>
+  <typecode
+    code="typekeycheck"
+    desc="Verifies typekey column contains valid values"
+    name="Typekey check"/>
+  <typecode
+    code="typelisttablecheck"
+    desc="Verifies values in typelist table and data model are in sync"
+    name="Typelist table check"/>
+  <typecode
+    code="upgradewarningcheck"
+    desc="Verifies that data will pass associated version check at the beginning of the upgrade to a subsequent version of the product"
+    name="Upgrade warning check"/>
+  <typecode
+    code="onetoonecheck"
+    desc="Verifies that one-to-one relationships have at most one referring entity"
+    name="One-to-one check"/>
+  <typecode
+    code="onetoonenonnullcheck"
+    desc="Verifies that non-nullable one-to-one relationships have at least one referring entity"
+    name="One-to-one non-null check"/>
+  <typecode
+    code="edgefknonnullcheck"
+    desc="Verifies that non-nullable edge foreign key relationships have one referring entity"
+    name="Edge foreign key non-null check"/>
+</typelist>

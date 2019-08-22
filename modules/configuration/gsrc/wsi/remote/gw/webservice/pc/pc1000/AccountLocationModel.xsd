@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.accountlocationmodel" elementFormDefault="qualified" xmlns:gw="http://guidewire.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AccountLocation" type="AccountLocation" nillable="true" xmlns="http://guidewire.com/pc/gx/gw.webservice.pc.pc1000.gxmodel.accountlocationmodel"/>
+  <xs:complexType name="AccountLocation">
+    <xs:sequence>
+      <xs:element name="AddressBookUID" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="AddressLine1" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="AddressLine1Kanji" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="AddressLine2" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="AddressLine2Kanji" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="AddressLine3" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="AddressType" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="CEDEX" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="CEDEXBureau" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="City" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="CityKanji" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="Country" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="County" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="EmployeeCount" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+      <xs:element name="GeocodeStatus" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="Latitude" type="xs:decimal" minOccurs="0" nillable="true" gw:type="java.math.BigDecimal"/>
+      <xs:element name="LocationCode" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="LocationName" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="LocationNum" type="xs:int" minOccurs="0" nillable="true" gw:type="java.lang.Integer"/>
+      <xs:element name="Longitude" type="xs:decimal" minOccurs="0" nillable="true" gw:type="java.math.BigDecimal"/>
+      <xs:element name="NonSpecific" type="xs:boolean" minOccurs="0" nillable="true" gw:type="java.lang.Boolean"/>
+      <xs:element name="Phone" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="PostalCode" type="xs:string" minOccurs="0" nillable="true" gw:type="java.lang.String"/>
+      <xs:element name="State" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="ValidUntil" type="xs:dateTime" minOccurs="0" nillable="true" gw:type="java.util.Date"/>
+    </xs:sequence>
+    <xs:attribute name="action" type="xs:string" gw:type="gw.xml.xsd.ArrayAction"/>
+  </xs:complexType>
+</xs:schema>

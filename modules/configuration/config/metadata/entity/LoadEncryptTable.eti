@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Encrypt columns in a staging table"
+  entity="LoadEncryptTable"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadencrypttable"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.staging.LoadEncryptTablePublicMethods"
+    impl="com.guidewire.pl.domain.staging.impl.LoadEncryptTableImpl"/>
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <foreignkey
+    columnName="LoadCommandID"
+    desc="Parent load command"
+    fkentity="LoadCommand"
+    name="LoadCommand"
+    nullok="false"/>
+  <column
+    desc="Name of table being updated"
+    name="TableName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Column(s) being encrypted (comma separated)"
+    name="ColumnsToEncrypt"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Select statement used to read rows"
+    name="SelectStmt"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="Update statement used to update rows"
+    name="UpdateStmt"
+    nullok="false"
+    type="longtext"/>
+  <column
+    desc="Target number of update executions in each chunk"
+    name="SizeOfTimedChuck"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="Total rows read and updated"
+    name="AffectedRowCount"
+    nullok="true"
+    type="integer"/>
+  <array
+    arrayentity="LoadEncryptChunk"
+    name="LoadEncryptChunks"
+    owner="true"/>
+  <index
+    desc="(LoadCommandID, TableName) is unique across load encrypt tables"
+    name="loadencryptu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LoadCommandID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+  </index>
+</entity>

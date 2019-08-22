@@ -1,0 +1,44 @@
+$gw-RowGroup--font-size: gw-emFixed(1);
+$gw-RowGroup--icon-size: gw-emFixed(1);
+
+$gw-RowGroup--expand-icon: 'chevron-down';
+$gw-app--tables--group--collapse-icon: 'chevron-up';
+
+//See ListViewWidget for colors and backgrounds
+.gw-RowGroup {
+  cursor: pointer;
+  position: relative;
+  font-size: $gw-RowGroup--font-size;
+
+  .gw-RowGroup--label--col-name {
+    display: inline-block;
+    font-weight: gw-weight(light);
+  }
+
+  .gw-RowGroup--inner {
+    padding: $gw-app--tables--cell--pad-v-rem $gw-app--tables--cell--pad-v-rem;
+  }
+
+  .gw-RowGroup--icon {
+    display: inline-block;
+    vertical-align: baseline;
+    @include gw-icon($gw-RowGroup--expand-icon, $gw-RowGroup--icon-size);
+  }
+
+  .gw-RowGroup--label {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: $gw-app--SPACING-rem-S;
+  }
+
+  &.gw-RowGroup--expanded {
+    .gw-RowGroup--icon {
+      @include gw-icon($gw-app--tables--group--collapse-icon, $gw-RowGroup--icon-size);
+    }
+  }
+}
+
+
+
+
+

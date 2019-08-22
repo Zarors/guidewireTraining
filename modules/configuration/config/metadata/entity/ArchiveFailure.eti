@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ArchiveFailure"
+  extendable="true"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="archivefailure"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.archiving.impl.ArchiveFailureInternalMethods"
+    impl="com.guidewire.pl.domain.archiving.impl.ArchiveFailureImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.archiving.ArchiveFailurePublicMethods"
+    impl="com.guidewire.pl.domain.archiving.impl.ArchiveFailureImpl"/>
+  <column
+    desc="Short version of the reason for a failure to archive"
+    name="ArchiveFailure"
+    nullok="false"
+    type="mediumtext"/>
+</entity>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="How the question should be rendered in PCF"
+  final="false"
+  name="QuestionFormat"
+  platform="true">
+  <typecode
+    code="BooleanCheckbox"
+    desc="A boolean yes/no checkbox.  Default for Boolean questions."
+    name="Boolean Checkbox">
+    <category
+      code="Boolean"
+      typelist="QuestionType"/>
+  </typecode>
+  <typecode
+    code="DateField"
+    desc="A Date picker.  Default for Date questions."
+    name="Date Field">
+    <category
+      code="Date"
+      typelist="QuestionType"/>
+  </typecode>
+  <typecode
+    code="IntegerField"
+    desc="A simple integer field.  Default for Integer questions."
+    name="Integer Field">
+    <category
+      code="Integer"
+      typelist="QuestionType"/>
+  </typecode>
+  <typecode
+    code="StringField"
+    desc="A simple 1-line text field.  Default for String questions."
+    name="String Field">
+    <category
+      code="String"
+      typelist="QuestionType"/>
+  </typecode>
+  <typecode
+    code="ChoiceSelect"
+    desc="A combo box of choices.  Default for Choice questions."
+    name="Choice Select">
+    <category
+      code="Choice"
+      typelist="QuestionType"/>
+  </typecode>
+  <typecode
+    code="ChoiceRadio"
+    desc="A radio button of choices. An option for Choice questions with 2-3 choices"
+    name="Choice Radio">
+    <category
+      code="Choice"
+      typelist="QuestionType"/>
+  </typecode>
+</typelist>

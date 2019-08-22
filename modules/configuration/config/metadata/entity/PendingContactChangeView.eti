@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<viewEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Displays pending changes efficiently in the PendingChanges screen."
+  entity="PendingContactChangeView"
+  exportable="false"
+  final="false"
+  primaryEntity="PendingContactChange">
+  <fulldescription><![CDATA[<p>Aggregates the information needed to display one PendingContactChange in the PendingContactChange.</p>
+    ]]></fulldescription>
+  <viewEntityName
+    name="ABContactName"
+    path="ABContact"/>
+  <viewEntityColumn
+    name="RequestingUser"
+    path="AppUserDisplayName"/>
+  <viewEntityColumn
+    name="RelatedTo"
+    path="AppRootEntityDisplayName"/>
+  <viewEntityColumn
+    name="ABContact"
+    path="ABContact"/>
+</viewEntity>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="NamePrefix">
+  <typecode
+    code="mr"
+    desc="Mr."
+    name="Mr."
+    priority="1"/>
+  <typecode
+    code="mrs"
+    desc="Mrs."
+    name="Mrs."
+    priority="2"/>
+  <typecode
+    code="ms"
+    desc="Ms."
+    name="Ms."
+    priority="3"/>
+  <typecode
+    code="dr"
+    desc="Dr."
+    name="Dr."
+    priority="4"/>
+</typelistextension>

@@ -1,0 +1,28 @@
+.gw-FormatCellWidget { //TODO: can this use a style container on the table?
+  .gw-cell-inner {
+    > table {
+      border: 0;
+      background-color: transparent;
+    }
+  }
+
+  .gw-multi-content-cell {
+    align-items: stretch;
+  }
+
+  &.gw-stacked {
+    .gw-multi-content-cell {
+      > div + div {
+        margin-top: $gw-app--SPACING-rem-S;
+      }
+    }
+  }
+
+  &:not(.gw-stacked) {
+    .gw-multi-content-cell {
+      > div + div {
+        margin-left: $gw-app--SPACING-rem-S;
+      }
+    }
+  }
+}

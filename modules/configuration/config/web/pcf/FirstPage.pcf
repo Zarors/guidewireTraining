@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../pcf.xsd">
+  <Forward
+    id="FirstPage">
+    <ForwardCondition
+      action="ABContactSearch.go()"/>
+    <ForwardCondition
+      action="AdminForward.go()"/>
+    <!-- Finally go to the no permissions error page. -->
+    <ForwardCondition
+      action="StartupPageError.go()"/>
+  </Forward>
+</PCF>

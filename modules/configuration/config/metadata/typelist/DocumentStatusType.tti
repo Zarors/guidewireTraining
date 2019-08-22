@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Status of the document"
+  final="false"
+  name="DocumentStatusType"
+  platform="true">
+  <typecode
+    code="draft"
+    desc="Draft"
+    name="Draft"/>
+  <typecode
+    code="approving"
+    desc="Approving"
+    name="Approving"/>
+  <typecode
+    code="approved"
+    desc="Approved"
+    name="Approved"/>
+  <typecode
+    code="final"
+    desc="Final"
+    name="Final"/>
+  <typecode
+    code="filed"
+    desc="Filed"
+    name="Filed"
+    retired="true"/>
+</typelist>

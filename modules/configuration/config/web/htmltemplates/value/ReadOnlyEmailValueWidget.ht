@@ -1,0 +1,3 @@
+<a href="mailto:${emailValue}">
+  ${emailValue}
+</a>

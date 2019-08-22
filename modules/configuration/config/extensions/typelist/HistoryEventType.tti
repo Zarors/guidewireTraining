@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="HistoryEventType"
+  name="HistoryEventType">
+  <typecode
+    code="created"
+    desc="ABContact was created"
+    name="Created"
+    priority="10"/>
+  <typecode
+    code="assigned"
+    desc="ABContact assigned user was set or reset"
+    name="Assigned"
+    priority="20"/>
+  <typecode
+    code="flagged"
+    desc="ABContact was flagged"
+    name="Flagged"
+    priority="30"/>
+  <typecode
+    code="unflagged"
+    desc="ABContact was unflagged"
+    name="Unflagged"
+    priority="40"/>
+  <typecode
+    code="viewed"
+    desc="ABContact was viewed"
+    name="Viewed"
+    priority="50"/>
+</typelist>

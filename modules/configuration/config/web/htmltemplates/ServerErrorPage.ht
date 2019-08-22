@@ -1,0 +1,11 @@
+<div id="gw-serverError" class="gw-errorpage ${fullPage ? 'gw-full-page'}">
+  <div class="gw-errorpage--background"></div>
+  <div class="gw-errorpage--content-wrapper">
+    <div class="gw-errorpage--top gw-alert-error">
+    <div class="gw-header">${title}</div>
+    <div class="gw-text">${message}</div>
+    <div :if="reloadApp"><div class="gw-button" onclick="window.onbeforeunload = null; location = location.href">${reloadApp}</div></div>
+    </div>
+    <div :if="error" class="gw-errorpage--bottom gw-alert-error"><pre>${error}</pre></div>
+  </div>
+</div>

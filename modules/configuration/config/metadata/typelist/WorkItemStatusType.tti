@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The status of a work-item"
+  final="true"
+  name="WorkItemStatusType"
+  platform="true">
+  <typecode
+    code="available"
+    desc="Work item that is available to be processed."
+    name="Available"/>
+  <typecode
+    code="checkedout"
+    desc="Work item that is checked out."
+    name="CheckedOut"/>
+  <typecode
+    code="failed"
+    desc="Work item that exceeded the maximum number of allowed retries."
+    name="Failed"/>
+</typelist>

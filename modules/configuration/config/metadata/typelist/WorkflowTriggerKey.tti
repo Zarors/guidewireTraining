@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="What workflow Triggers are allowed"
+  final="false"
+  name="WorkflowTriggerKey"
+  platform="true"/>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    canVisit="true"
+    id="BatchProcessDownloadConfigure"
+    parent="BatchProcessInfo()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Download.Select.Date&quot;)">
+    <LocationEntryPoint
+      signature="BatchProcessDownloadConfigure(batchProcessType : BatchProcessType)"/>
+    <Variable
+      name="batchProcessType"
+      type="BatchProcessType"/>
+    <Screen
+      editable="true"
+      id="BatchProcessDownloadConfigureScreen">
+      <Variable
+        initialValue="new com.guidewire.pl.system.batchprocessing.BatchInfoHelper(batchProcessType)"
+        name="BatchInfoHelper"
+        type="com.guidewire.pl.system.batchprocessing.BatchInfoHelper"/>
+      <DetailViewPanel>
+        <InputColumn>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            focusOnStartEditing="true"
+            id="StartDate"
+            label="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Download.Start.Date&quot;)"
+            required="true"
+            value="BatchInfoHelper.StartDate"/>
+          <DateInput
+            dateFormat="short"
+            editable="true"
+            focusOnStartEditing="false"
+            id="StopDate"
+            label="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Download.End.Date&quot;)"
+            required="true"
+            value="BatchInfoHelper.EndDate"/>
+          <ButtonInput
+            action="BatchInfoHelper.download()"
+            download="true"
+            id="download"
+            value="DisplayKey.get(&quot;Button.Complete.Download&quot;)"/>
+          <ButtonInput
+            action="BatchProcessInfo.go()"
+            id="BackButton"
+            value="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Download.Return.BatchProcessInfo&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

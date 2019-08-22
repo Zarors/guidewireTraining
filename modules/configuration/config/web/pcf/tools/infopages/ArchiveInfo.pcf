@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    autosaveable="false"
+    canEdit="true"
+    canVisit="gw.api.web.tools.ArchiveInfoPage.isArchivingAvailable()"
+    countsAsWork="false"
+    id="ArchiveInfo"
+    parent="InfoPages()"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Title&quot;)">
+    <LocationEntryPoint
+      signature="ArchiveInfo()"/>
+    <Variable
+      initialValue="new gw.api.archiving.ArchiveCountSummary()"
+      name="archiveCountSummary"
+      type="gw.api.archiving.ArchiveCountSummary"/>
+    <Variable
+      initialValue="new gw.api.archiving.ArchiveCountSummarySinceLastRun()"
+      name="archiveSummary"
+      recalculateOnRefresh="true"
+      type="gw.api.archiving.ArchiveCountSummarySinceLastRun"/>
+    <Variable
+      initialValue="null"
+      name="alertMessage"
+      type="String"/>
+    <Variable
+      initialValue="null"
+      name="uploadFile"
+      type="gw.api.web.WebFile"/>
+    <Screen
+      id="ArchiveInfoScreen">
+      <AlertBar
+        id="Alert"
+        label="alertMessage"
+        visible="alertMessage != null"/>
+      <DetailViewPanel>
+        <InputColumn>
+        <FileInput
+          available="gw.api.web.tools.ArchiveInfoPage.isDevMode()"
+          editable="true"
+          id="UploadFile"
+          labelAbove="true"
+          value="uploadFile"
+          visible="gw.api.web.tools.ArchiveInfoPage.isDevMode()"/>
+        </InputColumn>
+        <InputColumn>
+          <ButtonInput
+            action="upload()"
+            available="gw.api.web.tools.ArchiveInfoPage.isDevMode() and uploadFile != null"
+            hideIfDisabled="false"
+            id="Upload"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.UploadUpgradeInfo&quot;)"
+            visible="gw.api.web.tools.ArchiveInfoPage.isDevMode()"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        editable="false">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Overview&quot;)"/>
+        <Toolbar>
+          <ToolbarButton
+            action="gw.plugin.Plugins.get(gw.plugin.archiving.IArchiveSource).refresh()"
+            id="RefreshButton"
+            label="DisplayKey.get(&quot;Button.Refresh&quot;)"/>
+          <ToolbarButton
+            action="gw.api.web.tools.ArchiveInfoPage.downloadArchiveInfo()"
+            id="DownloadButton"
+            label="DisplayKey.get(&quot;Button.Download&quot;)"/>
+          <ToolbarButton
+            action="WorkQueueInfo.go(new gw.api.web.tools.WorkQueueDisplayInfo(com.guidewire.pl.system.dependency.PLDependencies.getDistributedWorkerManager().getWorkQueue(com.guidewire.pl.system.dependency.PLDependencies.getDomainGraphSupport().getBatchProcessType().getCode())))"
+            id="Status"
+            label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ViewDetailedStatus&quot;)"/>
+          <ToolbarButton
+            action="gw.api.web.tools.ArchiveInfoPage.downloadUpgradeDatamodelInfo()"
+            download="true"
+            id="Download"
+            label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.DownloadUpgradeInfo&quot;)"/>
+        </Toolbar>
+        <DetailViewPanel>
+          <InputColumn>
+            <TextInput
+              id="Archived"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.EntitiesArchived&quot;)"
+              value="archiveCountSummary.ArchivedCount"
+              valueType="java.lang.Integer"/>
+            <TextInput
+              id="Skipped"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.EntitiesSkipped&quot;)"
+              value="archiveCountSummary.SkippedCount"
+              valueType="java.lang.Integer"/>
+            <TextInput
+              id="ExcludedBecauseOfRules"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ExcludedBecauseOfRules&quot;)"
+              value="archiveCountSummary.getExcludedBecauseOfRulesCount()"
+              valueType="java.lang.Integer"/>
+            <ButtonInput
+              action="archiveCountSummary.resetExcludedBecauseOfRulesFlag()"
+              available="archiveCountSummary.getExcludedBecauseOfRulesCount() &gt; 0"
+              hideIfDisabled="false"
+              id="ResetExcludedBecauseOfRules"
+              labelAbove="true"
+              value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Reset&quot;)"/>
+            <TextInput
+              id="ExcludedBecauseOfFailure"
+              label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ExcludedBecauseOfFailure&quot;)"
+              value="archiveCountSummary.getExcludedBecauseOfFailureCount()"
+              valueType="java.lang.Integer"/>
+            <ButtonInput
+              action="archiveCountSummary.resetExcludedBecauseOfFailureFlag()"
+              available="archiveCountSummary.getExcludedBecauseOfFailureCount() &gt; 0"
+              hideIfDisabled="false"
+              id="ResetExcludedBecauseOfFailure"
+              labelAbove="true"
+              value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Reset&quot;)"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+      <PanelRef
+        def="ArchiveSourceInfoDV()"
+        editable="false">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.SourceInfo&quot;)"/>
+      </PanelRef>
+      <PanelRef
+        editable="false">
+        <TitleBar
+          title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.SummaryTitle&quot;)"/>
+        <Toolbar/>
+        <ListViewPanel
+          editable="false"
+          id="ArchiveCountSummaryLV">
+          <RowIterator
+            editable="false"
+            elementName="upgradeDatamodelInfo"
+            pageSize="5"
+            value="new gw.api.database.Query&lt;UpgradeDatamodelInfo&gt;(UpgradeDatamodelInfo).select()"
+            valueType="gw.api.database.IQueryBeanResult&lt;entity.UpgradeDatamodelInfo&gt;">
+            <Variable
+              initialValue="new gw.api.archiving.ArchiveCountSummaryByDatamodelVersion(upgradeDatamodelInfo)"
+              name="archiveCountSummaryByDatamodelVersion"
+              type="gw.api.archiving.ArchiveCountSummaryByDatamodelVersion"/>
+            <Row>
+              <TextCell
+                action="ArchiveInfoByDateRange.go(archiveCountSummaryByDatamodelVersion, archiveCountSummaryByDatamodelVersion.EarliestDate, archiveCountSummaryByDatamodelVersion.LatestDate)"
+                actionAvailable="archiveCountSummaryByDatamodelVersion.EarliestDate != null"
+                id="VersionString"
+                label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Version&quot;)"
+                sortBy="upgradeDatamodelInfo.PlatformMajorVers,upgradeDatamodelInfo.PlatformMinorVers,upgradeDatamodelInfo.ApplicationMajorVers,upgradeDatamodelInfo.ApplicationMinorVers,upgradeDatamodelInfo.ExtensionsVers"
+                sortDirection="descending"
+                sortOrder="1"
+                value="archiveCountSummaryByDatamodelVersion.VersionString"
+                wrapLabel="true"/>
+              <DateCell
+                enableSort="false"
+                id="EarliestDate"
+                label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.EarliestDate&quot;)"
+                value="archiveCountSummaryByDatamodelVersion.EarliestDate"/>
+              <DateCell
+                enableSort="false"
+                id="LatestDate"
+                label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.LatestDate&quot;)"
+                value="archiveCountSummaryByDatamodelVersion.LatestDate"/>
+              <TextCell
+                enableSort="false"
+                id="Archived"
+                label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Archived&quot;)"
+                sortBy="upgradeDatamodelInfo.PlatformMajorVers,upgradeDatamodelInfo.PlatformMinorVers,upgradeDatamodelInfo.ApplicationMajorVers,upgradeDatamodelInfo.ApplicationMinorVers,upgradeDatamodelInfo.ExtensionsVers"
+                sortDirection="descending"
+                value="archiveCountSummaryByDatamodelVersion.ArchivedCount"
+                valueType="java.lang.Integer"
+                wrapLabel="true"/>
+              <TextCell
+                enableSort="false"
+                id="ExcludedBecauseOfRules"
+                label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ExcludedBecauseOfRules&quot;)"
+                sortBy="upgradeDatamodelInfo.PlatformMajorVers,upgradeDatamodelInfo.PlatformMinorVers,upgradeDatamodelInfo.ApplicationMajorVers,upgradeDatamodelInfo.ApplicationMinorVers,upgradeDatamodelInfo.ExtensionsVers"
+                sortDirection="descending"
+                value="archiveCountSummaryByDatamodelVersion.ExcludedBecauseOfRulesCount"
+                valueType="java.lang.Integer"
+                wrapLabel="true"/>
+              <ButtonCell
+                action="archiveCountSummaryByDatamodelVersion.resetExcludedBecauseOfRulesFlag()"
+                available="archiveCountSummaryByDatamodelVersion.ExcludedBecauseOfRulesCount &gt; 0"
+                hideIfDisabled="false"
+                id="ExcludedBecauseOfRulesReset"
+                value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Reset&quot;)"/>
+              <TextCell
+                enableSort="false"
+                id="ExcludedBecauseOfFailure"
+                label="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.ExcludedBecauseOfFailure&quot;)"
+                sortBy="upgradeDatamodelInfo.PlatformMajorVers,upgradeDatamodelInfo.PlatformMinorVers,upgradeDatamodelInfo.ApplicationMajorVers,upgradeDatamodelInfo.ApplicationMinorVers,upgradeDatamodelInfo.ExtensionsVers"
+                sortDirection="descending"
+                value="archiveCountSummaryByDatamodelVersion.ExcludedBecauseOfFailureCount"
+                valueType="java.lang.Integer"
+                wrapLabel="true"/>
+              <ButtonCell
+                action="archiveCountSummaryByDatamodelVersion.resetExcludedBecauseOfFailureFlag()"
+                available="archiveCountSummaryByDatamodelVersion.ExcludedBecauseOfFailureCount &gt; 0"
+                hideIfDisabled="false"
+                id="ExcludedBecauseOfFailureReset"
+                value="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Reset&quot;)"/>
+            </Row>
+          </RowIterator>
+        </ListViewPanel>
+      </PanelRef>
+      <PanelSet
+        editable="false"
+        visible="archiveSummary.LastRunDate != null and (archiveCountSummarySinceLastRun.SkippedCount &gt; 0 or archiveCountSummarySinceLastRun.ExcludedBecauseOfRulesCount &gt; 0 or archiveCountSummarySinceLastRun.ExcludedBecauseOfFailureCount &gt; 0)">
+        <Variable
+          initialValue="new gw.api.archiving.ArchiveCountSummarySinceLastRun()"
+          name="archiveCountSummarySinceLastRun"
+          type="gw.api.archiving.ArchiveCountSummarySinceLastRun"/>
+        <PanelRef
+          def="ArchiveExcludeDetailsCV(new gw.api.archiving.ArchiveCountSummarySinceLastRun())">
+          <TitleBar
+            title="DisplayKey.get(&quot;Web.ServerTools.ArchiveInfo.Last24Hours&quot;, archiveSummary.LastRunDate, archiveSummary.ProcessId)"/>
+        </PanelRef>
+      </PanelSet>
+    </Screen>
+    <Code><![CDATA[function upload() {
+  try {
+    var success = gw.api.web.tools.ArchiveInfoPage.uploadUpgradeDatamodelInfo(uploadFile)
+    if (success) {
+      alertMessage = DisplayKey.get("Web.ServerTools.ArchiveInfo.UploadSuccess")
+    } else {
+      alertMessage = DisplayKey.get("Web.ServerTools.ArchiveInfo.UploadSuccessNoAction")
+    }
+  } finally {
+    uploadFile = null
+  }
+}]]></Code>
+  </Page>
+</PCF>

@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../../pcf.xsd">
+  <DetailViewPanel
+    editable="true"
+    id="ABContactDetailsCompanyDV">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <InputColumn>
+      <TextInput
+        editable="true"
+        id="Name"
+        label="DisplayKey.get(&quot;Training.Name&quot;)"
+        required="true"
+        value="(anABContact as ABCompany).Name"/>
+      <Label
+        id="PrimaryContactLabel"
+        label="DisplayKey.get(&quot;Training.PrimaryContact&quot;)"/>
+      <Label
+        id="PrimaryContactHelp"
+        label="DisplayKey.get(&quot;Training.PrimaryContactHelper&quot;)"
+        visible="User.util.getCurrentUser().UseHelperLabels"/>
+      <RangeInput
+        editable="true"
+        id="PrimaryContact"
+        label="DisplayKey.get(&quot;Training.PrimaryContact&quot;)"
+        value="(anABContact as ABCompany).PrimaryContact"
+        valueRange="(anABContact as ABCompany).Employees"
+        valueType="ABContact">
+        <PostOnChange
+          target="DATA_ONLY"/>
+      </RangeInput>
+      <InputSetRef
+        def="GlobalAddressInputSet(new gw.api.address.SecondaryAddressOwner(getCompanyPrimaryAddress()))"
+        editable="false"
+        id="globalAddressContainer"
+        mode="selectAddressMode()"
+        visible="anABContact typeis ABCompany"
+        widgets="globalAddressContainer"/>
+      <TextInput
+        available="(anABContact as ABCompany).PrimaryContact !=null"
+        editable="true"
+        id="EmailAddress"
+        label="DisplayKey.get(&quot;Training.EmailAddress&quot;)"
+        value="(anABContact as ABCompany).PrimaryContact.EmailAddress1">
+        <PostOnChange
+          target="PrefersContactByEmail"/>
+      </TextInput>
+      <BooleanRadioInput
+        available="(anABContact as ABCompany).PrimaryContact.EmailAddress1 != null"
+        editable="PrefersContactByEmailEditable()"
+        falseLabel="DisplayKey.get(&quot;Training.No&quot;)"
+        id="PrefersContactByEmail"
+        label="DisplayKey.get(&quot;Training.PrefersContactByEmail&quot;)"
+        trueLabel="DisplayKey.get(&quot;Training.Yes&quot;)"
+        value="(anABContact as ABCompany).PrimaryContact.PrefersContactByEmail"
+        visible="(anABContact as ABCompany).PrimaryContact.EmailAddress1 != null"/>
+      <InputDivider/>
+      <Label
+        id="AdditionalInfo"
+        label="DisplayKey.get(&quot;Training.AdditionalInfo&quot;)"/>
+      <TextInput
+        editable="true"
+        id="TaxID"
+        label="DisplayKey.get(&quot;Training.TaxID&quot;)"
+        required="true"
+        value="(anABContact as ABCompany).TaxID"/>
+      <CheckBoxInput
+        editable="true"
+        id="InspectionRequired"
+        label="DisplayKey.get(&quot;Training.InspectionRequired&quot;)"
+        value="(anABContact as ABCompany).InspectionRequired">
+        <PostOnChange/>
+      </CheckBoxInput>
+      <DateInput
+        editable="true"
+        id="InspectionDate"
+        label="DisplayKey.get(&quot;Training.InspectionDate&quot;)"
+        value="(anABContact as ABCompany).InspectionDate"
+        visible="(anABContact as ABCompany).InspectionRequired == true "/>
+      <TextInput
+        editable="true"
+        id="ABAutoRepairShopLicense"
+        label="DisplayKey.get(&quot;Training.License&quot;)"
+        value="(anABContact as ABAutoRepairShop).AutoRepairLicense"
+        visible="anABContact typeis ABAutoRepairShop"/>
+      <TextInput
+        editable="true"
+        id="ABAutoTowingAgcyLicense"
+        label="DisplayKey.get(&quot;Training.License&quot;)"
+        value="(anABContact as ABAutoTowingAgcy).AutoTowingLicense"
+        visible="anABContact typeis ABAutoTowingAgcy"/>
+      <TypeKeyInput
+        editable="true"
+        id="ABLawFirmSpecialty"
+        label="DisplayKey.get(&quot;Training.Specialty&quot;)"
+        value="(anABContact as ABLawFirm).LawFirmSpecialty"
+        visible="anABContact typeis ABLawFirm"
+        valueType="LegalSpecialty"/>
+      <TypeKeyInput
+        editable="true"
+        id="ABMedicalCareOrg"
+        label="DisplayKey.get(&quot;Training.Specialty&quot;)"
+        value="(anABContact as ABMedicalCareOrg).MedicalOrgSpecialty"
+        visible="anABContact typeis ABMedicalCareOrg"
+        valueType="typekey.SpecialtyType"/>
+      <TypeKeyInput
+        editable="true"
+        id="PreferredCurrency"
+        label="DisplayKey.get(&quot;Training.PreferredCurrency&quot;)"
+        value="(anABContact as ABCompany).PreferredCurrency"
+        valueType="typekey.Currency"/>
+      <InputSet
+        id="ColateralInputSet"
+        visible="anABContact typeis ABPolicyCompany">
+        <Label
+          id="CollateralLabel"
+          label="DisplayKey.get(&quot;Training.CollateralInfo&quot;)"/>
+        <CheckBoxInput
+          editable="true"
+          id="CollateralRequired"
+          label="DisplayKey.get(&quot;Training.CollateralRequired&quot;)"
+          value="(anABContact as ABPolicyCompany).CollateralRequired">
+          <PostOnChange/>
+        </CheckBoxInput>
+        <TextInput
+          editable="true"
+          id="CollateralAmount"
+          inputMask="&quot;####&quot;"
+          label="DisplayKey.get(&quot;Training.CollateralAmount&quot;)"
+          value="(anABContact as ABPolicyCompany).CollateralAmount"
+          visible="(anABContact as ABPolicyCompany).CollateralRequired"
+          valueType="java.lang.Integer"/>
+        <TypeKeyInput
+          editable="true"
+          id="CollateralVerified"
+          label="DisplayKey.get(&quot;Training.CollateralVerified&quot;)"
+          value="(anABContact as ABPolicyCompany).CompanyCollateralVerified"
+          visible="(anABContact as ABPolicyCompany).CollateralRequired"
+          valueType="typekey.YesNo"/>
+      </InputSet>
+    </InputColumn>
+    <InputColumn>
+      <Label
+        id="EmployeeInfo"
+        label="DisplayKey.get(&quot;Training.EmployeeInfo&quot;)"/>
+      <CheckBoxInput
+        editable="true"
+        id="CanAddEmployees"
+        label="DisplayKey.get(&quot;Training.CanHaveEmployees&quot;)"
+        value="(anABContact as ABCompany).CanAddEmployees">
+        <PostOnChange/>
+      </CheckBoxInput>
+      <TextInput
+        id="NumberOfEmployees"
+        label="DisplayKey.get(&quot;Training.NumberOfEmployees&quot;)"
+        value="(anABContact as ABCompany).NumberOfEmployees"
+        visible="(anABContact as ABCompany).CanAddEmployees == true"
+        valueType="java.lang.Integer"/>
+      <ListViewInput
+        boldLabel="true"
+        def="ABCompanyEmployeesLV(anABContact)"
+        id="ABCompanyEmployeesLV"
+        label="DisplayKey.get(&quot;Training.Employees&quot;)"
+        labelAbove="true"
+        visible="(anABContact as ABCompany).CanAddEmployees == true">
+        <Toolbar>
+          <ToolbarButton
+            action="cascadeCompanyMainEmailAddress()"
+            available="CurrentLocation.InEditMode and (anABContact as ABCompany).EmailAddress1 != null"
+            id="CascadeEmailAddress"
+            label="DisplayKey.get(&quot;Training.Company.CascadeEmailAddress&quot;)"/>
+        </Toolbar>
+      </ListViewInput>
+      <InputSet
+        id="FinancialPersonnelInputSet"
+        visible="anABContact typeis ABCompanyVendor">
+        <Label
+          id="FinancialPersonnelLabel"
+          label="DisplayKey.get(&quot;Training.FinancialPersonnel&quot;)"/>
+        <RangeInput
+          editable="true"
+          id="FinanceManager"
+          label="DisplayKey.get(&quot;Training.FinanceManager&quot;)"
+          value="(anABContact as ABCompanyVendor).FinanceManager"
+          valueRange="(anABContact as ABCompany).Employees"
+          valueType="ABPerson"/>
+        <RangeInput
+          editable="true"
+          id="PaymentContact"
+          label="DisplayKey.get(&quot;Training.PaymentContact&quot;)"
+          value="(anABContact as ABCompanyVendor).PaymentContact"
+          valueRange="(anABContact as ABCompany).Employees"
+          valueType="ABPerson"/>
+        <TypeKeyInput
+          editable="true"
+          id="FinanceMgrRelationship"
+          label="DisplayKey.get(&quot;Training.RelationshipToFinanceManager&quot;)"
+          value="(anABContact as ABCompanyVendor).FinanceMgrRelationship"
+          valueType="typekey.ManagerRelationshipType">
+          <Reflect
+            triggerIds="PaymentContact,FinanceManager"
+            value="(VALUE1 != null and VALUE1 == VALUE2) ?  ManagerRelationshipType.TC_SELF : null"/>
+        </TypeKeyInput>
+        <InputDivider/>
+      </InputSet>
+      <InputSetRef
+        def="ContactInsightsInputSet(anABContact)"/>
+    </InputColumn>
+    <Code><![CDATA[function cascadeCompanyMainEmailAddress() {
+  if(anABContact typeis ABCompany) {
+    var companyMainEmailAddress = anABContact.EmailAddress1
+    var employees = anABContact.Employees
+
+    for(oneEmployee in employees) {
+      oneEmployee.EmailAddress1 = companyMainEmailAddress
+    }
+  }
+}
+
+// The logic to determine if the PrefersContactByEmail field should be editable must check to see if anABContact is a company,
+// and if so, if the primary contact is non-null. If you attempt to do both checks in a single line, then you get a coercion error.
+// (This is because the check for a primary contact works only if the contact is an ABCompany.) This function simply splits the
+// logic into two lines.
+
+function PrefersContactByEmailEditable() : boolean {
+  var returnValue = false
+  if (anABContact typeis ABCompany)
+    if (anABContact.PrimaryContact != null)  // typeis automatically downcasts object; casting isn't needed here
+      returnValue = true
+  return returnValue
+}
+
+// Determining the mode for the GlobalAddressInputSet
+// This is in a separate function because of the typeis. typeis is needed because of a simplification of ABContactDetailsCV
+// Removing the typeis would raise a ClassCastException when displaying an ABPerson or ABPlace
+function selectAddressMode() : String {
+  if(anABContact typeis ABCompany) {
+    return gw.api.address.AddressCountrySettings.getSettings(new gw.api.address.SecondaryAddressOwner(anABContact.PrimaryContact.PrimaryAddress).SelectedCountry).PCFMode
+  } else {
+    return ""
+  }
+}
+
+// Getting the input parameter for the GlobalAddressInputSet
+// This is in a separate function because of the typeis. typeis is needed because of a simplification of ABContactDetailsCV
+// Removing the typeis would raise a ClassCastException when displaying an ABPerson or ABPlace
+function getCompanyPrimaryAddress() : Address {
+  if(anABContact typeis ABCompany) {
+    return anABContact.PrimaryContact.PrimaryAddress
+  } else {
+    return null
+  }
+}]]></Code>
+  </DetailViewPanel>
+</PCF>

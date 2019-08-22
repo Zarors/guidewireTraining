@@ -1,0 +1,6 @@
+<div id="${id}" class="gw-TabBarUnsavedWorkWidget-group gw-action--outer">
+  <div id="${id}-go" class="gw-action--inner" data-gw-click="unsavedWork id:${widgetId} go:${destination}">
+    <div class="gw-label">${title}</div>
+    <div class="gw-label">${time}</div>
+  </div>
+</div>

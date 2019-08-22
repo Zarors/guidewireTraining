@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <RowSet
+    id="ContactDetailsRowSet"
+    mode="default">
+    <Require
+      name="keptContact"
+      type="entity.ABContact"/>
+    <Require
+      name="retiredContact"
+      type="entity.ABContact"/>
+    <Require
+      name="mergedContact"
+      type="entity.ABContact"/>
+    <Require
+      name="addressDataHolder"
+      type="gw.web.merge.MergeContactsAddressHolder"/>
+    <Require
+      name="phoneHolder"
+      type="gw.web.merge.MergeContactsPhoneHolder"/>
+  </RowSet>
+</PCF>

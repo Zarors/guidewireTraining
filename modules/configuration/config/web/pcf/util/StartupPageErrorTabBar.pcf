@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <TabBar
+    id="StartupPageErrorTabBar">
+    <TabBarLink
+      action="Help.push()"
+      id="HelpTabBarLink"
+      label="DisplayKey.get(&quot;Web.TabBar.Help&quot;)"
+      visible="false"/>
+    <TabBarLink
+      action="javascript:gw.globals.gwApp.popupAboutWindow();"
+      id="AboutTabBarLink"
+      label="DisplayKey.get(&quot;Web.TabBar.About&quot;)"/>
+    <TabBarLogout
+      action="logout:*"
+      id="LogoutTabBarLink"
+      label="DisplayKey.get(&quot;Web.TabBar.Logout&quot;, entity.User.util.CurrentUser)"
+      shortcut="Z"/>
+  </TabBar>
+</PCF>

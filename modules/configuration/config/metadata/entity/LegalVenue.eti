@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents a court as a Place."
+  displayName="Legal Venue"
+  entity="LegalVenue"
+  final="false"
+  platform="true"
+  supertype="Place">
+  <fulldescription><![CDATA[
+      Represents a court as a Place. May specify that a court is of a specific type.
+    ]]></fulldescription>
+  <typekey
+    desc="Type of court."
+    name="VenueType"
+    nullok="true"
+    typelist="VenueType"/>
+</subtype>

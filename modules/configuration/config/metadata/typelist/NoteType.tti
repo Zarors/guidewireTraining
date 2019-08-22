@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of note"
+  final="false"
+  name="NoteType"
+  platform="true"/>

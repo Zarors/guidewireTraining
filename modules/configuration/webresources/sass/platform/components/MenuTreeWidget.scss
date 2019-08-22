@@ -1,0 +1,24 @@
+.gw-MenuTreeWidget {
+    // Position to other widgets
+    margin-top: $gw-app--MenuTree--spacing-widget-top-rem;
+    margin-left: $gw-app--MenuTree--spacing-widget-left-rem;
+    margin-right: $gw-app--MenuTree--spacing-widget-right-rem;
+    margin-bottom: $gw-app--MenuTree--spacing-widget-bottom-rem;
+
+    // Internal padding
+    padding-top: $gw-app--MenuTree--spacing-inner-top-rem;
+    padding-left: $gw-app--MenuTree--spacing-inner-left-rem;
+    padding-right: $gw-app--MenuTree--spacing-inner-right-rem;
+    padding-bottom: $gw-app--MenuTree--spacing-inner-bottom-rem;
+    
+    overflow: auto;
+    min-height: $gw-app--MenuTree--min-height;
+    min-width: $gw-app--MenuTree--min-width;
+    border-bottom: $gw-app--MenuTree--border-bottom;
+
+    @if ($gw-app--MenuTree--has-border-radius) {
+        @include gw-borderRadius();
+    }
+
+    // See TreeViewWidget for inner implementation
+}

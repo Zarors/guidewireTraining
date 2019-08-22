@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="Assignable"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.AssignablePublicMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.AssignableImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.AssignableInternalMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.AssignableImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.entity.PermissionAssignableCheck"
+    impl="com.guidewire.pl.domain.assignment.impl.AssignableImpl"/>
+  <fulldescription><![CDATA[
+        A delegate containing common fields used by all assignable entities. These fields track:
+        <ul>
+        <li>The assignment status ("Assigned", "Unassigned" and so on)
+        <li>The current assignee - a queue or user and their corresponding group
+        <li>The previous assignee - a queue or user and their corresponding group
+        <li>The user who last assigned the entity
+        <li>The time when the entity was last assigned
+        </ul>
+        If an entity is assigned to a queue then the assigned group will be the queue's group. If an
+        entity is assigned to a user then the assigned group will be one of the user's groups. Do not assign an
+        entity to both a user and a queue. If an entity is assigned to a group it will usually also be assigned
+        to a user or queue, though while assignment rules are running it may temporarily be assigned to just
+        a group.
+      
+      ]]></fulldescription>
+  <column
+    desc="Time when entity last assigned"
+    exportable="false"
+    name="AssignmentDate"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Date and time when this entity was closed. (Not applicable to all assignable entities)"
+    exportable="false"
+    name="CloseDate"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    columnName="AssignedGroupID"
+    desc="Group to which this entity is assigned; null if none assigned"
+    exportable="false"
+    fkentity="Group"
+    name="AssignedGroup"
+    nullok="true"
+    setterScriptability="all"/>
+  <foreignkey
+    columnName="AssignedUserID"
+    desc="Either the User to which this entity is assigned (if AssignmentStatus is 'assigned'), the User to which the system suggests assignment (if AssignmentStatus is 'manual'), or null if none assigned. Only one of AssignedUserID or AssignedQueueID should be non null."
+    exportable="false"
+    fkentity="User"
+    name="AssignedUser"
+    nullok="true"
+    setterScriptability="all"/>
+  <foreignkey
+    columnName="AssignedQueueID"
+    desc="Either the Queue to which this entity is assigned (if AssignmentStatus is 'assigned'), the Queue to which the system suggests assignment (if AssignmentStatus is 'manual'), or null if none assigned. Only one of AssignedUserID or AssignedQueueID should be non null."
+    exportable="false"
+    fkentity="AssignableQueue"
+    name="AssignedQueue"
+    nullok="true"
+    setterScriptability="all"/>
+  <foreignkey
+    columnName="PreviousGroupID"
+    desc="Group to which this entity was previously assigned."
+    exportable="false"
+    fkentity="Group"
+    name="PreviousGroup"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <foreignkey
+    columnName="PreviousUserID"
+    desc="User to which this entity was previously assigned."
+    exportable="false"
+    fkentity="User"
+    name="PreviousUser"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <foreignkey
+    columnName="PreviousQueueID"
+    desc="Queue to which this entity was previously assigned."
+    exportable="false"
+    fkentity="AssignableQueue"
+    name="PreviousQueue"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <typekey
+    createhistogram="true"
+    default="unassigned"
+    desc="Typelist describing assignment status."
+    exportable="false"
+    name="AssignmentStatus"
+    nullok="false"
+    setterScriptability="hidden"
+    typelist="AssignmentStatus"/>
+  <foreignkey
+    columnName="AssignedByUserID"
+    desc="User who assigned this entity."
+    exportable="false"
+    fkentity="User"
+    name="AssignedByUser"
+    nullok="true"/>
+</delegate>

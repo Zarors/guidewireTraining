@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <MenuActions
+    flatten="true"
+    id="InternalToolsMenuActions">
+    <MenuItem
+      action="gw.api.util.NavUtil.goToDefaultEntryPoint()"
+      id="ReturnToApp"
+      label="DisplayKey.get(&quot;Web.TabBar.ReturnToApp&quot;)"/>
+    <MenuItem
+      action="logout:*"
+      id="InternalToolsMenuActions_Logout"
+      label="DisplayKey.get(&quot;Web.TabBar.Logout&quot;, entity.User.util.CurrentUser)"/>
+  </MenuActions>
+</PCF>

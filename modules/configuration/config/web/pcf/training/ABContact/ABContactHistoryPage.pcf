@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canEdit="false"
+    canVisit="true"
+    id="ABContactHistoryPage"
+    title="DisplayKey.get(&quot;Training.History&quot;)">
+    <LocationEntryPoint
+      signature="ABContactHistoryPage(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Screen
+      id="ABContactHistoryScreen">
+      <PanelRef
+        def="ABContactHistoryLV(anABContact)">
+        <Toolbar/>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

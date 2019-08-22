@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SecurityConfig
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="security-config.xsd">
+
+  <StaticHandler entity="User" permKey="ViewInfo">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsInfoview"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewMBeans">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsJMXBeansview"/>
+  </StaticHandler>
+
+  <WrapHandler entity="User" permKey="EditMBeans" wrapPermKey="ViewMBeans">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsJMXBeansEdit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="EditJProfiler">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsJProfileredit"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewBatchProcess">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsBatchProcessview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditBatchProcess" wrapPermKey="ViewBatchProcess">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsBatchProcessedit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewWorkQueue">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsWorkQueueview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditWorkQueue" wrapPermKey="ViewWorkQueue">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsWorkQueueedit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewProfiler">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsProfilerview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditProfiler" wrapPermKey="ViewProfiler">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsProfileredit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewCacheInfo">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsCacheinfoview"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewPlugin">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsPluginview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditPlugin" wrapPermKey="ViewPlugin">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsPluginedit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewLog">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsLogview"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="EditLog">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsLogedit"/>
+  </StaticHandler>
+
+  <StaticHandler entity="User" permKey="ViewCluster">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsClusterview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="EditCluster" wrapPermKey="ViewCluster">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsClusteredit"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ViewDataChange">
+    <SystemPermType code="admindatachangeview"/>
+  </StaticHandler>
+  <WrapHandler entity="User" permKey="ExecuteDataChange" wrapPermKey="ViewDataChange">
+    <SystemPermType code="admindatachangeexec"/>
+  </WrapHandler>
+
+  <StaticHandler entity="User" permKey="ServerTools" noPermissionDisplayKey="Web.ServerTools.NoPermission">
+    <SystemPermType code="internaltools"/>
+    <SystemPermType code="toolsInfoview"/>
+    <SystemPermType code="toolsJMXBeansview"/>
+    <SystemPermType code="toolsJProfileredit"/>
+    <SystemPermType code="toolsBatchProcessview"/>
+    <SystemPermType code="toolsWorkQueueview"/>
+    <SystemPermType code="toolsProfilerview"/>
+    <SystemPermType code="toolsPluginview"/>
+    <SystemPermType code="toolsLogview"/>
+    <SystemPermType code="toolsLogedit"/>
+    <SystemPermType code="toolsClusterview"/>
+  </StaticHandler>
+
+  <!--PXPermissionKeys-->
+
+  <OptionalObjectHandler entity="Activity" permKey="view" internal="true" desc="Permission to view an activity">
+    <SystemPermType code="actview"/>
+  </OptionalObjectHandler>
+
+  <ObjectHandler entity="Activity" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.impl.EditActivityPermissionHandler"/>
+  </ObjectHandler>
+
+  <OptionalObjectHandler entity="Activity" permKey="makemandatory" internal="true" desc="Permission to make activities mandatory">
+    <SystemPermType code="actmakemand"/>
+  </OptionalObjectHandler>
+
+  <ObjectHandler entity="Activity" permKey="assign" internal="true">
+    <Handler code="com.guidewire.pl.domain.assignment.impl.ActivityAssignmentPermissionHandler"/>
+  </ObjectHandler>
+
+  <ObjectHandler entity="Activity" permKey="approve" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.ApproveActivityPermissionHandler"/>
+  </ObjectHandler>
+
+  <StaticHandler entity="Activity" permKey="approveany" internal="true" desc="Permission to approve any approval activity">
+    <SystemPermType code="actapproveany"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Activity" permKey="reviewassignment" internal="true" desc="Permission to complete assignment review activities">
+    <SystemPermType code="actreviewassign"/>
+  </StaticHandler>
+
+  <OptionalObjectHandler entity="Activity" permKey="own" internal="true" desc="Permission to own activities">
+    <SystemPermType code="actown"/>
+  </OptionalObjectHandler>
+
+  <StaticHandler entity="Activity" permKey="nextfromqueue" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.impl.ActivityNextFromQueuePermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Activity" permKey="pickfromqueue" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.impl.ActivityPickFromQueuePermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Activity" permKey="assignfromqueue" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.impl.ActivityAssignFromQueuePermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Activity" permKey="viewqueue" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.impl.ActivityViewQueuePermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Activity" permKey="viewallqueues" internal="true">
+    <Handler code="com.guidewire.pl.domain.activity.impl.ActivityViewAllQueuesPermissionHandler"/>
+  </StaticHandler>
+
+
+  <StaticHandler entity="Credential" permKey="create" internal="true" desc="Permission to create a new credential">
+    <SystemPermType code="usercreate"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Credential" permKey="edit" internal="true" desc="Permission to edit an existing credential.  Note that a user can always edit their own password">
+    <SystemPermType code="useredit"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Credential" permKey="delete" internal="true" desc="Permission to delete a credential">
+    <SystemPermType code="userdelete"/>
+  </StaticHandler>
+
+
+
+  <StaticHandler entity="User" permKey="create" internal="true" desc="Permission to create a new user">
+    <SystemPermType code="usercreate"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="User" permKey="view" internal="true" desc="Permission to view a user's details">
+    <SystemPermType code="userview"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="User" permKey="edit" internal="true" desc="Permission to edit an existing user">
+    <SystemPermType code="useredit"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="User" permKey="delete" internal="true" desc="Permission to delete a user">
+    <SystemPermType code="userdelete"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="User" permKey="viewallusers" internal="true" desc="Permission to view all users in the system">
+    <SystemPermType code="userviewall"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="usereditlang" internal="true" desc="Permission to change the language for a user">
+    <SystemPermType code="usereditlang"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="manageattributes" internal="true" desc="Permission to add and remove attributes from a user">
+    <SystemPermType code="usereditattrs"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="grantroles" internal="true" desc="Permission to assign a user roles">
+    <SystemPermType code="usergrantroles"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="grantauthoritylimits" internal="true" desc="Permission to give a user authority limits">
+    <SystemPermType code="usergrantauth"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="viewdestination" internal="true" desc="Permission to view a message destination">
+    <SystemPermType code="integadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="suspenddestination" internal="true" desc="Permission to suspend a message destination">
+    <SystemPermType code="integadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="resumedestination" internal="true" desc="Permission to resume a message destination">
+    <SystemPermType code="integadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="viewteam" internal="true" desc="Permission to view the team pages">
+    <SystemPermType code="viewteam"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="viewsearch" internal="true" desc="Permission to view the search pages">
+    <SystemPermType code="viewsearch"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="viewworkload" internal="true" desc="Permission to view global workload information of other users">
+    <SystemPermType code="viewworkload"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="viewactcal" internal="true" desc="Permission to view activity calendar of other users">
+    <SystemPermType code="viewactcal"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="alwaysaccessdebugtools" internal="true" desc="Permission to always access the debug tools">
+    <SystemPermType code="debugtools"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="soapadmin" internal="true" desc="Permission to use the SOAP tools">
+    <SystemPermType code="soapadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="jmxadmin" internal="true" desc="Permission to use the JMX monitoring interface">
+    <SystemPermType code="soapadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="ruleadmin" internal="true" desc="Permission to use the rule composer">
+    <SystemPermType code="ruleadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="integrationadmin" internal="true" desc="Permission to perform integration tasks">
+    <SystemPermType code="integadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="printlistviews" internal="true" desc="Permission to print list views">
+    <SystemPermType code="lvprint"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="importadmindata" internal="true" desc="Permission to import admin data">
+    <SystemPermType code="soapadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="exportadmindata" internal="true" desc="Permission to export admin data">
+    <SystemPermType code="soapadmin"/>
+  </StaticHandler>
+  <StaticHandler entity="User" permKey="DevAllAccess" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.DevAllAccessPermissionHandler"/>
+  </StaticHandler>
+  <ObjectHandler entity="User" permKey="editvacation" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.EditVacationPermissionHandler"/>
+  </ObjectHandler>
+
+  <StaticHandler entity="Group" permKey="create" internal="true" desc="Permission to create a new group">
+    <SystemPermType code="groupcreate"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="Group" permKey="view" internal="true" desc="Permission to view a group's details">
+    <SystemPermType code="groupview"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="Group" permKey="edit" internal="true" desc="Permission to edit an existing group">
+    <SystemPermType code="groupedit"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="Group" permKey="delete" internal="true" desc="Permission to delete a group">
+    <SystemPermType code="groupdelete"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Group" permKey="viewtree" internal="true" desc="Permission to view the user/group tree">
+    <SystemPermType code="grouptreeview"/>
+  </StaticHandler>
+  <StaticHandler entity="Group" permKey="viewloadfactors" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.ViewLoadFactorsPermissionHandler"/>
+  </StaticHandler>
+  <ObjectHandler entity="Group" permKey="manageloadfactors" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.ManageLoadFactorsPermissionHandler"/>
+  </ObjectHandler>
+
+
+  <StaticHandler entity="UserRole" permKey="create" internal="true" desc="Permission to create a new user-role mapping">
+    <SystemPermType code="usergrantroles"/>
+  </StaticHandler>
+  <StaticHandler entity="UserRole" permKey="edit" internal="true" desc="Permission to edit an existing user-role mapping">
+    <SystemPermType code="usergrantroles"/>
+  </StaticHandler>
+  <StaticHandler entity="UserRole" permKey="delete" internal="true" desc="Permission to delete a user-role mapping">
+    <SystemPermType code="usergrantroles"/>
+  </StaticHandler>
+
+  <OptionalObjectHandler entity="ActivityPattern" permKey="view" internal="true" desc="Permission to view activity patterns">
+    <SystemPermType code="actpatview"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="ActivityPattern" permKey="create" internal="true" desc="Permission to create activity patterns">
+    <SystemPermType code="actpatcreate"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="ActivityPattern" permKey="edit" internal="true" desc="Permission to edit activity patterns">
+    <SystemPermType code="actpatedit"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="ActivityPattern" permKey="delete" internal="true" desc="Permission to delete activity patterns">
+    <SystemPermType code="actpatdelete"/>
+  </OptionalObjectHandler>
+
+  <StaticHandler entity="GroupRegion" permKey="create" internal="true" desc="Permission to create a group region">
+    <SystemPermType code="groupedit"/>
+  </StaticHandler>
+  <StaticHandler entity="GroupRegion" permKey="edit" internal="true" desc="Permission to modify a group region">
+    <SystemPermType code="groupedit"/>
+  </StaticHandler>
+  <StaticHandler entity="GroupRegion" permKey="delete" internal="true" desc="Permission to delete a group region">
+    <SystemPermType code="groupedit"/>
+  </StaticHandler>
+
+  <StaticHandler entity="GroupUser" permKey="create" internal="true" desc="Permission to create a new user-group mapping">
+    <SystemPermType code="groupedit"/>
+  </StaticHandler>
+  <StaticHandler entity="GroupUser" permKey="edit" internal="true" desc="Permission to edit an existing user-group mapping">
+    <SystemPermType code="groupedit"/>
+  </StaticHandler>
+  <StaticHandler entity="GroupUser" permKey="delete" internal="true" desc="Permission to delete a user-group mapping">
+    <SystemPermType code="groupedit"/>
+  </StaticHandler>
+
+  <OptionalObjectHandler entity="Region" permKey="view" internal="true" desc="Permission to view a list of regions or a regions details">
+    <SystemPermType code="regionview"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Region" permKey="create" internal="true" desc="Permission to create a new region">
+    <SystemPermType code="regionmanage"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="Region" permKey="edit" internal="true" desc="Permission to edit an existing region">
+    <SystemPermType code="regionmanage"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="Region" permKey="delete" internal="true" desc="Permission to delete a region">
+    <SystemPermType code="regionmanage"/>
+  </OptionalObjectHandler>
+
+  <OptionalObjectHandler entity="Role" permKey="view" internal="true" desc="Permission to view the list of roles or a role's details">
+    <SystemPermType code="roleview"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Role" permKey="create" internal="true" desc="Permission to create a new role">
+    <SystemPermType code="rolemanage"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="Role" permKey="edit" internal="true" desc="Permission to edit an existing role">
+    <SystemPermType code="rolemanage"/>
+  </OptionalObjectHandler>
+  <OptionalObjectHandler entity="Role" permKey="delete" internal="true" desc="Permission to delete a role">
+    <SystemPermType code="rolemanage"/>
+  </OptionalObjectHandler>
+
+  <StaticHandler entity="RolePrivilege" permKey="create" internal="true" desc="Permission to create a new role-privilege mapping">
+    <SystemPermType code="rolemanage"/>
+  </StaticHandler>
+  <StaticHandler entity="RolePrivilege" permKey="edit" internal="true" desc="Permission to edit an existing role-privilege mapping">
+    <SystemPermType code="rolemanage"/>
+  </StaticHandler>
+  <StaticHandler entity="RolePrivilege" permKey="delete" internal="true" desc="Permission to delete a role-privilege mapping">
+    <SystemPermType code="rolemanage"/>
+  </StaticHandler>
+
+  <StaticHandler entity="ScriptParameter" permKey="view" internal="true" desc="Permission to view the script parameter list and script parameter details">
+    <SystemPermType code="scrprmview"/>
+  </StaticHandler>
+  <StaticHandler entity="ScriptParameter" permKey="create" internal="true" desc="Permission to create new script parameters">
+    <SystemPermType code="scrprmmanage"/>
+  </StaticHandler>
+  <StaticHandler entity="ScriptParameter" permKey="edit" internal="true" desc="Permission to edit existing script parameters">
+    <SystemPermType code="scrprmmanage"/>
+  </StaticHandler>
+  <StaticHandler entity="ScriptParameter" permKey="delete" internal="true" desc="Permission to delete script parameters">
+    <SystemPermType code="scrprmmanage"/>
+  </StaticHandler>
+
+  <StaticHandler entity="SecurityZone" permKey="view" internal="true" desc="Permission to view a security zone">
+    <SystemPermType code="seczonemanage"/>
+  </StaticHandler>
+  <StaticHandler entity="SecurityZone" permKey="create" internal="true" desc="Permission to create a new security zone">
+    <SystemPermType code="seczonemanage"/>
+  </StaticHandler>
+  <StaticHandler entity="SecurityZone" permKey="edit" internal="true" desc="Permission to edit an existing security zone">
+    <SystemPermType code="seczonemanage"/>
+  </StaticHandler>
+  <StaticHandler entity="SecurityZone" permKey="delete" internal="true" desc="Permission to delete a security zone">
+    <SystemPermType code="seczonemanage"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Attribute" permKey="view" internal="true" desc="Permission to view a list of attributes or an attribute's details">
+    <SystemPermType code="attrview"/>
+  </StaticHandler>
+  <StaticHandler entity="Attribute" permKey="create" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.AttributePermissionHandler"/>
+  </StaticHandler>
+  <StaticHandler entity="Attribute" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.AttributePermissionHandler"/>
+  </StaticHandler>
+  <StaticHandler entity="Attribute" permKey="delete" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.AttributePermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="BusinessWeek" permKey="view" internal="true" desc="Permission to view a list of BusinessWeeks or BusinessWeek details">
+    <SystemPermType code="buswkview"/>
+  </StaticHandler>
+  <StaticHandler entity="BusinessWeek" permKey="create" internal="true" desc="Permission to create a BusinessWeek">
+    <SystemPermType code="buswkmanage"/>
+  </StaticHandler>
+  <StaticHandler entity="BusinessWeek" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.BusinessWeekPermissionHandler"/>
+  </StaticHandler>
+  <StaticHandler entity="BusinessWeek" permKey="delete" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.BusinessWeekPermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Holiday" permKey="view" internal="true" desc="Permission to view a list of holidays or holiday details">
+    <SystemPermType code="holidayview"/>
+  </StaticHandler>
+  <StaticHandler entity="Holiday" permKey="create" internal="true" desc="Permission to create a holiday">
+    <SystemPermType code="holidaymanage"/>
+  </StaticHandler>
+  <StaticHandler entity="Holiday" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.HolidayPermissionHandler"/>
+  </StaticHandler>
+  <StaticHandler entity="Holiday" permKey="delete" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.HolidayPermissionHandler"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Contact" permKey="viewlocal" internal="true" desc="Permission to view a contact">
+    <SystemPermType code="ctcview"/>
+  </StaticHandler>
+  <StaticHandler entity="Contact" permKey="createlocal" internal="true" desc="Permission to create a new contact">
+    <SystemPermType code="ctccreate"/>
+  </StaticHandler>
+  <ObjectHandler entity="Contact" permKey="editlocal" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.impl.EditContactPermissionHandler"/>
+  </ObjectHandler>
+  <OptionalObjectHandler entity="Contact" permKey="viewab" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.security.ViewABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Contact" permKey="viewsearchab" internal="true" desc="Permission to view the AB search page">
+    <SystemPermType code="abviewsearch"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="Contact" permKey="createab" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.security.CreateABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Contact" permKey="createpreferredab" internal="true" desc="Permission to create new preferred vendor AB Contact or change an existing contact to be a preferred vendor">
+    <SystemPermType code="abcreatepref"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="Contact" permKey="editab" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.security.EditABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Contact" permKey="editpreferredab" internal="true" desc="Permission to modify a preferred vendor AB Contact">
+    <SystemPermType code="abeditpref"/>
+  </StaticHandler>
+  <OptionalObjectHandler entity="Contact" permKey="deleteab" internal="true">
+    <Handler code="com.guidewire.pl.domain.contact.security.DeleteABContactPermissionHandler"/>
+  </OptionalObjectHandler>
+  <StaticHandler entity="Contact" permKey="deletepreferredab" internal="true" desc="Permission to delete a preferred vendor AB Contact">
+    <SystemPermType code="abdeletepref"/>
+  </StaticHandler>
+
+  <StaticHandler entity="Document" permKey="create" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.DocumentCreatePermissionHandler"/>
+  </StaticHandler>
+  <ObjectHandler entity="Document" permKey="view" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.DocumentViewPermissionHandler.Wrap"/>
+  </ObjectHandler>
+  <ObjectHandler entity="Document" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.DocumentEditPermissionHandler.Wrap"/>
+  </ObjectHandler>
+  <ObjectHandler entity="Document" permKey="delete" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.DocumentDeletePermissionHandler.Wrap"/>
+  </ObjectHandler>
+
+  <StaticHandler entity="Note" permKey="create" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.NoteCreatePermissionHandler"/>
+  </StaticHandler>
+  <ObjectHandler entity="Note" permKey="view" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.NoteViewPermissionHandler.Wrap"/>
+  </ObjectHandler>
+  <ObjectHandler entity="Note" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.NoteEditPermissionHandler.Wrap"/>
+  </ObjectHandler>
+  <ObjectHandler entity="Note" permKey="delete" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.NoteDeletePermissionHandler.Wrap"/>
+  </ObjectHandler>
+  <ObjectHandler entity="Note" permKey="editbody" internal="true">
+    <Handler code="com.guidewire.pl.system.security.impl.NoteEditBodyPermissionHandler.Wrap"/>
+  </ObjectHandler>
+
+  <StaticHandler entity="AttributeUser" permKey="create" desc="Permission to create a new attribute-user relationship" internal="true">
+    <SystemPermType code="usereditattrs"/>
+  </StaticHandler>
+  <StaticHandler entity="AttributeUser" permKey="edit" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.AttributeUserPermissionHandler"/>
+  </StaticHandler>
+  <StaticHandler entity="AttributeUser" permKey="delete" internal="true">
+    <Handler code="com.guidewire.pl.domain.community.impl.AttributeUserPermissionHandler"/>
+  </StaticHandler>
+
+</SecurityConfig>

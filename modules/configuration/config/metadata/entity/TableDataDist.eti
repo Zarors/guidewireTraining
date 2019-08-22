@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores data distribution info for each table in the database."
+  entity="TableDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="tabledatadist"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.impl.TableDataDistInternalMethods"
+    impl="com.guidewire.pl.domain.database.impl.TableDataDistImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.database.TableDataDistPublicMethods"
+    impl="com.guidewire.pl.domain.database.impl.TableDataDistImpl"/>
+  <!-- TableName can contain subtype references, and so must be more than 30 characters -->
+  <column
+    desc="Name of table."
+    name="TableName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Name of entity.  Can be subtype entity."
+    name="EntityName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Count of # of rows."
+    name="NumRows"
+    nullok="false"
+    type="longint"/>
+  <column
+    desc="Count of # of retired rows. (null if non-retireable)"
+    name="NumRetiredRows"
+    nullok="true"
+    type="longint"/>
+  <column
+    desc="Count of # of rows loaded through the staging tables. (null if non-loadable)"
+    name="NumLoadedThruStagingTables"
+    nullok="true"
+    type="longint"/>
+  <column
+    desc="Count of # of updated rows."
+    name="NumUpdatedRows"
+    nullok="true"
+    type="longint"/>
+  <column
+    desc="Count of # of total updates."
+    name="NumUpdates"
+    nullok="true"
+    type="longint"/>
+  <column
+    default="false"
+    desc="True if staging table distribution"
+    name="StagingTableDist"
+    nullok="true"
+    type="bit"/>
+  <column
+    default="false"
+    desc="True if type list table distribution"
+    name="TypeListTableDist"
+    nullok="true"
+    type="bit"/>
+  <column
+    default="true"
+    desc="True if admin table"
+    name="AdminTable"
+    nullok="true"
+    type="bit"/>
+  <column
+    default="true"
+    desc="True if platform table"
+    name="PlatformTable"
+    nullok="true"
+    type="bit"/>
+  <foreignkey
+    columnName="DatabaseDataDistID"
+    desc="DatabaseDataDist for this object."
+    exportable="false"
+    fkentity="DatabaseDataDist"
+    ignoreforevents="true"
+    name="DatabaseDataDist"
+    nullok="false"/>
+  <edgeForeignKey
+    desc="For subtype tables, points to the parent table's data distribution.  Otherwise, this is null."
+    edgeTableEntityName="TableDataDistParent"
+    edgeTableName="tableparent"
+    exportable="false"
+    fkentity="TableDataDist"
+    loadable="false"
+    name="ParentTableDataDist"
+    nullok="true"/>
+  <array
+    arrayentity="ForKeyDataDist"
+    desc="Collection of ForKeyDataDists linked to this TableDataDist."
+    exportable="true"
+    name="ForKeyDataDists"
+    owner="true"/>
+  <array
+    arrayentity="AssignableForKeyDataDist"
+    desc="Collection of AssignableForKeyDataDists linked to this TableDataDist."
+    exportable="true"
+    name="AssignableForKeyDataDists"
+    owner="true"/>
+  <array
+    arrayentity="BeanVersionDataDist"
+    desc="Collection of BeanVersionDataDists linked to this TableDataDist."
+    exportable="true"
+    name="BeanVersionDataDists"
+    owner="true"/>
+  <array
+    arrayentity="BlobColDataDist"
+    desc="Collection of BlobColDataDists linked to this TableDataDist."
+    exportable="true"
+    name="BlobColDataDists"
+    owner="true"/>
+  <array
+    arrayentity="ClobColDataDist"
+    desc="Collection of ClobColDataDists linked to this TableDataDist."
+    exportable="true"
+    name="ClobColDataDists"
+    owner="true"/>
+  <array
+    arrayentity="DateSpanDataDist"
+    desc="Collection of min and max dates for all date columns in this table"
+    exportable="true"
+    name="DateSpanDataDists"
+    owner="true"/>
+  <array
+    arrayentity="ArrayDataDist"
+    desc="Collection of ArrayDataDists linked to this TableDataDist."
+    exportable="true"
+    name="ArrayDataDists"
+    owner="true"/>
+  <array
+    arrayentity="TypeKeyDataDist"
+    desc="Collection of TypeKeyDataDists linked to this TableDataDist."
+    exportable="true"
+    name="TypeKeyDataDists"
+    owner="true"/>
+  <array
+    arrayentity="BooleanColDataDist"
+    desc="Collection of BooleanColDataDists linked to this TableDataDist."
+    exportable="true"
+    name="BooleanColDataDists"
+    owner="true"/>
+  <array
+    arrayentity="GenericGroupDataDist"
+    desc="Collection of GenericGroupDataDists linked to this TableDataDist."
+    exportable="true"
+    name="GenericGroupDataDists"
+    owner="true"/>
+  <array
+    arrayentity="DateBinnedDataDist"
+    desc="Collection of DateBinnedDataDists linked to this TableDataDist."
+    exportable="true"
+    name="DateBinnedDataDists"
+    owner="true"/>
+  <array
+    arrayentity="CustomDataDistRequest"
+    desc="Collection of CustomDataDistRequests linked to this TableDataDist."
+    exportable="true"
+    name="CustomDataDistRequests"
+    owner="true"/>
+  <array
+    arrayentity="NullableColumnDataDist"
+    desc="Collection of NullableColumnDataDists linked to this TableDataDist."
+    exportable="true"
+    name="NullableColumnDataDists"
+    owner="true"/>
+  <array
+    arrayentity="DateAnalysisDataDist"
+    desc="Collection of DateAnalysisDataDists linked to this TableDataDist."
+    exportable="true"
+    name="DateAnalysisDataDists"
+    owner="true"/>
+  <array
+    arrayentity="HourAnalysisDataDist"
+    desc="Collection of HourAnalysisDataDists linked to this TableDataDist."
+    exportable="true"
+    name="HourAnalysisDataDists"
+    owner="true"/>
+  <index
+    desc="Ensure uniqueness for combination of TableName and EntityName"
+    name="tableddu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="DatabaseDataDistID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+    <indexcol
+      keyposition="3"
+      name="EntityName"/>
+  </index>
+</entity>

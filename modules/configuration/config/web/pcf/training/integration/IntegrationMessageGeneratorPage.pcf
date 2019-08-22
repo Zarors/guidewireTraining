@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="IntegrationMessageGeneratorPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Training.MessageGenerator&quot;)">
+    <Variable
+      initialValue="generateMessageGeneratorName()"
+      name="InstanceName"
+      type="String"/>
+    <Screen
+      editable="true">
+      <DetailViewPanel>
+        <InputColumn>
+          <ContentInput>
+            <Link
+              action="MessageGeneratorExitPoint.push()"
+              id="DisplayInstructions"
+              label="DisplayKey.get(&quot;Training.DisplayInstructions&quot;)"/>
+          </ContentInput>
+          <Label
+            id="NewMessageTestLabel"
+            label="DisplayKey.get(&quot;Training.NewMessageGenerator&quot;)"/>
+          <TextInput
+            editable="true"
+            id="Name"
+            label="DisplayKey.get(&quot;Training.Name&quot;)"
+            required="true"
+            value="InstanceName"/>
+          <ButtonInput
+            action="sendOnly()"
+            id="SendOnly"
+            value="DisplayKey.get(&quot;Training.SendOnly&quot;)"/>
+          <ButtonInput
+            action="sendAndAck()"
+            id="SendAndAckButton"
+            value="DisplayKey.get(&quot;Training.SendAndAck&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[function generateMessageGeneratorName() : String {
+  return "MsgGen:" + gw.api.system.database.SequenceUtil.next(1, "MsgGen")
+}
+
+function sendOnly() {
+  gw.transaction.Transaction.runWithNewBundle(\ bundle -> {
+    var newMessageGenerator = new MessageGenerator()
+    newMessageGenerator.Name = InstanceName
+    print (newMessageGenerator)
+  })
+  InstanceName = generateMessageGeneratorName()
+}
+
+function sendAndAck() {
+  gw.transaction.Transaction.runWithNewBundle(\ bundle -> {
+    var newMessageGenerator = new MessageGenerator()
+    newMessageGenerator.Name = InstanceName
+    newMessageGenerator.AutoAckMessage = true
+    print (newMessageGenerator)
+  })
+  InstanceName = generateMessageGeneratorName()
+}]]></Code>
+  </Page>
+</PCF>

@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="ABContactSearchCriteria">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.addressbook.impl.ABContactSearchCriteriaInternal"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABContactSearchCriteria"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactSearchCriteriaImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.service.search.CommonContactSearchCriteria"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactSearchCriteriaImpl"/>
+  <typekey
+    desc="ABContact class, like ABPerson, ABCompany, and ABVenue."
+    name="ContactSubtype"
+    nullok="false"
+    typelist="ABContact"/>
+  <column
+    desc="First Name"
+    name="FirstName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Keyword is the general term for Name (Companies and Places) and LastName (for Persons)"
+    name="Keyword"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Name of person's employer"
+    name="OrganizationName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    default="false"
+    desc="Preferred vendors only"
+    name="PreferredVendors"
+    nullok="true"
+    type="bit"/>
+  <column
+    desc="Tax ID for the contact (SSN or EIN)."
+    name="TaxID"
+    nullok="true"
+    type="ssn"/>
+  <column
+    desc="Employee ID number. Applies to UserContacts."
+    name="EmployeeNumber"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Minimum Score for returned Contacts"
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <typekey
+    desc="The contact's vendor type."
+    name="VendorType"
+    nullok="true"
+    typelist="VendorType"/>
+  <typekey
+    desc="The contact's vendor availability type for example, available, unavailable."
+    name="VendorAvailability"
+    nullok="true"
+    typelist="VendorAvailabilityType"/>
+  <foreignkey
+    desc="The parameters for a proximity search"
+    fkentity="ProximitySearchParameters"
+    name="ProximitySearchParameters"
+    nullok="true"/>
+  <foreignkey
+    desc="The center for a proximity search"
+    fkentity="Address"
+    name="ProximitySearchCenter"
+    nullok="true"/>
+  <foreignkey
+    desc="The address of the contact.  Supercedes the separate fields of City, State, and PostalCode."
+    fkentity="Address"
+    name="Address"
+    nullok="true"/>
+  <column
+    default="false"
+    desc="Set on remote searches via SOAP if Country should actually be null, as the SOAP deserialization of Address.Country treats Null as the default Country."
+    getterScriptability="hidden"
+    name="IgnoreCountry"
+    nullok="true"
+    setterScriptability="hidden"
+    type="bit"/>
+  <foreignkey
+    desc="The criteria for related contacts"
+    fkentity="RelatedABContactSearchCriteria"
+    name="RelatedABContactSearchCriteria"
+    nullok="true"/>
+  <array
+    arrayentity="ABContactSearchCriteriaTag"
+    desc="List of ABContactSearchCriteriaTags."
+    name="Tags"
+    owner="true"/>
+  <column
+    default="false"
+    desc="If true, Contacts must have all the tags to match, if false, Contacts must have at least one of the tags to match."
+    name="AllTagsRequired"
+    nullok="true"
+    type="bit"/>
+  <array
+    arrayentity="ABContactSearchCriteriaSpecialistService"
+    desc="List of ABContactSearchCriteriaSpecialistServices."
+    name="SpecialistServices"
+    owner="true"/>
+  <column
+    name="CityDenorm"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+  </column>
+  <column
+    name="PostalCodeDenorm"
+    nullok="true"
+    type="postalcode"/>
+  <typekey
+    createhistogram="true"
+    name="StateDenorm"
+    nullok="true"
+    typelist="State">
+    <keyfilters>
+      <keyfilter
+        name="CountryDenorm"/>
+    </keyfilters>
+  </typekey>
+  <typekey
+    name="CountryDenorm"
+    nullok="true"
+    typelist="Country"/>
+</nonPersistentEntity>

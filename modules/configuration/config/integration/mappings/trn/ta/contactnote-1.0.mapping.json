@@ -1,0 +1,23 @@
+{
+  "schemaName" : "trn.ta.contactnote-1.0",
+  "mappers" : {
+    "ContactNoteDetails" : {
+      "schemaDefinition" : "ContactNoteDetails",
+      "root" : "entity.ContactNote",
+      "properties" : {
+        "ContactNoteType" : {
+          "path" : "ContactNote.ContactNoteType"
+        },
+        "Confidential" : {
+          "path" : "ContactNote.IsConfidential"
+        },
+        "Subject" : {
+          "path" : "ContactNote.Subject"
+        },
+        "Body" : {
+          "path" : "ContactNote.Body"
+        }
+      }
+    }
+  }
+}

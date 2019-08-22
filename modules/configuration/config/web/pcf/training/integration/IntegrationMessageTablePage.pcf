@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="IntegrationMessageTablePage"
+    title="DisplayKey.get(&quot;Training.MessageTable&quot;)">
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Training.WarningMessageTable&quot;)"/>
+          <Label
+            label="DisplayKey.get(&quot;Training.MessageCount&quot;, allMessageCount())"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        def="MessageLV()">
+        <Toolbar>
+          <CheckedValuesToolbarButton
+            checkedRowAction="skipSelectedMessage(CheckedValue)"
+            confirmMessage="DisplayKey.get(&quot;Training.AreYouSureMessage&quot;)"
+            id="SkipSelectedMessageButton"
+            iterator="MessageLV.MessageIterator"
+            label="DisplayKey.get(&quot;Training.SkipSelectedMessages&quot;)"/>
+        </Toolbar>
+      </PanelRef>
+    </Screen>
+    <Code><![CDATA[function allMessageCount() : int {
+  var queryObj = gw.api.database.Query.make(Message)
+  return queryObj.select().Count
+}
+
+function skipAllMessages() : void {
+  var allMessages = gw.api.database.Query.make(Message).select() 
+  gw.transaction.Transaction.runWithNewBundle( \ newBundle -> {
+    for (currentMessage in allMessages) {
+      newBundle.add(currentMessage)
+      currentMessage.skip()
+    } // end for
+  } ) // end runWithNewBundle
+}
+
+function skipSelectedMessage(aMessage : Message) : void {
+  gw.transaction.Transaction.runWithNewBundle( \ newBundle -> {aMessage.skip()} )
+} // end skipSelectedMessage  
+  ]]></Code>
+  </Page>
+</PCF>

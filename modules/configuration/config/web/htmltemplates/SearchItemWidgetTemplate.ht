@@ -1,0 +1,2 @@
+<div :if="label" class="gw-label gw-SearchItemWidget--label">${label}</div>
+<div class="gw-SearchItemWidget--input-and-icon">${:children}</div>

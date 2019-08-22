@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><internalExtension xmlns="http://guidewire.com/datamodel" entityName="Address">
+  <implementsInterface
+    iface="com.guidewire.ab.domain.contact.impl.AddressCoreExtMethods"
+    impl="com.guidewire.ab.domain.contact.impl.AddressCoreExtMethodsImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.ab.domain.contact.impl.AddressCoreExtMethodsImpl"/>
+  <implementsEntity name="Validatable"/>
+  <implementsEntity name="ABLinkable"/>
+  <implementsInterface
+    iface="com.guidewire.ab.domain.addressbook.impl.ABLinkableInternal"
+    impl="com.guidewire.ab.domain.contact.impl.AddressCoreExtMethodsImpl"/>
+  <implementsEntity name="HistoryEventContainer"/>
+  <implementsInterface
+    iface="gw.ab.history.entity.HistoryEventContainer"
+    impl="com.guidewire.ab.domain.contact.impl.AddressCoreExtMethodsImpl"/>
+  <description>
+      Represents a street or mailing address. Addresses are normally associated with
+      a Contact, either as a Primary Address for that Contact or via the ContactAddress table. Addresses can
+      have geographic location information stored for proximity searches.&lt;p/&gt;
+      {@see com.guidewire.pl.domain.contact.Contact}&lt;br/&gt;
+      {@see com.guidewire.pl.domain.contact.ContactAddress}
+  </description>
+  <onetoone desc="The associated ABContact, if any" exportable="false" fkentity="ABContact" name="ABContact" nullok="true" setterScriptability="doesNotExist"/>
+  <onetoone desc="The associated ABContactAddress, if any" exportable="false" fkentity="ABContactAddress" name="ABContactAddress" nullok="true" setterScriptability="doesNotExist"/>
+  <array arrayentity="ContactAddressHistory" arrayfield="ContactAddress" desc="History entries on this address" exportable="false" name="History"/>
+  <column desc="Represents the LinkID of the address that replaced this address in the event of a merge." name="ReplacingAddressLinkID" nullok="true" type="varchar">
+    <columnParam name="size" value="30"/>
+  </column>
+  <index desc="Index covering address for search by City and State" name="address2" trackUsage="true" unique="true">
+    <indexcol keyposition="1" name="CityDenorm"/>
+    <indexcol keyposition="2" name="State"/>
+    <indexcol keyposition="3" name="retired"/>
+    <indexcol keyposition="4" name="ID"/>
+  </index>
+  <index name="address3" unique="true">
+    <indexcol keyposition="1" name="PostalCodeDenorm"/>
+    <indexcol keyposition="2" name="retired"/>
+    <indexcol keyposition="3" name="ID"/>
+  </index>
+  <index desc="Index on geocode status and ID" name="address4" unique="true">
+    <indexcol keyposition="1" name="GeocodeStatus"/>
+    <indexcol keyposition="2" name="ID"/>
+  </index>
+  <index desc="Preserve uniqueness of LinkID" name="addresslinkid">
+    <indexcol keyposition="1" name="AddressBookUID"/>
+    <indexcol keyposition="2" name="Retired"/>
+  </index>
+  <index desc="Preserve uniqueness of LinkID" name="abaddresslinkid" unique="true">
+    <indexcol keyposition="1" name="LinkID"/>
+    <indexcol keyposition="2" name="Retired"/>
+  </index>
+  <index desc="Index covering address for search on state. Moved From Platform. (NOTE: We put id before state because of an oracle optimizer bug - it wasn't choosing the index for PersonLastNameSearchWithState when the 1st 2 columns were reversed.)" name="addressu1" trackUsage="true" unique="true">
+    <indexcol keyposition="1" name="ID"/>
+    <indexcol keyposition="2" name="State"/>
+    <indexcol keyposition="3" name="retired"/>
+  </index>
+  <index desc="For find duplicates" expectedtobecovering="true" name="address6" unique="true">
+    <indexcol keyposition="1" name="AddressLine1"/>
+    <indexcol keyposition="2" name="City"/>
+    <indexcol keyposition="3" name="State"/>
+    <indexcol keyposition="4" name="PostalCode"/>
+    <indexcol keyposition="5" name="retired"/>
+    <indexcol keyposition="6" name="ID"/>
+  </index>
+</internalExtension>

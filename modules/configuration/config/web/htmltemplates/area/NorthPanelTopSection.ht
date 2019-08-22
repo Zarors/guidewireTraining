@@ -1,0 +1,4 @@
+<div class="gw-NorthPanelWidget--top-section">
+  ${:children}
+  <div class="gw-page-load-bar"><div class="gw-page-load-bar--inner"></div></div>
+</div>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Notes added by users"
+  entity="Note"
+  exportable="true"
+  platform="true"
+  table="note"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.note.NotePublicMethods"
+    impl="com.guidewire.pl.domain.note.impl.NoteImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.note.impl.NoteInternalMethods"
+    impl="com.guidewire.pl.domain.note.impl.NoteImpl"/>
+  <column
+    desc="Body of the note."
+    exportable="true"
+    name="Body"
+    nullok="true"
+    type="longtext"/>
+  <!-- Moved here from cc -->
+  <column
+    default="false"
+    desc="Whether the note is confidential."
+    name="Confidential"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Subject or summary of the note."
+    exportable="true"
+    name="Subject"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Date on which the note was originally authored.  If null, the CreateTime seves this purpose."
+    exportable="true"
+    loadable="true"
+    name="AuthoringDate"
+    nullok="true"
+    type="datetime"/>
+  <foreignkey
+    columnName="ActivityID"
+    desc="The activity associated with the note."
+    exportable="false"
+    fkentity="Activity"
+    name="Activity"
+    nullok="true"/>
+  <foreignkey
+    columnName="AuthorID"
+    desc="User who wrote the note."
+    exportable="true"
+    exportasid="true"
+    fkentity="User"
+    name="Author"
+    nullok="true"/>
+  <typekey
+    default="general"
+    desc="Topic to which the note belongs."
+    exportable="true"
+    name="Topic"
+    nullok="true"
+    typelist="notetopictype"/>
+  <typekey
+    desc="Type of note; used for access-restriction purposes"
+    name="SecurityType"
+    nullok="true"
+    typelist="NoteSecurityType"/>
+  <typekey
+    desc="The language in which this note is created."
+    name="Language"
+    nullok="true"
+    typelist="LanguageType"/>
+</entity>

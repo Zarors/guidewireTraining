@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <InputSet
+    id="ABCompanyVendorSpecialtyInputSet"
+    mode="ABMedicalCareOrg">
+    <Require
+      name="contact"
+      type="ABContact"/>
+    <TypeKeyInput
+      editable="true"
+      id="MedicalSpecialty"
+      label="DisplayKey.get(&quot;Web.ContactDetail.MedicalCareOrg.MedicalSpecialty&quot;)"
+      value="(contact as ABMedicalCareOrg).MedicalOrgSpecialty"
+      valueType="typekey.SpecialtyType"/>
+  </InputSet>
+</PCF>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><import>
+  <SpecialistService public-id="svc:acc">
+    <Active>true</Active>
+    <Code>accomm</Code>
+    <Description displayKey="true">Services.Accommodation.Description</Description>
+    <Name displayKey="true">Services.Accommodation.Name</Name>
+    <Parent/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:acc_alt">
+    <Active>true</Active>
+    <Code>accommaltaccomm</Code>
+    <Description displayKey="true">Services.AlternativeAccomodation.Description</Description>
+    <Name displayKey="true">Services.AlternativeAccomodation.Name</Name>
+    <Parent public-id="svc:acc"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut">
+    <Active>true</Active>
+    <Code>auto</Code>
+    <Description displayKey="true">Services.Auto.Description</Description>
+    <Name displayKey="true">Services.Auto.Name</Name>
+    <Parent/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_adj">
+    <Active>true</Active>
+    <Code>autoadjudicate</Code>
+    <Description displayKey="true">Services.Auto.AdjudicateClaim.Description</Description>
+    <Name displayKey="true">Services.Auto.AdjudicateClaim.Name</Name>
+    <Parent public-id="svc:aut"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_app">
+    <Active>true</Active>
+    <Code>autoappraise</Code>
+    <Description displayKey="true">Services.Auto.Appraisal.Description</Description>
+    <Name displayKey="true">Services.Auto.Appraisal.Name</Name>
+    <Parent public-id="svc:aut"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_ins">
+    <Active>true</Active>
+    <Code>autoinsprepair</Code>
+    <Description displayKey="true">Services.Auto.InspectionRepair.Description</Description>
+    <Name displayKey="true">Services.Auto.InspectionRepair.Name</Name>
+    <Parent public-id="svc:aut"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_ins_aud">
+    <Active>true</Active>
+    <Code>autoinsprepairaudio</Code>
+    <Description displayKey="true">Services.Auto.AudioEquipment.Description</Description>
+    <Name displayKey="true">Services.Auto.AudioEquipment.Name</Name>
+    <Parent public-id="svc:aut_ins"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_ins_bod">
+    <Active>true</Active>
+    <Code>autoinsprepairbody</Code>
+    <Description displayKey="true">Services.Auto.AutoBody.Description</Description>
+    <Name displayKey="true">Services.Auto.AutoBody.Name</Name>
+    <Parent public-id="svc:aut_ins"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_ins_gla">
+    <Active>true</Active>
+    <Code>autoinsprepairglass</Code>
+    <Description displayKey="true">Services.Auto.Glass.Description</Description>
+    <Name displayKey="true">Services.Auto.Glass.Name</Name>
+    <Parent public-id="svc:aut_ins"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_oth">
+    <Active>true</Active>
+    <Code>autoother</Code>
+    <Description displayKey="true">Services.Auto.Other.Description</Description>
+    <Name displayKey="true">Services.Auto.Other.Name</Name>
+    <Parent public-id="svc:aut"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_oth_cou">
+    <Active>true</Active>
+    <Code>autoothercourtesycar</Code>
+    <Description displayKey="true">Services.Auto.ProvideCourtesyCar.Description</Description>
+    <Name displayKey="true">Services.Auto.ProvideCourtesyCar.Name</Name>
+    <Parent public-id="svc:aut_oth"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_oth_ren">
+    <Active>true</Active>
+    <Code>autootherrental</Code>
+    <Description displayKey="true">Services.Auto.CarRental.Description</Description>
+    <Name displayKey="true">Services.Auto.CarRental.Name</Name>
+    <Parent public-id="svc:aut_oth"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_oth_roa">
+    <Active>true</Active>
+    <Code>autootherroadassist</Code>
+    <Description displayKey="true">Services.Auto.RoadsideAssistance.Description</Description>
+    <Name displayKey="true">Services.Auto.RoadsideAssistance.Name</Name>
+    <Parent public-id="svc:aut_oth"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_oth_sal">
+    <Active>true</Active>
+    <Code>autoothersalvage</Code>
+    <Description displayKey="true">Services.Auto.Salvage.Description</Description>
+    <Name displayKey="true">Services.Auto.Salvage.Name</Name>
+    <Parent public-id="svc:aut_oth"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:aut_oth_tow">
+    <Active>true</Active>
+    <Code>autoothertowing</Code>
+    <Description displayKey="true">Services.Auto.Towing.Description</Description>
+    <Name displayKey="true">Services.Auto.Towing.Name</Name>
+    <Parent public-id="svc:aut_oth"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con">
+    <Active>true</Active>
+    <Code>cont</Code>
+    <Description displayKey="true">Services.Contents.Description</Description>
+    <Name displayKey="true">Services.Contents.Name</Name>
+    <Parent/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_ins">
+    <Active>true</Active>
+    <Code>continspect</Code>
+    <Description displayKey="true">Services.Content.Inspection.Description</Description>
+    <Name displayKey="true">Services.Content.Inspection.Name</Name>
+    <Parent public-id="svc:con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_ins_ind">
+    <Active>true</Active>
+    <Code>continspectindependent</Code>
+    <Description displayKey="true">Services.Content.Appraisal.Description</Description>
+    <Name displayKey="true">Services.Content.Appraisal.Name</Name>
+    <Parent public-id="svc:con_ins"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rep">
+    <Active>true</Active>
+    <Code>contrepair</Code>
+    <Description displayKey="true">Services.Content.Repair.Description</Description>
+    <Name displayKey="true">Services.Content.Repair.Name</Name>
+    <Parent public-id="svc:con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rep_com">
+    <Active>true</Active>
+    <Code>contrepaircomputer</Code>
+    <Description displayKey="true">Services.Content.ComputerEquipment.Repair.Description</Description>
+    <Name displayKey="true">Services.Content.ComputerEquipment.Name</Name>
+    <Parent public-id="svc:con_rep"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rep_ele">
+    <Active>true</Active>
+    <Code>contrepairelectronics</Code>
+    <Description displayKey="true">Services.Content.Electronics.Repair.Description</Description>
+    <Name displayKey="true">Services.Content.Electronics.Name</Name>
+    <Parent public-id="svc:con_rep"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rep_fur">
+    <Active>true</Active>
+    <Code>contrepairfurniture</Code>
+    <Description displayKey="true">Services.Content.Furniture.Repair.Description</Description>
+    <Name displayKey="true">Services.Content.Furniture.Name</Name>
+    <Parent public-id="svc:con_rep"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rep_gar">
+    <Active>true</Active>
+    <Code>contrepairgarden</Code>
+    <Description displayKey="true">Services.Content.Garden.Repair.Description</Description>
+    <Name displayKey="true">Services.Content.Garden.Name</Name>
+    <Parent public-id="svc:con_rep"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rep_kit">
+    <Active>true</Active>
+    <Code>contrepairkitchen</Code>
+    <Description displayKey="true">Services.Content.KitchenAppliances.Description</Description>
+    <Name displayKey="true">Services.Content.KitchenAppliances.Name</Name>
+    <Parent public-id="svc:con_rep"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl">
+    <Active>true</Active>
+    <Code>contrplc</Code>
+    <Description displayKey="true">Services.Content.Replacement.Description</Description>
+    <Name displayKey="true">Services.Content.Replacement.Name</Name>
+    <Parent public-id="svc:con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl_aud">
+    <Active>true</Active>
+    <Code>contrplcaudio</Code>
+    <Description displayKey="true">Services.Content.AudioEquipment.Description</Description>
+    <Name displayKey="true">Services.Content.AudioEquipment.Name</Name>
+    <Parent public-id="svc:con_rpl"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl_com">
+    <Active>true</Active>
+    <Code>contrplccomputer</Code>
+    <Description displayKey="true">Services.Content.ComputerEquipment.Replacement.Description</Description>
+    <Name displayKey="true">Services.Content.ComputerEquipment.Name</Name>
+    <Parent public-id="svc:con_rpl"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl_ele">
+    <Active>true</Active>
+    <Code>contrplcelectronics</Code>
+    <Description displayKey="true">Services.Content.Electronics.Replacement.Description</Description>
+    <Name displayKey="true">Services.Content.Electronics.Name</Name>
+    <Parent public-id="svc:con_rpl"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl_fur">
+    <Active>true</Active>
+    <Code>contrplcfurniture</Code>
+    <Description displayKey="true">Services.Content.Furniture.Replacement.Description</Description>
+    <Name displayKey="true">Services.Content.Furniture.Name</Name>
+    <Parent public-id="svc:con_rpl"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl_gar">
+    <Active>true</Active>
+    <Code>contrplcgarden</Code>
+    <Description displayKey="true">Services.Content.Garden.Replacement.Description</Description>
+    <Name displayKey="true">Services.Content.Garden.Name</Name>
+    <Parent public-id="svc:con_rpl"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:con_rpl_kit">
+    <Active>true</Active>
+    <Code>contrplckitchen</Code>
+    <Description displayKey="true">Services.Content.KitchenApplicanes.Description</Description>
+    <Name displayKey="true">Services.Content.KitchenApplicanes.Name</Name>
+    <Parent public-id="svc:con_rpl"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:hom">
+    <Active>true</Active>
+    <Code>homeserv</Code>
+    <Description displayKey="true">Services.HomeServices.Description</Description>
+    <Name displayKey="true">Services.HomeServices.Name</Name>
+    <Parent/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:hom_eme">
+    <Active>true</Active>
+    <Code>homeservemerg</Code>
+    <Description displayKey="true">Services.HomeServices.EmergencyServices.Description</Description>
+    <Name displayKey="true">Services.HomeServices.EmergencyServices.Name</Name>
+    <Parent public-id="svc:hom"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:hom_eme_cle">
+    <Active>true</Active>
+    <Code>homeservemergcleaning</Code>
+    <Description displayKey="true">Services.HomeServices.Cleaning.Description</Description>
+    <Name displayKey="true">Services.HomeServices.Cleaning.Name</Name>
+    <Parent public-id="svc:hom_eme"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:hom_eme_mak">
+    <Active>true</Active>
+    <Code>homeservemergmakesafe</Code>
+    <Description displayKey="true">Services.HomeServices.MakeSafe.Description</Description>
+    <Name displayKey="true">Services.HomeServices.MakeSafe.Name</Name>
+    <Parent public-id="svc:hom_eme"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:med">
+    <Active>true</Active>
+    <Code>medical</Code>
+    <Description displayKey="true">Services.Medical.Description</Description>
+    <Name displayKey="true">Services.Medical.Name</Name>
+    <Parent/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:med_ass">
+    <Active>false</Active>
+    <Code>medicalassess</Code>
+    <Description displayKey="true">Services.Medical.MedicalAssessment.Description</Description>
+    <Name displayKey="true">Services.Medical.MedicalAssessment.Name</Name>
+    <Parent public-id="svc:med"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:med_care">
+    <Active>true</Active>
+    <Code>medicalcare</Code>
+    <Description displayKey="true">Services.Medical.MedicalCare.Description</Description>
+    <Name displayKey="true">Services.Medical.MedicalCare.Name</Name>
+    <Parent public-id="svc:med"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro">
+    <Active>true</Active>
+    <Code>prop</Code>
+    <Description displayKey="true">Services.Property.Description</Description>
+    <Name displayKey="true">Services.Property.Name</Name>
+    <Parent/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con">
+    <Active>true</Active>
+    <Code>propconstrserv</Code>
+    <Description displayKey="true">Services.Property.ConstructionServices.Description</Description>
+    <Name displayKey="true">Services.Property.ConstructionServices.Name</Name>
+    <Parent public-id="svc:pro"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_arb">
+    <Active>true</Active>
+    <Code>propconstrservarborist</Code>
+    <Description displayKey="true">Services.Property.Arborist.Description</Description>
+    <Name displayKey="true">Services.Property.Arborist.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_boi">
+    <Active>true</Active>
+    <Code>propconstrservboilers</Code>
+    <Description displayKey="true">Services.Property.Boilers.Description</Description>
+    <Name displayKey="true">Services.Property.Boilers.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_car">
+    <Active>true</Active>
+    <Code>propconstrservcarpentry</Code>
+    <Description displayKey="true">Services.Property.Carpentry.Description</Description>
+    <Name displayKey="true">Services.Property.Carpentry.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_dry">
+    <Active>true</Active>
+    <Code>propconstrservdrying</Code>
+    <Description displayKey="true">Services.Property.Drying.Description</Description>
+    <Name displayKey="true">Services.Property.Drying.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_ele">
+    <Active>true</Active>
+    <Code>propconstrservelectrical</Code>
+    <Description displayKey="true">Services.Property.Electrical.Description</Description>
+    <Name displayKey="true">Services.Property.Electrical.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_fen">
+    <Active>true</Active>
+    <Code>propconstrservfencing</Code>
+    <Description displayKey="true">Services.Property.Fencing.Description</Description>
+    <Name displayKey="true">Services.Property.Fencing.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_flo">
+    <Active>true</Active>
+    <Code>propconstrservflooring</Code>
+    <Description displayKey="true">Services.Property.Flooring.Description</Description>
+    <Name displayKey="true">Services.Property.Flooring.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_gen">
+    <Active>true</Active>
+    <Code>propconstrservgencontractor</Code>
+    <Description displayKey="true">Services.Property.GeneralContractor.Description</Description>
+    <Name displayKey="true">Services.Property.GeneralContractor.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_loc">
+    <Active>true</Active>
+    <Code>propconstrservlocksmith</Code>
+    <Description displayKey="true">Services.Property.Locksmith.Description</Description>
+    <Name displayKey="true">Services.Property.Locksmith.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_pai">
+    <Active>true</Active>
+    <Code>propconstrservpainting</Code>
+    <Description displayKey="true">Services.Property.Painting.Description</Description>
+    <Name displayKey="true">Services.Property.Painting.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_pla">
+    <Active>true</Active>
+    <Code>propconstrservplaster</Code>
+    <Description displayKey="true">Services.Property.Plaster.Description</Description>
+    <Name displayKey="true">Services.Property.Plaster.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_plu">
+    <Active>true</Active>
+    <Code>propconstrservplumber</Code>
+    <Description displayKey="true">Services.Property.Plumber.Description</Description>
+    <Name displayKey="true">Services.Property.Plumber.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_roo">
+    <Active>true</Active>
+    <Code>propconstrservroofing</Code>
+    <Description displayKey="true">Services.Property.Roofing.Description</Description>
+    <Name displayKey="true">Services.Property.Roofing.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_wal">
+    <Active>true</Active>
+    <Code>propconstrservwall</Code>
+    <Description displayKey="true">Services.Property.Walls.Description</Description>
+    <Name displayKey="true">Services.Property.Walls.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_con_win">
+    <Active>true</Active>
+    <Code>propconstrservwindows</Code>
+    <Description displayKey="true">Services.Property.Windows.Description</Description>
+    <Name displayKey="true">Services.Property.Windows.Name</Name>
+    <Parent public-id="svc:pro_con"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_eme">
+    <Active>true</Active>
+    <Code>propemerg</Code>
+    <Description displayKey="true">Services.Property.EmergencyServices.Description</Description>
+    <Name displayKey="true">Services.Property.EmergencyServices.Name</Name>
+    <Parent public-id="svc:pro"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_eme_deb">
+    <Active>true</Active>
+    <Code>propemergdebrisremoval</Code>
+    <Description displayKey="true">Services.Property.DebrisRemoval.Description</Description>
+    <Name displayKey="true">Services.Property.DebrisRemoval.Name</Name>
+    <Parent public-id="svc:pro_eme"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_eme_mak">
+    <Active>true</Active>
+    <Code>propemergmakesafe</Code>
+    <Description displayKey="true">Services.Property.MakeSafe.Description</Description>
+    <Name displayKey="true">Services.Property.MakeSafe.Name</Name>
+    <Parent public-id="svc:pro_eme"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_ins">
+    <Active>true</Active>
+    <Code>propinspect</Code>
+    <Description displayKey="true">Services.Property.Inspection.Description</Description>
+    <Name displayKey="true">Services.Property.Inspection.Name</Name>
+    <Parent public-id="svc:pro"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_ins_adj">
+    <Active>true</Active>
+    <Code>propinspectadjudicate</Code>
+    <Description displayKey="true">Services.Property.AdjudicateClaim.Description</Description>
+    <Name displayKey="true">Services.Property.AdjudicateClaim.Name</Name>
+    <Parent public-id="svc:pro_ins"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_ins_app">
+    <Active>true</Active>
+    <Code>propinspectappraisal</Code>
+    <Description displayKey="true">Services.Property.Appraisal.Description</Description>
+    <Name displayKey="true">Services.Property.Appraisal.Name</Name>
+    <Parent public-id="svc:pro_ins"/>
+  </SpecialistService>
+  <SpecialistService public-id="svc:pro_ins_ind">
+    <Active>true</Active>
+    <Code>propinspectindependent</Code>
+    <Description displayKey="true">Services.Property.IndependentAppraisal.Description</Description>
+    <Name displayKey="true">Services.Property.IndependentAppraisal.Name</Name>
+    <Parent public-id="svc:pro_ins"/>
+  </SpecialistService>
+</import>

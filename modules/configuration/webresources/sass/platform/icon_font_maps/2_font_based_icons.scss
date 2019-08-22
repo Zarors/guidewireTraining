@@ -1,0 +1,118 @@
+$gw-app--force-all-gw-icons-to-another-library-using-conversion-map: false !default; //TODO: think about customer "platform wide" variables
+$gw-svg-font-css-class-prefix: "gw-svg-icon";
+$gw-missing-icon-glyph: "◻" !default;
+
+$gw-font-awesome-5-map: () !default;
+$gw-font-awesome-5-brands-map: () !default;
+$gw-font-awesome-5-solid-map: () !default;
+$gw-font-awesome-5-light-map: () !default;
+$gw-font-customer-map: () !default;
+
+$fa-brands-font-family: fa-brands;
+$fa-regular-font-family: fa-regular;
+$fa-solid-font-family: fa-solid;
+$fa-light-font-family: fa-light;
+
+// ============ Map Helpers ===============
+
+@function gw-font-conversion-map-has-key($name) {
+  @return map-has-key($gw-convert-gw-icons-to-other-libraries-map, $name);
+}
+
+@function gw-get-value-from-font-conversion-map($name) {
+  @return map-get($gw-convert-gw-icons-to-other-libraries-map, $name);
+}
+
+@function gw-should-convert-gw-font-glyph-to-another-library($name) {
+  @return ($gw-app--force-all-gw-icons-to-another-library-using-conversion-map != false and gw-font-conversion-map-has-key($name));
+}
+
+@function modifier-map-has-key($map, $name, $modifier) {
+  $index: str-index($name, $modifier);
+  @if($index == null) {
+    $name-with-modifier: $name + $modifier;
+    @return map-has-key($map, $name-with-modifier);
+  } @else {
+    @return map-has-key($map, $name);
+  }
+}
+
+@function modifier-get-content($map, $name, $modifier) {
+  $content: map-get($map, $name);
+  @if($content) {
+    @return $content;
+  } @else {
+    $name-with-modifier: $name + $modifier;
+    @return map-get($map, $name-with-modifier);
+  }
+}
+
+@mixin gw-populate-fa5-glyph($name) {
+  @if (map-has-key($gw-font-awesome-5-map, $name)) {
+    content: map-get($gw-font-awesome-5-map, $name);
+    font-family: $fa-regular-font-family;
+  } @else if (map-has-key($gw-font-awesome-5-brands-map, $name)) {
+    content: map-get($gw-font-awesome-5-brands-map, $name);
+    font-family: $fa-brands-font-family;
+  } @else if (modifier-map-has-key($gw-font-awesome-5-solid-map, $name, "-solid")) {
+    content: modifier-get-content($gw-font-awesome-5-solid-map, $name, "-solid");
+    font-family: $fa-solid-font-family;
+  } @else if (modifier-map-has-key($gw-font-awesome-5-light-map, $name, "-light")) {
+    content: modifier-get-content($gw-font-awesome-5-light-map, $name, "-light");
+    font-family: $fa-light-font-family;
+  }
+}
+
+@mixin gw-populate-customer-font-glyph($name) {
+  font-family: customer-font;
+  content: map-get($gw-font-customer-map);
+}
+
+@function gw-fa5-maps-have-glyph($name) {
+  @return map-has-key($gw-font-awesome-5-map, $name)
+  or map-has-key($gw-font-awesome-5-brands-map, $name)
+  or modifier-map-has-key($gw-font-awesome-5-solid-map, $name, "-solid")
+  or modifier-map-has-key($gw-font-awesome-5-light-map, $name, "-light");
+}
+
+@function gw-customer-font-map-has-glyph($name) {
+  @return map-has-key($gw-font-customer-map, $name);
+}
+
+@function gw-non-gw-font-map-has-glyph($name) {
+  @return gw-fa5-maps-have-glyph($name) or gw-customer-font-map-has-glyph($name);
+}
+
+@mixin gw-populate-non-gw-icon-glyph($name) {
+  @if (gw-customer-font-map-has-glyph($name)) {
+    @include gw-populate-customer-font-glyph($name);
+  } @else {
+    @include gw-populate-fa5-glyph($name);
+  }
+}
+
+@mixin gw-font-before-props() {
+  display: inline-block;
+  vertical-align: baseline;
+  font-style: normal;
+  font-variant: normal;
+  font-stretch: normal;
+  text-align: center;
+  text-rendering: auto;
+  width: 1em; //em-allowed
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@if ($gw-app--force-all-gw-icons-to-another-library-using-conversion-map) {
+  @each $name, $value in $gw-svg-font-map {
+    @if (gw-should-convert-gw-font-glyph-to-another-library($name)) {
+      $converted-name: gw-get-value-from-font-conversion-map($name);
+      @if (gw-non-gw-font-map-has-glyph($converted-name)) {
+        .#{$gw-svg-font-css-class-prefix}-#{$name}:before {
+          @include gw-populate-non-gw-icon-glyph($converted-name);
+        }
+      }
+    }
+  }
+}

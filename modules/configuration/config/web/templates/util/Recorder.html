@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <title>Guidewire Smoke Test Recorder</title>
+  <script>
+  function onLoad() {
+    var topWin = opener.top;
+    topWin.recorderWindow = window;
+    topWin.recorderStarted = true;
+
+    var recorder = opener.Recorder;
+    recorder.step(opener.stepId);
+    recorder.bindInputFields();
+  }
+  function beforeUnload() {
+    var topWin = opener.top;
+    topWin.recorderStarted = false;
+    topWin.recorderWindow=null;
+  }
+  function doSave() {
+    document.smokeScript.dosave.value = "true";
+    document.smokeScript.filename.value = window.prompt("Please enter a filename for the test script:", "Auto.txt") + "";
+    if (document.smokeScript.filename.value.length > 0 && document.smokeScript.filename.value != "null") {
+      if (window.onbeforeunload) window.onbeforeunload(); document.smokeScript.submit();
+    }
+  }
+  </script>
+</head>
+<body bgcolor="#EEEEEE" onload="onLoad()" onbeforeunload="beforeUnload()">
+  <font face=Arial size=3>
+    <table align="right" border="0" cellspacing="0" cellpadding="0"><tr><td>
+      <button id="save_btn" onclick="doSave()" style="position:relative;top:-2px;visibility:hidden">Save</button>
+    </td></tr></table>
+    <b>Guidewire Smoke Test Recorder:</b><br><br>
+    <form name="smokeScript" method="POST" action="../RecordSmokeTest.do">
+      <input type="hidden" name="filename"><input type="hidden" name="dosave">
+      <textarea name="scriptText" wrap="off" rows="30" cols="80" id="out"></textarea>
+    </form>
+    <button id="clear_btn" onclick="document.forms[0].scriptText.value = ''">Clear</button>
+  </font>
+</body>
+</html>

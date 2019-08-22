@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<webservice-collection xmlns="http://guidewire.com/config/webservicecollection">
+  <resources>
+    <resource>
+      <url>http://localhost:8890/ab/ws/externalapp/webservice/LegalReportAPI?WSDL</url>
+    </resource>
+  </resources>
+</webservice-collection>

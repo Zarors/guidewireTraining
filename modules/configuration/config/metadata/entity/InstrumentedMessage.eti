@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Profiler data for each destination"
+  entity="InstrumentedMessage"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="instrumentedmessage"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.entity.DoesNotValidateOnCommit"
+    impl="com.guidewire.pl.domain.messaging.impl.InstrumentedMessageImpl"/>
+  <implementsInterface
+    iface="com.guidewire.commons.profiler.ProfilerDataSourceInternal"
+    impl="com.guidewire.pl.domain.messaging.impl.InstrumentedMessageImpl"/>
+  <column
+    desc="Identifies the message destination."
+    name="DestinationID"
+    nullok="false"
+    setterScriptability="hidden"
+    type="integer"/>
+  <column
+    desc="Timestamp when the instance was started."
+    name="StartTime"
+    nullok="false"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Timestamp when the instance was shutdown."
+    name="EndTime"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Raw Profiler data"
+    name="ProfilerData"
+    nullok="true"
+    type="blob"/>
+</entity>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<extension xmlns="http://guidewire.com/datamodel" entityName="EFTData">
+
+ <index desc="Index used to enforce uniqueness for EFT data" name="eftaccountnumber" unique="true">
+    <indexcol name="AccountName" keyposition="1"/>
+    <indexcol name="BankName" keyposition="2"/>
+    <indexcol name="BankAccountNumber" keyposition="3"/>
+    <indexcol name="Retired" keyposition="4"/>
+    <indexcol name="ContactID" keyposition="5"/>
+  </index>
+
+</extension>

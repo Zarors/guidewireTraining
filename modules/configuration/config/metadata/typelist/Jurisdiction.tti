@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The list of jurisdictions regulating insurance and other licensing within this deployment. This is similar to the State typelist, which is used for addresses and locations. Each code in the Jurisdiction typelist has an additional category set that is based on State typelist. In many deployments, the State and Jurisdiction typelists will be equal"
+  final="false"
+  name="Jurisdiction"
+  platform="true"/>

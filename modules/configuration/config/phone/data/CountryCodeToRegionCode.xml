@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<CountryCodeToRegionCode xmlns="http://guidewire.com/phone">
+  <country_code id="1">
+    <region_code code="US"/>
+    <region_code code="AG"/>
+    <region_code code="AI"/>
+    <region_code code="AS"/>
+    <region_code code="BB"/>
+    <region_code code="BM"/>
+    <region_code code="BS"/>
+    <region_code code="CA"/>
+    <region_code code="DM"/>
+    <region_code code="DO"/>
+    <region_code code="GD"/>
+    <region_code code="GU"/>
+    <region_code code="JM"/>
+    <region_code code="KN"/>
+    <region_code code="KY"/>
+    <region_code code="LC"/>
+    <region_code code="MP"/>
+    <region_code code="MS"/>
+    <region_code code="PR"/>
+    <region_code code="SX"/>
+    <region_code code="TC"/>
+    <region_code code="TT"/>
+    <region_code code="VC"/>
+    <region_code code="VG"/>
+    <region_code code="VI"/>
+  </country_code>
+  <country_code id="7">
+    <region_code code="RU"/>
+    <region_code code="KZ"/>
+  </country_code>
+  <country_code id="20">
+    <region_code code="EG"/>
+  </country_code>
+  <country_code id="27">
+    <region_code code="ZA"/>
+  </country_code>
+  <country_code id="30">
+    <region_code code="GR"/>
+  </country_code>
+  <country_code id="31">
+    <region_code code="NL"/>
+  </country_code>
+  <country_code id="32">
+    <region_code code="BE"/>
+  </country_code>
+  <country_code id="33">
+    <region_code code="FR"/>
+  </country_code>
+  <country_code id="34">
+    <region_code code="ES"/>
+  </country_code>
+  <country_code id="36">
+    <region_code code="HU"/>
+  </country_code>
+  <country_code id="39">
+    <region_code code="IT"/>
+  </country_code>
+  <country_code id="40">
+    <region_code code="RO"/>
+  </country_code>
+  <country_code id="41">
+    <region_code code="CH"/>
+  </country_code>
+  <country_code id="43">
+    <region_code code="AT"/>
+  </country_code>
+  <country_code id="44">
+    <region_code code="GB"/>
+    <region_code code="GG"/>
+    <region_code code="IM"/>
+    <region_code code="JE"/>
+  </country_code>
+  <country_code id="45">
+    <region_code code="DK"/>
+  </country_code>
+  <country_code id="46">
+    <region_code code="SE"/>
+  </country_code>
+  <country_code id="47">
+    <region_code code="NO"/>
+    <region_code code="SJ"/>
+  </country_code>
+  <country_code id="48">
+    <region_code code="PL"/>
+  </country_code>
+  <country_code id="49">
+    <region_code code="DE"/>
+  </country_code>
+  <country_code id="51">
+    <region_code code="PE"/>
+  </country_code>
+  <country_code id="52">
+    <region_code code="MX"/>
+  </country_code>
+  <country_code id="53">
+    <region_code code="CU"/>
+  </country_code>
+  <country_code id="54">
+    <region_code code="AR"/>
+  </country_code>
+  <country_code id="55">
+    <region_code code="BR"/>
+  </country_code>
+  <country_code id="56">
+    <region_code code="CL"/>
+  </country_code>
+  <country_code id="57">
+    <region_code code="CO"/>
+  </country_code>
+  <country_code id="58">
+    <region_code code="VE"/>
+  </country_code>
+  <country_code id="60">
+    <region_code code="MY"/>
+  </country_code>
+  <country_code id="61">
+    <region_code code="AU"/>
+    <region_code code="CC"/>
+    <region_code code="CX"/>
+  </country_code>
+  <country_code id="62">
+    <region_code code="ID"/>
+  </country_code>
+  <country_code id="63">
+    <region_code code="PH"/>
+  </country_code>
+  <country_code id="64">
+    <region_code code="NZ"/>
+  </country_code>
+  <country_code id="65">
+    <region_code code="SG"/>
+  </country_code>
+  <country_code id="66">
+    <region_code code="TH"/>
+  </country_code>
+  <country_code id="81">
+    <region_code code="JP"/>
+  </country_code>
+  <country_code id="82">
+    <region_code code="KR"/>
+  </country_code>
+  <country_code id="84">
+    <region_code code="VN"/>
+  </country_code>
+  <country_code id="86">
+    <region_code code="CN"/>
+  </country_code>
+  <country_code id="90">
+    <region_code code="TR"/>
+  </country_code>
+  <country_code id="91">
+    <region_code code="IN"/>
+  </country_code>
+  <country_code id="92">
+    <region_code code="PK"/>
+  </country_code>
+  <country_code id="93">
+    <region_code code="AF"/>
+  </country_code>
+  <country_code id="94">
+    <region_code code="LK"/>
+  </country_code>
+  <country_code id="95">
+    <region_code code="MM"/>
+  </country_code>
+  <country_code id="98">
+    <region_code code="IR"/>
+  </country_code>
+  <country_code id="211">
+    <region_code code="SS"/>
+  </country_code>
+  <country_code id="212">
+    <region_code code="MA"/>
+  </country_code>
+  <country_code id="213">
+    <region_code code="DZ"/>
+  </country_code>
+  <country_code id="216">
+    <region_code code="TN"/>
+  </country_code>
+  <country_code id="218">
+    <region_code code="LY"/>
+  </country_code>
+  <country_code id="220">
+    <region_code code="GM"/>
+  </country_code>
+  <country_code id="221">
+    <region_code code="SN"/>
+  </country_code>
+  <country_code id="222">
+    <region_code code="MR"/>
+  </country_code>
+  <country_code id="223">
+    <region_code code="ML"/>
+  </country_code>
+  <country_code id="224">
+    <region_code code="GN"/>
+  </country_code>
+  <country_code id="225">
+    <region_code code="CI"/>
+  </country_code>
+  <country_code id="226">
+    <region_code code="BF"/>
+  </country_code>
+  <country_code id="227">
+    <region_code code="NE"/>
+  </country_code>
+  <country_code id="228">
+    <region_code code="TG"/>
+  </country_code>
+  <country_code id="229">
+    <region_code code="BJ"/>
+  </country_code>
+  <country_code id="230">
+    <region_code code="MU"/>
+  </country_code>
+  <country_code id="231">
+    <region_code code="LR"/>
+  </country_code>
+  <country_code id="232">
+    <region_code code="SL"/>
+  </country_code>
+  <country_code id="233">
+    <region_code code="GH"/>
+  </country_code>
+  <country_code id="234">
+    <region_code code="NG"/>
+  </country_code>
+  <country_code id="235">
+    <region_code code="TD"/>
+  </country_code>
+  <country_code id="236">
+    <region_code code="CF"/>
+  </country_code>
+  <country_code id="237">
+    <region_code code="CM"/>
+  </country_code>
+  <country_code id="238">
+    <region_code code="CV"/>
+  </country_code>
+  <country_code id="239">
+    <region_code code="ST"/>
+  </country_code>
+  <country_code id="240">
+    <region_code code="GQ"/>
+  </country_code>
+  <country_code id="241">
+    <region_code code="GA"/>
+  </country_code>
+  <country_code id="242">
+    <region_code code="CG"/>
+  </country_code>
+  <country_code id="243">
+    <region_code code="CD"/>
+  </country_code>
+  <country_code id="244">
+    <region_code code="AO"/>
+  </country_code>
+  <country_code id="245">
+    <region_code code="GW"/>
+  </country_code>
+  <country_code id="246">
+    <region_code code="IO"/>
+  </country_code>
+  <country_code id="247">
+    <region_code code="AC"/>
+  </country_code>
+  <country_code id="248">
+    <region_code code="SC"/>
+  </country_code>
+  <country_code id="249">
+    <region_code code="SD"/>
+  </country_code>
+  <country_code id="250">
+    <region_code code="RW"/>
+  </country_code>
+  <country_code id="251">
+    <region_code code="ET"/>
+  </country_code>
+  <country_code id="252">
+    <region_code code="SO"/>
+  </country_code>
+  <country_code id="253">
+    <region_code code="DJ"/>
+  </country_code>
+  <country_code id="254">
+    <region_code code="KE"/>
+  </country_code>
+  <country_code id="255">
+    <region_code code="TZ"/>
+  </country_code>
+  <country_code id="256">
+    <region_code code="UG"/>
+  </country_code>
+  <country_code id="257">
+    <region_code code="BI"/>
+  </country_code>
+  <country_code id="258">
+    <region_code code="MZ"/>
+  </country_code>
+  <country_code id="260">
+    <region_code code="ZM"/>
+  </country_code>
+  <country_code id="261">
+    <region_code code="MG"/>
+  </country_code>
+  <country_code id="262">
+    <region_code code="RE"/>
+    <region_code code="YT"/>
+  </country_code>
+  <country_code id="263">
+    <region_code code="ZW"/>
+  </country_code>
+  <country_code id="264">
+    <region_code code="NA"/>
+  </country_code>
+  <country_code id="265">
+    <region_code code="MW"/>
+  </country_code>
+  <country_code id="266">
+    <region_code code="LS"/>
+  </country_code>
+  <country_code id="267">
+    <region_code code="BW"/>
+  </country_code>
+  <country_code id="268">
+    <region_code code="SZ"/>
+  </country_code>
+  <country_code id="269">
+    <region_code code="KM"/>
+  </country_code>
+  <country_code id="290">
+    <region_code code="SH"/>
+  </country_code>
+  <country_code id="291">
+    <region_code code="ER"/>
+  </country_code>
+  <country_code id="297">
+    <region_code code="AW"/>
+  </country_code>
+  <country_code id="298">
+    <region_code code="FO"/>
+  </country_code>
+  <country_code id="299">
+    <region_code code="GL"/>
+  </country_code>
+  <country_code id="350">
+    <region_code code="GI"/>
+  </country_code>
+  <country_code id="351">
+    <region_code code="PT"/>
+  </country_code>
+  <country_code id="352">
+    <region_code code="LU"/>
+  </country_code>
+  <country_code id="353">
+    <region_code code="IE"/>
+  </country_code>
+  <country_code id="354">
+    <region_code code="IS"/>
+  </country_code>
+  <country_code id="355">
+    <region_code code="AL"/>
+  </country_code>
+  <country_code id="356">
+    <region_code code="MT"/>
+  </country_code>
+  <country_code id="357">
+    <region_code code="CY"/>
+  </country_code>
+  <country_code id="358">
+    <region_code code="FI"/>
+    <region_code code="AX"/>
+  </country_code>
+  <country_code id="359">
+    <region_code code="BG"/>
+  </country_code>
+  <country_code id="370">
+    <region_code code="LT"/>
+  </country_code>
+  <country_code id="371">
+    <region_code code="LV"/>
+  </country_code>
+  <country_code id="372">
+    <region_code code="EE"/>
+  </country_code>
+  <country_code id="373">
+    <region_code code="MD"/>
+  </country_code>
+  <country_code id="374">
+    <region_code code="AM"/>
+  </country_code>
+  <country_code id="375">
+    <region_code code="BY"/>
+  </country_code>
+  <country_code id="376">
+    <region_code code="AD"/>
+  </country_code>
+  <country_code id="377">
+    <region_code code="MC"/>
+  </country_code>
+  <country_code id="378">
+    <region_code code="SM"/>
+  </country_code>
+  <country_code id="379">
+    <region_code code="VA"/>
+  </country_code>
+  <country_code id="380">
+    <region_code code="UA"/>
+  </country_code>
+  <country_code id="381">
+    <region_code code="RS"/>
+  </country_code>
+  <country_code id="382">
+    <region_code code="ME"/>
+  </country_code>
+  <country_code id="385">
+    <region_code code="HR"/>
+  </country_code>
+  <country_code id="386">
+    <region_code code="SI"/>
+  </country_code>
+  <country_code id="387">
+    <region_code code="BA"/>
+  </country_code>
+  <country_code id="389">
+    <region_code code="MK"/>
+  </country_code>
+  <country_code id="420">
+    <region_code code="CZ"/>
+  </country_code>
+  <country_code id="421">
+    <region_code code="SK"/>
+  </country_code>
+  <country_code id="423">
+    <region_code code="LI"/>
+  </country_code>
+  <country_code id="500">
+    <region_code code="FK"/>
+  </country_code>
+  <country_code id="501">
+    <region_code code="BZ"/>
+  </country_code>
+  <country_code id="502">
+    <region_code code="GT"/>
+  </country_code>
+  <country_code id="503">
+    <region_code code="SV"/>
+  </country_code>
+  <country_code id="504">
+    <region_code code="HN"/>
+  </country_code>
+  <country_code id="505">
+    <region_code code="NI"/>
+  </country_code>
+  <country_code id="506">
+    <region_code code="CR"/>
+  </country_code>
+  <country_code id="507">
+    <region_code code="PA"/>
+  </country_code>
+  <country_code id="508">
+    <region_code code="PM"/>
+  </country_code>
+  <country_code id="509">
+    <region_code code="HT"/>
+  </country_code>
+  <country_code id="590">
+    <region_code code="GP"/>
+    <region_code code="BL"/>
+    <region_code code="MF"/>
+  </country_code>
+  <country_code id="591">
+    <region_code code="BO"/>
+  </country_code>
+  <country_code id="592">
+    <region_code code="GY"/>
+  </country_code>
+  <country_code id="593">
+    <region_code code="EC"/>
+  </country_code>
+  <country_code id="594">
+    <region_code code="GF"/>
+  </country_code>
+  <country_code id="595">
+    <region_code code="PY"/>
+  </country_code>
+  <country_code id="596">
+    <region_code code="MQ"/>
+  </country_code>
+  <country_code id="597">
+    <region_code code="SR"/>
+  </country_code>
+  <country_code id="598">
+    <region_code code="UY"/>
+  </country_code>
+  <country_code id="599">
+    <region_code code="CW"/>
+    <region_code code="AN"/>
+    <region_code code="BQ"/>
+  </country_code>
+  <country_code id="670">
+    <region_code code="TL"/>
+  </country_code>
+  <country_code id="672">
+    <region_code code="NF"/>
+  </country_code>
+  <country_code id="673">
+    <region_code code="BN"/>
+  </country_code>
+  <country_code id="674">
+    <region_code code="NR"/>
+  </country_code>
+  <country_code id="675">
+    <region_code code="PG"/>
+  </country_code>
+  <country_code id="676">
+    <region_code code="TO"/>
+  </country_code>
+  <country_code id="677">
+    <region_code code="SB"/>
+  </country_code>
+  <country_code id="678">
+    <region_code code="VU"/>
+  </country_code>
+  <country_code id="679">
+    <region_code code="FJ"/>
+  </country_code>
+  <country_code id="680">
+    <region_code code="PW"/>
+  </country_code>
+  <country_code id="681">
+    <region_code code="WF"/>
+  </country_code>
+  <country_code id="682">
+    <region_code code="CK"/>
+  </country_code>
+  <country_code id="683">
+    <region_code code="NU"/>
+  </country_code>
+  <country_code id="685">
+    <region_code code="WS"/>
+  </country_code>
+  <country_code id="686">
+    <region_code code="KI"/>
+  </country_code>
+  <country_code id="687">
+    <region_code code="NC"/>
+  </country_code>
+  <country_code id="688">
+    <region_code code="TV"/>
+  </country_code>
+  <country_code id="689">
+    <region_code code="PF"/>
+  </country_code>
+  <country_code id="690">
+    <region_code code="TK"/>
+  </country_code>
+  <country_code id="691">
+    <region_code code="FM"/>
+  </country_code>
+  <country_code id="692">
+    <region_code code="MH"/>
+  </country_code>
+  <country_code id="800">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="808">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="850">
+    <region_code code="KP"/>
+  </country_code>
+  <country_code id="852">
+    <region_code code="HK"/>
+  </country_code>
+  <country_code id="853">
+    <region_code code="MO"/>
+  </country_code>
+  <country_code id="855">
+    <region_code code="KH"/>
+  </country_code>
+  <country_code id="856">
+    <region_code code="LA"/>
+  </country_code>
+  <country_code id="870">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="878">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="880">
+    <region_code code="BD"/>
+  </country_code>
+  <country_code id="881">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="882">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="883">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="886">
+    <region_code code="TW"/>
+  </country_code>
+  <country_code id="888">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="960">
+    <region_code code="MV"/>
+  </country_code>
+  <country_code id="961">
+    <region_code code="LB"/>
+  </country_code>
+  <country_code id="962">
+    <region_code code="JO"/>
+  </country_code>
+  <country_code id="963">
+    <region_code code="SY"/>
+  </country_code>
+  <country_code id="964">
+    <region_code code="IQ"/>
+  </country_code>
+  <country_code id="965">
+    <region_code code="KW"/>
+  </country_code>
+  <country_code id="966">
+    <region_code code="SA"/>
+  </country_code>
+  <country_code id="967">
+    <region_code code="YE"/>
+  </country_code>
+  <country_code id="968">
+    <region_code code="OM"/>
+  </country_code>
+  <country_code id="970">
+    <region_code code="PS"/>
+  </country_code>
+  <country_code id="971">
+    <region_code code="AE"/>
+  </country_code>
+  <country_code id="972">
+    <region_code code="IL"/>
+  </country_code>
+  <country_code id="973">
+    <region_code code="BH"/>
+  </country_code>
+  <country_code id="974">
+    <region_code code="QA"/>
+  </country_code>
+  <country_code id="975">
+    <region_code code="BT"/>
+  </country_code>
+  <country_code id="976">
+    <region_code code="MN"/>
+  </country_code>
+  <country_code id="977">
+    <region_code code="NP"/>
+  </country_code>
+  <country_code id="979">
+    <region_code code="001"/>
+  </country_code>
+  <country_code id="992">
+    <region_code code="TJ"/>
+  </country_code>
+  <country_code id="993">
+    <region_code code="TM"/>
+  </country_code>
+  <country_code id="994">
+    <region_code code="AZ"/>
+  </country_code>
+  <country_code id="995">
+    <region_code code="GE"/>
+  </country_code>
+  <country_code id="996">
+    <region_code code="KG"/>
+  </country_code>
+  <country_code id="998">
+    <region_code code="UZ"/>
+  </country_code>
+</CountryCodeToRegionCode>

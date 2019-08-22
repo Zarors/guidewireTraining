@@ -1,0 +1,8 @@
+.gw-PrivacyValueWidget,.gw-TextValueWidget {
+  .gw-PrivacyValueWidget--dropMenu {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: $gw-app--SPACING-rem-S;
+    @include gw-button--asMenuItem(true);
+  }
+}

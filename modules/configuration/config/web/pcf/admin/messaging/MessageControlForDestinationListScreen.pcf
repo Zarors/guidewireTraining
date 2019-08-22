@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Screen
+    id="MessageControlForDestinationListScreen">
+    <Require
+      name="DestinationId"
+      type="int"/>
+    <Require
+      name="DestinationName"
+      type="String"/>
+    <Toolbar>
+      <CheckedValuesToolbarButton
+        allCheckedRowsAction="gw.api.admin.MessagingUtil.retryMessagesForStats(CheckedValues)"
+        confirmMessage="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList.RetryConfirm&quot;)"
+        flags="all RetryableSOOMessage"
+        id="MessageControlForDestinationListScreen_RetryButton"
+        iterator="MessageControlForDestinationListLV.MessageControlForDestinationListLV"
+        label="DisplayKey.get(&quot;Button.Retry&quot;)"
+        shortcut="Y"
+        tooltip="DisplayKey.get(&quot;Button.Retry.Tooltip&quot;)"
+        visible="perm.System.retrymessage"/>
+      <CheckedValuesToolbarButton
+        allCheckedRowsAction="gw.api.admin.MessagingUtil.skipBlockingMessagesForStats(CheckedValues)"
+        confirmMessage="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList.SkipConfirm&quot;)"
+        flags="any SkippableSOOMessage"
+        id="MessageControlForDestinationListScreen_SkipButton"
+        iterator="MessageControlForDestinationListLV.MessageControlForDestinationListLV"
+        label="DisplayKey.get(&quot;Button.SkipBlocking&quot;)"
+        shortcut="P"
+        tooltip="DisplayKey.get(&quot;Button.SkipBlocking.Tooltip&quot;)"
+        visible="perm.System.skipmessage"/>
+      <CheckedValuesToolbarButton
+        allCheckedRowsAction="gw.api.admin.MessagingUtil.resyncPrimaryObjectForStats(CheckedValues)"
+        confirmMessage="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList.ResyncConfirm&quot;)"
+        id="MessageControlForDestinationListScreen_ResyncButton"
+        iterator="MessageControlForDestinationListLV.MessageControlForDestinationListLV"
+        label="DisplayKey.get(&quot;Button.Resync&quot;)"
+        shortcut="S"
+        tooltip="DisplayKey.get(&quot;Button.Resync.Tooltip&quot;)"
+        visible="perm.System.resyncmessage"/>
+      <ToolbarDivider/>
+      <SearchItem
+        id="MessageControlSearchItem"
+        label="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList.Search&quot;)"
+        onFailure="CurrentLocation"
+        onResult="MessageControlForSOOList.go(gw.api.upgrade.Coercions.makePIntFrom((result as Object[])[1]), (result as Object[])[2] as String, getValue((result as Object[])[0]), getSOOName((result as Object[])[0]))"
+        search="gw.api.messaging.SOOMessageSearchItemUtil.runSearchQuery(searchText, DestinationId, DestinationName)"
+        validationError="DisplayKey.get(&quot;Java.Messaging.SOOMessageSearch.Error&quot;, searchText)"
+        visible="gw.api.messaging.SOOMessageSearchItemUtil.isSearchAvailable(DestinationId)"/>
+      <ToolbarDivider/>
+    </Toolbar>
+    <PanelRef
+      def="MessageDestinationStatisticsDV(DestinationId)"
+      id="TotalStatistics">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList.TotalStatistics&quot;)"/>
+    </PanelRef>
+    <PanelRef
+      def="MessageControlForDestinationListLV(DestinationId, DestinationName)">
+      <TitleBar
+        title="DisplayKey.get(&quot;Web.Admin.MessageControlForDestinationList.DetailedStatistics&quot;)"/>
+    </PanelRef>
+    <Code><![CDATA[function getValue(o : Object) : long {
+return (o as gw.pl.persistence.core.Key).Value
+}
+
+function getSOOName(o : Object) : String {
+  return gw.api.messaging.SOOMessageSearchItemUtil.getSOOName(o as KeyableBean)
+}]]></Code>
+  </Screen>
+</PCF>

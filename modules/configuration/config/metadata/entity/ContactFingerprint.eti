@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="ContactFingerprint"
+  entity="ContactFingerprint"
+  exportable="false"
+  extendable="false"
+  final="true"
+  platform="true"
+  table="contactfingerprint"
+  type="editable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.InsertCallback"
+    impl="com.guidewire.pl.domain.contact.impl.ContactFingerprintImpl"/>
+  <foreignkey
+    fkentity="Contact"
+    name="Contact"
+    nullok="false"/>
+  <column
+    desc="Fingerprint allowing for a convertible object to check its last sync status locally."
+    exportable="false"
+    getterScriptability="hidden"
+    loadable="false"
+    name="AddressBookFingerprint"
+    nullok="true"
+    setterScriptability="hidden"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="40"/>
+  </column>
+</entity>

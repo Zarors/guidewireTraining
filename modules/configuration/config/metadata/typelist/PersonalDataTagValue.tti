@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<typelist xmlns="http://guidewire.com/typelists" name="PersonalDataTagValue" desc="Valid tag values for a PersonalData tag">
+  <typecode
+    code="ObfuscateDefault"
+    desc="default obfuscation for personal data"
+    name="ObfuscateDefault"/>
+  <typecode
+    code="ObfuscateUnique"
+    desc="unique obfuscation for personal data"
+    name="ObfuscateUnique"/>
+</typelist>

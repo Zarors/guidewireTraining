@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugin
+  name="ITestingClock">
+  <!-- if production or no longer needed please delete the next line or the entire file -->
+  <plugin-java javaclass="com.guidewire.pl.plugin.system.internal.OffsetTestingClock"/>
+</plugin>

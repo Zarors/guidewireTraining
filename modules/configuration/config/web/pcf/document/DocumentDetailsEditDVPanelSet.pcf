@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../app-ab/pcf.xsd">
+  <PanelSet
+    id="DocumentDetailsEditDVPanelSet">
+    <!-- Do not move, rename or modify the signature of this PDF. It shadows a Platform PCF for multifile upload functionality. -->
+    <Require
+      name="documentDetailsApplicationHelper"
+      type="gw.document.DocumentDetailsApplicationHelper"/>
+    <Require
+      name="fromTemplate"
+      type="boolean"/>
+    <Variable
+      name="documentPropertiesCMHelper"
+      type="gw.document.DocumentPropertiesCMHelper"
+      initialValue="documentDetailsApplicationHelper as gw.document.DocumentPropertiesCMHelper"/>
+    <PanelRef def="DocumentDetailsEditDV((documentPropertiesCMHelper.resetVisibility(true, true)))"/>
+  </PanelSet>
+</PCF>

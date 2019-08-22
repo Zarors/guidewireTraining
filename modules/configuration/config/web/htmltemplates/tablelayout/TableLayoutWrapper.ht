@@ -1,0 +1,3 @@
+<table class="gw-tableLayout--table gw-table"><tbody class="gw-tableLayout--tbody gw-table-body">
+  ${:children}
+</tbody></table>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<entity
+  loadable="false"
+  platform="true"
+  xmlns="http://guidewire.com/datamodel"
+  entity="DomainGraphPurgeLock"
+  table="domaingraphpurgelock"
+  type="keyable">
+  <column
+    name="RootInfoName"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="100"/>
+  </column>
+  <column
+    name="RootInfoID"
+    nullok="false"
+    type="softentityreference"/>
+  <column
+    name="Expires"
+    nullok="false"
+    type="datetime"/>
+  <index
+    desc="Index on RootInfo"
+    name="RootInfo"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="RootInfoName"/>
+    <indexcol
+      keyposition="2"
+      name="RootInfoID"/>
+  </index>
+</entity>

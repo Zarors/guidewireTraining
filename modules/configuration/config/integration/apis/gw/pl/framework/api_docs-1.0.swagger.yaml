@@ -1,0 +1,18 @@
+swagger: '2.0'
+info:
+  description: "Generates a Swagger 2.0 json payload for the associated schema"
+  version: '1.0'
+  title: "API Docs"
+paths:
+  /swagger.json: #TODO - AHK - REST - What should this be called?
+    get:
+      summary: "Returns the Swagger schema for this API"
+      description: "Returns a Swagger 2.0 schema for this API as json"
+      operationId: generateDocs
+      produces:
+      - application/json
+      x-gw-authenticated: false
+      x-gw-apihandler: gw.api.rest.framework.v1.ApiDocsHandler
+      responses:
+        '200':
+          description: "Successful operation"

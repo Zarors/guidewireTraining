@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <MenuActions
+    id="ABContactLGMenuActions">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <MenuItemSetRef
+      def="NewContactPickerMenuItemSet(ABContact, null)"/>
+    <MenuItem
+      id="ModifyContactMenu"
+      label="DisplayKey.get(&quot;Training.MenuItem.Workspace&quot;)">
+      <MenuItem
+        action="ContactNoteWorksheet.goInWorkspace(anABContact, true)"
+        id="ABContactMenuActions_NewNote"
+        label="DisplayKey.get(&quot;Training.NewNote&quot;)"/>
+      <MenuItem
+        action="ResetPrimaryPhoneWorksheet.goInWorkspace(anABContact as ABPerson)"
+        id="ResetPrimaryPhoneValue"
+        label="DisplayKey.get(&quot;Training.ResetPrimaryPhone2&quot;)"
+        visible="anABContact typeis ABPerson"/>
+    </MenuItem>
+  </MenuActions>
+</PCF>

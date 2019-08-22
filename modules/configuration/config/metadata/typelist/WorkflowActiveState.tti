@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The possible states of an active workflow object"
+  final="true"
+  name="WorkflowActiveState"
+  platform="true">
+  <typecode
+    code="running"
+    desc="The workflow is currently running."
+    name="Running"/>
+  <typecode
+    code="waitmanual"
+    desc="The workflow is waiting for a trigger or timeout."
+    name="Wait Timeout/Manual"/>
+  <typecode
+    code="waitactivity"
+    desc="The workflow is waiting for some activities to complete."
+    name="Wait Activity"/>
+  <typecode
+    code="waitmessage"
+    desc="The workflow is waiting for a message to be acked."
+    name="Wait Message"/>
+</typelist>

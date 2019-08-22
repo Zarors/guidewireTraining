@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    autosaveable="false"
+    canVisit="perm.Contact.viewsearchab"
+    countsAsWork="false"
+    id="AddressBookDirectionsPopup"
+    title="DisplayKey.get(&quot;Web.AddressBook.Search.Result.Directions&quot;)">
+    <LocationEntryPoint
+      signature="AddressBookDirectionsPopup(directions: gw.api.contact.DrivingDirections)"/>
+    <Variable
+      name="directions"
+      type="gw.api.contact.DrivingDirections"/>
+    <ScreenRef
+      def="AddressBookDirectionsScreen(directions)"/>
+  </Popup>
+</PCF>

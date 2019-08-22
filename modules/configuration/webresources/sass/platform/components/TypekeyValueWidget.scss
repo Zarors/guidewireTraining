@@ -1,0 +1,10 @@
+.gw-TypeKeyValueWidget {
+
+  .gw-actionRangeValue {
+    @include gw-link()
+  }
+
+  .gw-retired {
+    @include gw-retired(); //TODO: can we just gloabally make all things gw-retired call this mixin?
+  }
+}

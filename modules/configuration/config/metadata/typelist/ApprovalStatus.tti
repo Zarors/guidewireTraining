@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- Approval engine typelist -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="The approval status of an approvable entity"
+  final="true"
+  name="ApprovalStatus"
+  platform="true">
+  <typecode
+    code="unapproved"
+    desc="Pending approval"
+    name="Unapproved"/>
+  <typecode
+    code="approved"
+    desc="The entity has been approved"
+    name="Approved"/>
+  <typecode
+    code="rejected"
+    desc="The entity has been rejected"
+    name="Rejected"/>
+</typelist>

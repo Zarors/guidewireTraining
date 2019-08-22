@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    canVisit="gw.api.tools.OracleOutlineHelper.dbSupportsOutlines()"
+    id="OracleOutlineInfo"
+    parent="InfoPages()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.OracleOutlineInfo&quot;)">
+    <Variable
+      initialValue="new gw.api.tools.OracleOutlineHelper()"
+      name="PageHelper"
+      type="gw.api.tools.OracleOutlineHelper"/>
+    <Screen
+      id="OracleOutlineInfoScreen">
+      <DetailViewPanel>
+        <InputColumn>
+          <ButtonInput
+            action="PageHelper.downloadOutlines()"
+            download="true"
+            id="Download"
+            labelAbove="true"
+            value="DisplayKey.get(&quot;Button.Download&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        def="OracleOutlineLV(PageHelper)">
+        <Toolbar
+          id="oraotb"/>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

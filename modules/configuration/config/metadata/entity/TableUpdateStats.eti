@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- ### =============================================================
+  ### Table update statistics (owned by Database update statistics)
+  ### ============================================================= -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores update statistics info for each table in the database."
+  entity="TableUpdateStats"
+  exportable="false"
+  extendable="false"
+  final="true"
+  loadable="false"
+  platform="true"
+  table="tableupdatestats"
+  type="keyable">
+  <!-- TableName can contain subtype references, and so must be more than 30 characters -->
+  <foreignkey
+    columnName="DatabaseUpdateStatsID"
+    desc="DatabaseUpdateStats for this object."
+    fkentity="DatabaseUpdateStats"
+    ignoreforevents="true"
+    name="DatabaseUpdateStats"
+    nullok="false"/>
+  <column
+    desc="Name of table."
+    name="TableName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Start time of update statistics process for this table."
+    name="StartTime"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="End time of update statistics process for this table."
+    name="EndTime"
+    nullok="false"
+    type="datetime"/>
+  <array
+    arrayentity="TableUpdateStatsStatement"
+    desc="Collection of TableUpdateStatsStatements linked to this TableUpdateStats."
+    name="TableUpdateStatsStatements"
+    owner="true">
+    <array-association>
+      <typelist-map
+        field="UpdateStatsType"/>
+    </array-association>
+  </array>
+  <index
+    desc="Ensure uniqueness for TableName"
+    name="tableu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="DatabaseUpdateStatsID"/>
+    <indexcol
+      keyposition="2"
+      name="TableName"/>
+  </index>
+</entity>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="The type of error for messages that are in error"
+  name="ErrorCategory">
+  <typecode
+    code="no_connection"
+    desc="Cannot connect to external system"
+    name="No Connection"
+    priority="1"/>
+  <typecode
+    code="database_contention"
+    desc="Contention with external system database"
+    name="Database Contention"
+    priority="2"/>
+  <typecode
+    code="user_authentication"
+    desc="User account doesn't get authenticated"
+    name="User Authentication"
+    priority="3"/>
+  <typecode
+    code="unexpected_error"
+    desc="There was an unexpected error."
+    name="Unexpected Error"
+    priority="4"/>
+  <typecode
+    code="permanent_error"
+    desc="There is a permanent error related to sending and/or processing this message."
+    name="Permanent Error"
+    priority="5"/>
+  <typecode
+    code="payload_format"
+    desc="Issue with the format of the message payload reported by external system"
+    name="Payload Format"
+    priority="6"/>
+</typelistextension>

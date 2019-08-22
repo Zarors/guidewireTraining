@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=true;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_BPPROFILERCONFIG, com.guidewire.pl.system.batchprocessing.BatchProcessProfiler.getEntryPointName( batchProcessType ) );"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableBatchProcessPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForBatchProcess&quot;)">
+    <LocationEntryPoint
+      signature="EnableBatchProcessPopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="batchProcessType"
+      type="BatchProcessType"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="BatchProcess"
+            label="DisplayKey.get(&quot;Web.Profiler.BatchProcess&quot;)"
+            required="true"
+            value="batchProcessType"
+            valueRange="gw.api.profiler.BatchProcessWorkQueueProfilerPageHelper.getNotEnabledBatchProcessTypes().toTypedArray()"
+            valueType="typekey.BatchProcessType"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

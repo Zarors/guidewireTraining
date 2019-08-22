@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Log of what work the Workflows have performed.  Each row is one entry."
+  entity="WorkflowLogEntry"
+  exportable="false"
+  extendable="true"
+  final="false"
+  loadable="false"
+  platform="true"
+  table="workflowlog"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.workflow.WorkflowLogEntryPublicMethods"
+    impl="com.guidewire.pl.domain.workflow.impl.WorkflowLogEntryImpl"/>
+  <foreignkey
+    desc="The Workflow this log entry is for"
+    fkentity="Workflow"
+    name="Workflow"
+    nullok="false"
+    setterScriptability="hidden"/>
+  <column
+    desc="The date when this entry was logged"
+    name="LogDate"
+    nullok="false"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Number of times this workflow has been polled."
+    name="SortOrder"
+    nullok="false"
+    type="integer"/>
+  <column
+    desc="The display key to construct"
+    name="DisplayKey"
+    nullok="true"
+    setterScriptability="hidden"
+    type="shorttext"/>
+  <column
+    desc="The argument for the display key"
+    name="Argument"
+    nullok="true"
+    setterScriptability="hidden"
+    type="integer"/>
+  <index
+    desc="order preserving index."
+    name="workflowlogindex">
+    <indexcol
+      keyposition="1"
+      name="Workflow"/>
+    <indexcol
+      keyposition="2"
+      name="SortOrder"/>
+  </index>
+</entity>

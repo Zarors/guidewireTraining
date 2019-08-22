@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    id="SafePersistingOrderInfo"
+    parent="InfoPages()"
+    title="DisplayKey.get(&quot;Web.InternalTools.InfoPages.SafePersistingOrderInfo&quot;)">
+    <Variable
+      initialValue="gw.api.tools.SafePersistingOrderInfoHelper.getSafePersistingOrderTableNames()"
+      name="safeOrderList"
+      type="java.util.List&lt;gw.api.tools.SafePersistingOrderInfoHelper.SafePersistingOrderData&gt;"/>
+    <Screen
+      id="SafePersistingOrderInfoScreen">
+      <PanelRef
+        def="SafePersistingOrderInfoLV(safeOrderList)">
+        <Toolbar
+          id="spotb"/>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  entity="AttributeBasedAssignmentCriteria"
+  platform="true">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.AttributeBasedAssignmentCriteriaPublicMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.AttributeBasedAssignmentCriteriaImpl"/>
+  <foreignkey
+    columnName="GroupID"
+    desc="The Group within which the attribute-based search is being done. May be null."
+    fkentity="Group"
+    name="Group"
+    nullok="true"/>
+  <array
+    arrayentity="AttributeCriteriaElement"
+    name="AttributeCriteria"/>
+</nonPersistentEntity>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Currency xmlns="http://guidewire.com/currency">
+  <CurrencyType code="jpy" desc="Japanese Yen" storageScale="0">
+    <CurrencyFormat zeroValue="-"/>
+  </CurrencyType>
+</Currency>

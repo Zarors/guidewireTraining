@@ -1,0 +1,46 @@
+package rules.Preupdate.ABContactPreupdate_dir
+uses gw.api.locale.DisplayKey
+uses gw.api.util.MiscUtil
+
+@gw.rules.RuleName("Related Contact Removed History Event")
+internal class RelatedContactRemovedHistoryEvent {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return !aBContact.getRemovedArrayElements("TargetRelatedContacts").IsEmpty or
+!aBContact.getRemovedArrayElements("SourceRelatedContacts").IsEmpty
+
+/*end00rule*/
+
+  }
+
+  static function doAction(abContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// We don't want to generate a removed event for the ABContactContact if 
+// it's removed from SourceRelatedContacts and added to TargetRelatedContacts
+// and vice versa
+var sourceAdded = abContact.getAddedArrayElements("SourceRelatedContacts")
+var targetAdded = abContact.getAddedArrayElements("TargetRelatedContacts")
+var sourceRemoved = abContact.getRemovedArrayElements("SourceRelatedContacts")
+  .where(\ b -> !targetAdded.contains(b))
+var targetRemoved = abContact.getRemovedArrayElements("TargetRelatedContacts")
+  .where(\ b -> !sourceAdded.contains(b))
+var allRemoved = sourceRemoved.concat(targetRemoved)
+
+for (obj in allRemoved) {
+  var abContactContact  = obj as ABContactContact
+  var isSrc = abContact == abContactContact.SrcABContact
+  var relatedContact = isSrc ? abContactContact.RelABContact :  abContactContact.SrcABContact
+  var history = abContact.addHistory(
+    CustomHistoryType.TC_RELATEDCONTACTREMOVED, 
+    DisplayKey.get("Java.ABContactContact.Removed", relatedContact.DisplayName))
+
+  MiscUtil.addRelatedContactChanges(
+    history, relatedContact, null, abContactContact.Rel, null, isSrc);
+}
+
+/*end00rule*/
+
+  }
+}

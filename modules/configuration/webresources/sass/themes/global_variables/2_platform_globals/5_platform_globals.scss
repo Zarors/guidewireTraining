@@ -1,0 +1,164 @@
+// Only Global Variables are Allowed Here
+// All Variables here are allowed to be overridden by app/customers
+// Therefore all Variables must be followed by !default;
+
+// These globals do NOT directly correspond to a component
+// Instead, they map down into other globals.
+// But also into the individual component files' globals.
+
+
+
+// Sections
+$gw-app--bg: $gw-app--palette--white !default;
+$gw-app--col: $gw-app--palette--offblack !default;
+$gw-app--col-opposite: $gw-app--palette--white !default;
+$gw-app--divider--col: $gw-app--palette--gray-9 !default;
+$gw-app--border--col: $gw-app--divider--col !default;
+$gw-app--border--col-lighter: $gw-app--palette--gray-C !default;
+$gw-app--panels--icon-col: $gw-app--palette--gray-5 !default;
+
+$gw-app--section-primary--bg: $gw-app--palette--gray-D !default;
+$gw-app--section-primary--col: $gw-app--col !default;
+$gw-app--section-primary--hover-bg: $gw-app--palette--left-nav--bg-highlight !default;
+$gw-app--section-primary--hover-col: $gw-app--palette--white !default;
+$gw-app--section-primary--divider-col: darken($gw-app--section-primary--bg, 10%) !default;
+
+// Menus
+$gw-app--menus--bg: $gw-app--section-primary--bg !default;
+$gw-app--menus--col: $gw-app--section-primary--col !default;
+$gw-app--menus--hover--bg: $gw-app--section-primary--hover-bg !default;
+$gw-app--menus--hover--col: $gw-app--section-primary--hover-col !default;
+$gw-app--menus--active--bg: $gw-app--menus--hover--bg !default;
+$gw-app--menus--active--col: $gw-app--menus--hover--col !default;
+$gw-app--menus--expand-divider-col: $gw-app--palette--gray-B !default;
+$gw-app--menus--border-color: $gw-app--section-primary--divider-col !default;
+$gw-app--menus--divider-col: $gw-app--menus--border-color !default;
+$gw-app--menus--shadow: gw-pxFixed(2) gw-pxFixed(2) gw-pxFixed(6) 0 $gw-app--palette--shadow-col !default;
+
+$gw-app--menus--pad-v-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--menus--pad-h-rem: $gw-app--SPACING-rem-L !default;
+$gw-app--menus--expand--pad-h-rem: gw-remScaled(.5) !default;
+$gw-app--menus--divider-h-em: $gw-app--SPACING-rem-XS !default;
+$gw-app--menus--divider-pad-h-rem: gw-remScaled(.1) !default;
+$gw-app--menus--expand-divider-pad-v-mod: 1.1 !default;
+$gw-app--menus--have-border-radius: false !default;
+$gw-app--menus--submenu-pad-v-rem: null !default;
+$gw-app--menus--submenu-pad-h-rem: null !default;
+$gw-app--menus--space-between-icon-and-label: $gw-app--SPACING-rem-S !default;
+$gw-app--menus--submenu-expand-glyph: "caret-right-solid" !default;
+$gw-app--menus--expand-glyph: "caret-down-solid" !default;
+
+// Buttons
+$gw-app--buttons--col: $gw-app--palette--white !default;
+$gw-app--buttons--bg: $gw-app--palette--blue-dark !default;
+$gw-app--buttons--active--col: $gw-app--buttons--col !default;
+$gw-app--buttons--active--bg: darken($gw-app--buttons--bg, 10%) !default;
+$gw-app--buttons--hover--col: $gw-app--buttons--col !default;
+$gw-app--buttons--hover--bg: darken($gw-app--buttons--bg, 10%) !default;
+$gw-app--buttons--disabled-bg: $gw-app--palette--gray-E !default;
+$gw-app--buttons--disabled-col: $gw-app--palette--gray-9 !default;
+$gw-app--buttons--hover-shadow: 0 gw-pxFixed(2) gw-pxFixed(4) 0 $gw-app--palette--shadow-col !default;
+$gw-app--buttons--border-darken-percent: 5% !default;
+$gw-app--buttons--shadow: 1px 1px 2px 0px $gw-app--palette--shadow-light-col !default; //@px-allowed
+$gw-app--buttons--disabled-shadow: inset 0px 0px 2px 2px $gw-app--palette--shadow-light-col !default; //@px-allowed
+$gw-app--buttons--expand-glyph: "caret-down-solid" !default;
+
+$gw-app--buttons--secondary--col: $gw-app--buttons--bg !default;
+$gw-app--buttons--secondary--bg: $gw-app--bg !default;
+$gw-app--buttons--secondary--active--col: $gw-app--buttons--active--col !default;
+$gw-app--buttons--secondary--active--bg: $gw-app--buttons--active--bg !default;
+$gw-app--buttons--secondary--hover--col: $gw-app--buttons--hover--col !default;
+$gw-app--buttons--secondary--hover--bg: $gw-app--buttons--hover--bg !default;
+$gw-app--buttons--secondary--border-width-px: $gw-app--border-width-px !default;
+$gw-app--buttons--secondary--border-col: $gw-app--buttons--secondary--col !default;
+$gw-app--buttons--secondary--hover--border-col: darken($gw-app--buttons--secondary--hover--bg, $gw-app--buttons--border-darken-percent) !default;
+$gw-app--buttons--secondary--active--border-col: darken($gw-app--buttons--secondary--active--bg, $gw-app--buttons--border-darken-percent) !default;
+
+$gw-app--buttons--expand-divider-pad-v-mod: .2 !default;
+$gw-app--buttons--expand-divider-col: null !default;
+$gw-app--buttons--border-radius-px: $gw-app--border-radius-px !default;
+$gw-app--buttons--pad-v-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--buttons--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--buttons--disabled-cursor: not-allowed !default;
+$gw-app--buttons--have-borders: true !default;
+$gw-app--buttons--use-browser-default-outline: false !default;
+$gw-app--buttons--focus-offset-px: $gw-app--focus--outline-offset-px !default;
+$gw-app--buttons--small-pad-h-rem: $gw-app--buttons--pad-h-rem * .52 !default;
+$gw-app--buttons--small-pad-v-rem: $gw-app--buttons--pad-v-rem * .52 !default;
+
+// Links
+$gw-app--links--col: $gw-app--palette--blue !default;
+$gw-app--links--hover--col: $gw-app--links--col !default;
+$gw-app--links--disabled-col: null !default;
+
+$gw-app--links--pad-v-rem: 0 !default;
+$gw-app--links--pad-h-rem: $gw-app--buttons--pad-h-rem !default;
+$gw-app--links--underline-on-hover: true !default;
+$gw-app--links--outline-offset-px: gw-pxFixed(1) !default;
+
+// Panels
+$gw-app--panels--bg: $gw-app--section-primary--bg !default;
+$gw-app--panels--col: $gw-app--section-primary--col !default;
+$gw-app--panels--border-col: $gw-app--section-primary--divider-col !default;
+
+$gw-app--panels--info--bg: lighten($gw-app--palette--info, 40%) !default;
+$gw-app--panels--info--border-col: $gw-app--palette--info !default;
+$gw-app--panels--warning--bg: $gw-app--palette--orange-light !default;
+$gw-app--panels--warning--border-col: $gw-app--palette--warning !default;
+$gw-app--panels--error--bg: lighten($gw-app--palette--error, 50%) !default;
+$gw-app--panels--error--border-col: $gw-app--palette--error !default;
+$gw-app--panels--have-borders: true !default;
+
+// Inputs
+$gw-app--inputs--bg: $gw-app--palette--white !default;
+$gw-app--inputs--col: $gw-app--col !default;
+$gw-app--inputs--placeholder--col: $gw-app--palette--gray-C !default;
+$gw-app--inputs--border--col: $gw-app--palette--gray-B !default;
+$gw-app--inputs--disabled-bg: null !default;
+$gw-app--inputs--disabled-col: null !default;
+$gw-app--inputs--checkbox-checked-col: $gw-app--inputs--col !default;
+$gw-app--inputs--checkbox-checked-bg: $gw-app--inputs--bg !default;
+$gw-app--inputs--radio-checked-col: $gw-app--inputs--col !default;
+$gw-app--inputs--radio-checked-bg: $gw-app--inputs--bg !default;
+$gw-app--inputs--changed--bg: $gw-app--palette--beige !default;
+$gw-app--inputs--changed--col: $gw-app--col !default;
+$gw-app--inputs--changed--small-input-box-shadow: 0 0 0 gw-pxFixed(2) $gw-app--palette--beige-dark !default;
+$gw-app--inputs--error--bg: $gw-app--panels--error--bg !default;
+$gw-app--inputs--error--col: $gw-app--inputs--col !default;
+$gw-app--inputs--editable-inner-shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, .16) !default; //@px-allowed
+
+$gw-app--inputs--pad-v-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--inputs--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--inputs--select-glyph: "caret-down-solid" !default;
+$gw-app--inputs--checkbox-checked-glyph: "check-solid" !default;
+$gw-app--inputs--checkbox-size-em: gw-emFixed(1.4) !default;
+$gw-app--inputs--checkbox-glyph-size-em: gw-emFixed(($gw-app--base-font-size--in-px - 1px) / $gw-app--base-font-size--in-px) !default; //px-allowed TODO: with the plan to have dynamic sizing, we should convert elements like these to fixed pixels probably
+$gw-app--inputs--radio-checked-glyph: "circle-solid" !default;
+$gw-app--inputs--radio-size-em: gw-emFixed(1.3) !default;
+$gw-app--inputs--radio-glyph-size-em: gw-emFixed(.64) !default;
+$gw-app--inputs--min-text-input-width-em: gw-emFixed(3) !default;
+$gw-app--inputs--state-shadow-width-px: gw-pxFixed(5) !default;
+$gw-app--inputs--general-editable-max-width-em: gw-emFixed(34) !default;
+$gw-app--inputs--select--behave-like-secondary: true !default;
+$gw-app--inputs--select-min-width-em: gw-emFixed(5) !default;
+
+// Tables
+$gw-app--tables--rows--odd: $gw-app--bg !default;
+$gw-app--tables--rows--even: $gw-app--palette--offwhite !default;
+$gw-app--tables--style-list--border-col: $gw-app--palette--gray-D !default;
+$gw-app--tables--style-grid--border-col: $gw-app--palette--gray-A !default;
+$gw-app--tables--style-min--border-col: $gw-app--palette--gray-D !default;
+$gw-app--tables--style-list--headers-have-v-borders: false !default;
+$gw-app--tables--style-list--headers-have-h-borders: true !default;
+
+$gw-app--tables--cell--pad-h-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--tables--cell--pad-v-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--tables--cell--hover-bg: $gw-app--palette--blue-hint  !default;
+$gw-app--tables--cell--include-vertical-borders: true !default;
+
+// Groups
+$gw-app--tables--group--bg: $gw-app--panels--bg !default;
+$gw-app--tables--group--col: $gw-app--panels--col !default;
+$gw-app--tables--group--hover--bg: $gw-app--tables--group--bg !default;
+$gw-app--tables--group--hover--col: $gw-app--tables--group--col !default;
+

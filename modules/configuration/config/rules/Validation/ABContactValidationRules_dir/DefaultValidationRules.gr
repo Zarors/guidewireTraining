@@ -1,0 +1,20 @@
+package rules.Validation.ABContactValidationRules_dir
+
+@gw.rules.RuleName("Default Validation Rules")
+internal class DefaultValidationRules {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+    
+/*start00rule*/
+return true
+/*end00rule*/
+
+  }
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+
+/*end00rule*/
+
+  }
+}

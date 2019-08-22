@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Join table between the organization and the zone, to see which zones an organization can admin over."
+  entity="OrganizationZoneAdmin"
+  exportable="true"
+  extendable="true"
+  platform="true"
+  table="OrganizationZoneAdmin"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.OrganizationZoneAdminPublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.OrganizationZoneAdminImpl"/>
+  <foreignkey
+    columnName="OrganizationID"
+    desc="Fk to the Organization"
+    fkentity="Organization"
+    name="Organization"
+    nullok="false"
+    triggersValidation="true"/>
+  <typekey
+    desc="Type of zone."
+    name="ZoneType"
+    nullok="false"
+    typelist="ZoneType"/>
+  <typekey
+    desc="The country to which the zone belongs."
+    name="Country"
+    nullok="false"
+    typelist="Country"/>
+  <column
+    desc="Code of the zone"
+    name="ZoneCode"
+    nullok="false"
+    type="shorttext"/>
+  <index
+    desc="Improve performance of search for zone and enforce uniqueness"
+    name="orgzonezone"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="retired"/>
+    <indexcol
+      keyposition="2"
+      name="Country"/>
+    <indexcol
+      keyposition="3"
+      name="ZoneType"/>
+    <indexcol
+      keyposition="4"
+      name="ZoneCode"/>
+  </index>
+</entity>

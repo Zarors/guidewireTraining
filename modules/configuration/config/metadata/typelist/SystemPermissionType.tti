@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<!-- Typelists related to security -->
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Defines all permissions that can be granted to users via privileges and roles"
+  name="SystemPermissionType"
+  platform="true">
+  <!-- Application Admin -->
+  <typecode
+    code="internaltools"
+    desc="Permission to access all Internal Tools"
+    name="All internal tools"/>
+  <typecode
+    code="toolsInfoview"
+    desc="Permission to access the Info Internal Tools page"
+    name="View Info tools page"/>
+  <typecode
+    code="toolsBatchProcessview"
+    desc="Permission to access the BatchProcess Internal Tools page"
+    name="View BatchProcess tools page"/>
+  <typecode
+    code="toolsBatchProcessedit"
+    desc="Permission to edit the BatchProcess Internal Tools page"
+    name="Edit BatchProcess tools page"/>
+  <typecode
+    code="toolsWorkQueueview"
+    desc="Permission to access the WorkQueue Internal Tools page"
+    name="View WorkQueue tools page"/>
+  <typecode
+    code="toolsWorkQueueedit"
+    desc="Permission to edit the WorkQueue Internal Tools page"
+    name="Edit WorkQueue tools page"/>
+  <typecode
+    code="toolsJMXBeansEdit"
+    desc="Permission to edit the ManagementBeans presented on Internal Tools page"
+    name="Edit ManagementBeans tools page"/>
+  <typecode
+    code="toolsJMXBeansview"
+    desc="Permission to access the ManagementBeans Internal Tools page"
+    name="View ManagementBeans tools page"/>
+  <typecode
+    code="toolsJProfileredit"
+    desc="Permission to edit the JProfiler Internal Tools page"
+    name="Edit JProfiler tools page"/>
+  <typecode
+    code="toolsProfilerview"
+    desc="Permission to access the Profiler Internal Tools page"
+    name="View Profiler tools page"/>
+  <typecode
+    code="toolsProfileredit"
+    desc="Permission to edit the Profiler Internal Tools page"
+    name="Edit Profiler tools page"/>
+  <typecode
+    code="toolsCacheinfoview"
+    desc="Permission to view the CacheInfo Internal Tools page"
+    name="View Cache Info page"/>
+  <typecode
+    code="toolsPluginview"
+    desc="Permission to access the StartablePlugin Internal Tools page"
+    name="View StartablePlugin tools page"/>
+  <typecode
+    code="toolsPluginedit"
+    desc="Permission to edit the StartablePlugin Internal Tools page"
+    name="Edit StartablePlugin tools page"/>
+  <typecode
+    code="toolsLogview"
+    desc="Permission to access the Log Internal Tools page"
+    name="View Log tools page"/>
+  <typecode
+    code="toolsLogedit"
+    desc="Permission to edit the Log Internal Tools page"
+    name="Edit Log tools page"/>
+  <typecode
+    code="toolsClusterview"
+    desc="Permission to access the Cluster Internal Tools page"
+    name="View Cluster tools page"/>
+  <typecode
+    code="toolsClusteredit"
+    desc="Permission to edit the Cluster Internal Tools page"
+    name="Edit Cluster tools page"/>
+  <!-- Rule Admin -->
+  <typecode
+    code="ruleadmin"
+    desc="Permission to run Guidewire Studio or import rules"
+    name="Administer rules"/>
+  <!-- Community Admin -->
+  <typecode
+    code="regionview"
+    desc="Permission to view the list of regions and region details"
+    name="View regions"/>
+  <typecode
+    code="roleview"
+    desc="Permission to view the list of roles and role details"
+    name="View roles"/>
+  <typecode
+    code="groupview"
+    desc="Permission to view details of a group"
+    name="View groups"/>
+  <typecode
+    code="grouptreeview"
+    desc="Permission to see the user/group tree on the Administration tab"
+    name="View group tree"/>
+  <typecode
+    code="actpatcreate"
+    desc="Permission to create new activity patterns"
+    name="Create activity pattern"/>
+  <typecode
+    code="actpatedit"
+    desc="Permission to edit activity patterns"
+    name="Edit activity pattern"/>
+  <typecode
+    code="actpatdelete"
+    desc="Permission to delete activity patterns"
+    name="Delete activity pattern"/>
+  <typecode
+    code="actpatview"
+    desc="Permission to view the list of activity patterns or activity pattern details"
+    name="View activity pattern"/>
+  <typecode
+    code="attrmanage"
+    desc="Permission to create, edit, or delete user attributes"
+    name="Manage attributes"/>
+  <typecode
+    code="attrview"
+    desc="Permission to view the list of user attributes or attribute details"
+    name="View attributes"/>
+  <typecode
+    code="alpview"
+    desc="Permission to view authority limit profiles"
+    name="View authority limit profiles"/>
+  <typecode
+    code="soapadmin"
+    desc="Permission to use the SOAP APIs"
+    name="SOAP administration"/>
+  <typecode
+    code="debugtools"
+    desc="Permission to access debug tools, even when they are disabled by a configuration parameter"
+    name="Always access debug tools"/>
+  <typecode
+    code="userview"
+    desc="Permission to view details of a user"
+    name="View user"/>
+  <typecode
+    code="scrprmview"
+    desc="Permission to view the list of script parameters or details of an individual script parameter"
+    name="View script parameters"/>
+  <typecode
+    code="scrprmmanage"
+    desc="Permission to create, edit, or delete script parameters"
+    name="Manage script parameters"/>
+  <typecode
+    code="manageldfctrs"
+    desc="Permission to modify the load factors on all users and groups"
+    name="Manage load factors"/>
+  <typecode
+    code="usercreate"
+    desc="Permission to create a new user"
+    name="Create users"/>
+  <typecode
+    code="useredit"
+    desc="Permission to edit an existing user, except for roles, authority limits, or attributes"
+    name="Edit users"/>
+  <typecode
+    code="userdelete"
+    desc="Permission to delete a user (Note: if a user has had any activity it's recommended to make them non-active rather than delete)"
+    name="Delete users"/>
+  <typecode
+    code="usereditattrs"
+    desc="Permission to edit attributes for a user"
+    name="Edit user attributes"/>
+  <typecode
+    code="usereditlang"
+    desc="Permission to edit language"
+    name="Edit user language"/>
+  <typecode
+    code="groupcreate"
+    desc="Permission to create groups"
+    name="Create groups"/>
+  <typecode
+    code="groupdelete"
+    desc="Permission to delete groups"
+    name="Delete groups"/>
+  <typecode
+    code="usergrantroles"
+    desc="Permission to grant or revoke roles"
+    name="Grant roles to users"/>
+  <typecode
+    code="rolemanage"
+    desc="Permission to create, edit, or delete roles"
+    name="Manage roles"/>
+  <typecode
+    code="zonemanage"
+    desc="Permission to create, edit, or delete admin zones"
+    name="Manage admin zones"/>
+  <typecode
+    code="zoneview"
+    desc="Permission to view the list of admin zones"
+    name="View admin zones"/>
+  <typecode
+    code="buswkmanage"
+    desc="Permission to create, edit, or delete business week"
+    name="Manage business week"/>
+  <typecode
+    code="buswkview"
+    desc="Permission to view the list of business week"
+    name="View business week"/>
+  <typecode
+    code="orgcreate"
+    desc="Permission to create an organization."
+    name="Create organization"/>
+  <typecode
+    code="orgdelete"
+    desc="Permission to delete an organization."
+    name="Delete organization"/>
+  <typecode
+    code="orgeditbasic"
+    desc="Permission to edit an organization's basic info."
+    name="Edit organization basic info"/>
+  <typecode
+    code="orgsearch"
+    desc="Permission to search for organizations."
+    name="Search for organization"/>
+  <typecode
+    code="orgviewbasic"
+    desc="Permission to view an organization's basic info."
+    name="View organization basic info"/>
+  <!-- Integration Admin permissions -->
+  <typecode
+    code="retrymessage"
+    desc="Permission to try to resend the failed message"
+    name="Retry message"/>
+  <typecode
+    code="skipmessage"
+    desc="Permission to skip the failed message"
+    name="Skip message"/>
+  <typecode
+    code="resyncmessage"
+    desc="Permission to resync message"
+    name="Resync message"/>
+  <!-- Supervisor -->
+  <typecode
+    code="actmakemand"
+    desc="Permission to set whether an activity is mandatory"
+    name="Make activities mandatory"/>
+  <typecode
+    code="viewteam"
+    desc="Permission to view the Team tab"
+    name="View team"/>
+  <!-- Adjuster -->
+  <typecode
+    code="actown"
+    desc="Permission to own an activity and to see the Desktop Activities page"
+    name="Own activity"/>
+  <!-- Assignment search result view permissions -->
+  <typecode
+    code="viewworkload"
+    desc="Permission to view global workload statistics of other users"
+    name="View global workload"/>
+  <typecode
+    code="viewactcal"
+    desc="Permission to view activity calendar of other users"
+    name="View activity calendar"/>
+  <!-- Additions are out of order - see the Permission classes for a more reasonable ordering and grouping -->
+  <typecode
+    code="seczonemanage"
+    desc="Permission to create, edit, and delete security zones"
+    name="Manage security zones"/>
+  <typecode
+    code="regionmanage"
+    desc="Permission to create, edit, and delete regions"
+    name="Manage regions"/>
+  <typecode
+    code="groupedit"
+    desc="Permission to edit groups"
+    name="Edit groups"/>
+  <typecode
+    code="actraown"
+    desc="Permission to reassign your own activities"
+    name="Reassign owned activities"/>
+  <typecode
+    code="actraunown"
+    desc="Permission to reassign activities owned by other users"
+    name="Reassign unowned activities"/>
+  <!-- Task creation -->
+  <typecode
+    code="actcreate"
+    desc="Permission to create new activities"
+    name="Create activities"/>
+  <typecode
+    code="workflowview"
+    desc="Permission to view the Workflow page"
+    name="View workflow"/>
+  <typecode
+    code="workflowmanage"
+    desc="Permission to view the ManageWorkflow page"
+    name="Manage workflow"/>
+  <!-- Documents permissions -->
+  <typecode
+    code="doccreate"
+    desc="Permission to add documents"
+    name="Create documents"/>
+  <typecode
+    code="docview"
+    desc="Permission to view documents"
+    name="View documents"/>
+  <typecode
+    code="docedit"
+    desc="Permission to edit documents"
+    name="Edit documents"/>
+  <typecode
+    code="docdelete"
+    desc="Permission to remove documents"
+    name="Delete documents"/>
+  <typecode
+    code="docviewall"
+    desc="Permission to view all documents, regardless of the permissions set on the individual documents"
+    name="View all documents"/>
+  <typecode
+    code="docmodifyall"
+    desc="Permission to edit or delete all documents, regardless of the permissions set on the individual documents"
+    name="Modify all documents"/>
+  <!-- Notes permissions -->
+  <typecode
+    code="notecreate"
+    desc="Permission to add notes"
+    name="Create notes"/>
+  <typecode
+    code="noteview"
+    desc="Permission to view notes"
+    name="View notes"/>
+  <typecode
+    code="noteeditbody"
+    desc="Permission to edit the body of notes"
+    name="Edit note body"/>
+  <typecode
+    code="noteedit"
+    desc="Permission to edit the notes"
+    name="Edit note"/>
+  <typecode
+    code="notedelete"
+    desc="Permission to remove notes"
+    name="Delete notes"/>
+  <typecode
+    code="actreviewassign"
+    desc="Permission to review and approve manually-approved assignables"
+    name="Review assignments"/>
+  <typecode
+    code="abcreatepref"
+    desc="Permission to add a preferred vendor to the address book"
+    name="Create address book preferred vendors"/>
+  <typecode
+    code="abeditpref"
+    desc="Permission to modify an existing preferred vendor address book entry"
+    name="Edit address book preferred vendors"/>
+  <typecode
+    code="acteditunowned"
+    desc="Permission to modify (edit/skip/close) activities owned by other users"
+    name="Edit unowned activities"/>
+  <typecode
+    code="userviewall"
+    desc="Permission to see users in all visible groups"
+    name="View all users"/>
+  <!-- Permission to modify authority limits for a user -->
+  <typecode
+    code="usergrantauth"
+    desc="Permission to grant or change an authority limit for a user"
+    name="Grant authority limits"/>
+  <typecode
+    code="actapproveany"
+    desc="Permission to approve any approval activity even if the activity is assigned to someone else; the approver is still subject to authority limit restrictions"
+    name="Approve any approval activity"/>
+  <typecode
+    code="actview"
+    desc="Permission to view activities"
+    name="View activities"/>
+  <!-- integration events monitor permissions -->
+  <typecode
+    code="integadmin"
+    desc="Permission to administer integration events"
+    name="Administer integration"/>
+  <!-- purge permissions -->
+  <typecode
+    code="purge"
+    desc="Permission to purge objects from the database"
+    name="Purge objects"/>
+  <!-- archive permissions -->
+  <typecode
+    code="archive"
+    desc="Permission to archive objects"
+    name="Archive objects"/>
+  <typecode
+    code="lvprint"
+    desc="Permission to print listviews"
+    name="Print listviews"/>
+  <!-- UI Permissions -->
+  <typecode
+    code="viewdesktop"
+    desc="Permission to view the Desktop"
+    name="View Desktop"/>
+  <typecode
+    code="viewsearch"
+    desc="Permission to view the Search tab"
+    name="View Search"/>
+  <typecode
+    code="actviewallqueues"
+    desc="Permission to view all activity queues, even those in other security zones"
+    name="View all activity queues"/>
+  <typecode
+    code="actqueuenext"
+    desc="Permission to get the next activity off of a queue"
+    name="Get next activity from queue"/>
+  <typecode
+    code="actqueuepick"
+    desc="Permission to pick an activity from a queue"
+    name="Pick activity from queue"/>
+  <typecode
+    code="actqueueassign"
+    desc="Permission to assign an activity from a queue"
+    name="Assign activity from queue"/>
+  <typecode
+    code="reporting_view"
+    desc="Permission to view the Report tab, if the add-on reporting module is installed"
+    name="View Report tab"/>
+  <!-- Address Book permissions -->
+  <typecode
+    code="abview"
+    desc="Permission to view the details of contact entries in the address book"
+    name="View address book contacts"/>
+  <typecode
+    code="abcreate"
+    desc="Permission to create a new contact in the address book"
+    name="Create address book contacts"/>
+  <typecode
+    code="abedit"
+    desc="Permission to edit an existing contact in the address book"
+    name="Edit address book contacts"/>
+  <typecode
+    code="abviewsearch"
+    desc="Permission to search contact entries in the address book"
+    name="View address book contact search pages"/>
+  <typecode
+    code="abdelete"
+    desc="Permission to delete an existing contact in the address book"
+    name="Delete address book contacts"/>
+  <typecode
+    code="abdeletepref"
+    desc="Permission to delete an existing preferred vendor address book entry"
+    name="Delete address book preferred vendors"/>
+  <typecode
+    code="ctcview"
+    desc="Permission to view and search local contact entries"
+    name="View local contacts"/>
+  <typecode
+    code="ctccreate"
+    desc="Permission to create a new local contact"
+    name="Create local contacts"/>
+  <typecode
+    code="ctcedit"
+    desc="Permission to edit an existing local contact"
+    name="Edit local contacts"/>
+  <!-- Address Book Tag permissions -->
+  <typecode
+    code="anytagcreate"
+    desc="Permission to create a new contact regardless of which tag(s) it has"
+    name="Create contact with any tag"/>
+  <typecode
+    code="anytagview"
+    desc="Permission to view the details of a contact regardless of which tag(s) it has"
+    name="View contact with any tag"/>
+  <typecode
+    code="anytagedit"
+    desc="Permission to edit the details of a contact regardless of which tag(s) it has"
+    name="Edit contact with any tag"/>
+  <typecode
+    code="anytagdelete"
+    desc="Permission to delete a contact regardless of which tag(s) it has"
+    name="Delete contact with any tag"/>
+  <!-- Calendar permissions -->
+  <typecode
+    code="holidayview"
+    desc="Permission to view a list of holidays or holiday details"
+    name="View holidays"/>
+  <typecode
+    code="holidaymanage"
+    desc="Permission to create, edit, and delete holidays"
+    name="Manage holidays"/>
+  <typecode
+    code="admindatachangeview"
+    desc="Permission to view the data change page."
+    name="View Data Change"/>
+  <typecode
+    code="wsdatachangeedit"
+    desc="Permission to add a data change gosu program."
+    name="Add Data Change"/>
+  <typecode
+    code="admindatachangeexec"
+    desc="Permission to execute the data change."
+    name="Execute Data Change"/>
+  <typecode
+    code="changecontactsubtype"
+    desc="Permission to change contact subtype"
+    name="Change Contact Subtype"/>
+  <typecode
+    code="eventmessageview"
+    desc="Permission to view the event messages page"
+    name="View event messages"/>
+  <typecode
+    code="editobfuscatedusercontact"
+    desc="Permission to edit obfuscated user contacts"
+    name="Edit obfuscated user contact"/>
+  <typecode
+    code="requestcontactdestruction"
+    desc="Permission to call the PersonalDataDestructionAPI to destroy contacts"
+    name="Request Contact Destruction"/>
+</typelist>

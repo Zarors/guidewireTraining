@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Page
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    canVisit="perm.User.EditProfiler or perm.User.DevAllAccess"
+    id="ProfilerConfigurationPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.Configuration&quot;)">
+    <ScreenRef
+      def="ProfilerConfigurationScreen(\ -&gt; {}, \ -&gt; {})"/>
+  </Page>
+</PCF>

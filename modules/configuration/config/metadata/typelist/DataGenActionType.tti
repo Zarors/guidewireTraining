@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Action type performed by data-gen"
+  name="DataGenActionType"
+  platform="true">
+  <typecode
+    code="restore"
+    desc="Restore DB from pcb."
+    name="Restore"/>
+  <typecode
+    code="advanceDate"
+    desc="Advancing all dates field in DB."
+    name="AdvanceDate"/>
+  <typecode
+    code="initialize"
+    desc="Initialize DB."
+    name="Initialize"/>
+</typelist>

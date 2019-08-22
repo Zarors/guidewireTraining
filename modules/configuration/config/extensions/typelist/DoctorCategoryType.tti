@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="DoctorCategoryType"
+  name="DoctorCategoryType">
+  <typecode
+    code="immediatecare"
+    desc="Immediate Care"
+    name="Immediate Care"
+    priority="10"/>
+  <typecode
+    code="generalcare"
+    desc="General Care"
+    name="General Care"
+    priority="20"/>
+  <typecode
+    code="surgery"
+    desc="Surgery"
+    name="Surgery"
+    priority="30"/>
+  <typecode
+    code="longtermcare"
+    desc="Long-Term Care"
+    name="Long-Term Care"
+    priority="40"/>
+  <typecode
+    code="unspecified"
+    desc="Unspecified"
+    name="Unspecified"
+    priority="50"/>
+</typelist>

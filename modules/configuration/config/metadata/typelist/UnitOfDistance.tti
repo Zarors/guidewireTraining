@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Units of distance"
+  final="true"
+  name="UnitOfDistance"
+  platform="true">
+  <typecode
+    code="Mile"
+    desc="International statute mile"
+    name="Mile"/>
+  <typecode
+    code="Kilometer"
+    desc="Kilometer"
+    name="Kilometer"/>
+  <typecode
+    code="Meter"
+    desc="Meter"
+    name="Meter"/>
+  <typecode
+    code="Foot"
+    desc="Foot"
+    name="Foot"/>
+</typelist>

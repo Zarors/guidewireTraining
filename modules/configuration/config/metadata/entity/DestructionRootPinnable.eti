@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="DestructionRootPinnable"
+  platform="true">
+  <column
+    default="false"
+    desc="If set then the entity should not be destroyed"
+    name="DoNotDestroy"
+    nullok="false"
+    setterScriptability="doesNotExist"
+    type="bit"/>
+  <fulldescription>This delegate is currently only attached to purge roots. At some later date we may want to allow for
+    Pinnable-s that are not also purge roots.</fulldescription>
+</delegate>

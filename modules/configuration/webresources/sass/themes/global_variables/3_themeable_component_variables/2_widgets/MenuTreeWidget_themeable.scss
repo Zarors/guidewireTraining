@@ -1,0 +1,33 @@
+// Position to other widgets
+$gw-app--MenuTree--spacing-widget-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--MenuTree--spacing-widget-left-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--MenuTree--spacing-widget-right-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--MenuTree--spacing-widget-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+// Internal padding
+$gw-app--MenuTree--spacing-inner-top-rem: null !default;
+$gw-app--MenuTree--spacing-inner-left-rem: null !default;
+$gw-app--MenuTree--spacing-inner-right-rem: null !default;
+$gw-app--MenuTree--spacing-inner-bottom-rem: null !default;
+
+// Other
+$gw-app--MenuTree--min-width: null !default;
+$gw-app--MenuTree--min-height: null !default;
+$gw-app--MenuTree--border-bottom: $gw-app--border-width-px solid $gw-app--palette--left-nav--bg-lighter !default;
+$gw-app--MenuTree--has-border-radius: true !default;
+
+// Internal TreeViewWidget Styling
+$gw-app--MenuTree--row-spacing-inner-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--MenuTree--row-spacing-inner-left-rem: null !default;
+$gw-app--MenuTree--row-spacing-inner-right-rem: null !default;
+$gw-app--MenuTree--row-spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+$gw-app--MenuTree--even-odd-row-highlighting: true !default;
+$gw-app--MenuTree--even-row-bg: transparentize($gw-app--WestPanel--button--col, .9) !default; //TODO: does this widget get used not in the west panel?
+$gw-app--MenuTree--odd-row-bg: transparentize($gw-app--WestPanel--button--col, .95) !default;
+
+$gw-app--MenuTree--row-hover-bg: null !default;
+$gw-app--MenuTree--row-hover-col: null !default;
+
+$gw-app--MenuTree--expand-collapse-hover-col: null !default;
+$gw-app--MenuTree--expand-collapse-hover-bg: null !default;

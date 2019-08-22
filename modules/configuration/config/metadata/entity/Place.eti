@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Place subtypes -->
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents an place/location."
+  entity="Place"
+  final="false"
+  platform="true"
+  priority="3"
+  supertype="Contact">
+  <fulldescription><![CDATA[
+      Represents an place/location that is not directly associated with a business or person.
+      This is a primary subtype of Contact.
+    ]]></fulldescription>
+</subtype>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <CardViewPanel
+    hideTabIfSingle="true"
+    id="ProfilerResultsCV"
+    mode="StacksGrouped">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Card
+      id="Card"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)">
+      <ListDetailPanel
+        selectionName="selectedStackSummary"
+        selectionType="gw.api.profiler.ProfilerStackGroup">
+        <PanelRef>
+          <TitleBar
+            title="&quot;Stacks Grouped by Name&quot;"/>
+          <Toolbar/>
+          <ListViewPanel
+            id="StackSummaryLV">
+            <RowIterator
+              editable="false"
+              elementName="stackSummary"
+              value="profilerDataSource.StacksGroupedByName"
+              valueType="gw.api.profiler.ProfilerStackGroup[]">
+              <Row>
+                <TextCell
+                  id="StackName"
+                  label="DisplayKey.get(&quot;Web.Profiler.StackName&quot;)"
+                  value="stackSummary.StackName"/>
+                <TextCell
+                  id="count"
+                  label="&quot;# &quot; + DisplayKey.get(&quot;Web.Profiler.Stacks&quot;)"
+                  value="stackSummary.StackCount"
+                  valueType="java.lang.Integer"/>
+                <TextCell
+                  id="total"
+                  label="&quot;Total &quot; + DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                  value="stackSummary.TotalElapsed"
+                  valueType="java.lang.Integer"/>
+                <TextCell
+                  id="average"
+                  label="&quot;Ave &quot; + DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                  value="stackSummary.AverageElapsed"
+                  valueType="java.lang.Integer"/>
+                <TextCell
+                  id="min"
+                  label="&quot;Min &quot; + DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                  value="stackSummary.MinElapsed"
+                  valueType="java.lang.Integer"/>
+                <TextCell
+                  id="max"
+                  label="&quot;Max &quot; + DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                  value="stackSummary.MaxElapsed"
+                  valueType="java.lang.Integer"/>
+              </Row>
+            </RowIterator>
+          </ListViewPanel>
+        </PanelRef>
+        <CardViewPanel>
+          <Card
+            id="NestedCard"
+            title="DisplayKey.get(&quot;Web.Profiler.Stacks&quot;) + &quot; in Group&quot;">
+            <PanelRef>
+              <Toolbar/>
+              <ListViewPanel>
+                <RowIterator
+                  editable="false"
+                  elementName="time"
+                  value="selectedStackSummary.ElapsedTimes"
+                  valueType="java.lang.Integer[]">
+                  <Row>
+                    <TextCell
+                      enableSort="false"
+                      id="name"
+                      label="DisplayKey.get(&quot;Web.Profiler.StackName&quot;)"
+                      value="selectedStackSummary.StackName"/>
+                    <TextCell
+                      id="time"
+                      label="DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+                      value="time"
+                      valueType="java.lang.Integer"/>
+                  </Row>
+                </RowIterator>
+              </ListViewPanel>
+            </PanelRef>
+          </Card>
+        </CardViewPanel>
+      </ListDetailPanel>
+    </Card>
+  </CardViewPanel>
+</PCF>

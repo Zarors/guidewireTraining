@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Basic priority typelist"
+  final="false"
+  name="Priority"
+  platform="true">
+  <typecode
+    code="urgent"
+    desc="Highest priority - must be addressed immediately"
+    name="Urgent"
+    priority="1"/>
+  <typecode
+    code="high"
+    desc="High priority - should be addressed before normal activities"
+    name="High"
+    priority="2"/>
+  <typecode
+    code="normal"
+    desc="Normal"
+    name="Normal"
+    priority="3"/>
+  <typecode
+    code="low"
+    desc="Low - needs to be addressed eventually but there is no urgency"
+    name="Low"
+    priority="4"/>
+</typelist>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Legal values for this type list can contain codes with the values:
+  0 - represents any date
+  <number> - represents +number days in the future.
+  n<number> - represents number days in the past. -->
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="The predetermined list of date ranges we can search for"
+  name="DateRangeChoiceType">
+  <typecode
+    code="0"
+    desc="any date"
+    name="Any"
+    priority="1"/>
+</typelistextension>

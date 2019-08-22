@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <entity entity="HistoryEntry" table="historyentry" type="retireable" desc="Entry in a contact's history" exportable="true" xmlns="http://guidewire.com/datamodel">
+  <implementsEntity
+    name="Extractable"/>
+  <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+  <column name="Description" type="varchar" desc="Description of history event" nullok="true">
+			<columnParam name="size" value="160"/>
+	</column>
+	<typekey name="EventType" typelist="HistoryEventType" desc="Type of event for history entry" nullok="true"/>
+	<foreignkey name="ABContact" columnName="ABContactID" fkentity="ABContact" desc="Contact to which history event belongs" nullok="true"/>	
+  </entity>

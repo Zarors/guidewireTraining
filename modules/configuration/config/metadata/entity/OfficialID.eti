@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Represents the pairing of a given official ID number and a jurisdiction."
+  entity="OfficialID"
+  exportable="true"
+  extendable="true"
+  final="false"
+  platform="true"
+  table="officialid"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.OfficialIDPublicMethods"
+    impl="com.guidewire.pl.domain.contact.impl.OfficialIDImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.OfficialIDBase"
+    impl="com.guidewire.pl.domain.contact.impl.OfficialIDImpl"/>
+  <fulldescription><![CDATA[
+      Represents the pairing of a given official ID number and a jurisdiction.  Examples of these would
+      include the pairing of a state and a drivers license number or state tax ID number.  Multiple OfficialIDs
+      can be associated with a given Contact.
+    ]]></fulldescription>
+  <foreignkey
+    columnName="ContactID"
+    fkentity="Contact"
+    name="Contact"
+    nullok="true"/>
+  <column
+    desc="This official id's value, such as a social security number or drivers' license number."
+    name="OfficialIDValue"
+    nullok="true"
+    type="shorttext"/>
+  <typekey
+    desc="The type of this official id."
+    name="OfficialIDType"
+    nullok="false"
+    typelist="OfficialIDType"/>
+  <typekey
+    desc="Jurisdiction."
+    name="State"
+    nullok="true"
+    typelist="Jurisdiction"/>
+  <index
+    desc="Perf index for searches on OfficialIDValue involving the contact this official ID is related to."
+    name="OfficialIDPerf1">
+    <indexcol
+      keyposition="1"
+      name="OfficialIDValue"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+    <indexcol
+      keyposition="3"
+      name="ContactID"/>
+  </index>
+</entity>

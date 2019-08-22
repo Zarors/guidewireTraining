@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Identifies whether entity search/fetch operations should be performed against the internal system or some remote system"
+  final="true"
+  name="EntitySourceType"
+  platform="true">
+  <typecode
+    code="internal"
+    desc="Search/fetch should be performed internally against the local database"
+    name="Internal"/>
+  <typecode
+    code="external"
+    desc="Search/fetch should be performed against some remote system via a plugin"
+    name="External"/>
+</typelist>

@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of batch processes"
+  final="false"
+  name="BatchProcessType"
+  platform="true">
+  <!-- batch processes -->
+  <typecode
+    code="ActivityEsc"
+    desc="Activity escalation monitor"
+    name="Activity Escalation"/>
+  <typecode
+    code="Archive"
+    desc="Identify archiving work and create work items."
+    name="Archiving Item Writer"/>
+  <typecode
+    code="DeferredUpgradeTasks"
+    desc="Execute database upgrade tasks that were deferred"
+    name="DeferredUpgradeTasks">
+    <category
+      code="APIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="BulkPurge"
+    desc="Purge records through table updates"
+    name="BulkPurge"/>
+  <typecode
+    code="ProcessHistoryPurge"
+    desc="Purge batch process history data"
+    name="ProcessHistoryPurge">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="WorkQueueInstrumentationPurge"
+    desc="Purge instrumentation data for work queues"
+    name="WorkQueueInstrumentationPurge">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="WorkItemSetPurge"
+    desc="Purge WorkItemSet data"
+    name="WorkItemSetPurge">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="DataDistribution"
+    desc="Data distribution for the database"
+    name="Data Distribution"/>
+  <typecode
+    code="DBConsistencyCheck"
+    desc="Database consistency checks"
+    name="Database Consistency Check">
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="DBStats"
+    desc="Database statistics"
+    name="Database Statistics"/>
+  <typecode
+    code="MSDMVReport"
+    desc="Microsoft database performance report generation"
+    name="Microsoft Perf Report"/>
+  <typecode
+    code="OraAWRReport"
+    desc="Oracle database AWR performance report generation"
+    name="Oracle AWR Report"/>
+  <typecode
+    code="GroupException"
+    desc="Group exception Monitor"
+    name="Group Exception"/>
+  <typecode
+    code="UserException"
+    desc="User exception Monitor"
+    name="User Exception"/>
+  <typecode
+    code="Workflow"
+    desc="Workflows work queue writer."
+    name="Workflow Writer"/>
+  <!-- work queues -->
+  <typecode
+    code="ContactAutoSync"
+    desc="Automatically synchronize the local contact that are out of syn and marked 'allow' auto-sync."
+    name="ContactAutoSync"/>
+  <typecode
+    code="Geocode"
+    desc="Geocoding Addresses queue writer."
+    name="Geocode Writer"/>
+  <!-- unused -->
+  <typecode
+    code="StatReport"
+    desc="Stat Report work queue writer"
+    name="Stat Report Writer"/>
+  <typecode
+    code="ProcessCompletionMonitor"
+    desc="Invoke plugin on completion of monitored worker queue"
+    name="Process Completion Monitor">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PurgeProfilerData"
+    desc="Purge profiler data at regular intervals"
+    name="Purge Profiler Data">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PurgeWorkflowLogs"
+    desc="Purge completed workflows logs, this executes gw.processes.PurgeWorkflowLogs.gs"
+    name="Purge Workflow Logs">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PurgeWorkflows"
+    desc="Purge completed workflows after resetting any referenced workflows, this executes gw.processes.PurgeWorkflow.gs"
+    name="Purge Workflow">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PurgeFailedWorkItems"
+    desc="Purge failed work items from all queues."
+    name="Purge Failed Work Items">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PurgeTransactionIds"
+    desc="Purge external transaction id that no longer need to be tracked, by age."
+    name="Purge old transaction ids">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PopulateSearchColumns"
+    desc="Populate searchColumn columns from their original sources."
+    name="Populate searchColumn columns">
+    <category
+      code="APIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PurgeClusterMembers"
+    desc="Purge old ClusterMember entities"
+    name="Purge Cluster Members">
+    <category
+      code="UIRunnable"
+      typelist="BatchProcessTypeUsage"/>
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="PhoneNumberNormalizer"
+    desc="Performs a normalization of phone numbers contact"
+    name="Phone number normalizer"/>
+  <typecode
+    code="StagingTableImport"
+    desc="Asynchronous operation on staging tables (encrypt, statistics, integrity check, load, delete excluded, populate excluded)"
+    name="Staging Table Import"/>
+  <typecode
+    code="FindUsagesOfUpgradedTypecodes"
+    desc="During the back out of a rolling upgrade, looks for typecodes that were inserted during the rolling upgrade. These usages need to be fixed before we can back out."
+    name="FindUsagesOfUpgradedTypecodes"/>
+  <typecode
+    code="BackOutRollingUpgrade"
+    desc="Back out a rolling upgrade"
+    name="BackOutRollingUpgrade"/>
+<typecode
+    code="CreatePerfOnlyIndexes"
+    desc="Recreate perf-only indexes when the loader finishes the big insert/select from staging to operational tables"
+    name="Loader Create Indexes"/>
+  <typecode
+    code="DestroyContactForPersonalData"
+    desc="Destroy contacts that have been requested by an external system"
+    name="Destroy Contact For Personal Data">
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="RemoveOldContactDestructionRequest"
+    desc="Remove destruction requests for contacts that have been destroyed."
+    name="Purge Old Contact Destruction Request">
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  <typecode
+    code="ArchiveReferenceTrackingSync"
+    desc="Ensures that, as long archive reference tracking is enabled, that the archive document references table is in sync with the archive store."
+    name="Archive Reference Tracking Sync"/>
+  <typecode
+    code="NotifyExternalSystemForPersonalData"
+    desc="Picks up all contact destruction tests that are in final state and notifies external system"
+    name="Notify External System For Personal Data">
+    <category
+      code="Schedulable"
+      typelist="BatchProcessTypeUsage"/>
+  </typecode>
+  </typelist>

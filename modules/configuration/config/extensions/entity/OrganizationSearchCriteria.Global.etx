@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="OrganizationSearchCriteria">
+  <column
+    desc="The kanji name of the organization. Used only for Japanese."
+    name="NameKanji"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="120"/>
+  </column>
+  <column
+    desc="The contact city kanji for the organization. Used only for Japanese."
+    name="ContactCityKanji"
+    nullok="true"
+    type="shorttext"/>
+</extension>

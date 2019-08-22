@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Running request to start a batch process by the scheduler"
+  entity="ActiveScheduledJob"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="activescheduledjob"
+  type="keyable">
+  <typekey
+    desc="The batch process"
+    name="ProcessType"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <column
+    desc="The server ID"
+    name="ServerId"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="The timestamp in UTC when the job was started"
+    name="JobStarted"
+    nullok="false"
+    type="longint"/>
+</entity>

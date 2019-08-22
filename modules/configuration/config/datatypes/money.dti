@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<DataTypeDef xmlns="http://guidewire.com/datatype" type="com.guidewire.pl.metadata.datatype2.impl.MoneyDataTypeDef" valueType="java.math.BigDecimal">
+  <ParameterDef name="validator" desc="The name of a ValidatorDef (fieldvalidators.xml) that should be used to validate values of this data type." required="false" type="java.lang.String"/>
+  <ParameterDef name="precision" desc="The maximum number of digits used in the decimal representation of values of this data type." required="false" type="java.lang.Integer"/>
+  <ParameterDef name="scale" desc="The maximum number of digits to the right of the decimal point in a decimal representation of values of this data type." required="false" type="java.lang.Integer"/>
+</DataTypeDef>

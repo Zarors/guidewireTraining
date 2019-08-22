@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Worksheet
+    id="PendingContactMatchWorksheet"
+    tabLabel="DisplayKey.get(&quot;Web.Contacts.PendingContactMatchWorksheet.Title&quot;)"
+    title="DisplayKey.get(&quot;Web.Contacts.PendingContactMatchWorksheet.Title&quot;)">
+    <LocationEntryPoint
+      signature="PendingContactMatchWorksheet(originalContact: ABContact, matchResults: gw.api.webservice.addressbook.contactapi.ABContactSearchResult)"/>
+    <Scope
+      location="*"/>
+    <Variable
+      name="matchResults"
+      type="gw.api.webservice.addressbook.contactapi.ABContactSearchResult"/>
+    <Variable
+      name="originalContact"
+      type="ABContact"/>
+    <Screen>
+      <Toolbar>
+        <ToolbarButton
+          action="CurrentLocation.cancel()"
+          id="PendingContactMatchWorksheet_CancelButton"
+          label="DisplayKey.get(&quot;Button.Cancel&quot;)"/>
+      </Toolbar>
+      <ListViewPanel
+        id="DuplicateLV">
+        <RowIterator
+          editable="false"
+          elementName="contact"
+          value="gw.api.web.contact.PendingContactChangeUtil.getDuplicates(originalContact, matchResults)"
+          valueType="java.util.ArrayList&lt;entity.ABContact&gt;">
+          <Row>
+            <TextCell
+              action="gw.api.web.contact.PendingContactChangeUtil.pickDuplicateContact(contact, originalContact, CurrentLocation)"
+              id="AcceptContact"
+              value="DisplayKey.get(&quot;Web.Contacts.MergeContacts.Accept&quot;)"/>
+            <TextCell
+              id="MatchType"
+              label="DisplayKey.get(&quot;Web.Contacts.MergeContacts.MatchType&quot;)"
+              value="getMatchType(contact)"/>
+            <TextCell
+              action="gw.api.web.contact.PendingContactChangeUtil.showDetailView(contact)"
+              id="Name"
+              label="DisplayKey.get(&quot;Web.Contacts.MergeContacts.Name&quot;)"
+              value="contact.DisplayName"/>
+            <TextCell
+              id="Address"
+              label="DisplayKey.get(&quot;Web.Contacts.MergeContacts.Address&quot;)"
+              value="contact.PrimaryAddress"
+              valueType="entity.Address"/>
+            <TextCell
+              id="PhoneNumber"
+              label="DisplayKey.get(&quot;Web.Contacts.MergeContacts.Phone&quot;)"
+              value="contact.PrimaryPhoneValue"/>
+          </Row>
+        </RowIterator>
+      </ListViewPanel>
+    </Screen>
+    <Code><![CDATA[uses java.util.ArrayList
+
+function getDuplicates() : ArrayList<ABContact> {  
+  var list = new ArrayList<ABContact>()
+  for (c in matchResults.Results) {
+    if (c.PublicID != originalContact.PublicID and c.CreateStatus != ContactCreationApprovalStatus.TC_PENDING_APPROVAL) {
+      list.add(c)  
+    }
+  }
+  return list
+}
+
+function getMatchType(contact : ABContact) : String {
+  var exact = gw.api.web.contact.PendingContactChangeUtil.isContactExact(contact, matchResults)
+  return exact ? DisplayKey.get("Web.Contacts.MergeContacts.Exact") : DisplayKey.get("Web.Contacts.MergeContacts.Potential")
+}]]></Code>
+  </Worksheet>
+</PCF>

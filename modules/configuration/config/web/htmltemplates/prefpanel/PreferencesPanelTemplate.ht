@@ -1,0 +1,18 @@
+<div id="gw-PrefPanel">
+    <div id="gw-PrefPanel--inner">
+        <div id="gw-PrefPanel--top">
+            <div id="gw-PrefPanel--title">
+                <div class="gw-label">${preferencesLabel}</div>
+            </div>
+            <div id="gw-PrefPanel--toolbar">
+                <div id="gw-PrefPanel--wipe" data-gw-click="gwStorage.clearStorage">${eraseStorageLabel}</div>
+                <div id="gw-PrefPanel--reset" data-gw-click="gwPrefPanel.reset">${restoreDefaultsLabel}</div>
+                <div id="gw-PrefPanel--cancel" data-gw-click="gwPrefPanel.cancel">${cancelLabel}</div>
+                <div id="gw-PrefPanel--save" data-gw-click="gwPrefPanel.save">${saveLabel}</div>
+            </div>
+        </div>
+        <div id="gw-PrefPanel--bottom">
+            ${:children}
+        </div>
+    </div>
+</div>

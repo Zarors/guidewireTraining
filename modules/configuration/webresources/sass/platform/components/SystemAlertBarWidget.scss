@@ -1,0 +1,71 @@
+.gw-SystemAlertBarWidget {
+  $gw-SystemAlertBar--general-pad-rem: $gw-app--SPACING-rem-L;
+  $gw-SystemAlertBar--element-max-width: 100ch;
+  $gw-SystemAlertBar--text-margin-v-rem: $gw-app--SPACING-rem-S;
+
+  // Position to other widgets
+  margin-top: $gw-app--SystemAlertBar--spacing-widget-top-rem;
+  margin-left: $gw-app--SystemAlertBar--spacing-widget-left-rem;
+  margin-right: $gw-app--SystemAlertBar--spacing-widget-right-rem;
+  margin-bottom: $gw-app--SystemAlertBar--spacing-widget-bottom-rem;
+
+  display: block;
+  background-color: $gw-app--SystemAlertBar--bg;
+
+  text-align: center;
+
+  .gw-SystemAlertBarWidget--inner {
+    // Internal padding
+    padding-top: $gw-app--SystemAlertBar--spacing-inner-top-rem;
+    padding-left: $gw-app--SystemAlertBar--spacing-inner-left-rem;
+    padding-right: $gw-app--SystemAlertBar--spacing-inner-right-rem;
+    padding-bottom: $gw-app--SystemAlertBar--spacing-inner-bottom-rem;
+
+    text-align: left;
+    display: inline-flex;
+    justify-content: flex-start;
+    vertical-align: top;
+
+    .gw-SystemAlertBarWidget--icon {
+      margin-right: $gw-SystemAlertBar--general-pad-rem;
+      float: left;
+    }
+
+    .gw-SystemAlertBarWidget--content {
+      display: block;
+      text-align: left;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      .gw-SystemAlertBarWidget--label {
+        display: block;
+        font-size: $gw-app--SystemAlertBar--title-font-size-em;
+        font-weight: $gw-app--SystemAlertBar--title-font-weight;
+      }
+
+      .gw-SystemAlertBarWidget--elements {
+
+        .gw-SystemAlertBarElementWidget {
+          display: inline-block;
+          max-width: $gw-SystemAlertBar--element-max-width;
+          vertical-align: middle;
+
+          &:not(.gw-mini-button):not(.gw-big-button) {
+            margin-top: $gw-SystemAlertBar--text-margin-v-rem;
+            margin-bottom: $gw-SystemAlertBar--text-margin-v-rem;
+          }
+
+          & + .gw-mini-button, & + .gw-big-button {
+            margin-left: $gw-SystemAlertBar--general-pad-rem;
+          }
+        }
+
+        .gw-mini-button, .gw-big-button {
+          & + .gw-SystemAlertBarElementWidget, & + .gw-mini-button, & + .gw-big-button {
+            margin-left: $gw-SystemAlertBar--general-pad-rem;
+          }
+        }
+      }
+    }
+  }
+}

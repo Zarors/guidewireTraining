@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc=""
+  name="NoteType">
+  <typecode
+    code="diagram"
+    desc="General"
+    name="General"/>
+  <typecode
+    code="interviewreport"
+    desc="Interview report"
+    name="Interview report"/>
+  <typecode
+    code="actionplan"
+    desc="Action plan"
+    name="Action plan"/>
+  <typecode
+    code="statusreport"
+    desc="Status report"
+    name="Status report"/>
+  <typecode
+    code="outbound"
+    desc="Outbond"
+    name="Outbound"/>
+  <typecode
+    code="inbound"
+    desc="Inbound"
+    name="Inbound"/>
+  <typecode
+    code="transferredcall"
+    desc="Transferred Call"
+    name="Transferred Call"/>
+</typelistextension>

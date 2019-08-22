@@ -1,0 +1,8 @@
+<div class="gw-Wizard--titles">
+  <div :if="title" class="gw-Wizard--Title">
+    ${title}
+  </div>
+  <div :if="subTitle" class="gw-Wizard--SubTitle">
+    ${subTitle}
+  </div>
+</div>

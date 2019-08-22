@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="SearchConfig">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="CriteriaDef"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" type="xsd:integer" default="1"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="CriteriaDef">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Criterion"/>
+        <xsd:element ref="ArrayCriterion"/>
+        <xsd:element ref="CriterionChoice"/>
+      </xsd:choice>
+      <xsd:attribute name="entity" type="xsd:string" use="required"/>
+      <xsd:attribute name="targetEntity" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Criterion">
+    <xsd:complexType>
+      <xsd:attribute name="property" type="xsd:string" use="required"/>
+      <xsd:attribute name="targetProperty" type="xsd:string" use="optional"/>
+      <xsd:attribute name="forceEqMatchType" type="xsd:string" use="optional"/>
+      <xsd:attribute name="matchType" type="MatchType" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ArrayCriterion">
+    <xsd:complexType>
+      <xsd:attribute name="property" type="xsd:string" use="required"/>
+      <xsd:attribute name="targetProperty" type="xsd:string" use="required"/>
+      <xsd:attribute name="arrayMemberProperty" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="CriterionChoice">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Option"/>
+      </xsd:sequence>
+      <xsd:attribute name="property" type="xsd:string" use="required"/>
+      <xsd:attribute name="init" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Option">
+    <xsd:complexType>
+      <xsd:attribute name="label" type="xsd:string" use="required"/>
+      <xsd:attribute name="targetProperty" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="MatchType">
+    <!-- For Strings, MatchType case-sensitivity depends on the database, except for startsWith and Contains which are always case-insensitive. -->
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="eq"/>
+      <xsd:enumeration value="lt"/>
+      <xsd:enumeration value="le"/>
+      <xsd:enumeration value="ge"/>
+      <xsd:enumeration value="gt"/>
+      <xsd:enumeration value="startsWith"/>
+      <xsd:enumeration value="startsWithCaseSensitive"/>
+      <xsd:enumeration value="contains"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+</xsd:schema>

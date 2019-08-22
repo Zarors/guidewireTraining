@@ -1,0 +1,22 @@
+<!--JIC ERA SELECT-->
+<input :if="isJIC" readonly placeholder="${eraPlaceholder}" class="gw-DateValueWidget--era gw-input-prefix ${noTrack ? 'gw-noTrack'}" id="${renderId}_era"
+       name="${renderId}_era"
+       data-gw-readonly-focusable
+       data-gw-click="gwJic.showDatePicker id:${renderId}" disabled="${disabled}"
+       data-gw-order="${selectedEra.order}" value="${selectedEra.name}" tabindex="-1"/>
+<!-- -->
+<input :if="hasDate" type="text" class="gw-DateValueWidget--dateInput ${noTrack ? 'gw-noTrack'}" data-gw-jic="${isJIC}"
+       data-gw-digit-mask data-gw-input-mask="${dateMask}"
+       name="${renderId}" disabled="${disabled}" value="${dateValue}" placeholder="${datePlaceholder}"/>
+<div :if="hasDate" id="${renderId}_dateIcon" class="gw-date-icon ${disabled ? 'gw-disabled'}"
+     data-gw-click="gwDateValue.dateIconClicked id:${renderId}" readonly data-gw-readonly-focusable></div>
+<input :if="hasTime" type="text" class="gw-DateValueWidget--timeInput ${isUse12HourClock ? 'gw-is12Hour'} ${noTrack ? 'gw-noTrack'}"
+       data-gw-time-input data-gw-digit-mask data-gw-input-mask="${timeMask}"
+       name="${renderId}_time" id="${renderId}_time" disabled="${disabled}"
+       value="${timeValue}" placeholder="${timePlaceholder}"/>
+<input :if="hasTime && isUse12HourClock" readonly data-gw-readonly-focusable
+       placeholder="${meridianPlaceholder}" class="gw-DateValueWidget--ampm gw-input-suffix ${noTrack ? 'gw-noTrack'}"
+       id="${renderId}_ampm" disabled="${disabled}"
+       name="${renderId}_ampm" value="${selectedAmPm}"
+       data-gw-click="gwDateValue.clickedOnAmPmInput id:${renderId}_time"
+       data-gw-confirm="${confirm}"/>

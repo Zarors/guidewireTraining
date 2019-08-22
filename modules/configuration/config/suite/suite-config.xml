@@ -1,0 +1,6 @@
+<suite-config xmlns="http://guidewire.com/config/suite/suite-config">
+  <!--<product name="cc" url="http://localhost:8080/cc"/>-->
+  <!--<product name="pc" url="http://localhost:8180/pc"/>-->
+  <product name="ab" url="http://localhost:8890/ab"/>
+  <!--<product name="bc" url="http://localhost:8580/bc"/>-->
+</suite-config>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A queue to which assignable entities can be assigned."
+  entity="AssignableQueue"
+  exportable="true"
+  extendable="true"
+  ignoreForEvents="true"
+  loadable="true"
+  lockable="true"
+  platform="true"
+  table="assignqueue"
+  type="retireable">
+  <implementsInterface
+    iface="gw.api.assignment.Assignee"
+    impl="com.guidewire.pl.domain.assignment.impl.AssignableQueueImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.AssignableQueuePublicMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.AssignableQueueImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.AssignableQueueInternalMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.AssignableQueueImpl"/>
+  <fulldescription><![CDATA[
+        A queue of assignable entities. Entities can be assigned to a queue (rather than a user) and
+        any entity assigned to a queue is said to be "in the queue". A queue belongs to a group
+        and is typically used to organize items which can be handled by any user in its group.
+        When a user has time to tackle a new item they look at the items in the queue and reassign
+        the top item to themselves.
+      
+    ]]></fulldescription>
+  <foreignkey
+    columnName="GroupID"
+    desc="The group to which the queue belongs."
+    fkentity="Group"
+    name="Group"
+    nullok="false"/>
+  <column
+    desc="The name of this queue."
+    name="Name"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="The description of what this queue is for."
+    name="Description"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    default="false"
+    desc="If true the queue is visible from sub-groups of the group to which it belongs."
+    name="SubGroupVisible"
+    nullok="false"
+    type="bit"/>
+  <index
+    desc="Enforce uniqueness, must be only one queue with a given name per group"
+    name="queueu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GroupID"/>
+    <indexcol
+      keyposition="2"
+      name="Name"/>
+    <indexcol
+      keyposition="3"
+      name="Retired"/>
+  </index>
+</entity>

@@ -1,0 +1,44 @@
+.gw-ChoiceWidget {
+  display: flex;
+  align-items: flex-start;
+
+  // Position to other widgets
+  margin-top: $gw-app--ChoiceWidget--spacing-widget-top-rem;
+  margin-left: $gw-app--ChoiceWidget--spacing-widget-left-rem;
+  margin-right: $gw-app--ChoiceWidget--spacing-widget-right-rem;
+  margin-bottom: $gw-app--ChoiceWidget--spacing-widget-bottom-rem;
+
+  // Internal padding
+  padding-top: $gw-app--ChoiceWidget--spacing-inner-top-rem;
+  padding-left: $gw-app--ChoiceWidget--spacing-inner-left-rem;
+  padding-right: $gw-app--ChoiceWidget--spacing-inner-right-rem;
+  padding-bottom: $gw-app--ChoiceWidget--spacing-inner-bottom-rem;
+
+  .gw-ChoiceRadioButtonValueWidget {
+    position: relative;
+    right: $gw-app--ChoiceWidget--radio-button-right-offset;
+    $finalMarginTop: 0;
+
+    @if ($gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem) {
+      $finalMarginTop: $gw-app--InputWidget-in-InputColumn--spacing-widget-top-rem;
+    }
+
+    @if ($gw-app--inputs--pad-v-rem) {
+      $finalMarginTop: $finalMarginTop + $gw-app--inputs--pad-v-rem;
+    }
+    margin-top: $finalMarginTop;
+
+    .gw-radio-wrapper {
+      @include gw-convertRadioWrapper();
+    }
+  }
+
+  .gw-ChoiceWidget--children {
+    flex-grow: 1;
+    .gw-InputWidget {
+      .gw-LabelWidget {
+        // Not currently being used, but there's some common variations to styling this that will want it, so leaving
+      }
+    }
+  }
+}

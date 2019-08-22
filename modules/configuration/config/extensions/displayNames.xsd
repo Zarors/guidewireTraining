@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DisplayNames">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Entity" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Entity">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Columns" type="ColumnsType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="DisplayName" type="DisplayNameType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="DisplayNameType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="type" type="xsd:string" use="optional"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ColumnsType">
+    <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+      <xsd:choice>
+        <xsd:element name="Column" type="ColumnType"/>
+        <xsd:element name="DisplayNameColumn" type="DisplayNameColumnType"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ColumnType">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="beanPath" type="xsd:string" use="required"/>
+    <xsd:attribute name="sortBeanPath" type="xsd:string" use="optional"/>
+    <xsd:attribute name="sortOrder" type="xsd:string" use="optional" default="none"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="DisplayNameColumnType">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="beanPath" type="xsd:string" use="required"/>
+    <xsd:attribute name="sortOrder" type="xsd:string" use="optional" default="none"/>
+  </xsd:complexType>
+</xsd:schema>

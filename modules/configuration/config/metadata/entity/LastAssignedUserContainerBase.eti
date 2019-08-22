@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="LastAssignedUserContainerBase"
+  platform="true">
+  <foreignkey
+    columnName="LastReviewUserID"
+    desc="The id of the last user that was assigned an assignment review activity."
+    fkentity="User"
+    name="LastReviewUser"
+    nullok="true"/>
+  <foreignkey
+    columnName="LastActivityUserID"
+    desc="The id of the last user that was assigned an activity."
+    fkentity="User"
+    name="LastActivityUser"
+    nullok="true"/>
+  <foreignkey
+    columnName="LastReviewGrpID"
+    desc="The id of the last group that was assigned an assignment review activity."
+    fkentity="Group"
+    name="LastReviewGrp"
+    nullok="true"/>
+  <foreignkey
+    columnName="LastActivityGrpID"
+    desc="The id of the last group that was assigned an activity."
+    fkentity="Group"
+    name="LastActivityGrp"
+    nullok="true"/>
+</delegate>

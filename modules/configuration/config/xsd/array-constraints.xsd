@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+  ### ============================================================================
+  ###  ARRAYCONSTRAINTS
+  ### ============================================================================
+  ###
+  ### ARRAYCONSTRAINT [0..n]
+  ###   All the array constraints in the system.
+  ###
+  -->
+  <xsd:element name="ArrayConstraints">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Entity" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+  ### =================================================================================================================
+  ###  Entity
+  ### =================================================================================================================
+  ###
+  ### name [required]
+  ###   Name of the entity
+  ###
+  ### Array [1..n]
+  ###   One or more arrays within this entity.  Each array element corresponds to an existing virtual array on the
+  ###   entity.
+  ###
+  -->
+  <xsd:element name="Entity">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Array" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+  ### =================================================================================================================
+  ###  Array
+  ### =================================================================================================================
+  ###
+  ### name [required]
+  ###   Name of the array
+  ###
+  ### CONSTRAINT [1..n]
+  ###   One or more elements that describe the constraints on the given array.
+  ###
+  -->
+  <xsd:element name="Array">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="ArrayConstraint" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+  ### =================================================================================================================
+  ###  ARRAYCONSTRAINT
+  ### =================================================================================================================
+  ###
+  ### name [required]
+  ###   Name of the virtual field that will be available to Gosu
+  ###
+  ### cardinality [required]
+  ###   The cardinality of the constraint.  The cardinality determines the return type (in Gosu) of this
+  ###   ArrayConstraint.  If the cardinality is zeroorone or one, then Gosu expects a single value.  If the
+  ###   cardinality is zeroormore or oneormore, then Gosu expects an array value.  If the cardinality is prohibited,
+  ###   then Gosu will not expose this constraint (and entities containing a value that matches the criteria for
+  ###   this constraint will fail data validation).
+  ###
+  ### CRITERIA [1..n]
+  ###   One or more elements that describe the constraints on the given array.
+  ###
+  -->
+  <xsd:element name="ArrayConstraint">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Criterion" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="cardinality" type="Cardinality" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+  ### =================================================================================================================
+  ###  CRITERION
+  ### =================================================================================================================
+  ###
+  ### entity [required]
+  ###   The name of the entity on which the given field attribute lives.  Either the entity type of the array element,
+  ###   or the entity type of the container.
+  ###
+  ### field [required]
+  ###   The field, either on the sub-array element (the AccountContactRole entity, in the example above) if the array
+  ###   attribute is not null, or the array element itself if the array attribute is null.
+  ###
+  ### value [required]
+  ###   The required value for the typekey field given in the typeKeyPath attribute.  The value corresponds to a code
+  ###   on the typekey field's typelist.
+  ###
+  -->
+  <xsd:element name="Criterion">
+    <xsd:complexType>
+      <xsd:attribute name="entity" type="xsd:string" use="required"/>
+      <xsd:attribute name="field" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+  ### =================================================================================================================
+  ###  CARDINALITY
+  ### =================================================================================================================
+  ###
+  ### The Cardinality enumeration defines the legal cardinalities for a particular ArrayConstraint.
+  ###
+  ### zeroorone
+  ###   The ArrayConstraint is a single, nullable, member of the given virtual array.
+  ###
+  ### one
+  ###   The ArrayConstraint is a single, non-nullable, member of the given virtual array.
+  ###
+  ### zeroormore
+  ###   The ArrayConstraint is a sub-array of the given virtual array, and can be empty.
+  ###
+  ### oneormore
+  ###   The ArrayConstraint is a sub-array of the given virtual array, and must have at least one element.
+  ###
+  ### prohibited
+  ###   The ArrayConstraint is not allowed for the given virtual array.
+  ###
+  -->
+  <xsd:simpleType name="Cardinality">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="zeroorone"/>
+      <xsd:enumeration value="one"/>
+      <xsd:enumeration value="zeroormore"/>
+      <xsd:enumeration value="oneormore"/>
+      <xsd:enumeration value="prohibited"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

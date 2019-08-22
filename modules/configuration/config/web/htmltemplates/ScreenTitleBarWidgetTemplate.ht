@@ -1,0 +1,6 @@
+<div :if="icon" class="gw-TitleBar--icon">${icon}</div>
+<div class="gw-TitleBar--titles--container">
+  <div class="gw-TitleBar--title ${action ? 'gw-actionable'}"
+       data-gw-click="?{action} fireEvent id:${renderId}">${title}</div>
+  <div :if="subtitle" class="gw-TitleBar--subtitle">${subtitle}</div>
+</div>

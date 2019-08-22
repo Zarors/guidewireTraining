@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Entity
+  name="Contact">
+  <Columns>
+    <Column
+      beanPath="Contact.Subtype"
+      name="SubType"
+      sortBeanPath="Contact.Subtype"/>
+    <Column
+      beanPath="Person.LastName"
+      name="LastName"
+      sortBeanPath="Person.LastNameDenorm"
+      sortOrder="1"/>
+    <Column
+      beanPath="Person.LastNameKanji"
+      name="LastNameKanji"/>
+    <Column
+      beanPath="Person.FirstName"
+      name="FirstName"
+      sortBeanPath="Person.FirstNameDenorm"
+      sortOrder="2"/>
+    <Column
+      beanPath="Person.FirstNameKanji"
+      name="FirstNameKanji"/>
+    <Column
+      beanPath="Person.Suffix"
+      name="Suffix"
+      sortOrder="3"/>
+    <Column
+      beanPath="Person.Prefix"
+      name="Prefix"/>
+    <Column
+      beanPath="Person.Particle"
+      name="Particle"/>
+    <Column
+      beanPath="Person.MiddleName"
+      name="MiddleName"/>
+    <Column
+      beanPath="Company.Name"
+      name="Name"
+      sortBeanPath="Company.NameDenorm"
+      sortOrder="4"/>
+    <Column
+      beanPath="Contact.NameKanji"
+      name="NameKanji"/>
+  </Columns>
+  <DisplayName><![CDATA[uses gw.api.name.NameFormatter
+    uses gw.api.name.PersonNameFieldsImpl
+    uses gw.api.name.ContactNameFieldsImpl
+    uses gw.api.name.NameOwnerFieldId
+
+    if (SubType != null && Person.Type.isAssignableFrom(Type.forName("entity." + SubType.getCode()))) {
+      var person = new PersonNameFieldsImpl(){
+        :LastName = LastName,
+        :LastNameKanji = LastNameKanji,
+        :FirstName = FirstName,
+        :FirstNameKanji = FirstNameKanji,
+        :Suffix = Suffix,
+        :Prefix = Prefix,
+        :Particle = Particle,
+        :MiddleName = MiddleName,
+        :Name = Name,
+        :NameKanji = NameKanji
+        }
+      return new NameFormatter().format(person, " ", NameOwnerFieldId.DISPLAY_NAME_FIELDS)
+    } else {
+      var contact = new ContactNameFieldsImpl(){
+        :Name = Name,
+        :NameKanji = NameKanji
+        }
+      return new NameFormatter().format(contact, " ")
+    }]]></DisplayName>
+</Entity>

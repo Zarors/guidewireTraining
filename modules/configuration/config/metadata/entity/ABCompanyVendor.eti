@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<subtype
+  xmlns="http://guidewire.com/datamodel"
+  desc="Contact type representing vendors that are companies."
+  displayName="Vendor (Company)"
+  entity="ABCompanyVendor"
+  final="false"
+  supertype="ABCompany">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABCompanyVendor"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABCompanyVendorImpl"/>
+</subtype>

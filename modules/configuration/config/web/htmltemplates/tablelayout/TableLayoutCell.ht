@@ -1,0 +1,4 @@
+<td class="gw-tableLayout--table--cell gw-table-cell ${tdClass}" colspan="${childColspan}"
+    data-gw-colspan-count="${colspanCount}" data-gw-col-number="${childInRowIndex}">
+${:children}
+</td>

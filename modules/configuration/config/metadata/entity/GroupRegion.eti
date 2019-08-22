@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- GroupRegion table -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Joins a group to one or more regions."
+  entity="GroupRegion"
+  extendable="true"
+  platform="true"
+  table="groupregion"
+  type="joinarray">
+  <foreignkey
+    columnName="GroupID"
+    desc="Associated group."
+    exportable="false"
+    fkentity="Group"
+    name="Group"
+    nullok="false"/>
+  <foreignkey
+    columnName="RegionID"
+    desc="Associated region."
+    fkentity="Region"
+    name="Region"
+    nullok="false"/>
+  <!-- All array tables must have a unique index.  groupregion accessed through
+      group, so we have key be (groupid, regionid) and
+      eliminate backing index on groupid since unique index is usable for FK. -->
+  <index
+    desc="Enforce uniqueness, must be only one entry joining a particular group and region"
+    name="groupregionu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="GroupID"/>
+    <indexcol
+      keyposition="2"
+      name="RegionID"/>
+  </index>
+</entity>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Information about a building"
+  entity="Building_Ext"
+  exportable="true"
+  table="building"
+  type="retireable">
+  <implementsEntity
+    name="Extractable"/>
+  <!-- This file contains an example of a new entity and uses the naming conventions recommended    for customer implementations. All other new entities are needed specifically for the         TrainingApp "base application" and therefore do not follow the customer implementation       naming conventions.                                                                          For new "top-level" entities, the entity itself has the "_Ext" suffix, but the fields do not -->
+  <foreignkey
+    columnName="AddressID"
+    desc="Address at which building is located"
+    fkentity="Address"
+    name="Address"
+    nullok="true"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="Associated ABContact"
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="true"/>
+  <column
+    desc="Number of employees in this building"
+    name="NumberOfEmployees"
+    nullok="true"
+    type="integer"/>
+  <column
+    desc="Date of last inspection"
+    name="InspectionDate"
+    nullok="false"
+    type="datetime"/>
+  <column
+    desc="Is there a parking structure at this building?"
+    name="HasParking"
+    nullok="true"
+    type="bit"/>
+  <typekey
+    desc="Building type"
+    name="BuildingType"
+    nullok="true"
+    typelist="BuildingType_Ext"/>
+</entity>

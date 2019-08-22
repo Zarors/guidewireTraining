@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Sample color theme"
+  name="SampleTheme"
+  platform="true">
+  <typecode
+    code="cold"
+    desc="Cold color"
+    name="Cold"/>
+  <typecode
+    code="warm"
+    desc="Warm color"
+    name="Warm"/>
+</typelist>

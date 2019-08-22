@@ -1,0 +1,21 @@
+// Position to other widgets
+$gw-app--PagingWidget--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--PagingWidget--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--PagingWidget--spacing-widget-right-rem: null !default;
+$gw-app--PagingWidget--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--PagingWidget--spacing-inner-top-rem: null !default;
+$gw-app--PagingWidget--spacing-inner-left-rem: null !default;
+$gw-app--PagingWidget--spacing-inner-right-rem: null !default;
+$gw-app--PagingWidget--spacing-inner-bottom-rem: null !default;
+
+
+$gw-app--Paging--icon--size-em: gw-emFixed(1.2) !default;
+$gw-app--Paging--icon--col: $gw-app--buttons--bg !default;
+$gw-app--Paging--spacing-rem: $gw-app--SPACING-rem-XS !default;
+
+$gw-app--Paging--glyph-left: "chevron-left" !default;
+$gw-app--Paging--glyph-right: "chevron-right" !default;
+$gw-app--Paging--glyph-up: "chevron-up" !default;
+$gw-app--Paging--glyph-down: "chevron-down" !default;

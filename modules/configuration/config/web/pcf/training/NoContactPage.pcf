@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <Page
+    id="NoContactPage"
+    parent="ContactTabForward()"
+    title="DisplayKey.get(&quot;Training.NoContactTitle&quot;)">
+    <LocationEntryPoint
+      signature="NoContactPage()"/>
+    <Screen>
+      <DetailViewPanel>
+        <InputColumn>
+          <Label
+            label="DisplayKey.get(&quot;Training.NoContactLabel&quot;)"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Page>
+</PCF>

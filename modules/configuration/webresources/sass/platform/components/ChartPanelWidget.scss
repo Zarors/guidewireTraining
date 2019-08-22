@@ -1,0 +1,291 @@
+.gw-ChartPanelWidget,.gw-TileChartPanelWidget {
+
+  .gw-round-chart-placeholder {
+    fill: $gw-app--ChartPanel--placeholder--fill;
+  }
+
+  .gw-chart-placeholder {
+    color: $gw-app--ChartPanel--placeholder--text-color;
+    font-style: italic;
+  }
+
+  &.gw-chart-legend--position-bottom, &.gw-chart-legend--position-right {
+    .gw-chart-legend {
+      order: 1;
+    }
+  }
+
+  &.gw-chart-legend--position-right, &.gw-chart-legend--position-left {
+    .gw-chart {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .gw-chart-title {
+        flex-basis: 100%;
+      }
+
+      $gw-app-chart-title-height-rem: $gw-app--line-height-unitless + 2 * $gw-app--ChartPanel--title--pad-v-rem;
+
+      .gw-chart-legend:empty {
+        display: none;
+      }
+
+      .gw-chart-legend {
+        max-height: calc(100% - #{$gw-app-chart-title-height-rem});
+        overflow: auto;
+        align-self: center;
+        justify-content: baseline;
+
+        &.gw-chart-legend-dual {
+          .gw-chart-legend-left, .gw-chart-legend-right {
+            flex-direction: column;
+            max-width: 100%;
+          }
+          .gw-chart-legend-left {
+            padding-right: 0;
+            padding-bottom: $gw-app--ChartPanel--graph--padding-rem;
+          }
+          .gw-chart-legend-right {
+            padding-left: 0;
+            padding-top: $gw-app--ChartPanel--graph--padding-rem;
+          }
+        }
+      }
+
+      .gw-chart-title:empty~.gw-chart-legend {
+        max-height: 100%;
+      }
+
+      svg {
+        height: calc(100% - #{$gw-app-chart-title-height-rem} - #{2 * $gw-app--ChartPanel--graph--padding-rem});
+        min-height: calc(100% - #{$gw-app-chart-title-height-rem} - #{2 * $gw-app--ChartPanel--graph--padding-rem});
+        width: 0; // ie11 workaround
+      }
+
+      .gw-chart-title:empty~svg {
+        height: calc(100% - #{2 * $gw-app--ChartPanel--graph--padding-rem});
+        min-height: calc(100% - #{2 * $gw-app--ChartPanel--graph--padding-rem});
+        width: 0; // ie11 workaround
+      }
+    }
+  }
+
+  .gw-chart-wedge {
+    stroke: $gw-app--TileWidget--bg;
+  }
+
+  svg {
+    text {
+      font-family: $gw-app--font-family;
+      font-size: $gw-app--ChartPanel--axisLabel--font-size-px;
+      fill: $gw-app--col;
+    }
+  }
+
+  .gw-chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    padding: $gw-app--ChartPanel--padding-rem;
+
+    .gw-chart-title {
+      margin: $gw-app--ChartPanel--title--pad-v-rem $gw-app--ChartPanel--title--mar-h-rem;
+      color: $gw-app--LabelWidget--color;
+      font-weight: gw-weight("bold");
+      text-align: center;
+      white-space: normal;
+
+      &:empty {
+        margin: 0;
+      }
+    }
+
+    svg {
+      flex-grow: 1;
+      margin: $gw-app--ChartPanel--graph--padding-rem;
+      min-height: 0;
+    }
+  }
+
+  @include gw-chartLegend();
+
+  .gw-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .gw-legend-entry-container {
+      display: flex;
+      align-items: baseline;
+      padding: $gw-app--ChartPanel--legend--pad-v-rem $gw-app--ChartPanel--legend--pad-h-rem;
+      max-width: 100%;
+
+      .gw-chart-legend-marker {
+        width: $gw-app--ChartPanel--marker-width;
+        height: $gw-app--ChartPanel--marker-height;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+      .gw-chart-legend-text {
+        margin-left: $gw-app--ChartPanel--legend-text--margin-left-rem;
+        white-space: normal;
+        word-wrap: break-word;
+        flex-shrink: 1;
+        flex-grow: 1;
+      }
+    }
+
+    .gw-chart-legend-entry {
+      max-width: 100%;
+      // do not add focus outline to the legend entry
+      &, & *:focus, & *.gw-focus {
+        outline: none;
+      }
+    }
+
+    .gw-chart-legend-entry.gw-focus .gw-legend-entry-container:not(:focus):not(.gw-focus) {
+      // combined with tabindex == -1 on .gw-legend-entry-container
+      // makes and exception for adding an outline when tabbing
+      @include gw-addFocusOutline();
+    }
+  }
+
+  &.gw-chart-legend--position-right, &.gw-chart-legend--position-left {
+    .gw-chart-legend {
+      display: block;
+    }
+  }
+
+  .gw-chart-legend.gw-chart-legend-dual {
+    justify-content: space-between;
+    align-items: start;
+
+    .gw-chart-legend-left, .gw-chart-legend-right {
+      display: flex;
+      justify-content: initial;
+      max-width: 50%;
+    }
+
+    .gw-chart-legend-left {
+      padding-right: $gw-app--ChartPanel--legend--dual-axis--pad-rem;
+    }
+    .gw-chart-legend-right {
+      padding-left: $gw-app--ChartPanel--legend--dual-axis--pad-rem;
+    }
+  }
+
+  circle.gw-chart-series-circle, circle.gw-chart-series-dual-circle, circle.gw-chart-time-circle {
+    &:not(:hover) {
+      fill: $gw-app--ChartPanel--circle--fill;
+    }
+  }
+
+  circle.gw-chart-tooltip-circle {
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .gw-y-axis, .gw-y-grid {
+    path {
+      stroke: $gw-app--ChartPanel--y-axis-stroke;
+    }
+    line {
+      stroke: $gw-app--ChartPanel--y-axis-color;
+    }
+  }
+
+  .gw-secondary-y-axis {
+    .tick line, path {
+      stroke: $gw-app--ChartPanel--secondary-axis-color;
+    }
+  }
+
+  .gw-x-axis {
+    path, line {
+      stroke: $gw-app--ChartPanel--x-axis-color;
+    }
+  }
+
+  .gw-axis .tick text, &.tick-mock-label {
+    font-size: $gw-app--ChartPanel--tick--font-size-px;
+    fill: $gw-app--col;
+
+    &.flip-45-labels {
+      font-weight: gw-weight("semibold");
+    }
+  }
+
+  .gw-axis-label {
+    font-size: $gw-app--ChartPanel--axisLabel--font-size-px;
+  }
+
+  .gw-chart-series-dual, .gw-chart-series-dual-series-point, .gw-chart-series-dual-tooltips {
+    stroke: $gw-app--ChartPanel--secondary-series-color;
+    fill: $gw-app--ChartPanel--secondary-series-color;
+    background-color: $gw-app--ChartPanel--secondary-series-color;
+  }
+
+  // interactions
+  &.gw-interactive {
+    .gw-chart-bar, .gw-chart-series, .gw-chart-series-dual, .gw-chart-time, .gw-chart-tooltip-circle {
+      cursor: pointer;
+    }
+  }
+
+  // chart-type specific styles
+  &.gw-Pie-chart, &.gw-Donut-chart {
+    &.gw-chart-legend--position-right {
+      .gw-chart {
+        .gw-chart-legend {
+          margin-left: $gw-app--ChartPanel--pie-legend--pad-h-rem;
+        }
+      }
+    }
+
+    &.gw-chart-legend--position-left {
+      .gw-chart {
+        .gw-chart-legend {
+          margin-right: $gw-app--ChartPanel--pie-legend--pad-h-rem;
+        }
+      }
+    }
+  }
+
+  &.gw-Area-chart {
+    .gw-chart,.gw-tcp-chart-svg {
+      path.gw-chart-series {
+        fill-opacity: 0.3;
+        stroke: none;
+      }
+    }
+  }
+
+  &.gw-StackedBar-chart {
+    .gw-chart,.gw-tcp-chart-svg {
+      .gw-chart-bar {
+        line.gw-bars-separator {
+          stroke: transparent;
+        }
+      }
+    }
+  }
+
+  &.gw-Bar-chart {
+    .gw-chart,.gw-tcp-chart-svg {
+      .gw-chart-series[stroke=''], .gw-chart-series:not([stroke]) {
+        stroke: transparent;
+      }
+    }
+  }
+}
+
+[class*='gw-chartcolor'] {
+  fill: $gw-app--palette--disabled;
+  stroke: $gw-app--palette--disabled;
+  background-color: $gw-app--palette--disabled;
+}

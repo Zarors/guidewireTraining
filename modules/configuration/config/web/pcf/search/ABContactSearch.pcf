@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    canVisit="perm.ABContact.viewsearch"
+    id="ABContactSearch"
+    title="DisplayKey.get(&quot;Web.Contacts.Search&quot;)">
+    <LocationEntryPoint
+      signature="ABContactSearch()"/>
+    <LocationEntryPoint
+      signature="ABContactSearch(requiredContactType : Type)"/>
+    <Variable
+      initialValue="entity.ABContact"
+      name="requiredContactType"
+      type="Type"/>
+    <ScreenRef
+      def="ABContactSearchScreen(false, true, requiredContactType)"/>
+  </Page>
+</PCF>

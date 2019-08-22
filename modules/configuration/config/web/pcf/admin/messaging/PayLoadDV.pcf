@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="PayLoadDV">
+    <Require
+      name="Message"
+      type="Message"/>
+    <InputColumn>
+      <TextAreaInput
+        align="center"
+        id="Response"
+        label="DisplayKey.get(&quot;Web.Admin.MessageControlForSOOListLV.Response&quot;)"
+        numRows="4"
+        value="Message.ErrorDescription"/>
+      <TextAreaInput
+        align="center"
+        editable="true"
+        id="Payload"
+        label="DisplayKey.get(&quot;Web.Admin.MessagePayload&quot;)"
+        numRows="20"
+        value="Message.Payload"/>
+    </InputColumn>
+  </DetailViewPanel>
+</PCF>

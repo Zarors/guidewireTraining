@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+<!-- Generated WSDL for gw.wsi.pl.AdminDataAPI web service -->
+<wsdl:definitions targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataAPI" name="AdminDataAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://guidewire.com/gw/api/webservice/importTools" xmlns:pogo2="http://guidewire.com/pl/ws/gw/wsi/pl/ExportQuery" xmlns:pogo3="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataInfo" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="../../../../../gw/xsd/guidewire/soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataInfo"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportQuery"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/importTools"/>
+      <!-- importXmlData(String) : ImportResults -->
+      <xs:element name="importXmlData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="xmlData" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="importXmlDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo:ImportResults" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DataConversionException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalArgumentException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="UnsupportedOperationException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="IllegalStateException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="WsiAuthenticationException">
+        <xs:complexType/>
+      </xs:element>
+      <!-- exportEverything() : String -->
+      <xs:element name="exportEverything">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="exportEverythingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- export(List<EntityExportQuery>) : String -->
+      <xs:element name="export">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="conditions" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Entry" type="pogo2:EntityExportQuery" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="exportResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getAdminDataInfo() : AdminDataInfo -->
+      <xs:element name="getAdminDataInfo">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getAdminDataInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="pogo3:AdminDataInfo" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/gw/api/webservice/importTools" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataInfo"/>
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportQuery"/>
+      <xs:complexType name="ImportResults">
+        <xs:sequence>
+          <xs:element name="Details" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo:ImportResultDetail" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ErrorLog" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Ok" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ParseTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="Summaries" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="pogo:ImportResultSummary" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="WriteTime" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ImportResultDetail">
+        <xs:sequence>
+          <xs:element name="EntityName" type="xs:string" minOccurs="0"/>
+          <xs:element name="ExternalID" type="xs:string" minOccurs="0"/>
+          <xs:element name="ExternalSource" type="xs:string" minOccurs="0"/>
+          <xs:element name="InternalID" type="xs:long" minOccurs="0"/>
+          <xs:element name="Type" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ImportResultSummary">
+        <xs:sequence>
+          <xs:element name="Count" type="xs:int" minOccurs="0"/>
+          <xs:element name="EntityName" type="xs:string" minOccurs="0"/>
+          <xs:element name="Type" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportQuery" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataInfo"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/importTools"/>
+      <xs:complexType name="EntityExportQuery">
+        <xs:sequence>
+          <xs:element name="EntityType" type="xs:string" minOccurs="0"/>
+          <xs:element name="ExportReferenced" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="IncludeRetired" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ModifiedAfter" type="xs:long" minOccurs="0"/>
+          <xs:element name="PublicIds" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Entry" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/pl/ws/gw/wsi/pl/AdminDataInfo" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/pl/ws/gw/wsi/pl/ExportQuery"/>
+      <xs:import namespace="http://guidewire.com/gw/api/webservice/importTools"/>
+      <xs:complexType name="AdminDataInfo">
+        <xs:sequence>
+          <xs:element name="AdminDataImportTimestamp" type="xs:long" minOccurs="0"/>
+          <xs:element name="AdminDataVersion" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="AdminDataAPIPortType">
+    <wsdl:operation name="importXmlData">
+      <wsdl:input name="importXmlData" message="tns:importXmlData"/>
+      <wsdl:output name="importXmlDataResponse" message="tns:importXmlDataResponse"/>
+      <!-- If the data can't be imported because it violates duplicate key constraints, contains nulls in non-nullable fields, or otherwise can't be safely inserted into the database. -->
+      <wsdl:fault name="DataConversionException" message="tns:DataConversionException"/>
+      <!-- If xmlData is null or empty. -->
+      <wsdl:fault name="IllegalArgumentException" message="tns:IllegalArgumentException"/>
+      <!-- If this API is disabled -->
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <!-- If Rolling Upgrade in progress -->
+      <wsdl:fault name="IllegalStateException" message="tns:IllegalStateException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="exportEverything">
+      <wsdl:input name="exportEverything" message="tns:exportEverything"/>
+      <wsdl:output name="exportEverythingResponse" message="tns:exportEverythingResponse"/>
+      <!-- If this API is disabled -->
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <!-- If Rolling Upgrade in progress -->
+      <wsdl:fault name="IllegalStateException" message="tns:IllegalStateException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="export">
+      <wsdl:input name="export" message="tns:export"/>
+      <wsdl:output name="exportResponse" message="tns:exportResponse"/>
+      <!-- If this API is disabled -->
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <!-- If Rolling Upgrade in progress -->
+      <wsdl:fault name="IllegalStateException" message="tns:IllegalStateException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAdminDataInfo">
+      <wsdl:input name="getAdminDataInfo" message="tns:getAdminDataInfo"/>
+      <wsdl:output name="getAdminDataInfoResponse" message="tns:getAdminDataInfoResponse"/>
+      <!-- If this API is disabled -->
+      <wsdl:fault name="UnsupportedOperationException" message="tns:UnsupportedOperationException"/>
+      <!-- If Rolling Upgrade in progress -->
+      <wsdl:fault name="IllegalStateException" message="tns:IllegalStateException"/>
+      <wsdl:fault name="WsiAuthenticationException" message="tns:WsiAuthenticationException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdminDataAPISoap12Binding" type="tns:AdminDataAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="importXmlData">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="importXmlData">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap12:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap12:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap12:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportEverything">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="exportEverything">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportEverythingResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap12:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="export">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="export">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap12:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAdminDataInfo">
+      <soap12:operation soapActionRequired="false" style="document"/>
+      <wsdl:input name="getAdminDataInfo">
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap12:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap12:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAdminDataInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap12:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap12:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap12:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdminDataAPISoap11Binding" type="tns:AdminDataAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="importXmlData">
+      <soap11:operation style="document"/>
+      <wsdl:input name="importXmlData">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importXmlDataResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataConversionException">
+        <soap11:fault name="DataConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalArgumentException">
+        <soap11:fault name="IllegalArgumentException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap11:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportEverything">
+      <soap11:operation style="document"/>
+      <wsdl:input name="exportEverything">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportEverythingResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap11:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="export">
+      <soap11:operation style="document"/>
+      <wsdl:input name="export">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap11:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAdminDataInfo">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAdminDataInfo">
+        <soap11:body use="literal"/>
+        <soap11:header message="tns:gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="tns:gw-language-only" part="gw-language-only" use="literal"/>
+        <soap11:header message="tns:gw-locale-only" part="gw-locale-only" use="literal"/>
+        <soap11:header message="tns:gw-traceability-id" part="gw-traceability-id" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAdminDataInfoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UnsupportedOperationException">
+        <soap11:fault name="UnsupportedOperationException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IllegalStateException">
+        <soap11:fault name="IllegalStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WsiAuthenticationException">
+        <soap11:fault name="WsiAuthenticationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminDataAPI">
+    <wsdl:port name="AdminDataAPISoap12Port" binding="tns:AdminDataAPISoap12Binding">
+      <soap12:address location="local:///gw/wsi/pl/AdminDataAPI"/>
+    </wsdl:port>
+    <wsdl:port name="AdminDataAPISoap11Port" binding="tns:AdminDataAPISoap11Binding">
+      <soap11:address location="local:///gw/wsi/pl/AdminDataAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="importXmlData">
+    <wsdl:part name="parameters" element="tns:importXmlData"/>
+  </wsdl:message>
+  <wsdl:message name="importXmlDataResponse">
+    <wsdl:part name="parameters" element="tns:importXmlDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataConversionException">
+    <wsdl:part name="DataConversionException" element="tns:DataConversionException"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalArgumentException">
+    <wsdl:part name="IllegalArgumentException" element="tns:IllegalArgumentException"/>
+  </wsdl:message>
+  <wsdl:message name="UnsupportedOperationException">
+    <wsdl:part name="UnsupportedOperationException" element="tns:UnsupportedOperationException"/>
+  </wsdl:message>
+  <wsdl:message name="IllegalStateException">
+    <wsdl:part name="IllegalStateException" element="tns:IllegalStateException"/>
+  </wsdl:message>
+  <wsdl:message name="WsiAuthenticationException">
+    <wsdl:part name="WsiAuthenticationException" element="tns:WsiAuthenticationException"/>
+  </wsdl:message>
+  <wsdl:message name="exportEverything">
+    <wsdl:part name="parameters" element="tns:exportEverything"/>
+  </wsdl:message>
+  <wsdl:message name="exportEverythingResponse">
+    <wsdl:part name="parameters" element="tns:exportEverythingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="export">
+    <wsdl:part name="parameters" element="tns:export"/>
+  </wsdl:message>
+  <wsdl:message name="exportResponse">
+    <wsdl:part name="parameters" element="tns:exportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAdminDataInfo">
+    <wsdl:part name="parameters" element="tns:getAdminDataInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getAdminDataInfoResponse">
+    <wsdl:part name="parameters" element="tns:getAdminDataInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale-only">
+    <wsdl:part name="gw-locale-only" element="gwsoap:gw_locale"/>
+  </wsdl:message>
+  <wsdl:message name="gw-language-only">
+    <wsdl:part name="gw-language-only" element="gwsoap:gw_language"/>
+  </wsdl:message>
+  <wsdl:message name="gw-transaction-id">
+    <wsdl:part name="gw-transaction-id" element="gwsoap:transaction_id"/>
+  </wsdl:message>
+  <wsdl:message name="gw-traceability-id">
+    <wsdl:part name="gw-traceability-id" element="gwsoap:traceability_id"/>
+  </wsdl:message>
+</wsdl:definitions>

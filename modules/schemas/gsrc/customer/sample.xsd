@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.example.org/contact"
+  xmlns:tns="http://www.example.org/contact"
+  elementFormDefault="qualified">
+
+  <xs:element name="contact">
+    <xs:annotation>
+      <xs:documentation>
+        example contact
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="person">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GivenName" type="xs:string" />
+              <xs:element name="FamilyName" type="xs:string" />
+              <xs:element name="BirthDate" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

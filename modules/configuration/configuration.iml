@@ -1,0 +1,2746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <exclude-output/>
+    <content url="file://$MODULE_DIR$/">
+      <sourceFolder url="file://$MODULE_DIR$/config" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/gtest" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/generated" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/gsrc" isTestSource="false"/>
+      <excludeFolder url="file://$MODULE_DIR$/build"/>
+      <excludeFolder url="file://$MODULE_DIR$/.gradle"/>
+      <excludeFolder url="file://$MODULE_DIR$/deploy/resources/javascript"/>
+      <excludeFolder url="file://$MODULE_DIR$/plugins/Gosu/gclasses"/>
+      <excludeFolder url="file://$MODULE_DIR$/plugins/Gosu/idea-gclasses"/>
+      <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource"/>
+    </content>
+    <orderEntry type="sourceFolder" forTests="false"/>
+    <output url="file://$MODULE_DIR$/build/idea/classes"/>
+    <output-test url="file://$MODULE_DIR$/build/idea/testClasses"/>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/Gosu/classes"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/Gosu/lib"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+        <jarDirectory url="file://$MODULE_DIR$/plugins/Gosu/lib" recursive="false"/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/Gosu/basic/classes"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/Gosu/basic/lib"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+        <jarDirectory url="file://$MODULE_DIR$/plugins/Gosu/basic/lib" recursive="false"/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/shared/classes"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/shared/lib"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+        <jarDirectory url="file://$MODULE_DIR$/plugins/shared/lib" recursive="false"/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/shared/basic/classes"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/shared/basic/lib"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+        <jarDirectory url="file://$MODULE_DIR$/plugins/shared/basic/lib" recursive="false"/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/generated_classes"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-gunit/10.0.0/ab-gunit-10.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-gunit/10.0.0/ab-gunit-10.0.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab/10.0.0/ab-10.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab/10.0.0/ab-10.0.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pl-gunit/10.7.5/pl-gunit-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pl-appserver-websphere/10.7.5/pl-appserver-websphere-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pl-appserver-jboss/10.7.5/pl-appserver-jboss-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-pl-personaldata/10.0.0/ab-pl-personaldata-10.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-pl/10.0.0/ab-pl-10.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-plugin/10.0.0/ab-plugin-10.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-plugin/10.0.0/ab-plugin-10.0.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/contact/10.7.5/contact-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/contact/10.7.5/contact-10.7.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/beangraphutil/10.7.5/beangraphutil-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/beangraphutil/10.7.5/beangraphutil-10.7.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/personaldata/10.7.5/personaldata-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/personaldata/10.7.5/personaldata-10.7.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pl/10.7.5/pl-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pl/10.7.5/pl-10.7.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/perfdownload-analyzer-test/10.7.5/perfdownload-analyzer-test-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-core-api-precompiled/1.14.10/gosu-core-api-precompiled-1.14.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-core-api-precompiled/1.14.10/gosu-core-api-precompiled-1.14.10-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/plugin/10.7.5/plugin-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/plugin/10.7.5/plugin-10.7.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/perfdownload-analyzer/10.7.5/perfdownload-analyzer-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-ant-tools/1.14.10/gosu-ant-tools-1.14.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-ant-tools/1.14.10/gosu-ant-tools-1.14.10-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/perfdownload-collector-test/10.7.5/perfdownload-collector-test-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/perfdownload-collector/10.7.5/perfdownload-collector-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/util/10.7.5/util-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/util/10.7.5/util-10.7.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-doc/1.14.10/gosu-doc-1.14.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-doc/1.14.10/gosu-doc-1.14.10-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/gosu-process/10.7.5/gosu-process-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/gosu-servlet/10.7.5/gosu-servlet-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-core/1.14.10/gosu-core-1.14.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-core/1.14.10/gosu-core-1.14.10-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/modules/10.7.5/modules-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-core-api/1.14.10/gosu-core-api-1.14.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-core-api/1.14.10/gosu-core-api-1.14.10-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-asm-all/5.0.4/gw-asm-all-5.0.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-asm-all/5.0.4/gw-asm-all-5.0.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-jcommander/1.48/gw-jcommander-1.48.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-jcommander/1.48/gw-jcommander-1.48-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/ant/ant-junit/1.8.4/ant-junit-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/ant/ant/1.8.4/ant-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/ant/ant/1.8.4/ant-1.8.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/ant/ant-launcher/1.8.4/ant-launcher-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/gw-cactus/1.8.4/gw-cactus-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/aspectj/aspectjrt/1.2.1/aspectjrt-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/easymock/easymock/3.1/easymock-3.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/easymock/easymock/3.1/easymock-3.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/easytesting/fest-assert/1.3/fest-assert-1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/easytesting/fest-util/1.1.4/fest-util-1.1.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-appsforyourdomain/1.0/gdata-appsforyourdomain-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-appsforyourdomain-meta/1.0/gdata-appsforyourdomain-meta-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-base/1.0/gdata-base-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-client/1.0/gdata-client-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-client-meta/1.0/gdata-client-meta-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-core/1.0/gdata-core-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-docs/1.0/gdata-docs-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-docs-meta/1.0/gdata-docs-meta-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-media/1.0/gdata-media-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-spreadsheet/1.0/gdata-spreadsheet-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/gdata/gdata-spreadsheet-meta/1.0/gdata-spreadsheet-meta-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/thoughtworks/qdox/qdox/1.12/qdox-1.12.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/thoughtworks/qdox/qdox/1.12/qdox-1.12-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/gw-xml-testframework/3.0.22/gw-xml-testframework-3.0.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/gosu-classredefiner/1.0.1/gosu-classredefiner-1.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/mockito/mockito-core/2.7.6/mockito-core-2.7.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/mockito/mockito-core/2.7.6/mockito-core-2.7.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/cglib/cglib-nodep/3.1/cglib-nodep-3.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/cglib/cglib-nodep/3.1/cglib-nodep-3.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/tools/upgradediff-core/1.3.41/upgradediff-core-1.3.41-shaded.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/tools/upgradediff-core/1.3.41/upgradediff-core-1.3.41-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-java8/1.2.4/cucumber-java8-1.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-java8/1.2.4/cucumber-java8-1.2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-junit/1.2.4/cucumber-junit-1.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-junit/1.2.4/cucumber-junit-1.2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/info/cukes/cucumber-guice/1.2.4/cucumber-guice-1.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/info/cukes/cucumber-guice/1.2.4/cucumber-guice-1.2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/inject/guice/4.0/guice-4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/inject/guice/4.0/guice-4.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pcfcodegen/pcfschema/10.7.4/pcfschema-10.7.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pcfcodegen/pcfschema/10.7.4/pcfschema-10.7.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/jsoup/jsoup/1.11.2/jsoup-1.11.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/osgi/equinox/org.eclipse.osgi/3.10.101/org.eclipse.osgi-3.10.101.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/entity/entity-metadata-api/10.6.0/entity-metadata-api-10.6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/solr/10.7.5/solr-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/ext-config/10.7.5/ext-config-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/web/org.json/1.0.0/org.json-1.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/web/org.json/1.0.0/org.json-1.0.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pcfcodegen/pcfxml/10.7.4/pcfxml-10.7.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pcfcodegen/pcfxml/10.7.4/pcfxml-10.7.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/xml/simple/simplexml-schema/1.3.3/simplexml-schema-1.3.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/xml/simple/simplexml-schema/1.3.3/simplexml-schema-1.3.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/junit/junit/4.11/junit-4.11.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/junit/junit/4.11/junit-4.11-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-inbound-plugin-jms-api/10.4.4/gw-integration-inbound-plugin-jms-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-inbound-plugin-jms-api/10.4.4/gw-integration-inbound-plugin-jms-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/maven/maven-artifact/3.5.3/maven-artifact-3.5.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/maven/maven-artifact/3.5.3/maven-artifact-3.5.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-runtime-api/10.4.4/gw-integration-runtime-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-runtime-api/10.4.4/gw-integration-runtime-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-cm-api/10.4.4/gw-integration-cm-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-cm-api/10.4.4/gw-integration-cm-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-jndi-api/10.4.4/gw-integration-jndi-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-jndi-api/10.4.4/gw-integration-jndi-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-inbound-plugin-files-api/10.4.4/gw-integration-inbound-plugin-files-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-inbound-plugin-files-api/10.4.4/gw-integration-inbound-plugin-files-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-inbound-api/10.4.4/gw-integration-inbound-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-inbound-api/10.4.4/gw-integration-inbound-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-execution-api/10.4.4/gw-integration-execution-api-10.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/integration/gw-integration-execution-api/10.4.4/gw-integration-execution-api-10.4.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/uuid/java-uuid-generator/3.1.3/java-uuid-generator-3.1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/uuid/java-uuid-generator/3.1.3/java-uuid-generator-3.1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/sdoapi/12.2.0.1/sdoapi-12.2.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/solr/solr-solrj/6.6.2/solr-solrj-6.6.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/solr/solr-solrj/6.6.2/solr-solrj-6.6.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/woodstox/woodstox-core-asl/4.1.2/woodstox-core-asl-4.1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/zookeeper/zookeeper/3.4.10/zookeeper-3.4.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/zookeeper/zookeeper/3.4.10/zookeeper-3.4.10-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/io/netty/netty/3.10.6.Final/netty-3.10.6.Final-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/entity/entity-codegen-annotations/10.6.0/entity-codegen-annotations-10.6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/entity/entity-codegen-common/10.6.0/entity-codegen-common-10.6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/intellij/annotations/12.0/annotations-12.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/intellij/annotations/12.0/annotations-12.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-commons-cli/1.2-1/gw-commons-cli-1.2-1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-commons-cli/1.2-1/gw-commons-cli-1.2-1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/aspose/aspose-cells/18.2/aspose-cells-18.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/aspose/aspose-cells/18.2/aspose-cells-18.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/aspose/aspose-words/18.2/aspose-words-18.2-jdk16.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/aspose/aspose-words/18.2/aspose-words-18.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/graphql-java/0.1/graphql-java-0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/graphql-java/0.1/graphql-java-0.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/htmltemplate/1.17/htmltemplate-1.17.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/htmltemplate/1.17/htmltemplate-1.17-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/antlr/antlr4-runtime/4.6/antlr4-runtime-4.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/antlr/antlr4-runtime/4.6/antlr4-runtime-4.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/objenesis/objenesis/1.3/objenesis-1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/objenesis/objenesis/1.3/objenesis-1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/gw-webservices-client/3.0.22/gw-webservices-client-3.0.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/gw-gx/3.0.22/gw-gx-3.0.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/gw-xml/3.0.22/gw-xml-3.0.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/groovy/groovy-all/2.4.14/groovy-all-2.4.14.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/groovy/groovy-all/2.4.14/groovy-all-2.4.14-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/parboiled/parboiled-java/1.1.8/parboiled-java-1.1.8.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/parboiled/parboiled-java/1.1.8/parboiled-java-1.1.8-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/javax-websocket-server-impl/9.4.7.v20170914/javax-websocket-server-impl-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/javax-websocket-server-impl/9.4.7.v20170914/javax-websocket-server-impl-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-annotations/9.4.7.v20170914/jetty-annotations-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-annotations/9.4.7.v20170914/jetty-annotations-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-commons/5.1/asm-commons-5.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-commons/5.1/asm-commons-5.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-util/6.0/asm-util-6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-util/6.0/asm-util-6.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm-tree/6.0/asm-tree-6.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm/6.0/asm-6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/ow2/asm/asm/6.0/asm-6.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/net/bytebuddy/byte-buddy/1.6.5/byte-buddy-1.6.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/net/bytebuddy/byte-buddy/1.6.5/byte-buddy-1.6.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/net/bytebuddy/byte-buddy-agent/1.6.5/byte-buddy-agent-1.6.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/net/bytebuddy/byte-buddy-agent/1.6.5/byte-buddy-agent-1.6.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/logging/logging-over-log4j2/0.2.14/logging-over-log4j2-0.2.14.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/logging/logging-over-log4j2/0.2.14/logging-over-log4j2-0.2.14-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/logging/logging-api/0.2.14/logging-api-0.2.14.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/logging/logging-api/0.2.14/logging-api-0.2.14-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/quartz-scheduler/quartz/2.2.2/quartz-2.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/quartz-scheduler/quartz/2.2.2/quartz-2.2.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/slf4j-ext/1.7.21/slf4j-ext-1.7.21.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/slf4j-ext/1.7.21/slf4j-ext-1.7.21-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.7/log4j-slf4j-impl-2.7.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.7/log4j-slf4j-impl-2.7-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/log4j-over-slf4j/1.7.21/log4j-over-slf4j-1.7.21.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/log4j-over-slf4j/1.7.21/log4j-over-slf4j-1.7.21-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pli18n/0.4.3/pli18n-0.4.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pli18n/0.4.3/pli18n-0.4.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-java/1.2.4/cucumber-java-1.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-java/1.2.4/cucumber-java-1.2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-core/1.2.4/cucumber-core-1.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-core/1.2.4/cucumber-core-1.2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/inject/javax.inject/1/javax.inject-1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/inject/javax.inject/1/javax.inject-1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/guava/guava/18.0/guava-18.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/google/guava/guava/18.0/guava-18.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/xml-api/0.2/xml-api-0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/xml-api/0.2/xml-api-0.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pcf/pcf-api/0.14/pcf-api-0.14.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pcf/pcf-api/0.14/pcf-api-0.14-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/xml/simple/simplexml/1.6/simplexml-1.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/xml/simple/simplexml/1.6/simplexml-1.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/fop/2.2/fop-2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/fop/2.2/fop-2.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-transcoder/1.9/batik-transcoder-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-transcoder/1.9/batik-transcoder-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-extension/1.9/batik-extension-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-extension/1.9/batik-extension-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-bridge/1.9/batik-bridge-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-bridge/1.9/batik-bridge-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-script/1.9/batik-script-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-script/1.9/batik-script-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-anim/1.9/batik-anim-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-anim/1.9/batik-anim-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-svg-dom/1.9/batik-svg-dom-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-svg-dom/1.9/batik-svg-dom-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-dom/1.9/batik-dom-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-dom/1.9/batik-dom-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-css/1.9/batik-css-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-css/1.9/batik-css-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/xmlgraphics-commons/2.2/xmlgraphics-commons-2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/xmlgraphics-commons/2.2/xmlgraphics-commons-2.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-io/commons-io/2.6/commons-io-2.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-io/commons-io/2.6/commons-io-2.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/poi/poi/3.17/poi-3.17.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/poi/poi/3.17/poi-3.17-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-codec/commons-codec/1.11/commons-codec-1.11-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/biz/aQute/bndlib/1.50.0/bndlib-1.50.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/biz/aQute/bndlib/1.50.0/bndlib-1.50.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/core/jackson-databind/2.9.5/jackson-databind-2.9.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/core/jackson-databind/2.9.5/jackson-databind-2.9.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.5/jackson-dataformat-yaml-2.9.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.9.5/jackson-dataformat-yaml-2.9.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.5/jackson-annotations-2.9.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.5/jackson-annotations-2.9.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/microsoft/sqlserver/mssql-jdbc/6.2.1.jre8/mssql-jdbc-6.2.1.jre8.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/microsoft/sqlserver/mssql-jdbc/6.2.1.jre8/mssql-jdbc-6.2.1.jre8-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/postgresql/postgresql/42.2.1/postgresql-42.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/postgresql/postgresql/42.2.1/postgresql-42.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/h2database/h2/1.2.147/h2-1.2.147.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/h2database/h2/1.2.147/h2-1.2.147-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-server/9.4.7.v20170914/websocket-server-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-server/9.4.7.v20170914/websocket-server-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-servlet/9.4.7.v20170914/websocket-servlet-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-servlet/9.4.7.v20170914/websocket-servlet-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-plus/9.4.7.v20170914/jetty-plus-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-plus/9.4.7.v20170914/jetty-plus-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-webapp/9.4.7.v20170914/jetty-webapp-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-webapp/9.4.7.v20170914/jetty-webapp-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-servlet/9.4.7.v20170914/jetty-servlet-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-servlet/9.4.7.v20170914/jetty-servlet-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-security/9.4.7.v20170914/jetty-security-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-security/9.4.7.v20170914/jetty-security-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-server/9.4.7.v20170914/jetty-server-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-server/9.4.7.v20170914/jetty-server-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/sqlinform-pro/4.8.49/sqlinform-pro-4.8.49.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/gosu-lang/gosu/managed/gw-jetty/6.1.26RC0-4/gw-jetty-6.1.26RC0-4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/gw-commons-collections/3.2.2/gw-commons-collections-3.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/jline/jline/0.9.94/jline-0.9.94.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/bfopdf/2.22.22/bfopdf-2.22.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/bfopdf-cmap/2.22.22/bfopdf-cmap-2.22.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/bfopdf-qrcode/2.22.22/bfopdf-qrcode-2.22.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/bfopdf-stamp/2.22.22/bfopdf-stamp-2.22.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/velocity/velocity-tools/1.3/velocity-tools-1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-validator/commons-validator/1.6/commons-validator-1.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-digester/commons-digester/2.1/commons-digester-2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-jxpath/commons-jxpath/1.1/commons-jxpath-1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-jxpath/commons-jxpath/1.1/commons-jxpath-1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-cli/commons-cli/1.4/commons-cli-1.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/velocity/velocity/1.5/velocity-1.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-dbcp2/2.0.1/commons-dbcp2-2.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-dbcp2/2.0.1/commons-dbcp2-2.0.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-discovery/commons-discovery/0.5/commons-discovery-0.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-discovery/commons-discovery/0.5/commons-discovery-0.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-lang/commons-lang/2.4/commons-lang-2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-math/commons-math/1.2/commons-math-1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-math/commons-math/1.2/commons-math-1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-pool2/2.3/commons-pool2-2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-pool2/2.3/commons-pool2-2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/cotta/3.0.0-beta/cotta-3.0.0-beta.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/mozilla/rhino/1.7R5/rhino-1.7R5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/mozilla/rhino/1.7R5/rhino-1.7R5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/avalon-framework/avalon-framework-api/4.2.0/avalon-framework-api-4.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/avalon-framework/avalon-framework-impl/4.2.0/avalon-framework-impl-4.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/ibm/icu/icu4j/51.2/icu4j-51.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/ibm/icu/icu4j/51.2/icu4j-51.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/oro/oro/2.0.8/oro-2.0.8.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-start/9.4.7.v20170914/jetty-start-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-start/9.4.7.v20170914/jetty-start-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/joda-time/joda-time/2.9.1/joda-time-2.9.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/joda-time/joda-time/2.9.1/joda-time-2.9.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/joda/joda-convert/1.3/joda-convert-1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/joda/joda-convert/1.3/joda-convert-1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/mail/mail/1.4.7/mail-1.4.7.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/mail/mail/1.4.7/mail-1.4.7-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/ch/qos/cal10n/cal10n-api/0.7.4/cal10n-api-0.7.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/ch/qos/cal10n/cal10n-api/0.7.4/cal10n-api-0.7.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/xalan/xalan/2.7.2/xalan-2.7.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/xalan/xalan/2.7.2/xalan-2.7.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/gw/managed/osgi/libphonenumber/5.1/libphonenumber-5.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/custommonkey/xmlunit/com.springsource.org.custommonkey.xmlunit/1.2.0/com.springsource.org.custommonkey.xmlunit-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/commons/performance/perf-analyzer/1.0.9/perf-analyzer-1.0.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/graphql-java/java-dataloader/2.0.2/java-dataloader-2.0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/graphql-java/java-dataloader/2.0.2/java-dataloader-2.0.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/xml/parser/gw-xml-parser/1.1.0/gw-xml-parser-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/codegen/codegen-api/0.14/codegen-api-0.14.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/parboiled/parboiled-core/1.1.8/parboiled-core-1.1.8.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/parboiled/parboiled-core/1.1.8/parboiled-core-1.1.8-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-jvm-deps/1.0.5/cucumber-jvm-deps-1.0.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/cucumber-jvm-deps/1.0.5/cucumber-jvm-deps-1.0.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/info/cukes/gherkin/2.12.2/gherkin-2.12.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/noggit/noggit/0.6/noggit-0.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/noggit/noggit/0.6/noggit-0.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/commons-logging/commons-logging/1.2/commons-logging-1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/logging/log4j/log4j-core/2.7/log4j-core-2.7.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/logging/log4j/log4j-core/2.7/log4j-core-2.7-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/yaml/snakeyaml/1.18/snakeyaml-1.18.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/yaml/snakeyaml/1.18/snakeyaml-1.18-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-gvt/1.9/batik-gvt-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-gvt/1.9/batik-gvt-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-parser/1.9/batik-parser-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-parser/1.9/batik-parser-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-svggen/1.9/batik-svggen-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-svggen/1.9/batik-svggen-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-awt-util/1.9/batik-awt-util-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-awt-util/1.9/batik-awt-util-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-ext/1.9/batik-ext-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-ext/1.9/batik-ext-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/pdfbox/fontbox/2.0.4/fontbox-2.0.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/pdfbox/fontbox/2.0.4/fontbox-2.0.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-jndi/9.4.7.v20170914/jetty-jndi-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-jndi/9.4.7.v20170914/jetty-jndi-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/sslext/sslext/1.2-0/sslext-1.2-0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.4.7.v20170914/javax-websocket-client-impl-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.4.7.v20170914/javax-websocket-client-impl-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/websocket/javax.websocket-api/1.0/javax.websocket-api-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/websocket/javax.websocket-api/1.0/javax.websocket-api-1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/logging/log4j/log4j-api/2.7/log4j-api-2.7.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/logging/log4j/log4j-api/2.7/log4j-api-2.7-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-xml/1.9/batik-xml-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-xml/1.9/batik-xml-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-util/1.9/batik-util-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-util/1.9/batik-util-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-client/9.4.7.v20170914/websocket-client-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-client/9.4.7.v20170914/websocket-client-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-xml/9.4.7.v20170914/jetty-xml-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-xml/9.4.7.v20170914/jetty-xml-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-common/9.4.7.v20170914/websocket-common-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-common/9.4.7.v20170914/websocket-common-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-client/9.4.7.v20170914/jetty-client-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-client/9.4.7.v20170914/jetty-client-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-http/9.4.7.v20170914/jetty-http-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-http/9.4.7.v20170914/jetty-http-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-io/9.4.7.v20170914/jetty-io-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-io/9.4.7.v20170914/jetty-io-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-util/9.4.7.v20170914/jetty-util-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/jetty-util/9.4.7.v20170914/jetty-util-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/websocket/javax.websocket-client-api/1.0/javax.websocket-client-api-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/javax/websocket/javax.websocket-client-api/1.0/javax.websocket-client-api-1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-constants/1.9/batik-constants-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-constants/1.9/batik-constants-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-i18n/1.9/batik-i18n-1.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/apache/xmlgraphics/batik-i18n/1.9/batik-i18n-1.9-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-api/9.4.7.v20170914/websocket-api-9.4.7.v20170914.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/org/eclipse/jetty/websocket/websocket-api/9.4.7.v20170914/websocket-api-9.4.7.v20170914-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/ab/ab-tools/10.0.0/ab-tools-10.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/com/guidewire/pl/pl-tools/10.7.5/pl-tools-10.7.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/GW10/TrainingApp/repository/net/jodah/failsafe/1.0.4/failsafe-1.0.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/GW10/TrainingApp/repository/net/jodah/failsafe/1.0.4/failsafe-1.0.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_181/lib/tools.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="inheritedJdk"/>
+  </component>
+  <component name="ModuleRootManager"/>
+</module>

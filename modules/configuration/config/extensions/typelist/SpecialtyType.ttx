@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="specialty types for doctors"
+  name="SpecialtyType">
+  <typecode
+    code="allergy"
+    desc="Allergy"
+    name="Allergy"/>
+  <typecode
+    code="anesthesiology"
+    desc="Anesthesiology"
+    name="Anesthesiology">
+    <category
+      code="immediatecare"
+      typelist="DoctorCategoryType"/>
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="criticalcaremed"
+    desc="Critical Care Medicine"
+    name="Critical Care Medicine">
+    <category
+      code="immediatecare"
+      typelist="DoctorCategoryType"/>
+    <category
+      code="longtermcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="dentistry"
+    desc="Dentistry/Oral Surgery"
+    name="Dentistry/Oral Surgery">
+    <category
+      code="immediatecare"
+      typelist="DoctorCategoryType"/>
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="cardiology"
+    desc="Cardiology"
+    name="Cardiology"/>
+  <typecode
+    code="dermatology"
+    desc="Dermatology"
+    name="Dermatology">
+    <category
+      code="generalcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="emergencymed"
+    desc="Emergency Medicine"
+    name="Emergency Medicine">
+    <category
+      code="immediatecare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="endocrinology"
+    desc="Endocrinology"
+    name="Endocrinology"/>
+  <typecode
+    code="ent"
+    desc="ENT"
+    name="ENT"/>
+  <typecode
+    code="familypractice"
+    desc="Family Practice"
+    name="Family Practice">
+    <category
+      code="generalcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="footsurgery"
+    desc="Foot Surgery"
+    name="Foot Surgery">
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="generalsurgery"
+    desc="General Surgery"
+    name="General Surgery">
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="handsurgery"
+    desc="Hand Surgery"
+    name="Hand Surgery">
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="gastroenterology"
+    desc="Gastroenterology"
+    name="Gastroenterology"/>
+  <typecode
+    code="hematologyonc"
+    desc="Hematalogy/Oncology"
+    name="Hematalogy/Oncology"/>
+  <typecode
+    code="hospitalist"
+    desc="Hospitalist"
+    name="Hospitalist">
+    <category
+      code="immediatecare"
+      typelist="DoctorCategoryType"/>
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="infectiousdis"
+    desc="Infectious Disease"
+    name="Infectious Disease"/>
+  <typecode
+    code="internalmed"
+    desc="Internal Medicine"
+    name="Internal Medicine">
+    <category
+      code="generalcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="medpeds"
+    desc="Med/Peds"
+    name="Med/Peds"/>
+  <typecode
+    code="nephrology"
+    desc="Nephrology"
+    name="Nephrology"/>
+  <typecode
+    code="neurology"
+    desc="Neurology"
+    name="Neurology">
+    <category
+      code="generalcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="obgyn"
+    desc="Obstetrics/Gynecology"
+    name="Obstetrics/Gynecology"/>
+  <typecode
+    code="occupationalmed"
+    desc="Occupational Medicine"
+    name="Occupational Medicine"/>
+  <typecode
+    code="opthalmology"
+    desc="Opthalmology"
+    name="Opthalmology"/>
+  <typecode
+    code="orthopaedics"
+    desc="Orthopaedics"
+    name="Orthopaedics">
+    <category
+      code="generalcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="pathology"
+    desc="Pathology"
+    name="Pathology"/>
+  <typecode
+    code="painmanagement"
+    desc="Pain Management"
+    name="Pain Management">
+    <category
+      code="longtermcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="physmedrehab"
+    desc="Physical Medicine/Rehabilitation"
+    name="Physical Medicine/Rehabilitation">
+    <category
+      code="longtermcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="plasticsurgery"
+    desc="Plastic Surgery"
+    name="Plastic Surgery"/>
+  <typecode
+    code="podiatry"
+    desc="Podiatry"
+    name="Podiatry">
+    <category
+      code="generalcare"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="psychiatry"
+    desc="Psychiatry"
+    name="Psychiatry"/>
+  <typecode
+    code="pulmcritcare"
+    desc="Pulmonary/Critical Care"
+    name="Pulmonary/Critical Care"/>
+  <typecode
+    code="reconstructivesurgery"
+    desc="Reconstructive Surgery"
+    name="Reconstructive Surgery">
+    <category
+      code="surgery"
+      typelist="DoctorCategoryType"/>
+  </typecode>
+  <typecode
+    code="surgery"
+    desc="Surgery"
+    name="Surgery"/>
+  <typecode
+    code="chiropractic"
+    desc="Chiropractic"
+    name="Chiropractic"/>
+  <typecode
+    code="orthopedics"
+    desc="Orthopedics"
+    name="Orthopedics"/>
+  <typecode
+    code="dental"
+    desc="Dental"
+    name="Dental"/>
+  <typecode
+    code="unspecified"
+    desc="Unspecified"
+    name="Unspecified">
+    <categorylist
+      typelist="DoctorCategoryType"/>
+  </typecode>
+</typelistextension>

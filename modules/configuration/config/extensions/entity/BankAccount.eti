@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Contact bank account"
+  entity="BankAccount"
+  exportable="true"
+  table="bankaccount"
+  type="retireable">
+  <implementsEntity
+    name="Extractable"/>
+  <!-- This is an entity needed specifically for the TrainingApp "base application" -->
+  <events>
+    <event
+      description="Custom BankAccountFlagged Event"
+      name="BankAccountFlagged"/>
+  </events>
+  <column
+    desc="Bank name"
+    name="BankName"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="30"/>
+  </column>
+  <column
+    desc="Account routing number"
+    name="RoutingNumber"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="10"/>
+    <columnParam
+      name="validator"
+      value="RoutingNumber"/>
+  </column>
+  <column
+    desc="Account number"
+    name="AccountNumber"
+    nullok="true"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="20"/>
+  </column>
+  <typekey
+    desc="Type of bank account"
+    name="AccountType"
+    nullok="true"
+    typelist="BankAccountType"/>
+  <typekey
+    default="pending"
+    desc="Has the routing and account information been verified with the bank?"
+    name="IsVerified"
+    nullok="true"
+    typelist="VerificationStatus"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="Associated contact"
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="true"/>
+  <column
+    name="OrginateDate"
+    nullok="true"
+    type="datetime"/>
+</entity>

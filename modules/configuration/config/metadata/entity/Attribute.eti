@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A general-purpose attribute"
+  entity="Attribute"
+  extendable="true"
+  platform="true"
+  table="attribute"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.system.bundle.RemoveCallback"
+    impl="com.guidewire.pl.domain.community.impl.AttributeImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.impl.AttributeInternalMethods"
+    impl="com.guidewire.pl.domain.community.impl.AttributeImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.community.AttributePublicMethods"
+    impl="com.guidewire.pl.domain.community.impl.AttributeImpl"/>
+  <fulldescription><![CDATA[
+        Describes a name-value pair. An administrator can create an Attribute entity to represent custom user characteristics,
+        for example, Spanish. Then, the administrator can associate the Attribute with one or more system users.
+        Studio users can reference an Attribute from Studio when writing rules.
+      
+    ]]></fulldescription>
+  <column
+    default="true"
+    desc="Indicates whether or not this attribute is currently in use."
+    name="Active"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="A description of the attribute."
+    name="Description"
+    nullok="true"
+    type="mediumtext">
+    <localization
+      nullok="true"
+      tableName="attr_name_l10n"/>
+  </column>
+  <column
+    desc="The name of the attribute."
+    name="Name"
+    nullok="false"
+    type="shorttext">
+    <localization
+      nullok="false"
+      tableName="attr_desc_l10n"/>
+  </column>
+  <typekey
+    desc="The type of the attribute."
+    name="Type"
+    nullok="false"
+    typelist="UserAttributeType"/>
+  <index
+    desc="Enforce uniqueness of Name/Type combination"
+    name="attributeu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+    <indexcol
+      keyposition="2"
+      name="Type"/>
+    <indexcol
+      keyposition="3"
+      name="Retired"/>
+  </index>
+</entity>

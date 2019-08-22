@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<PCF>
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    alwaysInEditMode="true"
+    autosaveable="false"
+    canEdit="true"
+    id="PickSavedFilePopup"
+    returnType="gw.api.profiler.ProfilerDataSource"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.AnalyzeSaved&quot;)">
+    <Variable
+      name="zipFile"
+      type="gw.api.web.WebFile"/>
+    <Variable
+      name="zipFileString"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"
+          pickValue="pickFile()"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <FileInput
+            editable="true"
+            id="ZipFile"
+            label="DisplayKey.get(&quot;Web.Profiler.RestoreSnapshot&quot;)"
+            required="true"
+            value="zipFile"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <!-- <TextInput
+      editable="true"
+      id="ZipFileString"
+      label="DisplayKey.get(&quot;Web.Profiler.RestoreSnapshot&quot;)"
+      required="true"
+      value="zipFileString"/> -->
+    <Code><![CDATA[
+function pickFile() : gw.api.profiler.ProfilerDataSource {
+  try {
+    return gw.api.profiler.ProfilerStacksDownloaderUploader.readProfilerStacksFromZipFile(zipFile)
+//    return zipFileString==null?ProfilerStacksDownloaderUploader.readProfilerStacksFromZipFile(zipFile):ProfilerStacksDownloaderUploader.readProfilerStacksFromZipFile(new java.io.File(zipFileString))
+  } catch (e : java.io.IOException) {
+    throw new com.guidewire.pl.web.controller.UserDisplayableException( DisplayKey.get("Web.Profiler.InvalidFile",  zipFile.getName(), e.getMessage() ) )
+  }
+}
+    ]]></Code>
+  </Popup>
+</PCF>

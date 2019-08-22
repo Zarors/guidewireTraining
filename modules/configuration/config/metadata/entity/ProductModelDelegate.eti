@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  ProductModelDelegate marks that a given entity is used in the Product Model.
+      It must be used for all product model entities. All ProductModelDelegates are also ReadOnlyBeans (but not ReadOnlys). -->
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="ProductModelDelegate"
+  platform="true">
+  <column
+    desc="The source file in which the entity is defined"
+    name="SourceFile"
+    nullok="true"
+    type="shorttext"/>
+</delegate>

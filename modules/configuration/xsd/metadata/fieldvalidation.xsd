@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="FieldValidators">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ValidatorDef" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="FieldValidatorsExt">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ValidatorDef" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="ValidationType">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="gosu"/>
+      <xsd:enumeration value="regex"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ValidationLevel">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="none"/>
+      <xsd:enumeration value="relaxed"/>
+      <xsd:enumeration value="strict"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="FormatType">
+      <xsd:restriction base="xsd:NMTOKEN">
+        <xsd:enumeration value="gosu"/>
+        <xsd:enumeration value="pattern"/>
+      </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="FormatLevel">
+      <xsd:restriction base="xsd:NMTOKEN">
+          <xsd:enumeration value="short" />
+          <xsd:enumeration value="medium" />
+          <xsd:enumeration value="long" />
+      </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:element name="ValidatorDef">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string" use="required"/>
+      <xsd:attribute name="value" type="xsd:string" use="required"/>
+      <xsd:attribute name="description" type="xsd:string" use="required"/>
+      <xsd:attribute name="input-mask" type="xsd:string" use="optional"/>
+      <xsd:attribute name="format" type="xsd:string" use="optional"/>
+      <xsd:attribute name="format-type" type="FormatType" use="optional" default="pattern"/>
+      <xsd:attribute name="format-level" type="FormatLevel" use="optional" default="medium"/>
+      <xsd:attribute name="placeholder-char" type="xsd:string" use="optional"/>
+      <xsd:attribute name="floor" type="xsd:string" use="optional"/>
+      <xsd:attribute name="ceiling" type="xsd:string" use="optional"/>
+      <xsd:attribute name="validation-level" type="ValidationLevel" use="optional" default="strict" />
+      <xsd:attribute name="validation-type" type="ValidationType" use="optional" default="regex" />
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

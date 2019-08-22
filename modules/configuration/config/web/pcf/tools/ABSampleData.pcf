@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Page
+    canEdit="false"
+    canVisit="gw.api.tools.InternalTools.isTabVisible() and gw.api.tools.InternalTools.isEnabled()"
+    id="ABSampleData"
+    title="DisplayKey.get(&quot;Web.ABSampleData.Title&quot;)">
+    <Screen>
+      <Variable
+        initialValue="&quot;&quot;"
+        name="result"
+        type="String"/>
+      <PanelRef
+        def="ServerToolsDisclaimerDV()"/>
+      <PanelRef>
+        <Verbatim
+          id="SampleDataImportResult"
+          label="result"/>
+        <DetailViewPanel>
+          <InputColumn>
+            <PreFormattedTextInput
+              id="Spacer1"
+              value="&quot;&quot;"/>
+            <ButtonInput
+              action="result = new gw.command.ImportSampleData().import() + &quot;:\t&quot; + (new java.util.Date().toString())"
+              id="LoadSampleDataButton"
+              labelAbove="true"
+              value="DisplayKey.get(&quot;Web.ABSampleData.Load&quot;)"/>
+            <PreFormattedTextInput
+              id="Spacer2"
+              value="&quot;&quot;"/>
+            <ButtonInput
+              action="result = new gw.command.ImportSampleData().importDuplicateContacts() + &quot;:\t&quot; + (new java.util.Date().toString())"
+              id="LoadDuplicateContactSampleData"
+              labelAbove="true"
+              value="DisplayKey.get(&quot;Web.ABDuplicateContactSampleData.Load&quot;)"/>
+            <PreFormattedTextInput
+              id="Spacer3"
+              value="&quot;&quot;"/>
+            <ButtonInput
+              action="result = trainingapp.batch.additionalsampledata.ABContactLoadAdditionalSampleData.loadDataFromCSV()"
+              id="LoadAdditionalSampleData"
+              labelAbove="true"
+              value="DisplayKey.get(&quot;Training.ABDAdditionalContactSampleData.Load&quot;)"/>
+          </InputColumn>
+        </DetailViewPanel>
+      </PanelRef>
+    </Screen>
+  </Page>
+</PCF>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<delegate
+  xmlns="http://guidewire.com/datamodel"
+  name="RootInfo"
+  platform="true"
+  requiresType="keyable">
+  <implementsInterface
+    iface="com.guidewire.commons.metadata.internal.version.MetadataVersionProvider"
+    impl="com.guidewire.pl.domain.extract.impl.RootInfoImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.extract.impl.RootInfoInternalMethods"
+    impl="com.guidewire.pl.domain.extract.impl.RootInfoImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.extract.RootInfoPublicMethods"
+    impl="com.guidewire.pl.domain.extract.impl.RootInfoImpl"/>
+  <typekey
+    desc="The archive state of the graph"
+    loadable="false"
+    name="ArchiveState"
+    nullok="true"
+    setterScriptability="hidden"
+    typelist="ArchiveState"/>
+  <column
+    desc="When archiving was attempted on the root. Null if we never attempted to archive it."
+    loadable="false"
+    name="ArchiveDate"
+    nullok="true"
+    setterScriptability="hidden"
+    type="datetime"/>
+  <column
+    desc="Indicate if this entity should be excluded from archiving"
+    loadable="false"
+    name="ExcludedFromArchive"
+    nullok="true"
+    setterScriptability="hidden"
+    type="bit"/>
+  <column
+    desc="Reason for excluding or skipping the entity from archiving. If the ExcludeFromArchive bit is set, this gives the reason for excluding. Else, if this is not null, it is the reason for skipping."
+    loadable="false"
+    name="ExcludeReason"
+    nullok="true"
+    setterScriptability="hidden"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="255"/>
+  </column>
+  <foreignkey
+    desc="Schema version at which the root was archived or null if it was not archived"
+    fkentity="UpgradeDatamodelInfo"
+    name="ArchiveSchemaInfo"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <foreignkey
+    columnName="ArchiveFailureID"
+    desc="Short version of the reason for a failure to archive"
+    fkentity="ArchiveFailure"
+    loadable="false"
+    name="ArchiveFailure"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <foreignkey
+    columnName="ArchiveFailureDetailsID"
+    desc="Full details of archive failure"
+    fkentity="ArchiveFailureDetails"
+    loadable="false"
+    name="ArchiveFailureDetails"
+    nullok="true"
+    setterScriptability="hidden"/>
+  <index
+    desc="Speed up search for archived claims"
+    name="archivestatekey"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="ArchiveState"/>
+  </index>
+  <index
+    desc="Speed up mark claim for archive writer as it searches for archive candidates"
+    name="excludekey"
+    unique="false">
+    <indexcol
+      keyposition="1"
+      name="ExcludedFromArchive"/>
+  </index>
+  <index
+    desc="Unique index for the details"
+    name="archfailuredetails"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ArchiveFailureDetailsID"/>
+  </index>
+  <index
+    desc="Info query"
+    name="info1">
+    <indexcol
+      keyposition="1"
+      name="ExcludeReason"/>
+    <indexcol
+      keyposition="2"
+      name="ArchiveSchemaInfo"/>
+    <indexcol
+      keyposition="3"
+      name="ExcludedFromArchive"/>
+    <indexcol
+      keyposition="4"
+      name="ArchiveDate"/>
+  </index>
+  <index
+    desc="Info query"
+    name="info2">
+    <indexcol
+      keyposition="1"
+      name="ExcludedFromArchive"/>
+    <indexcol
+      keyposition="2"
+      name="ArchiveFailureID"/>
+    <indexcol
+      keyposition="3"
+      name="ArchiveSchemaInfo"/>
+    <indexcol
+      keyposition="4"
+      name="ArchiveDate"/>
+  </index>
+</delegate>

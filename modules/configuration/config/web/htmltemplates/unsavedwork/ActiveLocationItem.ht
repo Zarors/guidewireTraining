@@ -1,0 +1,13 @@
+<div id="${id}" class="gw-TabBarUnsavedWorkWidget-active">
+  <div class="gw-TabBarUnsavedWorkWidget-active-go gw-action--outer">
+    <div id="${id}-go" class="gw-action--inner" data-gw-click="unsavedWork id:${widgetId} go:${destination}">
+      <div class="gw-label">${title}</div>
+    </div>
+  </div>
+  <div class="gw-TabBarUnsavedWorkWidget-active-discard gw-action--outer">
+    <div id="${id}-discard" class="gw-TabBarUnsavedWorkWidget-discard gw-action--inner"
+         data-gw-click="unsavedWork id:${widgetId} discard:${destination}" data-gw-confirm="${confirmDiscard}">
+      <div class="gw-label-icon" title="${discardTooltip}"></div>
+    </div>
+  </div>
+</div>

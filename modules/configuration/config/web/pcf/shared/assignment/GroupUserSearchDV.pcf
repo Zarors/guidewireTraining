@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <DetailViewPanel
+    id="GroupUserSearchDV">
+    <Require
+      name="SearchCriteria"
+      type="UserSearchCriteria"/>
+    <InputColumn>
+      <InputSetRef
+        def="GlobalPersonNameInputSet(new gw.api.name.PLPersonNameSearchOwner(SearchCriteria.Contact))"
+        id="Name"
+        mode="gw.api.name.NameLocaleSettings.PCFMode"/>
+    </InputColumn>
+    <InputFooterSection>
+      <InputSetRef
+        def="SearchAndResetInputSet()"/>
+    </InputFooterSection>
+  </DetailViewPanel>
+</PCF>

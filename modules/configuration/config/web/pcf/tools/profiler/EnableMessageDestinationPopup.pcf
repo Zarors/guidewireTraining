@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <Popup
+    afterCommit="enableAlertBar[0]=true;gw.api.profiler.GosuProfilerPageHelper.enableProfilingFor( typekey.ProfilerConfig.TC_MDPROFILERCONFIG, com.guidewire.pl.system.integration.messaging.dispatch.MessageDestinationProfiler.getEntryPointName( messageDestinationName ) )"
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="EnableMessageDestinationPopup"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Web.Profiler.EnableProfilingForMessageDestination&quot;)">
+    <LocationEntryPoint
+      signature="EnableMessageDestinationPopup(enableAlertBar: boolean[])"/>
+    <Variable
+      name="enableAlertBar"
+      type="boolean[]"/>
+    <Variable
+      name="messageDestinationName"
+      type="String"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <RangeInput
+            editable="true"
+            id="MessageDestination"
+            label="DisplayKey.get(&quot;Web.Profiler.MessageDestination&quot;)"
+            required="true"
+            value="messageDestinationName"
+            valueRange="gw.api.profiler.MessageDestinationProfilerPageHelper.getNotEnabledMessageDestinationNames().toTypedArray()"
+            valueType="java.lang.String"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

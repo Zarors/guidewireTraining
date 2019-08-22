@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Staging table load history."
+  entity="LoadCommand"
+  exportable="true"
+  extendable="false"
+  instrumentationtable="true"
+  loadable="false"
+  platform="true"
+  table="loadcommand"
+  type="keyable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.staging.LoadCommandPublicMethods"
+    impl="com.guidewire.pl.domain.staging.impl.LoadCommandImpl"/>
+  <implementsEntity
+    name="TimedLoaderObject"/>
+  <column
+    desc="Total number of integrity check errors detected for all affected tables (if applicable)."
+    name="ErrorCount"
+    nullok="true"
+    type="integer"/>
+  <foreignkey
+    columnName="CallingUserID"
+    desc="ID of the user who executed the operation."
+    fkentity="User"
+    name="CallingUser"
+    nullok="false"/>
+  <typekey
+    desc="Type of load command."
+    name="CommandType"
+    nullok="false"
+    typelist="loadcommandtype"/>
+  <column
+    desc="Description of the load history event."
+    name="Description"
+    nullok="true"
+    type="mediumtext"/>
+  <array
+    arrayentity="LoadStep"
+    desc="Steps."
+    name="Steps"
+    owner="true"/>
+  <array
+    arrayentity="LoadRowCount"
+    desc="Row counts."
+    name="RowCounts"
+    owner="true"/>
+  <array
+    arrayentity="LoadCallback"
+    desc="Timed loader callbacks."
+    name="Callbacks"
+    owner="false"/>
+  <array
+    arrayentity="UpdateDBStatisticsCommand"
+    desc="UpdateDBStatisticsCommands."
+    name="UpdateDBStatisticsCommands"
+    owner="true"/>
+  <array
+    arrayentity="LoadParameter"
+    desc="Parameter values for command."
+    name="ParameterNameValuePairs"
+    owner="true"/>
+  <array
+    arrayentity="LoadIntegrityCheck"
+    desc="Timed loader integrity checks."
+    name="IntegrityChecks"
+    owner="false"/>
+  <array
+    arrayentity="LoadInsertSelect"
+    desc="Timed loader insert/selects."
+    name="InsertSelects"
+    owner="false"/>
+  <array
+    arrayentity="LoadEncryptTable"
+    desc="Timed loader table columns encryptions."
+    name="EncryptTables"
+    owner="true"/>
+  <column
+    columnName="RereateIndexesProcessId"
+    desc="ID of batch process to recreate indexes."
+    type="softentityreference"
+    name="RecreateIndexes"
+    nullok="true"/>
+</entity>

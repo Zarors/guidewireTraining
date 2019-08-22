@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Used to partition groups, users and entities assigned to them into seprate zones."
+  entity="SecurityZone"
+  loadable="false"
+  platform="true"
+  table="securityzone"
+  type="retireable">
+  <fulldescription><![CDATA[
+        Used to partition groups, users and entities assigned to them. By default, a user in one zone
+        cannot view an entity assigned to someone in a different zone. Each group belongs to exactly
+        one security zone, and a customer can define an arbitrary number of security zones. A user is
+        a member of a zone if they are a member of a group in the zone, and an assignable entity belongs
+        to a zone if its assigned group belongs to the zone. For full details see the Administration Guide.
+      
+    ]]></fulldescription>
+  <column
+    desc="Name of the security zone."
+    name="Name"
+    nullok="false"
+    type="varchar">
+    <columnParam
+      name="size"
+      value="60"/>
+    <localization
+      nullok="false"
+      tableName="seczone_nam_l10n"
+      unique="true"/>
+  </column>
+  <column
+    desc="An optional, more detailed description of the security zone."
+    name="Description"
+    nullok="true"
+    type="text">
+    <columnParam
+      name="logicalSize"
+      value="4096"/>
+    <localization
+      nullok="true"
+      tableName="seczone_dsc_l10n"/>
+  </column>
+  <array
+    arrayentity="Group"
+    desc="Groups that belong to this security zone."
+    name="Groups"/>
+  <index
+    desc="Security zone names must be unique"
+    name="seczoneu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="Name"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+</entity>

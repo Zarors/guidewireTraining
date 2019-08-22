@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  cacheable="false"
+  desc="Stores the distribution of items by date bins sizes for a given value column, date column pair."
+  entity="DateBinnedDataDist"
+  exportable="false"
+  loadable="false"
+  platform="true"
+  table="datebinneddatadist"
+  type="keyable">
+  <column
+    desc="Description."
+    name="Description"
+    nullok="false"
+    type="mediumtext"/>
+  <column
+    desc="Main value column name."
+    name="ValueColumnName"
+    nullok="false"
+    type="shorttext"/>
+  <column
+    desc="Additional value column name (optional)"
+    name="AddlColumnName"
+    nullok="true"
+    type="shorttext"/>
+  <column
+    desc="Date column name."
+    name="DateColumnName"
+    nullok="false"
+    type="shorttext"/>
+  <foreignkey
+    columnName="TableDataDistID"
+    desc="TableDataDist for this object."
+    exportable="false"
+    fkentity="TableDataDist"
+    ignoreforevents="true"
+    name="TableDataDist"
+    nullok="false"/>
+  <typekey
+    desc="Data type of primary column in value bins."
+    name="DataType"
+    nullok="true"
+    typelist="DateBinDataType"/>
+  <array
+    arrayentity="DateBinnedDDValue"
+    desc="Value of MainColumn and Addlcolumn (these must be bounded)"
+    exportable="true"
+    name="ValueBins"
+    owner="true"/>
+</entity>

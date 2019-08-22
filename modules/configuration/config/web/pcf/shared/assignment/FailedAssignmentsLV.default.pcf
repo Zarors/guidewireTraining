@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    id="FailedAssignmentsLV"
+    mode="default">
+    <Require
+      name="AssignmentPopup"
+      type="gw.api.assignment.AssignmentPopup"/>
+    <RowIterator
+      editable="false"
+      elementName="Item"
+      value="AssignmentPopup.getFailedAssignables()"
+      valueType="entity.Assignable[]">
+      <Row/>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<typelist
+  xmlns="http://guidewire.com/typelists"
+  desc="Types of LoaderCallback execution times"
+  final="true"
+  name="LoaderCallbackTimeType"
+  platform="true">
+  <typecode
+    code="beforeidgeneration"
+    desc="Before ID generation"
+    name="Before ID generation"
+    priority="1"/>
+  <typecode
+    code="beforeinsertselects"
+    desc="Before insert/selects into source tables"
+    name="Before insert/selects into source tables"
+    priority="2"/>
+  <typecode
+    code="afterinsertselects"
+    desc="After insert/selects into source tables"
+    name="After insert/selects into source tables"
+    priority="3"/>
+</typelist>

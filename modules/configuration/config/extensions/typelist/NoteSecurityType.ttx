@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  desc="Type of the note for access-restriction purposes"
+  name="NoteSecurityType">
+  <typecode
+    code="public"
+    desc="Note viewable by any user in the system"
+    name="Public"/>
+  <typecode
+    code="private"
+    desc="Note viewable by internal users only"
+    name="Private"/>
+  <typecode
+    code="sensitive"
+    desc="Confidential note, viewable by select internal users only"
+    name="Sensitive"/>
+</typelistextension>

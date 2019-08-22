@@ -1,0 +1,4 @@
+<input class="gw-QuickjumpWidget--input gw-noTrack" name="${renderId}"
+       data-gw-autocomplete type="text" data-gw-post-on-enter-key
+       placeholder="${placeholder}"
+       data-gw-shortcut="gwEvents.focusQuickjump id:${renderId}"/>

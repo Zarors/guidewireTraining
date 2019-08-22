@@ -1,0 +1,32 @@
+package rules.Preupdate.ABContactContactPreupdate_dir
+uses gw.api.locale.DisplayKey
+uses gw.api.util.MiscUtil
+
+@gw.rules.RuleName("ABContactContact Added History Event")
+internal class ABContactContactAddedHistoryEvent {
+  static function doCondition(abContactContact : entity.ABContactContact) : boolean {
+    
+/*start00rule*/
+return abContactContact.New
+/*end00rule*/
+
+  }
+
+  static function doAction(abContactContact : entity.ABContactContact, actions : gw.rules.Action) {
+
+/*start00rule*/
+// Add related contact added events for both the src and rel ABContacts.
+var type = CustomHistoryType.TC_RELATEDCONTACTADDED
+
+var history = abContactContact.SrcABContact.addHistory(type, DisplayKey.get("Java.ABContactContact.Added", abContactContact.RelABContact.DisplayName))
+  MiscUtil.addRelatedContactChanges(
+    history, null, abContactContact.RelABContact, null, abContactContact.Rel, true);
+
+history = abContactContact.RelABContact.addHistory(type, DisplayKey.get("Java.ABContactContact.Added", abContactContact.SrcABContact.DisplayName))
+  MiscUtil.addRelatedContactChanges(
+    history, null, abContactContact.SrcABContact, null, abContactContact.Rel, false);
+
+/*end00rule*/
+
+  }
+}

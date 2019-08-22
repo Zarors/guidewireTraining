@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- GB -->
+<Country xmlns="http://guidewire.com/country"
+  visibleFields="Country,AddressLine1,AddressLine2,AddressLine3,City,PostalCode"
+  cityDisplayKey="Web.AddressBook.AddressInputSet.TownCity"
+/>

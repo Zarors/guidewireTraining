@@ -1,0 +1,1 @@
+<div id="gw-browserActions"><script type="text/javascript"> gw.browserActions = {}; (function() { var ba = gw.browserActions;${js}})();</script></div>

@@ -1,0 +1,1091 @@
+<?xml version="1.0"?>
+<typelistextension
+  xmlns="http://guidewire.com/typelists"
+  name="Country">
+  <typecode
+    code="AF"
+    desc="Afghanistan"
+    name="Afghanistan"/>
+  <typecode
+    code="AL"
+    desc="Albania"
+    name="Albania"/>
+  <typecode
+    code="DZ"
+    desc="Algeria"
+    name="Algeria"/>
+  <typecode
+    code="AS"
+    desc="American Samoa"
+    name="American Samoa"/>
+  <typecode
+    code="AD"
+    desc="Andorra"
+    name="Andorra">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="AO"
+    desc="Angola"
+    name="Angola"/>
+  <typecode
+    code="AI"
+    desc="Anguilla"
+    name="Anguilla"/>
+  <typecode
+    code="AQ"
+    desc="Antarctica"
+    name="Antarctica"/>
+  <typecode
+    code="AG"
+    desc="Antigua and Barbuda"
+    name="Antigua and Barbuda"/>
+  <typecode
+    code="AR"
+    desc="Argentina"
+    name="Argentina"/>
+  <typecode
+    code="AM"
+    desc="Armenia"
+    name="Armenia"/>
+  <typecode
+    code="AW"
+    desc="Aruba"
+    name="Aruba"/>
+  <typecode
+    code="AU"
+    desc="Australia"
+    name="Australia">
+    <category
+      code="aud"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="AT"
+    desc="Austria"
+    name="Austria">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="AZ"
+    desc="Azerbaijan"
+    name="Azerbaijan"/>
+  <typecode
+    code="BS"
+    desc="Bahamas"
+    name="Bahamas"/>
+  <typecode
+    code="BH"
+    desc="Bahrain"
+    name="Bahrain"/>
+  <typecode
+    code="BD"
+    desc="Bangladesh"
+    name="Bangladesh"/>
+  <typecode
+    code="BB"
+    desc="Barbados"
+    name="Barbados"/>
+  <typecode
+    code="BY"
+    desc="Belarus"
+    name="Belarus"/>
+  <typecode
+    code="BE"
+    desc="Belgium"
+    name="Belgium">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="BZ"
+    desc="Belize"
+    name="Belize"/>
+  <typecode
+    code="BJ"
+    desc="Benin"
+    name="Benin"/>
+  <typecode
+    code="BM"
+    desc="Bermuda"
+    name="Bermuda"/>
+  <typecode
+    code="BT"
+    desc="Bhutan"
+    name="Bhutan"/>
+  <typecode
+    code="BO"
+    desc="Bolivia"
+    name="Bolivia"/>
+  <typecode
+    code="BA"
+    desc="Bosnia and Herzegovina"
+    name="Bosnia and Herzegovina"/>
+  <typecode
+    code="BW"
+    desc="Botswana"
+    name="Botswana"/>
+  <typecode
+    code="BV"
+    desc="Bouvet Island (Bouvetoya)"
+    name="Bouvet Island (Bouvetoya)"/>
+  <typecode
+    code="BR"
+    desc="Brazil"
+    name="Brazil"/>
+  <typecode
+    code="IO"
+    desc="British Indian Ocean Territory (Chagos Archipelago)"
+    name="British Indian Ocean Territory (Chagos Archipelago)"/>
+  <typecode
+    code="VG"
+    desc="British Virgin Islands"
+    name="British Virgin Islands"/>
+  <typecode
+    code="BN"
+    desc="Brunei"
+    name="Brunei"/>
+  <typecode
+    code="BG"
+    desc="Bulgaria"
+    name="Bulgaria"/>
+  <typecode
+    code="BF"
+    desc="Burkina Faso"
+    name="Burkina Faso"/>
+  <typecode
+    code="BI"
+    desc="Burundi"
+    name="Burundi"/>
+  <typecode
+    code="KH"
+    desc="Cambodia"
+    name="Cambodia"/>
+  <typecode
+    code="CM"
+    desc="Cameroon"
+    name="Cameroon"/>
+  <typecode
+    code="CA"
+    desc="Canada"
+    name="Canada"
+    priority="1">
+    <category
+      code="cad"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="CV"
+    desc="Cape Verde"
+    name="Cape Verde"/>
+  <typecode
+    code="KY"
+    desc="Cayman Islands"
+    name="Cayman Islands"/>
+  <typecode
+    code="CF"
+    desc="Central African Republic"
+    name="Central African Republic"/>
+  <typecode
+    code="TD"
+    desc="Chad"
+    name="Chad"/>
+  <typecode
+    code="CL"
+    desc="Chile"
+    name="Chile"/>
+  <typecode
+    code="CN"
+    desc="China"
+    name="China"/>
+  <typecode
+    code="CX"
+    desc="Christmas Island"
+    name="Christmas Island"/>
+  <typecode
+    code="CC"
+    desc="Cocos (Keeling) Islands"
+    name="Cocos (Keeling) Islands"/>
+  <typecode
+    code="CO"
+    desc="Colombia"
+    name="Colombia"/>
+  <typecode
+    code="KM"
+    desc="Comoros"
+    name="Comoros"/>
+  <typecode
+    code="CG"
+    desc="Congo - Brazzaville"
+    name="Congo - Brazzaville"/>
+  <typecode
+    code="CD"
+    desc="Congo - Kinshasa"
+    name="Congo - Kinshasa"/>
+  <typecode
+    code="CK"
+    desc="Cook Islands"
+    name="Cook Islands"/>
+  <typecode
+    code="CR"
+    desc="Costa Rica"
+    name="Costa Rica"/>
+  <typecode
+    code="HR"
+    desc="Croatia"
+    name="Croatia"/>
+  <typecode
+    code="CU"
+    desc="Cuba"
+    name="Cuba"/>
+  <typecode
+    code="CY"
+    desc="Cyprus"
+    name="Cyprus">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="CZ"
+    desc="Czech Republic"
+    name="Czech Republic"/>
+  <typecode
+    code="CI"
+    desc="Ivory Coast"
+    name="Ivory Coast"/>
+  <typecode
+    code="DK"
+    desc="Denmark"
+    name="Denmark"/>
+  <typecode
+    code="DJ"
+    desc="Djibouti"
+    name="Djibouti"/>
+  <typecode
+    code="DM"
+    desc="Dominica"
+    name="Dominica"/>
+  <typecode
+    code="DO"
+    desc="Dominican Republic"
+    name="Dominican Republic"/>
+  <typecode
+    code="EC"
+    desc="Ecuador"
+    name="Ecuador"/>
+  <typecode
+    code="EG"
+    desc="Egypt"
+    name="Egypt"/>
+  <typecode
+    code="SV"
+    desc="El Salvador"
+    name="El Salvador"/>
+  <typecode
+    code="GQ"
+    desc="Equatorial Guinea"
+    name="Equatorial Guinea"/>
+  <typecode
+    code="ER"
+    desc="Eritrea"
+    name="Eritrea"/>
+  <typecode
+    code="EE"
+    desc="Estonia"
+    name="Estonia">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="ET"
+    desc="Ethiopia"
+    name="Ethiopia"/>
+  <typecode
+    code="FO"
+    desc="Faroe Islands"
+    name="Faroe Islands"/>
+  <typecode
+    code="FK"
+    desc="Falkland Islands (Malvinas)"
+    name="Falkland Islands (Malvinas)"/>
+  <typecode
+    code="FJ"
+    desc="Fiji, Republic of the Fiji Islands"
+    name="Fiji, Republic of the Fiji Islands"/>
+  <typecode
+    code="FI"
+    desc="Finland"
+    name="Finland">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="FR"
+    desc="France"
+    name="France">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="GF"
+    desc="French Guiana"
+    name="French Guiana"/>
+  <typecode
+    code="PF"
+    desc="French Polynesia"
+    name="French Polynesia"/>
+  <typecode
+    code="TF"
+    desc="French Southern Territories"
+    name="French Southern Territories"/>
+  <typecode
+    code="GA"
+    desc="Gabon"
+    name="Gabon"/>
+  <typecode
+    code="GM"
+    desc="Gambia"
+    name="Gambia"/>
+  <typecode
+    code="GE"
+    desc="Georgia"
+    name="Georgia"/>
+  <typecode
+    code="DE"
+    desc="Germany"
+    name="Germany">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="GH"
+    desc="Ghana"
+    name="Ghana"/>
+  <typecode
+    code="GI"
+    desc="Gibraltar"
+    name="Gibraltar"/>
+  <typecode
+    code="GR"
+    desc="Greece"
+    name="Greece">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="GL"
+    desc="Greenland"
+    name="Greenland"/>
+  <typecode
+    code="GD"
+    desc="Grenada"
+    name="Grenada"/>
+  <typecode
+    code="GP"
+    desc="Guadeloupe"
+    name="Guadeloupe"/>
+  <typecode
+    code="GU"
+    desc="Guam"
+    name="Guam"/>
+  <typecode
+    code="GT"
+    desc="Guatemala"
+    name="Guatemala"/>
+  <typecode
+    code="GN"
+    desc="Guinea"
+    name="Guinea"/>
+  <typecode
+    code="GW"
+    desc="Guinea-Bissau"
+    name="Guinea-Bissau"/>
+  <typecode
+    code="GY"
+    desc="Guyana"
+    name="Guyana"/>
+  <typecode
+    code="HT"
+    desc="Haiti"
+    name="Haiti"/>
+  <typecode
+    code="HM"
+    desc="Heard and McDonald Islands"
+    name="Heard and McDonald Islands"/>
+  <typecode
+    code="HN"
+    desc="Honduras"
+    name="Honduras"/>
+  <typecode
+    code="HK"
+    desc="Hong Kong SAR China"
+    name="Hong Kong SAR China"/>
+  <typecode
+    code="HU"
+    desc="Hungary"
+    name="Hungary"/>
+  <typecode
+    code="IS"
+    desc="Iceland"
+    name="Iceland"/>
+  <typecode
+    code="IN"
+    desc="India"
+    name="India"/>
+  <typecode
+    code="ID"
+    desc="Indonesia"
+    name="Indonesia"/>
+  <typecode
+    code="IR"
+    desc="Iran"
+    name="Iran"/>
+  <typecode
+    code="IQ"
+    desc="Iraq"
+    name="Iraq"/>
+  <typecode
+    code="IE"
+    desc="Ireland"
+    name="Ireland">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="IL"
+    desc="Israel"
+    name="Israel"/>
+  <typecode
+    code="IT"
+    desc="Italy"
+    name="Italy">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="JM"
+    desc="Jamaica"
+    name="Jamaica"/>
+  <typecode
+    code="JP"
+    desc="Japan"
+    name="Japan">
+    <category
+      code="jpy"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="JO"
+    desc="Jordan"
+    name="Jordan"/>
+  <typecode
+    code="KZ"
+    desc="Kazakhstan"
+    name="Kazakhstan"/>
+  <typecode
+    code="KE"
+    desc="Kenya"
+    name="Kenya"/>
+  <typecode
+    code="KI"
+    desc="Kiribati"
+    name="Kiribati"/>
+  <typecode
+    code="KP"
+    desc="Korea, North"
+    name="Korea, North"/>
+  <typecode
+    code="KR"
+    desc="Korea, South"
+    name="Korea, South"/>
+  <typecode
+    code="KW"
+    desc="Kuwait"
+    name="Kuwait"/>
+  <typecode
+    code="KG"
+    desc="Kyrgyz Republic"
+    name="Kyrgyz Republic"/>
+  <typecode
+    code="LA"
+    desc="Laos"
+    name="Laos"/>
+  <typecode
+    code="LV"
+    desc="Latvia"
+    name="Latvia"/>
+  <typecode
+    code="LB"
+    desc="Lebanon"
+    name="Lebanon"/>
+  <typecode
+    code="LS"
+    desc="Lesotho"
+    name="Lesotho"/>
+  <typecode
+    code="LR"
+    desc="Liberia"
+    name="Liberia"/>
+  <typecode
+    code="LY"
+    desc="Libya"
+    name="Libya"/>
+  <typecode
+    code="LI"
+    desc="Liechtenstein"
+    name="Liechtenstein"/>
+  <typecode
+    code="LT"
+    desc="Lithuania"
+    name="Lithuania"/>
+  <typecode
+    code="LU"
+    desc="Luxembourg"
+    name="Luxembourg">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="MO"
+    desc="Macau SAR China"
+    name="Macau SAR China"/>
+  <typecode
+    code="MK"
+    desc="Macedonia"
+    name="Macedonia"/>
+  <typecode
+    code="MG"
+    desc="Madagascar"
+    name="Madagascar"/>
+  <typecode
+    code="MW"
+    desc="Malawi"
+    name="Malawi"/>
+  <typecode
+    code="MY"
+    desc="Malaysia"
+    name="Malaysia"/>
+  <typecode
+    code="MV"
+    desc="Maldives"
+    name="Maldives"/>
+  <typecode
+    code="ML"
+    desc="Mali"
+    name="Mali"/>
+  <typecode
+    code="MT"
+    desc="Malta"
+    name="Malta">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="MH"
+    desc="Marshall Islands"
+    name="Marshall Islands"/>
+  <typecode
+    code="MQ"
+    desc="Martinique"
+    name="Martinique"/>
+  <typecode
+    code="MR"
+    desc="Mauritania"
+    name="Mauritania"/>
+  <typecode
+    code="MU"
+    desc="Mauritius"
+    name="Mauritius"/>
+  <typecode
+    code="YT"
+    desc="Mayotte"
+    name="Mayotte"/>
+  <typecode
+    code="MX"
+    desc="Mexico"
+    name="Mexico"/>
+  <typecode
+    code="FM"
+    desc="Micronesia, Federated States of"
+    name="Micronesia, Federated States of"/>
+  <typecode
+    code="MD"
+    desc="Moldova"
+    name="Moldova"/>
+  <typecode
+    code="MC"
+    desc="Monaco"
+    name="Monaco">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="MN"
+    desc="Mongolia"
+    name="Mongolia"/>
+  <typecode
+    code="ME"
+    desc="Montenegro"
+    name="Montenegro">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="MS"
+    desc="Montserrat"
+    name="Montserrat"/>
+  <typecode
+    code="MA"
+    desc="Morocco"
+    name="Morocco"/>
+  <typecode
+    code="MZ"
+    desc="Mozambique"
+    name="Mozambique"/>
+  <typecode
+    code="MM"
+    desc="Myanmar [Burma]"
+    name="Myanmar [Burma]"/>
+  <typecode
+    code="NA"
+    desc="Namibia"
+    name="Namibia"/>
+  <typecode
+    code="NR"
+    desc="Nauru"
+    name="Nauru"/>
+  <typecode
+    code="NP"
+    desc="Nepal"
+    name="Nepal"/>
+  <typecode
+    code="NL"
+    desc="Netherlands"
+    name="Netherlands"/>
+  <typecode
+    code="AN"
+    desc="Netherlands Antilles"
+    name="Netherlands Antilles">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="NC"
+    desc="New Caledonia"
+    name="New Caledonia"/>
+  <typecode
+    code="NZ"
+    desc="New Zealand"
+    name="New Zealand"/>
+  <typecode
+    code="NI"
+    desc="Nicaragua"
+    name="Nicaragua"/>
+  <typecode
+    code="NE"
+    desc="Niger"
+    name="Niger"/>
+  <typecode
+    code="NG"
+    desc="Nigeria"
+    name="Nigeria"/>
+  <typecode
+    code="NU"
+    desc="Niue"
+    name="Niue"/>
+  <typecode
+    code="NF"
+    desc="Norfolk Island"
+    name="Norfolk Island"/>
+  <typecode
+    code="MP"
+    desc="Northern Mariana Islands"
+    name="Northern Mariana Islands"/>
+  <typecode
+    code="NO"
+    desc="Norway"
+    name="Norway"/>
+  <typecode
+    code="OM"
+    desc="Oman"
+    name="Oman"/>
+  <typecode
+    code="PK"
+    desc="Pakistan"
+    name="Pakistan"/>
+  <typecode
+    code="PW"
+    desc="Palau"
+    name="Palau"/>
+  <typecode
+    code="PS"
+    desc="Palestinian Interim Self-Government Authority"
+    name="Palestinian Interim Self-Government Authority"/>
+  <typecode
+    code="PA"
+    desc="Panama"
+    name="Panama"/>
+  <typecode
+    code="PG"
+    desc="Papua New Guinea"
+    name="Papua New Guinea"/>
+  <typecode
+    code="PY"
+    desc="Paraguay"
+    name="Paraguay"/>
+  <typecode
+    code="PE"
+    desc="Peru"
+    name="Peru"/>
+  <typecode
+    code="PH"
+    desc="Philippines"
+    name="Philippines"/>
+  <typecode
+    code="PN"
+    desc="Pitcairn Island"
+    name="Pitcairn Island"/>
+  <typecode
+    code="PL"
+    desc="Poland"
+    name="Poland"/>
+  <typecode
+    code="PT"
+    desc="Portugal"
+    name="Portugal">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="PR"
+    desc="Puerto Rico"
+    name="Puerto Rico"/>
+  <typecode
+    code="QA"
+    desc="Qatar"
+    name="Qatar"/>
+  <typecode
+    code="RO"
+    desc="Romania"
+    name="Romania"/>
+  <typecode
+    code="RU"
+    desc="Russia"
+    name="Russia">
+    <category
+      code="rub"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="RW"
+    desc="Rwanda"
+    name="Rwanda"/>
+  <typecode
+    code="RE"
+    desc="Reunion"
+    name="Reunion"/>
+  <typecode
+    code="SH"
+    desc="St. Helena"
+    name="St. Helena"/>
+  <typecode
+    code="KN"
+    desc="St. Kitts and Nevis"
+    name="St. Kitts and Nevis"/>
+  <typecode
+    code="LC"
+    desc="St. Lucia"
+    name="St. Lucia"/>
+  <typecode
+    code="PM"
+    desc="St. Pierre and Miquelon"
+    name="St. Pierre and Miquelon"/>
+  <typecode
+    code="VC"
+    desc="St. Vincent and the Grenadines"
+    name="St. Vincent and the Grenadines"/>
+  <typecode
+    code="WS"
+    desc="Samoa"
+    name="Samoa"/>
+  <typecode
+    code="SM"
+    desc="San Marino"
+    name="San Marino">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="BL"
+    desc="Saint Barthelemy"
+    name="Saint Barthelemy"/>
+  <typecode
+    code="MF"
+    desc="Saint Martin"
+    name="Saint Martin"/>
+  <typecode
+    code="SA"
+    desc="Saudi Arabia"
+    name="Saudi Arabia"/>
+  <typecode
+    code="SN"
+    desc="Senegal"
+    name="Senegal"/>
+  <typecode
+    code="RS"
+    desc="Serbia"
+    name="Serbia"/>
+  <typecode
+    code="SC"
+    desc="Seychelles"
+    name="Seychelles"/>
+  <typecode
+    code="SL"
+    desc="Sierra Leone"
+    name="Sierra Leone"/>
+  <typecode
+    code="SG"
+    desc="Singapore"
+    name="Singapore"/>
+  <typecode
+    code="SK"
+    desc="Slovakia"
+    name="Slovakia">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="SI"
+    desc="Slovenia"
+    name="Slovenia">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="SB"
+    desc="Solomon Islands"
+    name="Solomon Islands"/>
+  <typecode
+    code="SO"
+    desc="Somalia"
+    name="Somalia"/>
+  <typecode
+    code="ZA"
+    desc="South Africa"
+    name="South Africa"/>
+  <typecode
+    code="GS"
+    desc="South Georgia and the South Sandwich Islands"
+    name="South Georgia and the South Sandwich Islands"/>
+  <typecode
+    code="ES"
+    desc="Spain"
+    name="Spain">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="LK"
+    desc="Sri Lanka"
+    name="Sri Lanka"/>
+  <typecode
+    code="SD"
+    desc="Sudan"
+    name="Sudan"/>
+  <typecode
+    code="SR"
+    desc="Suriname"
+    name="Suriname"/>
+  <typecode
+    code="SJ"
+    desc="Svalbard and Jan Mayen Islands"
+    name="Svalbard and Jan Mayen Islands"/>
+  <typecode
+    code="SZ"
+    desc="Swaziland"
+    name="Swaziland"/>
+  <typecode
+    code="SE"
+    desc="Sweden"
+    name="Sweden"/>
+  <typecode
+    code="CH"
+    desc="Switzerland"
+    name="Switzerland"/>
+  <typecode
+    code="SY"
+    desc="Syria"
+    name="Syria"/>
+  <typecode
+    code="ST"
+    desc="Sao Tome and Principe"
+    name="Sao Tome and Principe"/>
+  <typecode
+    code="TW"
+    desc="Taiwan"
+    name="Taiwan"/>
+  <typecode
+    code="TJ"
+    desc="Tajikistan"
+    name="Tajikistan"/>
+  <typecode
+    code="TZ"
+    desc="Tanzania"
+    name="Tanzania"/>
+  <typecode
+    code="TH"
+    desc="Thailand"
+    name="Thailand"/>
+  <typecode
+    code="TL"
+    desc="Timor-Leste"
+    name="Timor-Leste"/>
+  <typecode
+    code="TG"
+    desc="Togo"
+    name="Togo"/>
+  <typecode
+    code="TK"
+    desc="Tokelau (Tokelau Islands)"
+    name="Tokelau (Tokelau Islands)"/>
+  <typecode
+    code="TO"
+    desc="Tonga"
+    name="Tonga"/>
+  <typecode
+    code="TT"
+    desc="Trinidad and Tobago"
+    name="Trinidad and Tobago"/>
+  <typecode
+    code="TN"
+    desc="Tunisia"
+    name="Tunisia"/>
+  <typecode
+    code="TR"
+    desc="Turkey"
+    name="Turkey"/>
+  <typecode
+    code="TM"
+    desc="Turkmenistan"
+    name="Turkmenistan"/>
+  <typecode
+    code="TC"
+    desc="Turks and Caicos Islands"
+    name="Turks and Caicos Islands"/>
+  <typecode
+    code="TV"
+    desc="Tuvalu"
+    name="Tuvalu"/>
+  <typecode
+    code="UM"
+    desc="U.S. Minor Outlying Islands"
+    name="U.S. Minor Outlying Islands">
+    <category
+      code="usd"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="VI"
+    desc="U.S. Virgin Islands"
+    name="U.S. Virgin Islands"/>
+  <typecode
+    code="UG"
+    desc="Uganda"
+    name="Uganda"/>
+  <typecode
+    code="UA"
+    desc="Ukraine"
+    name="Ukraine"/>
+  <typecode
+    code="AE"
+    desc="United Arab Emirates"
+    name="United Arab Emirates"/>
+  <typecode
+    code="GB"
+    desc="United Kingdom"
+    name="United Kingdom">
+    <category
+      code="gbp"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="US"
+    desc="United States"
+    name="United States"
+    priority="0">
+    <category
+      code="usd"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="UY"
+    desc="Uruguay"
+    name="Uruguay"/>
+  <typecode
+    code="UZ"
+    desc="Uzbekistan"
+    name="Uzbekistan"/>
+  <typecode
+    code="VU"
+    desc="Vanuatu"
+    name="Vanuatu"/>
+  <typecode
+    code="VA"
+    desc="Vatican City"
+    name="Vatican City">
+    <category
+      code="eur"
+      typelist="Currency"/>
+  </typecode>
+  <typecode
+    code="VE"
+    desc="Venezuela"
+    name="Venezuela"/>
+  <typecode
+    code="VN"
+    desc="Vietnam"
+    name="Vietnam"/>
+  <typecode
+    code="WF"
+    desc="Wallis and Futuna Islands"
+    name="Wallis and Futuna Islands"/>
+  <typecode
+    code="EH"
+    desc="Western Sahara"
+    name="Western Sahara"/>
+  <typecode
+    code="YE"
+    desc="Yemen"
+    name="Yemen"/>
+  <typecode
+    code="ZM"
+    desc="Zambia"
+    name="Zambia"/>
+  <typecode
+    code="ZW"
+    desc="Zimbabwe"
+    name="Zimbabwe"/>
+</typelistextension>

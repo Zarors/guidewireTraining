@@ -1,0 +1,25 @@
+package rules.EventMessage.EventFired_dir.BAEF1000BankAccountVerification_dir.BAEF1100BankAccount_dir
+
+@gw.rules.RuleName("BAEF1110 - Added Changed")
+internal class BAEF1110AddedChanged {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return messageContext.EventName == "BankAccountAdded" or
+messageContext.EventName == "BankAccountChanged"
+
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("    Event Fired rules: " + actions.Rule.DisplayName )
+print("    Event is " + messageContext.EventName )
+// execute child rules
+
+/*end00rule*/
+
+  }
+}

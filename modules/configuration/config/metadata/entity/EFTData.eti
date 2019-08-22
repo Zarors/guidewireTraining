@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Electronic funds transfer"
+  entity="EFTData"
+  exportable="true"
+  platform="false"
+  table="eftdata"
+  type="retireable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.persistence.core.impl.RetireableInternalMethods"
+    impl="com.guidewire.ab.domain.contact.impl.EFTDataImpl"/>
+  <implementsEntity
+    name="EFTDataDelegate"/>
+  <implementsEntity
+    name="ABLinkable"/>
+  <implementsEntity
+    name="Extractable"/>
+  <fulldescription><![CDATA[Electronic funds transfer or EFT refers to the computer-based systems used to perform financial transactions electronically.
+    ]]></fulldescription>
+  <foreignkey
+    columnName="ContactID"
+    desc="Contact this EFT record relates to"
+    fkentity="ABContact"
+    name="Contact"
+    nullok="false"/>
+  <index
+    desc="Preserve uniqueness of LinkID"
+    name="abeftdatalinkid"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LinkID"/>
+    <indexcol
+      keyposition="2"
+      name="Retired"/>
+  </index>
+</entity>

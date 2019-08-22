@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<webservice-collection xmlns="http://guidewire.com/config/webservicecollection">
+  <resources>
+    <resource>
+      <url>${cc}/ws/gw/webservice/cc/cc1000/contact/ContactAPI?wsdl</url>
+    </resource>
+  </resources>
+  <settings>
+    <configuration-provider>
+      <type-name>wsi.remote.gw.webservice.cc.CCConfigurationProvider</type-name>
+    </configuration-provider>
+  </settings>
+</webservice-collection>

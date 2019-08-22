@@ -1,0 +1,14 @@
+package rules.Validation
+
+@gw.rules.RuleName("PersonValidationRules")
+@gw.rules.RuleSetDescription("Validates phone number on the Person entity has valid phone countries")
+@gw.lang.Export
+class PersonValidationRules extends gw.rules.RuleSetBase {
+  static function invoke(bean : entity.Person) : gw.rules.ExecutionSession {
+    return invoke( new gw.rules.ExecutionSession(), bean )
+  }
+
+  static function invoke(exeSession : gw.rules.ExecutionSession, bean : entity.Person) : gw.rules.ExecutionSession {
+    return _invoke( exeSession, bean, "PersonValidationRules", PersonValidationRules)
+  }
+}

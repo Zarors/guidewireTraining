@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- ### ============================================================================
+  ### Master store for metadata about the encrypted columns
+  ### ============================================================================ -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="Stores metadata for each encrypted column in the database."
+  entity="EncryptedColumnRegistryEntry"
+  extendable="false"
+  loadable="false"
+  platform="true"
+  table="encryptedcolumnregistry"
+  type="nonkeyable">
+  <column
+    desc="Name of the table."
+    name="TableName"
+    nullok="false"
+    type="sqlidentifier"/>
+  <column
+    desc="Name of the column"
+    name="ColumnName"
+    nullok="false"
+    type="sqlidentifier"/>
+  <index
+    desc="(TableName, ColumnName) is unique within encrypted column registry"
+    name="tablecol"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="TableName"/>
+    <indexcol
+      keyposition="2"
+      name="ColumnName"/>
+  </index>
+</entity>

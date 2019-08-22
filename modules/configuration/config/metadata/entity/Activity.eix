@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- ====================================================================  Activity  ==================================================================== -->
+<internalExtension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="Activity">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.activity.impl.ActivityInternalMethods"
+    impl="com.guidewire.ab.domain.activity.impl.ActivityCoreExtMethodsImpl"/>
+  <description>An activity is a instance of work assigned to a user.</description>
+  <!-- Moved from platform -->
+  <index
+    name="activityu1"
+    desc="Compound index to speed ActivitySearchAssignedToMeXXX"
+    trackUsage="true"
+    unique="true">
+    <indexcol
+      name="AssignedUserId"
+      keyposition="1"/>
+    <indexcol
+      name="Status"
+      keyposition="2"/>
+    <indexcol
+      name="AssignmentStatus"
+      keyposition="3"/>
+    <indexcol
+      name="Retired"
+      keyposition="4"/>
+    <indexcol
+      name="TargetDate"
+      keyposition="5"/>
+    <indexcol
+      name="Type"
+      keyposition="6"/>
+    <indexcol
+      name="ID"
+      keyposition="7"/>
+  </index>
+  <events/>
+  <dbcheckbuilder
+    className="com.guidewire.pl.domain.activity.dbchecks.ActivityDBCheckBuilder"/>
+</internalExtension>

@@ -1,0 +1,37 @@
+package rules.EventMessage.EventFired_dir
+
+@gw.rules.RuleName("MGEF1000 - MessageGenerator")
+internal class MessageGeneratorDemo {
+  static function doCondition(messageContext : entity.MessageContext) : boolean {
+    
+/*start00rule*/
+return // This rule executes demo-only functionality. For
+// simplicity sake, the Event Fired logic has been placed in
+// a single rule (as opposed to a rule hierarchy). This is not
+// considered best practice for production messaging
+// integration points.
+messageContext.DestID == 21
+and messageContext.Root typeis MessageGenerator
+/*end00rule*/
+
+  }
+
+  static function doAction(messageContext : entity.MessageContext, actions : gw.rules.Action) {
+
+/*start00rule*/
+print("\n*** Stage 1 -- Triggering the message ***")
+print("    Event Fired rules: " + actions.Rule.DisplayName )
+print("    Messaging Destination ID is " + messageContext.DestID)
+print("    EventAware entity is  MessageGenerator")
+//messageContext root must be cast to appropriate type
+var aMessageGenerator = messageContext.Root as MessageGenerator
+print("\n*** Stage 2 -- Generating the message payload ***")
+var msg : Message
+var payload = aMessageGenerator.Name
+print("    Using String for payload")
+msg = messageContext.createMessage(payload)
+print("    createMessage() called")
+/*end00rule*/
+
+  }
+}

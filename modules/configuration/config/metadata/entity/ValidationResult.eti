@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<nonPersistentEntity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Stores validation results for a validatable object such as a claim. The results are not persisted to the database.  The validation results may also contain general validation errors not associated with a particular field."
+  entity="ValidationResult"
+  platform="true">
+  <fulldescription><![CDATA[<p>ValidationResult is used to read and write results of an object's validation (e.g. validation via rules, or field level validation).</p>
+      <p>ValidationResult stores both entity level errors (general errors not associated with a particular field) and field level errors (errors associated with a particular field on an entity).</p>
+      <p>A FieldValidation object can store the bad value which triggered the error (e.g. a mangled loss date that was imported with the claim) and may also suggests possible correct values,
+      either as a list of objects or foreign keys (if the field is a foreign key, e.g. picking from a set of users with the last name "Shaw" if the imported ClaimDef only identifies "Shaw" as the owner).
+      See FieldValidation to learn what information may be captured with an invalid field.</p>
+    ]]></fulldescription>
+  <array
+    arrayentity="EntityValidation"
+    name="EntityValidations"/>
+</nonPersistentEntity>

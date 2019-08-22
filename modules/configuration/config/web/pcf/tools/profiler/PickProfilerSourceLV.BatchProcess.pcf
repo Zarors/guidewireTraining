@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <ListViewPanel
+    id="PickProfilerSourceLV"
+    mode="BatchProcess">
+    <ExposeIterator
+      flags="CanDelete,CannotDelete"
+      name="PickProfilerSourceLV"
+      valueType="gw.api.profiler.ProfilerDataSource"
+      widget="PickProfilerSourceLV"/>
+    <RowIterator
+      editable="false"
+      elementName="batchProcessHistory"
+      toRemove="deleteProfilerData(batchProcessHistory)"
+      value="gw.api.database.Query.make(ProcessHistory).compare(&quot;ProfilerData&quot;, NotEquals, null).select()"
+      valueType="gw.api.database.IQueryBeanResult&lt;entity.ProcessHistory&gt;">
+      <ToolbarFilter
+        label="DisplayKey.get(&quot;Web.Profiler.BatchProcessType&quot;)"
+        name="batchProcessTypeChooser">
+        <ToolbarFilterOptionGroup
+          filters="new gw.api.filters.TypeKeyFilterSet(ProcessHistory.Type.TypeInfo.getProperty( &quot;ProcessType&quot; )).getFilterOptions()"/>
+      </ToolbarFilter>
+      <ToolbarFlag
+        name="CanDelete"/>
+      <ToolbarFlag
+        condition="false"
+        name="CannotDelete"/>
+      <Row>
+        <TypeKeyCell
+          id="BatchProcess"
+          label="DisplayKey.get(&quot;Web.Profiler.BatchProcessType&quot;)"
+          sortOrder="1"
+          value="batchProcessHistory.ProcessType"
+          valueType="typekey.BatchProcessType"/>
+        <TextCell
+          enableSort="false"
+          id="Description"
+          label="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.Description&quot;)"
+          value="batchProcessHistory.ProcessType.Description"/>
+        <DateCell
+          dateFormat="short"
+          id="StartDate"
+          label="DisplayKey.get(&quot;Web.Profiler.StartDate&quot;)"
+          sortDirection="descending"
+          sortOrder="2"
+          timeFormat="short"
+          value="batchProcessHistory.StartDate"/>
+        <DateCell
+          dateFormat="short"
+          id="CompleteDate"
+          label="DisplayKey.get(&quot;Web.Profiler.CompleteDate&quot;)"
+          timeFormat="short"
+          value="batchProcessHistory.CompleteDate"/>
+        <BooleanRadioCell
+          id="RanToCompletion"
+          label="DisplayKey.get(&quot;Web.InternalTools.BatchProcessInfo.ProcessHistoryLV.RanToCompletion&quot;)"
+          value="batchProcessHistory.RanToCompletion"/>
+      </Row>
+    </RowIterator>
+    <Code><![CDATA[function deleteProfilerData(processHistory : ProcessHistory) {
+  gw.transaction.Transaction.runWithNewBundle( \ bundle -> {
+      var localSource = bundle.add( processHistory )
+      localSource.ProfilerData = null
+    }
+  )
+}]]></Code>
+  </ListViewPanel>
+</PCF>

@@ -1,0 +1,506 @@
+$gw-WestPanel--optionsbar--bg: $gw-app--menus--bg;
+$gw-WestPanel--optionsbar--col: $gw-app--menus--col;
+$gw-WestPanel--optionsbar--hover--bg: $gw-app--menus--hover--bg;
+$gw-WestPanel--optionsbar--hover--col: $gw-app--menus--hover--col;
+$gw-WestPanel--optionsbar--active--bg: $gw-app--menus--active--bg;
+$gw-WestPanel--optionsbar--active--col: $gw-app--menus--active--col;
+$gw-WestPanel--optionsbar--border: $gw-app--border--col-lighter;
+
+$gw-WestPanel--top-section--collapsed-pad-h: $gw-app--SPACING-rem-S;
+
+
+#gw-west-panel {
+  width: $gw-app--WestPanel--default-width-em;
+  border-right: $gw-app--WestPanel--border-right-width-px solid $gw-app--WestPanel--border-right--col;
+  background-color: $gw-app--WestPanel--bg;
+  font-size: $gw-app--WestPanel--font-size-em;
+  position: relative;
+  color: $gw-app--WestPanel--button--col;
+  //Don't set height, container will stretch
+
+  // Internal padding
+  padding-top: $gw-app--WestPanel--spacing-inner-top-rem;
+  padding-left: $gw-app--WestPanel--spacing-inner-left-rem;
+  padding-right: $gw-app--WestPanel--spacing-inner-right-rem;
+  padding-bottom: $gw-app--WestPanel--spacing-inner-bottom-rem;
+
+  .gw-minimized-view {
+    display: none;
+  }
+
+  .gw-WestPanelWidget--drag {
+    position: absolute;
+    @include gw-z-index(panelDrag);
+    transition: opacity 1s;
+    width: $gw-app--WestPanel--drag-width;
+    height: 100%;
+    top: 0;
+    right: -$gw-app--border-width-px;
+    cursor: col-resize;
+    opacity: 0;
+    background-color: $gw-app--WestPanel--drag-col;
+    box-sizing: content-box;
+
+    .gw-WestPanelWidget--drag-inner {
+      display: inline-block;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      opacity: 0;
+      background-color: $gw-app--bg;
+      transition: opacity 1s;
+
+      & + .gw-WestPanelWidget--drag-inner {
+        left: auto;
+        right: 100%;
+        background-color: $gw-app--WestPanel--bg;
+      }
+    }
+  }
+
+  &.gw-beingResized {
+    #gw-west-panel--children--wrapper, #gw-west-panel--bottom-bar {
+      //@include gw-grayOut();
+    }
+
+    .gw-WestPanelWidget--drag {
+      opacity: .9;
+      .gw-WestPanelWidget--drag-inner {
+        opacity: .85;
+        width: $gw-app--spacing-off-screen;
+      }
+    }
+  }
+
+  &:not(.gw-beingResized){
+    .gw-WestPanelWidget--drag {
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+#gw-west-panel--top-section {
+  width: 100%;
+  display: block;
+  background-color: $gw-app--WestPanel--bg;
+  color: $gw-app--WestPanel--button--col;
+  @if ($gw-app--MenuActionsWidget--has-button-appearance) {
+    border-bottom: gw-border($gw-app--palette--left-nav--bg-lighter);
+  }
+
+  overflow: hidden;
+}
+
+@mixin gw-westPanelIconButton($glyph) {
+  @include gw-button--panelIcon(
+                  $glyph,
+                  $gw-app--WestPanel--optionsbar--pad-v--small-rem,
+                  $gw-app--WestPanel--optionsbar--pad-h--small-rem,
+                  $gw-app--WestPanel--font-size-em);
+}
+
+@if ($gw-app--WestPanel--use-UI-bar) {
+  #gw-west-panel-toggleMinMax_float {
+    display: none;
+  }
+
+  #gw-west-panel--bottom-bar {
+    background-color: $gw-WestPanel--optionsbar--bg;
+    color: $gw-WestPanel--optionsbar--col;
+    border-top: gw-border($gw-WestPanel--optionsbar--border);
+    text-align: right;
+
+    .gw-west-panel--minmax-button {
+      display: inline-block;
+      @include gw-westPanelIconButton($gw-app--WestPanel--minmax-close-glyph);
+      border-width: 0;
+      border-left: gw-border($gw-WestPanel--optionsbar--border);
+    }
+
+    .gw-west-panel--chat-button {
+      @include gw-westPanelIconButton("comments");
+      display: none;
+      border-width: 0;
+      border-left: gw-border($gw-WestPanel--optionsbar--border);
+    }
+  }
+} @else {
+  #gw-west-panel-toggleMinMax_float {
+    display: inline-block;
+  }
+  #gw-west-panel--bottom-bar {
+    display: none;
+  }
+}
+
+@mixin gw-WestPanelFloatToggleIcon($glyph) {
+  @include gw-iconVerticalCenter($glyph);
+}
+
+#gw-west-panel-toggleMinMax_float {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: gw-pxFixed(64);
+  max-height: 100%;
+  @include gw-transform(translateY(-50%));
+  transform-origin: left center;
+  background-color: $gw-app--WestPanel--floatToggle--bg;
+  color: $gw-app--WestPanel--floatToggle--col;
+  @include gw-z-index(floatingButtons);
+  border-top-right-radius: gw-pxFixed(10);
+  border-bottom-right-radius: gw-pxFixed(10);
+  @include gw-clickable($gw-app--WestPanel--floatToggle--col, gw-pxFixed(2));
+
+  .gw-icon {
+    @include gw-WestPanelFloatToggleIcon($gw-app--WestPanel--floatToggle--close-glyph);
+  }
+}
+
+// Change some things when the panel is minimized
+#gw-west-panel.gw-makeWestPanel--min {
+  width: auto;
+
+  #gw-chat--panel {
+    display: none;
+  }
+
+  #gw-west-panel--top-section {
+    float: left;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #gw-west-panel--children--wrapper {
+    #gw-west-panel--children {
+      .gw-action--outer:not(.gw-WizardMenuLinkWidget), .gw-LinkWithArgWidget, .gw-Wizard--titles, .gw-MenuTreeWidget {
+        &:not(.gw-hasMinimizedView) {
+          display: none !important;
+        }
+      }
+
+      /*
+      The minimized view for MenuItems when the west panel is collapsed
+      */
+      .gw-action--outer.gw-hasMinimizedView:not(.gw-WizardMenuLinkWidget) {
+        .gw-action--inner {
+          padding-left: $gw-app--WestPanel--minimized-view-pad-h-rem;
+          padding-right: $gw-app--WestPanel--minimized-view-pad-h-rem;
+        }
+
+        .gw-subMenu {
+          .gw-action--outer {
+            .gw-action--inner {
+              padding-left: $gw-app--WestPanel--minimized-view-pad-h-rem;
+            }
+          }
+        }
+
+        .gw-action--expand-button {
+          display: none;
+        }
+
+        .gw-icon {
+          display: none;
+        }
+
+        .gw-label {
+          display: none;
+        }
+
+        .gw-graphics {
+          display: none;
+        }
+
+        .gw-subMenu .gw-useBulletIcon {
+          .gw-action--inner {
+            @if($gw-app--WestPanel--submenu--min-use-circular-background == true) {
+              @include gw-circular-background(
+                              $gw-app--WestPanel--submenu--min-circular-background-fill,
+                              $gw-app--WestPanel--submenu--min-circular-background-stroke,
+                              $gw-app--WestPanel--submenu--min-circular-background-stroke-w,
+                              $gw-app--WestPanel--submenu--min-circular-background-radius,
+                              $gw-app--WestPanel--submenu--min-circular-background-inset
+              );
+
+              & > .gw-minimized-view {
+                & > .gw-label-min {
+                  position: relative;
+                  top: gw-pxFixed(($gw-app--base-font-size--in-px - $gw-app--WestPanel--min-label-font-size) / -2);
+                  // Can be used to offset the position of this element that has a smaller font size
+                }
+              }
+            }
+          }
+        }
+
+        .gw-minimized-view {
+          display: block;
+          text-align: center;
+
+
+          .gw-icon-min {
+            // When the west panel is minimized, we need to let the icons determine their own widths, so that they are visually center aligned
+            &:before {
+              width: auto;
+            }
+          }
+
+          .gw-label-min {
+            font-size: $gw-app--WestPanel--min-label-font-size;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  #gw-west-panel--bottom-bar {
+    .gw-west-panel--chat-button {
+      display: none;
+      border-width: 0;
+      border-top: gw-border($gw-WestPanel--optionsbar--border);
+    }
+
+    .gw-west-panel--minmax-button {
+      .gw-icon {
+        font-size: $gw-app--WestPanel--font-size-em;
+        @include gw-iconVerticalCenter($gw-app--WestPanel--minmax-open-glyph);
+      }
+      border-width: 0;
+      border-top: gw-border($gw-WestPanel--optionsbar--border);
+    }
+  }
+
+  #gw-west-panel-toggleMinMax_float {
+    .gw-icon {
+      @include gw-WestPanelFloatToggleIcon($gw-app--WestPanel--floatToggle--open-glyph);
+    }
+  }
+}
+
+// This is the styling for the main section, all the buttons that are not in the 2 options bars
+#gw-west-panel--children--wrapper {
+  #gw-west-panel--children {
+    display: block;
+    position: relative;
+    text-align: left;
+
+    @mixin gw-westPanelItem($glyph: $gw-app--WestPanel--button--glyph-open, $bg: $gw-app--WestPanel--button--bg, $main-border-top: $gw-app--WestPanel--button--topborder, $hover-bg: $gw-app--WestPanel--button--hover--bg, $col: $gw-app--WestPanel--button--col, $hover-col: $gw-app--WestPanel--button--hover--col, $graphics-width: null) {
+      $border-width: 0;
+
+      @if($graphics-width != null) {
+        $graphics-width: $graphics-width - $gw-app--WestPanel--button--pad-h-rem;
+        @if(gw-stripUnit($graphics-width) < 0) {
+          $graphics-width: null;
+        }
+      }
+
+      @include gw-menuItem(
+              $bg: $bg,
+              $col: $col,
+              $hover-bg: $hover-bg,
+              $hover-col: $hover-col,
+              $active-bg: $gw-app--WestPanel--button--active--bg,
+              $active-col: $gw-app--WestPanel--button--active--col,
+              $pad-v: $gw-app--WestPanel--button--pad-v-rem,
+              $inner-action--pad-h: $gw-app--WestPanel--button--pad-h-rem,
+              $expand--pad-h: $gw-app--WestPanel--button--pad-h-rem,
+              $is-button: false,
+              $glyph: $glyph,
+              $force-no-expand: false,
+              $force-expand-only: false,
+              $focus-offset: $gw-app--WestPanel--focus-offset-px,
+              $border-width: $border-width,
+              $graphics-width: $graphics-width,
+              $inactive-when-open: true,
+              $add-disabled-state: false
+      );
+      @include gw-subMenu(
+              $bg: $gw-app--WestPanel--submenu--button--bg,
+              $col: $gw-app--WestPanel--submenu--button--col,
+              $hover-bg: $gw-app--WestPanel--submenu--button--hover--bg,
+              $hover-col: $gw-app--WestPanel--submenu--button--hover--col,
+              $active-bg: $gw-app--WestPanel--submenu--button--active--bg,
+              $active-col: $gw-app--WestPanel--submenu--button--active--col,
+              $pad-v: $gw-app--WestPanel--submenu--button--pad-v-rem,
+              $inner-action--pad-h: $gw-app--WestPanel--submenu--button--pad-h-rem,
+              $expand--pad-h: $gw-app--WestPanel--button--pad-h-rem,
+              $glyph: $glyph,
+              $focus-offset: $gw-app--WestPanel--focus-offset-px,
+              $sub-menu-pad-v: 0,
+              $graphics-width: $graphics-width,
+              $border-width: $border-width,
+              $inactive-when-open: true,
+              $add-disabled-state: false
+      );
+
+      &.gw-disabled {
+        @include gw-disabledInner($bg, $gw-app--palette--gray-7);
+        > .gw-action--inner, > .gw-action--expand-button {
+          @include gw-disabledInner($bg, $gw-app--palette--gray-7);
+        }
+      }
+
+      .gw-subMenu {
+        .gw-useBulletIcon {
+          & > .gw-action--inner {
+            // West Panel menu items in submenus that don't have their own icons get bullets when in an expanded state
+            & > .gw-label {
+              position: relative;
+              margin-left: gw-lineHeightInFixedEms();
+              @include gw-icon("circle-medium", $position: absolute, $left: 0, $display: inline, $width: gw-lineHeightInFixedEms(), $v-align: baseline, $pad-right: $gw-app--menus--space-between-icon-and-label);
+            }
+          }
+        }
+
+        .gw-action--outer.gw-disabled {
+          @include gw-disabledInner($bg, $gw-app--palette--gray-7);
+          > .gw-action--inner, > .gw-action--expand-button {
+            @include gw-disabledInner($bg, $gw-app--palette--gray-7);
+          }
+        }
+
+        > .gw-action--outer {
+          > .gw-subMenu {
+            .gw-action--outer > .gw-action--inner {
+              padding-left: $gw-app--WestPanel--submenu--button--pad-h-rem + $gw-app--WestPanel--submenu--button--pad-h-rem; // Indent tertiary menus
+            }
+          }
+        }
+
+      }
+
+      .gw-action--inner {
+        & > .gw-icon {
+          background-color: transparent;
+          position: relative;
+          float: left;
+          width: gw-lineHeightInFixedEms();
+        }
+      }
+
+      .gw-action--expand-button {
+        //float: right;
+      }
+
+      .gw-label {
+        vertical-align: baseline; //This has been flipping based on other designs, keep an eye on it
+        display: inline;
+        @include gw-textEllipse();
+      }
+
+      border-top: $main-border-top;
+      border-bottom: $gw-app--WestPanel--button--bottomborder;
+
+      > .gw-action--inner {
+        border-top: $gw-app--WestPanel--button--bottomborder;
+        border-bottom: $gw-app--WestPanel--button--bottomborder;
+        border-color: transparent;
+      }
+
+      &.gw-hasOpenSubMenu {
+        > .gw-action--inner {
+          border-bottom: $gw-app--WestPanel--button--bottomborder;
+        }
+      }
+
+      .gw-subMenu {
+        font-size: $gw-app--WestPanel--submenu--button--font-size-em;
+        .gw-action--outer {
+          border-top: $gw-app--WestPanel--submenu--button--topborder;
+          border-bottom: $gw-app--WestPanel--submenu--button--bottomborder;
+
+          > .gw-action--inner {
+            border-top: $gw-app--WestPanel--submenu--button--topborder;
+            border-bottom: $gw-app--WestPanel--submenu--button--topborder;
+            border-color: transparent;
+          }
+
+          &.gw-hasOpenSubMenu {
+            > .gw-action--inner {
+              border-bottom: $gw-app--WestPanel--submenu--button--bottomborder;
+            }
+          }
+
+          .gw-label {
+            padding-left: $gw-app--WestPanel--submenu--additional-inset-pad-left-rem; //Inset padding for submenus
+          }
+        }
+      }
+    }
+
+    & > div {
+      display: block;
+      > .gw-action--outer.gw-WizardMenuLinkWidget {
+        // Note: implemented in WizardMenuLinkWidget.scss
+      }
+
+      > .gw-action--outer:not(.gw-WizardMenuLinkWidget) {
+        display: block;
+        @include gw-westPanelItem();
+
+        &.gw-active, .gw-action--outer.gw-active {
+          & > .gw-action--expand-button {
+            @include gw-disabledInner();
+          }
+
+          // If you are active, and don't have any children, then you are the page, so put a highlight on you
+          &:not(.gw-hasChildren) {
+            & > .gw-action--inner {
+              position: relative;
+              &:before {
+                position: absolute;
+                content: " ";
+                height: 100%;
+                left: 0;
+                top: 0;
+                width: $gw-app--WestPanel--button-active-border-width-px;
+                background-color: $gw-app--WestPanel--button--active--border--col;
+              }
+            }
+          }
+        }
+
+        &.gw-hasOpenSubMenu {
+          & > .gw-action--expand-button {
+            .gw-icon--expand {
+              @include gw-iconVerticalCenter($gw-app--WestPanel--button--glyph-close);
+            }
+          }
+
+          .gw-subMenu.gw-open {
+            .gw-hasOpenSubMenu {
+              & > .gw-action--expand-button {
+                .gw-icon--expand {
+                  @include gw-iconVerticalCenter($gw-app--WestPanel--button--glyph-close);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .gw-MenuTitleBarWidget {
+      font-size: $gw-app--WestPanel--titlebar-font-size-em;
+      @include gw-westPanelItem($bg: $gw-app--WestPanel--titlebar-bg, $main-border-top: $gw-app--WestPanel--titlebar-border-top, $hover-bg: $gw-app--WestPanel--titlebar-hover-bg, $col: $gw-app--WestPanel--titlebar-col, $hover-col: $gw-app--WestPanel--titlebar-hover-col);
+
+      display: block;
+      position: relative;
+
+      &.gw-hasOpenSubMenu {
+        & > .gw-action--expand-button {
+          .gw-icon--expand {
+            @include gw-iconVerticalCenter($gw-app--WestPanel--button--glyph-close);
+          }
+        }
+      }
+    }
+  }
+}

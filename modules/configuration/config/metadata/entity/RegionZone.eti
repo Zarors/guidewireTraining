@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- <index name="region1">
+      <indexcol name="RegionType" keyposition="1"/>
+    </index> -->
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  admin="true"
+  desc="A zone of a region.  It contains the zone code, the zone type and the country to which the region belongs."
+  entity="RegionZone"
+  extendable="false"
+  platform="true"
+  table="region_zone"
+  type="versionable">
+  <implementsInterface
+    iface="com.guidewire.pl.domain.assignment.impl.RegionZoneInternalMethods"
+    impl="com.guidewire.pl.domain.assignment.impl.RegionZoneImpl"/>
+  <column
+    desc="The code for this zone, this is the value that should be used for lookups."
+    name="Code"
+    nullok="false"
+    supportsLinguisticSearch="true"
+    type="shorttext"/>
+  <typekey
+    desc="Type of zone."
+    name="ZoneType"
+    nullok="false"
+    typelist="ZoneType"/>
+  <typekey
+    desc="The country to which the zone belongs."
+    name="Country"
+    nullok="false"
+    typelist="Country"/>
+  <foreignkey
+    columnName="RegionId"
+    desc="The region."
+    fkentity="Region"
+    name="Region"
+    nullok="false"/>
+</entity>

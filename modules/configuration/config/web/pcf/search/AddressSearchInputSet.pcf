@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <InputSet
+    id="AddressSearchInputSet">
+    <Require
+      name="SearchCriteria"
+      type="ABContactSearchCriteria"/>
+    <Expose
+      widget="globalAddressContainer"/>
+    <InputSetRef
+      def="GlobalAddressInputSet(new gw.api.address.SearchAddressOwner(SearchCriteria.Address))"
+      id="globalAddressContainer"
+      mode="gw.api.address.AddressCountrySettings.getSettings(SearchCriteria.Address.Country).PCFMode"
+      widgets="globalAddressContainer"/>
+  </InputSet>
+</PCF>

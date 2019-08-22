@@ -1,0 +1,66 @@
+// Gray
+$gw-app--palette--black: #000000 !default;
+$gw-app--palette--offblack: #1F1F1F !default;
+$gw-app--palette--gray-5: #545C67 !default;
+$gw-app--palette--gray-7: #7b7b7b !default;
+$gw-app--palette--gray-8: #8c8c8c !default;
+$gw-app--palette--gray-9: #969696 !default;
+$gw-app--palette--gray-A: #A1A8B4 !default;
+$gw-app--palette--gray-B: #B7BABC !default;
+$gw-app--palette--gray-C: #C8C8C8 !default;
+$gw-app--palette--gray-D: #D9DDE1 !default;
+$gw-app--palette--gray-E: #E6E6E6 !default;
+$gw-app--palette--offwhite: #f8f9fa !default;
+$gw-app--palette--white: #ffffff !default;
+
+// Blue
+$gw-app--palette--blue-hint: #ECF8FD !default;
+$gw-app--palette--blue-highlight: #d6e8ff !default;
+$gw-app--palette--blue-highlight-alt: #b6d6f5 !default;
+$gw-app--palette--blue-active: #88CEE8 !default;
+$gw-app--palette--blue-light: #5EB5DA !default;
+$gw-app--palette--blue-focus: #00baff !default;
+$gw-app--palette--blue: #6C87B6 !default;
+$gw-app--palette--blue-gray: #7086A2 !default;
+$gw-app--palette--blue-dark: #5881b6 !default;
+$gw-app--palette--blue-dark-accent: #3a4859 !default;
+
+// General Base Colors
+$gw-app--palette--yellow: #FFF8D7 !default;
+$gw-app--palette--yellow-dark: #dfda63 !default;
+
+$gw-app--palette--green-light: #AFC468 !default;
+$gw-app--palette--green: #84b64d !default;
+$gw-app--palette--green-dark: #4D8C6C !default;
+
+$gw-app--palette--red-light: #DF675A !default;
+$gw-app--palette--red: #db5345 !default;
+$gw-app--palette--red-dark: #c81414 !default;
+
+$gw-app--palette--orange-light: #FEF6E9 !default;
+$gw-app--palette--orange: #EB9C4A !default;
+$gw-app--palette--orange-dark: #D2845C !default;
+
+$gw-app--palette--beige: #ffecd5 !default;
+$gw-app--palette--beige-dark: #f0ddc8 !default;
+
+$gw-app--palette--purple: #907DAB !default;
+$gw-app--palette--pink: #D089B9 !default;
+
+$gw-app--palette--platinum: #778291 !default;
+$gw-app--palette--gold: #f2a629 !default;
+$gw-app--palette--silver: #afb6be !default;
+$gw-app--palette--bronze: #8C7853 !default;
+
+// Specific Callout for Left Nav Coloring
+$gw-app--palette--left-nav--bg: #3a4859 !default;
+$gw-app--palette--left-nav--col: $gw-app--palette--gray-E !default;
+$gw-app--palette--left-nav--bg-highlight: #303b49 !default;
+$gw-app--palette--left-nav--bg-lighter: #445468 !default;
+$gw-app--palette--left-nav--bg-lighter-highlight: #4e6178 !default;
+$gw-app--palette--left-nav--border-col: #586D87 !default;
+
+// Other
+$gw-app--palette--shadow-col: rgba(0, 0, 0, .24) !default;
+$gw-app--palette--shadow-light-col: rgba(0, 0, 0, 0.16) !default;
+

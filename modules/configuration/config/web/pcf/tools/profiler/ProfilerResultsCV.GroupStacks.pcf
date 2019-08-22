@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <!-- WARNING: Internal Guidewire file. DO NOT EDIT. -->
+  <CardViewPanel
+    hideTabIfSingle="true"
+    id="ProfilerResultsCV"
+    mode="GroupStacks">
+    <Require
+      name="profilerDataSource"
+      type="gw.api.profiler.ProfilerDataSource"/>
+    <Card
+      id="Empty"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)"
+      visible="profilerDataSource.ProfilerFrameGroupSource == null">
+      <PanelRef
+        def="ProfilerResultsEmptyDV()"/>
+    </Card>
+    <Card
+      id="Card"
+      title="DisplayKey.get(&quot;Web.Profiler.Results&quot;)"
+      visible="profilerDataSource.ProfilerFrameGroupSource != null">
+      <DetailViewPanel>
+        <InputColumn>
+          <TextInput
+            id="stacks"
+            label="DisplayKey.get(&quot;Web.Profiler.Stacks&quot;)"
+            value="profilerDataSource.ProfilerFrameGroupSource.StackCount"
+            valueType="java.lang.Integer"/>
+          <TextInput
+            id="frames"
+            label="DisplayKey.get(&quot;Web.Profiler.Frames&quot;)"
+            value="profilerDataSource.ProfilerFrameGroupSource.FrameCount"
+            valueType="java.lang.Integer"/>
+          <TextInput
+            id="time"
+            label="DisplayKey.get(&quot;Web.Profiler.ElapsedTime&quot;)"
+            value="profilerDataSource.ProfilerFrameGroupSource.TotalElapsedTime"
+            valueType="java.lang.Integer"/>
+        </InputColumn>
+      </DetailViewPanel>
+      <PanelRef
+        def="ProfilerFrameGroupLV(profilerDataSource, profilerDataSource.ProfilerFrameGroupSource)">
+        <Toolbar/>
+      </PanelRef>
+    </Card>
+  </CardViewPanel>
+</PCF>

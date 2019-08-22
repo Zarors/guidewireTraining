@@ -1,0 +1,22 @@
+// Used inside of collapsed columns
+$gw-CollapsedCellWidget--width: gw-emFixed(.4);
+
+.gw-CollapsedCellWidget {
+  .gw-CollapsedCellWidget--show {
+    width: $gw-CollapsedCellWidget--width;
+    max-width: $gw-CollapsedCellWidget--width;
+    min-width: $gw-CollapsedCellWidget--width;
+    height: 100%;
+    min-height: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gw-app--buttons--bg !important; //TODO: cannot currently win against specificity in the table sass
+  }
+
+  padding: 0;
+}

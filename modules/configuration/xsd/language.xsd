@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+            targetNamespace="http://guidewire.com/language" xmlns="http://guidewire.com/language">
+
+<xsd:element name="Language">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element ref="GWLanguage" minOccurs="0" maxOccurs="1"/>
+    </xsd:choice>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:simpleType name="CollationStrength">
+  <xsd:restriction base="xsd:string">
+    <xsd:enumeration value="primary"/>
+    <xsd:enumeration value="secondary"/>
+    <xsd:enumeration value="tertiary"/>
+  </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:element name="GWLanguage">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element ref="InMemoryCollatorVariant" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="LinguisticSearchCollation" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="InputLabelWidth" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="SortCollation" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="FormatPatternLocalization" minOccurs="0" maxOccurs="1"/>
+
+    </xsd:choice>
+    <xsd:attribute name="code" type="xsd:string" use="required"/>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="typecode" type="xsd:string" use="required"/>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="FormatPatternLocalization">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element ref="PatternSymbolLocalization" minOccurs="0"/>
+    </xsd:choice>
+    <xsd:attribute name="useExampleDate" type="xsd:boolean" use="optional" />
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="PatternSymbolLocalization">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attribute name="java" type="xsd:string" use="required"/>
+    <xsd:attribute name="localized" type="xsd:string" use="required"/>
+  </xsd:complexType>
+</xsd:element>
+  <!-- Heuristic sizing settings -->
+<xsd:element name="InputLabelWidth">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attribute name="width" type="xsd:integer" use="required"/>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="InMemoryCollatorVariant">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <!-- The ICU locale collation variant used to generate the languages' collator for in-memory
+         sorting (that is, sorting not done in the database).  For example, for German, "phonebook". -->
+    <xsd:attribute name="variant" type="xsd:string"/>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="LinguisticSearchCollation">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <!-- Defines the linguistic search collation "strength" for this language. Set to "primary"
+         for linguistic searches that ignore case and accents, and "secondary" to ignore case
+         but not accents. "Tertiary" is not a valid search strength value. -->
+    <xsd:attribute name="strength" type="CollationStrength" default="tertiary"/>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="SortCollation">
+  <xsd:complexType>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <!-- Defines the sorting collation "strength" for this language. The meaning depends on
+         the specific language, but generally, "primary" considers only character weights,
+         "secondary" also considers accent differences, and "tertiary" also considers case
+         differences. See the documentation for com.ibm.icu.text.Collator for more information. -->
+    <xsd:attribute name="strength" type="CollationStrength" default="secondary"/>
+  </xsd:complexType>
+</xsd:element>
+</xsd:schema>

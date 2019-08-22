@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="Table linking Contacts to Category Scores"
+  entity="ABContactCategoryScore"
+  exportable="true"
+  platform="false"
+  table="abcontactcatscore"
+  type="joinarray">
+  <implementsInterface
+    iface="gw.ab.addressbook.entity.ABContactCategoryScore"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactCategoryScoreImpl"/>
+  <implementsInterface
+    iface="com.guidewire.pl.domain.contact.CommonCategoryScore"
+    impl="com.guidewire.ab.domain.addressbook.impl.ABContactCategoryScoreImpl"/>
+  <implementsEntity
+    name="ABLinkable"/>
+  <implementsEntity
+    name="Extractable"/>
+  <foreignkey
+    columnName="ABContactID"
+    desc="Associated ABContact."
+    fkentity="ABContact"
+    name="ABContact"
+    nullok="false"/>
+  <typekey
+    desc="Category of this Score."
+    name="ReviewCategory"
+    nullok="true"
+    typelist="ReviewCategory"/>
+  <column
+    name="Score"
+    nullok="true"
+    type="integer"/>
+  <index
+    name="abcontactcatscu1"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="ABContactID"/>
+    <indexcol
+      keyposition="2"
+      name="ReviewCategory"/>
+  </index>
+  <index
+    desc="Preserve uniqueness of LinkID"
+    name="abccslinkid"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="LinkID"/>
+  </index>
+</entity>

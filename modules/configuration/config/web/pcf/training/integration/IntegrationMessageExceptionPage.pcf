@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <Page
+    alwaysInEditMode="true"
+    canEdit="true"
+    id="IntegrationMessageExceptionPage"
+    startInEditMode="true"
+    title="DisplayKey.get(&quot;Training.MessageException&quot;)">
+    <Variable
+      initialValue="generateMessageGeneratorName()"
+      name="InstanceName"
+      type="String"/>
+    <Screen
+      editable="true">
+      <DetailViewPanel>
+        <InputColumn>
+          <ContentInput>
+            <Link
+              action="MessageExceptionExitPoint.push()"
+              id="DisplayInstructions"
+              label="DisplayKey.get(&quot;Training.DisplayInstructions&quot;)"/>
+          </ContentInput>
+          <Label
+            id="NewMessageTestLabel"
+            label="DisplayKey.get(&quot;Training.NewMessageGenerator&quot;)"/>
+          <TextInput
+            editable="true"
+            id="Name"
+            label="DisplayKey.get(&quot;Training.Name&quot;)"
+            required="true"
+            value="InstanceName"/>
+          <ButtonInput
+            action="throwExceptionInRequest()"
+            id="ThrowExceptionInRequest"
+            value="DisplayKey.get(&quot;Training.ThrowExceptionInRequest&quot;)"/>
+          <ButtonInput
+            action="throwExceptionInTransport()"
+            id="ThrowExceptionInTransport"
+            value="DisplayKey.get(&quot;Training.ThrowExceptionInTransport&quot;)"/>
+          <!-- <ButtonInput
+            action="throwExceptionInReply()"
+            id="ThrowExceptionInReply"
+            value="displaykey.Training.ThrowExceptionDuringReply"/> -->
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+    <Code><![CDATA[function generateMessageGeneratorName() : String {
+  return "MsgGen:" + gw.api.system.database.SequenceUtil.next(1, "MsgGen")
+}
+
+function throwExceptionInRequest() {
+  gw.transaction.Transaction.runWithNewBundle(\ bundle -> {
+    var newMessageGenerator = new MessageGenerator()
+    newMessageGenerator.Name = InstanceName
+    newMessageGenerator.ThrowExceptionInRequest = true
+    print (newMessageGenerator)
+  })
+  InstanceName = generateMessageGeneratorName()
+}
+
+function throwExceptionInTransport() {
+  gw.transaction.Transaction.runWithNewBundle(\ bundle -> {
+    var newMessageGenerator = new MessageGenerator()
+    newMessageGenerator.Name = InstanceName
+    newMessageGenerator.ThrowExceptionInTransport = true
+    print (newMessageGenerator)
+  })
+  InstanceName = generateMessageGeneratorName()
+}
+
+function throwExceptionInReply() {
+}]]></Code>
+  </Page>
+</PCF>

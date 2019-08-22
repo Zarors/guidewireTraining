@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <ListViewPanel
+    id="HistoryTrackedChangesLV">
+    <Require
+      name="history"
+      type="History"/>
+    <RowIterator
+      editable="false"
+      elementName="trackedChange"
+      value="history.TrackedChanges"
+      valueType="entity.TrackedChange[]">
+      <Row>
+        <TextCell
+          id="Field"
+          label="DisplayKey.get(&quot;Web.HistoryTrackedChangesLV.ChangedField&quot;)"
+          sortDirection="descending"
+          sortOrder="1"
+          value="trackedChange.ChangedField"/>
+        <TextCell
+          id="OldValue"
+          label="DisplayKey.get(&quot;Web.HistoryTrackedChangesLV.OldValue&quot;)"
+          value="trackedChange.OldValue"
+          visible="history.CustomType != CustomHistoryType.TC_PENDINGCHANGEREJECTED"/>
+        <TextCell
+          id="NewValue"
+          label="DisplayKey.get(&quot;Web.HistoryTrackedChangesLV.NewValue&quot;)"
+          value="trackedChange.NewValue"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

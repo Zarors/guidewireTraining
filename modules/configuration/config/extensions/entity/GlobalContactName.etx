@@ -1,0 +1,4 @@
+<!-- This file only exists in order to force code generation of this object in this module -->
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="GlobalContactName"/>

@@ -1,0 +1,7 @@
+${iconHTML}
+<div :if="label" class="gw-label">${label}</div>
+<div :for="valueIcon" :in="valueIcons" class="gw-InfoBar-icon gw-icon">
+  <img src="${valueIcon.source}" alt=""/>
+</div>
+${:children}
+<div :if="value" class="gw-label gw-infoValue">${value}</div>

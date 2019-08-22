@@ -1,0 +1,33 @@
+// Position to other widgets
+$gw-app--MessagesWidget--spacing-widget-top-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--MessagesWidget--spacing-widget-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--MessagesWidget--spacing-widget-right-rem: null !default;
+$gw-app--MessagesWidget--spacing-widget-bottom-rem: null !default;
+
+// Internal padding
+$gw-app--MessagesWidget--spacing-inner-top-rem: $gw-app--SPACING-rem-S !default;
+$gw-app--MessagesWidget--spacing-inner-left-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--MessagesWidget--spacing-inner-right-rem: $gw-app--SPACING-rem-M !default;
+$gw-app--MessagesWidget--spacing-inner-bottom-rem: $gw-app--SPACING-rem-S !default;
+
+// Icons
+$gw-app--MessagesWidget--info-glyph: "info-circle-solid" !default;
+$gw-app--MessagesWidget--warning-glyph: "exclamation-triangle-solid" !default;
+$gw-app--MessagesWidget--error-glyph: "exclamation-circle-solid" !default;
+$gw-app--MessagesWidget--default-header-glyph: "asterisk-solid" !default;
+$gw-app--MessagesWidget--toggle-glyph-close: "caret-up-solid" !default;
+$gw-app--MessagesWidget--toggle-glyph-open: "caret-down-solid" !default;
+$gw-app--MessagesWidget--non-displayable-error-glyph: "ban-solid" !default;
+
+// Others
+$gw-app--MessagesWidget--spacing-large-rem: $gw-app--SPACING-rem-M !default;
+
+$gw-app--MessagesWidget--max-width-px: gw-pxFixed(800) !default;
+$gw-app--MessagesWidget--border-col: $gw-app--palette--left-nav--bg !default;
+$gw-app--MessagesWidget--bg-hover: $gw-app--palette--blue-hint !default;
+$gw-app--MessagesWidget--show-help-sub-title: true !default;
+$gw-app--MessagesWidget--show-group-header-icon: true !default;
+$gw-app--MessagesWidget--bg: $gw-app--palette--offwhite !default;
+$gw-app--MessagesWidget--header-bg: $gw-app--MessagesWidget--bg !default;
+
+$gw-app--MessagesWidget--has-drop-shadow: true !default;

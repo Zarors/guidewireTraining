@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  cacheable="false"
+  desc="State of a Work Queue"
+  entity="WorkQueueState"
+  extendable="false"
+  final="true"
+  loadable="false"
+  lockable="false"
+  platform="true"
+  table="workqueuestate"
+  type="keyable">
+  <typekey
+    desc="The related writer batch process, identifying this queue."
+    name="WorkQueueID"
+    nullok="false"
+    typelist="BatchProcessType"/>
+  <column
+    desc="This Work Queue is active"
+    name="Active"
+    nullok="false"
+    type="bit"/>
+  <column
+    desc="Update time"
+    name="UpdateTime"
+    nullok="false"
+    type="longint"/>
+  <index
+    desc="Enforce uniqueness of WorkQueueID"
+    name="WorkQueueIDUn"
+    unique="true">
+    <indexcol
+      keyposition="1"
+      name="WorkQueueID"/>
+  </index>
+</entity>
