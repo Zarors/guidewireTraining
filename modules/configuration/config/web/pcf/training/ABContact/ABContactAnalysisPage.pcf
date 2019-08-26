@@ -12,6 +12,14 @@
       name="anABContact"
       type="ABContact"/>
     <Screen>
+      <Toolbar>
+        <ToolbarButton
+          action="anABContact.upgradeToStrategicPartner()"
+          available="if(anABContact.IsStrategicPartner_Ext == true &amp;&amp; CurrentLocation.InEditMode == true) {return false} else {return true}"
+          id="upgradeToStrategicPartnetB"
+          label="&quot;Upgrade to Strategic Partner&quot;"/>
+        <EditButtons/>
+      </Toolbar>
       <PanelRef
         def="ABContactAnalysisDV(anABContact)"/>
     </Screen>
