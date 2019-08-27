@@ -1,0 +1,17 @@
+package rules.Preupdate.ABContactPreupdate_dir.ABPU2000SubtypeABPerson_dir
+
+
+@gw.rules.RuleName("ABPU2020 - Subtype ABDoctor")
+internal class ABPU2020SubtypeABDoctor {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+/*start00rule*/
+    return aBContact typeis ABDoctor
+/*end00rule*/
+}
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+/*start00rule*/
+ 
+/*end00rule*/
+  }
+}

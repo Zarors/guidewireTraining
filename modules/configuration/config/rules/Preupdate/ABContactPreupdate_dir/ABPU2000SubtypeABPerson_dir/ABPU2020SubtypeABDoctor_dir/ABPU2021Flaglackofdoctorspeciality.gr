@@ -1,0 +1,19 @@
+package rules.Preupdate.ABContactPreupdate_dir.ABPU2000SubtypeABPerson_dir.ABPU2020SubtypeABDoctor_dir
+uses gw.api.util.DateUtil
+@gw.rules.RuleName("ABPU2021 - Flag lack of doctor speciality")
+internal class ABPU2021Flaglackofdoctorspeciality {
+  static function doCondition(aBContact : entity.ABContact) : boolean {
+/*start00rule*/
+    return (aBContact as ABDoctor).DoctorSpecialty == null
+/*end00rule*/
+}
+
+  static function doAction(aBContact : entity.ABContact, actions : gw.rules.Action) {
+/*start00rule*/
+    var newEntry = new FlagEntry()
+    newEntry.FlagDate = DateUtil .currentDate()
+    newEntry.Reason = FlagEntryReason.TC_DOCTOR_SPECIALTY_UNSPECIFIED
+    aBContact.addToFlagEntries(newEntry)
+/*end00rule*/
+  }
+}
