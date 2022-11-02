@@ -11,6 +11,6 @@
     "font": "node ./font-build.js"
   },
   "devDependencies": {
-    "webfont": "7.1.4"
+    "webfont": "11.2.26"
   }
 }
